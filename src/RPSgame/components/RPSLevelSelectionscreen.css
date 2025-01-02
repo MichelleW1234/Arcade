@@ -1,4 +1,4 @@
-.levelsScreen{
+.RPSlevelsScreen{
 
     display: flex;
     flex-direction: column;
@@ -9,7 +9,7 @@
     padding: 100px;
 }
 
-.levelsContainer {
+.RPSlevelsContainer {
 
     display: flex;
     flex-direction: row;
@@ -29,7 +29,7 @@
 
 }
 
-.LevelsWindowContainer{
+.RPSLevelsWindowContainer{
 
     min-width: 200px;
     display: flex;
@@ -40,7 +40,7 @@
 }
 
 
-.LevelsWindow{
+.RPSLevelsWindow{
 
     display: flex;
     flex-direction: column;
@@ -60,14 +60,14 @@
 
 }
 
-.LevelGlitch{
+.RPSLevelGlitch{
 
     animation: button-glitch 4s infinite;
 
 }
 
 
-.LevelButton{
+.RPSLevelButton{
 
     justify-self: center;
     background-color: rgb(0, 217, 255);
@@ -80,7 +80,7 @@
 
 }
 
-.LevelButton.active{
+.RPSLevelButton.active{
 
     background-color: blue;
     color: white;
@@ -88,7 +88,7 @@
 
 }
 
-.continueButton {
+.RPScontinueButton {
     
     background-color:rgb(0, 242, 255);
     padding: 10px;
@@ -101,7 +101,7 @@
 
 }
 
-.continueButton:hover {
+.RPScontinueButton:hover {
 
     background-color: rgb(47, 0, 255);
     color: white;

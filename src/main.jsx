@@ -1,14 +1,14 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { LevelProvider } from './RPSgame/LevelProvider.jsx'; 
-import { InputProvider } from './RPSgame/InputProvider.jsx'; 
-import { ReferenceProvider } from './RPSgame/ReferenceProvider.jsx'; 
+import { RPSLevelProvider } from './RPSgame/Providers/RPSLevelProvider.jsx'; 
+import { RPSInputProvider } from './RPSgame/Providers/RPSInputProvider.jsx'; 
+import { RPSReferenceProvider } from './RPSgame/Providers/RPSReferenceProvider.jsx'; 
 import App from './App.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <LevelProvider> <InputProvider>  <ReferenceProvider>
+    <RPSLevelProvider> <RPSInputProvider>  <RPSReferenceProvider>
         <App />
-    </ReferenceProvider> </InputProvider> </LevelProvider>
+    </RPSReferenceProvider> </RPSInputProvider> </RPSLevelProvider>
   </StrictMode>,
 )

@@ -1,0 +1,43 @@
+.instructions{
+
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 20px 100px;
+    align-items: center;
+
+}
+
+.InstructionsSign{
+
+    font-size: 35px;
+    border-radius: 30px;
+    padding: 10px;
+    color: white;
+    background-color: rgb(243, 154, 255);
+    border: 5px solid rgba(0, 253, 46, 0.521);
+
+    animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
+
+}
+
+.chooseLevelButton {
+    
+    background-color:rgb(0, 242, 255);
+    padding: 10px;
+    font-size: 30px;
+    border-left: 5.5px solid black;
+    border-bottom: 5.5px solid black;
+    
+    animation: button-glitch 4s infinite, glowing-shadow1 4s infinite;
+
+}
+
+.chooseLevelButton:hover {
+
+    background-color: rgb(47, 0, 255);
+    color: white;
+    animation: button-glitch 4s infinite, glowing-shadow1 4s infinite;
+    
+}

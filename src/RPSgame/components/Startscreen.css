@@ -1,0 +1,46 @@
+.startScreen {
+    
+    padding: 10px;
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+
+}
+
+.intro{
+
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    text-shadow: 1px 1px 4px #f700ff, -1px -1px 4px rgb(0, 255, 94), 1px -1px 4px #f700ff, -1px 1px 4px rgb(0, 255, 94);
+
+}
+
+.introGlitch{
+
+    animation: sign-glitch 3s infinite;
+
+}
+
+.startButton {
+
+    background-color:rgb(0, 242, 255);
+    font-size: 40px;
+    padding: 15px;
+    border-left: 8px solid black;
+    border-bottom: 8px solid black;
+    border-top: 2.5px solid black;
+    border-right: 2.5px solid black;
+
+    animation: button-glitch 4s infinite, glowing-shadow1 4s infinite;
+    
+}
+
+.startButton:hover {
+
+    background-color: rgb(13, 0, 255);
+    color: white;
+    animation: button-glitch 4s infinite, glowing-shadow4 4s infinite;
+
+}

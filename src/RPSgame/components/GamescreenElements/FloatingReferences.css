@@ -1,0 +1,70 @@
+.FloatingReferencesContainer {
+
+    display: flex;
+    flex-direction: column;
+    position: absolute; /* Position it relative to the container */
+
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    z-index: 10; /* Ensures it appears above other elements */
+
+    background-color: rgba(0, 47, 255, 0.5); /* Semi-transparent background */
+    
+}
+
+.FloatingReferencesFlag {
+
+    margin-top: 80px;
+    display:flex;
+    flex-direction: column;
+    background-color: rgb(220, 74, 234);
+    background-color: rgb(233, 81, 247);
+    color: rgb(0, 0, 0);
+    padding: 50px;
+    border-radius: 20px;
+    gap: 40px;
+    border-bottom: 9px solid black;
+    border-left: 9px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+
+    box-shadow: 0 0 80px rgb(254, 82, 252);
+
+}
+
+.ReferenceSign{
+
+    align-self: center;
+    color: white;
+
+    background-color: rgb(252, 162, 246);
+    border: 5px solid rgba(122, 253, 151, 0.635);
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 30px;
+
+    animation: glowing-sign-shadows 4s infinite;
+
+}
+
+.ReferenceSignGlitch{
+
+    animation: sign-glitch 4s infinite;
+
+}
+
+.references{
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 23px;
+    max-width: 600px;
+    max-height: 500px;
+    overflow-y: auto;
+
+}
+
+
+

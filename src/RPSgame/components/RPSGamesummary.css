@@ -1,4 +1,4 @@
-.GameSummary{
+.RPSGameSummary{
 
     margin-top: 180px;
     display: flex;
@@ -8,7 +8,7 @@
 
 }
 
-.GameSummarySign{
+.RPSGameSummarySign{
 
     padding: 10px;
     border-radius: 25px;
@@ -21,14 +21,14 @@
 
 }
 
-.GameSummarySignGlitch{
+.RPSGameSummarySignGlitch{
 
     animation: sign-glitch 3s infinite;
 
 }
 
 
-.stats{
+.RPSStats{
 
     display: flex;
     flex-direction: column;
@@ -52,22 +52,10 @@
     
 }
 
-.restartButton{
+.RPSGameSummaryButtons{
 
-    padding: 10px;
-    font-size: 25px;
-    background-color:rgb(0, 229, 255);
-    border-left: 4.5px solid black;
-    border-bottom: 4.5px solid black;
-
-    animation: button-glitch 4s infinite, glowing-shadow1 4s infinite;
-
-}
-
-.restartButton:hover {
-
-    background-color: rgb(0, 51, 255);
-    color: white;
-    animation: button-glitch 4s infinite, glowing-shadow4 4s infinite;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
 
 }

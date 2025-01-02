@@ -1,0 +1,80 @@
+.gameScreenContainer {
+
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: rgb(151, 133, 253);
+    width: 600px;
+    height: 500px;
+    overflow-y: auto;
+    border-radius: 25px;
+    gap: 30px;
+
+    border-left: 9px solid black;
+    border-bottom: 9px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+
+    box-shadow: 0 0 40px 8px rgb(160, 117, 253);
+
+}
+
+
+.RoundNumberSign{
+
+    padding: 10px;
+    border-radius: 25px;
+    background-color: rgb(204, 194, 251);
+    border: 5px solid rgba(1, 255, 35, 0.586);
+    color: white;
+
+    animation:glowing-sign-shadows 4s infinite;
+    
+}
+
+.RoundNumberSignGlitch{
+
+    animation: sign-glitch 4s infinite;
+    
+}
+
+.directions {
+
+    font-size: 20px;
+
+}
+
+.textbox {
+
+    font-size: 20px;
+    border-radius: 3px;
+    padding: 5px;
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+
+    animation: glowing-shadow2 4s infinite;
+
+}
+
+.enterButton {
+
+    font-size: 25px;
+    padding: 10px;
+    background-color: rgb(252, 91, 236);
+    border-left: 5.5px solid black;
+    border-bottom: 5.5px solid black;
+
+    animation: glowing-shadow3 4s infinite;
+    
+}
+
+.enterButton:hover {
+
+    background-color: #4d1fd4;
+    color: white;
+    animation: glowing-shadow4 4s infinite;
+
+}
+

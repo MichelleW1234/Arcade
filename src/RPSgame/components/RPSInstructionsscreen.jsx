@@ -1,10 +1,10 @@
-import "./Instructionsscreen.css";
+import "./RPSInstructionsscreen.css";
 
 function Instructionsscreen (){
 
     return (
-        <div className= "instructions">
-            <h1 className = "InstructionsSign">Instructions: </h1>
+        <div className= "RPSinstructionsScreen">
+            <h1 className = "RPSInstructionsSign">Instructions: </h1>
             <p className="words">
                 &gt; A game has 10 rounds.<br/>
                 &gt; In each round, you either win or lose to the computer. <br/>
@@ -16,7 +16,7 @@ function Instructionsscreen (){
                 Good luck!
             </p>
             <a href = "/levels">
-                <button className = "chooseLevelButton"> Choose Level </button>
+                <button className = "RPSchooseLevelButton"> Choose Level </button>
             </a>
         </div>
     );

@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const LevelContext = createContext();
 
 // Create a provider component
-export function LevelProvider({ children }) {
+export function RPSLevelProvider({ children }) {
 
   // Retrieve rounds from localStorage or default to 1 if not available
   const storedLevel = localStorage.getItem('level') ? JSON.parse(localStorage.getItem('level')) : 1;

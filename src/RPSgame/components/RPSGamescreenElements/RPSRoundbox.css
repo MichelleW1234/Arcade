@@ -1,4 +1,4 @@
-.gameScreenContainer {
+.RPSgameScreenContainer {
 
     margin-top: 100px;
     display: flex;
@@ -22,7 +22,7 @@
 }
 
 
-.RoundNumberSign{
+.RPSRoundNumberSign{
 
     padding: 10px;
     border-radius: 25px;
@@ -34,19 +34,19 @@
     
 }
 
-.RoundNumberSignGlitch{
+.RPSRoundNumberSignGlitch{
 
     animation: sign-glitch 4s infinite;
     
 }
 
-.directions {
+.RPSdirections {
 
     font-size: 20px;
 
 }
 
-.textbox {
+.RPStextbox {
 
     font-size: 20px;
     border-radius: 3px;
@@ -58,7 +58,7 @@
 
 }
 
-.enterButton {
+.RPSenterButton {
 
     font-size: 25px;
     padding: 10px;
@@ -70,7 +70,7 @@
     
 }
 
-.enterButton:hover {
+.RPSenterButton:hover {
 
     background-color: #4d1fd4;
     color: white;

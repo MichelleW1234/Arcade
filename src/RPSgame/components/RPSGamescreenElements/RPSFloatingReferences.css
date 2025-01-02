@@ -1,4 +1,4 @@
-.FloatingReferencesContainer {
+.RPSFloatingReferencesContainer {
 
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     
 }
 
-.FloatingReferencesFlag {
+.RPSFloatingReferencesFlag {
 
     margin-top: 80px;
     display:flex;
@@ -33,7 +33,7 @@
 
 }
 
-.ReferenceSign{
+.RPSReferenceSign{
 
     align-self: center;
     color: white;
@@ -48,13 +48,13 @@
 
 }
 
-.ReferenceSignGlitch{
+.RPSReferenceSignGlitch{
 
     animation: sign-glitch 4s infinite;
 
 }
 
-.references{
+.RPSReferences{
 
     display: flex;
     flex-direction: column;

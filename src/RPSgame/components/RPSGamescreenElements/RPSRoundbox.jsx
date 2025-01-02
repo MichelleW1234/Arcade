@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { decideRoundWinnerLevel1, decideRoundWinnerLevel2, decideRoundWinnerLevel3 } from "../../Helpers/helpers.js";
-import { useInput } from '../../InputProvider.jsx';
-import { useLevel } from '../../LevelProvider.jsx'; 
-import "./Roundbox.css";
+import { decideRoundWinnerLevel1, decideRoundWinnerLevel2, decideRoundWinnerLevel3 } from "../../Helpers/RPShelpers.js";
+import { useInput } from '../../Providers/RPSInputProvider.jsx';
+import { useLevel } from '../../Providers/RPSLevelProvider.jsx'; 
+import "./RPSRoundbox.css";
 
 function Roundbox ({round, setShowFlag, setComputerWins, setUserWins, result, 
     setResult, setTerminationFlag}){
@@ -66,10 +66,10 @@ function Roundbox ({round, setShowFlag, setComputerWins, setUserWins, result,
 
     return (
 
-        <div className="gameScreenContainer">
-            <h1 className = "RoundNumberSign"><span className="RoundNumberSignGlitch">Round:</span>{round}</h1>
+        <div className="RPSgameScreenContainer">
+            <h1 className = "RPSRoundNumberSign"><span className="RPSRoundNumberSignGlitch">Round:</span>{round}</h1>
 
-            <div className = "directions">
+            <div className = "RPSdirections">
                 <p>Enter one of the following in the space below: </p>
                 {currInput.map((item, index) => (
                     <p key={index}> &gt; Enter {index+1} for {item} </p>
@@ -77,14 +77,14 @@ function Roundbox ({round, setShowFlag, setComputerWins, setUserWins, result,
             </div>
 
             <input 
-                className = "textbox"
+                className = "RPStextbox"
                 type="text"
                 value={inputValue}
                 onChange={handleChange}
                 placeholder="Type here..."
             />
 
-            <button className = "enterButton" onClick={ProcessingInput}>Enter </button>
+            <button className = "RPSenterButton" onClick={ProcessingInput}>Enter </button>
             {error && <p style={{ color: 'red' }}>{error}</p>}
 
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Resultsscreen.css";
+import "./RPSResultsscreen.css";
 
 function Resultsscreen ({result, setRounds, setShowFlag, terminationFlag}){
 
@@ -20,20 +20,20 @@ function Resultsscreen ({result, setRounds, setShowFlag, terminationFlag}){
     }
 
     return (
-        <div className = "floatingFlag">
+        <div className = "RPSfloatingFlag">
 
-            <div className = "resultsContainer"> 
+            <div className = "RPSresultsContainer"> 
                 
             {result.map((line, index) => (
                 <p 
-                    className={`results${index === 1 ? "glitch" : ""}`}
+                    className={`RPSresults${index === 1 ? "glitch" : ""}`}
                     key={index}
                 >
                     {line}
                 </p>
             ))}
 
-                <button className = "floatingButton" onClick={handleHideFlag}> Close </button>
+                <button className = "RPSfloatingButton" onClick={handleHideFlag}> Close </button>
             </div>
 
         </div>

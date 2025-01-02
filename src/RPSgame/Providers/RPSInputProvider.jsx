@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const InputContext = createContext();
 
 // Create a provider component
-export function InputProvider({ children }) {
+export function RPSInputProvider({ children }) {
   // Retrieve rounds from localStorage, with a fallback to default if parsing fails
   let storedInput;
 

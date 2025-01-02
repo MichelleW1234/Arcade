@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const ReferenceContext = createContext();
 
 // Create a provider component
-export function ReferenceProvider({ children }) {
+export function RPSReferenceProvider({ children }) {
   // Retrieve rounds from localStorage, with a fallback to default if parsing fails
   let storedReference;
 

@@ -1,4 +1,4 @@
-.navbarContainer {
+.RPSnavbarContainer {
 
     background-color: rgb(0, 247, 255);
     padding: 10px 20px;
@@ -9,7 +9,7 @@
 
 }
 
-.navbarMenu{
+.RPSnavbarMenu{
 
     display:flex;
     flex-direction: row;
@@ -18,7 +18,7 @@
 
 }
 
-.navBarButton{
+.RPSnavBarButton{
 
     font-size: 25px;
     background-color: rgb(255, 104, 240);
@@ -30,7 +30,7 @@
 
 }
 
-.navBarButton:hover {
+.RPSnavBarButton:hover {
     
     background-color: #4d1fd4;
     color: white;
@@ -38,7 +38,7 @@
 }
 
 
-.readMoveReferencesButton {
+.RPSreadMoveReferencesButton {
 
     font-size: 25px;
     background-color: rgb(255, 104, 240);
@@ -52,7 +52,7 @@
 
 }
 
-.readMoveReferencesButton:hover {
+.RPSreadMoveReferencesButton:hover {
 
     background-color: #4d1fd4;
     color: white;

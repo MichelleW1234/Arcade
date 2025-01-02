@@ -1,10 +1,10 @@
 import React, { useState} from "react";
-import { useLevel } from '../LevelProvider.jsx';
-import { useInput } from '../InputProvider.jsx';
-import { useReference } from '../ReferenceProvider.jsx';
-import { getInput, getReferences } from "../Helpers/helpers.js";
+import { useLevel } from '../Providers/RPSLevelProvider.jsx';
+import { useInput } from '../Providers/RPSInputProvider.jsx';
+import { useReference } from '../Providers/RPSReferenceProvider.jsx';
+import { getInput, getReferences } from "../Helpers/RPShelpers.js";
 
-import "./LevelSelectionscreen.css";
+import "./RPSLevelSelectionscreen.css";
 
 function LevelSelectionscreen (){
 
@@ -27,19 +27,19 @@ function LevelSelectionscreen (){
     };
 
     return (
-        <div className = "levelsScreen">
+        <div className = "RPSlevelsScreen">
 
             <h1 className = "words"> Select a level below (default is 1): </h1>
 
-            <div className = "levelsContainer">
+            <div className = "RPSlevelsContainer">
 
-                <div className = "LevelsWindowContainer">
+                <div className = "RPSLevelsWindowContainer">
 
-                    <div className = "LevelsWindow"> 
+                    <div className = "RPSLevelsWindow"> 
                         <h2>Level 1</h2>
                     </div>
                     <button
-                    className={`LevelButton ${activeButton === 1 ? 'active' : ''}`}
+                    className={`RPSLevelButton ${activeButton === 1 ? 'active' : ''}`}
                     onClick={() => handleClick(1)}
                     >
                         Select
@@ -47,13 +47,13 @@ function LevelSelectionscreen (){
 
                 </div>   
 
-                <div className = "LevelsWindowContainer">
+                <div className = "RPSLevelsWindowContainer">
 
-                    <div className = "LevelsWindow"> 
-                        <h2><span className="LevelGlitch">Level</span> 2</h2> 
+                    <div className = "RPSLevelsWindow"> 
+                        <h2><span className="RPSLevelGlitch">Level</span> 2</h2> 
                     </div>
                     <button
-                    className={`LevelButton ${activeButton === 2 ? 'active' : ''}`}
+                    className={`RPSLevelButton ${activeButton === 2 ? 'active' : ''}`}
                     onClick={() => handleClick(2)}
                     >
                         Select
@@ -61,13 +61,13 @@ function LevelSelectionscreen (){
 
                 </div>    
 
-                <div className = "LevelsWindowContainer">
+                <div className = "RPSLevelsWindowContainer">
 
-                    <div className = "LevelsWindow"> 
+                    <div className = "RPSLevelsWindow"> 
                         <h2>Level 3</h2>
                     </div>
                     <button
-                    className={`LevelButton ${activeButton === 3 ? 'active' : ''}`}
+                    className={`RPSLevelButton ${activeButton === 3 ? 'active' : ''}`}
                     onClick={() => handleClick(3)}
                     >
                         Select
@@ -78,7 +78,7 @@ function LevelSelectionscreen (){
             </div>
             
             <a href = "/game">
-                <button className = "continueButton"> Continue to Game </button>
+                <button className = "RPScontinueButton"> Continue to Game </button>
             </a>
         </div>
     );

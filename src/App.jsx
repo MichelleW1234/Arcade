@@ -1,4 +1,8 @@
 import React from "react";
+import ArcadeStartScreen from "./components/ArcadeStartScreen.jsx";
+import GameSelectionScreen from "./components/GameSelectionScreen.jsx";
+
+
 import Startscreen from "./RPSgame/components/Startscreen.jsx";
 import Gamescreen from "./RPSgame/components/Gamescreen.jsx";
 import Instructionsscreen from "./RPSgame/components/Instructionsscreen.jsx";
@@ -14,7 +18,10 @@ function App() {
     <div className = "innerboarder">
     <BrowserRouter>
       <Routes>
-        <Route index element={<Startscreen />}/>
+        <Route index element={<ArcadeStartScreen />}/>
+        <Route path="/arcadeStart" element={<GameSelectionScreen />}/>
+        <Route path="/selection" element={<GameSelectionScreen />}/>
+        
         <Route path="/start" element={<Startscreen />}/>
         <Route path="/game" element={<Gamescreen />}/>
         <Route path="/instructions" element={<Instructionsscreen />}/>

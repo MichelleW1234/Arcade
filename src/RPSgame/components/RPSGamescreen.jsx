@@ -1,9 +1,9 @@
 import React, { useState} from "react";
-import Round from "./GamescreenElements/Roundbox.jsx";
-import Results from "./GamescreenElements/Resultsscreen.jsx";
-import Navbar from "./GamescreenElements/Navbar.jsx";
-import References from "./GamescreenElements/FloatingReferences.jsx";
-import "./Gamescreen.css";
+import Round from "./RPSGamescreenElements/RPSRoundbox.jsx";
+import Results from "./RPSGamescreenElements/RPSResultsscreen.jsx";
+import Navbar from "./RPSGamescreenElements/RPSNavbar.jsx";
+import References from "./RPSGamescreenElements/RPSFloatingReferences.jsx";
+import "./RPSGamescreen.css";
 
 function Gamescreen (){
 
@@ -25,7 +25,7 @@ function Gamescreen (){
             (<References/>)}
                     
             {rounds < 11 ? (
-                <div className="gameScreen">
+                <div className="RPSgameScreen">
 
                     <Round 
                         round={rounds} 
@@ -50,12 +50,12 @@ function Gamescreen (){
 
             ) : (
 
-                <div className="gameOver">
+                <div className="RPSgameOver">
 
                     <h1 className = "words"> Game Over!! </h1>
 
                     <a href={`/summary?computerWins=${computerWins}&userWins=${userWins}`}>
-                        <button className="gameResultsButton"> View Game Summary </button>
+                        <button className="RPSgameResultsButton"> View Game Summary </button>
                     </a>
                 
                 </div>

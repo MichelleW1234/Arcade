@@ -1,4 +1,4 @@
-.startButton {
+.enterArcadeButton{
 
     background-color:rgb(0, 242, 255);
     font-size: 40px;
@@ -9,10 +9,10 @@
     border-right: 2.5px solid black;
 
     animation: button-glitch 4s infinite, glowing-shadow1 4s infinite;
-    
+
 }
 
-.startButton:hover {
+.enterArcadeButton:hover {
 
     background-color: rgb(13, 0, 255);
     color: white;

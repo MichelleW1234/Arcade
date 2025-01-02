@@ -21,7 +21,7 @@ function Navbar ({setShowReferences}){
             <div className = "navbarContainer">
                 <ul className = "navbarMenu">
                     <li>
-                        <a href="/start">
+                        <a href="/arcadeStart">
                             <button className = "navBarButton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Quit Game </button>
                         </a>
                     </li>

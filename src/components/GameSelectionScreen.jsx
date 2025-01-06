@@ -16,7 +16,7 @@ function GameSelecionScreen (){
                     <div className = "ArcadeGame"> 
                         
                         <h2> game 1 (placeholder)</h2>
-                        <h3> game description: </h3>
+                        <h3> game description: </h3> 
                         
                     </div>
 

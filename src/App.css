@@ -45,7 +45,9 @@ body {
   font-size: 50px;
   text-shadow: 
       3px -2px 0px rgb(0, 179, 255),
-      3px 2px 0px rgb(234, 0, 255);
+      3px 2px 0px rgb(234, 0, 255),
+      -4px -4px 10px rgba(0, 255, 242, 0.422),
+      4px 4px 10px rgba(0, 255, 242, 0.422);
 
 
 }
@@ -143,7 +145,8 @@ body {
 
   0%, 44% {
     text-transform: translate(0, 0);
-    text-shadow: 2px 2px 4px #ff69b4, -2px -2px 4px #00ffff;
+    text-shadow: 
+      2px 2px 4px #ff69b4, -2px -2px 4px #00ffff;
   }
   45%, 46% {
     text-transform: translate(-5px, -2px);
@@ -163,7 +166,8 @@ body {
   }
   56%, 100% {
     text-transform: translate(0, 0);
-    text-shadow: 2px 2px 4px #ff69b4, -2px -2px 4px #00ffff;
+    text-shadow: 
+      2px 2px 4px #ff69b4, -2px -2px 4px #00ffff;
   }
 
 }
@@ -204,7 +208,11 @@ body {
 
 0%, 44% {
   text-transform: translate(0, 0);
-  text-shadow: 3px -2px 0px rgb(0, 179, 255), 3px 2px 0px rgb(234, 0, 255);
+  text-shadow: 
+    3px -2px 0px rgb(0, 179, 255), 
+    3px 2px 0px rgb(234, 0, 255),
+    -4px -4px 10px rgba(0, 255, 242, 0.422),
+    4px 4px 10px rgba(0, 255, 242, 0.422);
   
 }
 45%, 46% {
@@ -225,7 +233,11 @@ body {
 }
 56%, 100% {
   text-transform: translate(0, 0);
-  text-shadow: 3px -2px 0px rgb(0, 179, 255), 3px 2px 0px rgb(234, 0, 255);
+  text-shadow: 
+    3px -2px 0px rgb(0, 179, 255), 
+    3px 2px 0px rgb(234, 0, 255),
+    -4px -4px 10px rgba(0, 255, 242, 0.422),
+    4px 4px 10px rgba(0, 255, 242, 0.422);
   
 }
 

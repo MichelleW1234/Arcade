@@ -25,7 +25,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<ArcadeStartScreen />}/>
-        <Route path="/arcadeStart" element={<GameSelectionScreen />}/>
+        <Route path="/arcadeStart" element={<ArcadeStartScreen />}/>
         <Route path="/selection" element={<GameSelectionScreen />}/>
         
         <Route path="/RPSstart" element={<RPSStartscreen />}/>

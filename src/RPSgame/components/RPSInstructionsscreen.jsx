@@ -1,5 +1,3 @@
-import "./RPSInstructionsscreen.css";
-
 function Instructionsscreen (){
 
     return (

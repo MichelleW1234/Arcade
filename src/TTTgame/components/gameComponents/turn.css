@@ -1,4 +1,4 @@
-.chart_container{
+.TTTchart_container{
 
     height: 300px;
     width: 300px;
@@ -13,7 +13,7 @@
     
 }
 
-.chart_button{
+.TTTchart_button{
 
     background-color: rgb(204, 252, 255);
     border: 2px solid black;
@@ -27,7 +27,7 @@
 
 }
 
-.chart_button:hover{
+.TTTchart_button:hover{
 
     background-color: rgb(0, 204, 255);
 
@@ -40,7 +40,7 @@
 
 }
 
-.chart_selected_computer{
+.TTTchart_selected_computer{
 
     background-color: rgb(255, 0, 255);
     border: 2px solid black;
@@ -54,7 +54,7 @@
     0 0 6px 6px rgb(33, 155, 255);
 }
 
-.chart_selected_user{
+.TTTchart_selected_user{
 
     background-color: rgb(13, 0, 255);
     border: 2px solid black;

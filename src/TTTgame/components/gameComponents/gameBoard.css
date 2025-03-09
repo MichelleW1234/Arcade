@@ -1,4 +1,4 @@
-.board{
+.TTTboard{
 
     height: 500px;
     width: 500px;
@@ -19,7 +19,7 @@
 
 }
 
-.turnBoard {
+.TTTturnBoard {
 
     height: 80px;
     width: 400px;
@@ -44,7 +44,7 @@
 }
 
 
-.finished_chart_container{
+.TTTfinished_chart_container{
 
     height: 300px;
     width: 300px;
@@ -59,7 +59,7 @@
     
 }
 
-.resulting_chart_win{
+.TTTresulting_chart_win{
 
     background-color: rgb(246, 255, 0);
     border-bottom: 2px solid black;
@@ -77,7 +77,7 @@
 
 }
 
-.resulting_chart{
+.TTTresulting_chart{
 
     background-color: rgb(204, 252, 255);
     border-bottom: 2px solid black;
@@ -95,7 +95,7 @@
 
 }
 
-.endingContainer{
+.TTTendingContainer{
 
     display: flex;
     flex-direction: column;

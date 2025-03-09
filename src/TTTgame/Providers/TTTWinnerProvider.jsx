@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const WinnerContext = createContext();
 
 // Create a provider component
-export function WinnerProvider({ children }) {
+export function TTTWinnerProvider({ children }) {
   // Retrieve rounds from localStorage, with a fallback to default if parsing fails
   let storedWinner;
 

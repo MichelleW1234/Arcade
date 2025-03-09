@@ -1,4 +1,4 @@
-.scoreboard{
+.TTTscoreboard{
 
     width: 400px;
     background-color: rgb(0, 191, 255);
@@ -23,7 +23,7 @@
 }
 
 
-.buttonsContainer{
+.TTTbuttonsContainer{
 
     display: flex;
     flex-direction: row;

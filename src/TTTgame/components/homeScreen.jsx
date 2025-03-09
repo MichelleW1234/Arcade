@@ -1,5 +1,3 @@
-import './homeScreen.css';
-
 function homeScreen() {
 
   return (

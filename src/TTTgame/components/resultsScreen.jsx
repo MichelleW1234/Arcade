@@ -1,17 +1,27 @@
 import { useStarter } from '../Providers/TTTStarterProvider.jsx';
 import { useWinner } from '../Providers/TTTWinnerProvider.jsx';
+import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import "./resultsScreen.css";
 
 function resultsScreen() {
 
     const { Starter, setStarter} = useStarter();
     const { Winner, setWinner} = useWinner();
+    const { ActiveGame, setActiveGame} = useActiveGame();
 
     const reset = () => {
 
         setStarter(-1);
         setWinner(-1);
+        setActiveGame(["/RPSstart", "20", "-1", "-1", "-1"]);
 
+    }
+
+    const resetGame = () => {
+
+        setStarter(-1);
+        setWinner(-1);
+        
     }
 
     return (
@@ -28,7 +38,7 @@ function resultsScreen() {
                 </a>
 
                 <a href = "/TTTcoinFlip">
-                    <button className = "generalbutton" onClick={() => reset()}> Play Again </button>
+                    <button className = "generalbutton" onClick={() => resetGame()}> Play Again </button>
                 </a>
             </div>
         </div>

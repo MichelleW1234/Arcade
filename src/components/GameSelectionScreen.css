@@ -1,21 +1,15 @@
-.ArcadeselectionScreen{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-    gap: 80px;
-
-}
-
 .ArcadeGameBoard {
 
     display: flex;
     flex-direction: row;
-    background-color: rgb(162, 0, 255);
+    overflow: auto;
+    max-width: 100%;
+
+    background-color: rgb(204, 0, 255);
     width: 800px;
     padding: 50px;
+    gap: 50px;
+
     border-radius: 20px;
     border-left: 8px solid black;
     border-bottom: 8px solid black;
@@ -39,14 +33,53 @@
 
     display: flex;
     flex-direction: column;
-    height: 300px;
-    width: 200px;
-    background-color: rgb(0, 242, 255);
+    height: 250px;
+    width: 180px;
+    background-color: rgb(180, 246, 249);
     align-items: center;
     padding: 20px;
     gap: 20px;
+
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-radius: 15px;
+
+    box-shadow:  0 0 20px 6px rgb(0, 204, 255);
     
 }
+
+.gameButton{
+
+    font-size: 20px;
+    padding: 10px;
+    background-color: aqua;
+
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+
+    animation: glowing-shadow1 4s infinite;
+
+}
+
+
+.gameButton.active{
+
+    background-color: blue;
+    color: white;
+    animation: glowing-shadow4 4s infinite;
+
+}
+
+.buttonContainer{
+
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+}
+
 
 
 

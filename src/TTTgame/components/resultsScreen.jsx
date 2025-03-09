@@ -23,7 +23,7 @@ function resultsScreen() {
             </div>
            
            <div className = "TTTbuttonsContainer">
-                <a href = "/arcadeStart">
+                <a href = "/selection">
                     <button className = "generalbutton" onClick={() => reset()}> Exit Game </button>
                 </a>
 

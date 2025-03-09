@@ -1,6 +1,7 @@
 import { useLevel } from '../../Providers/RPSLevelProvider.jsx';
 import { useInput } from '../../Providers/RPSInputProvider.jsx';
 import { useReference } from '../../Providers/RPSReferenceProvider.jsx';
+import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import {resetLevel} from "../../Helpers/RPShelpers.js";
 import "./RPSNavbar.css";
 
@@ -9,6 +10,7 @@ function Navbar ({setShowReferences}){
     const { level, setLevel } = useLevel();
     const { input, setInput } = useInput();
     const { reference, setReference } = useReference();
+    const { ActiveGame, setActiveGame} = useActiveGame();
 
     const displayReferences = () => {
 
@@ -16,13 +18,21 @@ function Navbar ({setShowReferences}){
 
     }
 
+    const reset = () => {
+
+        resetLevel(setLevel, setInput, setReference);
+        setActiveGame(["/RPSstart", "20", "-1", "-1", "-1"]);
+
+    }
+
+
     return (
         <div>
             <div className = "navbarContainer">
                 <ul className = "navbarMenu">
                     <li>
                         <a href="/arcadeStart">
-                            <button className = "navBarButton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Quit Game </button>
+                            <button className = "navBarButton" onClick ={() => reset()}> Quit Game </button>
                         </a>
                     </li>
 

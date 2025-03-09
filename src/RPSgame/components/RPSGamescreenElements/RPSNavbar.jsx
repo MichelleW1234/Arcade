@@ -18,17 +18,17 @@ function Navbar ({setShowReferences}){
 
     return (
         <div>
-            <div className = "RPSnavbarContainer">
-                <ul className = "RPSnavbarMenu">
+            <div className = "navbarContainer">
+                <ul className = "navbarMenu">
                     <li>
                         <a href="/arcadeStart">
-                            <button className = "RPSnavBarButton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Quit Game </button>
+                            <button className = "navBarButton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Quit Game </button>
                         </a>
                     </li>
 
                     <li>
-                        <a href="/levels">
-                            <button className = "RPSnavBarButton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Change Level </button>
+                        <a href="/RPSlevels">
+                            <button className = "navBarButton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Change Level </button>
                         </a>
                     </li>
 

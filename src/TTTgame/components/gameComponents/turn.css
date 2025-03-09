@@ -1,0 +1,71 @@
+.chart_container{
+
+    height: 300px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 rows */
+    background-color: aqua;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+
+    animation: glowing-shadow2 4s infinite;
+    
+}
+
+.chart_button{
+
+    background-color: rgb(204, 252, 255);
+    border: 2px solid black;
+
+    box-shadow: 
+    0 0 2px 2px rgb(150, 255, 250),
+    0 0 4px 4px rgb(0, 242, 255),
+    0 0 6px 6px rgb(0, 200, 255);
+
+    animation: none;
+
+}
+
+.chart_button:hover{
+
+    background-color: rgb(0, 204, 255);
+
+    box-shadow: 
+    0 0 2px 2px rgb(150, 255, 250),
+    0 0 4px 4px rgb(0, 242, 255),
+    0 0 6px 6px rgb(0, 200, 255);
+
+    animation: none;
+
+}
+
+.chart_selected_computer{
+
+    background-color: rgb(255, 0, 255);
+    border: 2px solid black;
+
+    font-size: 80px;
+    text-align: center;
+
+    box-shadow:
+    0 0 2px 2px rgb(240, 32, 255),
+    0 0 4px 4px rgb(209, 42, 255),
+    0 0 6px 6px rgb(33, 155, 255);
+}
+
+.chart_selected_user{
+
+    background-color: rgb(13, 0, 255);
+    border: 2px solid black;
+    
+    font-size: 80px;
+    text-align: center;
+
+    box-shadow: 
+    0 0 2px 2px rgb(0, 42, 255),
+    0 0 4px 4px rgb(0, 140, 255),
+    0 0 6px 6px rgb(0, 191, 255);
+
+
+}

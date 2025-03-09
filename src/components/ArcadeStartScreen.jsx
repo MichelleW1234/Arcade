@@ -4,17 +4,19 @@ import "./ArcadeStartScreen.css";
 function ArcadeStartScreen (){
 
     return (
-        <div className = "startScreen">
 
-            <h1 className = "intro">
-                Welcome to The <span className = "introGlitch">Arcade</span>.
+        <div className = "screenLayout">
+
+            <h1 className = "headerwords">
+                Welcome to The <span className = "headerwordsGlitch">Arcade</span>.
             </h1>
 
             <a href="/selection">
-                <button className = "startButton"> Enter </button>
+                <button className = "generalbutton"> Enter </button>
             </a>
             
         </div>
+
     );
 
 }

@@ -13,7 +13,7 @@ function gameScreen() {
 
     setStarter(-1);
     setWinner(-1);
-    setActiveGame(["/RPSstart", "20", "-1", "-1", "-1"]);
+    setActiveGame(["/RPSstart", 10, null, null, null]);
 
   }
 

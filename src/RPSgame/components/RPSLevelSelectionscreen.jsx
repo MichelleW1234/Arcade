@@ -27,9 +27,9 @@ function LevelSelectionscreen (){
     };
 
     return (
-        <div className = "RPSlevelsScreen">
+        <div className = "screenLayout">
 
-            <h1 className = "words"> Select a level below (default is 1): </h1>
+            <h1 className = "headerwords"> Choose a level: </h1>
 
             <div className = "RPSlevelsContainer">
 
@@ -77,8 +77,8 @@ function LevelSelectionscreen (){
 
             </div>
             
-            <a href = "/game">
-                <button className = "RPScontinueButton"> Continue to Game </button>
+            <a href = "/RPSgame">
+                <button className = "generalbutton"> Continue to Game </button>
             </a>
         </div>
     );

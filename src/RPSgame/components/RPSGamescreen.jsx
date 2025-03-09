@@ -50,12 +50,12 @@ function Gamescreen (){
 
             ) : (
 
-                <div className="RPSgameOver">
+                <div className="screenLayout">
 
-                    <h1 className = "words"> Game Over!! </h1>
+                    <h1 className = "headerwords"> Game Over. </h1>
 
-                    <a href={`/summary?computerWins=${computerWins}&userWins=${userWins}`}>
-                        <button className="RPSgameResultsButton"> View Game Summary </button>
+                    <a href={`/RPSsummary?computerWins=${computerWins}&userWins=${userWins}`}>
+                        <button className="generalbutton"> View Game Summary </button>
                     </a>
                 
                 </div>

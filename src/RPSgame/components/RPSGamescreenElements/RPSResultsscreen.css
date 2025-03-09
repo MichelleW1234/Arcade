@@ -46,24 +46,3 @@
     animation: sign-glitch 3s infinite;
 
 }
-
-
-.RPSfloatingButton {
-
-    font-size: 25px;
-    padding: 10px;
-    background-color:rgb(0, 213, 255);
-    border-left: 4.5px solid black;
-    border-bottom: 4.5px solid black;
-
-    animation: button-glitch 4s infinite, glowing-shadow1 4s infinite;
-
-}
-
-.RPSfloatingButton:hover {
-
-    background-color: rgb(0, 0, 255);
-    color: white;
-    animation: button-glitch 4s infinite, glowing-shadow4 4s infinite;
-
-}

@@ -1,5 +1,5 @@
-import { useStarter } from '../Providers/StarterProvider.jsx';
-import { useWinner } from '../Providers/WinnerProvider.jsx';
+import { useStarter } from '../Providers/TTTStarterProvider.jsx';
+import { useWinner } from '../Providers/TTTWinnerProvider.jsx';
 import "./resultsScreen.css";
 
 function resultsScreen() {
@@ -17,12 +17,12 @@ function resultsScreen() {
     return (
         <div className = "screenLayout">
 
-            <div className = "scoreboard">
+            <div className = "TTTscoreboard">
                 <h1> Result: </h1>
                 <h1>{Winner === 0 ? ("You lost. :("): Winner === 1 ? ("You won! :)") : ("It's a draw!")}</h1>
             </div>
            
-           <div className = "buttonsContainer">
+           <div className = "TTTbuttonsContainer">
                 <a href = "/arcadeStart">
                     <button className = "generalbutton" onClick={() => reset()}> Exit Game </button>
                 </a>

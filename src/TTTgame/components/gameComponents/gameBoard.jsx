@@ -1,7 +1,7 @@
 import './gameBoard.css';
 import {useState, React} from 'react';
-import { useStarter } from '../../Providers/StarterProvider.jsx';
-import { useWinner } from '../../Providers/WinnerProvider.jsx';
+import { useStarter } from '../../Providers/TTTStarterProvider.jsx';
+import { useWinner } from '../../Providers/TTTWinnerProvider.jsx';
 import Turn from './turn.jsx';
 
 function gameBoard() {
@@ -23,15 +23,15 @@ function gameBoard() {
 
             {Winner === -1 ? (
 
-                <div className = "board">
+                <div className = "TTTboard">
 
                     {error === "" ? (
                                         
-                        <h1 className = "turnBoard">Current turn: {currentTurn === 1 ? "You" : "Computer"}</h1>
+                        <h1 className = "TTTturnBoard">Current turn: {currentTurn === 1 ? "You" : "Computer"}</h1>
 
                     ) : (
 
-                        <h1 className = "turnBoard"> {error} </h1>
+                        <h1 className = "TTTturnBoard"> {error} </h1>
 
                     )}
 
@@ -58,13 +58,13 @@ function gameBoard() {
 
             ) : (
 
-                <div className = "endingContainer"> 
+                <div className = "TTTendingContainer"> 
 
-                    <div className = "board">
+                    <div className = "TTTboard">
                         
-                        <h1 className = "turnBoard">Game Over!</h1>
+                        <h1 className = "TTTturnBoard">Game Over!</h1>
 
-                        <div className = "finished_chart_container">
+                        <div className = "TTTfinished_chart_container">
 
                             {matrix.map((item, index) => (
 
@@ -72,11 +72,11 @@ function gameBoard() {
 
                                     threeInARow.includes(index) ? (
 
-                                        <div className="resulting_chart_win"> O </div>
+                                        <div className="TTTresulting_chart_win"> O </div>
         
                                     ) : (
 
-                                        <div className="resulting_chart"> O </div>
+                                        <div className="TTTresulting_chart"> O </div>
 
                                     )
                                     
@@ -84,17 +84,17 @@ function gameBoard() {
 
                                     threeInARow.includes(index) ? (
 
-                                        <div className="resulting_chart_win"> X </div>
+                                        <div className="TTTresulting_chart_win"> X </div>
         
                                     ) : (
 
-                                        <div className="resulting_chart"> X </div>
+                                        <div className="TTTresulting_chart"> X </div>
 
                                     )
 
                                 ) : (
 
-                                    <div className="resulting_chart"> </div>
+                                    <div className="TTTresulting_chart"> </div>
 
                                 )
 

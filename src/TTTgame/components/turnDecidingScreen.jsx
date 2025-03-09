@@ -1,4 +1,4 @@
-import { useStarter } from '../Providers/StarterProvider.jsx';
+import { useStarter } from '../Providers/TTTStarterProvider.jsx';
 import {useState, React} from 'react';
 import './turnDecidingScreen.css';
 
@@ -37,7 +37,7 @@ function turnDecidingScreen() {
 
             ) : (
 
-                <div className = "container">
+                <div className = "TTTcontainer">
 
                     <h1 className ="largefont">{statement}</h1>
 

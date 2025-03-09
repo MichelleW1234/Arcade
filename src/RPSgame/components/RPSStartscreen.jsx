@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import "./RPSStartscreen.css";
 
 function Startscreen (){
 

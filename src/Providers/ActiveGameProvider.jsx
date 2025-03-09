@@ -12,7 +12,7 @@ export function ActiveGameProvider({ children }) {
     storedActiveGame = JSON.parse(localStorage.getItem("ActiveGame"));
   } catch (error) {
     // If parsing fails, fallback to the default value
-    storedActiveGame = ["/RPSstart", "20", "-1", "-1", "-1"];
+    storedActiveGame = ["/RPSstart", 20, null, null, null];
   }
 
   const [ActiveGame, setActiveGame] = useState(storedActiveGame);

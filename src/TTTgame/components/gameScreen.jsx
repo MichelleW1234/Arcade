@@ -1,6 +1,6 @@
 import GameBoard from './gameComponents/gameBoard.jsx';
-import { useStarter } from '../Providers/StarterProvider.jsx';
-import { useWinner } from '../Providers/WinnerProvider.jsx';
+import { useStarter } from '../Providers/TTTStarterProvider.jsx';
+import { useWinner } from '../Providers/TTTWinnerProvider.jsx';
 
 function gameScreen() {
 

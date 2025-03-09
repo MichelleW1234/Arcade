@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const StarterContext = createContext();
 
 // Create a provider component
-export function StarterProvider({ children }) {
+export function TTTStarterProvider({ children }) {
   // Retrieve rounds from localStorage, with a fallback to default if parsing fails
   let storedStarter;
 

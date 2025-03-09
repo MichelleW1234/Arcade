@@ -1,6 +1,6 @@
 import './turn.css';
 import {useState, useEffect, React} from 'react';
-import {computerMoveDecider, winnerwinnerchickendinner} from "../../Helpers/helpers.js";
+import {computerMoveDecider, winnerwinnerchickendinner} from "../../Helpers/TTThelpers.js";
 
 function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, computerMoves, 
     setComputerMoves, userMoves, setUserMoves, setWinner, setThreeInARow, currentTurn, setCurrentTurn}) {
@@ -92,21 +92,21 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
     return(
 
-        <div className = "chart_container">
+        <div className = "TTTchart_container">
 
             {matrix.map((item, index) => (
 
                 matrix[index] === 1 ? (
 
-                    <div className="chart_selected_user"> O </div>
+                    <div className="TTTchart_selected_user"> O </div>
 
                 ) : matrix[index] === 0 ? (
 
-                    <div className="chart_selected_computer"> X </div>
+                    <div className="TTTchart_selected_computer"> X </div>
 
                 ) : (
 
-                    <button className="chart_button" onClick={() => userMove(index)}> </button>
+                    <button className="TTTchart_button" onClick={() => userMove(index)}> </button>
 
                 )
 

@@ -4,12 +4,12 @@ import "./RPSStartscreen.css";
 function Startscreen (){
 
     return (
-        <div className = "startScreen">
-            <h1 className = "intro">
-                Hello. You are about to start. Are you <span className = "introGlitch">ready</span>?
+        <div className = "screenLayout">
+            <h1 className = "headerwords">
+                Welcome to Rock-Paper-Scissor<span className = "headerwordsGlitch">s</span>
             </h1>
-            <a href="/instructions">
-                <button className = "startButton"> Start Game</button>
+            <a href="/RPSinstructions">
+                <button className = "generalbutton"> Start Game</button>
             </a>
         </div>
     );

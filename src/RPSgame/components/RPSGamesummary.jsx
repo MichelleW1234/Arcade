@@ -33,7 +33,7 @@ function Gamesummary (){
   }
 
   return (
-      <div className="RPSGameSummary">
+      <div className="screenLayout">
           <h1 className = "RPSGameSummarySign"><span className="RPSGameSummarySignGlitch">Game</span> Summary:  </h1>
           <div className = "RPSStats">
               <p> Computer Wins: {computerWins} </p>
@@ -42,12 +42,12 @@ function Gamesummary (){
           </div>
 
           <div className = "RPSGameSummaryButtons">
-            <a href="/start">
-                <button className = "restartButton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Restart </button>
+            <a href="/RPSstart">
+                <button className = "generalbutton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Restart </button>
             </a>
 
             <a href="/arcadeStart">
-                <button className = "quitGameButton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Exit Game </button>
+                <button className = "generalbutton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Exit Game </button>
             </a>
           </div>
       </div>

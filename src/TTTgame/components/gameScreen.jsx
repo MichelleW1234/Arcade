@@ -1,22 +1,25 @@
 import GameBoard from './gameComponents/gameBoard.jsx';
 import { useStarter } from '../Providers/TTTStarterProvider.jsx';
 import { useWinner } from '../Providers/TTTWinnerProvider.jsx';
+import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
 function gameScreen() {
 
   const { Starter, setStarter} = useStarter();
   const { Winner, setWinner} = useWinner();
+  const { ActiveGame, setActiveGame} = useActiveGame();
 
   const reset = () => {
 
     setStarter(-1);
     setWinner(-1);
+    setActiveGame(["/RPSstart", "20", "-1", "-1", "-1"]);
 
   }
 
   return (
     <div>
-      <a href = "/arcadeStart">
+      <a href = "/selection">
         <button className = "generalbutton" onClick={() => reset()}> Exit Game </button>
       </a>
       <div className = "screenLayout">

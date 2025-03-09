@@ -4,10 +4,9 @@ import "./GameSelectionScreen.css";
 function GameSelecionScreen (){
 
     return (
-        <div className = "ArcadeselectionScreen">
+        <div className = "screenLayout">
             
-            <h1 className = "intro"> Choose a game: </h1>
-
+            <h1 className = "headerwords"> Choose a game: </h1>
 
             <div className = "ArcadeGameBoard">
 
@@ -20,14 +19,14 @@ function GameSelecionScreen (){
                         
                     </div>
 
-                    <button> Select </button>
-
+                    <button > Select </button>
+                    
                 </div>
 
             </div>
 
-            <a href="/start">
-                <button > Go to game </button>
+            <a href="/RPSstart">
+                <button className = "generalbutton"> Go to game </button>
             </a>
         </div>
     );

@@ -24,16 +24,16 @@ function Resultsscreen ({result, setRounds, setShowFlag, terminationFlag}){
 
             <div className = "RPSresultsContainer"> 
                 
-            {result.map((line, index) => (
-                <p 
-                    className={`RPSresults${index === 1 ? "glitch" : ""}`}
-                    key={index}
-                >
-                    {line}
-                </p>
-            ))}
+                {result.map((line, index) => (
+                    <p 
+                        className={`RPSresults${index === 1 ? "glitch" : ""}`}
+                        key={index}
+                    >
+                        {line}
+                    </p>
+                ))}
 
-                <button className = "RPSfloatingButton" onClick={handleHideFlag}> Close </button>
+                    <button className = "generalbutton" onClick={handleHideFlag}> Close </button>
             </div>
 
         </div>

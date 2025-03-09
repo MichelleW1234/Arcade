@@ -46,7 +46,7 @@ function Gamesummary (){
                 <button className = "generalbutton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Restart </button>
             </a>
 
-            <a href="/arcadeStart">
+            <a href="/selection">
                 <button className = "generalbutton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Exit Game </button>
             </a>
           </div>

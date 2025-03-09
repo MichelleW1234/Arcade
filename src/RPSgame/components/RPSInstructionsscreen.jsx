@@ -3,20 +3,20 @@ import "./RPSInstructionsscreen.css";
 function Instructionsscreen (){
 
     return (
-        <div className= "RPSinstructionsScreen">
-            <h1 className = "RPSInstructionsSign">Instructions: </h1>
-            <p className="words">
+        <div className= "screenLayout">
+            <h1 className = "instructionsSign"> Instructions: </h1>
+            <p className="largefont">
                 &gt; A game has 10 rounds.<br/>
                 &gt; In each round, you either win or lose to the computer. <br/>
                 &gt; If you win, you get a point. <br/>
                 &gt; If the computer wins, it gets a point.<br/>
                 &gt; There will be a point summary at the end of the game, which will determine who wins overall (or if there is a winner). <br/>
             </p>
-            <p className="words">
+            <p className="largefont">
                 Good luck!
             </p>
-            <a href = "/levels">
-                <button className = "RPSchooseLevelButton"> Choose Level </button>
+            <a href = "/RPSlevels">
+                <button className = "generalbutton"> Choose Level </button>
             </a>
         </div>
     );

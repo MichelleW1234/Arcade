@@ -1,1 +1,1 @@
-terminal command to run: npm run dev
+terminal command to run: `npm run dev`

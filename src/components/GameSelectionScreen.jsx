@@ -19,8 +19,8 @@ function GameSelecionScreen (){
     };
 
     useEffect(() => {
-        setCurrGamePath(ActiveGame[0]); // Set currGamePath to the first element in ActiveGame
-    }, [ActiveGame]); // Dependency on ActiveGame
+        setCurrGamePath(ActiveGame[0]); 
+    }, [ActiveGame]); 
     
 
     return (
@@ -89,7 +89,7 @@ function GameSelecionScreen (){
 
                 </div>
 
-                <a href={ActiveGame[0]}>
+                <a href={currGamePath}>
                     <button className = "generalbutton"> Go to game </button>
                 </a>
 

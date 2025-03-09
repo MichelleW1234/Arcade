@@ -1,2 +1,1 @@
-Must be run in terminal \n
-command: npm run dev
+terminal command to run: npm run dev

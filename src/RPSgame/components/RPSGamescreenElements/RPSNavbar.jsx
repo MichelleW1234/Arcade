@@ -21,7 +21,7 @@ function Navbar ({setShowReferences}){
     const reset = () => {
 
         resetLevel(setLevel, setInput, setReference);
-        setActiveGame(["/RPSstart", "20", "-1", "-1", "-1"]);
+        setActiveGame(["/RPSstart", 20, null, null, null]);
 
     }
 

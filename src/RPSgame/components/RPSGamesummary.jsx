@@ -32,6 +32,13 @@ function Gamesummary (){
 
   }
 
+  const reset = () => {
+
+    resetLevel(setLevel, setInput, setReference);
+    setActiveGame(["/RPSstart", 20, null, null, null]);
+
+  }
+
   return (
       <div className="screenLayout">
           <h1 className = "RPSGameSummarySign"><span className="RPSGameSummarySignGlitch">Game</span> Summary:  </h1>
@@ -47,7 +54,7 @@ function Gamesummary (){
             </a>
 
             <a href="/selection">
-                <button className = "generalbutton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Exit Game </button>
+                <button className = "generalbutton" onClick ={() => reset}> Exit Game </button>
             </a>
           </div>
       </div>

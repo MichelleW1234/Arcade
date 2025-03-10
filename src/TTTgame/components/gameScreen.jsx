@@ -2,6 +2,7 @@ import GameBoard from './gameComponents/gameBoard.jsx';
 import { useStarter } from '../Providers/TTTStarterProvider.jsx';
 import { useWinner } from '../Providers/TTTWinnerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import {retrieveActiveGame} from "../../Helpers/helpers.js";
 
 function gameScreen() {
 
@@ -13,7 +14,7 @@ function gameScreen() {
 
     setStarter(-1);
     setWinner(-1);
-    setActiveGame(["/RPSstart", 10, null, null, null]);
+    setActiveGame(retrieveActiveGame(1));
 
   }
 

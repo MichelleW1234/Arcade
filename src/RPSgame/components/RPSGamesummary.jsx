@@ -2,7 +2,9 @@ import { useLocation } from "react-router-dom";
 import { useLevel } from '../Providers/RPSLevelProvider.jsx';
 import { useInput } from '../Providers/RPSInputProvider.jsx';
 import { useReference } from '../Providers/RPSReferenceProvider.jsx';
+import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {resetLevel} from "../Helpers/RPShelpers.js";
+import {retrieveActiveGame} from "../../Helpers/helpers.js";
 import "./RPSGamesummary.css";
 
 function Gamesummary (){
@@ -10,6 +12,7 @@ function Gamesummary (){
   const { level, setLevel } = useLevel();
   const { input, setInput } = useInput();
   const { reference, setReference } = useReference();
+  const { ActiveGame, setActiveGame} = useActiveGame();
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -35,7 +38,7 @@ function Gamesummary (){
   const reset = () => {
 
     resetLevel(setLevel, setInput, setReference);
-    setActiveGame(["/RPSstart", 20, null, null, null]);
+    setActiveGame(retrieveActiveGame(1));
 
   }
 

@@ -3,6 +3,7 @@ import { useInput } from '../../Providers/RPSInputProvider.jsx';
 import { useReference } from '../../Providers/RPSReferenceProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import {resetLevel} from "../../Helpers/RPShelpers.js";
+import {retrieveActiveGame} from "../../../Helpers/helpers.js";
 import "./RPSNavbar.css";
 
 function Navbar ({setShowReferences}){
@@ -21,7 +22,7 @@ function Navbar ({setShowReferences}){
     const reset = () => {
 
         resetLevel(setLevel, setInput, setReference);
-        setActiveGame(["/RPSstart", 20, null, null, null]);
+        setActiveGame(retrieveActiveGame(1));
 
     }
 

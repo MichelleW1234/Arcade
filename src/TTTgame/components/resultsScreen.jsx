@@ -1,6 +1,7 @@
 import { useStarter } from '../Providers/TTTStarterProvider.jsx';
 import { useWinner } from '../Providers/TTTWinnerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import {retrieveActiveGame} from "../../Helpers/helpers.js";
 import "./resultsScreen.css";
 
 function resultsScreen() {
@@ -13,7 +14,7 @@ function resultsScreen() {
 
         setStarter(-1);
         setWinner(-1);
-        setActiveGame(["/RPSstart", 20, null, null, null]);
+        setActiveGame(retrieveActiveGame(1));
 
     }
 

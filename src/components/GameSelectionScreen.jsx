@@ -46,6 +46,8 @@ function GameSelecionScreen (){
             </a>
 
             <div className = "screenLayout">
+
+                <h1 className = "pointsSign"> Your Points: <span className = "pointsSignGlitch">{Player[0]}</span></h1>
                 
                 <h1 className = "headerwords"> Choose a game: </h1>
 
@@ -56,6 +58,7 @@ function GameSelecionScreen (){
                         <div className = "ArcadeGame"> 
                             
                             <h2> Rock-Paper-Scissors</h2>
+                            <h2>(20 Points)</h2>
                             
                         </div>
 
@@ -73,6 +76,7 @@ function GameSelecionScreen (){
                         <div className = "ArcadeGame"> 
                             
                             <h2> Tic-Tac-Toe </h2>
+                            <h2>(10 Points)</h2>
                             
                         </div>
 

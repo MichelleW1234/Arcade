@@ -17,3 +17,22 @@ export const retrieveActiveGame = (index) => {
     return gameControls;
 
 }
+
+export const pointsDistribution = (ActiveGame, winner, setPlayer) => {
+
+    if (winner == 1){
+
+        setPlayer(prev => [prev[0] + ActiveGame[1], prev[0]]);
+
+    } else if (winner == 0){
+
+        setPlayer(prev => [prev[0] - ActiveGame[1], prev[0]]);
+
+    } else {
+
+        setPlayer(prev => [prev[0], prev[0]]);
+
+    }
+
+}
+

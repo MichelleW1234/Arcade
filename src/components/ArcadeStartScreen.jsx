@@ -11,7 +11,7 @@ function ArcadeStartScreen (){
                 Welcome to The <span className = "headerwordsGlitch">Arcade</span>.
             </h1>
 
-            <a href="/selection">
+            <a href="/rulesAndPoints">
                 <button className = "generalbutton"> Enter </button>
             </a>
             

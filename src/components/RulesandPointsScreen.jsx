@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./RulesandPointsScreen.css";
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 
@@ -10,7 +11,7 @@ function RulesandPointsScreen (){
 
         <div className = "screenLayout">
 
-            <h1 className = "headerwords"> Arcade Rules: </h1>
+            <h1 className = "instructionsSign"> Arcade Rules: </h1>
             <p className = "largefont">  
                 &gt; Do NOT use any of the browser naviation buttons to go backwards or forwards in the game, or you will break the arcade machine 
                 (and the program will have to terminate and restart to work again). <br/>
@@ -22,7 +23,7 @@ function RulesandPointsScreen (){
                 &gt; Have fun! <br/>
             </p>
 
-            <h1 className = "headerwords"> Claim points: </h1>
+            <h1 className = "claimPointsSign"> Claim points: </h1>
             <button className = "generalbutton" onClick={() => setPlayer([20, 20])}>20 pts</button>
 
             {Player[0] === 20 && Player[1] === 20 ? 

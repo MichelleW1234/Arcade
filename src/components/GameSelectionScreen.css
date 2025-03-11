@@ -80,6 +80,23 @@
 
 }
 
+.pointsSign{
+
+    font-size: 35px;
+    border-radius: 30px;
+    padding: 10px;
+    color: white;
+    background-color: rgb(243, 154, 255);
+    border: 5px solid rgba(0, 253, 46, 0.521);
+
+    animation: glowing-sign-shadows 4s infinite;
+
+}
+
+.pointsSignGlitch{
+
+    animation: sign-glitch 3s infinite;
 
 
+}
 

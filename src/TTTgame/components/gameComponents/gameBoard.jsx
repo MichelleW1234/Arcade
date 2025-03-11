@@ -2,12 +2,21 @@ import './gameBoard.css';
 import {useState, React} from 'react';
 import { useStarter } from '../../Providers/TTTStarterProvider.jsx';
 import { useWinner } from '../../Providers/TTTWinnerProvider.jsx';
+
+
+import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
+import { usePlayer} from '../../../Providers/PlayerProvider.jsx';
+import {pointsDistribution} from "../../../Helpers/helpers.js";
+
+
 import Turn from './turn.jsx';
 
 function gameBoard() {
 
     const {Starter, setStarter} = useStarter();
     const { Winner, setWinner } = useWinner();
+    const { ActiveGame, setActiveGame } = useActiveGame();
+    const { Player, setPlayer } = usePlayer();
 
     const [error, setError] = useState("");
     const [availableMoves, setAvailableMoves] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8]);
@@ -105,7 +114,7 @@ function gameBoard() {
                     </div> 
 
                     <a href = "/TTTresults">
-                        <button className = "generalbutton"> Game Results </button>
+                        <button className = "generalbutton" onClick={() => pointsDistribution(ActiveGame, Winner, setPlayer)}> Game Results </button>
                     </a>
 
                 </div> 

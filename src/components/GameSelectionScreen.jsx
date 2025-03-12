@@ -7,7 +7,7 @@ import {retrieveActiveGame} from "../Helpers/helpers.js";
 
 import "./GameSelectionScreen.css";
 
-function GameSelecionScreen (){
+function GameSelectionScreen (){
 
     const { ActiveGame, setActiveGame } = useActiveGame(); 
     const { Player, setPlayer } = usePlayer();
@@ -128,4 +128,4 @@ function GameSelecionScreen (){
 }
 
 
-export default GameSelecionScreen;
+export default GameSelectionScreen;

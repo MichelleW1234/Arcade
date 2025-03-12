@@ -13,8 +13,7 @@ function RulesandPointsScreen (){
 
             <h1 className = "instructionsSign"> Arcade Rules: </h1>
             <p className = "largefont">  
-                &gt; Do NOT use any of the browser naviation buttons to go backwards or forwards in the game, or you will break the arcade machine 
-                (and the program will have to terminate and restart to work again). <br/>
+                &gt; Do NOT use any of the browser naviation buttons to go backwards or forwards in the game, or you will break the arcade machine. <br/>
                 &gt; You will be given 20 points to start with. <br/>
                 &gt; For each game, if you win, you will gain points. If you lose, you will lose points.
                 If it's a draw, you will neither gain nor lose points. <br/>

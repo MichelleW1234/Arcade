@@ -1,10 +1,13 @@
-import { useStarter } from '../Providers/TTTStarterProvider.jsx';
 import {useState, React} from 'react';
+
+import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
+
 import './turnDecidingScreen.css';
 
 function turnDecidingScreen() {
 
-    const { Starter, setStarter} = useStarter();
+    const { TTTUser, setTTTUser} = useTTTUser();
+
     const [statement, setStatement] = useState("");
 
     const coinFlip = () => {
@@ -13,15 +16,19 @@ function turnDecidingScreen() {
 
         if (randomChoice == 0){
 
-            setStarter(randomChoice);
             setStatement("The computer will go first.");
 
         } else {
 
-            setStarter(randomChoice);
             setStatement("You will go first.");
 
         }
+
+        setTTTUser((prev) => {
+            const updatedUser = [...prev];
+            updatedUser[0] = randomChoice;
+            return updatedUser;
+        });
 
     }
 
@@ -31,9 +38,9 @@ function turnDecidingScreen() {
 
             <h1 className ="headerwords"> Press this button: </h1>
 
-            {Starter === -1 ? (
+            {TTTUser[0] === -1 ? (
                 
-                <button className = "generalbutton" onClick={() => coinFlip()}> Flip Coin </button>
+                <button className = "generalbutton" onClick={coinFlip}> Flip Coin </button>
 
             ) : (
 

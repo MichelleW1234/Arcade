@@ -1,12 +1,18 @@
-export const resetLevel = (setLevel, setInput, setReference) => {
-
-    setLevel(1);
+export const resetLevel = (setRPSUser) => {
 
     const defaultInput = getInput(1);
-    setInput(defaultInput);
-
     const defaultReferences = getReferences(1);
-    setReference(defaultReferences);
+
+    setRPSUser((prev) => {
+        const updatedUser = [...prev];
+        updatedUser[0] = 1;
+        updatedUser[1] = defaultInput;
+        updatedUser[2] = defaultReferences;
+        updatedUser[3] = 0;
+        updatedUser[4] = 0;
+
+        return updatedUser;
+    });
 
 }
 
@@ -52,18 +58,50 @@ export const getReferences = (level) => {
 
 };
 
-const computerGeneratedResponse = (lastMove) => {
 
-    return Math.floor(Math.random() * lastMove) + 1;
+
+
+
+export const decideRoundWinnerFunction = (level, userMove, setResult) => {
+
+    let result;
+
+    if (level === 1){
+
+        result = decideRoundWinnerLevel1(userMove, setResult);
+
+    } else if (level === 2){
+
+        result = decideRoundWinnerLevel2(userMove, setResult);
+
+    } else {
+
+        result = decideRoundWinnerLevel3(userMove, setResult);
+
+    }
+
+    return result;
 
 };
 
-export const decideRoundWinnerLevel1 = (userMove, result, setResult) => {
+
+
+const computerGeneratedResponse = (moveRange) => {
+
+    return Math.floor(Math.random() * moveRange) + 1;
+
+};
+
+const decideRoundWinnerLevel1 = (userMove, setResult) => {
+
 
     const userResponse = userMove;
     const computerResponse = computerGeneratedResponse(3);
 
     if (computerResponse === userResponse){
+
+        console.log("They are even  ");
+
         if (userResponse === 1){
             setResult(["Your response: rock", "Computer's response: rock", "It's a tie!"]);
         } else if (userResponse === 2){
@@ -93,7 +131,8 @@ export const decideRoundWinnerLevel1 = (userMove, result, setResult) => {
     return -1;
 };
 
-export const decideRoundWinnerLevel2 = (userMove, result, setResult) => {
+
+const decideRoundWinnerLevel2 = (userMove, setResult) => {
 
     const userResponse = userMove;
     const computerResponse = computerGeneratedResponse(5);
@@ -174,7 +213,7 @@ export const decideRoundWinnerLevel2 = (userMove, result, setResult) => {
     return -1;
 };
 
-export const decideRoundWinnerLevel3 = (userMove, result, setResult) => {
+const decideRoundWinnerLevel3 = (userMove, setResult) => {
 
     const userResponse = userMove;
     const computerResponse = computerGeneratedResponse(5);
@@ -254,7 +293,6 @@ export const decideRoundWinnerLevel3 = (userMove, result, setResult) => {
     }
     return -1;
 };
-
 
 
 

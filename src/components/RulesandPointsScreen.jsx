@@ -13,13 +13,13 @@ function RulesandPointsScreen (){
 
             <h1 className = "instructionsSign"> Arcade Rules: </h1>
             <p className = "largefont">  
-                &gt; Do NOT use any of the browser naviation buttons to go backwards or forwards in the game, or you will break the arcade machine. <br/>
-                &gt; You will be given 20 points to start with. <br/>
+                &gt; Do NOT use any of your browser navigation buttons. <br/>
+                &gt; You will receive 20 points initially. <br/>
                 &gt; For each game, if you win, you will gain points. If you lose, you will lose points.
                 If it's a draw, you will neither gain nor lose points. <br/>
-                &gt; In order to play a game, you must have the required amount of points in case you lose the game.<br/>
-                &gt; Once you are below the minimum number of points to play any of the games, you will have to leave the arcade.<br/>
-                &gt; Have fun! <br/>
+                &gt; You must have the required amount of points that correspond to a game to play it.<br/>
+                &gt; If you quit a game while it is actively playing, you will automatically lose points. <br/>
+                &gt; Once you are below the minimum number of points to play any of the games, you must leave the arcade.<br/>
             </p>
 
             <h1 className = "claimPointsSign"> Claim points: </h1>

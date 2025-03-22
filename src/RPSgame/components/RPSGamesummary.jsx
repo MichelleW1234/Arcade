@@ -16,7 +16,6 @@ function Gamesummary (){
   const { ActiveGame, setActiveGame} = useActiveGame();
   const { Player, setPlayer } = usePlayer();
 
-
   let winner;
 
   if (Player[0] < Player[1]) {

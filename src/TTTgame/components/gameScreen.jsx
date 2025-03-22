@@ -1,19 +1,22 @@
 import GameBoard from './gameComponents/gameBoard.jsx';
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
 
 import {resetGame} from "../Helpers/TTThelpers.js";
-import {retrieveActiveGame} from "../../Helpers/helpers.js";
+import {retrieveActiveGame, pointsDistribution} from "../../Helpers/helpers.js";
 
 function gameScreen() {
 
   const { ActiveGame, setActiveGame} = useActiveGame();
+  const { Player, setPlayer} = usePlayer();
   const { TTTUser, setTTTUser} = useTTTUser();
 
   const reset = () => {
 
     resetGame(setTTTUser);
+    pointsDistribution(ActiveGame, 0, setPlayer);
     setActiveGame(retrieveActiveGame(1));
 
   }
@@ -21,7 +24,7 @@ function gameScreen() {
   return (
     <div>
       <a href = "/selection">
-        <button className = "generalbutton" onClick={() => reset()}> Exit Game </button>
+        <button className = "generalbutton" onClick={() => reset()}> Quit Game </button>
       </a>
       <div className = "screenLayout">
           <h1 className ="headerwords"> Game Board: </h1>

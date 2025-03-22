@@ -1,48 +1,65 @@
 import React, { useState } from 'react';
-import { decideRoundWinnerLevel1, decideRoundWinnerLevel2, decideRoundWinnerLevel3 } from "../../Helpers/RPShelpers.js";
-import { useInput } from '../../Providers/RPSInputProvider.jsx';
-import { useLevel } from '../../Providers/RPSLevelProvider.jsx'; 
+
+import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
+
+import {decideRoundWinnerFunction} from "../../Helpers/RPShelpers.js";
+
 import "./RPSRoundbox.css";
 
-function Roundbox ({round, setShowFlag, setComputerWins, setUserWins, result, 
-    setResult, setTerminationFlag}){
+function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
 
-    const {input} = useInput();
-    const currInput = input;
-    const {level} = useLevel();
-    const currLevel = level;
+    const { RPSUser, setRPSUser } = useRPSUser();
+    const currInput = RPSUser[1];
+    const currLevel= RPSUser[0];
 
     const [error, setError] = useState("");
 
-    const functions = {decideRoundWinnerLevel1, decideRoundWinnerLevel2, decideRoundWinnerLevel3};
 
     const ProcessingInput = () => {
+        
+        const inputNumber = Number(inputValue);
+        if (1 <= inputNumber && inputNumber <= currInput.length) {
 
-        if (1 <= inputValue && inputValue <= currInput.length) {
+            setError("");  
 
-            setError(""); 
+            const winner = decideRoundWinnerFunction(currLevel, inputNumber, setResult);
 
-            const functionName = `decideRoundWinnerLevel${currLevel}`;
-            const winner = functions[functionName](Number(inputValue), result, setResult);
+            if (winner === 1){
 
-            if (winner == 1){
+                setRPSUser((prev) => {
+                    const updatedUser = [...prev];
+                    updatedUser[3] += 1;
+                    return updatedUser;
+                });
 
-                setUserWins((prevUserWins) => prevUserWins + 1);
+            } else if (winner === 0){
 
-            } else if (winner == 0){
+                setRPSUser((prev) => {
+                    const updatedUser = [...prev];
+                    updatedUser[4] += 1;
+                    return updatedUser;
+                });
 
-                setComputerWins((prevComputerWins) => prevComputerWins + 1);
+            } else if (winner === 3){
 
-            } else if (winner == 3){
+                setRPSUser((prev) => {
+                    const updatedUser = [...prev];
+                    updatedUser[3] = 10;
+                    updatedUser[4] = 0;
+                    return updatedUser;
+                });
 
-                setUserWins(10);
-                setComputerWins(0);
                 setTerminationFlag(true);
                 
-            } else if (winner == -3){
+            } else if (winner === -3){
 
-                setComputerWins(10);
-                setUserWins(0);
+                setRPSUser((prev) => {
+                    const updatedUser = [...prev];
+                    updatedUser[3] = 0;
+                    updatedUser[4] = 10;
+                    return updatedUser;
+                });
+
                 setTerminationFlag(true);
 
             }
@@ -58,11 +75,13 @@ function Roundbox ({round, setShowFlag, setComputerWins, setUserWins, result,
 
     };
 
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue] = useState("");
 
+    // For textbox:
     const handleChange = (e) => {
         setInputValue(e.target.value);
     };
+
 
     return (
 
@@ -85,6 +104,7 @@ function Roundbox ({round, setShowFlag, setComputerWins, setUserWins, result,
             />
 
             <button className = "RPSenterButton" onClick={ProcessingInput}>Enter </button>
+
             {error && <p style={{ color: 'red' }}>{error}</p>}
 
         </div>

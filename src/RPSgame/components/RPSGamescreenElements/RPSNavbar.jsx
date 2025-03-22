@@ -1,17 +1,15 @@
-import { useLevel } from '../../Providers/RPSLevelProvider.jsx';
-import { useInput } from '../../Providers/RPSInputProvider.jsx';
-import { useReference } from '../../Providers/RPSReferenceProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
+import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
+
 import {resetLevel} from "../../Helpers/RPShelpers.js";
 import {retrieveActiveGame} from "../../../Helpers/helpers.js";
+
 import "./RPSNavbar.css";
 
 function Navbar ({setShowReferences}){
 
-    const { level, setLevel } = useLevel();
-    const { input, setInput } = useInput();
-    const { reference, setReference } = useReference();
     const { ActiveGame, setActiveGame} = useActiveGame();
+    const {RPSUser, setRPSUser} = useRPSUser();
 
     const displayReferences = () => {
 
@@ -21,7 +19,7 @@ function Navbar ({setShowReferences}){
 
     const reset = () => {
 
-        resetLevel(setLevel, setInput, setReference);
+        resetLevel(setRPSUser);
         setActiveGame(retrieveActiveGame(1));
 
     }
@@ -39,7 +37,7 @@ function Navbar ({setShowReferences}){
 
                     <li>
                         <a href="/RPSlevels">
-                            <button className = "navBarButton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Change Level </button>
+                            <button className = "navBarButton" onClick ={() => resetLevel(setRPSUser)}> Change Level </button>
                         </a>
                     </li>
 

@@ -1,12 +1,15 @@
 import React from "react";
-import { useReference } from '../../Providers/RPSReferenceProvider.jsx';
-import { useLevel } from '../../Providers/RPSLevelProvider.jsx';
+
+import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
+
 import "./RPSFloatingReferences.css";
 
 function FloatingReferences (){
 
-    const {reference} = useReference();
-    const {level} = useLevel();
+    const {RPSUser} = useRPSUser();
+    const level = RPSUser[0];
+    const references = RPSUser[2];
+
     
 
     return (
@@ -14,7 +17,7 @@ function FloatingReferences (){
             <div className = "RPSFloatingReferencesFlag">
                 <h1 className = "RPSReferenceSign">Level {level} <span className="RPSReferenceSignGlitch">References:</span></h1>
                 <div className = "RPSReferences">
-                    {reference.map((item, index) => (
+                    {references.map((item, index) => (
                             <p key={index}> &gt; {item} </p> 
                     ))}
                 </div>

@@ -1,20 +1,18 @@
 import './gameBoard.css';
 import {useState, React} from 'react';
-import { useStarter } from '../../Providers/TTTStarterProvider.jsx';
-import { useWinner } from '../../Providers/TTTWinnerProvider.jsx';
 
-
+import { useTTTUser } from '../../Providers/TTTUserProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../../Providers/PlayerProvider.jsx';
-import {pointsDistribution} from "../../../Helpers/helpers.js";
 
+import {pointsDistribution} from "../../../Helpers/helpers.js";
 
 import Turn from './turn.jsx';
 
 function gameBoard() {
 
-    const {Starter, setStarter} = useStarter();
-    const { Winner, setWinner } = useWinner();
+    const { TTTUser, setTTTUser} = useTTTUser();
+
     const { ActiveGame, setActiveGame } = useActiveGame();
     const { Player, setPlayer } = usePlayer();
 
@@ -24,13 +22,13 @@ function gameBoard() {
     const [computerMoves, setComputerMoves] = useState([]);
     const [userMoves, setUserMoves] = useState([]);
     const [threeInARow, setThreeInARow] = useState([]);
-    const [currentTurn, setCurrentTurn] = useState(Starter);
+    const [currentTurn, setCurrentTurn] = useState(TTTUser[0]);
 
     return (
         
         <div>
 
-            {Winner === -1 ? (
+            {TTTUser[1] === -1 ? (
 
                 <div className = "TTTboard">
 
@@ -47,7 +45,7 @@ function gameBoard() {
                     <Turn
                                 
                         setError = {setError}
-                        starter = {Starter}
+                        starter = {TTTUser[0]}
                         matrix = {matrix}
                         setMatrix = {setMatrix}
                         availableMoves = {availableMoves}
@@ -56,7 +54,6 @@ function gameBoard() {
                         setComputerMoves = {setComputerMoves}
                         userMoves = {userMoves}
                         setUserMoves = {setUserMoves}
-                        setWinner = {setWinner}
                         setThreeInARow = {setThreeInARow}
                         currentTurn = {currentTurn}
                         setCurrentTurn = {setCurrentTurn}
@@ -114,7 +111,7 @@ function gameBoard() {
                     </div> 
 
                     <a href = "/TTTresults">
-                        <button className = "generalbutton" onClick={() => pointsDistribution(ActiveGame, Winner, setPlayer)}> Game Results </button>
+                        <button className = "generalbutton" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer)}> Game Results </button>
                     </a>
 
                 </div> 

@@ -1,14 +1,17 @@
+import React from 'react';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
+import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
 
 import {resetLevel} from "../../Helpers/RPShelpers.js";
-import {retrieveActiveGame} from "../../../Helpers/helpers.js";
+import {retrieveActiveGame, pointsDistribution} from "../../../Helpers/helpers.js";
 
 import "./RPSNavbar.css";
 
 function Navbar ({setShowReferences}){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
+    const {Player, setPlayer} = usePlayer();
     const {RPSUser, setRPSUser} = useRPSUser();
 
     const displayReferences = () => {
@@ -20,6 +23,7 @@ function Navbar ({setShowReferences}){
     const reset = () => {
 
         resetLevel(setRPSUser);
+        pointsDistribution(ActiveGame, 0, setPlayer);
         setActiveGame(retrieveActiveGame(1));
 
     }

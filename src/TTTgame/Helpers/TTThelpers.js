@@ -1,3 +1,17 @@
+export const resetGame = (setTTTUser) => {
+
+    setTTTUser((prev) => {
+        const updatedUser = [...prev];
+        updatedUser[0] = -1;
+        updatedUser[1] = -1;
+
+        return updatedUser;
+    });
+
+}
+
+
+
 export const sequenceFilter = (array, availableMoves) => {
 
     const winningSequences = [[0, 1, 2], 

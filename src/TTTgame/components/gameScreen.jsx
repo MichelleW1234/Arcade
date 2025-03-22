@@ -1,19 +1,19 @@
 import GameBoard from './gameComponents/gameBoard.jsx';
-import { useStarter } from '../Providers/TTTStarterProvider.jsx';
-import { useWinner } from '../Providers/TTTWinnerProvider.jsx';
+
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
+
+import {resetGame} from "../Helpers/TTThelpers.js";
 import {retrieveActiveGame} from "../../Helpers/helpers.js";
 
 function gameScreen() {
 
-  const { Starter, setStarter} = useStarter();
-  const { Winner, setWinner} = useWinner();
   const { ActiveGame, setActiveGame} = useActiveGame();
+  const { TTTUser, setTTTUser} = useTTTUser();
 
   const reset = () => {
 
-    setStarter(-1);
-    setWinner(-1);
+    resetGame(setTTTUser);
     setActiveGame(retrieveActiveGame(1));
 
   }

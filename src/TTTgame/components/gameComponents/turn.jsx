@@ -1,9 +1,14 @@
 import './turn.css';
 import {useState, useEffect, React} from 'react';
+
+import { useTTTUser } from '../../Providers/TTTUserProvider.jsx';
+
 import {computerMoveDecider, winnerwinnerchickendinner} from "../../Helpers/TTThelpers.js";
 
 function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, computerMoves, 
-    setComputerMoves, userMoves, setUserMoves, setWinner, setThreeInARow, currentTurn, setCurrentTurn}) {
+    setComputerMoves, userMoves, setUserMoves, setThreeInARow, currentTurn, setCurrentTurn}) {
+
+    const { TTTUser, setTTTUser} = useTTTUser();
 
     const [isLoading, setIsLoading] = useState(true); // Flag to trigger loading state
 
@@ -14,7 +19,13 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
             setTimeout(() => {
                 setIsLoading(false); // Stop loading
-                setWinner(result); // Set the final result after the delay
+
+                setTTTUser((prev) => {
+                    const updatedUser = [...prev];
+                    updatedUser[1] = result;
+                    return updatedUser;
+                });
+
             }, 200); // Adjust time as needed for UI feedback
         }
     }, [isLoading]); // Runs when isLoading or result changes

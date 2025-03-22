@@ -1,7 +1,6 @@
 import React, { useState} from "react";
-import { useLevel } from '../Providers/RPSLevelProvider.jsx';
-import { useInput } from '../Providers/RPSInputProvider.jsx';
-import { useReference } from '../Providers/RPSReferenceProvider.jsx';
+
+import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { getInput, getReferences } from "../Helpers/RPShelpers.js";
 
 import "./RPSLevelSelectionscreen.css";
@@ -9,20 +8,16 @@ import "./RPSLevelSelectionscreen.css";
 function LevelSelectionscreen (){
 
     const [activeButton, setActiveButton] = useState(1);
-    const { level, setLevel } = useLevel();
-    const { input, setInput } = useInput();
-    const {reference, setReference} = useReference();
+
+    const { RPSUser, setRPSUser} = useRPSUser();
 
     const handleClick = (index) => {
 
         setActiveButton(index);
-        setLevel(index);
 
         const currLevelInput = getInput(index);
-        setInput(currLevelInput);
-
         const currLevelReferences = getReferences(index);
-        setReference(currLevelReferences);
+        setRPSUser([index, currLevelInput, currLevelReferences, 0, 0])
 
     };
 

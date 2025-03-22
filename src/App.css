@@ -96,6 +96,10 @@ body {
 
 .navbarContainer{
 
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+
   background-color: rgb(0, 247, 255);
   padding: 10px 20px;
   border-bottom: 6px solid black;

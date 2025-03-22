@@ -29,7 +29,26 @@ export function RPSUserProvider({ children }) {
       "Scissors loses to Rock (Rock crushes Scissors)"], 0, 0];
   }
 
-  const [RPSUser, setRPSUser] = useState(storedRPSUser);
+  const [RPSUser, setRPSUser] = useState(() => {
+    try {
+      const storedRPSUser = JSON.parse(localStorage.getItem("RPSUser"));
+      return Array.isArray(storedRPSUser) ? storedRPSUser : [1, ["Rock", "Paper", "Scissors"], ["Rock beats scissors (Rock crushes Scissors)", 
+        "Rock loses to Paper (Paper covers Rock)",
+        "Paper beats Rock (Paper covers Rock)", 
+        "Paper loses to Scissors (Scissors cut Paper)",
+        "Scissors beats Paper (Scissors cut Paper)", 
+        "Scissors loses to Rock (Rock crushes Scissors)"], 0, 0]; // Ensure it's an array
+
+    } catch (error) {
+
+      return [1, ["Rock", "Paper", "Scissors"], ["Rock beats scissors (Rock crushes Scissors)", 
+        "Rock loses to Paper (Paper covers Rock)",
+        "Paper beats Rock (Paper covers Rock)", 
+        "Paper loses to Scissors (Scissors cut Paper)",
+        "Scissors beats Paper (Scissors cut Paper)", 
+        "Scissors loses to Rock (Rock crushes Scissors)"], 0, 0]; // Fallback if JSON parsing fails
+    }
+  });
 
   // Save input to localStorage whenever it changes
   useEffect(() => {
@@ -47,5 +66,7 @@ export function RPSUserProvider({ children }) {
 export function useRPSUser() {
   return useContext(RPSUserContext);
 }
+
+
 
 

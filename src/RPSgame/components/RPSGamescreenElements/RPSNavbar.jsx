@@ -6,8 +6,6 @@ import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
 import {resetLevel} from "../../Helpers/RPShelpers.js";
 import {retrieveActiveGame, pointsDistribution} from "../../../Helpers/helpers.js";
 
-import "./RPSNavbar.css";
-
 function Navbar ({setShowReferences}){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
@@ -46,7 +44,7 @@ function Navbar ({setShowReferences}){
                     </li>
 
                     <li>
-                        <button className = "RPSreadMoveReferencesButton" onClick = {displayReferences}> Move References </button>
+                        <button className = "navBarButton" onClick = {displayReferences}> Move References </button>
                     </li>
                 </ul>
             </div>

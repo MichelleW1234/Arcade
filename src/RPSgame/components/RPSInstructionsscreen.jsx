@@ -9,6 +9,7 @@ function Instructionsscreen (){
                 &gt; If you win, you get a point. <br/>
                 &gt; If the computer wins, it gets a point.<br/>
                 &gt; There will be a point summary at the end of the game, which will determine who wins overall (or if there is a winner). <br/>
+                &gt; You can read about how different objects affect one another by clicking the "Move References" button while playing. <br/>
             </p>
             <p className="largefont">
                 Good luck!

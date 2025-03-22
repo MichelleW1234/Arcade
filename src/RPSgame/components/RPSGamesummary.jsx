@@ -1,28 +1,20 @@
-import { useLocation } from "react-router-dom";
-import { useLevel } from '../Providers/RPSLevelProvider.jsx';
-import { useInput } from '../Providers/RPSInputProvider.jsx';
-import { useReference } from '../Providers/RPSReferenceProvider.jsx';
-import {resetLevel} from "../Helpers/RPShelpers.js";
+import React from "react";
 
+import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
+
 import {retrieveActiveGame} from "../../Helpers/helpers.js";
+import {resetLevel} from "../Helpers/RPShelpers.js";
 
 import "./RPSGamesummary.css";
 
 function Gamesummary (){
 
-  const { level, setLevel } = useLevel();
-  const { input, setInput } = useInput();
-  const { reference, setReference } = useReference();
+  const {RPSUser, setRPSUser} = useRPSUser();
+
   const { ActiveGame, setActiveGame} = useActiveGame();
   const { Player, setPlayer } = usePlayer();
-
-
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const computerWins = parseInt(searchParams.get("computerWins"), 10);
-  const userWins = parseInt(searchParams.get("userWins"), 10);
 
 
   let winner;
@@ -43,7 +35,7 @@ function Gamesummary (){
 
   const reset = () => {
 
-    resetLevel(setLevel, setInput, setReference);
+    resetLevel(setRPSUser);
     setActiveGame(retrieveActiveGame(1));
 
   }
@@ -52,15 +44,15 @@ function Gamesummary (){
       <div className="screenLayout">
           <h1 className = "RPSGameSummarySign"><span className="RPSGameSummarySignGlitch">Game</span> Summary:  </h1>
           <div className = "RPSStats">
-              <p> Computer Wins: {computerWins} </p>
-              <p> User Wins: {userWins} </p>
+              <p> Computer Wins: {RPSUser[4]} </p>
+              <p> User Wins: {RPSUser[3]} </p>
               <p>{winner}</p>
           </div>
 
           {Player[0] >= ActiveGame[1] ? (
 
             <a href="/RPSstart">
-              <button className = "generalbutton" onClick ={() => resetLevel(setLevel, setInput, setReference)}> Restart </button>
+              <button className = "generalbutton" onClick={() => resetLevel(setRPSUser)}> Restart </button>
             </a>
 
           ) : (
@@ -72,7 +64,7 @@ function Gamesummary (){
           <div className = "RPSGameSummaryButtons">
 
             <a href="/selection">
-                <button className = "generalbutton" onClick ={() => reset()}> Exit Game </button>
+                <button className = "generalbutton" onClick={() => reset()}> Exit Game </button>
             </a>
 
           </div>

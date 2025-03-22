@@ -23,8 +23,8 @@ export function TTTUserProvider({ children }) {
 
   const [TTTUser, setTTTUser] = useState(() => {
     try {
-      const storedValue = JSON.parse(localStorage.getItem("TTTUser"));
-      return Array.isArray(storedValue) ? storedValue : [-1, -1]; // Ensure it's an array
+      const storedTTTUser = JSON.parse(localStorage.getItem("TTTUser"));
+      return Array.isArray(storedTTTUser) ? storedTTTUser : [-1, -1]; // Ensure it's an array
     } catch (error) {
       return [-1, -1]; // Fallback if JSON parsing fails
     }

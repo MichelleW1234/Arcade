@@ -51,6 +51,10 @@ function Gamescreen (){
 
     return (
         <div>
+            
+            <Navbar
+                setShowReferences = {setShowReferences}
+            />
 
             {showReferences && 
             (<References/>)}
@@ -58,9 +62,6 @@ function Gamescreen (){
             {rounds < 11 ? (
                 
                 <div className="RPSgameScreen">
-                    <Navbar
-                        setShowReferences = {setShowReferences}
-                    />
 
                     <Round 
                         round={rounds} 
@@ -70,13 +71,14 @@ function Gamescreen (){
                     />
 
                     {showFlag && (
-
+        
                         <Results
                             result = {result}
                             setRounds={setRounds}
                             setShowFlag={setShowFlag}
                             terminationFlag = {terminationFlag}
                         />
+
                     )}
                 </div>
 

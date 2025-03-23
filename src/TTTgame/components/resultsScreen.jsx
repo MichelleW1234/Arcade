@@ -34,8 +34,8 @@ function resultsScreen() {
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <a href = "/TTTcoinFlip">
-                    <button className = "generalbutton" onClick={() => resetGame(setTTTUser)}> Play Again </button>
+                <a href = "/TTTcoinFlip" className = "generalbutton" onClick={() => resetGame(setTTTUser)}>
+                    Play Again
                 </a>
 
             ) : (
@@ -46,8 +46,8 @@ function resultsScreen() {
 
            
            <div className = "TTTbuttonsContainer">
-                <a href = "/selection">
-                    <button className = "generalbutton" onClick={() => reset()}> Exit Game </button>
+                <a href = "/selection" className = "generalbutton" onClick={() => reset()}>
+                    Exit Game
                 </a>
 
             </div>

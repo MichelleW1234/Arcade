@@ -72,8 +72,8 @@ function LevelSelectionscreen (){
 
             </div>
             
-            <a href = "/RPSgame">
-                <button className = "generalbutton"> Continue to Game </button>
+            <a href = "/RPSgame" className = "generalbutton">
+                Continue to Game
             </a>
         </div>
     );

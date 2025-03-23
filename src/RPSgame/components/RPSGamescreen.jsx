@@ -10,8 +10,6 @@ import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
 import {pointsDistribution} from "../../Helpers/helpers.js";
 
-
-
 import "./RPSGamescreen.css";
 
 function Gamescreen (){
@@ -51,35 +49,39 @@ function Gamescreen (){
 
     return (
         <div>
-            
-            <Navbar
-                setShowReferences = {setShowReferences}
-            />
-
-            {showReferences && 
-            (<References/>)}
                     
             {rounds < 11 ? (
-                
-                <div className="RPSgameScreen">
 
-                    <Round 
-                        round={rounds} 
-                        setShowFlag={setShowFlag}
-                        setResult = {setResult}
-                        setTerminationFlag = {setTerminationFlag}
+                <div>
+
+                    <Navbar
+                        setShowReferences = {setShowReferences}
                     />
 
-                    {showFlag && (
-        
-                        <Results
-                            result = {result}
-                            setRounds={setRounds}
+                    {showReferences && (<References/>)}
+                    
+                    <div className="RPSgameScreen">
+
+                        <Round 
+                            round={rounds} 
                             setShowFlag={setShowFlag}
-                            terminationFlag = {terminationFlag}
+                            setResult = {setResult}
+                            setTerminationFlag = {setTerminationFlag}
                         />
 
-                    )}
+                        {showFlag && (
+            
+                            <Results
+                                result = {result}
+                                setRounds={setRounds}
+                                setShowFlag={setShowFlag}
+                                terminationFlag = {terminationFlag}
+                            />
+
+                        )}
+                        
+                    </div>
+
                 </div>
 
             ) : (
@@ -88,8 +90,8 @@ function Gamescreen (){
 
                     <h1 className = "headerwords"> Game Over. </h1>
 
-                    <a href={"/RPSsummary"}>
-                        <button className="generalbutton" onClick={getPoints}> View Game Summary </button>
+                    <a href="/RPSsummary" className="generalbutton" onClick={getPoints}>
+                        View Game Summary
                     </a>
                 
                 </div>

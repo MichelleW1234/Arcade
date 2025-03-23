@@ -27,8 +27,8 @@ function RulesandPointsScreen (){
 
             {Player[0] === 20 && Player[1] === 20 ? 
 
-                <a href = "/selection">
-                <button className = "generalbutton"> Let's go! </button> 
+                <a href = "/selection" className = "generalbutton">
+                    Let's go!
                 </a>
 
             : 

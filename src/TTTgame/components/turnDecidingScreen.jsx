@@ -48,8 +48,8 @@ function turnDecidingScreen() {
 
                     <h1 className ="largefont">{statement}</h1>
 
-                    <a href = "/TTTgame">
-                        <button className = "generalbutton"> Begin Game </button>
+                    <a href = "/TTTgame" className = "generalbutton">
+                        Begin Game
                     </a>
 
                 </div>

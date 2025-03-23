@@ -1,6 +1,3 @@
-import React, { useState } from 'react';
-import "./ArcadeStartScreen.css";
-
 function ArcadeStartScreen (){
 
     return (
@@ -11,7 +8,7 @@ function ArcadeStartScreen (){
                 Welcome to The <span className = "headerwordsGlitch">Arcade</span>.
             </h1>
 
-            <a href="/rulesAndPoints" className = "generalbutton">
+            <a href="/rulesAndPoints" className = "generalbuttonGlitch">
                 Enter
             </a>
             

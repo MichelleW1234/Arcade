@@ -23,7 +23,7 @@ function instructionsScreen() {
         <a href="/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}> 
           Go Back
         </a>
-        <a href = "/TTTcoinFlip" className = "generalbutton">
+        <a href = "/TTTcoinFlip" className = "generalbuttonGlitch">
           Continue
         </a>
       </div>

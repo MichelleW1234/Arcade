@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import "./RulesandPointsScreen.css";
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
@@ -27,7 +26,7 @@ function RulesandPointsScreen (){
 
             {Player[0] === 20 && Player[1] === 20 ? 
 
-                <a href = "/selection" className = "generalbutton">
+                <a href = "/selection" className = "generalbuttonGlitch">
                     Let's go!
                 </a>
 

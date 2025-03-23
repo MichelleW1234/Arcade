@@ -83,11 +83,32 @@ a:active {
   border-bottom: 6px solid black;
 
   animation: glowing-shadow1 4s infinite;
-  animation: button-glitch 4s infinite, glowing-shadow1 4s infinite;
 
 }
 
 .generalbutton:hover{
+
+  background-color: rgb(58, 13, 173);
+  color: white;
+
+  animation: glowing-shadow4 4s infinite;
+
+}
+
+.generalbuttonGlitch{
+
+  background-color: rgb(102, 255, 237);
+  font-size: 30px;
+  padding: 10px;
+  border-left: 6px solid black;
+  border-bottom: 6px solid black;
+
+  animation: glowing-shadow1 4s infinite;
+  animation: button-glitch 4s infinite, glowing-shadow1 4s infinite;
+
+}
+
+.generalbuttonGlitch:hover{
 
   background-color: rgb(58, 13, 173);
   color: white;

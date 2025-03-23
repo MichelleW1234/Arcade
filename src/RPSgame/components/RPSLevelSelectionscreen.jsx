@@ -72,7 +72,7 @@ function LevelSelectionscreen (){
 
             </div>
             
-            <a href = "/RPSgame" className = "generalbutton">
+            <a href = "/RPSgame" className = "generalbuttonGlitch">
                 Continue to Game
             </a>
         </div>

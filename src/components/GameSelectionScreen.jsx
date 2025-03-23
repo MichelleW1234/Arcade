@@ -58,7 +58,7 @@ function GameSelectionScreen (){
                         <div className = "ArcadeGame"> 
                             
                             <h2> Rock-Paper-Scissors</h2>
-                            <h2>(20 Points)</h2>
+                            <h2><span className = "windowGlitch">(20 Points)</span></h2>
                             
                         </div>
 
@@ -110,7 +110,7 @@ function GameSelectionScreen (){
 
                 {Player[0] >= ActiveGame[1] ? (
 
-                    <a href={currGamePath} className = "generalbutton">
+                    <a href={currGamePath} className = "generalbuttonGlitch">
                         Go to game
                     </a>
 

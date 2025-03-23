@@ -1,4 +1,3 @@
-import React from 'react';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';

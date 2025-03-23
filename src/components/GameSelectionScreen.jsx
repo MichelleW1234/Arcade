@@ -41,8 +41,8 @@ function GameSelectionScreen (){
     return (
         <div>
 
-            <a href ="/arcadeStart">
-                <button className = "generalbutton" onClick ={() => resetPoints()}> Leave Arcade </button>
+            <a href ="/arcadeStart" className = "generalbutton" onClick ={() => resetPoints()}>
+                Leave Arcade
             </a>
 
             <div className = "screenLayout">
@@ -110,8 +110,8 @@ function GameSelectionScreen (){
 
                 {Player[0] >= ActiveGame[1] ? (
 
-                    <a href={currGamePath}>
-                        <button className = "generalbutton"> Go to game </button>
+                    <a href={currGamePath} className = "generalbutton">
+                        Go to game
                     </a>
 
                 ) : (

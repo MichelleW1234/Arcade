@@ -50,8 +50,8 @@ function Gamesummary (){
 
           {Player[0] >= ActiveGame[1] ? (
 
-            <a href="/RPSstart">
-              <button className = "generalbutton" onClick={() => resetLevel(setRPSUser)}> Restart </button>
+            <a href="/RPSlevels" className = "generalbutton" onClick={() => resetLevel(setRPSUser)}>
+              Play Again
             </a>
 
           ) : (
@@ -62,8 +62,8 @@ function Gamesummary (){
 
           <div className = "RPSGameSummaryButtons">
 
-            <a href="/selection">
-                <button className = "generalbutton" onClick={() => reset()}> Exit Game </button>
+            <a href="/selection" className = "generalbutton" onClick={() => reset()}>
+                Exit Game
             </a>
 
           </div>

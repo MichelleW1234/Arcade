@@ -23,13 +23,16 @@ function gameScreen() {
 
   return (
     <div>
-      <a href = "/selection">
-        <button className = "generalbutton" onClick={() => reset()}> Quit Game </button>
+
+      <a href = "/selection" className = "generalbutton" onClick={() => reset()}>
+        Quit Game
       </a>
+
       <div className = "screenLayout">
           <h1 className ="headerwords"> Game Board: </h1>
           <GameBoard/>
       </div>
+      
     </div>
   )
 }

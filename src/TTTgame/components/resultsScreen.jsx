@@ -29,7 +29,7 @@ function resultsScreen() {
 
             <div className = "TTTscoreboard">
                 <h1> Result: </h1>
-                <h1>{Player[0] < Player[1] ? ("You lost. :("): Player[0] > Player[1]  ? ("You won! :)") : ("It's a draw!")}</h1>
+                <h1> <span className = "TTTResultsSignGlitch">{Player[0] < Player[1] ? ("You lost. :("): Player[0] > Player[1]  ? ("You won! :)") : ("It's a draw!")} </span></h1>
             </div>
 
             {Player[0] >= ActiveGame[1] ? (

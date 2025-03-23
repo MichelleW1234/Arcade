@@ -1,4 +1,3 @@
-import React from "react";
 import "./RPSResultsscreen.css";
 
 function Resultsscreen ({result, setRounds, setShowFlag, terminationFlag}){

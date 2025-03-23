@@ -31,10 +31,10 @@ function App() {
         <Route path="/selection" element={<GameSelectionScreen />}/>
         
         <Route path="/RPSstart" element={<RPSStartscreen />}/>
-        <Route path="/RPSgame" element={<RPSGamescreen />}/>
         <Route path="/RPSinstructions" element={<RPSInstructionsscreen />}/>
-        <Route path="/RPSsummary" element={<RPSSummaryscreen />}/>
         <Route path="/RPSlevels" element={<RPSLevelSelectionscreen />}/>
+        <Route path="/RPSgame" element={<RPSGamescreen />}/>
+        <Route path="/RPSsummary" element={<RPSSummaryscreen />}/>
 
         <Route path="/TTThome" element={<TTTHomeScreen />}/>
         <Route path="/TTTinstructions" element={<TTTInstructionsScreen />}/>

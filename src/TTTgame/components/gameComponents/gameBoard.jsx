@@ -68,7 +68,7 @@ function gameBoard() {
 
                     <div className = "TTTboard">
                         
-                        <h1 className = "TTTturnBoard">Game Over!</h1>
+                        <h1 className = "TTTturnBoard"> Game Over! </h1>
 
                         <div className = "TTTfinished_chart_container">
 
@@ -110,8 +110,8 @@ function gameBoard() {
 
                     </div> 
 
-                    <a href = "/TTTresults">
-                        <button className = "generalbutton" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer)}> Game Results </button>
+                    <a href = "/TTTresults" className = "generalbutton" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer)}>
+                        Game Results
                     </a>
 
                 </div> 

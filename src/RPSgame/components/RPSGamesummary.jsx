@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
@@ -45,7 +43,7 @@ function Gamesummary (){
           <div className = "RPSStats">
               <p> Computer Wins: {RPSUser[4]} </p>
               <p> User Wins: {RPSUser[3]} </p>
-              <p>{winner}</p>
+              <p><span className = "RPSStatsGlitch">{winner}</span></p>
           </div>
 
           {Player[0] >= ActiveGame[1] ? (
@@ -60,13 +58,9 @@ function Gamesummary (){
 
           )}
 
-          <div className = "RPSGameSummaryButtons">
-
-            <a href="/selection" className = "generalbutton" onClick={() => reset()}>
-                Exit Game
-            </a>
-
-          </div>
+          <a href="/selection" className = "generalbutton" onClick={() => reset()}>
+              Exit Game
+          </a>
           
       </div>
   );

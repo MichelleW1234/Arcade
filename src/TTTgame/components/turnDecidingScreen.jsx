@@ -40,7 +40,7 @@ function turnDecidingScreen() {
 
             {TTTUser[0] === -1 ? (
                 
-                <button className = "generalbutton" onClick={coinFlip}> Flip Coin </button>
+                <button className = "generalbuttonGlitch" onClick={coinFlip}> Flip Coin </button>
 
             ) : (
 
@@ -48,7 +48,7 @@ function turnDecidingScreen() {
 
                     <h1 className ="largefont">{statement}</h1>
 
-                    <a href = "/TTTgame" className = "generalbutton">
+                    <a href = "/TTTgame" className = "generalbuttonGlitch">
                         Begin Game
                     </a>
 

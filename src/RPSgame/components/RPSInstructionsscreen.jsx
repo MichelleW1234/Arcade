@@ -25,7 +25,7 @@ function Instructionsscreen (){
             <a href="/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}>
                 Go Back
             </a>
-            <a href = "/RPSlevels" className = "generalbutton">
+            <a href = "/RPSlevels" className = "generalbuttonGlitch">
                 Choose Level
             </a>
             </div>

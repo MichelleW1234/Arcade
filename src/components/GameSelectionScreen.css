@@ -97,6 +97,11 @@
 
     animation: sign-glitch 3s infinite;
 
+}
+
+.windowGlitch{
+
+    animation: button-glitch 3.5s infinite;
 
 }
 

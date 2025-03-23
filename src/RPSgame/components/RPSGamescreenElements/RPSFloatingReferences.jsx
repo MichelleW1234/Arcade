@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
 
 import "./RPSFloatingReferences.css";

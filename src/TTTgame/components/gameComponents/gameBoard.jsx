@@ -34,7 +34,7 @@ function gameBoard() {
 
                     {error === "" ? (
                                         
-                        <h1 className = "TTTturnBoard">Current turn: {currentTurn === 1 ? "You" : "Computer"}</h1>
+                        <h1 className = "TTTturnBoard"> Current turn: {currentTurn === 1 ? "  You" : "  Computer"} </h1>
 
                     ) : (
 
@@ -110,7 +110,7 @@ function gameBoard() {
 
                     </div> 
 
-                    <a href = "/TTTresults" className = "generalbutton" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer)}>
+                    <a href = "/TTTresults" className = "generalbuttonGlitch" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer)}>
                         Game Results
                     </a>
 

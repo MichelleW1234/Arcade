@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {retrieveActiveGame} from '../../Helpers/helpers.js';
 
@@ -17,7 +15,7 @@ function Startscreen (){
                 <a href="/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}> 
                     Go Back
                 </a>
-                <a href="/RPSinstructions" className = "generalbutton">
+                <a href="/RPSinstructions" className = "generalbuttonGlitch">
                     Start Game
                 </a>
             </div>

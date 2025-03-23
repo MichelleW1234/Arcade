@@ -38,7 +38,7 @@
     border-radius: 15px;
     font-size: 26px;
 
-    animation: glowing-sign-shadows 4s infinite;
+    animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
 
 
 }
@@ -76,6 +76,7 @@
     0 0 6px 6px rgb(0, 225, 255);
 
 }
+
 
 .TTTresulting_chart{
 

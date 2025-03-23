@@ -88,9 +88,9 @@ function Gamescreen (){
 
                 <div className="screenLayout">
 
-                    <h1 className = "headerwords"> Game Over. </h1>
+                    <h1 className = "headerwords"> Game <span className = "headerwordsGlitch">Over</span>. </h1>
 
-                    <a href="/RPSsummary" className="generalbutton" onClick={getPoints}>
+                    <a href="/RPSsummary" className="generalbuttonGlitch" onClick={getPoints}>
                         View Game Summary
                     </a>
                 

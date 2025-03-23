@@ -52,10 +52,8 @@
     
 }
 
-.RPSGameSummaryButtons{
+.RPSStatsGlitch{
 
-    display: flex;
-    flex-direction: row;
-    gap: 80px;
+    animation: sign-glitch 4s infinite;
 
 }

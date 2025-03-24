@@ -78,11 +78,11 @@ function gameBoard() {
 
                                     threeInARow.includes(index) ? (
 
-                                        <div className="TTTresulting_chart_win"> O </div>
+                                        <div key = {index} className="TTTresulting_chart_win"> O </div>
         
                                     ) : (
 
-                                        <div className="TTTresulting_chart"> O </div>
+                                        <div key = {index} className="TTTresulting_chart"> O </div>
 
                                     )
                                     
@@ -90,17 +90,17 @@ function gameBoard() {
 
                                     threeInARow.includes(index) ? (
 
-                                        <div className="TTTresulting_chart_win"> X </div>
+                                        <div key = {index} className="TTTresulting_chart_win"> X </div>
         
                                     ) : (
 
-                                        <div className="TTTresulting_chart"> X </div>
+                                        <div key = {index} className="TTTresulting_chart"> X </div>
 
                                     )
 
                                 ) : (
 
-                                    <div className="TTTresulting_chart"> </div>
+                                    <div key = {index} className="TTTresulting_chart"> </div>
 
                                 )
 

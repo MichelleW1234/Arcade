@@ -12,7 +12,12 @@ export const retrieveActiveGame = (index) => {
         gameControls[0] = "/TTThome";
         gameControls[1] = 10;
 
-    }
+    } else if (index == 3){
+
+        gameControls[0] = "/SNKstart";
+        gameControls[1] = 20;
+
+    } 
 
     return gameControls;
 

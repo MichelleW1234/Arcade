@@ -109,15 +109,15 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
                 matrix[index] === 1 ? (
 
-                    <div className="TTTchart_selected_user"> O </div>
+                    <div key = {index} className="TTTchart_selected_user"> O </div>
 
                 ) : matrix[index] === 0 ? (
 
-                    <div className="TTTchart_selected_computer"> X </div>
+                    <div key = {index} className="TTTchart_selected_computer"> X </div>
 
                 ) : (
 
-                    <button className="TTTchart_button" onClick={() => userMove(index)}> </button>
+                    <button key = {index} className="TTTchart_button" onClick={() => userMove(index)}> </button>
 
                 )
 

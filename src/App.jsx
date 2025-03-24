@@ -15,6 +15,10 @@ import TTTGameScreen from "./TTTgame/components/gameScreen.jsx";
 import TTTTurnDecidingScreen from "./TTTgame/components/turnDecidingScreen.jsx";
 import TTTResultsScreen from "./TTTgame/components/resultsScreen.jsx";
 
+import SNKStartScreen from "./SNKgame/components/StartScreen.jsx";
+import SNKInstructionsScreen from "./SNKgame/components/InstructionsScreen.jsx";
+import SNKGameScreen from "./SNKgame/components/GameScreen.jsx";
+
 import NoPage from "./components/NoPage.jsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "./App.css";
@@ -41,6 +45,14 @@ function App() {
         <Route path="/TTTcoinFlip" element={<TTTTurnDecidingScreen />}/>
         <Route path="/TTTgame" element={<TTTGameScreen />}/>
         <Route path="/TTTresults" element={<TTTResultsScreen />}/>
+
+        <Route path="/SNKstart" element={<SNKStartScreen />}/>
+        <Route path="/SNKinstructions" element={<SNKInstructionsScreen />}/>
+        <Route path="/SNKgame" element={<SNKGameScreen />}/>
+
+
+
+
 
         {/*Page doesn't exist error*/}
         <Route path="*" element={<NoPage />} />

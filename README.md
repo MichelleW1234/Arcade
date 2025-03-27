@@ -6,7 +6,7 @@
 
 ## Copy and paste the link provided into your browser.
 ### Compatible browsers:
-* Google Chrome (best for React development)
+* Google Chrome 
 * Mozilla Firefox
 * Microsoft Edge
-* Apple Safari (some CSS features may need vendor prefixes)
+* Apple Safari

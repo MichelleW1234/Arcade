@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
@@ -31,15 +33,15 @@ function Navbar ({setShowReferences}){
             <div className = "navbarContainer">
                 <ul className = "navbarMenu">
                     <li>
-                        <a href="/selection" className = "navBarButton" onClick ={() => reset()}>
+                        <Link to= "/selection" className = "navBarButton" onClick ={() => reset()}>
                             Quit Game
-                        </a>
+                        </Link>
                     </li>
 
                     <li>
-                        <a href="/RPSlevels" className = "navBarButton" onClick ={() => resetLevel(setRPSUser)}>
+                        <Link to="/RPSlevels" className = "navBarButton" onClick ={() => resetLevel(setRPSUser)}>
                             Change Level
-                        </a>
+                        </Link>
                     </li>
 
                     <li>

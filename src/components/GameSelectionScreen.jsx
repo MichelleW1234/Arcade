@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../Providers/ActiveGameProvider.jsx';
 import {retrieveActiveGame} from "../Helpers/helpers.js";
 
-
 import "./GameSelectionScreen.css";
+
 
 function GameSelectionScreen (){
 
@@ -41,9 +42,9 @@ function GameSelectionScreen (){
     return (
         <div>
 
-            <a href ="/arcadeStart" className = "generalbutton" onClick ={() => resetPoints()}>
+            <Link to="/arcadeStart" className = "generalbutton" onClick ={() => resetPoints()}>
                 Leave Arcade
-            </a>
+            </Link>
 
             <div className = "screenLayout">
 
@@ -110,10 +111,10 @@ function GameSelectionScreen (){
 
                 {Player[0] >= ActiveGame[1] ? (
 
-                    <a href={currGamePath} className = "generalbuttonGlitch">
+                    <Link to={currGamePath} className = "generalbuttonGlitch">
                         Go to game
-                    </a>
-
+                    </Link>
+    
                 ) : (
 
                     <p className = "largefont"> You don't have enough points to play this game.</p>

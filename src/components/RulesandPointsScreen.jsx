@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import "./RulesandPointsScreen.css";
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
@@ -24,17 +26,17 @@ function RulesandPointsScreen (){
             <h1 className = "claimPointsSign"> Claim points: </h1>
             <button className = "generalbutton" onClick={() => setPlayer([20, 20])}>20 pts</button>
 
-            {Player[0] === 20 && Player[1] === 20 ? 
+            {Player[0] === 20 && Player[1] === 20 ? (
 
-                <a href = "/selection" className = "generalbuttonGlitch">
+                <Link to= "/selection" className = "generalbuttonGlitch">
                     Let's go!
-                </a>
-
-            : 
+                </Link>
+            
+            ) : (
 
                 null
 
-            }
+            )}
         
         </div>
 

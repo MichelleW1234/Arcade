@@ -1,4 +1,5 @@
 import React, { useState} from "react";
+import { Link } from 'react-router-dom';
 
 import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { getInput, getReferences } from "../Helpers/RPShelpers.js";
@@ -22,6 +23,7 @@ function LevelSelectionscreen (){
     };
 
     return (
+
         <div className = "screenLayout">
 
             <h1 className = "headerwords"> Choose a level: </h1>
@@ -71,11 +73,13 @@ function LevelSelectionscreen (){
                 </div>   
 
             </div>
-            
-            <a href = "/RPSgame" className = "generalbuttonGlitch">
+
+            <Link to= "/RPSgame" className = "generalbuttonGlitch">
                 Continue to Game
-            </a>
+            </Link>
+            
         </div>
+        
     );
 }
 

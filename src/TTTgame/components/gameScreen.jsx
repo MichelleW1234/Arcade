@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import GameBoard from './gameComponents/gameBoard.jsx';
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -24,9 +26,9 @@ function gameScreen() {
   return (
     <div>
 
-      <a href = "/selection" className = "generalbutton" onClick={() => reset()}>
+      <Link to= "/selection" className = "generalbutton" onClick={() => reset()}>
         Quit Game
-      </a>
+      </Link>
 
       <div className = "screenLayout">
           <h1 className ="headerwords"> Game Board: </h1>

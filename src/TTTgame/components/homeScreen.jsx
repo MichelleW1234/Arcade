@@ -1,5 +1,6 @@
-import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import { Link } from 'react-router-dom';
 
+import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {retrieveActiveGame} from '../../Helpers/helpers.js';
 
 function homeScreen() {
@@ -13,12 +14,12 @@ function homeScreen() {
         <h1 className = "headerwords"> <span className = "headerwordsGlitch">Welcome</span> to Tic-Tac-Toe.</h1>
 
         <div className = "generalbuttonContainer">
-          <a href="/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}> 
-            Go Back
-          </a>
-          <a href = "/TTTinstructions" className = "generalbuttonGlitch">
+          <Link to="/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}>
+            Quit Game
+          </Link>
+          <Link to= "/TTTinstructions" className = "generalbuttonGlitch">
             Instructions
-          </a>
+          </Link>
         </div>
         
     </div>

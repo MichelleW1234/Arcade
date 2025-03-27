@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
 import {retrieveActiveGame} from '../../Helpers/helpers.js';
@@ -22,12 +24,14 @@ function Instructionsscreen (){
                 Good luck!
             </p>
             <div className = "generalbuttonContainer">
-            <a href="/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}>
-                Go Back
-            </a>
-            <a href = "/RPSlevels" className = "generalbuttonGlitch">
-                Choose Level
-            </a>
+
+                <Link to="/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}>
+                    Exit Game
+                </Link>
+                <Link to= "/RPSlevels" className = "generalbuttonGlitch">
+                    Choose Level
+                </Link>
+
             </div>
         </div>
     );

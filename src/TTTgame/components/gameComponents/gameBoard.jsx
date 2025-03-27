@@ -1,5 +1,7 @@
-import './gameBoard.css';
 import {useState, React} from 'react';
+import { Link } from 'react-router-dom';
+
+import Turn from './turn.jsx';
 
 import { useTTTUser } from '../../Providers/TTTUserProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
@@ -7,7 +9,7 @@ import { usePlayer} from '../../../Providers/PlayerProvider.jsx';
 
 import {pointsDistribution} from "../../../Helpers/helpers.js";
 
-import Turn from './turn.jsx';
+import './gameBoard.css';
 
 function gameBoard() {
 
@@ -110,9 +112,9 @@ function gameBoard() {
 
                     </div> 
 
-                    <a href = "/TTTresults" className = "generalbuttonGlitch" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer)}>
+                    <Link to= "/TTTresults" className = "generalbuttonGlitch" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer)}>
                         Game Results
-                    </a>
+                    </Link>
 
                 </div> 
                 

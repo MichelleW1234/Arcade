@@ -22,15 +22,6 @@
 
 }
 
-
-.TTTbuttonsContainer{
-
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-
-}
-
 .TTTResultsSignGlitch{
 
     animation: button-glitch 3s infinite;

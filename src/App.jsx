@@ -18,6 +18,7 @@ import TTTResultsScreen from "./TTTgame/components/resultsScreen.jsx";
 import SNKStartScreen from "./SNKgame/components/StartScreen.jsx";
 import SNKInstructionsScreen from "./SNKgame/components/InstructionsScreen.jsx";
 import SNKGameScreen from "./SNKgame/components/GameScreen.jsx";
+import SNKResultsScreen from "./SNKgame/components/ResultsScreen.jsx";
 
 import NoPage from "./components/NoPage.jsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -49,6 +50,7 @@ function App() {
         <Route path="/SNKstart" element={<SNKStartScreen />}/>
         <Route path="/SNKinstructions" element={<SNKInstructionsScreen />}/>
         <Route path="/SNKgame" element={<SNKGameScreen />}/>
+        <Route path="/SNKresults" element={<SNKResultsScreen />}/>
 
 
 

@@ -29,6 +29,21 @@
 
 }
 
+
+.SNKendinggameboard{
+
+    height: 400px;
+    width: 600px;
+
+    background-color:rgb(210, 234, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
 .SNKbuttonsContainer{
 
     display: grid;

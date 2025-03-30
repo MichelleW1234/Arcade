@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
 
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
@@ -34,9 +36,9 @@ function resultsScreen() {
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <a href = "/TTTcoinFlip" className = "generalbutton" onClick={() => resetGame(setTTTUser)}>
+                <Link to= "/TTTcoinFlip" className = "generalbutton" onClick={() => resetGame(setTTTUser)}>
                     Play Again
-                </a>
+                </Link>
 
             ) : (
 
@@ -44,13 +46,10 @@ function resultsScreen() {
 
             )}
 
-           
-           <div className = "TTTbuttonsContainer">
-                <a href = "/selection" className = "generalbutton" onClick={() => reset()}>
-                    Exit Game
-                </a>
+            <Link to= "/selection" className = "generalbutton" onClick={() => reset()}>
+                Exit Game
+            </Link>
 
-            </div>
         </div>
     )
 }

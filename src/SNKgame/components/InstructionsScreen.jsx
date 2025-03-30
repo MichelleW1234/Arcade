@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function InstructionsScreen (){
 
     return (
@@ -11,9 +13,9 @@ function InstructionsScreen (){
                 (Complete later)
             </p>
 
-            <a href="/SNKgame" className = "generalbuttonGlitch">
+            <Link to="/SNKgame" className = "generalbuttonGlitch">
                 Begin Game
-            </a>
+            </Link>
             
         </div>
 

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function StartScreen (){
 
     return (
@@ -8,9 +10,9 @@ function StartScreen (){
                 Welcome to Snake.
             </h1>
 
-            <a href="/SNKinstructions" className = "generalbuttonGlitch">
+            <Link to="/SNKinstructions" className = "generalbuttonGlitch">
                 Enter
-            </a>
+            </Link>
             
         </div>
 

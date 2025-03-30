@@ -1,10 +1,14 @@
 import React, {useRef, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import InnerGameBoard from "./InnerGameBoard.jsx";
 
-import {changeSnakeDirection, increaseSnakeLength, newApple} from "../../Helpers/SNKhelpers.js";
+import { useSNKUser } from '../../Providers/SNKUserProvider.jsx';
+
+import {bumpChecker, changeSnakeDirection, increaseSnakeLength, newApple} from "../../Helpers/SNKhelpers.js";
 
 import "./GameBoard.css";
+
 
 
 function GameBoard (){
@@ -14,7 +18,9 @@ function GameBoard (){
     const [snake, setSnake] = useState([[0, 0]])
     const [appleLocation, setAppleLocation] = useState([20,30]);
 
+    const [completed, setCompleted] = useState(false);
 
+    const { SNKUser, setSNKUser } = useSNKUser();
 
 
     
@@ -31,6 +37,18 @@ function GameBoard (){
         const interval = setInterval(() => {
 
             changeSnakeDirection(activeDirection, setSnake);
+
+            let bumped = bumpChecker(snake);
+            setSNKUser(prevMatrix => {
+
+                const newMatrix = [...prevMatrix];
+                newMatrix[0] = bumped;
+    
+                return newMatrix;
+    
+            });
+                
+                
 
             // Make sure to use the latest snake state by referring to the ref
             const [headX, headY] = snakeRef.current[snakeRef.current.length - 1];
@@ -97,20 +115,42 @@ function GameBoard (){
         <div className = "SNKBoardcontainer">
 
             <div className = "SNKinnercontainer">
-                <InnerGameBoard
-                    snake = {snake}
-                    appleLocation = {appleLocation}
-                />
-            </div>
 
-            <div className = "SNKbuttonsContainer">
+                {SNKUser[0] === false && completed === false ? 
 
-                <button className = "SNKcontrolButton" onClick={() => direction(0)}> {"\u2190"} </button>
-                <button className = "SNKcontrolButton" onClick={() => direction(1)}> {"\u2192"} </button>
-                <button className = "SNKcontrolButton" onClick={() => direction(2)}> {"\u2191"} </button>
-                <button className = "SNKcontrolButton" onClick={() => direction(3)}> {"\u2193"} </button>
+                    <InnerGameBoard
+                        snake = {snake}
+                        appleLocation = {appleLocation}
+                    />
                 
+                :
+            
+                    <div>
+                        <h1 className = "SNKendinggameboard"> Game Over.</h1>
+                    </div>
+                        
+                }
+               
             </div>
+
+            {SNKUser[0] === false && completed === false ? 
+                
+                <div className = "SNKbuttonsContainer">
+                    
+                    <button className = "SNKcontrolButton" onClick={() => direction(0)}> {"\u2190"} </button>
+                    <button className = "SNKcontrolButton" onClick={() => direction(1)}> {"\u2192"} </button>
+                    <button className = "SNKcontrolButton" onClick={() => direction(2)}> {"\u2191"} </button>
+                    <button className = "SNKcontrolButton" onClick={() => direction(3)}> {"\u2193"} </button>
+
+                </div>
+
+            :
+
+                <Link to= "/SNKresults" className = "generalbuttonGlitch">
+                    View results
+                </Link>   
+
+            } 
 
         </div>
 

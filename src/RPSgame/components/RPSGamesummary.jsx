@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
@@ -57,10 +59,11 @@ function Gamesummary (){
             <p className = "largefont"> You don't have enough points to play this game again.</p>
 
           )}
-
-          <a href="/selection" className = "generalbutton" onClick={() => reset()}>
-              Exit Game
-          </a>
+          
+          <Link to="/selection" className = "generalbutton" onClick={() => reset()}>
+            Exit Game
+          </Link>
+            
           
       </div>
   );

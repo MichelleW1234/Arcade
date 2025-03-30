@@ -7,7 +7,6 @@
 5 -> 
 */
 
-
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 // Create the context
@@ -15,19 +14,10 @@ const ActiveGameContext = createContext();
 
 // Create a provider component
 export function ActiveGameProvider({ children }) {
-  // Retrieve rounds from localStorage, with a fallback to default if parsing fails
-  let storedActiveGame;
-
-  try {
-    storedActiveGame = JSON.parse(localStorage.getItem("ActiveGame"));
-  } catch (error) {
-    // If parsing fails, fallback to the default value
-    storedActiveGame = ["/RPSstart", 20];
-  }
 
   const [ActiveGame, setActiveGame] = useState(() => {
     try {
-      const storedActiveGame = JSON.parse(localStorage.getItem("ActiveGame"));
+      const storedActiveGame = JSON.parse(sessionStorage.getItem("ActiveGame"));
       return Array.isArray(storedActiveGame) ? storedActiveGame : ["/RPSstart", 20]; // Ensure it's an array
     } catch (error) {
       return ["/RPSstart", 20]; // Fallback if JSON parsing fails
@@ -36,7 +26,7 @@ export function ActiveGameProvider({ children }) {
 
   // Save input to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem("ActiveGame", JSON.stringify(ActiveGame));
+    sessionStorage.setItem("ActiveGame", JSON.stringify(ActiveGame));
   }, [ActiveGame]);
 
   return (
@@ -50,4 +40,3 @@ export function ActiveGameProvider({ children }) {
 export function useActiveGame() {
   return useContext(ActiveGameContext);
 }
-

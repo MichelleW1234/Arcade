@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function ArcadeStartScreen (){
 
     return (
@@ -8,9 +10,9 @@ function ArcadeStartScreen (){
                 Welcome to The <span className = "headerwordsGlitch">Arcade</span>.
             </h1>
 
-            <a href="/rulesAndPoints" className = "generalbuttonGlitch">
+            <Link to="/rulesAndPoints" className = "generalbuttonGlitch">
                 Enter
-            </a>
+            </Link>
             
         </div>
 

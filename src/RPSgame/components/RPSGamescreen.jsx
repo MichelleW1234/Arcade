@@ -1,4 +1,6 @@
 import React, { useState} from "react";
+import { Link } from 'react-router-dom';
+
 import Round from "./RPSGamescreenElements/RPSRoundbox.jsx";
 import Results from "./RPSGamescreenElements/RPSResultsscreen.jsx";
 import Navbar from "./RPSGamescreenElements/RPSNavbar.jsx";
@@ -90,10 +92,10 @@ function Gamescreen (){
 
                     <h1 className = "headerwords"> Game <span className = "headerwordsGlitch">Over</span>. </h1>
 
-                    <a href="/RPSsummary" className="generalbuttonGlitch" onClick={getPoints}>
+                    <Link to="/RPSsummary" className="generalbuttonGlitch" onClick={getPoints}>
                         View Game Summary
-                    </a>
-                
+                    </Link>
+            
                 </div>
 
             )}

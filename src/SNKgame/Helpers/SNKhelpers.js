@@ -1,7 +1,7 @@
 export const bumpChecker = (snake) => {
 
 
-
+    return false;
 
 }
 

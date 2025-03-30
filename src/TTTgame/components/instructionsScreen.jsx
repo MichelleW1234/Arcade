@@ -1,5 +1,7 @@
-import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
+import { Link } from 'react-router-dom';
+
+import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {retrieveActiveGame} from '../../Helpers/helpers.js';
 
 function instructionsScreen() {
@@ -20,12 +22,12 @@ function instructionsScreen() {
       </p>
 
       <div className = "generalbuttonContainer">
-        <a href="/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}> 
-          Go Back
-        </a>
-        <a href = "/TTTcoinFlip" className = "generalbuttonGlitch">
+        <Link to="/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}>
+          Quit Game
+        </Link>
+        <Link to= "/TTTcoinFlip" className = "generalbuttonGlitch">
           Continue
-        </a>
+        </Link>
       </div>
       
     </div>

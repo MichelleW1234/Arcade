@@ -1,4 +1,5 @@
 import {useState, React} from 'react';
+import { Link } from 'react-router-dom';
 
 import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
 
@@ -48,10 +49,10 @@ function turnDecidingScreen() {
 
                     <h1 className ="largefont">{statement}</h1>
 
-                    <a href = "/TTTgame" className = "generalbuttonGlitch">
+                    <Link to= "/TTTgame" className = "generalbuttonGlitch">
                         Begin Game
-                    </a>
-
+                    </Link>
+            
                 </div>
         
             )}

@@ -11,22 +11,23 @@ function InnerGameBoard ({snake, appleLocation}){
         <div className = "SNKrenderedgameboard">    
 
             {gameBoardMatrix.map((row, rowIndex) => (
-                row.map((num, colIndex) => (
+                row.map((num, colIndex) => {
 
-                    snake.some(([x, y]) => rowIndex === x && colIndex === y) ? (
+                    const isApple = appleLocation[0] === rowIndex && appleLocation[1] === colIndex;
+                    const isSnake = snake.some(([x, y]) => rowIndex === x && colIndex === y);
+                    
+                    return (
 
-                        <div key={rowIndex + "," + colIndex} className = "SNKsnakeLink"> </div> 
+                        <div key={rowIndex + "," + colIndex} className="SNKemptySpace">
 
-                    ) : appleLocation.x === rowIndex && appleLocation.y === colIndex ? (
-
-                        <div key={rowIndex + "," + colIndex} className = "SNKApple"> </div> 
-
-                    ) : (
-
-                        <div key={rowIndex + "," + colIndex} className = "SNKemptySpace"> </div> 
-
+                            {isSnake && <div className="SNKsnakeLink"></div>}
+                            {isApple && <div className="SNKApple"></div>}
+                         
+                        </div>
+                
                     )
-                ))
+
+                })
             ))}
 
         </div>

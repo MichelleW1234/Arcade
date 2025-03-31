@@ -54,12 +54,20 @@ function ResultsScreen (){
 
             </div>
 
+            {Player[0] >= 10 ? 
+
+                <Link to="/SNKgame" className = "generalbuttonGlitch" onClick={() => resetGame()}>
+                    Play Again
+                </Link>
+
+            :
+
+                <h1 className = "largefont"> You don't have enough points to play this game again. </h1>
+
+            }
+
             <Link to="/selection" className = "generalbuttonGlitch" onClick={() => reset()}>
                 Quit Game
-            </Link>
-
-            <Link to="/SNKgame" className = "generalbuttonGlitch" onClick={() => resetGame()}>
-                Play Again
             </Link>
             
         </div>

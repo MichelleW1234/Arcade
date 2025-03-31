@@ -1,0 +1,22 @@
+.SNKresultsSign{
+
+    padding: 80px;
+    background-color: rgb(68, 255, 0);
+
+    border-left: 8px solid black;
+    border-bottom: 8px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+
+    border-radius: 8px;
+
+    animation: glowing-sign-shadows 4s infinite;
+
+}
+
+.SNKresultsFont{
+
+    color:rgb(208, 0, 255);
+    font-size: 40px;
+
+}

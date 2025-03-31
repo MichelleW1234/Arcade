@@ -5,7 +5,7 @@ import InnerGameBoard from "./InnerGameBoard.jsx";
 
 import { useSNKUser } from '../../Providers/SNKUserProvider.jsx';
 
-import {bumpChecker, changeSnakeDirection, increaseSnakeLength, newApple} from "../../Helpers/SNKhelpers.js";
+import {changeSnakeDirection} from "../../Helpers/SNKhelpers.js";
 
 import "./GameBoard.css";
 
@@ -14,16 +14,10 @@ import "./GameBoard.css";
 function GameBoard (){
 
     const [activeDirection, setActiveDirection] = useState(3);
-
-    const [snake, setSnake] = useState([[0, 0]])
-    const [appleLocation, setAppleLocation] = useState([20,30]);
-
-    const [completed, setCompleted] = useState(false);
+    const [snake, setSnake] = useState([[0, 0]]);
+    const [appleLocation, setAppleLocation] = useState([14, 26]);
 
     const { SNKUser, setSNKUser } = useSNKUser();
-
-
-    
 
     // Use a ref to hold the current snake state, to prevent an infinite loop of updates
     const snakeRef = useRef(snake);
@@ -36,77 +30,36 @@ function GameBoard (){
    
         const interval = setInterval(() => {
 
-            changeSnakeDirection(activeDirection, setSnake);
+            changeSnakeDirection(setSNKUser, activeDirection, setSnake, snakeRef.current, appleLocation, setAppleLocation);
 
-            let bumped = bumpChecker(snake);
-            setSNKUser(prevMatrix => {
-
-                const newMatrix = [...prevMatrix];
-                newMatrix[0] = bumped;
-    
-                return newMatrix;
-    
-            });
-                
-                
-
-            // Make sure to use the latest snake state by referring to the ref
-            const [headX, headY] = snakeRef.current[snakeRef.current.length - 1];
-            const [appleX, appleY] = appleLocation;
-    
-            if (headX === appleX && headY === appleY) {
-
-                increaseSnakeLength(snakeRef.current, setSnake, appleLocation);
-                newApple(snakeRef.current, setAppleLocation);
-
-            }
-
-        }, 1000); // May tweak for better reaction time
+        }, 150);
         
         return () => clearInterval(interval);
 
-    }, [activeDirection, appleLocation]);
-
-
-
-
-
-
+    }, [SNKUser, activeDirection, appleLocation]);
 
     
     const direction = (direction) => {
 
-        if (direction === 0){
+        if (direction === 0 && activeDirection != 1){
 
             setActiveDirection(0);
 
-        } else if (direction === 1){
+        } else if (direction === 1 && activeDirection != 0){
 
             setActiveDirection(1);
 
-        } else if (direction === 2){
+        } else if (direction === 2 && activeDirection != 3){
 
             setActiveDirection(2);
 
-        } else {
+        } else if (direction === 3 && activeDirection != 2){
 
             setActiveDirection(3);
 
         }
 
-
     };
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -116,7 +69,7 @@ function GameBoard (){
 
             <div className = "SNKinnercontainer">
 
-                {SNKUser[0] === false && completed === false ? 
+                {SNKUser[0] === false && snake.length < 600 ? 
 
                     <InnerGameBoard
                         snake = {snake}
@@ -133,7 +86,7 @@ function GameBoard (){
                
             </div>
 
-            {SNKUser[0] === false && completed === false ? 
+            {SNKUser[0] === false && snake.length < 600 ? 
                 
                 <div className = "SNKbuttonsContainer">
                     

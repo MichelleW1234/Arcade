@@ -6,10 +6,6 @@ function GamesScreen (){
 
         <div className = "screenLayout">
 
-            <h1 className = "headerwords">
-                Gameboard:
-            </h1>
-
             <GameBoard/>
             
         </div>

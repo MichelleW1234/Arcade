@@ -16,6 +16,7 @@ function GameBoard (){
     const [activeDirection, setActiveDirection] = useState(3);
     const [snake, setSnake] = useState([[0, 0]]);
     const [appleLocation, setAppleLocation] = useState([14, 26]);
+    const [startButtonPressed, setstartButtonPressed] = useState(false);
 
     const { SNKUser, setSNKUser } = useSNKUser();
 
@@ -27,16 +28,22 @@ function GameBoard (){
     }, [snake]);
 
     useEffect(() => {
-   
+
+        if (startButtonPressed === false){
+
+            return;
+
+        }
+
         const interval = setInterval(() => {
 
             changeSnakeDirection(setSNKUser, activeDirection, setSnake, snakeRef.current, appleLocation, setAppleLocation);
 
         }, 150);
-        
+
         return () => clearInterval(interval);
 
-    }, [SNKUser, activeDirection, appleLocation]);
+    }, [startButtonPressed, activeDirection, appleLocation]);
 
     
     const direction = (direction) => {
@@ -67,37 +74,53 @@ function GameBoard (){
 
         <div className = "SNKBoardcontainer">
 
+            <div className = "SNKgameBoardSign"> Points earned: {SNKUser[1]}</div>
+
             <div className = "SNKinnercontainer">
 
-                {SNKUser[0] === false && snake.length < 600 ? 
+                {startButtonPressed === false ? (
+
+                    <div className="SNKendinggameboard">
+                        <h1> Press the button to begin. </h1>
+                    </div>
+
+
+                ) : SNKUser[0] === false && snake.length < 600 ? (
 
                     <InnerGameBoard
                         snake = {snake}
                         appleLocation = {appleLocation}
                     />
                 
-                :
+                ):(
             
-                    <div>
-                        <h1 className = "SNKendinggameboard"> Game Over.</h1>
+                    <div className = "SNKendinggameboard">
+                        <h1> Game Over.</h1>
                     </div>
                         
-                }
+                )}
                
             </div>
 
-            {SNKUser[0] === false && snake.length < 600 ? 
+            {startButtonPressed === false ? 
                 
+                
+                <button className = "generalbuttonGlitch" onClick={() => setstartButtonPressed(true)}> Start </button>
+                
+                
+            : SNKUser[0] === false && snake.length < 600 ? 
+
+
                 <div className = "SNKbuttonsContainer">
                     
-                    <button className = "SNKcontrolButton" onClick={() => direction(0)}> {"\u2190"} </button>
-                    <button className = "SNKcontrolButton" onClick={() => direction(1)}> {"\u2192"} </button>
-                    <button className = "SNKcontrolButton" onClick={() => direction(2)}> {"\u2191"} </button>
-                    <button className = "SNKcontrolButton" onClick={() => direction(3)}> {"\u2193"} </button>
+                <button className = "SNKcontrolButton" onClick={() => direction(0)}> {"\u2190"} </button>
+                <button className = "SNKcontrolButton" onClick={() => direction(1)}> {"\u2192"} </button>
+                <button className = "SNKcontrolButton" onClick={() => direction(2)}> {"\u2191"} </button>
+                <button className = "SNKcontrolButton" onClick={() => direction(3)}> {"\u2193"} </button>
 
                 </div>
 
-            :
+            : 
 
                 <Link to= "/SNKresults" className = "generalbuttonGlitch">
                     View results

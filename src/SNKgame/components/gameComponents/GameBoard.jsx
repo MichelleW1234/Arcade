@@ -13,10 +13,16 @@ import "./GameBoard.css";
 
 function GameBoard (){
 
+    const gameboardHeight = 20;
+    const gameboardWidth = 30;
+
     const [activeDirection, setActiveDirection] = useState(3);
     const [snake, setSnake] = useState([[0, 0]]);
-    const [appleLocation, setAppleLocation] = useState([14, 26]);
-    const [startButtonPressed, setstartButtonPressed] = useState(false);
+    const [appleLocation, setAppleLocation] = useState([
+        Math.floor(Math.random() * gameboardHeight),
+        Math.floor(Math.random() * gameboardWidth)
+    ]);
+    const [startButtonPressed, setStartButtonPressed] = useState(false);
 
     const { SNKUser, setSNKUser } = useSNKUser();
 
@@ -45,28 +51,38 @@ function GameBoard (){
 
     }, [startButtonPressed, activeDirection, appleLocation]);
 
+
+    const buttonControls = (direction) => {
+
+        if (startButtonPressed === false){
+
+            setStartButtonPressed(true);
+
+        } else {
+
+            if (direction === 0 && activeDirection != 1){
+
+                setActiveDirection(0);
     
-    const direction = (direction) => {
+            } else if (direction === 1 && activeDirection != 0){
+    
+                setActiveDirection(1);
+    
+            } else if (direction === 2 && activeDirection != 3){
+    
+                setActiveDirection(2);
+    
+            } else if (direction === 3 && activeDirection != 2){
+    
+                setActiveDirection(3);
+    
+            }
 
-        if (direction === 0 && activeDirection != 1){
-
-            setActiveDirection(0);
-
-        } else if (direction === 1 && activeDirection != 0){
-
-            setActiveDirection(1);
-
-        } else if (direction === 2 && activeDirection != 3){
-
-            setActiveDirection(2);
-
-        } else if (direction === 3 && activeDirection != 2){
-
-            setActiveDirection(3);
 
         }
 
-    };
+
+    }
 
 
 
@@ -81,7 +97,7 @@ function GameBoard (){
                 {startButtonPressed === false ? (
 
                     <div className="SNKendinggameboard">
-                        <h1> Press the button to begin. </h1>
+                        <h1> Press any of the controls to begin. </h1>
                     </div>
 
 
@@ -101,22 +117,16 @@ function GameBoard (){
                 )}
                
             </div>
-
-            {startButtonPressed === false ? 
-                
-                
-                <button className = "generalbuttonGlitch" onClick={() => setstartButtonPressed(true)}> Start </button>
-                
-                
-            : SNKUser[0] === false && snake.length < 600 ? 
+            
+            {SNKUser[0] === false && snake.length < 600 ? 
 
 
                 <div className = "SNKbuttonsContainer">
                     
-                <button className = "SNKcontrolButton" onClick={() => direction(0)}> {"\u2190"} </button>
-                <button className = "SNKcontrolButton" onClick={() => direction(1)}> {"\u2192"} </button>
-                <button className = "SNKcontrolButton" onClick={() => direction(2)}> {"\u2191"} </button>
-                <button className = "SNKcontrolButton" onClick={() => direction(3)}> {"\u2193"} </button>
+                <button className = "SNKcontrolButton" onClick={() => buttonControls(0)}> {"\u2190"} </button>
+                <button className = "SNKcontrolButton" onClick={() => buttonControls(1)}> {"\u2192"} </button>
+                <button className = "SNKcontrolButton" onClick={() => buttonControls(2)}> {"\u2191"} </button>
+                <button className = "SNKcontrolButton" onClick={() => buttonControls(3)}> {"\u2193"} </button>
 
                 </div>
 

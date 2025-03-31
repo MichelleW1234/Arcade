@@ -15,7 +15,7 @@ export const retrieveActiveGame = (index) => {
     } else if (index == 3){
 
         gameControls[0] = "/SNKstart";
-        gameControls[1] = 20;
+        gameControls[1] = 10;
 
     } 
 

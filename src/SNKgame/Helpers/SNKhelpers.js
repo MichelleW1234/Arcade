@@ -1,17 +1,3 @@
-const bumped = (setSNKUser) => {
-
-    setSNKUser(prevMatrix => {
-
-        const newMatrix = [...prevMatrix];
-        newMatrix[0] = true;
-
-        return newMatrix;
-
-    });
-
-}
-
-
 const bumpChecker = (activeDirection, setSNKUser, snake) => {
 
     const gameboardHeight = 20;
@@ -19,19 +5,19 @@ const bumpChecker = (activeDirection, setSNKUser, snake) => {
 
     if (activeDirection === 0 && snake[0][1] === 0){
 
-        bumped(setSNKUser);
+        setSNKUser(prevMatrix => [true, prevMatrix[1]]);
 
     } else if (activeDirection === 1 && snake[0][1] === gameboardWidth-1){
 
-        bumped(setSNKUser);
+        setSNKUser(prevMatrix => [true, prevMatrix[1]]);
 
     } else if (activeDirection === 2 && snake[0][0] === 0){
 
-        bumped(setSNKUser);
+        setSNKUser(prevMatrix => [true, prevMatrix[1]]);
 
     } else if (activeDirection === 3 && snake[0][0] === gameboardHeight-1){
 
-        bumped(setSNKUser);
+        setSNKUser(prevMatrix => [true, prevMatrix[1]]);
 
     } else {
 
@@ -41,19 +27,19 @@ const bumpChecker = (activeDirection, setSNKUser, snake) => {
 
             if (activeDirection === 0 && snake.some(([sx, sy]) => sx === snakeHead[0] && sy === snakeHead[1]-1)){
         
-                bumped(setSNKUser);
+                setSNKUser(prevMatrix => [true, prevMatrix[1]]);
 
             } else if (activeDirection === 1 && snake.some(([sx, sy]) => sx === snakeHead[0] && sy === snakeHead[1]+1)){
 
-                bumped(setSNKUser);
+                setSNKUser(prevMatrix => [true, prevMatrix[1]]);
 
             } else if (activeDirection === 2 && snake.some(([sx, sy]) => sx === snakeHead[0]-1 && sy === snakeHead[1])){
 
-                bumped(setSNKUser);
+                setSNKUser(prevMatrix => [true, prevMatrix[1]]);
 
             } else if (activeDirection === 3 && snake.some(([sx, sy]) => sx === snakeHead[0]+1 && sy === snakeHead[1])){
 
-                bumped(setSNKUser);
+                setSNKUser(prevMatrix => [true, prevMatrix[1]]);
 
             }
 
@@ -84,8 +70,6 @@ const newApple = (setAppleLocation, snake) => {
     }
 
 }
-
-
 
 const editSnake = (snake, setSnake, newSnakeHead, appleEaten) => {
 
@@ -119,6 +103,7 @@ export const changeSnakeDirection = (setSNKUser, activeDirection, setSnake, snak
     if (snake[0][0] === appleLocation[0] && snake[0][1] === appleLocation[1]) {
 
         increaseSnake = true;
+        setSNKUser(prevMatrix => [prevMatrix[0], prevMatrix[1] + 1]);
         newApple(setAppleLocation, snake);
 
     }

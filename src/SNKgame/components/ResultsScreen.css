@@ -16,7 +16,8 @@
 
 .SNKresultsFont{
 
-    color:rgb(208, 0, 255);
+    color:rgb(255, 93, 217);
     font-size: 40px;
+    text-shadow: -4px 2px 4px #0059ffcb, 4px -2px 4px #00e1ffc5;
 
 }

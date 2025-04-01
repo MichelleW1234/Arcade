@@ -40,7 +40,7 @@ function Navbar ({setShowReferences}){
 
                     <li>
                         <Link to="/RPSlevels" className = "navBarButton" onClick ={() => resetLevel(setRPSUser)}>
-                            Change Level
+                            Change Variation
                         </Link>
                     </li>
 

@@ -113,7 +113,7 @@ function GameBoard (){
 
         <div className = "SNKBoardcontainer">
 
-            <div className = "SNKgameBoardSign"> Points earned: {SNKUser[1]}</div>
+            <div className = "SNKgameBoardSign"> Points earned: <span className = "SNKgameBoardSignGlitch">{SNKUser[1]}</span></div>
 
             <div className = "SNKinnercontainer">
 
@@ -146,14 +146,14 @@ function GameBoard (){
 
                 <div className = "SNKbuttonsContainer">
                     
-                <button className = "SNKcontrolButton" onClick={() => buttonControls(0)}> {"\u2190"} </button>
-                <button className = "SNKcontrolButton" onClick={() => buttonControls(1)}> {"\u2192"} </button>
-                <button className = "SNKcontrolButton" onClick={() => buttonControls(2)}> {"\u2191"} </button>
-                <button className = "SNKcontrolButton" onClick={() => buttonControls(3)}> {"\u2193"} </button>
+                    <button className = "SNKcontrolButton" onClick={() => buttonControls(0)}> {"\u2190"} </button>
+                    <button className = "SNKcontrolButton" onClick={() => buttonControls(1)}> {"\u2192"} </button>
+                    <button className = "SNKcontrolButton" onClick={() => buttonControls(2)}> {"\u2191"} </button>
+                    <button className = "SNKcontrolButton" onClick={() => buttonControls(3)}> {"\u2193"} </button>
 
                 </div>
 
-            : 
+            :
 
                 <Link to= "/SNKresults" className = "generalbuttonGlitch" onClick = {transaction}>
                     View results

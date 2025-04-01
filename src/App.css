@@ -389,6 +389,27 @@ a.navBarButton {
 }
 
 
+@keyframes glowing-shadow5 {
+
+  0% {
+    box-shadow: 
+      0 0 10px 3px rgb(242, 62, 255),
+      0 0 20px 6px rgb(0, 251, 255);
+  }
+  50% {
+    box-shadow: 
+      0 0 10px 3px rgba(242, 62, 255, 0.47),
+      0 0 20px 6px rgba(0, 251, 255, 0.448);
+  }
+  100% {
+    box-shadow:
+      0 0 10px 3px rgb(242, 62, 255),
+      0 0 20px 6px rgb(0, 251, 255);
+  }
+  
+  }
+
+
 @keyframes glowing-sign-shadows{
 
 0% {

@@ -18,7 +18,7 @@ function GameBoard (){
     const gameboardHeight = 20;
     const gameboardWidth = 30;
 
-    const [activeDirection, setActiveDirection] = useState(3);
+    const [activeDirection, setActiveDirection] = useState(-1);
     const [snake, setSnake] = useState([[0, 0]]);
     const [appleLocation, setAppleLocation] = useState([
         Math.floor(Math.random() * gameboardHeight),
@@ -51,7 +51,7 @@ function GameBoard (){
 
             changeSnakeDirection(setSNKUser, activeDirection, setSnake, snakeRef.current, appleLocation, setAppleLocation);
 
-        }, 300);
+        }, 150);
 
         return () => clearInterval(interval);
 
@@ -142,7 +142,6 @@ function GameBoard (){
             </div>
             
             {SNKUser[0] === false && snake.length < 600 ? 
-
 
                 <div className = "SNKbuttonsContainer">
                     

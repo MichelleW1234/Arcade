@@ -26,14 +26,14 @@ function LevelSelectionscreen (){
 
         <div className = "screenLayout">
 
-            <h1 className = "headerwords"> Choose a level: </h1>
+            <h1 className = "headerwords"> Choose a variation: </h1>
 
             <div className = "RPSlevelsContainer">
 
                 <div className = "RPSLevelsWindowContainer">
 
                     <div className = "RPSLevelsWindow"> 
-                        <h2>Level 1</h2>
+                        <h2>Rock, Paper, Scissors</h2>
                     </div>
                     <button
                     className={`RPSLevelButton ${activeButton === 1 ? 'active' : ''}`}
@@ -47,7 +47,7 @@ function LevelSelectionscreen (){
                 <div className = "RPSLevelsWindowContainer">
 
                     <div className = "RPSLevelsWindow"> 
-                        <h2><span className="RPSLevelGlitch">Level</span> 2</h2> 
+                        <h2>Rock, Paper, Scissors, <span className="RPSLevelGlitch">Lizard, Spock</span></h2> 
                     </div>
                     <button
                     className={`RPSLevelButton ${activeButton === 2 ? 'active' : ''}`}
@@ -61,7 +61,7 @@ function LevelSelectionscreen (){
                 <div className = "RPSLevelsWindowContainer">
 
                     <div className = "RPSLevelsWindow"> 
-                        <h2>Level 3</h2>
+                        <h2>Rock, Paper, Scissors, Gun, Shield</h2>
                     </div>
                     <button
                     className={`RPSLevelButton ${activeButton === 3 ? 'active' : ''}`}

@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 
+import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import {retrieveActiveGame} from '../../Helpers/helpers.js';
+
 function StartScreen (){
+
+    const { ActiveGame, setActiveGame} = useActiveGame();
 
     return (
 
@@ -10,9 +15,17 @@ function StartScreen (){
                 Welcome to Snake.
             </h1>
 
-            <Link to="/SNKinstructions" className = "generalbuttonGlitch">
-                Enter
-            </Link>
+            <div className = "generalbuttonContainer">
+
+                <Link to="/selection" className = "generalbuttonGlitch" onClick={() => setActiveGame(retrieveActiveGame(1))}>
+                    Exit Game
+                </Link>
+
+                <Link to="/SNKinstructions" className = "generalbuttonGlitch">
+                    Enter
+                </Link>
+
+            </div>
             
         </div>
 

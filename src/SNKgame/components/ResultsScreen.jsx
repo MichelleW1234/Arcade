@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useSNKUser } from '../Providers/SNKUserProvider.jsx';
+import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
-import { retrieveActiveGame } from '../../Helpers/helpers.js';
+import {retrieveActiveGame} from '../../Helpers/helpers.js';
 
 import "./ResultsScreen.css";
 
@@ -11,36 +12,34 @@ function ResultsScreen (){
 
     const { Player, setPlayer} = usePlayer();
     const { SNKUser, setSNKUser } = useSNKUser();
-
-    const transaction = () => {
-
-        const difference = (SNKUser[1]*2) - 10;
-
-        if (difference >= 0){
-
-            setPlayer(prev => [prev[0] + difference, prev[0]]);
-
-        } else {
-
-            setPlayer(prev => [0, prev[0]]);
-
-        }
-
-    }
+    const { ActiveGame, setActiveGame} = useActiveGame();
 
     const resetGame = () => {
-
+        
         setSNKUser([false, 0]);
-        transaction();
 
+        const difference = Player[0] + (SNKUser[1] * 2) - 5;
+    
+        if (difference >= 0){
+    
+            setPlayer(prev => [difference, prev[0]]);
+    
+        } else {
+    
+            setPlayer(prev => [0, prev[0]]);
+    
+        }
+    
     }
+
 
     const reset = () => {
-
+    
         resetGame();
-        retrieveActiveGame(1);
-
+        setActiveGame(retrieveActiveGame(1))
+    
     }
+    
 
     return (
 
@@ -56,7 +55,7 @@ function ResultsScreen (){
 
             {Player[0] >= 10 ? 
 
-                <Link to="/SNKgame" className = "generalbuttonGlitch" onClick={() => resetGame()}>
+                <Link to="/SNKgame" className = "generalbuttonGlitch" onClick={resetGame}>
                     Play Again
                 </Link>
 
@@ -66,7 +65,7 @@ function ResultsScreen (){
 
             }
 
-            <Link to="/selection" className = "generalbuttonGlitch" onClick={() => reset()}>
+            <Link to="/selection" className = "generalbuttonGlitch" onClick={reset}>
                 Quit Game
             </Link>
             

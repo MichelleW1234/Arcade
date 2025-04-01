@@ -30,7 +30,7 @@ function Instructionsscreen (){
                     Exit Game
                 </Link>
                 <Link to= "/RPSlevels" className = "generalbuttonGlitch">
-                    Choose Level
+                    Choose Variation
                 </Link>
 
             </div>

@@ -12,12 +12,12 @@ function Startscreen (){
         <div className = "screenLayout">
             
             <h1 className = "headerwords">
-                Welcome to Rock-Paper-Scissor<span className = "headerwordsGlitch">s</span>
+                Welcome to Rock-Paper-<span className = "headerwordsGlitch">Scissors</span>
             </h1>
             
             <div className = "generalbuttonContainer">
 
-                <Link to= "/selection" className = "generalbuttonGlitch" onClick={() => setActiveGame(retrieveActiveGame(1))}>
+                <Link to= "/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}>
                     Exit Game
                 </Link>
                 <Link to="/RPSinstructions" className = "generalbuttonGlitch">

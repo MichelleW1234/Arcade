@@ -3,10 +3,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 780px;
+    height: 770px;
     width: 700px;
     background-color: rgb(8, 0, 255);
-    gap: 30px;
+    gap: 40px;
     padding: 50px;
 
     border-radius: 20px;
@@ -14,6 +14,10 @@
     border-bottom: 10px solid black;
     border-right: 2px solid black;
     border-top: 2px solid black;
+
+    box-shadow:
+    0 0 20px 8px rgb(0, 179, 255),
+    0 0 30px 4px rgb(106, 0, 255);
     
 }
 
@@ -47,27 +51,37 @@
 
 .SNKbuttonsContainer{
 
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    /*
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 5px;
+    gap: 10px;
+    */
 
 }
 
 .SNKcontrolButton{
 
-    background-color: rgb(0, 255, 30);
+    background-color: rgb(255, 0, 247);
     font-size: 50px;
     border-left: 5px solid black;
     border-bottom: 5px solid black;
 
     width: 75px;
 
+    animation: glowing-shadow5 4s infinite;
+
 }
+
+
 
 .SNKcontrolButton:hover{
 
-    background-color: rgb(0, 44, 5);
+    background-color: rgb(97, 0, 94);
     color:rgb(255, 255, 255);
 
 }
@@ -81,6 +95,13 @@
     background-color: rgba(130, 242, 255, 0.877);
     border: 5px solid rgba(0, 253, 46, 0.521);
 
-    animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
+    animation: glowing-sign-shadows 4s infinite;
+
+}
+
+.SNKgameBoardSignGlitch{
+
+    animation: sign-glitch 3s infinite;
+
 
 }

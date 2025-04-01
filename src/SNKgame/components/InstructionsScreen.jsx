@@ -27,7 +27,7 @@ function InstructionsScreen (){
 
             <div className = "generalbuttonContainer">
 
-                <Link to="/selection" className = "generalbuttonGlitch" onClick={() => setActiveGame(retrieveActiveGame(1))}>
+                <Link to="/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}>
                     Exit Game
                 </Link>
 

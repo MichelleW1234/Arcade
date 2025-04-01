@@ -43,7 +43,7 @@ function ResultsScreen (){
 
             {Player[0] >= ActiveGame[1] ? 
 
-                <Link to="/SNKgame" className = "generalbuttonGlitch" onClick={resetGame}>
+                <Link to="/SNKgame" className = "generalbutton" onClick={resetGame}>
                     Play Again
                 </Link>
 
@@ -53,7 +53,7 @@ function ResultsScreen (){
 
             }
 
-            <Link to="/selection" className = "generalbuttonGlitch" onClick={reset}>
+            <Link to="/selection" className = "generalbutton" onClick={reset}>
                 Quit Game
             </Link>
             

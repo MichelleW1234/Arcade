@@ -1,7 +1,7 @@
 .SNKresultsSign{
 
     padding: 80px;
-    background-color: rgb(68, 255, 0);
+    background-color: rgb(255, 0, 242);
 
     border-left: 8px solid black;
     border-bottom: 8px solid black;
@@ -10,14 +10,14 @@
 
     border-radius: 8px;
 
-    animation: glowing-sign-shadows 4s infinite;
+    animation: glowing-shadow3 4s infinite;
 
 }
 
 .SNKresultsFont{
 
-    color:rgb(255, 93, 217);
+    color:rgb(93, 255, 98);
     font-size: 40px;
-    text-shadow: -4px 2px 4px #0059ffcb, 4px -2px 4px #00e1ffc5;
+    animation: sign-glitch 3s infinite;
 
 }

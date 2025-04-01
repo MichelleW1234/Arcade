@@ -29,6 +29,7 @@ function GameSelectionScreen (){
 
     useEffect(() => {
         setCurrGamePath(ActiveGame[0]); 
+        console.log(currGamePath);
     }, [ActiveGame]); 
 
 
@@ -95,18 +96,17 @@ function GameSelectionScreen (){
 
                         <div className = "ArcadeGame"> 
                             
-                            <h2> Work In Progress... </h2>
+                            <h2> Snake </h2>
+                            <h2> (5 Points) </h2>
                             
                         </div>
 
-                        {/*
                         <button
                         className={`gameButton ${activeButton === 3 ? 'active' : ''}`}
                         onClick={() => handleClick(3)}
                         >
                             Select
                         </button>
-                        */}
 
                     </div>
 

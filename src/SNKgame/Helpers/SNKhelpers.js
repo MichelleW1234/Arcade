@@ -1,3 +1,5 @@
+import { retrieveActiveGame } from '../../Helpers/helpers.js';
+
 const bumpChecker = (activeDirection, setSNKUser, snake) => {
 
     const gameboardHeight = 20;
@@ -134,3 +136,8 @@ export const changeSnakeDirection = (setSNKUser, activeDirection, setSnake, snak
     }
 
 }
+
+
+
+
+

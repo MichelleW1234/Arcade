@@ -113,7 +113,7 @@ function GameBoard (){
 
         <div className = "SNKBoardcontainer">
 
-            <div className = "SNKgameBoardSign"> Points earned: <span className = "SNKgameBoardSignGlitch">{SNKUser[1]}</span></div>
+            <div className = "SNKgameBoardSign"> Apples eaten: <span className = "SNKgameBoardSignGlitch">{SNKUser[1]}</span></div>
 
             <div className = "SNKinnercontainer">
 

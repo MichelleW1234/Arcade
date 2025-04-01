@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import InnerGameBoard from "./InnerGameBoard.jsx";
 
 import { useSNKUser } from '../../Providers/SNKUserProvider.jsx';
+import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
+import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 
 import {changeSnakeDirection} from "../../Helpers/SNKhelpers.js";
 
@@ -22,9 +24,13 @@ function GameBoard (){
         Math.floor(Math.random() * gameboardHeight),
         Math.floor(Math.random() * gameboardWidth)
     ]);
+
     const [startButtonPressed, setStartButtonPressed] = useState(false);
 
     const { SNKUser, setSNKUser } = useSNKUser();
+    const { Player, setPlayer } = usePlayer();
+    const { ActiveGame, setActiveGame } = useActiveGame();
+
 
     // Use a ref to hold the current snake state, to prevent an infinite loop of updates
     const snakeRef = useRef(snake);
@@ -45,7 +51,7 @@ function GameBoard (){
 
             changeSnakeDirection(setSNKUser, activeDirection, setSnake, snakeRef.current, appleLocation, setAppleLocation);
 
-        }, 150);
+        }, 300);
 
         return () => clearInterval(interval);
 
@@ -81,6 +87,23 @@ function GameBoard (){
 
         }
 
+
+    }
+
+
+    const transaction = () => {
+
+        const difference = Player[0] + (SNKUser[1] * 2) - ActiveGame[1];
+    
+        if (difference >= 0){
+    
+            setPlayer(prev => [difference, prev[0]]);
+    
+        } else {
+    
+            setPlayer(prev => [0, prev[0]]);
+    
+        }
 
     }
 
@@ -132,7 +155,7 @@ function GameBoard (){
 
             : 
 
-                <Link to= "/SNKresults" className = "generalbuttonGlitch">
+                <Link to= "/SNKresults" className = "generalbuttonGlitch" onClick = {transaction}>
                     View results
                 </Link>   
 

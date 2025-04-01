@@ -18,7 +18,7 @@ function GamesScreen (){
     
         setSNKUser([false, 0]);
 
-        const difference = Player[0] - 5;
+        const difference = Player[0] - ActiveGame[1];
     
         if (difference >= 0){
     

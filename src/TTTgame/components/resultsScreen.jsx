@@ -19,15 +19,12 @@ function resultsScreen() {
     const reset = () => {
 
         resetGame(setTTTUser);
-
         setActiveGame(retrieveActiveGame(1));
 
     }
 
     return (
         <div className = "screenLayout">
-
-            {console.log("Winner scores", Player[0])}
 
             <div className = "TTTscoreboard">
                 <h1> Result: </h1>

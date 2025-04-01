@@ -67,7 +67,7 @@ const newApple = (setAppleLocation, snake) => {
             Y = Math.floor(Math.random() * gameboardWidth);
         } while (snake.some(([sx, sy]) => sx === X && sy === Y));
     
-        setAppleLocation([X,Y]);
+        setAppleLocation(prev => [X, Y]);
 
     }
 
@@ -106,7 +106,10 @@ export const changeSnakeDirection = (setSNKUser, activeDirection, setSnake, snak
 
         increaseSnake = true;
         setSNKUser(prevMatrix => [prevMatrix[0], prevMatrix[1] + 1]);
-        newApple(setAppleLocation, snake);
+        
+        setTimeout(() => {
+            newApple(setAppleLocation, snake);
+        }, 0);
 
     }
 

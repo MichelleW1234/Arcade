@@ -17,18 +17,6 @@ function ResultsScreen (){
     const resetGame = () => {
         
         setSNKUser([false, 0]);
-
-        const difference = Player[0] + (SNKUser[1] * 2) - 5;
-    
-        if (difference >= 0){
-    
-            setPlayer(prev => [difference, prev[0]]);
-    
-        } else {
-    
-            setPlayer(prev => [0, prev[0]]);
-    
-        }
     
     }
 
@@ -53,7 +41,7 @@ function ResultsScreen (){
 
             </div>
 
-            {Player[0] >= 10 ? 
+            {Player[0] >= ActiveGame[1] ? 
 
                 <Link to="/SNKgame" className = "generalbuttonGlitch" onClick={resetGame}>
                     Play Again

@@ -10,7 +10,6 @@ function FloatingReferences (){
     return (
         <div className = "RPSFloatingReferencesContainer">
             <div className = "RPSFloatingReferencesFlag">
-                <h1 className = "RPSReferenceSign">Game <span className="RPSReferenceSignGlitch">References:</span></h1>
                 <div className = "RPSReferences">
                     {references.map((item, index) => (
                             <p key={index}> &gt; {item} </p> 

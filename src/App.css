@@ -1,7 +1,7 @@
 body {
 
   height: 100vh;
-  background: linear-gradient(rgb(46, 5, 81)15%, rgb(112, 14, 128)70%, rgb(59, 13, 168));
+  background: linear-gradient(rgb(36, 4, 65)10%, rgb(119, 14, 135)70%, rgb(71, 12, 166));
     
 }
 
@@ -27,6 +27,17 @@ a:active {
     
 }
 
+.StartingScreenLayout{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 75px;
+  margin-top: 200px;
+  
+}
+
 .screenLayout{
 
   display: flex;
@@ -36,6 +47,16 @@ a:active {
   gap: 50px;
   padding-left: 50px;
   padding-right: 50px;
+
+}
+
+.gameScreenLayout{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  gap: 50px;
 
 }
 

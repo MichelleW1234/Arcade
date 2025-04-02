@@ -24,7 +24,7 @@ function LevelSelectionscreen (){
 
     return (
 
-        <div className = "screenLayout">
+        <div className = "gameScreenLayout">
 
             <h1 className = "headerwords"> Choose a variation: </h1>
 

@@ -1,23 +1,22 @@
 .RPSgameScreenContainer {
 
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
-    background-color: rgb(151, 133, 253);
+    padding: 50px;
+    background-color: rgb(117, 93, 255);
     width: 600px;
-    height: 500px;
     overflow-y: auto;
     border-radius: 25px;
-    gap: 30px;
+    gap: 50px;
 
     border-left: 9px solid black;
     border-bottom: 9px solid black;
     border-top: 2px solid black;
     border-right: 2px solid black;
 
-    box-shadow: 0 0 40px 8px rgb(160, 117, 253);
+    box-shadow: 0 0 40px 8px rgb(157, 139, 255);
+    margin-top: 100px;
 
 }
 
@@ -26,7 +25,7 @@
 
     padding: 10px;
     border-radius: 25px;
-    background-color: rgb(204, 194, 251);
+    background-color: rgb(190, 176, 254);
     border: 5px solid rgba(1, 255, 35, 0.586);
     color: white;
 
@@ -42,7 +41,8 @@
 
 .RPSdirections {
 
-    font-size: 20px;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
 
 }
 
@@ -62,19 +62,20 @@
 
     font-size: 25px;
     padding: 10px;
-    background-color: rgb(252, 91, 236);
+    background-color: rgb(251, 80, 234);
     border-left: 5.5px solid black;
     border-bottom: 5.5px solid black;
 
-    animation: glowing-shadow3 4s infinite;
+    animation: glowing-shadow5 4s infinite;
     
 }
 
 .RPSenterButton:hover {
 
-    background-color: #4d1fd4;
+    background-color: rgb(118, 35, 111);
     color: white;
-    animation: glowing-shadow4 4s infinite;
+    
+    animation: glowing-shadow3 4s infinite;
 
 }
 

@@ -88,7 +88,7 @@ function Gamescreen (){
 
             ) : (
 
-                <div className="screenLayout">
+                <div className="StartingScreenLayout">
 
                     <h1 className = "headerwords"> Game <span className = "headerwordsGlitch">Over</span>. </h1>
 

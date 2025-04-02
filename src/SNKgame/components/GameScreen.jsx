@@ -42,7 +42,7 @@ function GamesScreen (){
                 Quit Game
             </Link>
 
-            <div className = "screenLayout">
+            <div className = "gameScreenLayout">
 
                 <GameBoard/>
                 

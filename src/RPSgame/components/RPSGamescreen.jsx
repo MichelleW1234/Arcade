@@ -62,7 +62,7 @@ function Gamescreen (){
 
                     {showReferences && (<References/>)}
                     
-                    <div className="RPSgameScreen">
+                    <div className="RPSgameScreenLayout">
 
                         <Round 
                             round={rounds} 

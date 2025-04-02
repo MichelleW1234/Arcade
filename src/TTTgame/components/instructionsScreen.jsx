@@ -12,7 +12,7 @@ function instructionsScreen() {
 
     <div className = "screenLayout">
 
-      <h1 className = "headerwords"> Instructions: </h1>
+      <h1 className = "instructionsSign"> Instructions: </h1>
 
       <p className = "largefont">   
         &gt; Your opponent is this computer. <br/>

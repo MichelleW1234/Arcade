@@ -9,7 +9,7 @@ function StartScreen (){
 
     return (
 
-        <div className = "screenLayout">
+        <div className = "StartingScreenLayout">
 
             <h1 className = "headerwords">
                 Welcome to <span className = "headerwordsGlitch">Snake.</span>

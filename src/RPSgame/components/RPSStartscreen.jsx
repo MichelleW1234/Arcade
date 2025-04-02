@@ -9,7 +9,7 @@ function Startscreen (){
     const { ActiveGame, setActiveGame} = useActiveGame();
 
     return (
-        <div className = "screenLayout">
+        <div className = "StartingScreenLayout">
             
             <h1 className = "headerwords">
                 Welcome to Rock-Paper-<span className = "headerwordsGlitch">Scissors</span>

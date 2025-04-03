@@ -32,37 +32,17 @@
 
 }
 
-.RPSReferenceSign{
-
-    align-self: center;
-    color: white;
-
-    background-color: rgb(252, 162, 246);
-    background-color: rgb(255, 155, 248);
-    border: 5px solid rgba(122, 253, 151, 0.635);
-    border-radius: 25px;
-    padding: 10px;
-    font-size: 30px;
-
-    animation: glowing-sign-shadows 4s infinite;
-
-}
-
-.RPSReferenceSignGlitch{
-
-    animation: sign-glitch 4s infinite;
-
-}
-
 .RPSReferences{
 
     display: flex;
     flex-direction: column;
     gap: 15px;
-    font-size: 23px;
+    font-size: 25px;
     max-width: 600px;
     max-height: 500px;
     overflow-y: auto;
+
+    font-weight: bold;
 
 }
 

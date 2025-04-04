@@ -6,7 +6,7 @@ import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
 import {resetGame} from "../Helpers/TTThelpers.js";
-import {retrieveActiveGame} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
 import "./resultsScreen.css";
 
@@ -16,9 +16,16 @@ function resultsScreen() {
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { Player, setPlayer} = usePlayer();
 
+    const playAgain = () => {
+
+        playSound(4);
+        resetGame(setTTTUser);
+
+    }
+    
     const reset = () => {
 
-        resetGame(setTTTUser);
+        playAgain();
         setActiveGame(retrieveActiveGame(1));
 
     }
@@ -33,7 +40,7 @@ function resultsScreen() {
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to= "/TTTcoinFlip" className = "generalbutton" onClick={() => resetGame(setTTTUser)}>
+                <Link to= "/TTTcoinFlip" className = "generalbutton" onClick={playAgain}>
                     Play Again
                 </Link>
 
@@ -43,7 +50,7 @@ function resultsScreen() {
 
             )}
 
-            <Link to= "/selection" className = "generalbutton" onClick={() => reset()}>
+            <Link to= "/selection" className = "generalbutton" onClick={reset}>
                 Exit Game
             </Link>
 

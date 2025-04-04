@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../Providers/ActiveGameProvider.jsx';
-import {retrieveActiveGame} from "../Helpers/helpers.js";
+import {playSound, retrieveActiveGame} from "../Helpers/helpers.js";
 
 import "./GameSelectionScreen.css";
 
@@ -20,6 +20,7 @@ function GameSelectionScreen (){
 
     const handleClick = (index) => {
     
+        playSound(3);
         setActiveButton(index);
 
         const currGameInfo = retrieveActiveGame(index);
@@ -35,6 +36,7 @@ function GameSelectionScreen (){
 
     const resetPoints = () => {
 
+        playSound(4);
         setPlayer([0,0]);
         setActiveGame(retrieveActiveGame(1));
 
@@ -114,7 +116,7 @@ function GameSelectionScreen (){
 
                 {Player[0] >= ActiveGame[1] ? (
 
-                    <Link to={currGamePath} className = "generalbuttonGlitch">
+                    <Link to={currGamePath} className = "generalbuttonGlitch" onClick = {() => {playSound(2)}}>
                         Go to game
                     </Link>
     

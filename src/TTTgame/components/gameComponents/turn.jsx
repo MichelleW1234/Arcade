@@ -5,6 +5,8 @@ import { useTTTUser } from '../../Providers/TTTUserProvider.jsx';
 
 import {computerMoveDecider, winnerwinnerchickendinner} from "../../Helpers/TTThelpers.js";
 
+import {playSound} from "../../../Helpers/helpers.js";
+
 function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, computerMoves, 
     setComputerMoves, userMoves, setUserMoves, setThreeInARow, currentTurn, setCurrentTurn}) {
 
@@ -25,6 +27,12 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
                     updatedUser[1] = result;
                     return updatedUser;
                 });
+
+                if (result != -1){
+
+                    playSound(6);
+
+                }
 
             }, 200); // Adjust time as needed for UI feedback
         }
@@ -59,6 +67,7 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
         if (currentTurn === 1){
 
+            playSound(3);
             setUserMoves(prevMoves => [...prevMoves, index]);
             setIsLoading(true);
 
@@ -67,6 +76,7 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
     
         } else {
 
+            playSound(5);
             setError("It's not your turn yet.");
 
         }

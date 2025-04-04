@@ -1,15 +1,25 @@
 import "./RPSResultsscreen.css";
 
-function Resultsscreen ({result, setRounds, setShowFlag, terminationFlag}){
+import {playSound} from "../../../Helpers/helpers.js";
+
+function Resultsscreen ({result, rounds, setRounds, setShowFlag, terminationFlag}){
 
     const handleHideFlag = () => {
 
+        playSound(3);
         if (terminationFlag == true){
 
             setRounds(11);
             setShowFlag(false);
+            playSound(6);
 
         } else {
+
+            if (rounds == 10){
+
+                playSound(6);
+
+            }
 
             setRounds((prevRounds) => prevRounds + 1);
             setShowFlag(false);

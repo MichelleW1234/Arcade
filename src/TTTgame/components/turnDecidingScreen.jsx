@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
 
+import {playSound} from '../../Helpers/helpers.js';
+
 import './turnDecidingScreen.css';
 
 function turnDecidingScreen() {
@@ -13,6 +15,7 @@ function turnDecidingScreen() {
 
     const coinFlip = () => {
 
+        playSound(2);
         const randomChoice = Math.floor(Math.random() * 2);
 
         if (randomChoice == 0){
@@ -49,7 +52,7 @@ function turnDecidingScreen() {
 
                     <h1 className ="largefont">{statement}</h1>
 
-                    <Link to= "/TTTgame" className = "generalbuttonGlitch">
+                    <Link to= "/TTTgame" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
                         Begin Game
                     </Link>
             

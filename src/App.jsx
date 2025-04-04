@@ -20,6 +20,7 @@ import SNKInstructionsScreen from "./SNKgame/components/InstructionsScreen.jsx";
 import SNKGameScreen from "./SNKgame/components/GameScreen.jsx";
 import SNKResultsScreen from "./SNKgame/components/ResultsScreen.jsx";
 
+
 import NoPage from "./components/NoPage.jsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "./App.css";
@@ -51,8 +52,6 @@ function App() {
         <Route path="/SNKinstructions" element={<SNKInstructionsScreen />}/>
         <Route path="/SNKgame" element={<SNKGameScreen />}/>
         <Route path="/SNKresults" element={<SNKResultsScreen />}/>
-
-
 
 
 

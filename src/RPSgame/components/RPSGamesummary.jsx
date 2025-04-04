@@ -4,7 +4,7 @@ import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
-import {retrieveActiveGame} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 import {resetLevel} from "../Helpers/RPShelpers.js";
 
 import "./RPSGamesummary.css";
@@ -32,9 +32,16 @@ function Gamesummary (){
 
   }
 
+  const resetGame = () => {
+
+    playSound(4);
+    resetLevel(setRPSUser);
+
+  }
+
   const reset = () => {
 
-    resetLevel(setRPSUser);
+    resetGame();
     setActiveGame(retrieveActiveGame(1));
 
   }
@@ -50,9 +57,9 @@ function Gamesummary (){
 
           {Player[0] >= ActiveGame[1] ? (
 
-            <a href="/RPSlevels" className = "generalbutton" onClick={() => resetLevel(setRPSUser)}>
+            <Link to="/RPSlevels" className = "generalbutton" onClick={resetGame}>
               Play Again
-            </a>
+            </Link>
 
           ) : (
 
@@ -60,7 +67,7 @@ function Gamesummary (){
 
           )}
           
-          <Link to="/selection" className = "generalbutton" onClick={() => reset()}>
+          <Link to="/selection" className = "generalbutton" onClick={reset}>
             Exit Game
           </Link>
             

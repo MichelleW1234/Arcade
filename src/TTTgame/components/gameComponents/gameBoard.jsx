@@ -7,7 +7,7 @@ import { useTTTUser } from '../../Providers/TTTUserProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../../Providers/PlayerProvider.jsx';
 
-import {pointsDistribution} from "../../../Helpers/helpers.js";
+import {playSound, pointsDistribution} from "../../../Helpers/helpers.js";
 
 import './gameBoard.css';
 
@@ -25,6 +25,13 @@ function gameBoard() {
     const [userMoves, setUserMoves] = useState([]);
     const [threeInARow, setThreeInARow] = useState([]);
     const [currentTurn, setCurrentTurn] = useState(TTTUser[0]);
+
+    const results = () => {
+
+        playSound(1);
+        pointsDistribution(ActiveGame, TTTUser[1], setPlayer);
+
+    }
 
     return (
         
@@ -112,7 +119,7 @@ function gameBoard() {
 
                     </div> 
 
-                    <Link to= "/TTTresults" className = "generalbuttonGlitch" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer)}>
+                    <Link to= "/TTTresults" className = "generalbuttonGlitch" onClick={results}>
                         Game Results
                     </Link>
 

@@ -7,10 +7,11 @@ import { useSNKUser } from '../../Providers/SNKUserProvider.jsx';
 import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 
+import {playSound} from '../../../Helpers/helpers.js';
+
 import {changeSnakeDirection} from "../../Helpers/SNKhelpers.js";
 
 import "./GameBoard.css";
-
 
 
 function GameBoard (){
@@ -62,26 +63,35 @@ function GameBoard (){
 
         if (startButtonPressed === false){
 
+            playSound(3);
             setStartButtonPressed(true);
 
         } else {
 
             if (direction === 0 && activeDirection != 1){
 
+                playSound(3);
                 setActiveDirection(0);
     
             } else if (direction === 1 && activeDirection != 0){
     
+                playSound(3);
                 setActiveDirection(1);
     
             } else if (direction === 2 && activeDirection != 3){
     
+                playSound(3);
                 setActiveDirection(2);
     
             } else if (direction === 3 && activeDirection != 2){
     
+                playSound(3);
                 setActiveDirection(3);
     
+            } else {
+
+                playSound(5);
+
             }
 
 
@@ -93,6 +103,7 @@ function GameBoard (){
 
     const transaction = () => {
 
+        playSound(1);
         const difference = Player[0] + (SNKUser[1] * 2) - ActiveGame[1];
     
         if (difference >= 0){

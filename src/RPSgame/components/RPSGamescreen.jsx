@@ -10,7 +10,7 @@ import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
-import {pointsDistribution} from "../../Helpers/helpers.js";
+import {playSound, pointsDistribution} from "../../Helpers/helpers.js";
 
 import "./RPSGamescreen.css";
 
@@ -26,6 +26,14 @@ function Gamescreen (){
     const [showFlag, setShowFlag] = useState(false);
     const [result, setResult] = useState();
     const [terminationFlag, setTerminationFlag] = useState(false);
+
+    
+    const viewSummary  = () => {
+
+        playSound(1);
+        getPoints();
+
+    }
 
     const getPoints  = () => {
         
@@ -75,6 +83,7 @@ function Gamescreen (){
             
                             <Results
                                 result = {result}
+                                rounds = {rounds}
                                 setRounds={setRounds}
                                 setShowFlag={setShowFlag}
                                 terminationFlag = {terminationFlag}
@@ -92,7 +101,7 @@ function Gamescreen (){
 
                     <h1 className = "headerwords"> Game <span className = "headerwordsGlitch">Over</span>. </h1>
 
-                    <Link to="/RPSsummary" className="generalbuttonGlitch" onClick={getPoints}>
+                    <Link to="/RPSsummary" className="generalbuttonGlitch" onClick={viewSummary}>
                         View Game Summary
                     </Link>
             

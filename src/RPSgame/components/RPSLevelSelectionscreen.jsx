@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { getInput, getReferences } from "../Helpers/RPShelpers.js";
 
+import {playSound} from '../../Helpers/helpers.js';
+
 import "./RPSLevelSelectionscreen.css";
 
 function LevelSelectionscreen (){
@@ -14,6 +16,7 @@ function LevelSelectionscreen (){
 
     const handleClick = (index) => {
 
+        playSound(3);
         setActiveButton(index);
 
         const currLevelInput = getInput(index);
@@ -74,7 +77,7 @@ function LevelSelectionscreen (){
 
             </div>
 
-            <Link to= "/RPSgame" className = "generalbuttonGlitch">
+            <Link to= "/RPSgame" className = "generalbuttonGlitch" onClick={() => playSound(2)}>
                 Continue to Game
             </Link>
             

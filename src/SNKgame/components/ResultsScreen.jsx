@@ -4,7 +4,7 @@ import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useSNKUser } from '../Providers/SNKUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
-import {retrieveActiveGame} from '../../Helpers/helpers.js';
+import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
 import "./ResultsScreen.css";
 
@@ -16,6 +16,7 @@ function ResultsScreen (){
 
     const resetGame = () => {
         
+        playSound(4);
         setSNKUser([false, 0]);
     
     }

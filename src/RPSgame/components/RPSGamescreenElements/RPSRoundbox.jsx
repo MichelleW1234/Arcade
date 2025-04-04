@@ -4,6 +4,9 @@ import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
 
 import {decideRoundWinnerFunction} from "../../Helpers/RPShelpers.js";
 
+import {playSound} from "../../../Helpers/helpers.js";
+import RPSSuccess from "../../../Music/RPSSuccess.mp3";
+
 import "./RPSRoundbox.css";
 
 function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
@@ -20,12 +23,14 @@ function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
         const inputNumber = Number(inputValue);
         if (1 <= inputNumber && inputNumber <= currInput.length) {
 
+            playSound(3);
             setError("");  
 
             const winner = decideRoundWinnerFunction(currLevel, inputNumber, setResult);
 
             if (winner === 1){
 
+                new Audio(RPSSuccess).play();
                 setRPSUser((prev) => {
                     const updatedUser = [...prev];
                     updatedUser[3] += 1;
@@ -49,6 +54,7 @@ function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
                     return updatedUser;
                 });
 
+                new Audio(RPSSuccess).play();
                 setTerminationFlag(true);
                 
             } else if (winner === -3){
@@ -69,6 +75,7 @@ function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
 
         } else {
 
+            playSound(5);
             setError("Please enter a number between 1 and " + currInput.length);
 
         }

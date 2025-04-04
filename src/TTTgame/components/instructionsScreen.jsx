@@ -2,11 +2,18 @@
 import { Link } from 'react-router-dom';
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
-import {retrieveActiveGame} from '../../Helpers/helpers.js';
+import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
 function instructionsScreen() {
 
   const { ActiveGame, setActiveGame} = useActiveGame();
+
+  const quit = () => {
+
+    playSound(4);
+    setActiveGame(retrieveActiveGame(1))
+
+  }
 
   return (
 
@@ -22,10 +29,10 @@ function instructionsScreen() {
       </p>
 
       <div className = "generalbuttonContainer">
-        <Link to="/selection" className = "generalbutton" onClick={() => setActiveGame(retrieveActiveGame(1))}>
+        <Link to="/selection" className = "generalbutton" onClick={quit}>
           Quit Game
         </Link>
-        <Link to= "/TTTcoinFlip" className = "generalbuttonGlitch">
+        <Link to= "/TTTcoinFlip" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
           Continue
         </Link>
       </div>

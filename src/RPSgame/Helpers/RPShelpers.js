@@ -100,8 +100,6 @@ const decideRoundWinnerLevel1 = (userMove, setResult) => {
 
     if (computerResponse === userResponse){
 
-        console.log("They are even  ");
-
         if (userResponse === 1){
             setResult(["Your response: rock", "Computer's response: rock", "It's a tie!"]);
         } else if (userResponse === 2){

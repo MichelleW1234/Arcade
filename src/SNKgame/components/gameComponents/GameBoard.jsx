@@ -42,12 +42,6 @@ function GameBoard (){
 
     useEffect(() => {
 
-        if (startButtonPressed === false){
-
-            return;
-
-        }
-
         const interval = setInterval(() => {
 
             changeSnakeDirection(setSNKUser, activeDirection, setSnake, snakeRef.current, appleLocation, setAppleLocation);

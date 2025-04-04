@@ -8,7 +8,7 @@ import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
 
 import {resetGame} from "../Helpers/TTThelpers.js";
-import {retrieveActiveGame, pointsDistribution} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, pointsDistribution} from "../../Helpers/helpers.js";
 
 function gameScreen() {
 
@@ -18,6 +18,7 @@ function gameScreen() {
 
   const reset = () => {
 
+    playSound(4);
     resetGame(setTTTUser);
     pointsDistribution(ActiveGame, 0, setPlayer);
     setActiveGame(retrieveActiveGame(1));

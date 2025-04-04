@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import {playSound} from "../Helpers/helpers.js";
+
 function ArcadeStartScreen (){
 
     return (
@@ -10,7 +12,7 @@ function ArcadeStartScreen (){
                 Welcome to The <span className = "headerwordsGlitch">Arcade</span>.
             </h1>
 
-            <Link to="/rulesAndPoints" className = "generalbuttonGlitch">
+            <Link to="/rulesAndPoints" className = "generalbuttonGlitch" onClick = {() => {playSound(1)}}>
                 Enter
             </Link>
             

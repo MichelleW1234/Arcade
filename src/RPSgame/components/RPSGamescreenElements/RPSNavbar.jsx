@@ -5,7 +5,7 @@ import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
 
 import {resetLevel} from "../../Helpers/RPShelpers.js";
-import {retrieveActiveGame, pointsDistribution} from "../../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, pointsDistribution} from "../../../Helpers/helpers.js";
 
 function Navbar ({setShowReferences}){
 
@@ -15,12 +15,21 @@ function Navbar ({setShowReferences}){
 
     const displayReferences = () => {
 
+        playSound(3);
         setShowReferences(prevState => !prevState);
+
+    }
+
+    const resetGame = () => {
+
+        playSound(4);
+        resetLevel(setRPSUser);
 
     }
 
     const reset = () => {
 
+        playSound(4);
         resetLevel(setRPSUser);
         pointsDistribution(ActiveGame, 0, setPlayer);
         setActiveGame(retrieveActiveGame(1));
@@ -39,7 +48,7 @@ function Navbar ({setShowReferences}){
                     </li>
 
                     <li>
-                        <Link to="/RPSlevels" className = "navBarButton" onClick ={() => resetLevel(setRPSUser)}>
+                        <Link to="/RPSlevels" className = "navBarButton" onClick ={resetGame}>
                             Change Variation
                         </Link>
                     </li>

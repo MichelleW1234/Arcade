@@ -5,9 +5,18 @@ import "./RulesandPointsScreen.css";
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 
+import {playSound} from "../Helpers/helpers.js";
+
 function RulesandPointsScreen (){
 
     const { Player, setPlayer } = usePlayer();
+
+    const claimPoints = () => {
+
+        playSound(2);
+        setPlayer([20, 20]);
+
+    }
 
     return (
 
@@ -25,11 +34,11 @@ function RulesandPointsScreen (){
             </p>
 
             <h1 className = "claimPointsSign"> Claim points: </h1>
-            <button className = "generalbutton" onClick={() => setPlayer([20, 20])}>20 pts</button>
+            <button className = "generalbutton" onClick={claimPoints}>20 pts</button>
 
             {Player[0] === 20 && Player[1] === 20 ? (
 
-                <Link to= "/selection" className = "generalbuttonGlitch">
+                <Link to= "/selection" className = "generalbuttonGlitch" onClick = {() => {playSound(1)}}>
                     Let's go!
                 </Link>
             

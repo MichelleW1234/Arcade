@@ -69,6 +69,8 @@ function gameBoard() {
 
                     />
 
+                    {console.log("userMoves: "+ userMoves)}
+
                 </div>
 
             ) : (

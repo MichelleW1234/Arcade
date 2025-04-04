@@ -12,15 +12,15 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
     const { TTTUser, setTTTUser} = useTTTUser();
 
-    const [isLoading, setIsLoading] = useState(true); // Flag to trigger loading state
-
     useEffect(() => {
-        if (isLoading) {
 
-            const result = winnerwinnerchickendinner(matrix, userMoves, computerMoves, setThreeInARow);
+        const interval = setInterval(() => {
 
-            setTimeout(() => {
-                setIsLoading(false); // Stop loading
+            let result = winnerwinnerchickendinner(matrix, userMoves, computerMoves, setThreeInARow);
+
+            if (result != -1){
+
+                playSound(6);
 
                 setTTTUser((prev) => {
                     const updatedUser = [...prev];
@@ -28,15 +28,13 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
                     return updatedUser;
                 });
 
-                if (result != -1){
+            }
 
-                    playSound(6);
+        }, 100);
 
-                }
+        return () => clearInterval(interval);
 
-            }, 200); // Adjust time as needed for UI feedback
-        }
-    }, [isLoading]); // Runs when isLoading or result changes
+    }, [matrix, userMoves, computerMoves]);
 
 
     const nextMove = () => {
@@ -68,9 +66,8 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
         if (currentTurn === 1){
 
             playSound(3);
+            
             setUserMoves(prevMoves => [...prevMoves, index]);
-            setIsLoading(true);
-
             takenMove(index, 1);
             nextMove();
     
@@ -88,10 +85,8 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
         const computerMove = () => {
 
             const move = computerMoveDecider(availableMoves, computerMoves, userMoves);
-
+            
             setComputerMoves(prevMoves => [...prevMoves, move]);
-            setIsLoading(true);
-
             takenMove(move, 0);
             nextMove();
             setError("");

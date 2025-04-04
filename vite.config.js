@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: 'localhost', // Restricts access to your local machine
+    port: 5000,
   }
 })

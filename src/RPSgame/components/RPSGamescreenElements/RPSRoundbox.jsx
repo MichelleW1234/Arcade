@@ -30,7 +30,10 @@ function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
 
             if (winner === 1){
 
-                new Audio(RPSSuccess).play();
+                const audio = new Audio(RPSSuccess);
+                audio.volume = 0.7;
+                audio.play();
+
                 setRPSUser((prev) => {
                     const updatedUser = [...prev];
                     updatedUser[3] += 1;
@@ -54,7 +57,10 @@ function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
                     return updatedUser;
                 });
 
-                new Audio(RPSSuccess).play();
+                const audio = new Audio(RPSSuccess);
+                audio.volume = 0.7;
+                audio.play();
+
                 setTerminationFlag(true);
                 
             } else if (winner === -3){

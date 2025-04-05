@@ -51,31 +51,40 @@ export const pointsDistribution = (ActiveGame, winner, setPlayer) => {
 
 export const playSound = (soundEffect) => {
 
+    let audio = null;
+
     if (soundEffect == 1){
 
-        new Audio(buttonStart).play();
+        audio = new Audio(buttonStart);
+        audio.volume = 0.3;
 
     } else if (soundEffect == 2){
 
-        new Audio(buttonSet).play();
+        audio = new Audio(buttonSet);
+        audio.volume = 0.3;
 
     } else if (soundEffect == 3){
 
-        new Audio(buttonSelect).play();
+        audio = new Audio(buttonSelect);
+        audio.volume = 0.3;
 
     } else if (soundEffect == 4){
 
-        new Audio(buttonRestart).play();
+        audio = new Audio(buttonRestart);
 
     } else if (soundEffect == 5){
 
-        new Audio(buttonError).play();
+        audio = new Audio(buttonError);
+        audio.volume = 0.3;
 
     } else if (soundEffect == 6){
 
-        new Audio(gameOver).play();
+        audio = new Audio(gameOver);
+        audio.volume = 0.5;
 
     }
+
+    audio.play();
    
 
 }

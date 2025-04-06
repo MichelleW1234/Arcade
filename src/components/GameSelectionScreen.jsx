@@ -46,9 +46,21 @@ function GameSelectionScreen (){
     return (
         <div>
 
-            <Link to="/arcadeStart" className = "generalbutton" onClick ={() => resetPoints()}>
-                Leave Arcade
-            </Link>
+            <div className = "navbarContainer">
+                <div className = "navbarMenu">
+
+                    <Link to="/arcadeStart" className = "navBarButton" onClick ={() => resetPoints()}>
+                        Leave Arcade
+                    </Link>
+
+                    {/*
+                    <Link to="/prizeRoom" className = "navBarButton">
+                        Go to Prize Room
+                    </Link>
+                    */}
+
+                </div>
+            </div>
 
             <div className = "gameScreenLayout">
 

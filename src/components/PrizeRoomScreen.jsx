@@ -1,32 +1,73 @@
 import { Link } from 'react-router-dom';
 
+import { usePlayer} from '../Providers/PlayerProvider.jsx';
+import { usePrize} from '../Providers/PrizeProvider.jsx';
+
 import "./PrizeRoomScreen.css";
 
 function PrizeRoomScreen() {
 
-    const prizeArray = [["Bear", 100], ["Bear", 100], ["Bear", 100]];
+    const { Player, setPlayer } = usePlayer();
+    const { Prize, setPrize } = usePrize();
+
+    const purchaseItem = (index) => {
+
+        const difference = Player[0] - Prize[index][1];
+        setPlayer(prevMatrix => [difference, prevMatrix[0]]);
+
+        const newMatrix = Prize.map(Array => [...Array]);
+        newMatrix[index] = ["X"];
+        setPrize(prevMatrix => newMatrix);
+        
+    }
 
     return (
 
         <div className = "screenLayout">
 
-            <div className = "instructionsSign"> Your balance: (complete later)</div>
+            <div className = "instructionsSign"> Your balance: {Player[0]}</div>
 
             <div className = "prizeRoomContainer"> 
 
                 <div className = "prizeRoomInnerContainer">
 
-                    {prizeArray.map((item, index) => (
+                    {Prize.map((item, index) => (
 
-                        <div className = "prizeWindowContainer">
-                            <h2 className = "prizeWindow">
-                                Item: {item[0]} <br/>
-                                Price: {item[1]} <br/>
-                                (insert image here)
-                            </h2>
+                        item[0] != "X" ? 
 
-                            <button className = "prizeButton"> Buy </button>
-                        </div>
+                            <div className = "prizeWindowContainer">
+
+                                <h2 className = "prizeWindow">
+                                    Item: {item[0]} <br/>
+                                    Price: {item[1]} points <br/>
+                                    <br/>
+                                    (insert image here)
+                                </h2>
+
+
+                                {item[1] <= Player[0] ?
+
+                                    <button className = "prizeButton"  onClick = {() => purchaseItem(index)}> Buy </button>
+
+                                :
+
+                                    <div className = "prizeButtonBought"> Unavailable </div>
+
+                                }
+
+                            </div>
+
+                        :
+
+                            <div className = "prizeWindowContainer">
+
+                                <h2 className = "prizeWindowBought">
+                                    X
+                                </h2>
+
+                                <div className = "prizeButtonBought"> Bought </div>
+
+                            </div>
 
                     ))}
 
@@ -34,7 +75,7 @@ function PrizeRoomScreen() {
                 
             </div>
             
-            <Link to="/selection" className = "generalbutton" onClick ={() => resetPoints()}>
+            <Link to="/selection" className = "generalbutton">
                 Leave Prize Room
             </Link>
 

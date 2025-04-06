@@ -2,6 +2,7 @@ import React from "react";
 import ArcadeStartScreen from "./components/ArcadeStartScreen.jsx";
 import GameSelectionScreen from "./components/GameSelectionScreen.jsx";
 import RulesandPointsScreen from "./components/RulesandPointsScreen.jsx";
+import PrizeRoomScreen from "./components/PrizeRoomScreen.jsx";
 
 import RPSStartscreen from "./RPSgame/components/RPSStartscreen.jsx";
 import RPSGamescreen from "./RPSgame/components/RPSGamescreen.jsx";
@@ -34,6 +35,7 @@ function App() {
         <Route index element={<ArcadeStartScreen />}/>
         <Route path="/arcadeStart" element={<ArcadeStartScreen />}/>
         <Route path="/rulesAndPoints" element={<RulesandPointsScreen />}/>
+        <Route path="/prizeRoom" element={<PrizeRoomScreen />}/>
         <Route path="/selection" element={<GameSelectionScreen />}/>
         
         <Route path="/RPSstart" element={<RPSStartscreen />}/>

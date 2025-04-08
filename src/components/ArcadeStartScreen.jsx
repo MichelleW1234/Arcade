@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
+import { useContext} from 'react';
 
 import {playSound} from "../Helpers/helpers.js";
 
+import { MusicContext } from '../Providers/MusicProvider.jsx';
+
+
 function ArcadeStartScreen (){
+
+    const { audioRef } = useContext(MusicContext);
 
     return (
 

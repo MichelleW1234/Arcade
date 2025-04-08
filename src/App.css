@@ -2,6 +2,7 @@ body {
 
   min-height: 100vh;
   background: linear-gradient(rgb(36, 4, 65) 10%, rgb(119, 14, 135) 70%, rgb(71, 12, 166));
+  zoom: 0.80;
     
 }
 
@@ -65,7 +66,6 @@ a:active {
   font-size: 30px;
   color: rgb(255, 255, 255);
   text-shadow: 0.5px 0.5px 4px #f700ff, -0.5px -0.5px 4px #2bff00, 0.5px -0.5px 4px #f700ff, -0.5px 0.5px 4px #2bff00;
-
 
 }
 

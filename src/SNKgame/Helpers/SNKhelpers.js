@@ -113,7 +113,11 @@ export const changeSnakeDirection = (setSNKUser, activeDirection, setSnake, snak
 
     if (snake[0][0] === appleLocation[0] && snake[0][1] === appleLocation[1]) {
 
-        new Audio(SnakeSuccess).play();
+        const audio = new Audio(SnakeSuccess);
+        audio.volumne = 0.7;
+        audio.play();
+
+
         increaseSnake = true;
         setSNKUser(prevMatrix => [prevMatrix[0], prevMatrix[1] + 1]);
         

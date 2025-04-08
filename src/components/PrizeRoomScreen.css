@@ -1,19 +1,21 @@
 .prizeRoomContainer{
 
     background-color: rgb(98, 0, 255);
-    padding: 40px;
+    padding: 50px;
 
-    border-left: 8px solid black;
-    border-bottom: 8px solid black;
+    border-left: 10px solid black;
+    border-bottom: 10px solid black;
     border-right: 3px solid black;
     border-top: 3px solid black;
     border-radius: 20px;
+
+    box-shadow: 0 0 40px rgb(200, 156, 255);
 
 }
 
 .prizeRoomInnerContainer{
 
-    max-width: 800px;
+    max-width: 900px;
     display: flex;
     flex-direction: row;
     overflow-y: auto;
@@ -42,7 +44,15 @@
     width: 270px;
     background-color:rgb(208, 243, 255);
     padding: 20px;
-    
+
+    border-left: 8px solid black;
+    border-bottom: 8px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-radius: 20px;
+
+    box-shadow: 0 0 10px 6px rgb(190, 216, 255)
+   
 }
 
 .prizeWindowBought{
@@ -80,6 +90,8 @@
     border-left: 6px solid black;
     border-bottom: 6px solid black;
 
+    animation: glowing-shadow3 4s infinite;
+
 }
 
 
@@ -90,7 +102,7 @@
 
 }
 
-.prizeButtonBought{
+.prizeButtonNonClick{
 
     padding: 10px;
     font-size: 25px;
@@ -100,6 +112,8 @@
 
     border-left: 6px solid black;
     border-bottom: 6px solid black;
+
+    animation: glowing-shadow6 4s infinite;
 
 }
 

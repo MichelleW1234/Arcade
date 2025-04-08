@@ -35,13 +35,13 @@ function PrizeRoomScreen() {
 
                         item[0] != "X" ? 
 
-                            <div className = "prizeWindowContainer">
+                            <div key = {index} className = "prizeWindowContainer">
 
                                 <h2 className = "prizeWindow">
                                     Item: {item[0]} <br/>
                                     Price: {item[1]} points <br/>
                                     <br/>
-                                    (insert image here)
+                                    <img className = "prizeImages" src = {item[2]}/>
                                 </h2>
 
 
@@ -59,7 +59,7 @@ function PrizeRoomScreen() {
 
                         :
 
-                            <div className = "prizeWindowContainer">
+                            <div key = {index} className = "prizeWindowContainer">
 
                                 <h2 className = "prizeWindowBought">
                                     X

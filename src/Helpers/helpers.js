@@ -5,6 +5,15 @@ import buttonRestart from "../Music/buttonRestart.mp3";
 import buttonError from "../Music/buttonError.mp3";
 import gameOver from "../Music/gameOver.mp3";
 
+
+import Bear from '../Images/image 1.svg';
+import Bee from '../Images/image 2.svg';
+import Heart from '../Images/image 3.svg';
+import GameBoy from '../Images/image 4.svg';
+import Robot from '../Images/image 5.svg';
+import Alien from '../Images/image 6.svg';
+import Spider from '../Images/image 7.svg';
+
 export const retrieveActiveGame = (index) => {
     
     let gameControls = new Array(null, null, null, null, null);

@@ -4,7 +4,17 @@ import { Link } from 'react-router-dom';
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../Providers/ActiveGameProvider.jsx';
+import { usePrize } from '../Providers/PrizeProvider.jsx';
 import {playSound, retrieveActiveGame} from "../Helpers/helpers.js";
+
+
+import Bear from '../Images/image 1.svg';
+import Bee from '../Images/image 2.svg';
+import Heart from '../Images/image 3.svg';
+import GameBoy from '../Images/image 4.svg';
+import Robot from '../Images/image 5.svg';
+import Alien from '../Images/image 6.svg';
+import Spider from '../Images/image 7.svg';
 
 import "./GameSelectionScreen.css";
 
@@ -12,7 +22,9 @@ import "./GameSelectionScreen.css";
 function GameSelectionScreen (){
 
     const { ActiveGame, setActiveGame } = useActiveGame(); 
-    const { Player, setPlayer } = usePlayer();
+    const { Player, setPlayer } = usePlayer(); 
+    const { Prize, setPrize } = usePrize();
+
 
     const [activeButton, setActiveButton] = useState(1);
     const [currGamePath, setCurrGamePath] = useState(ActiveGame[0]);
@@ -39,6 +51,8 @@ function GameSelectionScreen (){
         playSound(4);
         setPlayer([0,0]);
         setActiveGame(retrieveActiveGame(1));
+        setPrize([["Bear", 80, Bear], ["BumbleBee", 50, Bee], ["Valentine", 20, Heart], ["GameBoy", 100, GameBoy], 
+            ["Robot", 30, Robot], ["Alien", 20, Alien], ["Spider", 80, Spider]]);
 
     }
     
@@ -53,11 +67,9 @@ function GameSelectionScreen (){
                         Leave Arcade
                     </Link>
 
-                    {/*
                     <Link to="/prizeRoom" className = "navBarButton">
                         Go to Prize Room
                     </Link>
-                    */}
 
                 </div>
             </div>

@@ -42,7 +42,7 @@
     
     height: 350px;
     width: 270px;
-    background-color:rgb(208, 243, 255);
+    background-color:rgb(189, 249, 255);
     padding: 20px;
 
     border-left: 8px solid black;
@@ -51,7 +51,7 @@
     border-top: 1px solid black;
     border-radius: 20px;
 
-    box-shadow: 0 0 10px 6px rgb(190, 216, 255)
+    box-shadow: 0 0 10px 6px rgb(190, 247, 255);
    
 }
 
@@ -76,7 +76,6 @@
 
     width: 200px;
     height: 200px;
-
 
 }
 

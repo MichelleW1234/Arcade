@@ -67,7 +67,7 @@ function GameSelectionScreen (){
                         Leave Arcade
                     </Link>
 
-                    <Link to="/prizeRoom" className = "navBarButton">
+                    <Link to="/prizeRoom" className = "navBarButton" onClick ={() =>  playSound(1)}>
                         Go to Prize Room
                     </Link>
 

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 import { usePrize} from '../Providers/PrizeProvider.jsx';
 
+import {playSound} from "../Helpers/helpers.js";
+
 import "./PrizeRoomScreen.css";
 
 function PrizeRoomScreen() {
@@ -12,6 +14,7 @@ function PrizeRoomScreen() {
 
     const purchaseItem = (index) => {
 
+        playSound(3);
         const difference = Player[0] - Prize[index][1];
         setPlayer(prevMatrix => [difference, prevMatrix[0]]);
 
@@ -51,7 +54,7 @@ function PrizeRoomScreen() {
 
                                 :
 
-                                    <div className = "prizeButtonBought"> Unavailable </div>
+                                    <div className = "prizeButtonNonClick"> Unavailable </div>
 
                                 }
 
@@ -65,7 +68,7 @@ function PrizeRoomScreen() {
                                     X
                                 </h2>
 
-                                <div className = "prizeButtonBought"> Bought </div>
+                                <div className = "prizeButtonNonClick"> Bought </div>
 
                             </div>
 
@@ -75,7 +78,7 @@ function PrizeRoomScreen() {
                 
             </div>
             
-            <Link to="/selection" className = "generalbutton">
+            <Link to="/selection" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
                 Leave Prize Room
             </Link>
 

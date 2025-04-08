@@ -4,6 +4,7 @@ import { usePlayer} from '../Providers/PlayerProvider.jsx';
 import { usePrize} from '../Providers/PrizeProvider.jsx';
 
 import {playSound} from "../Helpers/helpers.js";
+import buttonBought from "../Music/buttonBought.mp3";
 
 import "./PrizeRoomScreen.css";
 
@@ -14,7 +15,10 @@ function PrizeRoomScreen() {
 
     const purchaseItem = (index) => {
 
-        playSound(3);
+        const audio = new Audio(buttonBought);
+        audio.volume = 0.3;
+        audio.play();
+        
         const difference = Player[0] - Prize[index][1];
         setPlayer(prevMatrix => [difference, prevMatrix[0]]);
 

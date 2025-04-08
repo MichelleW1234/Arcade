@@ -1,11 +1,11 @@
 
 import { Link } from 'react-router-dom';
 
-import "./RulesandPointsScreen.css";
-
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 
 import {playSound} from "../Helpers/helpers.js";
+
+import "./RulesandPointsScreen.css";
 
 function RulesandPointsScreen (){
 
@@ -24,13 +24,13 @@ function RulesandPointsScreen (){
 
             <h1 className = "instructionsSign"> Arcade Rules: </h1>
             <p className = "largefont">  
-                &gt; Do NOT use any of your browser navigation buttons. <br/>
+                &gt; Your goal is to earn points to win as many prizes as you can. <br/>
                 &gt; You will receive 20 points initially. <br/>
-                &gt; For each game, if you win, you will gain points. If you lose, you will lose points.
-                If it's a draw, you will neither gain nor lose points. <br/>
                 &gt; You must have the required amount of points that correspond to a game to play it.<br/>
                 &gt; If you quit a game while it is actively playing, you will automatically lose points. <br/>
-                &gt; Once you are below the minimum number of points to play any of the games, you must leave the arcade.<br/>
+                &gt; You can purchase prizes at any point, however, it's your job to manage your points. <br/>
+                &gt; Once you are below the minimum number of points to play any of the games, you cannot earn anymore. <br/>
+                &gt; WARNING: Do NOT use any of your browser navigation buttons!! <br/>
             </p>
 
             <h1 className = "claimPointsSign"> Claim points: </h1>

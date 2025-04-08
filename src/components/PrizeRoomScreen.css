@@ -62,6 +62,13 @@
 
 }
 
+.prizeImages{
+
+    width: 200px;
+    height: 200px;
+
+
+}
 
 .prizeButton{
 
@@ -95,3 +102,4 @@
     border-bottom: 6px solid black;
 
 }
+

@@ -7,6 +7,7 @@ import { useActiveGame } from '../Providers/ActiveGameProvider.jsx';
 import { usePrize } from '../Providers/PrizeProvider.jsx';
 import {playSound, retrieveActiveGame} from "../Helpers/helpers.js";
 
+import PrizeInventory from './GameSelectionComponents/PrizeInventory.jsx';
 
 import Bear from '../Images/image 1.svg';
 import Bee from '../Images/image 2.svg';
@@ -28,7 +29,7 @@ function GameSelectionScreen (){
 
     const [activeButton, setActiveButton] = useState(1);
     const [currGamePath, setCurrGamePath] = useState(ActiveGame[0]);
-
+    const [showInventory, setShowInventory] = useState(false);
 
     const handleClick = (index) => {
     
@@ -55,27 +56,49 @@ function GameSelectionScreen (){
             ["Robot", 30, Robot], ["Alien", 20, Alien], ["Spider", 80, Spider]]);
 
     }
+
+    const displayInventory = () => {
+
+        playSound(3);
+        setShowInventory(prevState => !prevState);
+
+    }
     
 
     return (
         <div>
 
             <div className = "navbarContainer">
-                <div className = "navbarMenu">
+                <ul className = "navbarMenu">
 
-                    <Link to="/arcadeStart" className = "navBarButton" onClick ={() => resetPoints()}>
-                        Leave Arcade
-                    </Link>
+                    <li>
+                        <Link to="/arcadeStart" className = "navBarButton" onClick ={() => resetPoints()}>
+                            Leave Arcade
+                        </Link>
+                    </li>
 
-                    <Link to="/prizeRoom" className = "navBarButton" onClick ={() =>  playSound(1)}>
-                        Go to Prize Room
-                    </Link>
+                    <li>
+                        <Link to="/prizeRoom" className = "navBarButton" onClick ={() =>  playSound(1)}>
+                            Go to Prize Room
+                        </Link>
+                    </li>
 
-                </div>
+                    <li>
+                        <div className = "navBarButton" onClick ={displayInventory}>
+                            View Prize Inventory
+                        </div>
+                    </li>
+
+                </ul>
             </div>
 
-            <div className = "gameScreenLayout">
+            {showInventory && 
+                (<PrizeInventory
+                    Prize = {Prize}
+            />)}
 
+            <div className = "gameScreenLayout">
+        
                 <h1 className = "pointsSign"> Your Points: <span className = "pointsSignGlitch">{Player[0]}</span></h1>
                 
                 <h1 className = "headerwords"> Choose a game: </h1>
@@ -151,6 +174,7 @@ function GameSelectionScreen (){
                 )}
 
             </div>
+
         </div>
         
     );

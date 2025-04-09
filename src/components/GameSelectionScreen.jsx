@@ -99,7 +99,7 @@ function GameSelectionScreen (){
                     Prize = {Prize}
             />)}
 
-            <div className = "gameScreenLayout">
+            <div className = "ArcadeGameScreenLayout">
 
                 <h1 className = "pointsSign"> Your Points: <span className = "pointsSignGlitch">{Player[0]}</span></h1>
                 

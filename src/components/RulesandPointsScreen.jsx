@@ -30,7 +30,6 @@ function RulesandPointsScreen (){
                 &gt; If you quit a game while it is actively playing, you will automatically lose points. <br/>
                 &gt; You can purchase prizes at any point, however, it's your job to manage your points. <br/>
                 &gt; Once you are below the minimum number of points to play any of the games, you cannot earn anymore. <br/>
-                &gt; WARNING: Do NOT use any of your browser navigation buttons!! <br/>
             </p>
 
             <h1 className = "claimPointsSign"> Claim points: </h1>

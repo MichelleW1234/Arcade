@@ -163,6 +163,26 @@ function GameSelectionScreen (){
 
                         </div>
 
+                        <div className = "ArcadeGameContainer">
+
+                            <div className = "ArcadeGame"> 
+                                
+                                <h2> New game work in progress... </h2>
+                                
+                            </div>
+
+                            {/*
+                            <button
+                            className={`gameButton ${activeButton === 3 ? 'active' : ''}`}
+                            onClick={() => handleClick(3)}
+                            >
+                                Select
+                            </button>
+                            */}
+
+                        </div>
+                        
+
                     </div>
 
                 </div>

@@ -107,30 +107,67 @@ function GameSelectionScreen (){
 
                 <div className = "ArcadeGameBoard">
 
-                    <div className = "ArcadeGameContainer">
+                    <div className = "ArcadeGameBoardInner">
 
-                        <div className = "ArcadeGame"> 
-                            
-                            <h2> Rock-Paper-Scissors</h2>
-                            <h2><span className = "windowGlitch">(20 Points)</span></h2>
+                        <div className = "ArcadeGameContainer">
+
+                            <div className = "ArcadeGame"> 
+                                
+                                <h2> Rock-Paper-Scissors</h2>
+                                <h2><span className = "windowGlitch">(20 Points)</span></h2>
+                                
+                            </div>
+
+                            <button
+                            className={`gameButton ${activeButton === 1 ? 'active' : ''}`}
+                            onClick={() => handleClick(1)}
+                            >
+                                Select
+                            </button>
                             
                         </div>
 
-                        <button
-                        className={`gameButton ${activeButton === 1 ? 'active' : ''}`}
-                        onClick={() => handleClick(1)}
-                        >
-                            Select
-                        </button>
-                        
-                    </div>
+                        <div className = "ArcadeGameContainer">
 
-                    <div className = "ArcadeGameContainer">
+                            <div className = "ArcadeGame"> 
+                                
+                                <h2> Tic-Tac-Toe </h2>
+                                <h2>(10 Points)</h2>
+                                
+                            </div>
+
+                            <button
+                            className={`gameButton ${activeButton === 2 ? 'active' : ''}`}
+                            onClick={() => handleClick(2)}
+                            >
+                                Select
+                            </button>
+                            
+                        </div>
+
+                        <div className = "ArcadeGameContainer">
+
+                            <div className = "ArcadeGame"> 
+                                
+                                <h2> Snake </h2>
+                                <h2> (5 Points) </h2>
+                                
+                            </div>
+
+                            <button
+                            className={`gameButton ${activeButton === 3 ? 'active' : ''}`}
+                            onClick={() => handleClick(3)}
+                            >
+                                Select
+                            </button>
+
+                        </div>
+
+                        <div className = "ArcadeGameContainer">
 
                         <div className = "ArcadeGame"> 
                             
-                            <h2> Tic-Tac-Toe </h2>
-                            <h2>(10 Points)</h2>
+                            <h2> New game work in progress... </h2>
                             
                         </div>
 
@@ -140,24 +177,8 @@ function GameSelectionScreen (){
                         >
                             Select
                         </button>
-                        
-                    </div>
 
-                    <div className = "ArcadeGameContainer">
-
-                        <div className = "ArcadeGame"> 
-                            
-                            <h2> Snake </h2>
-                            <h2> (5 Points) </h2>
-                            
                         </div>
-
-                        <button
-                        className={`gameButton ${activeButton === 3 ? 'active' : ''}`}
-                        onClick={() => handleClick(3)}
-                        >
-                            Select
-                        </button>
 
                     </div>
 

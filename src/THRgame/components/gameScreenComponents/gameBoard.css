@@ -26,6 +26,14 @@
 }
 
 
+
+
+
+
+
+
+
+
 .THRemptySpace{
 
     background-color: rgb(148, 219, 255);
@@ -47,6 +55,31 @@
     border-right: 2px solid black;
 
 }
+
+.THRlaserSpace {
+
+    background-color: rgb(13, 255, 0);
+    height: 30px;
+    width: 30px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .THRSlider{
 

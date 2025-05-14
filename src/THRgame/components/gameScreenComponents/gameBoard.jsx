@@ -1,6 +1,8 @@
 import "./gameBoard.css"
 import { useEffect, useState } from 'react';
 
+import {aliensIncoming, alienKilled, checkButtonClicked} from "../../Helpers/THRhelpers.js";
+
 function gameBoard({setWaveNumber, setThresholdBreached}) {
 
     const [laserValue, setLaserValue] = useState(14);
@@ -8,31 +10,33 @@ function gameBoard({setWaveNumber, setThresholdBreached}) {
 
     //15 x 27 (30x30 pieces moving around the screen)
     const gameBoardMatrix = Array.from({ length: 15 }, () => Array(27).fill(0));
-    const alienPositions = [[0,5], [0,9], [0,15], [0, 20], [14, 10]];
-
+    const [alienPositions, setAlienPositions] = useState([[0,0], [0,5], [0,9], [0,15], [0, 20]]);
 
     /*Listener for lasers being shot*/
     useEffect(() => {
 
-        const isInAlienColumn = alienPositions.some(
-            ([, col]) => col === laserBlasted
-        );
-                        
-        if (isInAlienColumn) {
-            console.log("There's an alien in this column!");
-            
-        }
+        const interval = setInterval(() => {
+            checkButtonClicked(laserBlasted, setLaserBlasted);
+            alienKilled(laserBlasted, alienPositions, setAlienPositions, setWaveNumber);
 
-        return () => {
-        };
-    }, []);
+        }, 100);
+
+        return () => clearInterval(interval);
+
+    }, [laserBlasted, laserValue, alienPositions]);
 
     /* Wave rerendering */
     useEffect(() => {
 
-        return () => {
-        };
-    }, []);
+        const interval = setInterval(() => {
+
+            aliensIncoming(setAlienPositions, alienPositions, setThresholdBreached);
+
+        }, 1000);
+
+        return () => clearInterval(interval);
+
+    }, [alienPositions]);
 
 
     return (
@@ -48,8 +52,13 @@ function gameBoard({setWaveNumber, setThresholdBreached}) {
                             ([alienRow, alienCol]) => alienRow === rowIndex && alienCol === colIndex
                         );
 
-                        const isLaserHere = laserBlasted === colIndex;
-                        
+                        let isLaserHere;
+                        if (laserBlasted != -1){
+
+                            isLaserHere = laserValue === colIndex;
+
+                        }
+                          
                         return (
 
                             isLaserHere ? (
@@ -86,7 +95,7 @@ function gameBoard({setWaveNumber, setThresholdBreached}) {
                 min="0"
                 max="26"
                 value={laserValue}
-                onChange={(e) => setLaserValue(e.target.value)}
+                onChange={(e) => setLaserValue(Number(e.target.value))}
             />
 
             <button className = "THRFirebutton" onClick={() => setLaserBlasted(laserValue)}> Fire </button>

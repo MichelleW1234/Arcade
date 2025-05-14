@@ -1,20 +1,21 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import GameBoard from "./gameScreenComponents/gameBoard.jsx"
 import "./GameScreen.css"
 
 function gameScreen() {
 
-    const [waveNumber, setWaveNumber] = useState(0);
+    const [waveNumber, setWaveNumber] = useState(1);
     const [thresholdBreached, setThresholdBreached] = useState(false);
 
     return (
 
         <div className = "screenLayout">
 
-            <div className = "instructionsSign"> Wave Number: </div>
+            <div className = "instructionsSign"> Wave Number: {waveNumber}</div>
 
-            {waveNumber < 10 && thresholdBreached == false ? (
+            {waveNumber <= 10 && thresholdBreached == false ? (
 
                 <div className="THRouterContainer">
 
@@ -29,7 +30,13 @@ function gameScreen() {
 
                 <div className="THRouterContainer">
 
-                    <h1> Game over </h1>
+                    <div className = "THRendingScreen">
+                        <h1> Game over </h1>
+                    </div>
+
+                    <Link to="/THRsummary" className = "generalbutton">
+                        View Results
+                    </Link>
                     
                 </div>
 

@@ -5,7 +5,8 @@ import "./GameScreen.css"
 
 function gameScreen() {
 
-    const [value, setValue] = useState(50);
+    const [waveNumber, setWaveNumber] = useState(0);
+    const [thresholdBreached, setThresholdBreached] = useState(false);
 
     return (
 
@@ -13,19 +14,26 @@ function gameScreen() {
 
             <div className = "instructionsSign"> Wave Number: </div>
 
-            <div className="THRouterContainer">
+            {waveNumber < 10 && thresholdBreached == false ? (
 
-                <GameBoard/>
-                <input className = "THRSlider"
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                />
-                <button className = "THRFirebutton"> Fire </button>
-                
-            </div>
+                <div className="THRouterContainer">
+
+                    <GameBoard
+                        setWaveNumber = {setWaveNumber}
+                        setThresholdBreached = {setThresholdBreached}
+                    />
+                    
+                </div>
+
+            ): (
+
+                <div className="THRouterContainer">
+
+                    <h1> Game over </h1>
+                    
+                </div>
+
+            )}
 
         </div>
 

@@ -167,7 +167,7 @@ function GameSelectionScreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                <h2> Threshold </h2>
+                                <h2> Space Invasion </h2>
                                 <h2> work in progress... </h2>
                                 
                             </div>

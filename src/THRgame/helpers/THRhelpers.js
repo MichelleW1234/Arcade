@@ -37,13 +37,12 @@ export const newWave = () => {
 
     }
 
-       for (let i =0; i<3; i++){
+    for (let i =0; i<3; i++){
 
         const random = Math.floor(Math.random() * 27);
         newMatrix.push([2, random])
 
     }
-
 
     return newMatrix
 

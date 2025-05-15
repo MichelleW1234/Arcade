@@ -68,7 +68,7 @@ export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
 
     }
 
-    if (!(newMatrix.some(row => row[0] >= 9 && row[1] === laserValue))){
+    if (!(newMatrix.some(row => row[0] >= 9))){
 
         newMatrix.push(
             [14, laserValue],

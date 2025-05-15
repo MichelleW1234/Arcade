@@ -1,42 +1,47 @@
 import "./gameBoard.css"
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
-import {aliensIncoming, alienKilled, checkButtonClicked} from "../../Helpers/THRhelpers.js";
+import {aliensIncoming, alienKilled, checkButtonClicked, newWave} from "../../Helpers/THRhelpers.js";
 
-function gameBoard({setWaveNumber, setThresholdBreached}) {
+function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
     const [laserValue, setLaserValue] = useState(14);
     const [laserBlasted, setLaserBlasted] = useState(-1);
 
     //15 x 27 (30x30 pieces moving around the screen)
     const gameBoardMatrix = Array.from({ length: 15 }, () => Array(27).fill(0));
-    const [alienPositions, setAlienPositions] = useState([[0,0], [0,5], [0,9], [0,15], [0, 20]]);
+    const [alienPositions, setAlienPositions] = useState(newWave);
+
+
+    /*Listener for current alien positions*/
+    const alienPositionsRef = useRef(alienPositions);
+    useEffect(() => {
+        alienPositionsRef.current = alienPositions;
+    }, [alienPositions]);
 
     /*Listener for lasers being shot*/
     useEffect(() => {
 
         const interval = setInterval(() => {
             checkButtonClicked(laserBlasted, setLaserBlasted);
-            alienKilled(laserBlasted, alienPositions, setAlienPositions, setWaveNumber);
-
+            alienKilled(laserBlasted, alienPositionsRef.current, setAlienPositions, setWaveNumber);
         }, 100);
 
         return () => clearInterval(interval);
 
-    }, [laserBlasted, laserValue, alienPositions]);
+    }, [laserBlasted]);
 
-    /* Wave rerendering */
+
+    /* Listener for wave rerendering */
     useEffect(() => {
 
         const interval = setInterval(() => {
-
-            aliensIncoming(setAlienPositions, alienPositions, setThresholdBreached);
-
-        }, 1000);
+            aliensIncoming(setAlienPositions, alienPositionsRef.current, setThresholdBreached);
+        }, 2000/waveNumber);
 
         return () => clearInterval(interval);
 
-    }, [alienPositions]);
+    }, [waveNumber]);
 
 
     return (

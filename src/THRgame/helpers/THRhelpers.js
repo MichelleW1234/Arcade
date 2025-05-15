@@ -27,9 +27,25 @@ export const checkButtonClicked = (laserBlasted, setLaserBlasted) => {
 }
 
 
-const newWave = (setAlienPositions) => {
-    const newMatrix = [[0,0], [0,5], [0,9], [0,15], [0, 20]];
-    setAlienPositions(prevMatrix => newMatrix);
+export const newWave = () => {
+
+    const newMatrix = [];
+    for (let i =0; i<3; i++){
+
+        const random = Math.floor(Math.random() * 27);
+        newMatrix.push([0, random])
+
+    }
+
+       for (let i =0; i<3; i++){
+
+        const random = Math.floor(Math.random() * 27);
+        newMatrix.push([2, random])
+
+    }
+
+
+    return newMatrix
 
 }
 
@@ -47,7 +63,7 @@ export const alienKilled = (laserBlasted, alienPositions, setAlienPositions, set
 
     if (alienPositions.length === 0) {
         setWaveNumber(prev => prev + 1);
-        newWave(setAlienPositions);
+        setAlienPositions(prevMatrix => newWave());
     }
 
 }

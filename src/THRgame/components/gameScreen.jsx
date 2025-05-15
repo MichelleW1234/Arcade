@@ -11,33 +11,44 @@ function gameScreen() {
 
     return (
 
-        <div className = "screenLayout">
-
-            <div className = "instructionsSign"> Wave Number: {waveNumber}</div>
+        <div>
 
             {waveNumber <= 10 && thresholdBreached == false ? (
 
-                <div className="THRouterContainer">
+                <div className = "screenLayout">
 
-                    <GameBoard
-                        setWaveNumber = {setWaveNumber}
-                        setThresholdBreached = {setThresholdBreached}
-                    />
-                    
+                    <div className="THRouterContainer">
+
+                        <div className = "THRgameBoardSign"> Wave Number: {waveNumber}</div>
+
+                        <GameBoard
+                            waveNumber = {waveNumber}
+                            setWaveNumber = {setWaveNumber}
+                            setThresholdBreached = {setThresholdBreached}
+                        />
+                        
+                    </div>
+
                 </div>
 
             ): (
 
-                <div className="THRouterContainer">
+                <div className = "screenLayout">
 
-                    <div className = "THRendingScreen">
-                        <h1> Game over </h1>
+                    <div className="THRouterContainer">
+
+                        <div className = "THRgameBoardSign"> Game Over </div>
+
+                        <div className = "THRendingScreen">
+                            <h1> Game over!! </h1>
+                        </div>
+
+                        <Link to="/THRsummary" className = "generalbutton">
+                            View Results
+                        </Link>
+                        
                     </div>
 
-                    <Link to="/THRsummary" className = "generalbutton">
-                        View Results
-                    </Link>
-                    
                 </div>
 
             )}

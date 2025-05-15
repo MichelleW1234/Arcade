@@ -1,16 +1,16 @@
 import "./gameBoard.css"
 import { useEffect, useState, useRef } from 'react';
 
-import {aliensIncoming, alienKilled, checkButtonClicked, newWave} from "../../Helpers/THRhelpers.js";
+import {aliensIncoming, alienKilled, newWave, laserBlaster} from "../../Helpers/THRhelpers.js";
 
 function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
     const [laserValue, setLaserValue] = useState(14);
-    const [laserBlasted, setLaserBlasted] = useState(-1);
+    const [laserPositions, setLaserPositions] = useState([[14, laserValue], [13, laserValue], [12, laserValue]]);
+    const [alienPositions, setAlienPositions] = useState(newWave());
 
     //15 x 27 (30x30 pieces moving around the screen)
     const gameBoardMatrix = Array.from({ length: 15 }, () => Array(27).fill(0));
-    const [alienPositions, setAlienPositions] = useState(newWave);
 
 
     /*Listener for current alien positions*/
@@ -19,17 +19,23 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
         alienPositionsRef.current = alienPositions;
     }, [alienPositions]);
 
-    /*Listener for lasers being shot*/
+    /*Listener for current laser positions*/
+    const laserPositionsRef = useRef(laserPositions);
+    useEffect(() => {
+        laserPositionsRef.current = laserPositions;
+    }, [laserPositions]);
+
+
+    /*Listener for aliens being shot*/
     useEffect(() => {
 
         const interval = setInterval(() => {
-            checkButtonClicked(laserBlasted, setLaserBlasted);
-            alienKilled(laserBlasted, alienPositionsRef.current, setAlienPositions, setWaveNumber);
+            alienKilled(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber);
         }, 100);
 
         return () => clearInterval(interval);
 
-    }, [laserBlasted]);
+    }, [laserPositions, alienPositions]);
 
 
     /* Listener for wave rerendering */
@@ -42,6 +48,17 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
         return () => clearInterval(interval);
 
     }, [waveNumber]);
+
+     /* Listener for laser rerendering */
+    useEffect(() => {
+
+        const interval = setInterval(() => {
+            laserBlaster(laserPositionsRef.current, setLaserPositions, laserValue);
+        }, 150);
+
+        return () => clearInterval(interval);
+
+    }, [laserValue]);
 
 
     return (
@@ -57,13 +74,10 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
                             ([alienRow, alienCol]) => alienRow === rowIndex && alienCol === colIndex
                         );
 
-                        let isLaserHere;
-                        if (laserBlasted != -1){
+                        const isLaserHere = laserPositions.some(
+                            ([laserRow, laserCol]) => laserRow === rowIndex && laserCol === colIndex
+                        );
 
-                            isLaserHere = laserValue === colIndex;
-
-                        }
-                          
                         return (
 
                             isLaserHere ? (
@@ -102,8 +116,6 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
                 value={laserValue}
                 onChange={(e) => setLaserValue(Number(e.target.value))}
             />
-
-            <button className = "THRFirebutton" onClick={() => setLaserBlasted(laserValue)}> Fire </button>
 
         </div>
 

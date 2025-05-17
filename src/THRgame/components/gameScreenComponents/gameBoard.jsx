@@ -25,6 +25,12 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
         laserPositionsRef.current = laserPositions;
     }, [laserPositions]);
 
+     /*Listener for current laser positions*/
+    const laserValueRef = useRef(laserValue);
+    useEffect(() => {
+        laserValueRef.current = laserValue;
+    }, [laserValue]);
+
 
     /*Listener for aliens being shot*/
     useEffect(() => {
@@ -35,7 +41,7 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
         return () => clearInterval(interval);
 
-    }, [laserPositions, alienPositions]);
+    }, []);
 
 
     /* Listener for wave rerendering */
@@ -53,12 +59,12 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
     useEffect(() => {
 
         const interval = setInterval(() => {
-            laserBlaster(laserPositionsRef.current, setLaserPositions, laserValue);
-        }, 150);
+            laserBlaster(laserPositionsRef.current, setLaserPositions, laserValueRef.current);
+        }, 100);
 
         return () => clearInterval(interval);
 
-    }, [laserValue]);
+    }, []);
 
 
     return (

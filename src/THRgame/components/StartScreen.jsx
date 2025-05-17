@@ -19,7 +19,7 @@ function StartScreen (){
         <div className = "StartingScreenLayout">
             
             <h1 className = "headerwords">
-                Welcome to <span className = "headerwordsGlitch">Threshold</span>
+                Welcome to Space <span className = "headerwordsGlitch">Invasion</span>
             </h1>
             
             <div className = "generalbuttonContainer">

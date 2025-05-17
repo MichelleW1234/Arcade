@@ -37,7 +37,7 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
         const interval = setInterval(() => {
             alienKilled(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber);
-        }, 100);
+        }, 50);
 
         return () => clearInterval(interval);
 
@@ -49,7 +49,7 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
         const interval = setInterval(() => {
             aliensIncoming(setAlienPositions, alienPositionsRef.current, setThresholdBreached);
-        }, 2000/waveNumber);
+        }, 3000/waveNumber);
 
         return () => clearInterval(interval);
 
@@ -60,7 +60,7 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
         const interval = setInterval(() => {
             laserBlaster(laserPositionsRef.current, setLaserPositions, laserValueRef.current);
-        }, 100);
+        }, 80);
 
         return () => clearInterval(interval);
 

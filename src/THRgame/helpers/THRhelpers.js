@@ -22,17 +22,10 @@ export const aliensIncoming = (setAlienPositions, alienPositions, setThresholdBr
 export const newWave = () => {
 
     const newMatrix = [];
-    for (let i =0; i<3; i++){
+    for (let i =0; i<10; i++){
 
         const random = Math.floor(Math.random() * 27);
         newMatrix.push([0, random])
-
-    }
-
-    for (let i =0; i<3; i++){
-
-        const random = Math.floor(Math.random() * 27);
-        newMatrix.push([2, random])
 
     }
 

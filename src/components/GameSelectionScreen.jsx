@@ -168,18 +168,17 @@ function GameSelectionScreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 <h2> Space Invasion </h2>
+                                <h2> (15 Points) </h2>
                                 <h2> work in progress... </h2>
                                 
                             </div>
 
-                            {/*
                             <button
-                            className={`gameButton ${activeButton === 3 ? 'active' : ''}`}
-                            onClick={() => handleClick(3)}
+                            className={`gameButton ${activeButton === 4 ? 'active' : ''}`}
+                            onClick={() => handleClick(4)}
                             >
                                 Select
                             </button>
-                            */}
 
                         </div>
                         

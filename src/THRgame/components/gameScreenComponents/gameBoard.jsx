@@ -1,5 +1,7 @@
 import "./gameBoard.css"
 import { useEffect, useState, useRef } from 'react';
+import AlienNormal from '../../../Images/image 8.svg';
+import LaserBeam from '../../../Images/image 9.svg';
 
 import {aliensIncoming, alienKilled, newWave, laserBlaster} from "../../Helpers/THRhelpers.js";
 
@@ -88,21 +90,20 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
                             isLaserHere ? (
 
-                                <div key={rowIndex + "," + colIndex} className="THRlaserSpace">
-
+                                <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                    <img src={LaserBeam} alt="LaserBeam" />
                                 </div>
 
                             ) : isAlienHere ? (
 
-                                <div key={rowIndex + "," + colIndex} className="THRalienSpace">
-
+                                <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                    <img src={AlienNormal} alt="Alien" />
                                 </div>
 
 
                             ) : (
 
                                 <div key={rowIndex + "," + colIndex} className="THRemptySpace">
-
                                 </div>
                     
                             )

@@ -25,8 +25,12 @@ export const retrieveActiveGame = (index) => {
         gameControls[0] = "/SNKstart";
         gameControls[1] = 5;
 
-    } 
+    } else if (index === 4){
 
+        gameControls[0] = "/THRstart";
+        gameControls[1] = 15;
+
+    }
     return gameControls;
 
 }

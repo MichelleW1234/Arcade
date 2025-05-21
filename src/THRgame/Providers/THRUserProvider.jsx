@@ -15,9 +15,9 @@ export function THRUserProvider({ children }) {
   const [THRUser, setTHRUser] = useState(() => {
     try {
       const storedTHRUser = JSON.parse(sessionStorage.getItem("THRUser"));
-      return Array.isArray(storedTHRUser) ? storedTHRUser : [[],[1, "/THRgameM1"]]; // Ensure it's an array
+      return Array.isArray(storedTHRUser) ? storedTHRUser : [[],[1, "/THRM1Instructions"]]; // Ensure it's an array
     } catch (error) {
-      return [[],[1, "/THRgameM1"]]; // Fallback if JSON parsing fails
+      return [[],[1, "/THRM1Instructions"]]; // Fallback if JSON parsing fails
     }
   });
 

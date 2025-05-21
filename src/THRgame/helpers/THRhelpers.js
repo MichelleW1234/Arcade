@@ -1,3 +1,36 @@
+export const unlockNextMission = (THRUser, setTHRUser) => {
+
+    if (THRUser[1][0] == 1){
+
+        setTHRUser(prev => {
+            const newMission = [...prev];
+            newMission[1] = [2, "/THRM2Instructions"];
+            return newMission;                
+        });
+
+    } else if (THRUser[1][0] == 2){
+
+        setTHRUser(prev => {
+            const newMission = [...prev];
+            newMission[1] = [3, "/THRM3Instructions"];
+            return newMission;                
+        });
+
+    } else if (THRUser[1][0] == 3){
+
+        setTHRUser(prev => {
+            const newMission = [...prev];
+            newMission[1] = -1;
+            return newMission;                
+        });
+
+    }
+
+
+}
+
+
+
 export const aliensIncoming = (setAlienPositions, alienPositions, setThresholdBreached) => {
 
     const newMatrix = alienPositions.map(innerArray => [...innerArray]);

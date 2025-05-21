@@ -51,6 +51,19 @@ function missionScreen() {
                     ))}
                 </div>
             </div>
+
+            {THRUser[1] == -1 ? (
+
+                <Link to= "/THRsummary" className = "generalbutton">
+                    View Summary
+                </Link>
+
+            ) : (
+
+                null
+
+            )}
+
         </div>
 
     )

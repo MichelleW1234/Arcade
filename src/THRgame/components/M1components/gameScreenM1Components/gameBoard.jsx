@@ -1,9 +1,9 @@
 import "./gameBoard.css"
 import { useEffect, useState, useRef } from 'react';
-import AlienNormal from '../../../Images/image 8.svg';
-import LaserBeam from '../../../Images/image 9.svg';
+import AlienNormal from '../../../../Images/image 8.svg';
+import LaserBeam from '../../../../Images/image 9.svg';
 
-import {aliensIncoming, alienKilled, newWave, laserBlaster} from "../../Helpers/THRhelpers.js";
+import {aliensIncoming, alienKilled, newWave, laserBlaster} from "../../../Helpers/THRhelpers.js";
 
 function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
@@ -51,7 +51,7 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
         const interval = setInterval(() => {
             aliensIncoming(setAlienPositions, alienPositionsRef.current, setThresholdBreached);
-        }, 3000/waveNumber);
+        }, 2500/waveNumber);
 
         return () => clearInterval(interval);
 

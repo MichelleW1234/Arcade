@@ -24,7 +24,12 @@ import SNKResultsScreen from "./SNKgame/components/ResultsScreen.jsx";
 import THRStartScreen from "./THRgame/components/StartScreen.jsx";
 import THRinstructionsScreen from "./THRgame/components/instructionsScreen.jsx";
 import THRmissionScreen from "./THRgame/components/missionScreen.jsx";
-import THRgameScreenM1 from "./THRgame/components/gameScreenM1.jsx";
+import THRM1InstructionsScreen from "./THRgame/components/M1components/M1InstructionsScreen.jsx";
+import THRM2InstructionsScreen from "./THRgame/components/M2components/M2InstructionsScreen.jsx";
+import THRM3InstructionsScreen from "./THRgame/components/M3components/M3InstructionsScreen.jsx";
+import THRgameScreenM1 from "./THRgame/components/M1components/gameScreenM1.jsx";
+import THRgameScreenM2 from "./THRgame/components/M2components/gameScreenM2.jsx";
+import THRgameScreenM3 from "./THRgame/components/M3components/gameScreenM3.jsx";
 import THRsummaryScreen from "./THRgame/components/summaryScreen.jsx";
 
 import NoPage from "./components/NoPage.jsx";
@@ -63,7 +68,12 @@ function App() {
         <Route path="/THRstart" element={<THRStartScreen />}/>
         <Route path="/THRinstructions" element={<THRinstructionsScreen />}/>
         <Route path="/THRmission" element={<THRmissionScreen />}/>
+        <Route path="/THRM1Instructions" element={<THRM1InstructionsScreen />}/>
+        <Route path="/THRM2Instructions" element={<THRM2InstructionsScreen />}/>
+        <Route path="/THRM3Instructions" element={<THRM3InstructionsScreen />}/>
         <Route path="/THRgameM1" element={<THRgameScreenM1 />}/>
+        <Route path="/THRgameM2" element={<THRgameScreenM2 />}/>
+        <Route path="/THRgameM3" element={<THRgameScreenM3 />}/>
         <Route path="/THRsummary" element={<THRsummaryScreen />}/>
 
         {/*Page doesn't exist error*/}

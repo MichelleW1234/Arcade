@@ -1,13 +1,18 @@
-import { useState, } from 'react';
+import { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import "./missionScreen.css";
 import { useTHRUser } from '../Providers/THRUserProvider.jsx';
 
 function missionScreen() {
 
-    const allMissions = [1, 2, 3];
-
     const {THRUser, setTHRUser} = useTHRUser();
+
+    const allMissions = [1, 2, 3];
+    const [currGamePath, setCurrGamePath] = useState(THRUser[1][1]);
+
+    useEffect(() => {
+        setCurrGamePath(THRUser[1][1]); 
+    }, [THRUser[1][1]]); 
 
     return (
 
@@ -23,12 +28,12 @@ function missionScreen() {
                             </div>
 
 
-                        ) : THRUser[1] == mission ? (
+                        ) : THRUser[1][0] == mission ? (
 
                             <div key = {mission} className="THRmissionWindowUnlocked">
 
                                 <h1> Click to complete Mission {mission}:</h1>
-                                <Link to="/THRgameM1" className = "THRmissionButton">
+                                <Link to= {currGamePath} className = "THRmissionButton">
                                     Start
                                 </Link>
                             

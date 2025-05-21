@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import GameBoard from "./gameScreenComponents/gameBoard.jsx"
-import "./GameScreen.css"
+import GameBoard from "./gameScreenM1Components/gameBoard.jsx"
+import "./gameScreenM1.css"
 
 function gameScreen() {
 

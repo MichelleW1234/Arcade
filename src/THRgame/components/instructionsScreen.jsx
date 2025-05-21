@@ -29,7 +29,7 @@ function instructionsScreen() {
         <Link to="/selection" className = "generalbutton" onClick={quit}>
           Quit Game
         </Link>
-        <Link to= "/THRgame" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
+        <Link to= "/THRmission" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
           Continue
         </Link>
       </div>

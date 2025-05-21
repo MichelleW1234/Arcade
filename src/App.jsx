@@ -23,7 +23,8 @@ import SNKResultsScreen from "./SNKgame/components/ResultsScreen.jsx";
 
 import THRStartScreen from "./THRgame/components/StartScreen.jsx";
 import THRinstructionsScreen from "./THRgame/components/instructionsScreen.jsx";
-import THRgameScreen from "./THRgame/components/gameScreen.jsx";
+import THRmissionScreen from "./THRgame/components/missionScreen.jsx";
+import THRgameScreenM1 from "./THRgame/components/gameScreenM1.jsx";
 import THRsummaryScreen from "./THRgame/components/summaryScreen.jsx";
 
 import NoPage from "./components/NoPage.jsx";
@@ -61,7 +62,8 @@ function App() {
 
         <Route path="/THRstart" element={<THRStartScreen />}/>
         <Route path="/THRinstructions" element={<THRinstructionsScreen />}/>
-        <Route path="/THRgame" element={<THRgameScreen />}/>
+        <Route path="/THRmission" element={<THRmissionScreen />}/>
+        <Route path="/THRgameM1" element={<THRgameScreenM1 />}/>
         <Route path="/THRsummary" element={<THRsummaryScreen />}/>
 
         {/*Page doesn't exist error*/}

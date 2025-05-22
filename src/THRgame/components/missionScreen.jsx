@@ -52,7 +52,7 @@ function missionScreen() {
                 </div>
             </div>
 
-            {THRUser[1] == -1 ? (
+            {THRUser[0].length == allMissions.length ? (
 
                 <Link to= "/THRsummary" className = "generalbutton">
                     View Summary

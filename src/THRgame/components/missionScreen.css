@@ -48,7 +48,7 @@
     justify-content: center;
     gap: 30px;
 
-    box-shadow: 0 0 30px 10px rgb(68, 249, 92); 
+    box-shadow: 0 0 30px 10px rgb(41, 150, 55); 
 
     border-left: 5px solid black;
     border-bottom: 5px solid black;
@@ -78,7 +78,7 @@
     border-top: 2px solid black;
     border-right: 2px solid black;
 
-    box-shadow: 0 0 30px 10px rgb(249, 68, 210); 
+    box-shadow: 0 0 30px 10px rgb(249, 68, 164); 
     border-radius: 10px;
 
 }
@@ -88,7 +88,7 @@
     padding: 30px;
     min-height: 350px;
     width: 250px;
-    background-color: rgb(177, 218, 255);
+    background-color: rgb(117, 189, 252);
 
     display: flex;
     flex-direction: column;
@@ -102,7 +102,7 @@
     
     border-radius: 10px;
 
-    box-shadow: 0 0 30px 10px rgb(68, 237, 249); 
+    box-shadow: 0 0 30px 10px rgb(0, 145, 255); 
 
 }
 

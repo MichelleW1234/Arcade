@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useTHRUser } from '../../Providers/THRUserProvider.jsx';
-import {unlockNextMission} from "../../helpers/THRhelpers.js"
+import GameBoardM2 from "./gameScreenM2Components/gameBoardM2.jsx";
 
-import "./gameScreenM2.css"
+import { useTHRUser } from '../../Providers/THRUserProvider.jsx';
+import {unlockNextMission} from "../../helpers/THRhelpers.js";
+
+import "./gameScreenM2.css";
 
 function gameScreenM2() {
 
@@ -17,11 +19,21 @@ function gameScreenM2() {
 
         <div>
 
-            {waveNumber <= 10 && thresholdBreached == false ? (
+            {waveNumber <= 5 && thresholdBreached == false ? (
 
                 <div className = "screenLayout">
 
-                   <h1>Hello</h1>
+                    <div className="THRouterContainer">
+
+                        <div className = "THRgameBoardSign"> Wave Number: {waveNumber}</div>
+
+                        <GameBoardM2
+                            waveNumber = {waveNumber}
+                            setWaveNumber = {setWaveNumber}
+                            setThresholdBreached = {setThresholdBreached}
+                        />
+                        
+                    </div>
 
                 </div>
 
@@ -29,7 +41,24 @@ function gameScreenM2() {
 
                 <div className = "screenLayout">
 
-                    <h1>Hello</h1>
+                    <div className="THRouterContainer">
+
+                        <div className = "THRgameBoardSign"> Game Over. </div>
+                        <div className = "THRendingScreen">
+
+                            {thresholdBreached == true ? (
+
+                                <h1> You died. </h1>
+
+                            ) : (
+
+                                <h1> You survived! Great job! </h1>
+
+                            )}
+                            
+                        </div>
+                        
+                    </div>
 
                     {thresholdBreached == true ? (
                     

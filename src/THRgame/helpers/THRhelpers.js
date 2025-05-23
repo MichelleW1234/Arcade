@@ -88,9 +88,47 @@ export const newWave = (mission) => {
 
 }
 
-export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
 
-   const newMatrix = laserPositions.map(innerArray => [...innerArray]);
+export const aliensIncoming = (setAlienPositions, alienPositions, setThresholdBreached) => {
+
+    const newMatrix = alienPositions.map(innerArray => [...innerArray]);
+
+    for (let i = 0; i < newMatrix.length; i++) {
+
+        newMatrix[i][0] += 1;
+
+        if (newMatrix[i][0] >= 15){
+
+            setThresholdBreached(true);
+
+        }
+
+    }
+
+    setAlienPositions(prevMatrix => newMatrix);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const laserBlasterM1 = (laserPositions, setLaserPositions, laserValue) => {
+
+   let newMatrix = laserPositions.map(innerArray => [...innerArray]);
    newMatrix = newMatrix.filter(row => row[0] !== 0);
 
     for (let i = 0; i < newMatrix.length; i++) {
@@ -142,58 +180,6 @@ export const laserBlasterM2 = (laserPositions, setLaserPositions, laserValue) =>
     setLaserPositions(newMatrix);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-export const aliensIncomingM1 = (setAlienPositions, alienPositions, setThresholdBreached) => {
-
-    const newMatrix = alienPositions.map(innerArray => [...innerArray]);
-
-    for (let i = 0; i < newMatrix.length; i++) {
-
-        newMatrix[i][0] += 1;
-
-        if (newMatrix[i][0] >= 15){
-
-            setThresholdBreached(true);
-
-        }
-
-    }
-
-    setAlienPositions(prevMatrix => newMatrix);
-
-}
- 
-
-export const aliensIncomingM2 = (setAlienPositions, alienPositions, setThresholdBreached) => {
-
-    const newMatrix = alienPositions.map(innerArray => [...innerArray]);
-
-    for (let i = 0; i < newMatrix.length; i++) {
-
-        newMatrix[i][0] += 1;
-
-        if (newMatrix[i][0] >= 15){
-
-            setThresholdBreached(true);
-
-        }
-
-    }
-
-    setAlienPositions(prevMatrix => newMatrix);
-
-}
-
 
 
 

@@ -4,7 +4,7 @@ import LaserBeam from '../../../../Images/image 9.svg';
 
 import {aliensIncomingM2, alienKilledM2, newWave, laserBlaster} from "../../../helpers/THRhelpers.js";
 
-import "./gameBoard.css";
+import "./gameBoardM2.css";
 
 function gameBoardM2({waveNumber, setWaveNumber, setThresholdBreached}) {
 
@@ -35,12 +35,13 @@ function gameBoardM2({waveNumber, setWaveNumber, setThresholdBreached}) {
     }, [laserValue]);
 
 
+
     /*Listener for aliens being shot*/
     useEffect(() => {
 
         const interval = setInterval(() => {
             alienKilledM2(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber);
-        }, 50);
+        }, 60);
 
         return () => clearInterval(interval);
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import GameBoard from "./gameScreenM1Components/gameBoard.jsx"
+import GameBoardM1 from "./gameScreenM1Components/gameBoardM1.jsx";
 
 import { useTHRUser } from '../../Providers/THRUserProvider.jsx';
-import {unlockNextMission} from "../../helpers/THRhelpers.js"
+import {unlockNextMission} from "../../helpers/THRhelpers.js";
 
 import "./gameScreenM1.css"
 
@@ -27,11 +27,12 @@ function gameScreen() {
 
                         <div className = "THRgameBoardSign"> Wave Number: {waveNumber}</div>
 
-                        <GameBoard
+                        <GameBoardM1
                             waveNumber = {waveNumber}
                             setWaveNumber = {setWaveNumber}
                             setThresholdBreached = {setThresholdBreached}
                         />
+
                         
                     </div>
 
@@ -43,7 +44,7 @@ function gameScreen() {
 
                     <div className="THRouterContainer">
 
-                        <div className = "THRgameBoardSign"> Game Over </div>
+                        <div className = "THRgameBoardSign"> Game Over. </div>
                         <div className = "THRendingScreen">
 
                             {thresholdBreached == true ? (

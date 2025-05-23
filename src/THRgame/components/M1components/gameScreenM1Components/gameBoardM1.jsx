@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import AlienNormal from '../../../../Images/image 8.svg';
 import LaserBeam from '../../../../Images/image 9.svg';
 
-import {aliensIncomingM1, alienKilledM1, newWave, laserBlaster} from "../../../helpers/THRhelpers.js";
+import {aliensIncoming, newWave, alienKilledM1, laserBlasterM1} from "../../../helpers/THRhelpers.js";
 
 function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
@@ -50,7 +50,7 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
     useEffect(() => {
 
         const interval = setInterval(() => {
-            aliensIncomingM1(setAlienPositions, alienPositionsRef.current, setThresholdBreached);
+            aliensIncoming(setAlienPositions, alienPositionsRef.current, setThresholdBreached);
         }, 2500/waveNumber);
 
         return () => clearInterval(interval);
@@ -61,7 +61,7 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
     useEffect(() => {
 
         const interval = setInterval(() => {
-            laserBlaster(laserPositionsRef.current, setLaserPositions, laserValueRef.current);
+            laserBlasterM1(laserPositionsRef.current, setLaserPositions, laserValueRef.current);
         }, 80);
 
         return () => clearInterval(interval);

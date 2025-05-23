@@ -1,8 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
 import AlienNormal from '../../../../Images/image 8.svg';
+import AlienMutant from '../../../../Images/image 10.svg';
 import LaserBeam from '../../../../Images/image 9.svg';
 
-import {aliensIncomingM2, alienKilledM2, newWave, laserBlasterM2} from "../../../helpers/THRhelpers.js";
+
+import {aliensIncoming, newWave, alienKilledM2, laserBlasterM2} from "../../../helpers/THRhelpers.js";
 
 import "./gameBoardM2.css";
 
@@ -50,7 +52,7 @@ function gameBoardM2({waveNumber, setWaveNumber, setThresholdBreached}) {
     useEffect(() => {
 
         const interval = setInterval(() => {
-            aliensIncomingM2(setAlienPositions, alienPositionsRef.current, setThresholdBreached);
+            aliensIncoming(setAlienPositions, alienPositionsRef.current, setThresholdBreached);
         }, 3500/waveNumber);
 
         return () => clearInterval(interval);
@@ -106,13 +108,14 @@ function gameBoardM2({waveNumber, setWaveNumber, setThresholdBreached}) {
 
                                 
                                 <div key={rowIndex + "," + colIndex} className="THRemptySpace">
-                                    <img src={AlienNormal} alt="Alien" />
+                                    <img src={AlienNormal} alt="AlienNormal" />
                                 </div>
 
 
                             ) : isAlienMutantHere ? (
 
-                                <div key={rowIndex + "," + colIndex} className="THRPlaceHolder">
+                                <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                    <img src={AlienMutant} alt="AlienMutant" />
                                 </div>
 
 

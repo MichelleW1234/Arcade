@@ -1,15 +1,15 @@
-import "./gameBoard.css"
+import "./gameBoardM1.css"
 import { useEffect, useState, useRef } from 'react';
 import AlienNormal from '../../../../Images/image 8.svg';
 import LaserBeam from '../../../../Images/image 9.svg';
 
-import {aliensIncoming, alienKilled, newWave, laserBlaster} from "../../../Helpers/THRhelpers.js";
+import {aliensIncomingM1, alienKilledM1, newWave, laserBlaster} from "../../../helpers/THRhelpers.js";
 
 function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
     const [laserValue, setLaserValue] = useState(14);
     const [laserPositions, setLaserPositions] = useState([[14, laserValue], [13, laserValue], [12, laserValue]]);
-    const [alienPositions, setAlienPositions] = useState(newWave());
+    const [alienPositions, setAlienPositions] = useState(newWave(1));
 
     //15 x 27 (30x30 pieces moving around the screen)
     const gameBoardMatrix = Array.from({ length: 15 }, () => Array(27).fill(0));
@@ -38,7 +38,7 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
     useEffect(() => {
 
         const interval = setInterval(() => {
-            alienKilled(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber);
+            alienKilledM1(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber);
         }, 50);
 
         return () => clearInterval(interval);
@@ -50,7 +50,7 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
     useEffect(() => {
 
         const interval = setInterval(() => {
-            aliensIncoming(setAlienPositions, alienPositionsRef.current, setThresholdBreached);
+            aliensIncomingM1(setAlienPositions, alienPositionsRef.current, setThresholdBreached);
         }, 2500/waveNumber);
 
         return () => clearInterval(interval);

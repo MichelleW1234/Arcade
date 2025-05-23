@@ -67,8 +67,7 @@ export const newWave = (mission) => {
 
         for (let i =0; i<5; i++){
 
-            newMatrix.push([0, positions[i], 6, 2]); 
-            /* 6 = # of hits per alien multipled by 3 for the length of a laser */
+            newMatrix.push([0, positions[i], 2, 2]);
 
         }
 
@@ -91,7 +90,7 @@ export const newWave = (mission) => {
 
 export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
 
-   let newMatrix = laserPositions.map(innerArray => [...innerArray]);
+   const newMatrix = laserPositions.map(innerArray => [...innerArray]);
    newMatrix = newMatrix.filter(row => row[0] !== 0);
 
     for (let i = 0; i < newMatrix.length; i++) {
@@ -113,6 +112,37 @@ export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
     setLaserPositions(newMatrix);
 
 }
+
+
+export const laserBlasterM2 = (laserPositions, setLaserPositions, laserValue) => {
+
+   const newMatrix = laserPositions
+      .map(row => row.map(inner => [...inner]))
+      .filter(row => row[0][0] !== 0);
+
+    for (let i = 0; i < newMatrix.length; i++) {
+
+        newMatrix[i][0][0] -= 1;
+        newMatrix[i][1][0] -= 1;
+        newMatrix[i][2][0] -= 1;
+
+    }
+
+    if (!(newMatrix.some(row => row[0][0] >= 9))){
+
+        newMatrix.push(
+            [[14, laserValue],
+            [13, laserValue],
+            [12, laserValue], 
+            []]
+        );
+
+    }
+    
+    setLaserPositions(newMatrix);
+
+}
+
 
 
 
@@ -142,7 +172,7 @@ export const aliensIncomingM1 = (setAlienPositions, alienPositions, setThreshold
     setAlienPositions(prevMatrix => newMatrix);
 
 }
-
+ 
 
 export const aliensIncomingM2 = (setAlienPositions, alienPositions, setThresholdBreached) => {
 
@@ -178,7 +208,10 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setThreshold
 export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber) => {
 
     const newPositions =  alienPositions.filter(
-        alien => !(laserPositions.some(laser => laser.length === alien.length && laser.every((val, i) => val === alien[i])))
+        alien => !(laserPositions.some(laser => 
+            laser[0] === alien[0] &&
+            laser[1] === alien[1]
+        ))
     );
 
     setAlienPositions(prevMatrix => newPositions);
@@ -191,34 +224,52 @@ export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions,
 }
 
 
-export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber) => {
+export const alienKilledM2 = (laserPositions, alienPositions, setLaserPositions, setAlienPositions, setWaveNumber) => {
 
     const newAlienArray = alienPositions.map(innerArray => [...innerArray]);
+    const newLaserArray = laserPositions.map(laser => [
+        [...laser[0]],
+        [...laser[1]],
+        [...laser[2]],
+        [...laser[3]]
+    ]);
+
     for (let i =0; i<newAlienArray.length; i++){
 
-        if (laserPositions.some(laser =>
-            laser.length === 2 &&
-            laser[0] === newAlienArray[i][0] &&
-            laser[1] === newAlienArray[i][1]
-        )){
+        const matchingLaser = newLaserArray.find(laser =>
+            laser.some(inner => 
+                inner.length === 2 &&
+                inner[0] === newAlienArray[i][0] &&
+                inner[1] === newAlienArray[i][1]
+            )
+        );
 
-            newAlienArray[i][2] -= 1;
+        if (matchingLaser) {
 
+            const alienID = newAlienArray[i][1];
+            if (!matchingLaser[3].includes(alienID)) {
+
+                newAlienArray[i][2] -= 1;
+                matchingLaser[3] = [...matchingLaser[3], alienID];
+            }
         }
 
     }
 
     const filteredAlienPositions =  newAlienArray.filter(
-        alien => !(laserPositions.some(
-            laser =>
-                laser.length === 2 &&
-                laser[0] === alien[0] &&
-                laser[1] === alien[1] &&
-                alien[2] === 0
+        alien => !(newLaserArray.some(laser =>
+            laser.some(element => 
+                    element.length === 2 &&   
+                    element[0] === alien[0] &&
+                    element[1] === alien[1]
+            ) &&
+            /*!(laser[3].includes(alien[1]))*/
+            alien[2] === 0
         ))
     );
 
     setAlienPositions(prevMatrix => filteredAlienPositions);
+    setLaserPositions(prevMatrix => newLaserArray);
 
     if (alienPositions.length === 0) {
         setWaveNumber(prev => prev + 1);
@@ -226,4 +277,3 @@ export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions,
     }
 
 }
-

@@ -20,7 +20,7 @@ export const unlockNextMission = (THRUser, setTHRUser) => {
             return newMission;                
         });
 
-    }  else if (THRUser[1][0] == 2){
+    }  else if (THRUser[1][0] == 3){
 
         setTHRUser(prev => {
             const newMission = [...prev];
@@ -88,6 +88,20 @@ export const newWave = (mission) => {
 
     } else {
 
+        const positions = getUniqueRandomArray(20, 27);
+
+        for (let i =0; i<10; i++){
+
+            newMatrix.push([0, positions[i], 0]);
+
+        }
+
+         for (let i =10; i<20; i++){
+
+            newMatrix.push([0, positions[i], 1]);
+
+        }
+
 
     }
 
@@ -99,7 +113,7 @@ export const newWave = (mission) => {
 
 //For animating alien movements:
 
-export const aliensIncomingM1 = (setAlienPositions, alienPositions, setThresholdBreached) => {
+export const aliensIncomingM1andM3 = (setAlienPositions, alienPositions, setThresholdBreached) => {
 
     const newMatrix = alienPositions.map(innerArray => [...innerArray]);
 
@@ -197,11 +211,13 @@ export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions,
         ))
     );
 
-    setAlienPositions(newPositions);
-
     if (alienPositions.length === 0) {
         setWaveNumber(prev => prev + 1);
         setAlienPositions(newWave(1));
+    } else {
+
+        setAlienPositions(newPositions);
+
     }
 
 }
@@ -232,6 +248,45 @@ export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions,
         const newWaveMatrix = newWave(2);
         setAlienPositions(newWaveMatrix);
         setShieldedAliens(getRandomElements(newWaveMatrix, 3));
+
+    } else {
+
+        setAlienPositions(newPositions);
+
+    }
+
+}
+
+
+export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, mutantLaserOn) => {
+
+    let newPositions = []
+    if (mutantLaserOn === true){
+
+        newPositions =  alienPositions.filter(alien => !(
+            laserPositions.some(([laserRow, laserCol]) =>
+                laserRow === alien[0] &&
+                laserCol === alien[1]
+            ) &&
+            alien[2] === 1
+        ));
+
+    } else {
+
+        newPositions =  alienPositions.filter(alien => !(
+            laserPositions.some(([laserRow, laserCol]) =>
+                    laserRow === alien[0] &&
+                    laserCol === alien[1]
+                ) &&
+                alien[2] === 0
+        ));
+
+    }
+
+    if (newPositions.length === 0) {
+
+        setWaveNumber(prev => prev + 1);
+        setAlienPositions(newWave(3));
 
     } else {
 

@@ -61,9 +61,33 @@
 }
 
 
-.THRBox{
+.THRlaserSwitchNormal{
 
-    background-color: #e1ff00;
+    background-color: #00ff26;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+
+}
+
+.THRlaserSwitchMutant{
+
+    background-color: #a200ff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+
+}
+
+.THRplaceHolder{
+
+    background-color: #9000ff;
     height: 30px;
     width: 30px;
 

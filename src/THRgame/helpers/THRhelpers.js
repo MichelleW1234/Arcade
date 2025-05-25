@@ -1,3 +1,5 @@
+//For transitioning to next mission:
+
 export const unlockNextMission = (THRUser, setTHRUser) => {
 
     if (THRUser[1][0] == 1){
@@ -18,11 +20,20 @@ export const unlockNextMission = (THRUser, setTHRUser) => {
             return newMission;                
         });
 
-    } else if (THRUser[1][0] == 3){
+    }  else if (THRUser[1][0] == 2){
 
         setTHRUser(prev => {
             const newMission = [...prev];
             newMission[0].push(3);
+            newMission[1] = [4, "/THRM4Instructions"];
+            return newMission;                
+        });
+
+    } else if (THRUser[1][0] == 4){
+
+        setTHRUser(prev => {
+            const newMission = [...prev];
+            newMission[0].push(4);
             newMission[1] = -1;
             return newMission;                
         });
@@ -32,6 +43,11 @@ export const unlockNextMission = (THRUser, setTHRUser) => {
 
 }
 
+
+
+
+
+//For generating new wave of aliens:
 
 const getUniqueRandomArray = (count, max) => {
     const values = Array.from({ length: max }, (_, i) => i);
@@ -44,7 +60,6 @@ const getUniqueRandomArray = (count, max) => {
 
     return values.slice(0, count);
 }
-
 
 
 export const newWave = (mission) => {
@@ -63,23 +78,15 @@ export const newWave = (mission) => {
 
     } else if (mission === 2){
 
-        const positions = getUniqueRandomArray(10, 27);
+        const positions = getUniqueRandomArray(20, 27);
 
-        for (let i =0; i<5; i++){
+        for (let i =0; i<positions.length; i++){
 
-            newMatrix.push([0, positions[i], 2, 2]);
-
-        }
-
-        for (let i=5; i<positions.length; i++){
-
-            newMatrix.push([0, positions[i], 1, 1]); 
+            newMatrix.push([0, positions[i]]);
 
         }
 
     } else {
-
-
 
 
     }
@@ -89,7 +96,10 @@ export const newWave = (mission) => {
 }
 
 
-export const aliensIncoming = (setAlienPositions, alienPositions, setThresholdBreached) => {
+
+//For animating alien movements:
+
+export const aliensIncomingM1 = (setAlienPositions, alienPositions, setThresholdBreached) => {
 
     const newMatrix = alienPositions.map(innerArray => [...innerArray]);
 
@@ -105,7 +115,34 @@ export const aliensIncoming = (setAlienPositions, alienPositions, setThresholdBr
 
     }
 
-    setAlienPositions(prevMatrix => newMatrix);
+    setAlienPositions(newMatrix);
+
+}
+
+export const aliensIncomingM2 = (setAlienPositions, alienPositions, setThresholdBreached, setShieldedAliens) => {
+
+    const newMatrix = alienPositions.map(innerArray => [...innerArray]);
+
+    for (let i = 0; i < newMatrix.length; i++) {
+
+        newMatrix[i][0] += 1;
+
+        if (newMatrix[i][0] >= 15){
+
+            setThresholdBreached(true);
+
+        }
+
+    }
+
+    if (alienPositions.length > 3){
+
+        const selectedAliens = getRandomElements(newMatrix, 3);
+        setShieldedAliens(selectedAliens);
+
+    }
+
+    setAlienPositions(newMatrix);
 
 }
 
@@ -116,17 +153,9 @@ export const aliensIncoming = (setAlienPositions, alienPositions, setThresholdBr
 
 
 
+//For animating laser movements:
 
-
-
-
-
-
-
-
-
-
-export const laserBlasterM1 = (laserPositions, setLaserPositions, laserValue) => {
+export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
 
    let newMatrix = laserPositions.map(innerArray => [...innerArray]);
    newMatrix = newMatrix.filter(row => row[0] !== 0);
@@ -152,44 +181,12 @@ export const laserBlasterM1 = (laserPositions, setLaserPositions, laserValue) =>
 }
 
 
-export const laserBlasterM2 = (laserPositions, setLaserPositions, laserValue) => {
-
-   const newMatrix = laserPositions
-      .map(row => row.map(inner => [...inner]))
-      .filter(row => row[0][0] !== 0);
-
-    for (let i = 0; i < newMatrix.length; i++) {
-
-        newMatrix[i][0][0] -= 1;
-        newMatrix[i][1][0] -= 1;
-        newMatrix[i][2][0] -= 1;
-
-    }
-
-    if (!(newMatrix.some(row => row[0][0] >= 9))){
-
-        newMatrix.push(
-            [[14, laserValue],
-            [13, laserValue],
-            [12, laserValue], 
-            []]
-        );
-
-    }
-    
-    setLaserPositions(newMatrix);
-
-}
 
 
 
 
 
-
-
-
-
-
+//For determining alien deaths:
 
 export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber) => {
 
@@ -200,66 +197,48 @@ export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions,
         ))
     );
 
-    setAlienPositions(prevMatrix => newPositions);
+    setAlienPositions(newPositions);
 
     if (alienPositions.length === 0) {
         setWaveNumber(prev => prev + 1);
-        setAlienPositions(prevMatrix => newWave(1));
+        setAlienPositions(newWave(1));
     }
 
 }
 
 
-export const alienKilledM2 = (laserPositions, alienPositions, setLaserPositions, setAlienPositions, setWaveNumber) => {
+export const getRandomElements = (array, count) => {
+  const shuffled = [...array].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
 
-    const newAlienArray = alienPositions.map(innerArray => [...innerArray]);
-    const newLaserArray = laserPositions.map(laser => [
-        [...laser[0]],
-        [...laser[1]],
-        [...laser[2]],
-        [...laser[3]]
-    ]);
 
-    for (let i =0; i<newAlienArray.length; i++){
+export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, shieldedAliens, setShieldedAliens) => {
 
-        const matchingLaser = newLaserArray.find(laser =>
-            laser.some(inner => 
-                inner.length === 2 &&
-                inner[0] === newAlienArray[i][0] &&
-                inner[1] === newAlienArray[i][1]
+    const newPositions =  alienPositions.filter(alien => !(
+        laserPositions.some(([laserRow, laserCol]) =>
+            laserRow === alien[0] &&
+            laserCol === alien[1] &&
+            !shieldedAliens.some(
+                ([shieldedRow, shieldedCol]) => shieldedRow === alien[0] && shieldedCol === alien[1]
             )
-        );
+        )) 
 
-        if (matchingLaser) {
-
-            const alienID = newAlienArray[i][1];
-            if (!matchingLaser[3].includes(alienID)) {
-
-                newAlienArray[i][2] -= 1;
-                matchingLaser[3] = [...matchingLaser[3], alienID];
-            }
-        }
-
-    }
-
-    const filteredAlienPositions =  newAlienArray.filter(
-        alien => !(newLaserArray.some(laser =>
-            laser.some(element => 
-                    element.length === 2 &&   
-                    element[0] === alien[0] &&
-                    element[1] === alien[1]
-            ) &&
-            /*!(laser[3].includes(alien[1]))*/
-            alien[2] === 0
-        ))
     );
 
-    setAlienPositions(prevMatrix => filteredAlienPositions);
-    setLaserPositions(prevMatrix => newLaserArray);
+    if (newPositions.length === 0) {
 
-    if (alienPositions.length === 0) {
         setWaveNumber(prev => prev + 1);
-        setAlienPositions(prevMatrix => newWave(2));
+        const newWaveMatrix = newWave(2);
+        setAlienPositions(newWaveMatrix);
+        setShieldedAliens(getRandomElements(newWaveMatrix, 3));
+
+    } else {
+
+        setAlienPositions(newPositions);
+
     }
 
 }
+
+

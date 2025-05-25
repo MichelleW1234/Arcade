@@ -1,20 +1,22 @@
-import "./gameBoardM1.css"
 import { useEffect, useState, useRef } from 'react';
-import AlienNormal from '../../../../Images/image 8.svg';
+import Alien from '../../../../Images/image 8.svg';
 import LaserBeam from '../../../../Images/image 9.svg';
 
-import {aliensIncomingM1, newWave, alienKilledM1, laserBlaster} from "../../../helpers/THRhelpers.js";
 
-function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
+import {aliensIncomingM2, newWave, alienKilledM2, laserBlaster, getRandomElements} from "../../../helpers/THRhelpers.js";
+
+import "./gameBoardM3.css";
+
+function gameBoardM3({waveNumber, setWaveNumber, setThresholdBreached}) {
 
     const [laserValue, setLaserValue] = useState(14);
     const [laserPositions, setLaserPositions] = useState([[14, laserValue], [13, laserValue], [12, laserValue]]);
-    const [alienPositions, setAlienPositions] = useState(newWave(1));
+    const [alienPositions, setAlienPositions] = useState(newWave(2));
+    const [shieldedAliens, setShieldedAliens] = useState(getRandomElements(alienPositions, 3));
 
     //15 x 27 (30x30 pieces moving around the screen)
     const gameBoardMatrix = Array.from({ length: 15 }, () => Array(27).fill(0));
-
-
+  
     /*Listener for current alien positions*/
     const alienPositionsRef = useRef(alienPositions);
     useEffect(() => {
@@ -32,32 +34,35 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
     useEffect(() => {
         laserValueRef.current = laserValue;
     }, [laserValue]);
-
+    
+    const shieldedAliensRef = useRef(shieldedAliens);
+    useEffect(() => {
+        shieldedAliensRef.current = shieldedAliens;
+    }, [shieldedAliens]);
 
     /*Listener for aliens being shot*/
     useEffect(() => {
 
         const interval = setInterval(() => {
-            alienKilledM1(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber);
-        }, 50);
+            alienKilledM2(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, shieldedAliensRef.current, setShieldedAliens);
+        }, 60);
 
         return () => clearInterval(interval);
 
     }, []);
 
-
     /* Listener for wave rerendering */
     useEffect(() => {
 
         const interval = setInterval(() => {
-            aliensIncomingM1(setAlienPositions, alienPositionsRef.current, setThresholdBreached);
-        }, 2000 - 200*waveNumber);
+            aliensIncomingM2(setAlienPositions, alienPositionsRef.current, setThresholdBreached, setShieldedAliens);
+        }, 2000 - 100*waveNumber);
 
         return () => clearInterval(interval);
 
     }, [waveNumber]);
 
-     /* Listener for laser rerendering */
+    /* Listener for laser rerendering */
     useEffect(() => {
 
         const interval = setInterval(() => {
@@ -69,6 +74,7 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
     }, []);
 
 
+
     return (
 
         <div className = "THRgameContainer">
@@ -78,13 +84,30 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
                 {gameBoardMatrix.map((row, rowIndex) => (
                     row.map((num, colIndex) => {
 
+
                         const isAlienHere = alienPositions.some(
-                            ([alienRow, alienCol]) => alienRow === rowIndex && alienCol === colIndex
+                            ([alienRow, alienCol]) => 
+                                alienRow === rowIndex && 
+                                alienCol === colIndex && 
+                                !shieldedAliens.some(
+                                    ([shieldedRow, shieldedCol]) => shieldedRow === alienRow && shieldedCol === alienCol
+                                )
+                        );
+
+                        const isShieldedAlienHere = alienPositions.some(
+                            ([alienRow, alienCol]) => 
+                                alienRow === rowIndex && 
+                                alienCol === colIndex && 
+                                shieldedAliens.some(
+                                    ([shieldedRow, shieldedCol]) => shieldedRow === alienRow && shieldedCol === alienCol
+                                )
                         );
 
                         const isLaserHere = laserPositions.some(
-                            ([laserRow, laserCol]) => laserRow === rowIndex && laserCol === colIndex
+                            ([laserRow, laserCol]) =>
+                                laserRow === rowIndex && laserCol === colIndex
                         );
+
 
                         return (
 
@@ -95,13 +118,19 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
                                 </div>
 
                             ) : isAlienHere ? (
-
+                                
                                 <div key={rowIndex + "," + colIndex} className="THRemptySpace">
-                                    <img src={AlienNormal} alt="Alien" />
+                                    <img src={Alien} alt="AlienNormal" />
                                 </div>
 
-
-                            ) : (
+                            ) : isShieldedAlienHere ? (
+                                
+                                <div key={rowIndex + "," + colIndex} className="THRBox">
+                                    {/*<img src={AlienShielded} alt="AlienShielded" />*/}
+                                </div>
+                                
+                                
+                            ): (
 
                                 <div key={rowIndex + "," + colIndex} className="THRemptySpace">
                                 </div>
@@ -112,7 +141,6 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
 
                     })
                 ))}
-
                 
             </div>
 
@@ -130,4 +158,4 @@ function gameBoard({waveNumber, setWaveNumber, setThresholdBreached}) {
     )
 
 }
-export default gameBoard
+export default gameBoardM3

@@ -7,7 +7,7 @@ function missionScreen() {
 
     const {THRUser, setTHRUser} = useTHRUser();
 
-    const allMissions = [1, 2, 3];
+    const allMissions = [1, 2, 3, 4];
     const [currGamePath, setCurrGamePath] = useState(THRUser[1][1]);
 
     useEffect(() => {

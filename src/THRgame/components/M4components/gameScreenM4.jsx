@@ -61,7 +61,7 @@ function gameScreenM4() {
 
                                 killed == true ? (
 
-                                    <h1> Your ship was blown up by the boss. </h1>
+                                    <h1> Your ship was blown up. </h1>
                                     
                                 ) : (
 

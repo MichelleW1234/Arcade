@@ -38,6 +38,8 @@
     width: 810px;
     background-color: rgb(145, 215, 253);
 
+    padding: 80px;
+
     display: flex;
     flex-direction: row;
     align-items: center;

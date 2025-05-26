@@ -169,9 +169,14 @@ export const newBossPosition = () => {
 
 }
 
-export const bossMove = (setBossPosition) => {
+export const newBossState = (setBossState) => {
 
-    setBossPosition(newBossPosition());
+    const newPosition = newBossPosition();
+
+    const value = Math.floor(Math.random() * 5);
+    const dangerState = value < 3 ? false : true;
+
+    setBossState([newPosition, dangerState]);
 
 }
 

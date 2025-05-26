@@ -1,0 +1,70 @@
+.THRgameContainerM4 {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+.THRgameScreenM4 {
+
+    height: 450px;
+    width: 810px;
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+
+    box-shadow: 0 0 20px 10px rgb(117, 138, 255);
+
+}
+
+
+.THRemptySpaceM4{
+
+    background-color: #1d0086;
+    height: 90px;
+    width: 90px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.THRhealthbarContainer{
+
+    display: grid;
+    grid-template-columns: repeat(50, 1fr);
+    height: 40px;
+    width: 800px;
+
+    box-shadow: 0 0 20px 10px rgb(195, 117, 255);
+
+}
+
+.THRhealthLeft{
+
+    background-color: #ff0000;
+    height: 40px;
+    width: 16px;
+
+}
+
+.THRhealthGone{
+
+    background-color: #00c8ff;
+    height: 40px;
+    width: 16px;
+
+}
+

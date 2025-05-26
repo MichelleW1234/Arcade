@@ -160,6 +160,21 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setThreshold
 
 }
 
+export const newBossPosition = () => {
+
+    const newRow = Math.floor(Math.random() * 3) + 1;
+    const newCol = Math.floor(Math.random() * 8) + 1;
+
+    return [newRow, newCol];
+
+}
+
+export const bossMove = (setBossPosition) => {
+
+    setBossPosition(newBossPosition());
+
+}
+
 
 
 
@@ -187,6 +202,27 @@ export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
             [13, laserValue],
             [12, laserValue]
         );
+
+    }
+    
+    setLaserPositions(newMatrix);
+
+}
+
+export const laserBlasterM4 = (laserPositions, setLaserPositions, laserValue) => {
+
+   let newMatrix = laserPositions.map(innerArray => [...innerArray]);
+   newMatrix = newMatrix.filter(row => row[0] !== 0);
+
+    for (let i = 0; i < newMatrix.length; i++) {
+
+        newMatrix[i][0] -= 1;
+
+    }
+
+    if (!(newMatrix.some(row => row[0] >= 4))){
+
+        newMatrix.push([5, laserValue]);
 
     }
     
@@ -297,3 +333,14 @@ export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions,
 }
 
 
+export const bossHit = (bossHealth, setBossHealth, setBossDefeated) =>  {
+
+    if (bossHealth === 0){
+
+        setBossDefeated(true);
+
+    }
+
+    setBossHealth(prev => prev - 1);
+
+}

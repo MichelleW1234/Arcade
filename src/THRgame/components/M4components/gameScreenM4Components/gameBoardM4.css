@@ -10,8 +10,8 @@
 
 .THRgameScreenM4 {
 
-    height: 450px;
-    width: 810px;
+    height: 520px;
+    width: 920px;
 
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -22,7 +22,13 @@
     border-top: 3px solid black;
     border-right: 3px solid black;
 
-    box-shadow: 0 0 20px 10px rgb(117, 138, 255);
+    box-shadow: 0 0 40px 20px rgb(117, 138, 255);
+    background-color: #0e0040;
+
+    cursor: url('cursor.cur'), auto;
+
+    gap: 10px;
+    padding: 20px;
 
 }
 
@@ -38,7 +44,37 @@
     align-items: center;
     justify-content: center;
 
-    cursor: url('cursor.cur'), auto;
+}
+
+.THRemptySpaceM4BossNormal{
+
+    background-color:rgb(255, 255, 255);
+    height: 90px;
+    width: 90px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 0 7px 7px rgb(255, 255, 255);
+    border-radius: 30px;
+
+}
+
+.THRemptySpaceM4BossDanger{
+
+    background-color: #54ff4b;
+    height: 90px;
+    width: 90px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 0 7px 7px #54ff4b;
+    border-radius: 30px;
 
 }
 

@@ -35,7 +35,7 @@ function gameScreenM4() {
 
                 <div className = "screenLayout">
 
-                    <div className="THRouterContainer">
+                    <div className="THRouterContainerM4">
 
                         <div className = "THRgameBoardSign"> Timer: {seconds}</div>
 
@@ -52,7 +52,7 @@ function gameScreenM4() {
 
                 <div className = "screenLayout">
 
-                    <div className="THRouterContainer">
+                    <div className="THRouterContainerM4">
 
                         <div className = "THRgameBoardSign"> Game Over. </div>
                         <div className = "THRendingScreen">

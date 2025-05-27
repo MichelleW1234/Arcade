@@ -2,11 +2,15 @@ import { useEffect, useState, useRef } from 'react';
 import bossDanger from '../../../../Images/image 14.svg';
 import bossNormal from '../../../../Images/image 13.svg';
 
+import { useTHRUser } from '../../../Providers/THRUserProvider.jsx';
+
 import {newBossState, bossHit, newBossPosition} from "../../../helpers/THRhelpers.js";
 
 import "./gameBoardM4.css";
 
-function gameBoardM4({setBossDefeated, setKilled}) {
+function gameBoardM4({setBossDefeated}) {
+
+    const {THRUser, setTHRUser} = useTHRUser();
 
     const [bossHealth, setBossHealth] = useState(50);
     const [bossState, setBossState] = useState([newBossPosition(), false]);
@@ -46,7 +50,7 @@ function gameBoardM4({setBossDefeated, setKilled}) {
                                     <div
                                         key={rowIndex + "," + colIndex}
                                         className= "THRemptySpaceM4BossDanger"
-                                        onClick={() => setKilled(true)}
+                                        onClick={() => setTHRUser(prev => [prev[0], prev[1], true])}
                                     >
                                         <img src={bossDanger} alt="bossDanger"/>
                                     </div>

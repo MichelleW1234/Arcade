@@ -14,13 +14,12 @@ function gameScreenM3() {
     const {THRUser, setTHRUser} = useTHRUser();
 
     const [waveNumber, setWaveNumber] = useState(1);
-    const [thresholdBreached, setThresholdBreached] = useState(false);
 
     return (
 
         <div>
 
-            {waveNumber <= 5 && thresholdBreached == false ? (
+            {waveNumber <= 5 && THRUser[2] == false ? (
 
                 <div className = "screenLayout">
 
@@ -31,7 +30,6 @@ function gameScreenM3() {
                         <GameBoardM3
                             waveNumber = {waveNumber}
                             setWaveNumber = {setWaveNumber}
-                            setThresholdBreached = {setThresholdBreached}
                         />
                         
                     </div>
@@ -47,7 +45,7 @@ function gameScreenM3() {
                         <div className = "THRgameBoardSign"> Game Over. </div>
                         <div className = "THRendingScreen">
 
-                            {thresholdBreached == true ? (
+                            {THRUser[2] == true ? (
 
                                 <h1> You died. </h1>
 
@@ -61,19 +59,9 @@ function gameScreenM3() {
                         
                     </div>
 
-                    {thresholdBreached == true ? (
-
-                        <Link to="/THRsummary" className = "generalbutton">
-                            View Game Summary
-                        </Link>
-                    
-                    ) : (
-
-                        <Link to="/THRmission" className = "generalbutton" onClick = {() => unlockNextMission(THRUser, setTHRUser)}>
-                            Continue
-                        </Link>
-
-                    )}
+                    <Link to="/THRmission" className = "generalbutton" onClick = {() => unlockNextMission(THRUser, setTHRUser)}>
+                        Back to Missions Screen
+                    </Link>
 
                 </div>
 

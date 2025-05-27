@@ -2,48 +2,50 @@
 
 export const unlockNextMission = (THRUser, setTHRUser) => {
 
-    if (THRUser[1][0] == 1){
+    if (THRUser[2] == false){
 
-        setTHRUser(prev => {
-            const newMission = [...prev];
-            newMission[0].push(1);
-            newMission[1] = [2, "/THRM2Instructions"];
-            return newMission;                
-        });
+        if (THRUser[1][0] == 1){
 
-    } else if (THRUser[1][0] == 2){
+            setTHRUser(prev => {
+                const newMission = [...prev];
+                newMission[0].push(1);
+                newMission[1] = [2, "/THRM2Instructions"];
+                return newMission;                
+            });
 
-        setTHRUser(prev => {
-            const newMission = [...prev];
-            newMission[0].push(2);
-            newMission[1] = [3, "/THRM3Instructions"];
-            return newMission;                
-        });
+        } else if (THRUser[1][0] == 2){
 
-    }  else if (THRUser[1][0] == 3){
+            setTHRUser(prev => {
+                const newMission = [...prev];
+                newMission[0].push(2);
+                newMission[1] = [3, "/THRM3Instructions"];
+                return newMission;                
+            });
 
-        setTHRUser(prev => {
-            const newMission = [...prev];
-            newMission[0].push(3);
-            newMission[1] = [4, "/THRM4Instructions"];
-            return newMission;                
-        });
+        }  else if (THRUser[1][0] == 3){
 
-    } else if (THRUser[1][0] == 4){
+            setTHRUser(prev => {
+                const newMission = [...prev];
+                newMission[0].push(3);
+                newMission[1] = [4, "/THRM4Instructions"];
+                return newMission;                
+            });
 
-        setTHRUser(prev => {
-            const newMission = [...prev];
-            newMission[0].push(4);
-            newMission[1] = -1;
-            return newMission;                
-        });
+        } else if (THRUser[1][0] == 4){
+
+            setTHRUser(prev => {
+                const newMission = [...prev];
+                newMission[0].push(4);
+                newMission[1] = -1;
+                return newMission;                
+            });
+
+        }
 
     }
 
 
 }
-
-
 
 
 
@@ -113,7 +115,7 @@ export const newWave = (mission) => {
 
 //For animating alien movements:
 
-export const aliensIncomingM1andM3 = (setAlienPositions, alienPositions, setThresholdBreached) => {
+export const aliensIncomingM1andM3 = (setAlienPositions, alienPositions, setTHRUser) => {
 
     const newMatrix = alienPositions.map(innerArray => [...innerArray]);
 
@@ -123,7 +125,7 @@ export const aliensIncomingM1andM3 = (setAlienPositions, alienPositions, setThre
 
         if (newMatrix[i][0] >= 15){
 
-            setThresholdBreached(true);
+            setTHRUser(prev => [prev[0], prev[1], true]);
 
         }
 
@@ -133,7 +135,7 @@ export const aliensIncomingM1andM3 = (setAlienPositions, alienPositions, setThre
 
 }
 
-export const aliensIncomingM2 = (setAlienPositions, alienPositions, setThresholdBreached, setShieldedAliens) => {
+export const aliensIncomingM2 = (setAlienPositions, alienPositions, setTHRUser, setShieldedAliens) => {
 
     const newMatrix = alienPositions.map(innerArray => [...innerArray]);
 
@@ -143,7 +145,7 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setThreshold
 
         if (newMatrix[i][0] >= 15){
 
-            setThresholdBreached(true);
+            setTHRUser(prev => [prev[0], prev[1], true]);
 
         }
 

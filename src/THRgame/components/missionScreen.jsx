@@ -1,10 +1,15 @@
 import { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import "./missionScreen.css";
+
 import { useTHRUser } from '../Providers/THRUserProvider.jsx';
+import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 
 function missionScreen() {
 
+    const { ActiveGame, setActiveGame} = useActiveGame();
+    const { Player, setPlayer } = usePlayer();
     const {THRUser, setTHRUser} = useTHRUser();
 
     const allMissions = [1, 2, 3, 4];
@@ -14,6 +19,14 @@ function missionScreen() {
         setCurrGamePath(THRUser[1][1]); 
     }, [THRUser[1][1]]); 
 
+    const calculatePoints = () => {
+
+        const pointDifference = (Player[0] - ActiveGame[1]) + (THRUser[0].length*ActiveGame[1]);
+        console.log(pointDifference)
+        setPlayer(prev => [pointDifference, prev[0]]);
+
+    }
+
     return (
 
         <div className = "screenLayout">
@@ -21,7 +34,15 @@ function missionScreen() {
             <div className = "headerwords"> Your Mission<span className = "headerwordsGlitch">s</span>: </div>
             <div className = "THRmissionContainer">
                 {allMissions.map((mission, index) => (
-                    THRUser[0].includes(mission) ? (
+                    THRUser[2] == true ? (
+
+                        <div key = {mission} className="THRmissionWindowUnavailable">
+                            
+                            <h1> X </h1>
+                        
+                        </div>
+
+                    ) : THRUser[0].includes(mission) ? (
                         <div key = {mission} className="THRmissionWindowCompleted">
                             
                             <h1>Mission {mission} Completed</h1>
@@ -52,10 +73,10 @@ function missionScreen() {
                 ))}
             </div>
 
-            {THRUser[0].length == allMissions.length &&  THRUser[1] == -1 ? (
+            {THRUser[0].length == allMissions.length || THRUser[2] == true ? (
 
-                <Link to= "/THRsummary" className = "generalbutton">
-                    View Summary
+                <Link to= "/THRsummary" className = "generalbutton" onClick = {() => calculatePoints()}>
+                    View Game Summary
                 </Link>
 
             ) : (

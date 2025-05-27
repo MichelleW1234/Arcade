@@ -31,6 +31,7 @@ export const retrieveActiveGame = (index) => {
         gameControls[1] = 15;
 
     }
+    
     return gameControls;
 
 }

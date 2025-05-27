@@ -45,7 +45,7 @@ function gameBoardM4({setBossDefeated, setKilled}) {
 
                                     <div
                                         key={rowIndex + "," + colIndex}
-                                        className= "THRemptySpaceM4"
+                                        className= "THRemptySpaceM4BossDanger"
                                         onClick={() => setKilled(true)}
                                     >
                                         <img src={bossDanger} alt="bossDanger"/>
@@ -55,7 +55,7 @@ function gameBoardM4({setBossDefeated, setKilled}) {
 
                                     <div
                                         key={rowIndex + "," + colIndex}
-                                        className= "THRemptySpaceM4"
+                                        className= "THRemptySpaceM4BossNormal"
                                         onClick={() => bossHit(bossHealth, setBossHealth, setBossDefeated)}
                                     >
                                         <img src={bossNormal} alt="bossNormal"/>

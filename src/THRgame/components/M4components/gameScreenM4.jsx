@@ -13,9 +13,7 @@ function gameScreenM4() {
     const {THRUser, setTHRUser} = useTHRUser();
 
     const [bossDefeated, setBossDefeated] = useState(false);
-    const [killed, setKilled] = useState(false);
     const [seconds, setSeconds] = useState(0);
-
 
     useEffect(() => {
     // Set up interval
@@ -31,7 +29,7 @@ function gameScreenM4() {
 
         <div>
 
-            {seconds < 60 && bossDefeated == false && killed == false? (
+            {seconds < 60 && bossDefeated == false && THRUser[2] == false ? (
 
                 <div className = "screenLayout">
 
@@ -41,7 +39,6 @@ function gameScreenM4() {
 
                         <GameBoardM4
                             setBossDefeated = {setBossDefeated}
-                            setKilled={setKilled}
                         />
                         
                     </div>
@@ -59,7 +56,7 @@ function gameScreenM4() {
 
                             {bossDefeated == false ? (
 
-                                killed == true ? (
+                                THRUser[2] == false ? (
 
                                     <h1> Your ship was blown up. </h1>
                                     
@@ -79,19 +76,9 @@ function gameScreenM4() {
                         
                     </div>
 
-                    {bossDefeated == false ? (
-
-                        <Link to="/THRsummary" className = "generalbutton">
-                            View Game Summary
-                        </Link>
-                    
-                    ) : (
-
-                        <Link to="/THRmission" className = "generalbutton" onClick = {() => unlockNextMission(THRUser, setTHRUser)}>
-                            Return to Game Screen
-                        </Link>
-
-                    )}
+                    <Link to="/THRmission" className = "generalbutton" onClick = {() => unlockNextMission(THRUser, setTHRUser)}>
+                        Return to Missions Screen
+                    </Link>
 
                 </div>
 

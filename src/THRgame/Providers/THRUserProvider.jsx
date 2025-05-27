@@ -2,6 +2,7 @@
 Header:
 0 -> completed missions List
 1 -> [current unlocked mission, corresponding screen link]
+2 -> died?
 */
 
 import React, { createContext, useContext, useState, useEffect } from "react";
@@ -15,9 +16,9 @@ export function THRUserProvider({ children }) {
   const [THRUser, setTHRUser] = useState(() => {
     try {
       const storedTHRUser = JSON.parse(sessionStorage.getItem("THRUser"));
-      return Array.isArray(storedTHRUser) ? storedTHRUser : [[],[1, "/THRM1Instructions"]]; // Ensure it's an array
+      return Array.isArray(storedTHRUser) ? storedTHRUser : [[],[1, "/THRM1Instructions"], false]; // Ensure it's an array
     } catch (error) {
-      return [[],[1, "/THRM1Instructions"]]; // Fallback if JSON parsing fails
+      return [[],[1, "/THRM1Instructions"], false]; // Fallback if JSON parsing fails
     }
   });
 

@@ -101,13 +101,13 @@ function gameBoardM3({waveNumber, setWaveNumber, setThresholdBreached}) {
 
                                 mutantLaserOn === true ? (
 
-                                    <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                    <div key={rowIndex + "," + colIndex} className="THRemptySpaceM3">
                                         <img src={LaserBeamMutant} alt="LaserBeamMutant" />
                                     </div>
 
                                 ) : (
 
-                                    <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                    <div key={rowIndex + "," + colIndex} className="THRemptySpaceM3">
                                         <img src={LaserBeamNormal} alt="LaserBeamNormal" />
                                     </div>
 
@@ -115,19 +115,19 @@ function gameBoardM3({waveNumber, setWaveNumber, setThresholdBreached}) {
 
                             ) : isAlienHere ? (
                                 
-                                <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                <div key={rowIndex + "," + colIndex} className="THRemptySpaceM3">
                                     <img src={AlienNormal} alt="AlienNormal" />
                                 </div>
 
                             ) : isMutantAlienHere ? (
                                 
-                                <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                <div key={rowIndex + "," + colIndex} className="THRemptySpaceM3">
                                     <img src={AlienMutant} alt="AlienMutant" />
                                 </div>
                                 
                             ): (
 
-                                <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                <div key={rowIndex + "," + colIndex} className="THRemptySpaceM3">
                                 </div>
                     
                             )

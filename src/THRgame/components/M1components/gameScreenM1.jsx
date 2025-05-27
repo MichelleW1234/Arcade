@@ -8,18 +8,17 @@ import {unlockNextMission} from "../../helpers/THRhelpers.js";
 
 import "./gameScreenM1.css"
 
-function gameScreen() {
+function gameScreenM1() {
 
     const {THRUser, setTHRUser} = useTHRUser();
 
     const [waveNumber, setWaveNumber] = useState(1);
-    const [thresholdBreached, setThresholdBreached] = useState(false);
 
     return (
 
         <div>
 
-            {waveNumber <= 5 && thresholdBreached == false ? (
+            {waveNumber <= 5 && THRUser[2] == false ? (
 
                 <div className = "screenLayout">
 
@@ -30,7 +29,6 @@ function gameScreen() {
                         <GameBoardM1
                             waveNumber = {waveNumber}
                             setWaveNumber = {setWaveNumber}
-                            setThresholdBreached = {setThresholdBreached}
                         />
 
                         
@@ -47,7 +45,7 @@ function gameScreen() {
                         <div className = "THRgameBoardSign"> Game Over. </div>
                         <div className = "THRendingScreen">
 
-                            {thresholdBreached == true ? (
+                            {THRUser[2] == true ? (
 
                                 <h1> You died. </h1>
 
@@ -61,19 +59,9 @@ function gameScreen() {
                         
                     </div>
 
-                    {thresholdBreached == true ? (
-
-                        <Link to="/THRsummary" className = "generalbutton">
-                            View Game Summary
-                        </Link>
-                    
-                    ) : (
-
-                        <Link to="/THRmission" className = "generalbutton" onClick = {() => unlockNextMission(THRUser, setTHRUser)}>
-                            Continue
-                        </Link>
-
-                    )}
+                    <Link to="/THRmission" className = "generalbutton" onClick = {() => unlockNextMission(THRUser, setTHRUser)}>
+                        Back to Missions Screen
+                    </Link>
 
                 </div>
 
@@ -85,4 +73,4 @@ function gameScreen() {
 
 }
 
-export default gameScreen
+export default gameScreenM1

@@ -4,11 +4,15 @@ import AlienMutant from '../../../../Images/image 10.svg';
 import LaserBeamNormal from '../../../../Images/image 9.svg';
 import LaserBeamMutant from '../../../../Images/image 12.svg';
 
+import { useTHRUser } from '../../../Providers/THRUserProvider.jsx';
+
 import {aliensIncomingM1andM3, newWave, alienKilledM3, laserBlaster} from "../../../helpers/THRhelpers.js";
 
 import "./gameBoardM3.css";
 
-function gameBoardM3({waveNumber, setWaveNumber, setThresholdBreached}) {
+function gameBoardM3({waveNumber, setWaveNumber}) {
+
+    const {THRUser, setTHRUser} = useTHRUser();
 
     const [laserValue, setLaserValue] = useState(14);
     const [laserPositions, setLaserPositions] = useState([[14, laserValue], [13, laserValue], [12, laserValue]]);
@@ -51,7 +55,7 @@ function gameBoardM3({waveNumber, setWaveNumber, setThresholdBreached}) {
     useEffect(() => {
 
         const interval = setInterval(() => {
-            aliensIncomingM1andM3(setAlienPositions, alienPositionsRef.current, setThresholdBreached);
+            aliensIncomingM1andM3(setAlienPositions, alienPositionsRef.current, setTHRUser);
         }, 2000 - 200*waveNumber);
 
         return () => clearInterval(interval);
@@ -93,7 +97,6 @@ function gameBoardM3({waveNumber, setWaveNumber, setThresholdBreached}) {
                             ([laserRow, laserCol]) =>
                                 laserRow === rowIndex && laserCol === colIndex
                         );
-
 
                         return (
 

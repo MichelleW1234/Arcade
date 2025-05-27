@@ -113,26 +113,26 @@ function gameBoardM3({waveNumber, setWaveNumber, setThresholdBreached}) {
 
                             isLaserHere ? (
 
-                                <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                <div key={rowIndex + "," + colIndex} className="THRemptySpaceM2">
                                     <img src={LaserBeam} alt="LaserBeam" />
                                 </div>
 
                             ) : isAlienHere ? (
                                 
-                                <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                <div key={rowIndex + "," + colIndex} className="THRemptySpaceM2">
                                     <img src={AlienNormal} alt="AlienNormal" />
                                 </div>
 
                             ) : isShieldedAlienHere ? (
                                 
-                                <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                <div key={rowIndex + "," + colIndex} className="THRemptySpaceM2">
                                     <img src={AlienShielded} alt="AlienShielded" />
                                 </div>
                                 
                                 
                             ): (
 
-                                <div key={rowIndex + "," + colIndex} className="THRemptySpace">
+                                <div key={rowIndex + "," + colIndex} className="THRemptySpaceM2">
                                 </div>
                     
                             )

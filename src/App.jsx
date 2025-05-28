@@ -21,18 +21,18 @@ import SNKInstructionsScreen from "./SNKgame/components/InstructionsScreen.jsx";
 import SNKGameScreen from "./SNKgame/components/GameScreen.jsx";
 import SNKResultsScreen from "./SNKgame/components/ResultsScreen.jsx";
 
-import THRStartScreen from "./THRgame/components/StartScreen.jsx";
-import THRinstructionsScreen from "./THRgame/components/instructionsScreen.jsx";
-import THRmissionScreen from "./THRgame/components/missionScreen.jsx";
-import THRM1InstructionsScreen from "./THRgame/components/M1components/M1InstructionsScreen.jsx";
-import THRM2InstructionsScreen from "./THRgame/components/M2components/M2InstructionsScreen.jsx";
-import THRM3InstructionsScreen from "./THRgame/components/M3components/M3InstructionsScreen.jsx";
-import THRM4InstructionsScreen from "./THRgame/components/M4components/M4InstructionsScreen.jsx";
-import THRgameScreenM1 from "./THRgame/components/M1components/gameScreenM1.jsx";
-import THRgameScreenM2 from "./THRgame/components/M2components/gameScreenM2.jsx";
-import THRgameScreenM3 from "./THRgame/components/M3components/gameScreenM3.jsx";
-import THRgameScreenM4 from "./THRgame/components/M4components/gameScreenM4.jsx";
-import THRsummaryScreen from "./THRgame/components/summaryScreen.jsx";
+import SPIStartScreen from "./SPIgame/components/StartScreen.jsx";
+import SPIinstructionsScreen from "./SPIgame/components/instructionsScreen.jsx";
+import SPImissionScreen from "./SPIgame/components/missionScreen.jsx";
+import SPIM1InstructionsScreen from "./SPIgame/components/M1components/M1InstructionsScreen.jsx";
+import SPIM2InstructionsScreen from "./SPIgame/components/M2components/M2InstructionsScreen.jsx";
+import SPIM3InstructionsScreen from "./SPIgame/components/M3components/M3InstructionsScreen.jsx";
+import SPIM4InstructionsScreen from "./SPIgame/components/M4components/M4InstructionsScreen.jsx";
+import SPIgameScreenM1 from "./SPIgame/components/M1components/gameScreenM1.jsx";
+import SPIgameScreenM2 from "./SPIgame/components/M2components/gameScreenM2.jsx";
+import SPIgameScreenM3 from "./SPIgame/components/M3components/gameScreenM3.jsx";
+import SPIgameScreenM4 from "./SPIgame/components/M4components/gameScreenM4.jsx";
+import SPIsummaryScreen from "./SPIgame/components/summaryScreen.jsx";
 
 import NoPage from "./components/NoPage.jsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -67,18 +67,18 @@ function App() {
         <Route path="/SNKgame" element={<SNKGameScreen />}/>
         <Route path="/SNKresults" element={<SNKResultsScreen />}/>
 
-        <Route path="/THRstart" element={<THRStartScreen />}/>
-        <Route path="/THRinstructions" element={<THRinstructionsScreen />}/>
-        <Route path="/THRmission" element={<THRmissionScreen />}/>
-        <Route path="/THRM1Instructions" element={<THRM1InstructionsScreen />}/>
-        <Route path="/THRM2Instructions" element={<THRM2InstructionsScreen />}/>
-        <Route path="/THRM3Instructions" element={<THRM3InstructionsScreen />}/>
-        <Route path="/THRM4Instructions" element={<THRM4InstructionsScreen />}/>
-        <Route path="/THRgameM1" element={<THRgameScreenM1 />}/>
-        <Route path="/THRgameM2" element={<THRgameScreenM2 />}/>
-        <Route path="/THRgameM3" element={<THRgameScreenM3 />}/>
-        <Route path="/THRgameM4" element={<THRgameScreenM4 />}/>
-        <Route path="/THRsummary" element={<THRsummaryScreen />}/>
+        <Route path="/SPIstart" element={<SPIStartScreen />}/>
+        <Route path="/SPIinstructions" element={<SPIinstructionsScreen />}/>
+        <Route path="/SPImission" element={<SPImissionScreen />}/>
+        <Route path="/SPIM1Instructions" element={<SPIM1InstructionsScreen />}/>
+        <Route path="/SPIM2Instructions" element={<SPIM2InstructionsScreen />}/>
+        <Route path="/SPIM3Instructions" element={<SPIM3InstructionsScreen />}/>
+        <Route path="/SPIM4Instructions" element={<SPIM4InstructionsScreen />}/>
+        <Route path="/SPIgameM1" element={<SPIgameScreenM1 />}/>
+        <Route path="/SPIgameM2" element={<SPIgameScreenM2 />}/>
+        <Route path="/SPIgameM3" element={<SPIgameScreenM3 />}/>
+        <Route path="/SPIgameM4" element={<SPIgameScreenM4 />}/>
+        <Route path="/SPIsummary" element={<SPIsummaryScreen />}/>
 
         {/*Page doesn't exist error*/}
         <Route path="*" element={<NoPage />} />

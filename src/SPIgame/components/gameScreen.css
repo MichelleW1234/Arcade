@@ -1,0 +1,77 @@
+.SPIouterContainer{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    background-color: rgb(13, 0, 255);
+
+    border-left: 9px solid black;
+    border-bottom: 9px solid black;
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-radius: 25px;
+    padding: 30px;
+
+    box-shadow: 0 0 30px 10px rgb(0, 157, 255);
+
+}
+
+.SPIouterContainerM4{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    background-color: rgb(13, 0, 255);
+
+    border-left: 9px solid black;
+    border-bottom: 9px solid black;
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-radius: 25px;
+    padding: 30px;
+    
+
+    box-shadow: 0 0 30px 10px rgb(0, 157, 255);
+
+}
+
+.SPIgameBoardSign{
+
+    font-size: 35px;
+    border-radius: 30px;
+    padding: 10px;
+    color: white;
+    background-color: rgb(133, 147, 251);
+    border: 5px solid rgba(0, 253, 46, 0.521);
+
+    animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
+
+}
+
+.SPIendingScreen {
+
+    height: 450px;
+    width: 810px;
+    background-color: rgb(145, 215, 253);
+
+    padding: 80px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+
+    box-shadow: 0 0 20px 10px rgb(131, 208, 252);
+
+}

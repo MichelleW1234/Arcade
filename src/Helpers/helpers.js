@@ -27,7 +27,7 @@ export const retrieveActiveGame = (index) => {
 
     } else if (index === 4){
 
-        gameControls[0] = "/THRstart";
+        gameControls[0] = "/SPIstart";
         gameControls[1] = 15;
 
     }

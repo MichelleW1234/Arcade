@@ -10,8 +10,8 @@
 
 .SPIgameScreenM4 {
 
-    height: 440px;
-    width: 940px;
+    height: 520px;
+    width: 1020px;
 
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -57,8 +57,8 @@
     align-items: center;
     justify-content: center;
 
-    box-shadow: 0 0 7px 7px rgb(255, 255, 255);
-    border-radius: 30px;
+    box-shadow: 0 0 10px 10px rgb(255, 255, 255);
+    border-radius: 50px;
 
 }
 
@@ -73,8 +73,8 @@
     align-items: center;
     justify-content: center;
 
-    box-shadow: 0 0 7px 7px #54ff4b;
-    border-radius: 30px;
+    box-shadow: 0 0 10px 10px #54ff4b;
+    border-radius: 50px;
 
 }
 

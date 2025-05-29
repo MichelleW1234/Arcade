@@ -65,11 +65,19 @@ function gameScreenM4() {
 
                             {SPIUser[2] == true ? (
 
-                                <h1> Your ship was blown up and you died before you could defeat the boss. </h1>
+                                seconds >= 60 ? (
+
+                                    <h1> Your flashlight ran out of power.</h1>
+
+                                ) : (
+
+                                    <h1> Your ship was blown up. </h1>
+
+                                )
 
                             ) : (
 
-                                <h1> You defeated the boss and have saved your ship! Great job! </h1>
+                                <h1> You defeated the boss in time and have saved your ship! Great job! </h1>
 
                             )}
                             

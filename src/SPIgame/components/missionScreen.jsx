@@ -12,7 +12,7 @@ import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 function missionScreen() {
 
     const allMissions = [1, 2, 3, 4];
-    const missionNames = ["Surface Sweep", "Defense Protocol", "Strain X", "Operation: Kill the Queen"]
+    const missionNames = ["Surface Sweep", "Defense Protocol", "Strain X", "Operation: Kill the Queen"];
 
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { Player, setPlayer } = usePlayer();

@@ -10,12 +10,12 @@
 
 .SPIgameScreenM4 {
 
-    height: 520px;
-    width: 920px;
+    height: 440px;
+    width: 940px;
 
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 
     border-left: 3px solid black;
     border-bottom: 3px solid black;

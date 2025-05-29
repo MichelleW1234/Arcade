@@ -13,7 +13,7 @@ import {newBossState, bossHit, newBossPosition} from "../../../helpers/SPIhelper
 function gameBoardM4({setBossDefeated}) {
     
     //5 x 9 (90x90 pieces moving around the screen)
-    const gameBoardMatrix = Array.from({ length: 5 }, () => Array(9).fill(0));
+    const gameBoardMatrix = Array.from({ length: 4 }, () => Array(9).fill(0));
     const healthBar = Array(50).fill(0);
 
     const {SPIUser, setSPIUser} = useSPIUser();

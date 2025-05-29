@@ -164,8 +164,8 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setSPIUser, 
 
 export const newBossPosition = () => {
 
-    const newRow = Math.floor(Math.random() * 3) + 1;
-    const newCol = Math.floor(Math.random() * 8) + 1;
+    const newRow = Math.floor(Math.random() * 4);
+    const newCol = Math.floor(Math.random() * 9);
 
     return [newRow, newCol];
 

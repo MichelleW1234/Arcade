@@ -105,21 +105,23 @@
 
     font-size: 25px;
     font-weight: bold;
-    background-color: rgb(179, 98, 255);
+    background-color: rgb(255, 0, 251);
     padding: 15px;
     
-    border-left: 5px solid black;
-    border-bottom: 5px solid black;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 7px solid black;
+    border-bottom: 7px solid black;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
 
-    animation: button-glitch 4s infinite, glowing-shadow5 4s infinite;
+    animation: button-glitch 4s infinite, glowing-shadow3 4s infinite;
 
 }
 
 .SPImissionStartButton:hover{
 
-    background-color: rgb(97, 0, 188);
+    background-color: rgb(128, 0, 126);
     color: white;
+
+    animation: button-glitch 4s infinite, glowing-shadow5 4s infinite;
 
 }

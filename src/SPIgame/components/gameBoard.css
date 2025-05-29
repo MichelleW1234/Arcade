@@ -10,8 +10,10 @@
 
 .SPIgameScreen {
 
-    height: 450px;
-    width: 810px;
+    height: 456px;
+    width: 816px;
+
+    padding: 0px;
 
     display: grid;
     grid-template-columns: repeat(27, 1fr);

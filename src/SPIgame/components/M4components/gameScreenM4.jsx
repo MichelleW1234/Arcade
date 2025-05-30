@@ -67,17 +67,17 @@ function gameScreenM4() {
 
                                 seconds >= 60 ? (
 
-                                    <h1> Your flashlight ran out of power.</h1>
+                                    <h1> Your beamlight ran out of power.</h1>
 
                                 ) : (
 
-                                    <h1> Your ship was blown up. </h1>
+                                    <h1> You were blown up by the Queen. </h1>
 
                                 )
 
                             ) : (
 
-                                <h1> You defeated the boss in time and have saved your ship! Great job! </h1>
+                                <h1> You defeated the Queen in time and have saved your ship! Great job! </h1>
 
                             )}
                             

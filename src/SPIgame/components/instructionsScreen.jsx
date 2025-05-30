@@ -22,7 +22,13 @@ function instructionsScreen() {
       <h1 className = "instructionsSign"> Instructions: </h1>
 
       <p className = "largefont">   
-        &gt; Instructions go here. <br/>
+        &gt; You are part of a task force assigned to destroy a dangerous alien hive that is a threat to the galaxy. <br/>
+        &gt; In order to fully extinguish the hive, you must embark on 4 missions. <br/>
+        &gt; Starting from the beginning, you must complete the current mission in order to move onto the next one.  <br/>
+        &gt; Every mission has helpful information before you start, so be sure to read through it carefully. <br/>
+        &gt; If you die at any time, the game ends.  <br/>
+        &gt; You gain points per mission completed. <br/>
+        &gt; Good luck! <br/>
       </p>
 
       <div className = "generalbuttonContainer">

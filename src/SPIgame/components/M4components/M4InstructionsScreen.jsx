@@ -1,7 +1,9 @@
-
-
 import { Link } from 'react-router-dom';
 
+import boss from "../../../Images/image 13.svg";
+import bossDanger from "../../../Images/image 14.svg";
+import laser from "../../../Images/image 12.svg";
+import rifle from "./gameScreenM4Components/cursor.cur";
 
 function M4InstructionsScreen() {
 
@@ -9,15 +11,31 @@ function M4InstructionsScreen() {
 
     <div className = "screenLayout">
 
-      <h1 className = "instructionsSign"> Instructions: </h1>
+      <h1 className = "instructionsSign"> Station 4: The Nest </h1>
 
       <p className = "largefont">   
-        &gt; Instructions go here. <br/>
+        &gt; Mission description: Defeat the queen <br/>
+        &gt; Aliens detected:<br/>
+        &nbsp; &nbsp; &gt; <img src={boss} ></img> - The Queen  <br/>
+        &nbsp; &nbsp; &nbsp; &bull; Special abilities: Shifting positions, switching between states<br/>
+        &nbsp; &nbsp; &nbsp; &bull; Normal state: <img src={boss} ></img> - okay to shoot <br/>
+        &nbsp; &nbsp; &nbsp; &bull; Explosive state: <img src={bossDanger} ></img> - DO NOT shoot <br/>
+        &nbsp; &nbsp; &nbsp; &bull; Other notes: Do NOT let your light go out before it's dead. <br/>
+        &gt; Equipment: <br/>
+        &nbsp; &nbsp; &gt; Beamlight <br/>
+        &nbsp; &nbsp; &nbsp; &bull; Illuminates objects in complete darkness <br/>
+        &nbsp; &nbsp; &nbsp; &bull; Battery life: 60 seconds <br/>
+        &nbsp; &nbsp; &gt; <img src={rifle} ></img> - Laser rifle<br/>
+        &nbsp; &nbsp; &nbsp; &bull; First-person weapon designed for precision firing <br/>
+        &nbsp; &nbsp; &nbsp; &bull; To use: Aim at target and click <br/>
+        &nbsp; &nbsp; &nbsp; &bull; Unlimited ammunition<br/>
+        &nbsp; &nbsp; &gt; Health bar <br/>
+        &nbsp; &nbsp; &nbsp; &bull; Tracks health status of target <br/>
       </p>
 
       <div className = "generalbuttonContainer">
         <Link to= "/SPIgameM4" className = "generalbuttonGlitch" >
-            Begin Waves
+            Enter Zone
         </Link>
       </div>
       

@@ -1,3 +1,6 @@
+
+import {playSound} from '../../Helpers/helpers.js';
+
 //For transitioning to next mission:
 
 export const unlockNextMission = (SPIUser, setSPIUser) => {
@@ -44,6 +47,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
 
     }
 
+    playSound(4);
 
 }
 
@@ -106,6 +110,8 @@ export const newWave = (mission) => {
 
 
     }
+
+    playSound(10); /*new wave sound */
 
     return newMatrix;
 
@@ -254,9 +260,16 @@ export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions,
         ))
     );
 
+    if (newPositions.length < alienPositions.length){
+
+        playSound(9); /* laser shot sound*/ 
+
+    }
+
     if (alienPositions.length === 0) {
         setWaveNumber(prev => prev + 1);
         setAlienPositions(newWave(1));
+
     } else {
 
         setAlienPositions(newPositions);
@@ -284,6 +297,13 @@ export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions,
         )) 
 
     );
+
+    if (newPositions.length < alienPositions.length){
+
+        playSound(9); /* laser shot sound*/ 
+
+    }
+
 
     if (newPositions.length === 0) {
 
@@ -326,6 +346,13 @@ export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions,
 
     }
 
+    if (newPositions.length < alienPositions.length){
+
+        playSound(9); /* laser shot sound*/ 
+
+    }
+
+
     if (newPositions.length === 0) {
 
         setWaveNumber(prev => prev + 1);
@@ -349,5 +376,6 @@ export const bossHit = (bossHealth, setBossHealth, setBossDefeated) =>  {
     }
 
     setBossHealth(prev => prev - 1);
+    playSound(8); /* laser shot sound*/ 
 
 }

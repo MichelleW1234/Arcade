@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 
 import boss from "../../../Images/image 13.svg";
 import bossDanger from "../../../Images/image 14.svg";
-import laser from "../../../Images/image 12.svg";
 import rifle from "./gameScreenM4Components/cursor.cur";
+
+import {playSound} from '../../../Helpers/helpers.js';
 
 function M4InstructionsScreen() {
 
@@ -34,7 +35,7 @@ function M4InstructionsScreen() {
       </p>
 
       <div className = "generalbuttonContainer">
-        <Link to= "/SPIgameM4" className = "generalbuttonGlitch" >
+        <Link to= "/SPIgameM4" className = "generalbuttonGlitch" onClick = {() => playSound(7)}>
             Enter Zone
         </Link>
       </div>

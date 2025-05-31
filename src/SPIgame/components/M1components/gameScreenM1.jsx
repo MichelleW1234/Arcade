@@ -6,7 +6,7 @@ import GameBoardM1 from "./gameScreenM1Components/gameBoardM1.jsx";
 import { useSPIUser } from '../../Providers/SPIUserProvider.jsx';
 import {unlockNextMission} from "../../helpers/SPIhelpers.js";
 
-import "../gameScreen.css"
+import "../gameScreen.css";
 
 function gameScreenM1() {
 

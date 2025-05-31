@@ -9,6 +9,7 @@ import "./gameBoardM4.css";
 
 import {newBossState, bossHit, newBossPosition} from "../../../helpers/SPIhelpers.js";
 
+import {playSound} from '../../../../Helpers/helpers.js';
 
 function gameBoardM4({setBossDefeated}) {
     
@@ -29,7 +30,6 @@ function gameBoardM4({setBossDefeated}) {
 
         return () => clearInterval(interval);
     }, []);
-
 
     return (
 

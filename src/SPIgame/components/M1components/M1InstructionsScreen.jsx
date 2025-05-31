@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import alien from "../../../Images/image 8.svg";
 import laser from "../../../Images/image 9.svg";
 
+import {playSound} from '../../../Helpers/helpers.js';
+
 function M1InstructionsScreen() {
 
   return (
@@ -27,7 +29,7 @@ function M1InstructionsScreen() {
       </p>
 
       <div className = "generalbuttonContainer">
-        <Link to= "/SPIgameM1" className = "generalbuttonGlitch" >
+        <Link to= "/SPIgameM1" className = "generalbuttonGlitch" onClick = {() => playSound(7)}>
           Enter Zone
         </Link>
       </div>

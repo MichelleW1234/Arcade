@@ -1,5 +1,6 @@
 
 import {playSound} from '../../Helpers/helpers.js';
+import SPIcompleted from '../../Music/SPIcompleted.mp3';
 
 //For transitioning to next mission:
 
@@ -111,8 +112,6 @@ export const newWave = (mission) => {
 
     }
 
-    playSound(10); /*new wave sound */
-
     return newMatrix;
 
 }
@@ -132,6 +131,7 @@ export const aliensIncomingM1andM3 = (setAlienPositions, alienPositions, setSPIU
         if (newMatrix[i][0] >= 15){
 
             setSPIUser(prev => [prev[0], prev[1], true]);
+            playSound(13);
 
         }
 
@@ -152,6 +152,7 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setSPIUser, 
         if (newMatrix[i][0] >= 15){
 
             setSPIUser(prev => [prev[0], prev[1], true]);
+            playSound(13);
 
         }
 
@@ -262,13 +263,14 @@ export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions,
 
     if (newPositions.length < alienPositions.length){
 
-        playSound(9); /* laser shot sound*/ 
+        playSound(9);
 
     }
 
     if (alienPositions.length === 0) {
         setWaveNumber(prev => prev + 1);
         setAlienPositions(newWave(1));
+        playSound(10);
 
     } else {
 
@@ -309,6 +311,7 @@ export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions,
 
         setWaveNumber(prev => prev + 1);
         const newWaveMatrix = newWave(2);
+        playSound(10);
         setAlienPositions(newWaveMatrix);
         setShieldedAliens(getRandomElements(newWaveMatrix, 3));
 
@@ -357,6 +360,7 @@ export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions,
 
         setWaveNumber(prev => prev + 1);
         setAlienPositions(newWave(3));
+        playSound(10);
 
     } else {
 
@@ -367,15 +371,24 @@ export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions,
 }
 
 
-export const bossHit = (bossHealth, setBossHealth, setBossDefeated) =>  {
+export const bossHit = (setBossHealth, setBossDefeated) =>  {
 
-    if (bossHealth === 0){
+    setBossHealth(prevHealth => {
+        const newHealth = prevHealth - 1;
 
-        setBossDefeated(true);
+        if (newHealth <= 0) {
+            setBossDefeated(true);
+            
+            const audio = new Audio(SPIcompleted);
+            audio.volume = 0.5;
+            audio.play();
 
-    }
+            return 0;
+        }
 
-    setBossHealth(prev => prev - 1);
-    playSound(8); /* laser shot sound*/ 
+        return newHealth;
+    });
+
+    playSound(8); /* laser shot sound*/
 
 }

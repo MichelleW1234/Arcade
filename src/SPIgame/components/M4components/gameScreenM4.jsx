@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import GameBoardM4 from "./gameScreenM4Components/gameBoardM4.jsx";
 
 import { useSPIUser } from '../../Providers/SPIUserProvider.jsx';
-import {unlockNextMission} from "../../helpers/SPIhelpers.js";
+import {unlockNextMission} from "../../helpers/SPIhelpers.js"; 
 
 import "../gameScreen.css";
+
+import {playSound} from '../../../Helpers/helpers.js';
 
 function gameScreenM4() {
 
@@ -14,7 +16,10 @@ function gameScreenM4() {
 
     const [bossDefeated, setBossDefeated] = useState(false);
     const [seconds, setSeconds] = useState(0);
+    const [blownUp, setBlownUp] = useState(false);
+    const [bossRoared, setBossRoared] = useState(false);
 
+    /*Timer */
     useEffect(() => {
 
         const interval = setInterval(() => {
@@ -26,17 +31,22 @@ function gameScreenM4() {
 
     }, []);
 
+    /*Beamlight battery runs out */
     useEffect(() => {
 
-        if (seconds >= 60 && bossDefeated == false) {
+        if (seconds >= 60 && bossDefeated == false && blownUp == false) {
             setSPIUser(prev => [prev[0], prev[1], true]);
+
+            if (bossRoared == false){
+
+                playSound(14);
+                setBossRoared(true);
+
+            }
+
         }
 
-    }, [seconds, bossDefeated]);
-
-    /*Monster roar */
-
-
+    }, [seconds, bossDefeated, bossRoared, blownUp]);
 
 
     return (
@@ -53,6 +63,7 @@ function gameScreenM4() {
 
                         <GameBoardM4
                             setBossDefeated = {setBossDefeated}
+                            setBlownUp = {setBlownUp}
                         />
                         
                     </div>
@@ -71,7 +82,7 @@ function gameScreenM4() {
 
                             {SPIUser[2] == true ? (
 
-                                seconds >= 60 ? (
+                                blownUp == false ? (
 
                                     <h1> Your beamlight ran out of power.</h1>
 

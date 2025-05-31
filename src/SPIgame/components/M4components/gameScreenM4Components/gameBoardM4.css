@@ -93,15 +93,13 @@
 .SPIhealthLeft{
 
     background-color: #ff0000;
-    height: 40px;
-    width: 16px;
+    height: 100%;
 
 }
 
 .SPIhealthGone{
 
     background-color: #00c8ff;
-    height: 40px;
-    width: 16px;
+    height: 100%;
 
 }

@@ -50,6 +50,8 @@ function missionScreen() {
         const pointDifference = (Player[0] - ActiveGame[1]) + (SPIUser[0].length*ActiveGame[1]);
         setPlayer(prev => [pointDifference, prev[0]]);
 
+        playSound(2);
+
     }
 
     return (
@@ -86,7 +88,7 @@ function missionScreen() {
                             <div key = {mission} className="SPImissionWindowUnlocked">
 
                                 <h1> Mission {mission}:  {missionNames[index]}</h1>
-                                <Link to= {currGamePath} className = "SPImissionStartButton" onClick = {()=> playSound(3)}>
+                                <Link to= {currGamePath} className = "SPImissionStartButton" onClick = {()=> playSound(12)}>
                                     Start
                                 </Link>
                             

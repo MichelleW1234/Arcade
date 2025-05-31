@@ -169,7 +169,6 @@ function GameSelectionScreen (){
                                 
                                 <h2> Space Invasion </h2>
                                 <h2> (15 Points) </h2>
-                                <h2> work in progress... </h2>
                                 
                             </div>
 

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import GameBoardM4 from "./gameScreenM4Components/gameBoardM4.jsx";
 
 import { useSPIUser } from '../../Providers/SPIUserProvider.jsx';
-import {unlockNextMission} from "../../helpers/SPIhelpers.js"
+import {unlockNextMission} from "../../helpers/SPIhelpers.js";
 
-import "../gameScreen.css"
+import "../gameScreen.css";
 
 function gameScreenM4() {
 
@@ -19,6 +19,7 @@ function gameScreenM4() {
 
         const interval = setInterval(() => {
             setSeconds(prev => prev + 1);
+
         }, 1000);
 
         return () => clearInterval(interval);
@@ -32,6 +33,11 @@ function gameScreenM4() {
         }
 
     }, [seconds, bossDefeated]);
+
+    /*Monster roar */
+
+
+
 
     return (
 

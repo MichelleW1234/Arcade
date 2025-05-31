@@ -261,13 +261,13 @@ export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions,
         ))
     );
 
-    if (newPositions.length < alienPositions.length){
+    const alienHit = newPositions.length < alienPositions.length;
 
+    if (alienHit) {
         playSound(9);
-
     }
 
-    if (alienPositions.length === 0) {
+    if (newPositions.length === 0) {
         setWaveNumber(prev => prev + 1);
         setAlienPositions(newWave(1));
         playSound(10);
@@ -300,10 +300,10 @@ export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions,
 
     );
 
-    if (newPositions.length < alienPositions.length){
+    const alienHit = newPositions.length < alienPositions.length;
 
-        playSound(9); /* laser shot sound*/ 
-
+    if (alienHit) {
+        playSound(9);
     }
 
 
@@ -349,13 +349,12 @@ export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions,
 
     }
 
-    if (newPositions.length < alienPositions.length){
+    const alienHit = newPositions.length < alienPositions.length;
 
-        playSound(9); /* laser shot sound*/ 
-
+    if (alienHit) {
+        playSound(9);
     }
-
-
+    
     if (newPositions.length === 0) {
 
         setWaveNumber(prev => prev + 1);

@@ -94,7 +94,7 @@ function gameBoardM4({setBossDefeated, setBlownUp}) {
                 
             </div>
 
-            <div className = "largefont"> Boss health bar: </div>
+            <div className = "largefont"> Queen HP Bar: </div>
 
             <div className = "SPIhealthbarContainer">  
                 {healthBar.map((_, colIndex) => (

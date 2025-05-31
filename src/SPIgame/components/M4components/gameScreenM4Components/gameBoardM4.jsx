@@ -11,7 +11,7 @@ import {newBossState, bossHit, newBossPosition} from "../../../helpers/SPIhelper
 
 import {playSound} from '../../../../Helpers/helpers.js';
 
-function gameBoardM4({setBossDefeated}) {
+function gameBoardM4({setBossDefeated, setBlownUp}) {
     
     //5 x 9 (90x90 pieces moving around the screen)
     const gameBoardMatrix = Array.from({ length: 4 }, () => Array(9).fill(0));
@@ -30,6 +30,14 @@ function gameBoardM4({setBossDefeated}) {
 
         return () => clearInterval(interval);
     }, []);
+
+    const exploded = () =>  {
+
+        setSPIUser(prev => [prev[0], prev[1], true]);
+        setBlownUp(true);
+        playSound(11);
+
+    }
 
     return (
 
@@ -52,7 +60,7 @@ function gameBoardM4({setBossDefeated}) {
                                     <div
                                         key={rowIndex + "," + colIndex}
                                         className= "SPIemptySpaceBossDanger"
-                                        onClick={() => setSPIUser(prev => [prev[0], prev[1], true])}
+                                        onClick={() => exploded()}
                                     >
                                         <img src={bossDanger} alt="bossDanger"/>
                                     </div>
@@ -62,7 +70,7 @@ function gameBoardM4({setBossDefeated}) {
                                     <div
                                         key={rowIndex + "," + colIndex}
                                         className= "SPIemptySpaceBossNormal"
-                                        onClick={() => bossHit(bossHealth, setBossHealth, setBossDefeated)}
+                                        onClick={() => bossHit(setBossHealth, setBossDefeated)}
                                     >
                                         <img src={bossNormal} alt="bossNormal"/>
                                     </div>
@@ -91,7 +99,7 @@ function gameBoardM4({setBossDefeated}) {
             <div className = "SPIhealthbarContainer">  
                 {healthBar.map((_, colIndex) => (
 
-                    bossHealth >= colIndex ? (
+                    bossHealth > colIndex ? (
 
                         <div
                         key={colIndex}

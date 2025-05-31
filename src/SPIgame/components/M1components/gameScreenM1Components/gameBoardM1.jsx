@@ -20,7 +20,6 @@ function gameBoard({waveNumber, setWaveNumber}) {
     const [laserPositions, setLaserPositions] = useState([[14, laserValue], [13, laserValue], [12, laserValue]]);
     const [alienPositions, setAlienPositions] = useState(newWave(1));
 
-
     /*Listener for current alien positions*/
     const alienPositionsRef = useRef(alienPositions);
     useEffect(() => {

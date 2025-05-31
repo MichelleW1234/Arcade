@@ -5,7 +5,7 @@ import alienMutant from "../../../Images/image 10.svg";
 import alien from "../../../Images/image 8.svg";
 import laser from "../../../Images/image 9.svg";
 import laserMutant from "../../../Images/image 12.svg";
-import laserCannon from "../../../Images/image 17.svg";
+import laserCannon from "../../../Images/image 18.svg";
 
 import {playSound} from '../../../Helpers/helpers.js';
 

@@ -20,7 +20,7 @@ function Startscreen (){
         <div className = "StartingScreenLayout">
             
             <h1 className = "headerwords">
-                Welcome to Rock-Paper-<span className = "headerwordsGlitch">Scissors</span>
+                Welcome to Rock-Paper-<span className = "headerwordsGlitch">Scissors.</span>
             </h1>
             
             <div className = "generalbuttonContainer">

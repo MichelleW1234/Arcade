@@ -19,12 +19,12 @@ function summaryScreen() {
     const resetGame = () => {
 
         setSPIUser([[],[1, "/SPIM1Instructions"], false]);
+        playSound(4);
 
     }
 
     const reset = () => {
 
-        playSound(4);
         resetGame();
         setActiveGame(retrieveActiveGame(1));
 
@@ -41,7 +41,7 @@ function summaryScreen() {
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to="/SPImission" className = "generalbutton" onClick = {resetGame}>
+                <Link to="/SPImission" className = "generalbutton" onClick = {()=> resetGame()}>
                     Play Again
                 </Link>
 
@@ -51,7 +51,7 @@ function summaryScreen() {
 
             )}
 
-            <Link to="/selection" className = "generalbutton" onClick={reset}>
+            <Link to="/selection" className = "generalbutton" onClick={()=> reset()}>
                 Exit Game
             </Link>
 

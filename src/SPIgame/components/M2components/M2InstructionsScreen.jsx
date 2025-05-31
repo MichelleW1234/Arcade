@@ -4,6 +4,8 @@ import alienArmored from "../../../Images/image 11.svg";
 import alien from "../../../Images/image 8.svg";
 import laser from "../../../Images/image 9.svg";
 
+import {playSound} from '../../../Helpers/helpers.js';
+
 function M2InstructionsScreen() {
 
   return (
@@ -32,7 +34,7 @@ function M2InstructionsScreen() {
       </p>
 
       <div className = "generalbuttonContainer">
-        <Link to= "/SPIgameM2" className = "generalbuttonGlitch" >
+        <Link to= "/SPIgameM2" className = "generalbuttonGlitch" onClick = {() => playSound(7)}>
             Enter Zone
         </Link>
       </div>

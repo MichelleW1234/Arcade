@@ -6,6 +6,8 @@ import alien from "../../../Images/image 8.svg";
 import laser from "../../../Images/image 9.svg";
 import laserMutant from "../../../Images/image 12.svg";
 
+import {playSound} from '../../../Helpers/helpers.js';
+
 function M3InstructionsScreen() {
 
   return (
@@ -35,7 +37,7 @@ function M3InstructionsScreen() {
       </p>
 
       <div className = "generalbuttonContainer">
-        <Link to= "/SPIgameM3" className = "generalbuttonGlitch" >
+        <Link to= "/SPIgameM3" className = "generalbuttonGlitch" onClick = {() => playSound(7)}>
             Enter Zone
         </Link>
       </div>

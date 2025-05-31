@@ -4,6 +4,12 @@ import buttonSelect from "../Music/buttonSelect.mp3";
 import buttonRestart from "../Music/buttonRestart.mp3";
 import buttonError from "../Music/buttonError.mp3";
 import gameOver from "../Music/gameOver.mp3";
+import enteringAlienZone from "../Music/enteringAlienZone.mp3";
+import incomingAlienWave from "../Music/incomingAlienWave.mp3";
+import laserRifle from "../Music/laserRifle.mp3";
+import laserBlaster from "../Music/laserBlaster.mp3";
+import theQueenRoar from "../Music/theQueenRoar.mp3";
+
 
 
 export const retrieveActiveGame = (index) => {
@@ -87,6 +93,30 @@ export const playSound = (soundEffect) => {
 
         audio = new Audio(gameOver);
         audio.volume = 0.5;
+
+    } else if (soundEffect == 7){
+
+        audio = new Audio(enteringAlienZone);
+        audio.volume = 0.5;
+
+    } else if (soundEffect == 8){
+
+        audio = new Audio(laserRifle);
+        audio.volume = 0.5;
+
+    } else if (soundEffect == 9){
+
+        audio = new Audio(laserBlaster);
+        audio.volume = 0.5;
+
+    }  else if (soundEffect == 10){
+
+        audio = new Audio(incomingAlienWave);
+        audio.volume = 0.5;
+
+    }else if (soundEffect == 11){
+
+        audio = new Audio(theQueenRoar);
 
     }
 

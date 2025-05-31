@@ -86,7 +86,7 @@ function missionScreen() {
                             <div key = {mission} className="SPImissionWindowUnlocked">
 
                                 <h1> Mission {mission}:  {missionNames[index]}</h1>
-                                <Link to= {currGamePath} className = "SPImissionStartButton">
+                                <Link to= {currGamePath} className = "SPImissionStartButton" onClick = {()=> playSound(3)}>
                                     Start
                                 </Link>
                             

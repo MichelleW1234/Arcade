@@ -476,3 +476,20 @@ a.navBarButton {
 }
 
 }
+
+@keyframes pulse-glow {
+  0% {
+    filter: 
+      drop-shadow(0 0 5px rgba(21, 0, 255, 0.8))
+      drop-shadow(0 0 10px rgba(21, 0, 255, 0.6))
+      drop-shadow(0 0 20px rgba(21, 0, 255, 0.4));
+      
+  }
+  100% {
+
+    filter: 
+      drop-shadow(0 0 5px rgba(255, 0, 247, 0.8))
+      drop-shadow(0 0 10px rgba(255, 0, 247, 0.6))
+      drop-shadow(0 0 20px rgba(255, 0, 247, 0.4));
+  }
+}

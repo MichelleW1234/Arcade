@@ -28,7 +28,7 @@ function instructionsScreen() {
         &gt; Every mission has helpful information before you start, so be sure to read through it carefully. <br/>
         &gt; If you die at any time, the game ends.  <br/>
         &gt; You gain points per mission completed. <br/>
-        &gt; Good luck! <br/>
+        &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
       </p>
 
       <div className = "generalbuttonContainer">

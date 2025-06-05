@@ -35,7 +35,7 @@ function summaryScreen() {
         <div className = "screenLayout">
 
             <div className = "SPIResultsBoard">
-                <h1>Missions Completed: {SPIUser[0].length}</h1>
+                <h1> <span className='SPIWordsGlitch'>Missions Completed: {SPIUser[0].length}</span></h1>
                 <h1>Points Earned: {SPIUser[0].length * ActiveGame[1]}</h1>
             </div>
 

@@ -41,49 +41,49 @@ import "./App.css";
 function App() {
 
   return (
-    <div className = "innerboarder">
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<ArcadeStartScreen />}/>
-        <Route path="/arcadeStart" element={<ArcadeStartScreen />}/>
-        <Route path="/rulesAndPoints" element={<RulesandPointsScreen />}/>
-        <Route path="/prizeRoom" element={<PrizeRoomScreen />}/>
-        <Route path="/selection" element={<GameSelectionScreen />}/>
-        
-        <Route path="/RPSstart" element={<RPSStartscreen />}/>
-        <Route path="/RPSinstructions" element={<RPSInstructionsscreen />}/>
-        <Route path="/RPSlevels" element={<RPSLevelSelectionscreen />}/>
-        <Route path="/RPSgame" element={<RPSGamescreen />}/>
-        <Route path="/RPSsummary" element={<RPSSummaryscreen />}/>
+    <div id = "app-wrapper">
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<ArcadeStartScreen />}/>
+          <Route path="/arcadeStart" element={<ArcadeStartScreen />}/>
+          <Route path="/rulesAndPoints" element={<RulesandPointsScreen />}/>
+          <Route path="/prizeRoom" element={<PrizeRoomScreen />}/>
+          <Route path="/selection" element={<GameSelectionScreen />}/>
+          
+          <Route path="/RPSstart" element={<RPSStartscreen />}/>
+          <Route path="/RPSinstructions" element={<RPSInstructionsscreen />}/>
+          <Route path="/RPSlevels" element={<RPSLevelSelectionscreen />}/>
+          <Route path="/RPSgame" element={<RPSGamescreen />}/>
+          <Route path="/RPSsummary" element={<RPSSummaryscreen />}/>
 
-        <Route path="/TTThome" element={<TTTHomeScreen />}/>
-        <Route path="/TTTinstructions" element={<TTTInstructionsScreen />}/>
-        <Route path="/TTTcoinFlip" element={<TTTTurnDecidingScreen />}/>
-        <Route path="/TTTgame" element={<TTTGameScreen />}/>
-        <Route path="/TTTresults" element={<TTTResultsScreen />}/>
+          <Route path="/TTThome" element={<TTTHomeScreen />}/>
+          <Route path="/TTTinstructions" element={<TTTInstructionsScreen />}/>
+          <Route path="/TTTcoinFlip" element={<TTTTurnDecidingScreen />}/>
+          <Route path="/TTTgame" element={<TTTGameScreen />}/>
+          <Route path="/TTTresults" element={<TTTResultsScreen />}/>
 
-        <Route path="/SNKstart" element={<SNKStartScreen />}/>
-        <Route path="/SNKinstructions" element={<SNKInstructionsScreen />}/>
-        <Route path="/SNKgame" element={<SNKGameScreen />}/>
-        <Route path="/SNKresults" element={<SNKResultsScreen />}/>
+          <Route path="/SNKstart" element={<SNKStartScreen />}/>
+          <Route path="/SNKinstructions" element={<SNKInstructionsScreen />}/>
+          <Route path="/SNKgame" element={<SNKGameScreen />}/>
+          <Route path="/SNKresults" element={<SNKResultsScreen />}/>
 
-        <Route path="/SPIstart" element={<SPIStartScreen />}/>
-        <Route path="/SPIinstructions" element={<SPIinstructionsScreen />}/>
-        <Route path="/SPImission" element={<SPImissionScreen />}/>
-        <Route path="/SPIM1Instructions" element={<SPIM1InstructionsScreen />}/>
-        <Route path="/SPIM2Instructions" element={<SPIM2InstructionsScreen />}/>
-        <Route path="/SPIM3Instructions" element={<SPIM3InstructionsScreen />}/>
-        <Route path="/SPIM4Instructions" element={<SPIM4InstructionsScreen />}/>
-        <Route path="/SPIgameM1" element={<SPIgameScreenM1 />}/>
-        <Route path="/SPIgameM2" element={<SPIgameScreenM2 />}/>
-        <Route path="/SPIgameM3" element={<SPIgameScreenM3 />}/>
-        <Route path="/SPIgameM4" element={<SPIgameScreenM4 />}/>
-        <Route path="/SPIsummary" element={<SPIsummaryScreen />}/>
+          <Route path="/SPIstart" element={<SPIStartScreen />}/>
+          <Route path="/SPIinstructions" element={<SPIinstructionsScreen />}/>
+          <Route path="/SPImission" element={<SPImissionScreen />}/>
+          <Route path="/SPIM1Instructions" element={<SPIM1InstructionsScreen />}/>
+          <Route path="/SPIM2Instructions" element={<SPIM2InstructionsScreen />}/>
+          <Route path="/SPIM3Instructions" element={<SPIM3InstructionsScreen />}/>
+          <Route path="/SPIM4Instructions" element={<SPIM4InstructionsScreen />}/>
+          <Route path="/SPIgameM1" element={<SPIgameScreenM1 />}/>
+          <Route path="/SPIgameM2" element={<SPIgameScreenM2 />}/>
+          <Route path="/SPIgameM3" element={<SPIgameScreenM3 />}/>
+          <Route path="/SPIgameM4" element={<SPIgameScreenM4 />}/>
+          <Route path="/SPIsummary" element={<SPIsummaryScreen />}/>
 
-        {/*Page doesn't exist error*/}
-        <Route path="*" element={<NoPage />} />
-      </Routes>
-    </BrowserRouter>
+          {/*Page doesn't exist error*/}
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

@@ -145,14 +145,41 @@
 
 }
 
-.SPIlaserButtonMutant{
+.SPIlaserButtonNormal{
 
-    background-color: #a200ff;
+    background-color: #00ff26;
     font-size: 20px;
     font-weight: bold;
     padding: 10px;
 
     border-left: 5px solid black;
     border-bottom: 5px solid black;
+
+}
+
+.SPIlaserButtonNormal:hover{
+
+    background-color: #003508;
+    color: white;
+
+}
+
+
+.SPIlaserButtonMutant{
+
+    background-color: #fb00ff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+
+}
+
+.SPIlaserButtonMutant:hover{
+
+    background-color: #650066;
+    color: white;
 
 }

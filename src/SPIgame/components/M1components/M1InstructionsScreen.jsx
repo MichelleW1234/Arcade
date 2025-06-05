@@ -15,18 +15,17 @@ function M1InstructionsScreen() {
       <h1 className = "instructionsSign"> Station 1: Hive outskirts </h1>
 
       <p className = "largefont">   
-        &gt; Mission description: Exterminate all oncoming waves before they reach you. <br/> <br/>
-        &gt; Aliens detected:<br/> <br/>
+        &gt; Mission Description: Exterminate all oncoming waves before they reach you. <br/> <br/>
+        &gt; Aliens Detected:<br/> <br/>
         &nbsp; &nbsp; &gt; <img src={alien} ></img> - Soldier  <br/> <br/>
-        &nbsp; &nbsp; &nbsp; &bull; Laser weakness: <img src={laser} ></img> <br/>
-        &nbsp; &nbsp; &nbsp; &bull; Special abilities: None <br/> <br/>
-        &gt; Waves to eliminate: 5 <br/>
-        &gt; Wave size: 10 <br/> <br/>
+        &nbsp; &nbsp; &nbsp; &bull; Laser Weakness: <img src={laser} ></img> <br/>
+        &nbsp; &nbsp; &nbsp; &bull; Special Abilities: None <br/> <br/>
+        &gt; Waves to Eliminate: 5 <br/>
+        &gt; Wave Size: 10 <br/> <br/>
         &gt; Equipment: <br/><br/>
-        &nbsp; &nbsp; &gt; <img src={laserCannon} ></img> - laser cannon <br/> <br/>
-        &nbsp; &nbsp; &nbsp; &bull; ammunition: <img src={laser} ></img> <br/>
-        &nbsp; &nbsp; &nbsp; &bull; To use: move slider to aim at target <br/>
-        &nbsp; &nbsp; &nbsp; &bull; Unlimited ammunition<br/>
+        &nbsp; &nbsp; &gt; <img src={laserCannon} ></img> - Laser Cannon <br/> <br/>
+        &nbsp; &nbsp; &nbsp; &bull; Pulse Type: <img src={laser} ></img> <br/>
+        &nbsp; &nbsp; &nbsp; &bull; To Use: Move slider to aim at target <br/>
       </p>
 
       <div className = "generalbuttonContainer">

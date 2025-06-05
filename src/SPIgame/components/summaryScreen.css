@@ -21,4 +21,12 @@
     font-size: 20px;
     gap: 20px;
 
+    color: white;
+
+}
+
+.SPIWordsGlitch{
+
+    animation: sign-glitch 3s infinite;
+
 }

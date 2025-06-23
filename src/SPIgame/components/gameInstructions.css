@@ -1,0 +1,107 @@
+.SPIMissionInfofloatingFlag{
+
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+
+    min-width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 47, 255, 0.5);
+
+}
+
+.SPIMissionDescription {
+    font-size: 1.875rem; /* 30px */
+    color: rgb(255, 244, 244);
+}
+
+.SPIGuideContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(76, 0, 109);
+    padding: 3.75rem;            /* 60px */
+    gap: 1.875rem;               /* 30px */
+
+    color: white;
+    font-size: 1.5625rem;        /* 25px */
+
+    border-left: 0.5rem solid rgb(23, 0, 33);    /* 8px */
+    border-bottom: 0.5rem solid rgb(23, 0, 33);  /* 8px */
+    border-top: 0.1875rem solid rgb(23, 0, 33);  /* 3px */
+    border-right: 0.1875rem solid rgb(23, 0, 33); /* 3px */
+
+    border-radius: 0.625rem;     /* 10px */
+
+    box-shadow: 0 0 1.25rem 0.9375rem rgb(198, 117, 255); /* 20px 15px */
+}
+
+
+.SPIGuideCloseButtons {
+    font-size: 1.5625rem;             /* 25px */
+    padding: 0.625rem;                /* 10px */
+
+    background-color: rgb(234, 157, 255);
+
+    border-left: 0.3125rem solid rgb(134, 60, 153);   /* 5px */
+    border-bottom: 0.3125rem solid rgb(134, 60, 153); /* 5px */
+    border-top: 0.125rem solid rgb(134, 60, 153);     /* 2px */
+    border-right: 0.125rem solid rgb(134, 60, 153);   /* 2px */
+
+    box-shadow: 0 0 0.625rem 0.3125rem rgb(227, 117, 255); /* 10px 5px */
+}
+
+
+.SPIGuideCloseButtons:hover {
+    background-color: rgb(140, 30, 171);
+    color: white;
+
+    border-left: 0.3125rem solid rgb(63, 12, 77);    /* 5px */
+    border-bottom: 0.3125rem solid rgb(63, 12, 77);  /* 5px */
+    border-top: 0.125rem solid rgb(63, 12, 77);      /* 2px */
+    border-right: 0.125rem solid rgb(63, 12, 77);    /* 2px */
+}
+
+
+.SPIGuideButtonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 3.125rem; /* 50px */
+}
+
+
+.SPIGuideButton {
+    background-color: rgb(83, 255, 112);
+    color: rgb(12, 48, 18);
+
+    font-size: 1.5625rem;              /* 25px */
+    padding: 0.9375rem;                /* 15px */
+
+    border-left: 0.3125rem solid rgb(19, 82, 29);    /* 5px */
+    border-bottom: 0.3125rem solid rgb(19, 82, 29);  /* 5px */
+    border-top: 0.125rem solid rgb(19, 82, 29);      /* 2px */
+    border-right: 0.125rem solid rgb(19, 82, 29);    /* 2px */
+
+    box-shadow: 0 0 0.625rem 0.3125rem rgb(145, 255, 162); /* 10px 5px */
+}
+
+
+.SPIGuideButton:hover {
+    background-color: rgb(20, 69, 28);
+    color: white;
+
+    border-left: 0.3125rem solid rgb(5, 23, 8);    /* 5px */
+    border-bottom: 0.3125rem solid rgb(5, 23, 8);  /* 5px */
+    border-top: 0.125rem solid rgb(5, 23, 8);      /* 2px */
+    border-right: 0.125rem solid rgb(5, 23, 8);    /* 2px */
+
+    box-shadow: 0 0 0.625rem 0.3125rem rgb(95, 162, 105); /* 10px 5px */
+}

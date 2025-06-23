@@ -1,35 +1,27 @@
-.SNKsnakeLink{
-
-    height: 20px;
-    width: 20px;
+.SNKsnakeLink {
+    height: 1.25rem;       /* 20px */
+    width: 1.25rem;        /* 20px */
     background-color: rgb(0, 255, 30);
-    border: 2px solid black;
-
+    border: 0.125rem solid rgb(0, 114, 13);  /* 2px */
 }
 
-.SNKApple{
-
-    height: 20px;
-    width: 20px;
+.SNKApple {
+    height: 1.25rem;       /* 20px */
+    width: 1.25rem;        /* 20px */
     background-color: rgb(255, 0, 0);
-    border: 2px solid black;
-
+    border: 0.125rem solid rgb(120, 0, 0);  /* 2px */
 }
 
-.SNKemptySpace{
-
-    height: 20px;
-    width: 20px;
-    background-color:rgb(154, 208, 255);
-
+.SNKemptySpace {
+    height: 1.25rem;        /* 20px */
+    width: 1.25rem;         /* 20px */
+    background-color: rgb(154, 208, 255);
 }
 
-.SNKrenderedgameboard{
-
-    height: 400px;
-    width: 600px;
+.SNKrenderedgameboard {
+    height: 25rem;         /* 400px */
+    width: 37.5rem;        /* 600px */
     display: grid;
     grid-template-columns: repeat(30, 1fr);
     grid-template-rows: repeat(20, 1fr);
-
 }

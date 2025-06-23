@@ -125,7 +125,7 @@ function GameBoard (){
                 {startButtonPressed === false ? (
 
                     <div className="SNKendinggameboard">
-                        <h1> Press any of the controls to begin. </h1>
+                       Press any of the controls to begin.
                     </div>
 
 
@@ -139,7 +139,7 @@ function GameBoard (){
                 ):(
             
                     <div className = "SNKendinggameboard">
-                        <h1> Game Over.</h1>
+                        Game Over.
                     </div>
                         
                 )}

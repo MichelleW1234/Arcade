@@ -1,47 +1,41 @@
 .RPSfloatingFlag {
 
-    display: flex;
-    flex-direction: column;
-    position: absolute;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
 
-    min-width: 100vw;
-    min-height: 100vh;
-    align-items: center;
-    z-index: 1;
+  min-width: 100vw;
+  min-height: 100vh;
+  align-items: center;
+  z-index: 1;
 
-    background-color: rgba(0, 47, 255, 0.5);
+  background-color: rgba(0, 47, 255, 0.5);
 
 }
 
 .RPSresultsContainer {
-
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 150px;
-    background-color: rgb(231, 77, 206);
-    box-shadow: 0 0 30px 8px rgb(255, 144, 247);
-    padding: 40px;
-    border-radius: 8px;
-    gap: 35px;
-    border-bottom: 7px solid black;
-    border-left: 7px solid black;
-    border-top: 1.5px solid black;
-    border-right: 1.5px solid black;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 9.375rem;            /* 150px */
+  background-color: rgb(231, 77, 206);
+  box-shadow: 0 0 1.875rem 0.5rem rgb(255, 144, 247); /* 30px 8px */
+  padding: 2.5rem;                 /* 40px */
+  border-radius: 0.5rem;           /* 8px */
+  gap: 2.1875rem;                  /* 35px */
+  border-bottom: 0.4375rem solid rgb(111, 36, 99); /* 7px */
+  border-left: 0.4375rem solid rgb(111, 36, 99);   /* 7px */
+  border-top: 0.09375rem solid rgb(111, 36, 99);   /* 1.5px */
+  border-right: 0.09375rem solid rgb(111, 36, 99); /* 1.5px */
 }
 
-.RPSresults{
-
-    color: rgb(0, 255, 21);
-    font-size: 30px;
-
+.RPSresults {
+  color: rgb(0, 255, 21);
+  font-size: 1.875rem; /* 30px */
 }
 
 .RPSresultsglitch {
-
-    color: rgb(0, 255, 21);
-    font-size: 30px;
-    animation: sign-glitch 3s infinite;
-
+  color: rgb(0, 255, 21);
+  font-size: 1.875rem; /* 30px */
+  animation: sign-glitch 3s infinite;
 }

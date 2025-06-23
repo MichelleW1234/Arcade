@@ -1,52 +1,46 @@
 .RPSlevelsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 3.125rem;          /* 50px converted to rem */
+  overflow: auto;
+  max-width: 100%;
+  padding: 3.125rem;      /* 50px converted to rem */
 
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    overflow: auto;
-    max-width: 100%;
-    padding: 50px;
+  background-color: rgb(98, 0, 255);
+  border-right: 0.1875rem solid black;   /* 3px */
+  border-top: 0.1875rem solid black;     /* 3px */
+  border-left: 0.625rem solid black;     /* 10px */
+  border-bottom: 0.625rem solid black;   /* 10px */
+  border-radius: 1.25rem;                 /* 20px */
 
-    background-color: rgb(98, 0, 255);
-    border-right: 3px solid black;
-    border-top: 3px solid black;
-    border-left: 10px solid black;
-    border-bottom: 10px solid black;
-    border-radius: 20px;
-
-    box-shadow:  0 0 30px 4px rgb(0, 204, 255);
-
+  box-shadow: 0 0 1.875rem 0.25rem rgb(0, 204, 255); /* 30px 4px */
 }
 
-.RPSLevelsWindowContainer{
-
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    align-items: center;
-
+.RPSLevelsWindowContainer {
+  min-width: 12.5rem;   /* 200px */
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;        /* 50px */
+  align-items: center;
 }
 
 
-.RPSLevelsWindow{
+.RPSLevelsWindow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5rem;           /* 8px */
+  background-color: rgb(144, 230, 249);
+  width: 12.5rem;                  /* 200px */
+  height: 12.5rem;                 /* 200px */
+  padding: 0.625rem;               /* 10px */
+  border-left: 0.4375rem solid rgb(55, 94, 103);   /* 7px */
+  border-bottom: 0.4375rem solid rgb(55, 94, 103); /* 7px */
+  border-right: 0.125rem solid rgb(55, 94, 103);   /* 2px */
+  border-top: 0.125rem solid rgb(55, 94, 103);     /* 2px */
+  overflow-y: auto;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 8px;
-    background-color: rgb(144, 230, 249);
-    width: 200px;
-    height: 200px;
-    padding: 10px;
-    border-left: 7px solid black;
-    border-bottom: 7px solid black;
-    border-right: 2px solid black;
-    border-top: 2px solid black;
-    overflow-y: auto;
-
-    box-shadow:  0 0 20px 6px rgb(0, 204, 255);
-
+  box-shadow: 0 0 1.25rem 0.375rem rgb(0, 204, 255); /* 20px 6px */
 }
 
 .RPSLevelGlitch{
@@ -56,22 +50,31 @@
 }
 
 
-.RPSLevelButton{
+.RPSLevelButton {
 
-    justify-self: center;
-    background-color: rgb(0, 217, 255);
-    font-size: 20px;
-    padding: 10px;
-    border-left: 6px solid black;
-    border-bottom: 6px solid black;
+  justify-self: center;
+  background-color: rgb(0, 217, 255);
+  font-size: 1.25rem;           /* 20px */
+  padding: 0.625rem;            /* 10px */
+  border-left: 0.375rem solid rgb(0, 126, 149);  /* 6px */
+  border-bottom: 0.375rem solid rgb(0, 126, 149);/* 6px */
+  border-top: 0.125rem solid rgb(0, 126, 149);  /* 6px */
+  border-right: 0.125rem solid rgb(0, 126, 149);/* 6px */
 
-    animation: glowing-shadow2 4s infinite;
 
+  animation: glowing-shadow2 4s infinite;
+  
 }
 
 .RPSLevelButton.active{
 
     background-color: blue;
+
+    border-left: 0.375rem solid rgb(0, 0, 105); /* 6px */
+    border-bottom: 0.375rem solid rgb(0, 0, 105);/* 6px */
+    border-top: 0.125rem solid rgb(0, 0, 105);  /* 6px */
+    border-right: 0.125rem solid rgb(0, 0, 105);/* 6px */
+
     color: white;
     animation: glowing-shadow4 4s infinite;
 

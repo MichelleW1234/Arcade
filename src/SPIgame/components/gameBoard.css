@@ -1,31 +1,28 @@
-.SPIgameContainer{
-
+.SPIgameContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-
+    gap: 1.875rem; /* 30px */
 }
 
+
 .SPIgameScreen {
+    height: 28.5rem;                 /* 456px */
+    width: 51rem;                    /* 816px */
 
-    height: 456px;
-    width: 816px;
-
-    padding: 0px;
+    padding: 0rem;
 
     display: grid;
     grid-template-columns: repeat(27, 1fr);
     grid-template-rows: repeat(15, 1fr);
 
-    border-left: 3px solid black;
-    border-bottom: 3px solid black;
-    border-top: 3px solid black;
-    border-right: 3px solid black;
+    border-left: 0.1875rem solid rgb(19, 13, 82);   /* 3px */
+    border-bottom: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
+    border-top: 0.1875rem solid rgb(19, 13, 82);     /* 3px */
+    border-right: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
 
-    box-shadow: 0 0 20px 10px rgb(117, 138, 255);
-
+    box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); /* 20px 10px */
 }
 
 
@@ -33,43 +30,43 @@
 
 
 
-.SPIemptySpaceM1{
 
+
+
+.SPIemptySpaceM1 {
     background-color: #1d0086;
-    height: 30px;
-    width: 30px;
+    height: 1.875rem;  /* 30px */
+    width: 1.875rem;   /* 30px */
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
-.SPIemptySpaceM2{
 
+
+.SPIemptySpaceM2 {
     background-color: #180070;
-    height: 30px;
-    width: 30px;
+    height: 1.875rem;  /* 30px */
+    width: 1.875rem;   /* 30px */
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
-.SPIemptySpaceM3{
 
+.SPIemptySpaceM3 {
     background-color: #13005a;
-    height: 30px;
-    width: 30px;
+    height: 1.875rem;  /* 30px */
+    width: 1.875rem;   /* 30px */
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 
@@ -79,52 +76,49 @@
 
 
 
-.SPISlider{
 
+.SPISlider {
     -webkit-appearance: none;
-    width: 810px;
-    height: 30px;
+    width: 50.625rem;               /* 810px */
+    height: 1.875rem;               /* 30px */
     outline: none;
-    
+
     background-color: rgb(0, 255, 132);
 
-    border-left: 5px solid black;
-    border-bottom: 5px solid black;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 0.3125rem solid rgb(0, 120, 62); /* 5px */
+    border-bottom: 0.3125rem solid rgb(0, 120, 62); /* 5px */
+    border-top: 0.125rem solid rgb(0, 120, 62);    /* 2px */
+    border-right: 0.125rem solid rgb(0, 120, 62);   /* 2px */
 
-    box-shadow: 0 0 10px 4px rgb(169, 255, 202);
-
+    box-shadow: 0 0 0.625rem 0.25rem rgb(169, 255, 202); /* 10px 4px */
 }
 
-.SPISlider::-webkit-slider-thumb {
 
+.SPISlider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 30px;
-    height: 50px;
+    width: 1.875rem;                /* 30px */
+    height: 3.125rem;               /* 50px */
     background-color: #ff00ea;
     cursor: pointer;
 
-    border-left: 5px solid black;
-    border-bottom: 5px solid black;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-
+    border-left: 0.3125rem solid #7a0070;   /* 5px */
+    border-bottom: 0.3125rem solid #7a0070;  /* 5px */
+    border-top: 0.125rem solid #7a0070;     /* 2px */
+    border-right: 0.125rem solid #7a0070;   /* 2px */
 }
+
   
 /* for Firefox */
 .SPISlider::-moz-range-thumb {
-
-    width: 30px;
-    height: 50px;
+    width: 1.875rem;                /* 30px */
+    height: 3.125rem;               /* 50px */
     background-color: #ff00ea;
     cursor: pointer;
 
-    border-left: 5px solid black;
-    border-bottom: 5px solid black;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-
+    border-left: 0.3125rem solid #7a0070;    /* 5px */
+    border-bottom: 0.3125rem solid #7a0070;  /* 5px */
+    border-top: 0.125rem solid #7a0070;      /* 2px */
+    border-right: 0.125rem solid #7a0070;    /* 2px */
 }
 
 
@@ -133,53 +127,66 @@
 
 
 
-.SPIlaserButtonNormal{
 
+.SPIlaserButtonNormal {
     background-color: #00ff26;
-    font-size: 20px;
+    font-size: 1.25rem;          /* 20px */
     font-weight: bold;
-    padding: 10px;
+    padding: 0.625rem;           /* 10px */
 
-    border-left: 5px solid black;
-    border-bottom: 5px solid black;
+    border-left: 0.3125rem solid #00ff26;  /* 5px */
+    border-bottom: 0.3125rem solid #00ff26; /* 5px */
+    border-top: 0.125rem solid #00660f;  /* 5px */
+    border-right: 0.125rem solid #00660f; /* 5px */
 
 }
 
-.SPIlaserButtonNormal{
 
+.SPIlaserButtonNormal {
     background-color: #00ff26;
-    font-size: 20px;
+    font-size: 1.25rem;              /* 20px */
     font-weight: bold;
-    padding: 10px;
+    padding: 0.625rem;               /* 10px */
 
-    border-left: 5px solid black;
-    border-bottom: 5px solid black;
-
+    border-left: 0.3125rem solid #00590d;    /* 5px */
+    border-bottom: 0.3125rem solid #00590d;  /* 5px */
+    border-right: 0.125rem solid #00590d;    /* 2px */
+    border-top: 0.125rem solid #00590d;      /* 2px */
 }
 
-.SPIlaserButtonNormal:hover{
 
+.SPIlaserButtonNormal:hover {
     background-color: #003508;
-    color: white;
 
+    border-left: 0.3125rem solid #000d02;    /* 5px */
+    border-bottom: 0.3125rem solid #000d02;  /* 5px */
+    border-right: 0.125rem solid #000d02;    /* 2px */
+    border-top: 0.125rem solid #000d02;      /* 2px */
+    
+    color: white;
 }
 
 
-.SPIlaserButtonMutant{
-
+.SPIlaserButtonMutant {
     background-color: #fb00ff;
-    font-size: 20px;
+    font-size: 1.25rem;              /* 20px */
     font-weight: bold;
-    padding: 10px;
+    padding: 0.625rem;               /* 10px */
 
-    border-left: 5px solid black;
-    border-bottom: 5px solid black;
-
+    border-left: 0.3125rem solid #640065;    /* 5px */
+    border-bottom: 0.3125rem solid #640065;  /* 5px */
+    border-top: 0.125rem solid #640065;     /* 5px */
+    border-right: 0.125rem solid #640065;   /* 5px */
 }
 
-.SPIlaserButtonMutant:hover{
 
+.SPIlaserButtonMutant:hover {
     background-color: #650066;
-    color: white;
 
+    border-left: 0.3125rem solid #330034;    /* 5px */
+    border-bottom: 0.3125rem solid #330034;  /* 5px */
+    border-top: 0.125rem solid #330034;     /* 5px */
+    border-right: 0.125rem solid #330034;   /* 5px */
+
+    color: white;
 }

@@ -1,40 +1,37 @@
 .SPImissionContainer {
-
     display: flex;
     flex-direction: row;
-    gap: 80px;
-
+    gap: 5rem; /* 80px */
 }
 
+
 .SPImissionWindowUnlocked {
-    
-    padding: 30px;
-    min-height: 350px;
-    width: 250px;
+    padding: 1.875rem;           /* 30px */
+    min-height: 21.875rem;       /* 350px */
+    width: 15.625rem;            /* 250px */
     background-color: rgb(0, 253, 17);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 1.875rem;               /* 30px */
 
-    box-shadow: 0 0 30px 10px rgb(0, 255, 34); 
+    box-shadow: 0 0 1.875rem 0.625rem rgb(0, 255, 34); /* 30px 10px */
 
-    border-left: 8px solid black;
-    border-bottom: 8px solid black;
-    border-top: 3px solid black;
-    border-right: 3px solid black;
+    border-left: 0.5rem solid rgb(0, 73, 10);   /* 8px */
+    border-bottom: 0.5rem solid rgb(0, 73, 10);  /* 8px */
+    border-top: 0.1875rem solid rgb(0, 73, 10);  /* 3px */
+    border-right: 0.1875rem solid rgb(0, 73, 10); /* 3px */
 
-    border-radius: 10px;
-
+    border-radius: 0.625rem;       /* 10px */
 }
 
+
 .SPImissionWindowLocked {
-    
-    padding: 30px;
-    min-height: 350px;
-    width: 250px;
+    padding: 1.875rem;           /* 30px */
+    min-height: 21.875rem;       /* 350px */
+    width: 15.625rem;            /* 250px */
     background-color: rgb(255, 49, 49);
 
     display: flex;
@@ -42,23 +39,23 @@
     align-items: center;
     justify-content: center;
 
-    font-size: 20px;
+    font-size: 1.25rem;          /* 20px */
 
-    border-left: 8px solid black;
-    border-bottom: 8px solid black;
-    border-top: 3px solid black;
-    border-right: 3px solid black;
+    border-left: 0.5rem solid rgb(102, 19, 19);    /* 8px */
+    border-bottom: 0.5rem solid rgb(102, 19, 19);  /* 8px */
+    border-top: 0.1875rem solid rgb(102, 19, 19);  /* 3px */
+    border-right: 0.1875rem solid rgb(102, 19, 19);/* 3px */
 
-    box-shadow: 0 0 30px 10px rgb(250, 55, 97); 
-    border-radius: 10px;
-
+    box-shadow: 0 0 1.875rem 0.625rem rgb(250, 55, 97); /* 30px 10px */
+    border-radius: 0.625rem;     /* 10px */
 }
 
-.SPImissionWindowCompleted{
 
-    padding: 30px;
-    min-height: 350px;
-    width: 250px;
+
+.SPImissionWindowCompleted {
+    padding: 1.875rem;           /* 30px */
+    min-height: 21.875rem;       /* 350px */
+    width: 15.625rem;            /* 250px */
     background-color: rgb(111, 188, 255);
 
     display: flex;
@@ -66,22 +63,21 @@
     align-items: center;
     justify-content: center;
 
-    border-left: 8px solid black;
-    border-bottom: 8px solid black;
-    border-top: 3px solid black;
-    border-right: 3px solid black;
+    border-left: 0.5rem solid rgb(46, 80, 110);    /* 8px */
+    border-bottom: 0.5rem solid rgb(46, 80, 110);  /* 8px */
+    border-top: 0.1875rem solid rgb(46, 80, 110);  /* 3px */
+    border-right: 0.1875rem solid rgb(46, 80, 110); /* 3px */
     
-    border-radius: 10px;
+    border-radius: 0.625rem;       /* 10px */
 
-    box-shadow: 0 0 30px 10px rgb(10, 148, 253); 
-
+    box-shadow: 0 0 1.875rem 0.625rem rgb(10, 148, 253); /* 30px 10px */
 }
 
-.SPImissionWindowUnavailable{
 
-    padding: 30px;
-    min-height: 350px;
-    width: 250px;
+.SPImissionWindowUnavailable {
+    padding: 1.875rem;           /* 30px */
+    min-height: 21.875rem;       /* 350px */
+    width: 15.625rem;            /* 250px */
     background-color: rgb(251, 52, 52);
 
     display: flex;
@@ -89,37 +85,42 @@
     align-items: center;
     justify-content: center;
 
-    border-left: 8px solid black;
-    border-bottom: 8px solid black;
-    border-top: 3px solid black;
-    border-right: 3px solid black;
-    font-size: 40px;
+    border-left: 0.5rem solid rgb(106, 22, 22);    /* 8px */
+    border-bottom: 0.5rem solid rgb(106, 22, 22);  /* 8px */
+    border-top: 0.1875rem solid rgb(106, 22, 22);  /* 3px */
+    border-right: 0.1875rem solid rgb(106, 22, 22); /* 3px */
     
-    border-radius: 10px;
+    font-size: 2.5rem;           /* 40px */
+    border-radius: 0.625rem;     /* 10px */
 
-    box-shadow: 0 0 30px 10px rgb(253, 51, 10); 
-
+    box-shadow: 0 0 1.875rem 0.625rem rgb(253, 51, 10); /* 30px 10px */
 }
 
-.SPImissionStartButton{
 
-    font-size: 25px;
+.SPImissionStartButton {
+    font-size: 1.5625rem;           /* 25px */
     font-weight: bold;
     background-color: rgb(255, 0, 251);
-    padding: 15px;
+    padding: 0.9375rem;             /* 15px */
     
-    border-left: 7px solid black;
-    border-bottom: 7px solid black;
-    border-top: 3px solid black;
-    border-right: 3px solid black;
+    border-left: 0.4375rem solid rgb(109, 0, 107);   /* 7px */
+    border-bottom: 0.4375rem solid rgb(109, 0, 107);  /* 7px */
+    border-top: 0.1875rem solid rgb(109, 0, 107);     /* 3px */
+    border-right: 0.1875rem solid rgb(109, 0, 107);   /* 3px */
 
     animation: button-glitch 4s infinite, glowing-shadow3 4s infinite;
-
 }
+
 
 .SPImissionStartButton:hover{
 
     background-color: rgb(128, 0, 126);
+
+    border-left: 0.4375rem solid rgb(66, 0, 65);  /* 7px */
+    border-bottom: 0.4375rem solid rgb(66, 0, 65);  /* 7px */
+    border-top: 0.1875rem solid rgb(66, 0, 65);     /* 3px */
+    border-right: 0.1875rem solid rgb(66, 0, 65);   /* 3px */
+
     color: white;
 
     animation: button-glitch 4s infinite, glowing-shadow5 4s infinite;

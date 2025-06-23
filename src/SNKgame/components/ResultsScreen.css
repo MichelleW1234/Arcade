@@ -1,23 +1,22 @@
-.SNKresultsSign{
+.SNKresultsSign {
 
-    padding: 80px;
+    padding: 5rem;                /* 80px */
     background-color: rgb(255, 70, 246);
 
-    border-left: 8px solid black;
-    border-bottom: 8px solid black;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 0.5rem solid rgb(98, 25, 94);   /* 8px */
+    border-bottom: 0.5rem solid rgb(98, 25, 94);;  /* 8px */
+    border-top: 0.125rem solid rgb(98, 25, 94);   /* 2px */
+    border-right: 0.125rem solid rgb(98, 25, 94); /* 2px */
 
-    border-radius: 8px;
+    border-radius: 0.5rem;        /* 8px */
 
     animation: glowing-shadow3 4s infinite;
 
 }
 
-.SNKresultsFont{
 
-    color:rgb(93, 255, 98);
-    font-size: 40px;
+.SNKresultsFont {
+    color: rgb(93, 255, 98);
+    font-size: 2.5rem;  /* 40px */
     animation: sign-glitch 3s infinite;
-
 }

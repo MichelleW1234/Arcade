@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 import alien from "../../../Images/image 8.svg";
 import laser from "../../../Images/image 9.svg";
@@ -6,7 +7,13 @@ import laserCannon from "../../../Images/image 17.svg";
 
 import {playSound} from '../../../Helpers/helpers.js';
 
+import "../gameInstructions.css";
+
 function M1InstructionsScreen() {
+
+  const [aliensDetectedOn, setAliensDetectedOn] = useState(false);
+  const [waveInfoOn, setWaveInfoOn] = useState(false);
+  const [equipmentOn, setEquipmentOn] = useState(false);
 
   return (
 
@@ -14,19 +21,76 @@ function M1InstructionsScreen() {
 
       <h1 className = "instructionsSign"> Station 1: Hive outskirts </h1>
 
-      <p className = "largefont">   
-        &gt; Mission Description: Exterminate all oncoming waves before they reach you. <br/> <br/>
-        &gt; Aliens Detected:<br/> <br/>
-        &nbsp; &nbsp; &gt; <img src={alien} ></img> - Soldier  <br/> <br/>
-        &nbsp; &nbsp; &nbsp; &bull; Laser Weakness: <img src={laser} ></img> <br/>
-        &nbsp; &nbsp; &nbsp; &bull; Special Abilities: None <br/> <br/>
-        &gt; Waves to Eliminate: 5 <br/>
-        &gt; Wave Size: 10 <br/> <br/>
-        &gt; Equipment: <br/><br/>
-        &nbsp; &nbsp; &gt; <img src={laserCannon} ></img> - Laser Cannon <br/> <br/>
-        &nbsp; &nbsp; &nbsp; &bull; Pulse Type: <img src={laser} ></img> <br/>
-        &nbsp; &nbsp; &nbsp; &bull; To Use: Move slider to aim at target <br/>
-      </p>
+      <h1 className = "SPIMissionDescription"> 
+        Mission Description: Exterminate all oncoming waves before they reach you.
+      </h1>
+
+      <div className = "SPIGuideButtonContainer">
+
+        {aliensDetectedOn === true ? (
+
+          <div className = "SPIMissionInfofloatingFlag">
+            <div className = "SPIGuideContainer">
+              <h3>Aliens Detected:</h3>
+              <p>
+                <img src={alien} ></img> - Soldier  <br/> <br/>
+                &nbsp; &bull; Laser Weakness: <img src={laser} ></img> <br/>
+                &nbsp; &bull; Special Abilities: None <br/> <br/>
+              </p>
+
+              <button className = "SPIGuideCloseButtons" onClick={() => setAliensDetectedOn(false)}> Close </button>
+            </div>
+          </div>
+
+        ) : (
+
+          <button className = "SPIGuideButton"  onClick = {() => setAliensDetectedOn(true)}> Alien Guide
+          </button>
+        )}
+
+        {waveInfoOn === true ? (
+
+          <div className = "SPIMissionInfofloatingFlag">
+            <div className="SPIGuideContainer">
+              <h3> Waves Detected: </h3>
+              <p>
+                &gt; Waves to Eliminate: 5 <br/>
+                &gt; Wave Size: 10 <br/> <br/>
+              </p>
+
+              <button className = "SPIGuideCloseButtons" onClick={() => setWaveInfoOn(false)}> Close </button>
+            </div>
+          </div>
+
+
+        ) : (
+
+          <button className = "SPIGuideButton" onClick = {() => setWaveInfoOn(true)}> Wave Guide
+          </button>
+        )}
+
+        {equipmentOn === true ? (
+
+          <div className = "SPIMissionInfofloatingFlag">
+            <div className = "SPIGuideContainer">
+              <h3>Equipment:</h3>
+              <p>
+                <img src={laserCannon} ></img> - Laser Cannon <br/> <br/>
+                &nbsp; &bull; Pulse Type: <img src={laser} ></img> <br/>
+                &nbsp; &bull; To Use: Move slider to aim at target <br/>
+              </p>
+              <button className = "SPIGuideCloseButtons" onClick={() => setEquipmentOn(false)}> Close </button>
+            </div>
+          </div>
+
+        ) : (
+
+          <button className = "SPIGuideButton" onClick = {() => setEquipmentOn(true)}> Equipment Guide
+          </button>
+
+        )}
+
+      </div>
 
       <div className = "generalbuttonContainer">
         <Link to= "/SPIgameM1" className = "generalbuttonGlitch" onClick = {() => playSound(7)}>

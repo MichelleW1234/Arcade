@@ -1,106 +1,89 @@
-.TTTboard{
-
-    height: 500px;
-    width: 500px;
+.TTTboard {
+    height: 31.25rem;          /* 500px */
+    width: 31.25rem;           /* 500px */
     background-color: rgb(26, 156, 255);
-    border-left: 10px solid black;
-    border-bottom: 10px solid black;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-    border-radius: 10px;
-    gap: 30px;
-    
+
+    border-left: 0.625rem solid rgb(10, 62, 102);   /* 10px */
+    border-bottom: 0.625rem solid rgb(10, 62, 102);  /* 10px */
+    border-top: 0.125rem solid rgb(10, 62, 102);     /* 2px */
+    border-right: 0.125rem solid rgb(10, 62, 102);   /* 2px */
+    border-radius: 0.625rem;               /* 10px */
+    gap: 1.875rem;                        /* 30px */
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: 1.875rem;                    /* 30px */
 
     animation: glowing-shadow1 4s infinite;
-
 }
 
-.TTTturnBoard {
 
-    height: 80px;
-    width: 400px;
+.TTTturnBoard {
+    height: 5rem;            /* 80px */
+    width: 25rem;            /* 400px */
     background-color: rgb(146, 205, 249);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 0.625rem;       /* 10px */
     color: rgb(255, 255, 255);
 
-    border-left: 8px solid rgb(141, 255, 160);
-    border-bottom:  8px solid rgb(141, 255, 160);
-    border-top:  8px solid rgb(141, 255, 160);
-    border-right:  8px solid rgb(141, 255, 160);
+    border: 0.5rem solid rgb(141, 255, 160);   /* 8px */
 
-    border-radius: 15px;
-    font-size: 26px;
+    border-radius: 0.9375rem; /* 15px */
+    font-size: 1.625rem;      /* 26px */
 
     animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
-
-
 }
 
 
-.TTTfinished_chart_container{
-
-    height: 300px;
-    width: 300px;
+.TTTfinished_chart_container {
+    height: 18.75rem;       /* 300px */
+    width: 18.75rem;        /* 300px */
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    grid-template-rows: repeat(3, 1fr); /* 3 rows */
-    background-color: aqua;
-    border-left: 3px solid black;
-    border-bottom: 3px solid black;
+    grid-template-rows: repeat(3, 1fr);    /* 3 rows */
 
     animation: glowing-shadow2 4s infinite;
-    
 }
 
-.TTTresulting_chart_win{
 
+
+.TTTresulting_chart_win {
     background-color: rgb(246, 255, 0);
-    border-bottom: 2px solid black;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    border-top: 2px solid black;
+    
+    border: 0.125rem solid rgb(116, 120, 0); /* 2px */
 
-    font-size: 80px;
+    font-size: 5rem; /* 80px */
     text-align: center;
 
     box-shadow: 
-    0 0 2px 2px rgb(191, 255, 0),
-    0 0 4px 4px rgb(17, 255, 0),
-    0 0 6px 6px rgb(0, 225, 255);
-
+        0 0 0.125rem 0.125rem rgb(191, 255, 0),
+        0 0 0.25rem 0.25rem rgb(17, 255, 0),
+        0 0 0.375rem 0.375rem rgb(0, 225, 255);
 }
 
 
-.TTTresulting_chart{
-
+.TTTresulting_chart {
     background-color: rgb(204, 252, 255);
-    border-bottom: 2px solid black;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    border-top: 2px solid black;
+    
+    border: 0.125rem solid rgb(85, 105, 106); /* 2px */
 
-    font-size: 80px;
+    font-size: 5rem; /* 80px */
     text-align: center;
 
     box-shadow: 
-    0 0 2px 2px rgb(150, 255, 250),
-    0 0 4px 4px rgb(0, 242, 255),
-    0 0 6px 6px rgb(0, 200, 255);
-
+        0 0 0.125rem 0.125rem rgb(150, 255, 250),
+        0 0 0.25rem 0.25rem rgb(0, 242, 255),
+        0 0 0.375rem 0.375rem rgb(0, 200, 255);
 }
 
-.TTTendingContainer{
 
+.TTTendingContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
-
+    gap: 3.125rem; /* 50px */
 }
+

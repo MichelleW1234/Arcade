@@ -1,81 +1,81 @@
 .RPSgameScreenContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.125rem;               /* 50px */
+  background-color: rgb(117, 93, 255);
+  width: 37.5rem;                 /* 600px */
+  overflow-y: auto;
+  border-radius: 1.5625rem;       /* 25px */
+  gap: 3.125rem;                  /* 50px */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px;
-    background-color: rgb(117, 93, 255);
-    width: 600px;
-    overflow-y: auto;
-    border-radius: 25px;
-    gap: 50px;
+  border-left: 0.5625rem solid rgb(50, 39, 112);    /* 9px */
+  border-bottom: 0.5625rem solid rgb(50, 39, 112);  /* 9px */
+  border-top: 0.125rem solid rgb(50, 39, 112);      /* 2px */
+  border-right: 0.125rem solid rgb(50, 39, 112);    /* 2px */
 
-    border-left: 9px solid black;
-    border-bottom: 9px solid black;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-
-    box-shadow: 0 0 40px 8px rgb(157, 139, 255);
-    margin-top: 100px;
-
+  box-shadow: 0 0 2.5rem 0.5rem rgb(157, 139, 255); /* 40px 8px */
+  margin-top: 6.25rem;            /* 100px */
 }
 
+.RPSRoundNumberSign {
+  padding: 0.625rem;                  /* 10px */
+  border-radius: 1.5625rem;           /* 25px */
+  background-color: rgb(190, 176, 254);
+  border: 0.3125rem solid rgba(1, 255, 35, 0.586); /* 5px */
+  color: white;
 
-.RPSRoundNumberSign{
-
-    padding: 10px;
-    border-radius: 25px;
-    background-color: rgb(190, 176, 254);
-    border: 5px solid rgba(1, 255, 35, 0.586);
-    color: white;
-
-    animation:glowing-sign-shadows 4s infinite;
-    
+  animation: glowing-sign-shadows 4s infinite;
 }
 
 .RPSRoundNumberSignGlitch{
 
-    animation: sign-glitch 4s infinite;
+  animation: sign-glitch 4s infinite;
     
 }
 
 .RPSdirections {
-
-    font-size: 25px;
-    color: rgb(255, 255, 255);
-
+  font-size: 1.5625rem;  /* 25px */
+  color: rgb(255, 255, 255);
 }
 
 .RPStextbox {
+  font-size: 1.25rem;              /* 20px */
+  border-radius: 0.1875rem;        /* 3px */
+  padding: 0.3125rem;              /* 5px */
+  border-left: 0.3125rem solid black;   /* 5px */
+  border-bottom: 0.3125rem solid black; /* 5px */
 
-    font-size: 20px;
-    border-radius: 3px;
-    padding: 5px;
-    border-left: 5px solid black;
-    border-bottom: 5px solid black;
-
-    animation: glowing-shadow2 4s infinite;
-
+  animation: glowing-shadow2 4s infinite;
 }
 
 .RPSenterButton {
+  font-size: 1.5625rem;              /* 25px */
+  padding: 0.625rem;                 /* 10px */
+  background-color: rgb(251, 80, 234);
+  border-left: 0.34375rem solid rgb(103, 31, 95);   /* 5.5px */
+  border-bottom: 0.34375rem solid rgb(103, 31, 95); /* 5.5px */
+  border-top: 0.125rem solid rgb(103, 31, 95);   /* 5.5px */
+  border-right: 0.125rem solid rgb(103, 31, 95); /* 5.5px */
 
-    font-size: 25px;
-    padding: 10px;
-    background-color: rgb(251, 80, 234);
-    border-left: 5.5px solid black;
-    border-bottom: 5.5px solid black;
+  animation: glowing-shadow5 4s infinite;
 
-    animation: glowing-shadow5 4s infinite;
-    
 }
+
 
 .RPSenterButton:hover {
 
-    background-color: rgb(118, 35, 111);
-    color: white;
+  background-color: rgb(118, 35, 111);
+
+  border-left: 0.34375rem solid rgb(48, 14, 44);   /* 5.5px */
+  border-bottom: 0.34375rem solid rgb(48, 14, 44);  /* 5.5px */
+  border-top: 0.125rem solid rgb(48, 14, 44);  /* 5.5px */
+  border-right: 0.125rem solid rgb(48, 14, 44); /* 5.5px */
+
+
+  color: white;
     
-    animation: glowing-shadow3 4s infinite;
+  animation: glowing-shadow3 4s infinite;
 
 }
 

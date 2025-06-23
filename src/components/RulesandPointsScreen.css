@@ -1,12 +1,10 @@
-.claimPointsSign{
-
-    font-size: 35px;
-    border-radius: 30px;
-    padding: 10px;
-    color: white;
-    background-color: rgb(243, 154, 255);
-    border: 5px solid rgba(0, 253, 46, 0.521);
-
-    animation: glowing-sign-shadows 4s infinite;
-
+.claimPointsSign {
+  font-size: 2.1875rem;               /* 35px */
+  border-radius: 1.875rem;            /* 30px */
+  padding: 0.625rem;                  /* 10px */
+  color: white;
+  background-color: rgb(243, 154, 255);
+  border: 0.3125rem solid rgba(0, 253, 46, 0.521);  /* 5px */
+  
+  animation: glowing-sign-shadows 4s infinite;
 }

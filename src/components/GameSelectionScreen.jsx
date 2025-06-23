@@ -113,8 +113,8 @@ function GameSelectionScreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                <h2> Rock-Paper-Scissors</h2>
-                                <h2><span className = "windowGlitch">(20 Points)</span></h2>
+                                Rock-Paper-Scissors
+                                <span className = "windowGlitch">(20 Points)</span>
                                 
                             </div>
 
@@ -131,8 +131,8 @@ function GameSelectionScreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                <h2> Tic-Tac-Toe </h2>
-                                <h2>(10 Points)</h2>
+                                Tic-Tac-Toe <br/><br/>
+                                (10 Points)
                                 
                             </div>
 
@@ -149,8 +149,8 @@ function GameSelectionScreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                <h2> Snake </h2>
-                                <h2> (5 Points) </h2>
+                                Snake <br/> <br/>
+                                (5 Points)
                                 
                             </div>
 
@@ -167,8 +167,8 @@ function GameSelectionScreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                <h2> Space Invasion </h2>
-                                <h2> (15 Points) </h2>
+                                Space Invasion <br/> <br/>
+                                (15 Points)
                                 
                             </div>
 

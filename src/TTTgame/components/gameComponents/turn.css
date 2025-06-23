@@ -1,71 +1,63 @@
-.TTTchart_container{
-
-    height: 300px;
-    width: 300px;
+.TTTchart_container {
+    height: 18.75rem; /* 300px */
+    width: 18.75rem;  /* 300px */
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    grid-template-rows: repeat(3, 1fr); /* 3 rows */
-    background-color: aqua;
-    border-left: 3px solid black;
-    border-bottom: 3px solid black;
-
-    animation: glowing-shadow2 4s infinite;
+    grid-template-rows: repeat(3, 1fr);    /* 3 rows */
     
+    animation: glowing-shadow2 4s infinite;
 }
 
-.TTTchart_button{
 
+.TTTchart_button {
     background-color: rgb(204, 252, 255);
-    border: 2px solid black;
+    border: 0.125rem solid rgb(2, 0, 138); /* 2px */
 
     box-shadow: 
-    0 0 2px 2px rgb(150, 255, 250),
-    0 0 4px 4px rgb(0, 242, 255),
-    0 0 6px 6px rgb(0, 200, 255);
+        0 0 0.125rem 0.125rem rgb(150, 255, 250),
+        0 0 0.25rem 0.25rem rgb(0, 242, 255),
+        0 0 0.375rem 0.375rem rgb(0, 200, 255);
 
     animation: none;
-
 }
 
-.TTTchart_button:hover{
 
+
+.TTTchart_button:hover {
     background-color: rgb(0, 204, 255);
 
     box-shadow: 
-    0 0 2px 2px rgb(150, 255, 250),
-    0 0 4px 4px rgb(0, 242, 255),
-    0 0 6px 6px rgb(0, 200, 255);
+        0 0 0.125rem 0.125rem rgb(150, 255, 250),
+        0 0 0.25rem 0.25rem rgb(0, 242, 255),
+        0 0 0.375rem 0.375rem rgb(0, 200, 255);
 
     animation: none;
-
 }
 
-.TTTchart_selected_computer{
 
+.TTTchart_selected_computer {
     background-color: rgb(255, 0, 255);
-    border: 2px solid black;
+    border: 0.125rem solid rgb(89, 1, 89); /* 2px */
 
-    font-size: 80px;
+    font-size: 5rem; /* 80px */
     text-align: center;
 
     box-shadow:
-    0 0 2px 2px rgb(240, 32, 255),
-    0 0 4px 4px rgb(209, 42, 255),
-    0 0 6px 6px rgb(33, 155, 255);
+        0 0 0.125rem 0.125rem rgb(240, 32, 255),
+        0 0 0.25rem 0.25rem rgb(209, 42, 255),
+        0 0 0.375rem 0.375rem rgb(33, 155, 255);
 }
 
-.TTTchart_selected_user{
 
+.TTTchart_selected_user {
     background-color: rgb(13, 0, 255);
-    border: 2px solid black;
+    border: 0.125rem solid rgb(5, 0, 105); /* 2px */
     
-    font-size: 80px;
+    font-size: 5rem; /* 80px */
     text-align: center;
 
     box-shadow: 
-    0 0 2px 2px rgb(0, 42, 255),
-    0 0 4px 4px rgb(0, 140, 255),
-    0 0 6px 6px rgb(0, 191, 255);
-
-
+        0 0 0.125rem 0.125rem rgb(0, 42, 255),
+        0 0 0.25rem 0.25rem rgb(0, 140, 255),
+        0 0 0.375rem 0.375rem rgb(0, 191, 255);
 }

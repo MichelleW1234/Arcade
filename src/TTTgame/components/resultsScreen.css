@@ -1,33 +1,23 @@
-.TTTscoreboard{
-
-    background-color: rgb(238, 0, 255);
-    padding: 50px;
+.TTTscoreboard {
+    background-color: rgb(241, 81, 252);
+    padding: 3.125rem; /* 50px */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 1.875rem; /* 30px */
 
-    border-left: 8px solid black;
-    border-bottom: 8px solid black;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-radius: 15px;
+    border-left: 0.5rem solid rgb(104, 0, 111);   /* 8px */
+    border-bottom: 0.5rem solid rgb(104, 0, 111);  /* 8px */
+    border-top: 0.0625rem solid rgb(104, 0, 111);  /* 1px */
+    border-right: 0.0625rem solid rgb(104, 0, 111);  /* 1px */
+    border-radius: 0.9375rem; /* 15px */
 
-    font-size: 20px;
+    font-size: 1.25rem; /* 20px */
     color: rgba(0, 255, 110, 0.629);
 
     animation: glowing-shadow3 4s infinite;
-
 }
 
-
-.TTTbuttonsContainer{
-
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-
-}
 
 .TTTResultsSignGlitch{
 

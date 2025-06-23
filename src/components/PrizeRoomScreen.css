@@ -40,6 +40,8 @@
   background-color: rgb(189, 249, 255);
   padding: 1.25rem;           /* 20px */
 
+  font-size: 1.3rem;
+
   border-left: 0.5rem solid rgb(86, 113, 115);     /* 8px */
   border-bottom: 0.5rem solid rgb(86, 113, 115);   /* 8px */
   border-right: 0.0625rem solid rgb(86, 113, 115); /* 1px */
@@ -66,8 +68,8 @@
 
 
 .prizeImages {
-  width: 12.5rem;    /* 200px */
-  height: 12.5rem;   /* 200px */
+  width: 11rem;    /* 200px */
+  height: 11rem;   /* 200px */
 
   animation: pulse-glow 2s infinite alternate;
 }

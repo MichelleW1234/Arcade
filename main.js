@@ -10,6 +10,7 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    fullscreen: true,
     webPreferences: {
       nodeIntegration: true
     }
@@ -22,6 +23,11 @@ function createWindow () {
   } else {
     win.loadFile(path.join(__dirname, 'dist/index.html'));
   }
+
+  // 🔧 Set zoom to normal (1 = 100%)
+  win.webContents.on('did-finish-load', () => {
+    win.webContents.setZoomFactor(0.70);
+  });
 }
 
 app.whenReady().then(createWindow);

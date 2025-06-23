@@ -78,7 +78,7 @@ function gameBoard({waveNumber, setWaveNumber}) {
 
         <div className = "SPIgameContainer">
 
-            <div className = "SPIgameScreen"> 
+            <div className = "SPIgameScreenM1"> 
 
                 {gameBoardMatrix.map((row, rowIndex) => (
                     row.map((num, colIndex) => {

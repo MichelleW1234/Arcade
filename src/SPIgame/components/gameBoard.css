@@ -7,7 +7,7 @@
 }
 
 
-.SPIgameScreen {
+.SPIgameScreenM1 {
     height: 28.5rem;                 /* 456px */
     width: 51rem;                    /* 816px */
 
@@ -16,6 +16,8 @@
     display: grid;
     grid-template-columns: repeat(27, 1fr);
     grid-template-rows: repeat(15, 1fr);
+
+    background-color: #1d0086;
 
     border-left: 0.1875rem solid rgb(19, 13, 82);   /* 3px */
     border-bottom: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
@@ -26,6 +28,46 @@
 }
 
 
+.SPIgameScreenM2 {
+    height: 28.5rem;                 /* 456px */
+    width: 51rem;                    /* 816px */
+
+    padding: 0rem;
+
+    display: grid;
+    grid-template-columns: repeat(27, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+
+    background-color: #180070;
+
+    border-left: 0.1875rem solid rgb(19, 13, 82);   /* 3px */
+    border-bottom: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
+    border-top: 0.1875rem solid rgb(19, 13, 82);     /* 3px */
+    border-right: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
+
+    box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); /* 20px 10px */
+}
+
+
+.SPIgameScreenM3 {
+    height: 28.5rem;                 /* 456px */
+    width: 51rem;                    /* 816px */
+
+    padding: 0rem;
+
+    display: grid;
+    grid-template-columns: repeat(27, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+
+    background-color: #13005a;
+
+    border-left: 0.1875rem solid rgb(19, 13, 82);   /* 3px */
+    border-bottom: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
+    border-top: 0.1875rem solid rgb(19, 13, 82);     /* 3px */
+    border-right: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
+
+    box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); /* 20px 10px */
+}
 
 
 

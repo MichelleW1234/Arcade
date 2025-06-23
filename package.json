@@ -19,6 +19,7 @@
     "react-router-dom": "^7.0.2"
   },
   "devDependencies": {
+    "@electron/get": "^3.1.0",
     "@eslint/js": "^9.15.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
@@ -35,7 +36,7 @@
     "wait-on": "^8.0.3"
   },
   "build": {
-    "appId": "com.example.myapp",
+    "appId": "com.MichellesDomain.Arcade",
     "productName": "My Electron App",
     "directories": {
       "output": "dist"

@@ -39,3 +39,11 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });
+
+
+app.on('browser-window-focus', () => {
+  const win = BrowserWindow.getFocusedWindow();
+  if (win) {
+    win.webContents.setZoomFactor(0.7);  // or 1.0, whatever you want as default
+  }
+});

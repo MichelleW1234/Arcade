@@ -37,23 +37,17 @@
   },
   "build": {
     "appId": "com.MichellesDomain.Arcade",
-    "productName": "My Electron App",
-    "directories": {
-      "output": "dist"
-    },
+    "productName": "Arcade",
     "files": [
-      "dist/**/*",
-      "main.js",
-      "package.json"
+      "dist",
+      "main.js"
     ],
     "mac": {
-      "target": "dmg"
+      "target": "dmg",
+      "icon": "assets/ArcadeIconMac.icns"
     },
-    "win": {
-      "target": "nsis"
-    },
-    "linux": {
-      "target": "AppImage"
+    "directories": {
+      "output": "release"
     }
   }
 }

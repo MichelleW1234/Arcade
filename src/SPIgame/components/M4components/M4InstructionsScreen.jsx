@@ -16,6 +16,40 @@ function M4InstructionsScreen() {
   const [aliensDetectedOn, setAliensDetectedOn] = useState(false);
   const [equipmentOn, setEquipmentOn] = useState(false);
 
+    const openingGuide = (flagNumber) => {
+
+    if (flagNumber == 1){
+
+      setAliensDetectedOn(true);
+
+    } else {
+
+      setEquipmentOn(true);
+
+    }
+    
+    playSound(3);
+
+  }
+
+
+  const closingGuide = (flagNumber) => {
+
+    if (flagNumber == 1){
+
+      setAliensDetectedOn(false);
+
+    } else {
+
+      setEquipmentOn(false);
+
+    }
+    
+    playSound(3);
+
+  }
+
+
   return (
 
     <div className = "screenLayout">
@@ -41,13 +75,13 @@ function M4InstructionsScreen() {
                 &nbsp; &bull; Other Notes: Do NOT let your light source go out before the Queen dies. <br/> <br/>
               </p>
 
-              <button className = "SPIGuideCloseButtons" onClick={() => setAliensDetectedOn(false)}> Close </button>
+              <button className = "SPIGuideCloseButtons" onClick={() => closingGuide(1)}> Close </button>
             </div>
           </div>
 
         ) : (
 
-          <button className = "SPIGuideButton"  onClick = {() => setAliensDetectedOn(true)}> Alien Guide
+          <button className = "SPIGuideButton"  onClick = {() => openingGuide(1)}> Alien Guide
           </button>
         )}
         
@@ -66,13 +100,13 @@ function M4InstructionsScreen() {
                 &nbsp; &bull; First-person weapon designed for precision firing <br/>
                 &nbsp; &bull; To Use: Aim at target and click <br/>
               </p>
-              <button className = "SPIGuideCloseButtons" onClick={() => setEquipmentOn(false)}> Close </button>
+              <button className = "SPIGuideCloseButtons" onClick={() => closingGuide(2)}> Close </button>
             </div>
           </div>
 
         ) : (
 
-          <button className = "SPIGuideButton" onClick = {() => setEquipmentOn(true)}> Equipment Guide
+          <button className = "SPIGuideButton" onClick = {() => openingGuide(2)}> Equipment Guide
           </button>
 
         )}

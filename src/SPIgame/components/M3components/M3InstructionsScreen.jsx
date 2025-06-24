@@ -18,6 +18,47 @@ function M3InstructionsScreen() {
   const [waveInfoOn, setWaveInfoOn] = useState(false);
   const [equipmentOn, setEquipmentOn] = useState(false);
 
+  const openingGuide = (flagNumber) => {
+
+    if (flagNumber == 1){
+
+      setAliensDetectedOn(true);
+
+    } else if (flagNumber == 2){
+
+      setWaveInfoOn(true);
+
+    } else {
+
+      setEquipmentOn(true);
+
+    }
+    
+    playSound(3);
+
+  }
+
+
+  const closingGuide = (flagNumber) => {
+
+    if (flagNumber == 1){
+
+      setAliensDetectedOn(false);
+
+    } else if (flagNumber == 2){
+
+      setWaveInfoOn(false);
+
+    } else {
+
+      setEquipmentOn(false);
+
+    }
+    
+    playSound(3);
+
+  }
+
   return (
 
     <div className = "screenLayout">
@@ -44,13 +85,13 @@ function M3InstructionsScreen() {
                   &nbsp; &bull; Special Abilities: None <br/> <br/>
               </p>
 
-              <button className = "SPIGuideCloseButtons" onClick={() => setAliensDetectedOn(false)}> Close </button>
+              <button className = "SPIGuideCloseButtons" onClick={() => closingGuide(1)}> Close </button>
             </div>
           </div>
 
         ) : (
 
-          <button className = "SPIGuideButton"  onClick = {() => setAliensDetectedOn(true)}> Alien Guide
+          <button className = "SPIGuideButton"  onClick = {() => openingGuide(1)}> Alien Guide
           </button>
         )}
 
@@ -64,13 +105,13 @@ function M3InstructionsScreen() {
                 &gt; Wave Size: 20 <br/> <br/>
               </p>
 
-              <button className = "SPIGuideCloseButtons" onClick={() => setWaveInfoOn(false)}> Close </button>
+              <button className = "SPIGuideCloseButtons" onClick={() => closingGuide(2)}> Close </button>
             </div>
           </div>
 
         ) : (
 
-          <button className = "SPIGuideButton" onClick = {() => setWaveInfoOn(true)}> Wave Guide
+          <button className = "SPIGuideButton" onClick = {() => openingGuide(2)}> Wave Guide
           </button>
         )}
 
@@ -86,13 +127,13 @@ function M3InstructionsScreen() {
                 &nbsp; &bull; Pulse Type - Mutant: <img src={laserMutant} ></img> <br/>
                 &nbsp; &bull; To Use: Move slider to aim at target. Press buttom to switch between modes. <br/>
               </p>
-              <button className = "SPIGuideCloseButtons" onClick={() => setEquipmentOn(false)}> Close </button>
+              <button className = "SPIGuideCloseButtons" onClick={() => closingGuide(3)}> Close </button>
             </div>
           </div>
 
         ) : (
 
-          <button className = "SPIGuideButton" onClick = {() => setEquipmentOn(true)}> Equipment Guide
+          <button className = "SPIGuideButton" onClick = {() => openingGuide(3)}> Equipment Guide
           </button>
 
         )}

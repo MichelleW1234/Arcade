@@ -35,14 +35,17 @@ import SPIgameScreenM4 from "./SPIgame/components/M4components/gameScreenM4.jsx"
 import SPIsummaryScreen from "./SPIgame/components/summaryScreen.jsx";
 
 import NoPage from "./components/NoPage.jsx";
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import ScrollToTop from "./ScrollToTop.jsx";
+import {HashRouter, Routes, Route } from 'react-router-dom';
 import "./App.css";
 
 function App() {
 
+
   return (
     <div className = "innerboarder">
     <HashRouter>
+      <ScrollToTop />
       <Routes>
         <Route index element={<ArcadeStartScreen />}/>
         <Route path="/arcadeStart" element={<ArcadeStartScreen />}/>

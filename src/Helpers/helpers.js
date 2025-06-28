@@ -12,6 +12,8 @@ import explodedBoss from "../Music/explodedBoss.mp3";
 import stationArrival from "../Music/stationArrival.mp3";
 import alienTakeOver from "../Music/alienTakeOver.mp3";
 import theQueenRoar from "../Music/theQueenRoar.mp3";
+import RPSSuccess from "../Music/RPSSuccess.mp3";
+import SnakeSuccess from '../Music/SnakeSuccess.mp3';
 
 export const retrieveActiveGame = (index) => {
     
@@ -64,81 +66,31 @@ export const pointsDistribution = (ActiveGame, winner, setPlayer) => {
 
 export const playSound = (soundEffect) => {
 
-    let audio = null;
+    const soundDictionary = {
 
-    if (soundEffect == 1){
+        1: [buttonStart, 0.3],
+        2: [buttonSet, 0.3],
+        3: [buttonSelect, 0.3],
+        4: [buttonRestart, 1],
+        5: [buttonError, 0.3],
+        6: [gameOver, 0.5],
+        7: [enteringAlienZone, 0.3], 
+        8: [laserRifle, 0.1],
+        9: [laserBlaster, 0.05],
+        10: [incomingAlienWave, 0.1],
+        11: [explodedBoss, 0.2],
+        12: [stationArrival, 0.5],
+        13: [alienTakeOver, 0.05],
+        14: [theQueenRoar, 0.5],
+        15: [SnakeSuccess, 0.7],
+        16: [RPSSuccess, 0.7],
 
-        audio = new Audio(buttonStart);
-        audio.volume = 0.3;
+    };
 
-    } else if (soundEffect == 2){
-
-        audio = new Audio(buttonSet);
-        audio.volume = 0.3;
-
-    } else if (soundEffect == 3){
-
-        audio = new Audio(buttonSelect);
-        audio.volume = 0.3;
-
-    } else if (soundEffect == 4){
-
-        audio = new Audio(buttonRestart);
-
-    } else if (soundEffect == 5){
-
-        audio = new Audio(buttonError);
-        audio.volume = 0.3;
-
-    } else if (soundEffect == 6){
-
-        audio = new Audio(gameOver);
-        audio.volume = 0.5;
-
-    } else if (soundEffect == 7){
-
-        audio = new Audio(enteringAlienZone);
-        audio.volume = 0.3;
-
-    } else if (soundEffect == 8){
-
-        audio = new Audio(laserRifle);
-        audio.volume = 0.1;
-
-    } else if (soundEffect == 9){
-
-        audio = new Audio(laserBlaster);
-        audio.volume = 0.05;
-
-    }  else if (soundEffect == 10){
-
-        audio = new Audio(incomingAlienWave);
-        audio.volume = 0.1;
-
-    }else if (soundEffect == 11){
-
-        audio = new Audio(explodedBoss);
-        audio.volume = 0.2;
-
-    } else if (soundEffect == 12){
-
-        audio = new Audio(stationArrival);
-        audio.volume = 0.5;
-
-    } else if (soundEffect == 13){
-
-        audio = new Audio(alienTakeOver);
-        audio.volume = 0.05;
-
-    } else if (soundEffect == 14){
-
-        audio = new Audio(theQueenRoar);
-        audio.volume = 0.5;
-
-    }
-
-
+    const entry = soundDictionary[soundEffect];
+    const [soundFile, volume] = entry;
+    const audio = new Audio(soundFile);
+    audio.volume = volume;
     audio.play();
-   
 
 }

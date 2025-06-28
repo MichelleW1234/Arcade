@@ -14,6 +14,7 @@ import alienTakeOver from "../Music/alienTakeOver.mp3";
 import theQueenRoar from "../Music/theQueenRoar.mp3";
 import RPSSuccess from "../Music/RPSSuccess.mp3";
 import SnakeSuccess from '../Music/SnakeSuccess.mp3';
+import buttonBought from "../Music/buttonBought.mp3";
 
 export const retrieveActiveGame = (index) => {
     
@@ -84,6 +85,7 @@ export const playSound = (soundEffect) => {
         14: [theQueenRoar, 0.5],
         15: [SnakeSuccess, 0.7],
         16: [RPSSuccess, 0.7],
+        17: [buttonBought, 0.3]
 
     };
 

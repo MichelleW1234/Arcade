@@ -20,10 +20,12 @@ export function PrizeProvider({ children }) {
     try {
       const storedPrize = JSON.parse(sessionStorage.getItem("Prize"));
       return Array.isArray(storedPrize) ? storedPrize : [["Bear", 80, Bear], ["BumbleBee", 50, Bee], ["Valentine", 20, Heart],
-                                                          ["GameBoy", 100, GameBoy], ["Robot", 30, Robot], ["Alien", 20, Alien], ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 50, Whale]]; // Ensure it's an array
+                                                          ["GameBoy", 100, GameBoy], ["Robot", 30, Robot], ["Alien", 20, Alien], 
+                                                          ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 50, Whale]];
     } catch (error) {
       return [["Bear", 80, Bear], ["BumbleBee", 50, Bee], ["Valentine", 20, Heart],
-      ["GameBoy", 100, GameBoy], ["Robot", 30, Robot], ["Alien", 20, Alien], ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 50, Whale]]; // Fallback if JSON parsing fails
+              ["GameBoy", 100, GameBoy], ["Robot", 30, Robot], ["Alien", 20, Alien], 
+              ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 50, Whale]]; // Fallback if JSON parsing fails
     }
   });
 

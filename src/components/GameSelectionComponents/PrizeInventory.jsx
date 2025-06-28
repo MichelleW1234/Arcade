@@ -5,13 +5,17 @@ import GameBoy from '../../Images/image 4.svg';
 import Robot from '../../Images/image 5.svg';
 import Alien from '../../Images/image 6.svg';
 import Spider from '../../Images/image 7.svg';
+import Whale from "../../Images/image 19.svg";
+import Carrot from "../../Images/image 20.svg";
+
 
 import "./PrizeInventory.css";
 
 function PrizeInventory ({Prize}){
 
     const fullInventoryList = [["Bear", Bear], ["BumbleBee", Bee], ["Valentine", Heart], 
-        ["GameBoy", GameBoy], ["Robot", Robot], ["Alien", Alien], ["Spider", Spider]];
+        ["GameBoy", GameBoy], ["Robot", Robot], ["Alien", Alien], ["Spider", Spider], 
+        ["Carrot", Carrot], ["Whale", Whale]];
 
     return (
 

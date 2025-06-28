@@ -1,5 +1,4 @@
 import { playSound } from '../../Helpers/helpers.js';
-import SnakeSuccess from '../../Music/SnakeSuccess.mp3';
 
 const bumpChecker = (activeDirection, setSNKUser, snake) => {
 
@@ -113,10 +112,7 @@ export const changeSnakeDirection = (setSNKUser, activeDirection, setSnake, snak
 
     if (snake[0][0] === appleLocation[0] && snake[0][1] === appleLocation[1]) {
 
-        const audio = new Audio(SnakeSuccess);
-        audio.volumne = 0.7;
-        audio.play();
-
+        playSound(15);
 
         increaseSnake = true;
         setSNKUser(prevMatrix => [prevMatrix[0], prevMatrix[1] + 1]);

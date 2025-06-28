@@ -5,7 +5,6 @@ import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
 import {decideRoundWinnerFunction} from "../../Helpers/RPShelpers.js";
 
 import {playSound} from "../../../Helpers/helpers.js";
-import RPSSuccess from "../../../Music/RPSSuccess.mp3";
 
 import "./RPSRoundbox.css";
 
@@ -30,9 +29,7 @@ function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
 
             if (winner === 1){
 
-                const audio = new Audio(RPSSuccess);
-                audio.volume = 0.7;
-                audio.play();
+                playSound(16);
 
                 setRPSUser((prev) => {
                     const updatedUser = [...prev];
@@ -57,10 +54,7 @@ function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
                     return updatedUser;
                 });
 
-                const audio = new Audio(RPSSuccess);
-                audio.volume = 0.7;
-                audio.play();
-
+                playSound(16);
                 setTerminationFlag(true);
                 
             } else if (winner === -3){

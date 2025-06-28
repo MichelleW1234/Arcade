@@ -182,6 +182,19 @@ function GameSelectionScreen (){
                             </button>
 
                         </div>
+
+                        <div className = "ArcadeGameContainer">
+
+                            <div className = "ArcadeGame"> 
+                                
+                                Orbit <br/> <br/>
+                                (10 Points)
+
+                                Work in progress...
+                                
+                            </div>
+
+                        </div>
                         
 
                     </div>

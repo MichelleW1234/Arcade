@@ -34,9 +34,14 @@ import SPIgameScreenM3 from "./SPIgame/components/M3components/gameScreenM3.jsx"
 import SPIgameScreenM4 from "./SPIgame/components/M4components/gameScreenM4.jsx";
 import SPIsummaryScreen from "./SPIgame/components/summaryScreen.jsx";
 
+import ORBStartScreen from "./ORBgame/components/StartScreen.jsx";
+import ORBinstructionsScreen from "./ORBgame/components/InstructionsScreen.jsx";
+import ORBgameScreen from "./ORBgame/components/GameScreen.jsx";
+import ORBsummaryScreen from "./ORBgame/components/SummaryScreen.jsx";
+
 import NoPage from "./components/NoPage.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
-import {HashRouter, Routes, Route } from 'react-router-dom';
+import {HashRouter, Routes, Route, BrowserRouter } from 'react-router-dom';
 import "./App.css";
 
 function App() {
@@ -44,7 +49,8 @@ function App() {
 
   return (
     <div className = "innerboarder">
-    <HashRouter>
+    <BrowserRouter>
+    {/*<HashRouter>*/}
       <ScrollToTop />
       <Routes>
         <Route index element={<ArcadeStartScreen />}/>
@@ -83,10 +89,16 @@ function App() {
         <Route path="/SPIgameM4" element={<SPIgameScreenM4 />}/>
         <Route path="/SPIsummary" element={<SPIsummaryScreen />}/>
 
+        <Route path="/ORBstart" element={<ORBStartScreen />}/>
+        <Route path="/ORBInstructions" element={<ORBinstructionsScreen />}/>
+        <Route path="/ORBgame" element={<ORBgameScreen />}/>
+        <Route path="/ORBsummary" element={<ORBsummaryScreen />}/>
+        
         {/*Page doesn't exist error*/}
         <Route path="*" element={<NoPage />} />
       </Routes>
-    </HashRouter>
+    {/*</HashRouter>*/}
+    </BrowserRouter>
     </div>
   )
 }

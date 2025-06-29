@@ -1,38 +1,13 @@
-import React, { useEffect, useState} from "react";
 import "./InnerGameScreen.css";
 
-function InnerGameScreen ({roundNumber}){
-
-    const topRow = 1;
-    const rightCol = 18;
-    const bottomRow = 13;
-    const leftCol= 1;
-
-    const circleTop = 
-        Array.from({ length: 18 }, (_, i) => [topRow, i + 1]);
-    const circleRight = 
-        Array.from({ length: 13 }, (_, i) => [i + 1, rightCol]);
-    const circleBottom = 
-        Array.from({ length: 18 }, (_, i) => [bottomRow, i + 1]);
-    const circleLeft = 
-        Array.from({ length: 13 }, (_, i) => [i + 1, leftCol]);
-
-    const circle = [
-        ...circleTop,
-        ...circleRight,
-        ...circleBottom,
-        ...circleLeft,
-    ];
+function InnerGameScreen ({circle, currentSlot, winner}){
 
     /*20 × 30 matrix*/
-    const [gameArray, setGameArray] = useState(() => 
-        Array.from({ length: 15 }, () => Array(20).fill(0))
-    );
-
-
+    const gameArray = Array.from({ length: 15 }, () => Array(20).fill(0));
+    
     return (
 
-        <div className = "ORBGameBoard">
+        <div className = "ORBGameBoardScreen">
             {gameArray.map((row, rowIndex) => (
                 row.map((cell, colIndex) => {
 
@@ -40,9 +15,22 @@ function InnerGameScreen ({roundNumber}){
                         ([r, c]) => r === rowIndex && c === colIndex
                     );
 
+                    const slot = circle[currentSlot][0] === rowIndex && circle[currentSlot][1] === colIndex;
+
+                    const winningCirclePart = winner[0] === rowIndex && winner[1] === colIndex;
+
                     return (
 
-                        circlePart ? (
+                        slot ? (
+
+                            <div key = {rowIndex + "," + colIndex} className="ORBGameBoardCurrentSlot"></div>
+
+
+                        ) : winningCirclePart ? (
+
+                            <div key = {rowIndex + "," + colIndex} className="ORBGameBoardWinningCircle"></div>
+
+                        ) : circlePart ? (
 
                             <div key = {rowIndex + "," + colIndex} className="ORBGameBoardCircle"></div>
 

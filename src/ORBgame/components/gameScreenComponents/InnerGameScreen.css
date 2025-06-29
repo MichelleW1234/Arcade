@@ -1,4 +1,4 @@
-.ORBGameBoard{
+.ORBGameBoardScreen{
 
     border-top: 2px solid rgb(75, 101, 120);
     border-left: 5px solid rgb(75, 101, 120);
@@ -25,9 +25,29 @@
     height: 30px;
     width: 30px;
 
-    background-color: rgb(200, 255, 0);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(187, 187, 187);
 
-    border: 1px solid black;
+}
+
+
+.ORBGameBoardWinningCircle {
+
+    height: 30px;
+    width: 30px;
+
+    background-color: rgb(43, 255, 124);
+
+}
+
+
+.ORBGameBoardCurrentSlot {
+
+
+    height: 30px;
+    width: 30px;
+
+    background-color: rgb(246, 255, 0);
 
 }
 

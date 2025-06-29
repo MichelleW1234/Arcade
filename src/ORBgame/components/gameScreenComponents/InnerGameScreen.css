@@ -1,0 +1,36 @@
+.ORBGameBoard{
+
+    border-top: 2px solid rgb(75, 101, 120);
+    border-left: 5px solid rgb(75, 101, 120);
+    border-right: 2px solid rgb(75, 101, 120);
+    border-bottom: 5px solid rgb(75, 101, 120);
+
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(15, 1fr); 
+
+}
+
+.ORBGameBoardEmptySpace{
+
+    height: 30px;
+    width: 30px;
+
+    background-color: rgb(161, 216, 255);
+
+}
+
+.ORBGameBoardCircle {
+
+    height: 30px;
+    width: 30px;
+
+    background-color: rgb(200, 255, 0);
+
+    border: 1px solid black;
+
+}
+
+
+
+

@@ -76,9 +76,25 @@ function GameScreen (){
 
         <div className = "gameScreenLayout">
 
-            <h1 className='headerwords'> Gameboard: </h1>
-
             <div className = "ORBOuterGameContainer">
+
+                {stop == false ? (
+
+                    <div className = "ORBGameBoardLightContainer">
+                        <div className = "ORBGameBoardLightGo">  </div>
+                        <div className = "ORBGameBoardLightGo">  </div>
+                        <div className = "ORBGameBoardLightGo">  </div>
+                    </div>
+
+                ) : (
+
+                    <div className = "ORBGameBoardLightContainer">
+                        <div className = "ORBGameBoardLightStop">  </div>
+                        <div className = "ORBGameBoardLightStop">  </div>
+                        <div className = "ORBGameBoardLightStop">  </div>
+                    </div>
+
+                )}
 
                 <InnerGameScreen
                     circle = {circle}

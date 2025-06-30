@@ -40,6 +40,11 @@ export const retrieveActiveGame = (index) => {
         gameControls[0] = "/SPIstart";
         gameControls[1] = 15;
 
+    } else if (index === 5){
+
+        gameControls[0] = "/ORBstart";
+        gameControls[1] = 10;
+
     }
     
     return gameControls;

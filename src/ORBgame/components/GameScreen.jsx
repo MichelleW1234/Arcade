@@ -4,11 +4,18 @@ import React, { useState, useEffect} from "react";
 import InnerGameScreen from "./gameScreenComponents/InnerGameScreen.jsx";
 
 import {orbiting} from "../Helpers/helpers.js";
+
 import {playSound} from '../../Helpers/helpers.js';
+
+import { usePlayer } from '../../Providers/PlayerProvider.jsx';
+import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
 import "./GameScreen.css";
 
 function GameScreen (){
+
+    const { Player, setPlayer} = usePlayer();
+    const { ActiveGame, setActiveGame} = useActiveGame();
 
     const [stop, setStop] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -68,6 +75,15 @@ function GameScreen (){
 
     const claimPoints = () => {
 
+        if (circle[currentSlot][0] == winner[0] && circle[currentSlot][1] == winner[1]){
+
+            setPlayer(([current, prev]) => [current + ActiveGame[1], current]);
+
+        } else {
+
+            setPlayer(([current, prev]) => [current - ActiveGame[1], current]);
+
+        }
 
     }
 

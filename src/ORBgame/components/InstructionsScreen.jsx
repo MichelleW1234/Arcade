@@ -22,7 +22,10 @@ function InstructionsScreen (){
                 Instructions: 
             </h1>
             <p className = "largefont">
-                &gt; Instructions go here.
+                &gt; Press the stop button when the yellow light lands on green.<br/>
+                &gt; If you land it, you gain 10 points. If you miss, you lose 10 points.<br/>
+                &gt; You only get one try.<br/>
+                &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
             </p>
 
             <div className = "generalbuttonContainer">

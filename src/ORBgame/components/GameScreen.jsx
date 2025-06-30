@@ -5,7 +5,7 @@ import InnerGameScreen from "./gameScreenComponents/InnerGameScreen.jsx";
 
 import {orbiting} from "../Helpers/helpers.js";
 
-import {playSound} from '../../Helpers/helpers.js';
+import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -88,47 +88,61 @@ function GameScreen (){
     }
 
 
+    const exitGame = () => {
+        
+        playSound(4);
+        setPlayer(([current, prev]) => [current - ActiveGame[1], current]);
+        setActiveGame(retrieveActiveGame(1));
+
+    }
+
+
     return (
 
-        <div className = "gameScreenLayout">
+        <div>             
+            
+            <Link to="/selection" className = "generalbutton" onClick={() => exitGame()}> Quit Game </Link>
 
-            <div className = "ORBOuterGameContainer">
+            <div className = "gameScreenLayout">
 
-                {stop == false ? (
+                <div className = "ORBOuterGameContainer">
 
-                    <div className = "ORBGameBoardLightContainer">
-                        <div className = "ORBGameBoardLightGo">  </div>
-                        <div className = "ORBGameBoardLightGo">  </div>
-                        <div className = "ORBGameBoardLightGo">  </div>
-                    </div>
+                    {stop == false ? (
 
-                ) : (
+                        <div className = "ORBGameBoardLightContainer">
+                            <div className = "ORBGameBoardLightGo">  </div>
+                            <div className = "ORBGameBoardLightGo">  </div>
+                            <div className = "ORBGameBoardLightGo">  </div>
+                        </div>
 
-                    <div className = "ORBGameBoardLightContainer">
-                        <div className = "ORBGameBoardLightStop">  </div>
-                        <div className = "ORBGameBoardLightStop">  </div>
-                        <div className = "ORBGameBoardLightStop">  </div>
-                    </div>
+                    ) : (
 
-                )}
+                        <div className = "ORBGameBoardLightContainer">
+                            <div className = "ORBGameBoardLightStop">  </div>
+                            <div className = "ORBGameBoardLightStop">  </div>
+                            <div className = "ORBGameBoardLightStop">  </div>
+                        </div>
 
-                <InnerGameScreen
-                    circle = {circle}
-                    currentSlot = {currentSlot}
-                    winner = {winner}
+                    )}
 
-                />
+                    <InnerGameScreen
+                        circle = {circle}
+                        currentSlot = {currentSlot}
+                        winner = {winner}
 
-                {stop == false ? (
+                    />
 
-                    <button className = "ORBHitButton" onClick={stopped}> STOP </button>
+                    {stop == false ? (
 
-                ) : (
+                        <button className = "ORBHitButton" onClick={stopped}> STOP </button>
 
-                    <Link to="/ORBsummary" className = "ORBDoneButton" onClick={claimPoints}> View Result </Link>
+                    ) : (
 
-                )}
+                        <Link to="/ORBsummary" className = "ORBDoneButton" onClick={()=> claimPoints()}> View Result </Link>
 
+                    )}
+
+                </div>
             </div>
         </div>
 

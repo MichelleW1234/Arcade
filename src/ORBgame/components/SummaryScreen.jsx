@@ -1,16 +1,23 @@
 import { Link } from 'react-router-dom';
 
-import {playSound} from '../../Helpers/helpers.js';
-
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+
+import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
 import "./SummaryScreen.css";
 
 function SummaryScreen (){
 
     const { Player, setPlayer} = usePlayer();
-    const { ActiveGame, setActiveGame} = useActiveGame();
+    const { ActiveGame, setActiveGame} = useActiveGame();3
+
+    const reset = () => {
+        
+        playSound(4);
+        setActiveGame(retrieveActiveGame(1));
+
+    }
 
     return (
 
@@ -30,11 +37,11 @@ function SummaryScreen (){
     
             </div>
 
-            <Link to = "/selection" className = "generalbutton"> Exit Game</Link>
+            <Link to = "/selection" className = "generalbutton" onClick={() => reset()}> Exit Game</Link>
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/ORBgame"className = "generalbutton"> Play Again </Link>
+                <Link to = "/ORBgame" className = "generalbutton"> Play Again </Link>
 
             ) : (
 

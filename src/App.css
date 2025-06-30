@@ -487,6 +487,25 @@ a.navBarButton {
 }
 
 
+@keyframes glowing-shadow7 {
+  0% {
+    box-shadow: 
+      0 0 0.625rem 0.125rem rgb(165, 22, 175),  /* 10px 2px */
+      0 0 1.25rem 0.25rem rgb(131, 30, 186);    /* 20px 4px */
+  }
+  50% {
+    box-shadow: 
+      0 0 0.625rem 0.125rem rgba(240, 32, 255, 0.393),
+      0 0 1.25rem 0.25rem rgba(180, 42, 255, 0.419);
+  }
+  100% {
+    box-shadow:
+      0 0 0.625rem 0.125rem rgb(165, 22, 175),  /* 10px 2px */
+      0 0 1.25rem 0.25rem rgb(131, 30, 186);  /* 35px 6px */
+  }
+}
+
+
 @keyframes glowing-sign-shadows {
   0% {
     box-shadow: 
@@ -547,17 +566,14 @@ a.navBarButton {
 @keyframes red-glow {
   0%{
     box-shadow: 
-      0 0 0.625rem 0.6rem rgba(255, 36, 36, 0.8),
-      0 0 0.625rem 0.6rem rgba(0, 187, 255, 0.6);
+      0 0 0.8rem 0.4rem rgba(255, 0, 128);
   }
   50%{
     box-shadow: 
-      0 0 0.625rem 0.6rem rgba(255, 36, 36, 0.285),
-      0 0 0.625rem 0.6rem rgba(0, 187, 255, 0.25);
+      0 0 0.8rem 0.4rem rgba(255, 0, 128, 0.44);
   }
   100% {
     box-shadow:
-      0 0 0.625rem 0.6rem rgba(255, 36, 36, 0.8),
-      0 0 0.625rem 0.6rem rgba(0, 187, 255, 0.6);
+      0 0 0.8rem 0.4rem rgba(255, 0, 128);
   }
 }

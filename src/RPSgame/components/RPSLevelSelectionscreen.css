@@ -7,10 +7,10 @@
   padding: 3.125rem;      /* 50px converted to rem */
 
   background-color: rgb(98, 0, 255);
-  border-right: 0.1875rem solid black;   /* 3px */
-  border-top: 0.1875rem solid black;     /* 3px */
-  border-left: 0.625rem solid black;     /* 10px */
-  border-bottom: 0.625rem solid black;   /* 10px */
+  border-right: 0.1875rem solid rgb(40, 0, 104);   /* 3px */
+  border-top: 0.1875rem solid rgb(40, 0, 104);      /* 3px */
+  border-left: 0.625rem solid rgb(40, 0, 104);     /* 10px */
+  border-bottom: 0.625rem solid rgb(40, 0, 104);    /* 10px */
   border-radius: 1.25rem;                 /* 20px */
 
   box-shadow: 0 0 1.875rem 0.25rem rgb(0, 204, 255); /* 30px 4px */

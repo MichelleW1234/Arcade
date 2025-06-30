@@ -29,7 +29,7 @@ function LevelSelectionscreen (){
 
         <div className = "screenLayout">
 
-            <h1 className = "headerwords"> Choose a variation: </h1>
+            <h1 className = "headerwords"> Variations: </h1>
 
             <div className = "RPSlevelsContainer">
 

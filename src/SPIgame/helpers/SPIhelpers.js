@@ -123,17 +123,28 @@ export const aliensIncomingM1andM3 = (setAlienPositions, alienPositions, setSPIU
 
     const newMatrix = alienPositions.map(innerArray => [...innerArray]);
 
+    let gameShouldStop = false;
+
     for (let i = 0; i < newMatrix.length; i++) {
 
         newMatrix[i][0] += 1;
 
         if (newMatrix[i][0] >= 15){
 
+            /*
             setSPIUser(prev => [prev[0], prev[1], true]);
             playSound(13);
+            */
+
+            gameShouldStop = true;
 
         }
 
+    }
+
+    if (gameShouldStop) {
+        setSPIUser(prev => [prev[0], prev[1], true]);
+        playSound(13);
     }
 
     setAlienPositions(newMatrix);
@@ -144,17 +155,28 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setSPIUser, 
 
     const newMatrix = alienPositions.map(innerArray => [...innerArray]);
 
+    let gameShouldStop = false;
+
     for (let i = 0; i < newMatrix.length; i++) {
 
         newMatrix[i][0] += 1;
 
         if (newMatrix[i][0] >= 15){
 
+            /*
             setSPIUser(prev => [prev[0], prev[1], true]);
             playSound(13);
+            */
+
+            gameShouldStop = true;
 
         }
 
+    }
+
+    if (gameShouldStop) {
+        setSPIUser(prev => [prev[0], prev[1], true]);
+        playSound(13);
     }
 
     if (newMatrix.length > 3){

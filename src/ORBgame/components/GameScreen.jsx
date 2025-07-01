@@ -63,7 +63,7 @@ function GameScreen (){
     const stopped = () => {
 
         setStop(true);
-        playSound(18);
+        playSound(6);
 
         if (circle[currentSlot][0] == winner[0] && circle[currentSlot][1] == winner[1]){
 

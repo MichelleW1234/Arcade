@@ -77,7 +77,7 @@ function LevelSelectionscreen (){
 
             </div>
 
-            <Link to= "/RPSgame" className = "generalbuttonGlitch" onClick={() => playSound(2)}>
+            <Link to= "/RPSgame" className = "generalbuttonGlitch" onClick={() => playSound(18)}>
                 Continue to Game
             </Link>
             

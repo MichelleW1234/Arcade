@@ -36,7 +36,7 @@ function Instructionsscreen (){
                 <Link to="/selection" className = "generalbutton" onClick={exit}>
                     Exit Game
                 </Link>
-                <Link to= "/RPSlevels" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
+                <Link to= "/RPSlevels" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
                     Choose Variation
                 </Link>
 

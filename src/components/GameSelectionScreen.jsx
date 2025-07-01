@@ -185,7 +185,7 @@ function GameSelectionScreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 Orbit <br/> <br/>
-                                (10 Points)
+                                (5 Points)
                                 
                             </div>
 

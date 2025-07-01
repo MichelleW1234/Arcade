@@ -46,7 +46,7 @@ export const retrieveActiveGame = (index) => {
     } else if (index === 5){
 
         gameControls[0] = "/ORBstart";
-        gameControls[1] = 10;
+        gameControls[1] = 5;
 
     }
     

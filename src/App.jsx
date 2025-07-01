@@ -41,16 +41,13 @@ import ORBsummaryScreen from "./ORBgame/components/SummaryScreen.jsx";
 
 import NoPage from "./components/NoPage.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
-import {HashRouter, Routes, Route, BrowserRouter } from 'react-router-dom';
+import {HashRouter, Routes, Route} from 'react-router-dom';
 import "./App.css";
 
 function App() {
-
-
   return (
     <div className = "innerboarder">
-    <BrowserRouter>
-    {/*<HashRouter>*/}
+    <HashRouter>
       <ScrollToTop />
       <Routes>
         <Route index element={<ArcadeStartScreen />}/>
@@ -97,8 +94,7 @@ function App() {
         {/*Page doesn't exist error*/}
         <Route path="*" element={<NoPage />} />
       </Routes>
-    {/*</HashRouter>*/}
-    </BrowserRouter>
+    </HashRouter>
     </div>
   )
 }

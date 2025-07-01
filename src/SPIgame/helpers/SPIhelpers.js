@@ -157,10 +157,14 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setSPIUser, 
 
     }
 
-    if (alienPositions.length > 3){
+    if (newMatrix.length > 3){
 
         const selectedAliens = getRandomElements(newMatrix, 3);
         setShieldedAliens(selectedAliens);
+
+    } else {
+
+        setShieldedAliens([]); // Optional: clear if not enough
 
     }
 

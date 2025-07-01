@@ -37,7 +37,7 @@ function InstructionsScreen (){
                     Exit Game
                 </Link>
 
-                <Link to="/SNKgame" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
+                <Link to="/SNKgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
                     Go to Game
                 </Link>
 

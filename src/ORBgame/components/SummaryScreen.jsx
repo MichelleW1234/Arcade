@@ -41,7 +41,7 @@ function SummaryScreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/ORBgame" className = "generalbutton"> Play Again </Link>
+                <Link to = "/ORBgame" className = "generalbutton" onClick = {() => playSound(4)}> Play Again </Link>
 
             ) : (
 

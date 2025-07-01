@@ -60,10 +60,10 @@ function GameScreen (){
 
     }, [currentSlot, stop]);
 
-
     const stopped = () => {
 
         setStop(true);
+        playSound(18);
 
         if (circle[currentSlot][0] == winner[0] && circle[currentSlot][1] == winner[1]){
 
@@ -74,6 +74,8 @@ function GameScreen (){
     };
 
     const claimPoints = () => {
+
+        playSound(2);
 
         if (circle[currentSlot][0] == winner[0] && circle[currentSlot][1] == winner[1]){
 

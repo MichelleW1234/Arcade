@@ -1,31 +1,27 @@
 .ORBResultsBoard {
-
     background-color: rgb(198, 100, 255);
-    padding: 50px;
+    padding: 3.125rem; /* 50px */
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    border-left: 8px solid rgb(113, 56, 146);
-    border-bottom: 8px solid rgb(113, 56, 146);
-    border-top: 4px solid rgb(113, 56, 146);
-    border-right: 4px solid rgb(113, 56, 146);
+    border-left: 0.5rem solid rgb(113, 56, 146);    /* 8px */
+    border-bottom: 0.5rem solid rgb(113, 56, 146);  /* 8px */
+    border-top: 0.25rem solid rgb(113, 56, 146);    /* 4px */
+    border-right: 0.25rem solid rgb(113, 56, 146);  /* 4px */
 
-    border-radius: 20px;
+    border-radius: 1.25rem; /* 20px */
 
-    box-shadow: 0 0 1.25rem 0.5rem rgb(170, 0, 255);
+    box-shadow: 0 0 1.25rem 0.5rem rgb(170, 0, 255); /* already in rem */
 
-    animation:  glowing-shadow3 4s infinite;
-
-
+    animation: glowing-shadow3 4s infinite;
 }
 
-.ORBResultsWords{
 
+.ORBResultsWords {
     color: white;
-    font-size: 40px;
+    font-size: 2.5rem; /* 40px */
 
     animation: sign-glitch 4s infinite;
-
 }

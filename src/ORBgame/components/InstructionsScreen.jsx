@@ -34,7 +34,7 @@ function InstructionsScreen (){
                     Exit Game
                 </Link>
 
-                <Link to="/ORBgame" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
+                <Link to="/ORBgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
                     Go to Game
                 </Link>
 

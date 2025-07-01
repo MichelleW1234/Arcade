@@ -15,6 +15,8 @@ import theQueenRoar from "../Music/theQueenRoar.mp3";
 import RPSSuccess from "../Music/RPSSuccess.mp3";
 import SnakeSuccess from '../Music/SnakeSuccess.mp3';
 import buttonBought from "../Music/buttonBought.mp3";
+import ORBGameShuttingDown from "../Music/ORBGameShuttingDown.mp3";
+import gameStartingUp from "../Music/gameStartingUp.mp3";
 
 export const retrieveActiveGame = (index) => {
     
@@ -90,7 +92,9 @@ export const playSound = (soundEffect) => {
         14: [theQueenRoar, 0.5],
         15: [SnakeSuccess, 0.7],
         16: [RPSSuccess, 0.7],
-        17: [buttonBought, 0.3]
+        17: [buttonBought, 0.3],
+        18: [ORBGameShuttingDown, 0.1],
+        19: [gameStartingUp, 0.3]
 
     };
 

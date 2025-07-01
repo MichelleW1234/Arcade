@@ -34,14 +34,15 @@ function Gamesummary (){
 
   const resetGame = () => {
 
-    playSound(4);
+    playSound(19);
     resetLevel(setRPSUser);
 
   }
 
   const reset = () => {
 
-    resetGame();
+    playSound(4);
+    resetLevel(setRPSUser);
     setActiveGame(retrieveActiveGame(1));
 
   }
@@ -57,7 +58,7 @@ function Gamesummary (){
 
           {Player[0] >= ActiveGame[1] ? (
 
-            <Link to="/RPSlevels" className = "generalbutton" onClick={resetGame}>
+            <Link to="/RPSlevels" className = "generalbutton" onClick={() => resetGame()}>
               Play Again
             </Link>
 
@@ -67,7 +68,7 @@ function Gamesummary (){
 
           )}
           
-          <Link to="/selection" className = "generalbutton" onClick={reset}>
+          <Link to="/selection" className = "generalbutton" onClick={() => reset()}>
             Exit Game
           </Link>
             

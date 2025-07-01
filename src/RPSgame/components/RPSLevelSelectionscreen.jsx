@@ -29,7 +29,7 @@ function LevelSelectionscreen (){
 
         <div className = "screenLayout">
 
-            <h1 className = "headerwords"> Choose a variation: </h1>
+            <h1 className = "headerwords"> Variations: </h1>
 
             <div className = "RPSlevelsContainer">
 
@@ -77,7 +77,7 @@ function LevelSelectionscreen (){
 
             </div>
 
-            <Link to= "/RPSgame" className = "generalbuttonGlitch" onClick={() => playSound(2)}>
+            <Link to= "/RPSgame" className = "generalbuttonGlitch" onClick={() => playSound(18)}>
                 Continue to Game
             </Link>
             

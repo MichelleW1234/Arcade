@@ -22,12 +22,9 @@ function InstructionsScreen (){
                 Instructions: 
             </h1>
             <p className = "largefont">
-                &gt; Your goal is to use the controls to guide the snake to eat the apples. <br/>
-                &gt; By pressing the corresponding buttons, you can guide the snake to move it up, down, left, and right. <br/>
-                &gt; However, the snake cannot immediately move in the opposite direction that it is traveling in
-                at any given time and must be turned around with the necessary controls.<br/>
-                &gt; For every apple that is eaten, you will gain 2 points. <br/>
-                &gt; You will automatically give up 5 points by playing this game. <br/>
+                &gt; Press the stop button when the yellow light lands on green.<br/>
+                &gt; If you land it, you gain 10 points. If you miss, you lose 10 points.<br/>
+                &gt; You only get one try.<br/>
                 &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
             </p>
 
@@ -37,7 +34,7 @@ function InstructionsScreen (){
                     Exit Game
                 </Link>
 
-                <Link to="/SNKgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
+                <Link to="/ORBgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
                     Go to Game
                 </Link>
 

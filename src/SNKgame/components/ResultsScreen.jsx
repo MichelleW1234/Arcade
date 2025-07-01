@@ -16,7 +16,7 @@ function ResultsScreen (){
 
     const resetGame = () => {
         
-        playSound(4);
+        playSound(19);
         setSNKUser([false, 0]);
     
     }
@@ -24,7 +24,8 @@ function ResultsScreen (){
 
     const reset = () => {
     
-        resetGame();
+        playSound(4);
+        setSNKUser([false, 0]);
         setActiveGame(retrieveActiveGame(1))
     
     }
@@ -44,7 +45,7 @@ function ResultsScreen (){
 
             {Player[0] >= ActiveGame[1] ? 
 
-                <Link to="/SNKgame" className = "generalbutton" onClick={resetGame}>
+                <Link to="/SNKgame" className = "generalbutton" onClick={() => resetGame()}>
                     Play Again
                 </Link>
 
@@ -54,7 +55,7 @@ function ResultsScreen (){
 
             }
 
-            <Link to="/selection" className = "generalbutton" onClick={reset}>
+            <Link to="/selection" className = "generalbutton" onClick={() => reset()}>
                 Quit Game
             </Link>
             

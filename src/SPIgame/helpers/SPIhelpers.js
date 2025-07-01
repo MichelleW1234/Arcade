@@ -1,6 +1,5 @@
 
 import {playSound} from '../../Helpers/helpers.js';
-import SPIcompleted from '../../Music/SPIcompleted.mp3';
 
 //For transitioning to next mission:
 
@@ -378,9 +377,7 @@ export const bossHit = (setBossHealth, setBossDefeated) =>  {
         if (newHealth <= 0) {
             setBossDefeated(true);
             
-            const audio = new Audio(SPIcompleted);
-            audio.volume = 0.5;
-            audio.play();
+            playSound(20);
 
             return 0;
         }

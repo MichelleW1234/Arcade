@@ -18,14 +18,15 @@ function resultsScreen() {
 
     const playAgain = () => {
 
-        playSound(4);
+        playSound(19);
         resetGame(setTTTUser);
 
     }
     
     const reset = () => {
 
-        playAgain();
+        playSound(4);
+        resetGame(setTTTUser);
         setActiveGame(retrieveActiveGame(1));
 
     }
@@ -40,7 +41,7 @@ function resultsScreen() {
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to= "/TTTcoinFlip" className = "generalbutton" onClick={playAgain}>
+                <Link to= "/TTTcoinFlip" className = "generalbutton" onClick={() => playAgain()}>
                     Play Again
                 </Link>
 
@@ -50,7 +51,7 @@ function resultsScreen() {
 
             )}
 
-            <Link to= "/selection" className = "generalbutton" onClick={reset}>
+            <Link to= "/selection" className = "generalbutton" onClick={() => reset()}>
                 Exit Game
             </Link>
 

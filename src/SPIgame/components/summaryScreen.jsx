@@ -18,14 +18,15 @@ function summaryScreen() {
 
     const resetGame = () => {
 
+        playSound(19);
         setSPIUser([[],[1, "/SPIM1Instructions"], false]);
-        playSound(4);
 
     }
 
     const reset = () => {
 
-        resetGame();
+        playSound(4);
+        setSPIUser([[],[1, "/SPIM1Instructions"], false]);
         setActiveGame(retrieveActiveGame(1));
 
     }

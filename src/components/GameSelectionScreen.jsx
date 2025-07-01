@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -104,9 +103,7 @@ function GameSelectionScreen (){
             <div className = "ArcadeGameScreenLayout">
 
                 <h1 className = "pointsSign"> Your Points: <span className = "pointsSignGlitch">{Player[0]}</span></h1>
-                
-                <h1 className = "headerwords"> Choose a game: </h1>
-
+            
                 <div className = "ArcadeGameBoard">
 
                     <div className = "ArcadeGameBoardInner">
@@ -189,10 +186,15 @@ function GameSelectionScreen (){
                                 
                                 Orbit <br/> <br/>
                                 (10 Points)
-
-                                Work in progress...
                                 
                             </div>
+
+                            <button
+                            className={`gameButton ${activeButton === 5 ? 'active' : ''}`}
+                            onClick={() => handleClick(5)}
+                            >
+                                Select
+                            </button>
 
                         </div>
                         

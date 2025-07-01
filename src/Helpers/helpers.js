@@ -1,20 +1,23 @@
-import buttonStart from "../Music/buttonStart.mp3";
-import buttonSet from "../Music/buttonSet.mp3";
-import buttonSelect from "../Music/buttonSelect.mp3";
-import buttonRestart from "../Music/buttonRestart.mp3";
-import buttonError from "../Music/buttonError.mp3";
-import gameOver from "../Music/gameOver.mp3";
-import enteringAlienZone from "../Music/enteringAlienZone.mp3";
-import incomingAlienWave from "../Music/incomingAlienWave.mp3";
-import laserRifle from "../Music/laserRifle.mp3";
-import laserBlaster from "../Music/laserBlaster.mp3";
-import explodedBoss from "../Music/explodedBoss.mp3";
-import stationArrival from "../Music/stationArrival.mp3";
-import alienTakeOver from "../Music/alienTakeOver.mp3";
-import theQueenRoar from "../Music/theQueenRoar.mp3";
+import ArcadeButtonStart from "../Music/ArcadeButtonStart.mp3";
+import ArcadeButtonSet from "../Music/ArcadeButtonSet.mp3";
+import ArcadeButtonSelect from "../Music/ArcadeButtonSelect.mp3";
+import ArcadeButtonRestart from "../Music/ArcadeButtonRestart.mp3";
+import ArcadeButtonError from "../Music/ArcadeButtonError.mp3";
+import ArcadeGameOver from "../Music/ArcadeGameOver.mp3";
+import SPIenteringAlienZone from "../Music/SPIenteringAlienZone.mp3";
+import SPIincomingAlienWave from "../Music/SPIincomingAlienWave.mp3";
+import SPIlaserRifle from "../Music/SPIlaserRifle.mp3";
+import SPIlaserBlaster from "../Music/SPIlaserBlaster.mp3";
+import SPIexplodedBoss from "../Music/SPIexplodedBoss.mp3";
+import SPIstationArrival from "../Music/SPIstationArrival.mp3";
+import SPIalienTakeOver from "../Music/SPIalienTakeOver.mp3";
+import SPItheQueenRoar from "../Music/SPItheQueenRoar.mp3";
 import RPSSuccess from "../Music/RPSSuccess.mp3";
-import SnakeSuccess from '../Music/SnakeSuccess.mp3';
-import buttonBought from "../Music/buttonBought.mp3";
+import SNKSuccess from '../Music/SnakeSuccess.mp3';
+import ArcadePrizeBought from "../Music/ArcadePrizeBought.mp3";
+import StartingGameTwo from "../Music/StartingGameTwo.mp3";
+import StartingGameOne from "../Music/StartingGameOne.mp3";
+import SPIcompleted from "../Music/SPIcompleted.mp3";
 
 export const retrieveActiveGame = (index) => {
     
@@ -39,6 +42,11 @@ export const retrieveActiveGame = (index) => {
 
         gameControls[0] = "/SPIstart";
         gameControls[1] = 15;
+
+    } else if (index === 5){
+
+        gameControls[0] = "/ORBstart";
+        gameControls[1] = 10;
 
     }
     
@@ -69,25 +77,29 @@ export const playSound = (soundEffect) => {
 
     const soundDictionary = {
 
-        1: [buttonStart, 0.3],
-        2: [buttonSet, 0.3],
-        3: [buttonSelect, 0.3],
-        4: [buttonRestart, 1],
-        5: [buttonError, 0.3],
-        6: [gameOver, 0.5],
-        7: [enteringAlienZone, 0.3], 
-        8: [laserRifle, 0.1],
-        9: [laserBlaster, 0.05],
-        10: [incomingAlienWave, 0.1],
-        11: [explodedBoss, 0.2],
-        12: [stationArrival, 0.5],
-        13: [alienTakeOver, 0.05],
-        14: [theQueenRoar, 0.5],
-        15: [SnakeSuccess, 0.7],
+        1: [ArcadeButtonStart, 0.3],
+        2: [ArcadeButtonSet, 0.3],
+        3: [ArcadeButtonSelect, 0.3],
+        4: [ArcadeButtonRestart, 1],
+        5: [ArcadeButtonError, 0.3],
+        6: [ArcadeGameOver, 0.5],
+        7: [SPIenteringAlienZone, 0.3], 
+        8: [SPIlaserRifle, 0.1],
+        9: [SPIlaserBlaster, 0.05],
+        10: [SPIincomingAlienWave, 0.1],
+        11: [SPIexplodedBoss, 0.2],
+        12: [SPIstationArrival, 0.5],
+        13: [SPIalienTakeOver, 0.05],
+        14: [SPItheQueenRoar, 0.5],
+        15: [SNKSuccess, 0.7],
         16: [RPSSuccess, 0.7],
-        17: [buttonBought, 0.3]
+        17: [ArcadePrizeBought, 0.3],
+        18: [StartingGameTwo, 0.5],
+        19: [StartingGameOne, 0.3],
+        20: [SPIcompleted, 0.5]
 
     };
+
 
     const entry = soundDictionary[soundEffect];
     const [soundFile, volume] = entry;

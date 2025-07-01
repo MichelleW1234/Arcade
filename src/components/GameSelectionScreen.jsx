@@ -186,8 +186,6 @@ function GameSelectionScreen (){
                                 
                                 Orbit <br/> <br/>
                                 (10 Points)
-
-                                Work in progress...
                                 
                             </div>
 

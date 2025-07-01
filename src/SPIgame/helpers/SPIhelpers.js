@@ -131,11 +131,6 @@ export const aliensIncomingM1andM3 = (setAlienPositions, alienPositions, setSPIU
 
         if (newMatrix[i][0] >= 15){
 
-            /*
-            setSPIUser(prev => [prev[0], prev[1], true]);
-            playSound(13);
-            */
-
             gameShouldStop = true;
 
         }
@@ -162,11 +157,6 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setSPIUser, 
         newMatrix[i][0] += 1;
 
         if (newMatrix[i][0] >= 15){
-
-            /*
-            setSPIUser(prev => [prev[0], prev[1], true]);
-            playSound(13);
-            */
 
             gameShouldStop = true;
 

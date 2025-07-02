@@ -24,7 +24,7 @@ function StartScreen (){
 
             <div className = "generalbuttonContainer">
 
-                <Link to="/selection" className = "generalbutton" onClick={exit}>
+                <Link to="/selection" className = "generalbutton" onClick={() => exit()}>
                     Exit Game
                 </Link>
 

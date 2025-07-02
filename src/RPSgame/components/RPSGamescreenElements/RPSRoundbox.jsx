@@ -110,7 +110,7 @@ function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
                 placeholder="Type here..."
             />
 
-            <button className = "RPSenterButton" onClick={ProcessingInput}>Enter </button>
+            <button className = "RPSenterButton" onClick={() => ProcessingInput()}>Enter </button>
 
             {error && <p style={{ color: 'red' }}>{error}</p>}
 

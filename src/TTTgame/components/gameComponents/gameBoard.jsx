@@ -119,7 +119,7 @@ function gameBoard() {
 
                     </div> 
 
-                    <Link to= "/TTTresults" className = "generalbuttonGlitch" onClick={results}>
+                    <Link to= "/TTTresults" className = "generalbuttonGlitch" onClick={() => results()}>
                         Game Results
                     </Link>
 

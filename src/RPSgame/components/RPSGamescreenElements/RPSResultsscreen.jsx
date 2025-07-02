@@ -42,7 +42,7 @@ function Resultsscreen ({result, rounds, setRounds, setShowFlag, terminationFlag
                     </p>
                 ))}
 
-                    <button className = "generalbutton" onClick={handleHideFlag}> Close </button>
+                    <button className = "generalbutton" onClick={() => handleHideFlag()}> Close </button>
             </div>
 
         </div>

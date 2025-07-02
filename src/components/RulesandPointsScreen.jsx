@@ -33,11 +33,11 @@ function RulesandPointsScreen (){
             </p>
 
             <h1 className = "claimPointsSign"> Claim points: </h1>
-            <button className = "generalbutton" onClick={claimPoints}>20 pts</button>
+            <button className = "generalbutton" onClick={() => claimPoints()}>20 pts</button>
 
             {Player[0] === 20 && Player[1] === 20 ? (
 
-                <Link to= "/selection" className = "generalbuttonGlitch" onClick = {() => {playSound(1)}}>
+                <Link to= "/selection" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
                     Let's go!
                 </Link>
             

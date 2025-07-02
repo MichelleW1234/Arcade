@@ -48,13 +48,13 @@ function Navbar ({setShowReferences}){
                     </li>
 
                     <li>
-                        <Link to="/RPSlevels" className = "navBarButton" onClick ={resetGame}>
+                        <Link to="/RPSlevels" className = "navBarButton" onClick ={() => resetGame()}>
                             Change Variation
                         </Link>
                     </li>
 
                     <li>
-                        <button className = "navBarButton" onClick = {displayReferences}> Move References </button>
+                        <button className = "navBarButton" onClick = {() => displayReferences()}> Move References </button>
                     </li>
                 </ul>
             </div>

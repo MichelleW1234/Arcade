@@ -136,7 +136,7 @@ function GameScreen (){
 
                     {stop == false ? (
 
-                        <button className = "ORBHitButton" onClick={stopped}> STOP </button>
+                        <button className = "ORBHitButton" onClick={() => stopped()}> STOP </button>
 
                     ) : (
 

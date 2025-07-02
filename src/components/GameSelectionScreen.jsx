@@ -87,7 +87,7 @@ function GameSelectionScreen (){
                     </li>
 
                     <li>
-                        <div className = "navBarButton" onClick ={displayInventory}>
+                        <div className = "navBarButton" onClick ={() => displayInventory()}>
                             View Prize Inventory
                         </div>
                     </li>
@@ -205,7 +205,7 @@ function GameSelectionScreen (){
 
                 {Player[0] >= ActiveGame[1] ? (
 
-                    <Link to={currGamePath} className = "generalbuttonGlitch" onClick = {() => {playSound(2)}}>
+                    <Link to={currGamePath} className = "generalbuttonGlitch" onClick = {() => playSound(2)}>
                         Go to game
                     </Link>
     

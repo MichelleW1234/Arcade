@@ -159,7 +159,7 @@ function GameBoard (){
 
             :
 
-                <Link to= "/SNKresults" className = "generalbuttonGlitch" onClick = {transaction}>
+                <Link to= "/SNKresults" className = "generalbuttonGlitch" onClick = {() => transaction()}>
                     View results
                 </Link>   
 

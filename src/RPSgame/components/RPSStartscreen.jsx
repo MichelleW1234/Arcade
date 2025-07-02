@@ -25,7 +25,7 @@ function Startscreen (){
             
             <div className = "generalbuttonContainer">
 
-                <Link to= "/selection" className = "generalbutton" onClick={exit}>
+                <Link to= "/selection" className = "generalbutton" onClick={() => exit()}>
                     Exit Game
                 </Link>
                 <Link to="/RPSinstructions" className = "generalbuttonGlitch" onClick={() => playSound(1)}>

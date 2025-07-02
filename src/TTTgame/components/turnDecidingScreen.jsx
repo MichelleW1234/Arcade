@@ -44,7 +44,7 @@ function turnDecidingScreen() {
 
             {TTTUser[0] === -1 ? (
                 
-                <button className = "generalbuttonGlitch" onClick={coinFlip}> Flip Coin </button>
+                <button className = "generalbuttonGlitch" onClick={() => coinFlip()}> Flip Coin </button>
 
             ) : (
 

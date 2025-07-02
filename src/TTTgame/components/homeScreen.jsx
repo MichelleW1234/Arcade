@@ -21,7 +21,7 @@ function homeScreen() {
         <h1 className = "headerwords"> <span className = "headerwordsGlitch">Welcome</span> to Tic-Tac-Toe.</h1>
 
         <div className = "generalbuttonContainer">
-          <Link to="/selection" className = "generalbutton" onClick={quit}>
+          <Link to="/selection" className = "generalbutton" onClick={() => quit()}>
             Quit Game
           </Link>
           <Link to= "/TTTinstructions" className = "generalbuttonGlitch" onClick={() => playSound(1)}>

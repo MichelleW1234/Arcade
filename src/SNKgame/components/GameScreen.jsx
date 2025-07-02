@@ -39,7 +39,7 @@ function GamesScreen (){
 
         <div>
 
-            <Link to="/selection" className = "generalbutton" onClick={reset}>
+            <Link to="/selection" className = "generalbutton" onClick={() => reset()}>
                 Quit Game
             </Link>
 

@@ -101,7 +101,7 @@ function Gamescreen (){
 
                     <h1 className = "headerwords"> Game <span className = "headerwordsGlitch">Over</span>. </h1>
 
-                    <Link to="/RPSsummary" className="generalbuttonGlitch" onClick={viewSummary}>
+                    <Link to="/RPSsummary" className="generalbuttonGlitch" onClick={() => viewSummary()}>
                         View Game Summary
                     </Link>
             

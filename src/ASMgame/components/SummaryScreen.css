@@ -1,0 +1,27 @@
+.ORBResultsBoard {
+    background-color: rgb(236, 97, 251);
+    padding: 3.125rem; /* 50px */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-left: 0.5rem solid rgb(124, 51, 132);    /* 8px */
+    border-bottom: 0.5rem solid rgb(124, 51, 132);  /* 8px */
+    border-top: 0.25rem solid rgb(124, 51, 132);    /* 4px */
+    border-right: 0.25rem solid rgb(124, 51, 132);  /* 4px */
+
+    border-radius: 1.25rem; /* 20px */
+
+    box-shadow: 0 0 1.25rem 0.5rem rgb(217, 0, 255); /* already in rem */
+
+    animation: glowing-shadow3 4s infinite;
+}
+
+
+.ORBResultsWords {
+    color: rgb(218, 255, 178);
+    font-size: 2.5rem; /* 40px */
+
+    animation: sign-glitch 4s infinite;
+}

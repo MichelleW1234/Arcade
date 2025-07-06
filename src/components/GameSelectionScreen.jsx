@@ -202,8 +202,8 @@ function GameSelectionScreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Alien Smackdown <br/> <br/>
-                                (10 Points)
+                                Color Blaster <br/> <br/>
+                                (20 Points)
 
                                 Work in progress...
                                 

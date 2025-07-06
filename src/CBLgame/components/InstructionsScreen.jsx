@@ -31,7 +31,7 @@ function InstructionsScreen (){
                     Exit Game
                 </Link>
 
-                <Link to="/ASMgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
+                <Link to="/CBLgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
                     Go to Game
                 </Link>
 

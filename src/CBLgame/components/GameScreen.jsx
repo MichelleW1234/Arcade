@@ -7,6 +7,7 @@ import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import {useCBLUser} from "../Providers/CBLUserProvider.jsx";
 
 import "./GameScreen.css";
 
@@ -14,8 +15,9 @@ function GameScreen (){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
+    const {CBLUser, setCBLUser} = useCBLUser();
 
-    const [numAliens, setNumAliens] = useState(0);
+    const [timer, setTimer] = useState(0);
 
     const exitGame = () => {
         
@@ -26,6 +28,20 @@ function GameScreen (){
     }
 
 
+    useEffect(() => {
+
+        const interval = setInterval(() => {
+
+            setTimer(prev => prev + 1);
+
+        }, 1000);
+
+        return () => clearInterval(interval);
+
+    }, []);
+    
+
+
     return (
 
         <div>             
@@ -34,21 +50,32 @@ function GameScreen (){
 
             <div className = "gameScreenLayout">
 
-                <div className = "ASMOuterGameContainer">
+                {timer < 30 ? (
+            
+                <div className = "CBLOuterGameContainer">
 
-                    {numAliens <= 10 ? (
+                    <div> Timer: {timer} </div>
+                    <div> Colors Blasted: {CBLUser[0]} </div>
 
-                        <InnerGameScreen
-                            setNumAliens={setNumAliens}
-                        />
+                    <InnerGameScreen/>
+    
+                </div>
 
-                    ) : (
+                ) : (
+
+                    <div className = "CBLOuterGameContainer">
+
+                        <div> Timer: -- </div> 
+                        <div> Colors Blasted: {CBLUser[0]} </div>
 
                         <p>Game Over.</p>
 
-                    )}
-    
-                </div>
+                        <Link to="/CBLsummary" className = "generalbutton"> View Results </Link>
+
+                    </div>
+
+                )}
+
             </div>
         </div>
 

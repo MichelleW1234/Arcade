@@ -1,0 +1,74 @@
+.CBLGameBoardScreen {
+    border-top: 0.125rem solid rgb(75, 101, 120);     /* 2px */
+    border-left: 0.3125rem solid rgb(75, 101, 120);   /* 5px */
+    border-right: 0.125rem solid rgb(75, 101, 120);   /* 2px */
+    border-bottom: 0.3125rem solid rgb(75, 101, 120); /* 5px */
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr); 
+
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 1rem 0.75rem rgb(161, 216, 255);  /* already in rem */
+
+    gap: 0.5rem;  /* 8px */
+
+    padding: 40px;
+
+}
+
+
+.CBLGameBoardHole{
+
+    height: 8rem;  /* 25px */
+    width: 8rem;   /* 25px */
+
+    background-color: rgb(195, 252, 255);
+
+    border-radius: 50%;
+    border: 0px;
+
+}
+
+.CBLGameBoardHole:hover{
+
+    box-shadow: 0 0 1rem 0.25rem  rgb(195, 252, 255); /* already in rem */
+    border: 3px solid  rgb(195, 252, 255);
+}
+
+.CBLGameBoardColor{
+
+    height: 8rem;  /* 25px */
+    width: 8rem;   /* 25px */
+
+    background-color: rgb(17, 0, 255);
+
+    border-radius: 50%;
+    border: 0px;
+
+}
+
+.CBLGameBoardColor:hover{
+
+    box-shadow: 0 0 1rem 0.25rem rgb(82, 70, 255); /* already in rem */
+
+}
+
+.CBLGameBoardColorSpecial{
+
+    height: 8rem;  /* 25px */
+    width: 8rem;   /* 25px */
+
+    background-color: rgb(255, 0, 238);
+
+    border-radius: 50%;
+    border: 0px;
+
+}
+
+
+.CBLGameBoardColorSpecial:hover{
+
+    box-shadow: 0 0 1rem 0.25rem rgb(255, 79, 243); /* already in rem */
+
+}

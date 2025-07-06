@@ -39,10 +39,10 @@ import ORBinstructionsScreen from "./ORBgame/components/InstructionsScreen.jsx";
 import ORBgameScreen from "./ORBgame/components/GameScreen.jsx";
 import ORBsummaryScreen from "./ORBgame/components/SummaryScreen.jsx";
 
-import ASMStartScreen from "./ASMgame/components/StartScreen.jsx";
-import ASMinstructionsScreen from "./ASMgame/components/InstructionsScreen.jsx";
-import ASMgameScreen from "./ASMgame/components/GameScreen.jsx";
-import ASMsummaryScreen from "./ASMgame/components/SummaryScreen.jsx";
+import CBLStartScreen from "./CBLgame/components/StartScreen.jsx";
+import CBLinstructionsScreen from "./CBLgame/components/InstructionsScreen.jsx";
+import CBLgameScreen from "./CBLgame/components/GameScreen.jsx";
+import CBLsummaryScreen from "./CBLgame/components/SummaryScreen.jsx";
 
 import NoPage from "./components/NoPage.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
@@ -96,10 +96,10 @@ function App() {
         <Route path="/ORBgame" element={<ORBgameScreen />}/>
         <Route path="/ORBsummary" element={<ORBsummaryScreen />}/>
 
-        <Route path="/ASMstart" element={<ASMStartScreen />}/>
-        <Route path="/ASMInstructions" element={<ASMinstructionsScreen />}/>
-        <Route path="/ASMgame" element={<ASMgameScreen />}/>
-        <Route path="/ASMsummary" element={<ASMsummaryScreen />}/>
+        <Route path="/CBLstart" element={<CBLStartScreen />}/>
+        <Route path="/CBLInstructions" element={<CBLinstructionsScreen />}/>
+        <Route path="/CBLgame" element={<CBLgameScreen />}/>
+        <Route path="/CBLsummary" element={<CBLsummaryScreen />}/>
         
         {/*Page doesn't exist error*/}
         <Route path="*" element={<NoPage />} />

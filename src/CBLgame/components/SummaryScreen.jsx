@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import {useCBLUser} from "../Providers/CBLUserProvider.jsx";
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
@@ -10,7 +11,8 @@ import "./SummaryScreen.css";
 function SummaryScreen (){
 
     const { Player, setPlayer} = usePlayer();
-    const { ActiveGame, setActiveGame} = useActiveGame();3
+    const { ActiveGame, setActiveGame} = useActiveGame();
+    const {CBLUser, setCBLUser} = useCBLUser();
 
     const reset = () => {
         
@@ -25,15 +27,8 @@ function SummaryScreen (){
 
             <div className = "ORBResultsBoard">
 
-                {Player[0] > Player[1] ? (
-
-                    <h1 className="ORBResultsWords"> You won! Nice job! </h1>
-
-                ) : (
-
-                    <h1 className="ORBResultsWords"> You lost. Better luck next time! </h1>
-
-                )}
+                Number of colors blasted: {CBLUser[0]}
+                Points earned: {CBLUser[0]}*2
     
             </div>
 
@@ -41,7 +36,7 @@ function SummaryScreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/ASMgame" className = "generalbutton" onClick = {() => playSound(19)}> Play Again </Link>
+                <Link to = "/CBLgame" className = "generalbutton" onClick = {() => playSound(19)}> Play Again </Link>
 
             ) : (
 

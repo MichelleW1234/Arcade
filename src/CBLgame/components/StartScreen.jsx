@@ -19,7 +19,7 @@ function StartScreen (){
         <div className = "StartingScreenLayout">
 
             <h1 className = "headerwords">
-                Welcome to <span className = "headerwordsGlitch"> Alien Smackdown.</span>
+                Welcome to <span className = "headerwordsGlitch"> Color Blast.</span>
             </h1>
 
             <div className = "generalbuttonContainer">
@@ -28,7 +28,7 @@ function StartScreen (){
                     Exit Game
                 </Link>
 
-                <Link to="/ASMInstructions" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
+                <Link to="/CBLInstructions" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
                     Enter
                 </Link>
 

@@ -34,7 +34,7 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
         return () => clearInterval(interval);
 
-    }, [matrix]);
+    }, [matrix, userMoves]);
 
 
     const nextMove = () => {

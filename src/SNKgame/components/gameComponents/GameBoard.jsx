@@ -40,17 +40,23 @@ function GameBoard (){
         snakeRef.current = snake;
     }, [snake]);
 
+    const appleLocationRef = useRef(appleLocation);
+
+    useEffect(() => {
+        appleLocationRef.current = appleLocation;
+    }, [appleLocation]);
+
     useEffect(() => {
 
         const interval = setInterval(() => {
 
-            changeSnakeDirection(setSNKUser, activeDirection, setSnake, snakeRef.current, appleLocation, setAppleLocation);
+            changeSnakeDirection(setSNKUser, activeDirection, setSnake, snakeRef.current, appleLocationRef.current, setAppleLocation);
 
         }, 150);
 
         return () => clearInterval(interval);
 
-    }, [startButtonPressed, activeDirection, appleLocation]);
+    }, [startButtonPressed, activeDirection]);
 
 
     const buttonControls = (direction) => {

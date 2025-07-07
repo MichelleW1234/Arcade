@@ -52,6 +52,24 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
 }
 
 
+/*Instructions */
+
+export const openingGuide = (flagNumber) => {
+
+    playSound(3);
+    return true;
+
+}
+
+
+export const closingGuide = () => {
+
+    playSound(3);
+    return false;
+
+}
+
+
 
 //For generating new wave of aliens:
 

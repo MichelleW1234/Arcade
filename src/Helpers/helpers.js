@@ -51,7 +51,7 @@ export const retrieveActiveGame = (index) => {
     } else if (index === 6){
 
         gameControls[0] = "/CBLstart";
-        gameControls[1] = 20;
+        gameControls[1] = 5;
 
     }
     

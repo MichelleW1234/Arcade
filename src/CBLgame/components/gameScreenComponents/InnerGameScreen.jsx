@@ -7,18 +7,18 @@ import { useCBLUser } from "../../Providers/CBLUserProvider.jsx";
 import "./InnerGameScreen.css";
 import { playSound } from "../../../Helpers/helpers.js";
 
-function InnerGameScreen() {
+function InnerGameScreen({setColorAppearances, colorToBlast, setWrongColorBlasted}) {
 
     const { CBLUser, setCBLUser } = useCBLUser();
 
-    const [colorSpot, setColorSpot] = useState([Math.floor(Math.random() * 16), Math.floor(Math.random() * 20)]);
+    const [colorSpot, setColorSpot] = useState([Math.floor(Math.random() * 16), Math.floor(Math.random() * 4)]);
     const [colorBlasted, setColorBlasted] = useState(false);
 
     /*20 × 30 matrix*/
     const gameArray = Array.from({ length: 4 }, () => Array(4).fill(0));
 
-    const colorSpotRef = useRef(colorSpot);
 
+    const colorSpotRef = useRef(colorSpot);
     useEffect(() => {
         colorSpotRef.current = colorSpot;
     }, [colorSpot]);
@@ -30,18 +30,21 @@ function InnerGameScreen() {
             setColorBlasted(false);
 
             const newPosition = getRandomExcluding(colorSpotRef.current[0]);
-            const type = Math.floor(Math.random() * 20);
+            const type = Math.floor(Math.random() * 4);
             setColorSpot([newPosition, type]);
 
-        }, 650);
+            setColorAppearances(prev => prev + 1);
+
+        }, 700);
 
         return () => clearInterval(interval);
 
     }, []);
 
-    const bonked = () => {
 
-        if (colorSpot[1] < 18) {
+    const blasted = (type) => {
+
+        if (type === colorToBlast) {
 
             setCBLUser(prev => {
                 const updated = [...prev];
@@ -49,24 +52,25 @@ function InnerGameScreen() {
                 return updated;
             });
 
+            setColorBlasted(true);
+
         } else {
 
-            setCBLUser(prev => {
-                const updated = [...prev];
-                updated[0] = updated[0] + 5;
-                return updated;
-            });
+            setWrongColorBlasted(true);
 
         }
-    
-        setColorBlasted(true);
 
     }
 
 
     return (
 
-        <div className="CBLGameBoardScreen">
+        <div className={
+            colorToBlast === 0 ? "CBLGameBoardScreenOne"
+            : colorToBlast === 1 ? "CBLGameBoardScreenTwo"
+            : colorToBlast === 2 ? "CBLGameBoardScreenThree"
+            : "CBLGameBoardScreenFour"
+        }>
 
             {gameArray.map((row, rowIndex) => (
                 row.map((cell, colIndex) => {
@@ -83,16 +87,13 @@ function InnerGameScreen() {
 
                             ) : (
 
-                                colorSpot[1] < 18 ? (
-
-                                    <button key={rowIndex + "," + colIndex} className="CBLGameBoardColor" onClick={() => bonked()}></button>
-
-                                ) : (
-
-                                    <button key={rowIndex + "," + colIndex} className="CBLGameBoardColorSpecial" onClick={() => bonked()}></button>
-
-                                )
-                    
+                                <button key={rowIndex + "," + colIndex}  
+                                    className={colorSpot[1] === 0 ? "CBLGameBoardColorOne"
+                                        : colorSpot[1] === 1 ? "CBLGameBoardColorTwo"
+                                        : colorSpot[1] === 2 ? "CBLGameBoardColorThree"
+                                        : "CBLGameBoardColorFour"}
+                                    onClick={() => blasted(colorSpot[1])}>
+                                </button>
 
                             )
 

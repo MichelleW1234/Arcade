@@ -203,7 +203,7 @@ function GameSelectionScreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 Color Blaster <br/> <br/>
-                                (20 Points)
+                                (5 Points)
 
                                 Work in progress...
                                 

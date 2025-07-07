@@ -27,8 +27,8 @@ function SummaryScreen (){
 
             <div className = "ORBResultsBoard">
 
-                Number of colors blasted: {CBLUser[0]}
-                Points earned: {CBLUser[0]}*2
+                <h1>Number of colors blasted: {CBLUser[0]}</h1>
+                <h1>Points earned: {CBLUser[0]*2}</h1>
     
             </div>
 

@@ -1,11 +1,12 @@
 .CBLOuterGameContainer {
-    background-color: rgb(0, 157, 255);
-    padding: 1.875rem 3.125rem; /* 30px 50px */
 
-    border-top: 0.125rem solid rgb(0, 76, 123);     /* 2px */
-    border-left: 0.5rem solid rgb(0, 76, 123);      /* 8px */
-    border-right: 0.125rem solid rgb(0, 76, 123);   /* 2px */
-    border-bottom: 0.5rem solid rgb(0, 76, 123);    /* 8px */
+    background-color: rgb(158, 47, 255);
+    padding: 3rem;
+
+    border-top: 0.125rem solid rgb(75, 22, 121);     /* 2px */
+    border-left: 0.5rem solid rgb(75, 22, 121);        /* 8px */
+    border-right: 0.125rem solid rgb(75, 22, 121);     /* 2px */
+    border-bottom: 0.5rem solid rgb(75, 22, 121);      /* 8px */
 
     border-radius: 1.875rem; /* 30px */
 
@@ -13,7 +14,93 @@
     flex-direction: column;
     align-items: center;
 
-    gap: 1.875rem; /* 30px */
+    gap: 3rem; /* 30px */
 
-    box-shadow: 0 0 1.25rem 0.5rem rgb(0, 157, 255); /* already in rem */
+    box-shadow: 0 0 1.25rem 0.5rem rgb(157, 60, 241);  /* already in rem */
+
+}
+
+
+.CBLGameBoardEndingScreen{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 25rem;
+    width: 40rem;
+
+    background-color: rgb(162, 233, 255);
+    box-shadow: 0 0 1rem 0.75rem rgb(161, 216, 255);  /* already in rem */
+
+    border-top: 0.125rem solid rgb(75, 101, 120);     /* 2px */
+    border-left: 0.3125rem solid rgb(75, 101, 120);   /* 5px */
+    border-right: 0.125rem solid rgb(75, 101, 120);   /* 2px */
+    border-bottom: 0.3125rem solid rgb(75, 101, 120); /* 5px */
+
+}
+
+
+.CBLColorBlastBarContainer{
+
+    width: 100%;
+
+    border-radius: 1.875rem;       /* 30px */
+    padding: 1rem;             /* 10px */
+    background-color: rgb(193, 244, 255);
+
+    box-shadow: 0 0 1rem 0.25rem rgb(193, 244, 255);
+
+}
+
+
+.CBLColorBlastBarOne{
+
+    height: 15px;
+    background-color: rgb(17, 0, 255);
+
+    box-shadow: 0 0 1rem 0.5rem rgb(82, 70, 255);
+
+}
+
+.CBLColorBlastBarTwo{
+
+    height: 15px;
+    background-color: rgb(255, 0, 238);
+
+    box-shadow: 0 0 1rem 0.25rem rgb(255, 70, 243);
+
+}
+
+
+.CBLColorBlastBarThree{
+
+    height: 15px;
+    background-color: rgb(0, 255, 47);
+
+    box-shadow: 0 0 1rem 0.25rem rgb(65, 255, 100);
+
+}
+
+.CBLColorBlastBarFour{
+
+    height: 15px;
+    background-color: rgb(255, 242, 0);
+
+    box-shadow: 0 0 1rem 0.25rem rgb(255, 246, 74);
+
+}
+
+.CBLsign{
+
+    font-size: 2.1875rem;          /* 35px */
+    border-radius: 1.875rem;       /* 30px */
+    padding: 0.625rem;             /* 10px */
+    color: white;
+    background-color: rgb(243, 154, 255);
+    border: 0.3125rem solid rgba(0, 253, 46, 0.521); /* 5px */
+
+    animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
+
 }

@@ -17,7 +17,24 @@ function GameScreen (){
     const { ActiveGame, setActiveGame} = useActiveGame();
     const {CBLUser, setCBLUser} = useCBLUser();
 
-    const [timer, setTimer] = useState(0);
+    const [colorToBlast, setColorToBlast] = useState(Math.floor(Math.random() * 4));
+    const [colorAppearances, setColorAppearances] = useState(0);
+
+    const [wrongColorBlasted, setWrongColorBlasted] = useState(false);
+
+    useEffect(() => {
+
+        const interval = setInterval(() => {
+
+            const newColor = Math.floor(Math.random() * 4);
+            setColorToBlast(newColor);
+
+        }, 4000);
+
+        return () => clearInterval(interval);
+
+    }, []);
+    
 
     const exitGame = () => {
         
@@ -27,21 +44,6 @@ function GameScreen (){
 
     }
 
-
-    useEffect(() => {
-
-        const interval = setInterval(() => {
-
-            setTimer(prev => prev + 1);
-
-        }, 1000);
-
-        return () => clearInterval(interval);
-
-    }, []);
-    
-
-
     return (
 
         <div>             
@@ -50,14 +52,17 @@ function GameScreen (){
 
             <div className = "gameScreenLayout">
 
-                {timer < 30 ? (
+                {colorAppearances < 50 && wrongColorBlasted == false ? (
             
                 <div className = "CBLOuterGameContainer">
 
-                    <div> Timer: {timer} </div>
-                    <div> Colors Blasted: {CBLUser[0]} </div>
+                    <div className="CBLsign"> Colors Blasted: {CBLUser[0]} </div>
 
-                    <InnerGameScreen/>
+                    <InnerGameScreen
+                        setColorAppearances = {setColorAppearances}
+                        colorToBlast = {colorToBlast}
+                        setWrongColorBlasted = {setWrongColorBlasted}
+                    />
     
                 </div>
 
@@ -65,10 +70,11 @@ function GameScreen (){
 
                     <div className = "CBLOuterGameContainer">
 
-                        <div> Timer: -- </div> 
-                        <div> Colors Blasted: {CBLUser[0]} </div>
+                        <div className="CBLsign"> Colors Blasted: {CBLUser[0]} </div>
 
-                        <p>Game Over.</p>
+                        <div className = "CBLGameBoardEndingScreen">
+                            <h1> Game Over.</h1>
+                        </div>
 
                         <Link to="/CBLsummary" className = "generalbutton"> View Results </Link>
 

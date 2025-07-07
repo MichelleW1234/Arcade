@@ -12,6 +12,9 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
     const { TTTUser, setTTTUser} = useTTTUser();
 
+    /* Clear and restart their interval whenever anything in their dependency array changes
+    so that callback always uses the current value */
+
     useEffect(() => {
 
         const interval = setInterval(() => {
@@ -34,7 +37,33 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
         return () => clearInterval(interval);
 
-    }, [matrix, userMoves]);
+    }, [matrix]);
+
+    useEffect(() => {
+
+        const computerMove = () => {
+
+            const move = computerMoveDecider(availableMoves, computerMoves, userMoves);
+            
+            setComputerMoves(prevMoves => [...prevMoves, move]);
+            takenMove(move, 0);
+            nextMove();
+            setError("");
+           
+        }
+
+        if (currentTurn === 0) {
+
+            // Trigger the computer's move after a delay (for example, every 2 seconds)
+            const interval = setInterval(computerMove, 1800);
+    
+            // Cleanup interval when component is unmounted or when the turn changes
+            return () => clearInterval(interval);
+
+        }
+
+    }, [currentTurn]);
+
 
 
     const nextMove = () => {
@@ -79,31 +108,6 @@ function turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
         }
     
     }
-
-    useEffect(() => {
-
-        const computerMove = () => {
-
-            const move = computerMoveDecider(availableMoves, computerMoves, userMoves);
-            
-            setComputerMoves(prevMoves => [...prevMoves, move]);
-            takenMove(move, 0);
-            nextMove();
-            setError("");
-           
-        }
-
-        if (currentTurn === 0) {
-
-            // Trigger the computer's move after a delay (for example, every 2 seconds)
-            const interval = setInterval(computerMove, 1800);
-    
-            // Cleanup interval when component is unmounted or when the turn changes
-            return () => clearInterval(interval);
-
-        }
-
-    }, [currentTurn]);
 
 
     return(

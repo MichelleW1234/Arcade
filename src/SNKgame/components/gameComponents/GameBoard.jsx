@@ -32,31 +32,40 @@ function GameBoard (){
     const { Player, setPlayer } = usePlayer();
     const { ActiveGame, setActiveGame } = useActiveGame();
 
+    
+    /* Refs avoid stale values and store the latest values for use inside 
+    interval callbacks in useEffect without triggering re-renders*/
 
-    // Use a ref to hold the current snake state, to prevent an infinite loop of updates
     const snakeRef = useRef(snake);
-
     useEffect(() => {
         snakeRef.current = snake;
     }, [snake]);
 
     const appleLocationRef = useRef(appleLocation);
-
     useEffect(() => {
         appleLocationRef.current = appleLocation;
     }, [appleLocation]);
+
+    const activeDirectionRef = useRef(activeDirection);
+    useEffect(() => {
+        activeDirectionRef.current = activeDirection;
+    }, [activeDirection]);
+
+
+    /* Clear and restart their interval whenever anything in their dependency array changes
+    so that callback always uses the current value */
 
     useEffect(() => {
 
         const interval = setInterval(() => {
 
-            changeSnakeDirection(setSNKUser, activeDirection, setSnake, snakeRef.current, appleLocationRef.current, setAppleLocation);
+            changeSnakeDirection(setSNKUser, activeDirectionRef.current, setSnake, snakeRef.current, appleLocationRef.current, setAppleLocation);
 
         }, 150);
 
         return () => clearInterval(interval);
 
-    }, [startButtonPressed, activeDirection]);
+    }, [startButtonPressed]);
 
 
     const buttonControls = (direction) => {

@@ -20,24 +20,28 @@ function gameBoard({waveNumber, setWaveNumber}) {
     const [laserPositions, setLaserPositions] = useState([[14, laserValue], [13, laserValue], [12, laserValue]]);
     const [alienPositions, setAlienPositions] = useState(newWave(1));
 
-    /*Listener for current alien positions*/
+
+    /* Refs avoid stale values and store the latest values for use inside 
+    interval callbacks in useEffect without triggering re-renders*/
+
     const alienPositionsRef = useRef(alienPositions);
     useEffect(() => {
         alienPositionsRef.current = alienPositions;
     }, [alienPositions]);
 
-    /*Listener for current laser positions*/
     const laserPositionsRef = useRef(laserPositions);
     useEffect(() => {
         laserPositionsRef.current = laserPositions;
     }, [laserPositions]);
 
-     /*Listener for current laser positions*/
     const laserValueRef = useRef(laserValue);
     useEffect(() => {
         laserValueRef.current = laserValue;
     }, [laserValue]);
 
+
+    /* Clear and restart their interval whenever anything in their dependency array changes
+    so that callback always uses the current value */
 
     /*Listener for aliens being shot*/
     useEffect(() => {

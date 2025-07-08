@@ -1,5 +1,5 @@
 import { Link} from 'react-router-dom';
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useRef} from "react";
 
 import InnerGameScreen from "./gameScreenComponents/InnerGameScreen.jsx";
 
@@ -40,6 +40,12 @@ function GameScreen (){
     ];
 
 
+    const currentSlotRef = useRef(currentSlot);
+    
+    useEffect(() => {
+        currentSlotRef.current = currentSlot;
+    }, [currentSlot]);
+
     useEffect(() => {
     
         if (stop == true) {
@@ -50,7 +56,7 @@ function GameScreen (){
 
             const interval = setInterval(() => {
 
-                orbiting(circle, currentSlot, setCurrentSlot);
+                orbiting(circle, currentSlotRef.current, setCurrentSlot);
 
             }, 30);
 
@@ -58,7 +64,7 @@ function GameScreen (){
 
         }
 
-    }, [currentSlot, stop]);
+    }, [stop]);
 
     const stopped = () => {
 

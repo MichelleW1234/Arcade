@@ -39,6 +39,11 @@ import ORBinstructionsScreen from "./ORBgame/components/InstructionsScreen.jsx";
 import ORBgameScreen from "./ORBgame/components/GameScreen.jsx";
 import ORBsummaryScreen from "./ORBgame/components/SummaryScreen.jsx";
 
+import CBLStartScreen from "./CBLgame/components/StartScreen.jsx";
+import CBLinstructionsScreen from "./CBLgame/components/InstructionsScreen.jsx";
+import CBLgameScreen from "./CBLgame/components/GameScreen.jsx";
+import CBLsummaryScreen from "./CBLgame/components/SummaryScreen.jsx";
+
 import NoPage from "./components/NoPage.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import {HashRouter, Routes, Route} from 'react-router-dom';
@@ -90,6 +95,11 @@ function App() {
         <Route path="/ORBInstructions" element={<ORBinstructionsScreen />}/>
         <Route path="/ORBgame" element={<ORBgameScreen />}/>
         <Route path="/ORBsummary" element={<ORBsummaryScreen />}/>
+
+        <Route path="/CBLstart" element={<CBLStartScreen />}/>
+        <Route path="/CBLInstructions" element={<CBLinstructionsScreen />}/>
+        <Route path="/CBLgame" element={<CBLgameScreen />}/>
+        <Route path="/CBLsummary" element={<CBLsummaryScreen />}/>
         
         {/*Page doesn't exist error*/}
         <Route path="*" element={<NoPage />} />

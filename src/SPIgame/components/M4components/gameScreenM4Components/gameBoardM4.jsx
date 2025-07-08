@@ -22,7 +22,11 @@ function gameBoardM4({setBossDefeated, setBlownUp}) {
     const [bossHealth, setBossHealth] = useState(50);
     const [bossState, setBossState] = useState([newBossPosition(), false]);
 
-    /* Listener for boss posiiton rerendering and determining boss state*/
+  
+    /* Clear and restart their interval whenever anything in their dependency array changes
+    so that callback always uses the current value */
+
+    /* Listener for boss position rerendering and determining boss state*/
     useEffect(() => {
         const interval = setInterval(() => {
             newBossState(setBossState);

@@ -1,4 +1,4 @@
-import { useEffect, useState} from 'react';
+import { useEffect, useState, useRef} from 'react';
 import { Link } from 'react-router-dom';
 
 import GameBoardM4 from "./gameScreenM4Components/gameBoardM4.jsx";
@@ -19,12 +19,15 @@ function gameScreenM4() {
     const [blownUp, setBlownUp] = useState(false);
     const [bossRoared, setBossRoared] = useState(false);
 
-    /*Timer */
+
+    /* Clear and restart their interval whenever anything in their dependency array changes
+    so that callback always uses the current value */
+
+    /* Timer */
     useEffect(() => {
 
         const interval = setInterval(() => {
             setSeconds(prev => prev + 1);
-
         }, 1000);
 
         return () => clearInterval(interval);
@@ -35,6 +38,7 @@ function gameScreenM4() {
     useEffect(() => {
 
         if (seconds >= 60 && bossDefeated == false && blownUp == false) {
+
             setSPIUser(prev => [prev[0], prev[1], true]);
 
             if (bossRoared == false){

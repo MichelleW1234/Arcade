@@ -7,6 +7,7 @@ import rifle from "./gameScreenM4Components/cursor.cur";
 import beamlight from "../../../Images/image 15.svg";
 import hpbar from "../../../Images/image 16.svg";
 
+import {openingGuide, closingGuide} from '../../helpers/SPIhelpers.js';
 import {playSound} from '../../../Helpers/helpers.js';
 
 import "../gameInstructions.css";
@@ -15,40 +16,6 @@ function M4InstructionsScreen() {
 
   const [aliensDetectedOn, setAliensDetectedOn] = useState(false);
   const [equipmentOn, setEquipmentOn] = useState(false);
-
-    const openingGuide = (flagNumber) => {
-
-    if (flagNumber == 1){
-
-      setAliensDetectedOn(true);
-
-    } else {
-
-      setEquipmentOn(true);
-
-    }
-    
-    playSound(3);
-
-  }
-
-
-  const closingGuide = (flagNumber) => {
-
-    if (flagNumber == 1){
-
-      setAliensDetectedOn(false);
-
-    } else {
-
-      setEquipmentOn(false);
-
-    }
-    
-    playSound(3);
-
-  }
-
 
   return (
 
@@ -75,13 +42,13 @@ function M4InstructionsScreen() {
                 &nbsp; &bull; Other Notes: Do NOT let your light source go out before the Queen dies. <br/> <br/>
               </p>
 
-              <button className = "SPIGuideCloseButtons" onClick={() => closingGuide(1)}> Close </button>
+              <button className = "SPIGuideCloseButtons" onClick={() => setAliensDetectedOn(closingGuide())}> Close </button>
             </div>
           </div>
 
         ) : (
 
-          <button className = "SPIGuideButton"  onClick = {() => openingGuide(1)}> Alien Guide
+          <button className = "SPIGuideButton"  onClick = {() => setAliensDetectedOn(openingGuide())}> Alien Guide
           </button>
         )}
         
@@ -100,13 +67,13 @@ function M4InstructionsScreen() {
                 &nbsp; &bull; First-person weapon designed for precision firing <br/>
                 &nbsp; &bull; To Use: Aim at target and click <br/>
               </p>
-              <button className = "SPIGuideCloseButtons" onClick={() => closingGuide(2)}> Close </button>
+              <button className = "SPIGuideCloseButtons" onClick={() => setEquipmentOn(closingGuide())}> Close </button>
             </div>
           </div>
 
         ) : (
 
-          <button className = "SPIGuideButton" onClick = {() => openingGuide(2)}> Equipment Guide
+          <button className = "SPIGuideButton" onClick = {() => setEquipmentOn(openingGuide())}> Equipment Guide
           </button>
 
         )}

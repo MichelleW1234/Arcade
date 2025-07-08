@@ -197,6 +197,25 @@ function GameSelectionScreen (){
                             </button>
 
                         </div>
+
+                        <div className = "ArcadeGameContainer">
+
+                            <div className = "ArcadeGame"> 
+                                
+                                Color Blaster <br/> <br/>
+                                (10 Points)
+                                
+                            </div>
+
+                            
+                            <button
+                            className={`gameButton ${activeButton === 6 ? 'active' : ''}`}
+                            onClick={() => handleClick(6)}
+                            >
+                                Select
+                            </button>
+
+                        </div>
                         
 
                     </div>

@@ -1,0 +1,135 @@
+.CBLOuterGameContainer {
+
+    background-color: rgb(158, 47, 255);
+    padding: 4rem;
+
+    border-top: 0.125rem solid rgb(75, 22, 121);     /* 2px */
+    border-left: 0.5rem solid rgb(75, 22, 121);        /* 8px */
+    border-right: 0.125rem solid rgb(75, 22, 121);     /* 2px */
+    border-bottom: 0.5rem solid rgb(75, 22, 121);      /* 8px */
+
+    border-radius: 1.875rem; /* 30px */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 3rem; /* 30px */
+
+    box-shadow: 0 0 1.25rem 0.5rem rgb(157, 60, 241);  /* already in rem */
+
+}
+
+
+.CBLGameBoardEndingScreen{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 25rem;
+    width: 40rem;
+
+    background-color: rgb(159, 209, 253);
+    box-shadow: 0 0 1rem 0.5rem rgb(159, 209, 253);  /* already in rem */
+
+    border: 0.125rem solid rgb(91, 118, 142);      /* 2px */
+    border-left: 0.3125rem solid rgb(91, 118, 142);   /* 5px */
+    border-right: 0.125rem solid rgb(91, 118, 142);    /* 2px */
+    border-bottom: 0.3125rem solid rgb(91, 118, 142);  /* 5px */
+
+}
+
+.CBLColorBlastBarContainer{
+
+    width: 100%;
+
+    border-radius: 1.875rem;       /* 30px */
+    padding: 1rem;             /* 10px */
+    background-color: rgb(193, 244, 255);
+
+    box-shadow: 0 0 1rem 0.25rem rgb(193, 244, 255);
+
+}
+
+
+.CBLColorBlastBarOne{
+
+    height: 15px;
+    background-color: rgb(17, 0, 255);
+
+    box-shadow: 0 0 1rem 0.5rem rgb(82, 70, 255);
+
+}
+
+.CBLColorBlastBarTwo{
+
+    height: 15px;
+    background-color: rgb(255, 0, 238);
+
+    box-shadow: 0 0 1rem 0.25rem rgb(255, 70, 243);
+
+}
+
+
+.CBLColorBlastBarThree{
+
+    height: 15px;
+    background-color: rgb(0, 255, 47);
+
+    box-shadow: 0 0 1rem 0.25rem rgb(65, 255, 100);
+
+}
+
+.CBLColorBlastBarFour{
+
+    height: 15px;
+    background-color: rgb(255, 242, 0);
+
+    box-shadow: 0 0 1rem 0.25rem rgb(255, 246, 74);
+
+}
+
+.CBLsign{
+
+    font-size: 2rem;
+    border-radius: 1.875rem;
+    padding: 0.625rem; 
+    color: white;
+    background-color: rgb(209, 129, 255);
+    border: 0.3125rem solid rgba(0, 253, 46, 0.521); /* 5px */
+
+    animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
+
+}
+
+.CBLbutton{
+
+    font-size: 30px;
+    background-color: rgb(44, 255, 199);
+    padding: 15px;
+
+    border-top: 0.125rem solid rgb(17, 95, 74);   /* 2px */
+    border-left: 0.4rem solid rgb(17, 95, 74);         /* 8px */
+    border-right: 0.125rem solid rgb(17, 95, 74);      /* 2px */
+    border-bottom: 0.4rem solid rgb(17, 95, 74);  /* 8px */
+
+    animation: glowing-shadow2 4s infinite, button-glitch 4s infinite;
+
+}
+
+.CBLbutton:hover{
+
+    color: white;
+
+    background-color: rgb(21, 122, 95);
+
+    border-top: 0.125rem solid rgb(11, 65, 50);  /* 2px */
+    border-left: 0.4rem solid rgb(11, 65, 50);         /* 8px */
+    border-right: 0.125rem solid rgb(11, 65, 50);    /* 2px */
+    border-bottom: 0.4rem solid rgb(11, 65, 50);  /* 8px */
+
+    animation: glowing-shadow8 4s infinite, button-glitch 4s infinite;
+
+}

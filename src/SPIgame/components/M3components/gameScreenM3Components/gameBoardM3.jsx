@@ -10,6 +10,7 @@ import { useSPIUser } from '../../../Providers/SPIUserProvider.jsx';
 import "../../gameBoard.css";
 
 import {aliensIncomingM1andM3, newWave, alienKilledM3, laserBlaster} from "../../../helpers/SPIhelpers.js";
+import { playSound } from '../../../../Helpers/helpers.js';
 
 
 function gameBoardM3({waveNumber, setWaveNumber}) {
@@ -25,23 +26,26 @@ function gameBoardM3({waveNumber, setWaveNumber}) {
     const [mutantLaserOn, setMutantLaserOn] = useState(false);
 
   
-    /*Listener for current alien positions*/
+    /* Refs avoid stale values and store the latest values for use inside 
+    interval callbacks in useEffect without triggering re-renders*/
     const alienPositionsRef = useRef(alienPositions);
     useEffect(() => {
         alienPositionsRef.current = alienPositions;
     }, [alienPositions]);
 
-    /*Listener for current laser positions*/
     const laserPositionsRef = useRef(laserPositions);
     useEffect(() => {
         laserPositionsRef.current = laserPositions;
     }, [laserPositions]);
 
-     /*Listener for current laser positions*/
     const laserValueRef = useRef(laserValue);
     useEffect(() => {
         laserValueRef.current = laserValue;
     }, [laserValue]);
+
+
+    /* Clear and restart their interval whenever anything in their dependency array changes
+    so that callback always uses the current value */
 
     /*Listener for aliens being shot*/
     useEffect(() => {
@@ -76,6 +80,24 @@ function gameBoardM3({waveNumber, setWaveNumber}) {
 
     }, []);
 
+
+
+    const changeLaser = () => {
+
+
+        if (mutantLaserOn === false) {
+
+            setMutantLaserOn(true);
+
+        } else {
+
+            setMutantLaserOn(false);
+
+        }
+
+        playSound(22);
+
+    }
 
 
     return (
@@ -155,11 +177,11 @@ function gameBoardM3({waveNumber, setWaveNumber}) {
 
             {mutantLaserOn === true ? (
 
-                <button className = "SPIlaserButtonMutant" onClick={() => setMutantLaserOn(false)}> Change Laser </button>
+                <button className = "SPIlaserButtonMutant" onClick={() => changeLaser()}> Change Laser </button>
 
             ) : (
 
-                <button className = "SPIlaserButtonNormal" onClick={() => setMutantLaserOn(true)} > Change Laser </button>
+                <button className = "SPIlaserButtonNormal" onClick={() => changeLaser()} > Change Laser </button>
 
             )}
 

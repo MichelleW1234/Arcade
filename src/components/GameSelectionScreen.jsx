@@ -204,8 +204,6 @@ function GameSelectionScreen (){
                                 
                                 Color Blaster <br/> <br/>
                                 (10 Points)
-
-                                Work in progress...
                                 
                             </div>
 

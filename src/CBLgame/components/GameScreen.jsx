@@ -44,6 +44,14 @@ function GameScreen (){
 
     }
 
+    const claimPoints = () => {
+
+        const difference = (Player[0] - ActiveGame[1]) + CBLUser[0]*3;
+        setPlayer(([current, prev]) => [difference, current]);
+        playSound(2);
+
+    }
+
     return (
 
         <div>             
@@ -73,10 +81,20 @@ function GameScreen (){
                         <div className="CBLsign"> Colors Blasted: {CBLUser[0]} </div>
 
                         <div className = "CBLGameBoardEndingScreen">
-                            <h1> Game Over.</h1>
+
+                            {wrongColorBlasted ? (
+
+                                <h1> You blasted the wrong color. </h1>
+
+                            ) : (
+
+                                <h1> Game Over.</h1>
+
+                            )}
+                            
                         </div>
 
-                        <Link to="/CBLsummary" className = "generalbutton"> View Results </Link>
+                        <Link to="/CBLsummary" className = "CBLbutton" onClick = {() => claimPoints()}> View Results </Link>
 
                     </div>
 

@@ -22,7 +22,14 @@ function InstructionsScreen (){
                 Instructions: 
             </h1>
             <p className = "largefont">
-                &gt; Instructions go here <br/>
+                &gt; There are four different colors: blue, yellow, pink, and green.<br/>
+                &gt; Click on a circle in the gameboard if it flashes the correct color.<br/>
+                &gt; The correct color to blast matches that of the light that borders the gameboard, 
+                which can change throughout the game. <br/>
+                &gt; For every correct color blasted, you gain 3 points. <br/>
+                &gt; However, if you blast the wrong color, the game terminates immediately. <br/>
+                &gt; A complete game has 50 color instances (though not all of them guarantee points). <br/>
+                &gt; Good luck!
             </p>
 
             <div className = "generalbuttonContainer">

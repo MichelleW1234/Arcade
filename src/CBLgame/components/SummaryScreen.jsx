@@ -14,9 +14,17 @@ function SummaryScreen (){
     const { ActiveGame, setActiveGame} = useActiveGame();
     const {CBLUser, setCBLUser} = useCBLUser();
 
+    const resetGame = () => {
+        
+        playSound(19)
+        setCBLUser([0]);
+
+    }
+
     const reset = () => {
         
         playSound(4);
+        setCBLUser([0]);
         setActiveGame(retrieveActiveGame(1));
 
     }
@@ -25,10 +33,10 @@ function SummaryScreen (){
 
         <div className = "screenLayout">
 
-            <div className = "ORBResultsBoard">
+            <div className = "CBLResultsBoard">
 
-                <h1>Number of colors blasted: {CBLUser[0]}</h1>
-                <h1>Points earned: {CBLUser[0]*2}</h1>
+                <h1 className = "CBLResultsWords">Number of colors blasted: {CBLUser[0]}</h1>
+                <h1 className = "CBLResultsWordsGlitch">Points earned: {CBLUser[0]*3}</h1>
     
             </div>
 
@@ -36,7 +44,7 @@ function SummaryScreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/CBLgame" className = "generalbutton" onClick = {() => playSound(19)}> Play Again </Link>
+                <Link to = "/CBLgame" className = "generalbutton" onClick = {() => resetGame()}> Play Again </Link>
 
             ) : (
 

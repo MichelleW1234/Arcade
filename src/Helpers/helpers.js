@@ -18,6 +18,7 @@ import ArcadePrizeBought from "../Music/ArcadePrizeBought.mp3";
 import StartingGameTwo from "../Music/StartingGameTwo.mp3";
 import StartingGameOne from "../Music/StartingGameOne.mp3";
 import SPIcompleted from "../Music/SPIcompleted.mp3";
+import CBLSuccess from "../Music/CBLSuccess.mp3";
 
 export const retrieveActiveGame = (index) => {
     
@@ -51,7 +52,7 @@ export const retrieveActiveGame = (index) => {
     } else if (index === 6){
 
         gameControls[0] = "/CBLstart";
-        gameControls[1] = 5;
+        gameControls[1] = 10;
 
     }
     
@@ -101,7 +102,8 @@ export const playSound = (soundEffect) => {
         17: [ArcadePrizeBought, 0.3],
         18: [StartingGameTwo, 0.5],
         19: [StartingGameOne, 0.3],
-        20: [SPIcompleted, 0.5]
+        20: [SPIcompleted, 0.5],
+        21: [CBLSuccess, 0.3]
 
     };
 

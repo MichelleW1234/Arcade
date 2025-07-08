@@ -490,20 +490,41 @@ a.navBarButton {
 @keyframes glowing-shadow7 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.125rem rgb(165, 22, 175),  /* 10px 2px */
+      0 0 1.25rem 0.25rem rgb(165, 22, 175),  /* 10px 2px */
       0 0 1.25rem 0.25rem rgb(131, 30, 186);    /* 20px 4px */
   }
   50% {
     box-shadow: 
-      0 0 0.625rem 0.125rem rgba(240, 32, 255, 0.393),
+      0 0 1.25rem 0.25rem rgba(240, 32, 255, 0.393),
       0 0 1.25rem 0.25rem rgba(180, 42, 255, 0.419);
   }
   100% {
     box-shadow:
-      0 0 0.625rem 0.125rem rgb(165, 22, 175),  /* 10px 2px */
+      0 0 1.25rem 0.125rem rgb(165, 22, 175),  /* 10px 2px */
       0 0 1.25rem 0.25rem rgb(131, 30, 186);  /* 35px 6px */
   }
 }
+
+
+@keyframes glowing-shadow8 {
+  0% {
+    box-shadow: 
+      0 0 0.625rem 0.125rem rgb(130, 218, 215),  /* 10px 2px */
+      0 0 1.25rem 0.25rem rgb(0, 190, 200)     /* 20px 4px */
+  }
+  50% {
+    box-shadow: 
+      0 0 0.625rem 0.125rem rgba(150, 255, 250, 0.365),
+      0 0 1.25rem 0.25rem #00f2ff65
+  }
+  100% {
+    box-shadow:
+      0 0 0.625rem 0.125rem rgb(130, 218, 215),  /* 10px 2px */
+      0 0 1.25rem 0.25rem rgb(0, 190, 200)     /* 20px 4px */  
+  }
+}
+
+
 
 
 @keyframes glowing-sign-shadows {

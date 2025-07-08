@@ -33,7 +33,13 @@ function InnerGameScreen({setColorAppearances, colorToBlast, setWrongColorBlaste
             const type = Math.floor(Math.random() * 4);
             setColorSpot([newPosition, type]);
 
-            setColorAppearances(prev => prev + 1);
+            setColorAppearances(prev => {
+                const newVal = prev + 1;
+                if (newVal === 50) {
+                    playSound(6);
+                }
+                return newVal;
+            });
 
         }, 700);
 
@@ -53,10 +59,12 @@ function InnerGameScreen({setColorAppearances, colorToBlast, setWrongColorBlaste
             });
 
             setColorBlasted(true);
+            playSound(21);
 
         } else {
 
             setWrongColorBlasted(true);
+            playSound(6);
 
         }
 

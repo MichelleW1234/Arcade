@@ -1,7 +1,7 @@
 .CBLOuterGameContainer {
 
     background-color: rgb(158, 47, 255);
-    padding: 3rem;
+    padding: 4rem;
 
     border-top: 0.125rem solid rgb(75, 22, 121);     /* 2px */
     border-left: 0.5rem solid rgb(75, 22, 121);        /* 8px */
@@ -31,16 +31,15 @@
     height: 25rem;
     width: 40rem;
 
-    background-color: rgb(162, 233, 255);
-    box-shadow: 0 0 1rem 0.75rem rgb(161, 216, 255);  /* already in rem */
+    background-color: rgb(159, 209, 253);
+    box-shadow: 0 0 1rem 0.5rem rgb(159, 209, 253);  /* already in rem */
 
-    border-top: 0.125rem solid rgb(75, 101, 120);     /* 2px */
-    border-left: 0.3125rem solid rgb(75, 101, 120);   /* 5px */
-    border-right: 0.125rem solid rgb(75, 101, 120);   /* 2px */
-    border-bottom: 0.3125rem solid rgb(75, 101, 120); /* 5px */
+    border: 0.125rem solid rgb(91, 118, 142);      /* 2px */
+    border-left: 0.3125rem solid rgb(91, 118, 142);   /* 5px */
+    border-right: 0.125rem solid rgb(91, 118, 142);    /* 2px */
+    border-bottom: 0.3125rem solid rgb(91, 118, 142);  /* 5px */
 
 }
-
 
 .CBLColorBlastBarContainer{
 
@@ -94,13 +93,43 @@
 
 .CBLsign{
 
-    font-size: 2.1875rem;          /* 35px */
-    border-radius: 1.875rem;       /* 30px */
-    padding: 0.625rem;             /* 10px */
+    font-size: 2rem;
+    border-radius: 1.875rem;
+    padding: 0.625rem; 
     color: white;
-    background-color: rgb(243, 154, 255);
+    background-color: rgb(209, 129, 255);
     border: 0.3125rem solid rgba(0, 253, 46, 0.521); /* 5px */
 
     animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
+
+}
+
+.CBLbutton{
+
+    font-size: 30px;
+    background-color: rgb(44, 255, 199);
+    padding: 15px;
+
+    border-top: 0.125rem solid rgb(17, 95, 74);   /* 2px */
+    border-left: 0.4rem solid rgb(17, 95, 74);         /* 8px */
+    border-right: 0.125rem solid rgb(17, 95, 74);      /* 2px */
+    border-bottom: 0.4rem solid rgb(17, 95, 74);  /* 8px */
+
+    animation: glowing-shadow2 4s infinite, button-glitch 4s infinite;
+
+}
+
+.CBLbutton:hover{
+
+    color: white;
+
+    background-color: rgb(21, 122, 95);
+
+    border-top: 0.125rem solid rgb(11, 65, 50);  /* 2px */
+    border-left: 0.4rem solid rgb(11, 65, 50);         /* 8px */
+    border-right: 0.125rem solid rgb(11, 65, 50);    /* 2px */
+    border-bottom: 0.4rem solid rgb(11, 65, 50);  /* 8px */
+
+    animation: glowing-shadow8 4s infinite, button-glitch 4s infinite;
 
 }

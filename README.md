@@ -1,3 +1,3 @@
 New game ideas:
 
-- Some whack-a-mole -eqsque game (whack-an-alien?)
+- A claw machine to win prizes

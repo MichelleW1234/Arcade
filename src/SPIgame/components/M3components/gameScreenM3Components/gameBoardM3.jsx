@@ -10,6 +10,7 @@ import { useSPIUser } from '../../../Providers/SPIUserProvider.jsx';
 import "../../gameBoard.css";
 
 import {aliensIncomingM1andM3, newWave, alienKilledM3, laserBlaster} from "../../../helpers/SPIhelpers.js";
+import { playSound } from '../../../../Helpers/helpers.js';
 
 
 function gameBoardM3({waveNumber, setWaveNumber}) {
@@ -79,6 +80,24 @@ function gameBoardM3({waveNumber, setWaveNumber}) {
 
     }, []);
 
+
+
+    const changeLaser = () => {
+
+
+        if (mutantLaserOn === false) {
+
+            setMutantLaserOn(true);
+
+        } else {
+
+            setMutantLaserOn(false);
+
+        }
+
+        playSound(22);
+
+    }
 
 
     return (
@@ -158,11 +177,11 @@ function gameBoardM3({waveNumber, setWaveNumber}) {
 
             {mutantLaserOn === true ? (
 
-                <button className = "SPIlaserButtonMutant" onClick={() => setMutantLaserOn(false)}> Change Laser </button>
+                <button className = "SPIlaserButtonMutant" onClick={() => changeLaser()}> Change Laser </button>
 
             ) : (
 
-                <button className = "SPIlaserButtonNormal" onClick={() => setMutantLaserOn(true)} > Change Laser </button>
+                <button className = "SPIlaserButtonNormal" onClick={() => changeLaser()} > Change Laser </button>
 
             )}
 

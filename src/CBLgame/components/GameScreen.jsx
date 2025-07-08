@@ -29,7 +29,7 @@ function GameScreen (){
             const newColor = Math.floor(Math.random() * 4);
             setColorToBlast(newColor);
 
-        }, 4000);
+        }, 3500);
 
         return () => clearInterval(interval);
 

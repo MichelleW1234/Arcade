@@ -18,10 +18,10 @@ import Spider from '../Images/image 7.svg';
 import Whale from "../Images/image 19.svg";
 import Carrot from "../Images/image 20.svg";
 
-import "./GameSelectionScreen.css";
+import "./GameSelectionscreen.css";
 
 
-function GameSelectionScreen (){
+function GameSelectionscreen (){
 
     const { ActiveGame, setActiveGame } = useActiveGame(); 
     const { Player, setPlayer } = usePlayer(); 
@@ -242,5 +242,5 @@ function GameSelectionScreen (){
 }
 
 
-export default GameSelectionScreen;
+export default GameSelectionscreen;
 

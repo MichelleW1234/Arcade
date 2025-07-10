@@ -32,7 +32,7 @@ export const retrieveActiveGame = (index) => {
 
     } else if (index === 2){
 
-        gameControls[0] = "/TTThome";
+        gameControls[0] = "/TTTstart";
         gameControls[1] = 10;
 
     } else if (index === 3){

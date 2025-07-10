@@ -5,9 +5,9 @@ import { usePrize} from '../Providers/PrizeProvider.jsx';
 
 import {playSound} from "../Helpers/helpers.js";
 
-import "./PrizeRoomScreen.css";
+import "./PrizeRoomscreen.css";
 
-function PrizeRoomScreen() {
+function PrizeRoomscreen() {
 
     const { Player, setPlayer } = usePlayer();
     const { Prize, setPrize } = usePrize();
@@ -89,4 +89,4 @@ function PrizeRoomScreen() {
 
 }
   
-    export default PrizeRoomScreen
+    export default PrizeRoomscreen;

@@ -6,9 +6,9 @@ import {useCBLUser} from "../Providers/CBLUserProvider.jsx";
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-import "./SummaryScreen.css";
+import "./Summaryscreen.css";
 
-function SummaryScreen (){
+function Summaryscreen (){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
@@ -59,4 +59,4 @@ function SummaryScreen (){
 }
 
 
-export default SummaryScreen;
+export default Summaryscreen;

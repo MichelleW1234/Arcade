@@ -6,7 +6,7 @@ import {playSound} from "../Helpers/helpers.js";
 import { MusicContext } from '../Providers/MusicProvider.jsx';
 
 
-function ArcadeStartScreen (){
+function ArcadeStartscreen (){
 
     const { audioRef } = useContext(MusicContext);
 
@@ -29,4 +29,4 @@ function ArcadeStartScreen (){
 }
 
 
-export default ArcadeStartScreen;
+export default ArcadeStartscreen;

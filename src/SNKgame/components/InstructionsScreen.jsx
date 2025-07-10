@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
-function InstructionsScreen (){
+function Instructionsscreen (){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
 
@@ -50,4 +50,4 @@ function InstructionsScreen (){
 }
 
 
-export default InstructionsScreen;
+export default Instructionsscreen;

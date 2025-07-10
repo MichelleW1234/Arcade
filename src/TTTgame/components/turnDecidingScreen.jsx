@@ -5,9 +5,9 @@ import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
 
 import {playSound} from '../../Helpers/helpers.js';
 
-import './turnDecidingScreen.css';
+import './TurnDecidingscreen.css';
 
-function turnDecidingScreen() {
+function TurnDecidingscreen() {
 
     const { TTTUser, setTTTUser} = useTTTUser();
 
@@ -66,4 +66,4 @@ function turnDecidingScreen() {
 
 }
 
-export default turnDecidingScreen
+export default TurnDecidingscreen;

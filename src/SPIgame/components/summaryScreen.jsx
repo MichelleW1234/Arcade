@@ -4,12 +4,12 @@ import { useSPIUser } from '../Providers/SPIUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
-import "./summaryScreen.css"
+import "./Summaryscreen.css"
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
 
-function summaryScreen() {
+function Summaryscreen() {
 
     const {SPIUser, setSPIUser} = useSPIUser();
     const { ActiveGame, setActiveGame} = useActiveGame();
@@ -61,4 +61,4 @@ function summaryScreen() {
     )
 
 }
-export default summaryScreen
+export default Summaryscreen

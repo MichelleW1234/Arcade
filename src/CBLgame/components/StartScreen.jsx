@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
-function StartScreen (){
+function Startscreen (){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
 
@@ -28,7 +28,7 @@ function StartScreen (){
                     Exit Game
                 </Link>
 
-                <Link to="/CBLInstructions" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
+                <Link to="/CBLinstructions" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
                     Enter
                 </Link>
 
@@ -41,4 +41,4 @@ function StartScreen (){
 }
 
 
-export default StartScreen;
+export default Startscreen;

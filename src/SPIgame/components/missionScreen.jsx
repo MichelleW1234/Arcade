@@ -5,11 +5,11 @@ import { useSPIUser } from '../Providers/SPIUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 
-import "./missionScreen.css";
+import "./Missionscreen.css";
 
 import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
-function missionScreen() {
+function Missionscreen() {
 
     const allMissions = [1, 2, 3, 4];
     const missionNames = ["Surface Sweep", "Defense Protocol", "Strain X", "Operation: Kill the Queen"];
@@ -124,4 +124,4 @@ function missionScreen() {
     )
 
 }
-export default missionScreen
+export default Missionscreen

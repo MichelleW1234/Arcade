@@ -1,7 +1,7 @@
 import { Link} from 'react-router-dom';
 import React, { useState, useEffect, useRef} from "react";
 
-import InnerGameScreen from "./gameScreenComponents/InnerGameScreen.jsx";
+import InnerGameScreen from "./ORBGameComponents/InnerGamescreen.jsx";
 
 import {orbiting} from "../Helpers/helpers.js";
 
@@ -10,9 +10,9 @@ import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
-import "./GameScreen.css";
+import "./Gamescreen.css";
 
-function GameScreen (){
+function Gamescreen(){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
@@ -159,4 +159,4 @@ function GameScreen (){
 }
 
 
-export default GameScreen;
+export default Gamescreen;

@@ -1,7 +1,7 @@
 import { Link} from 'react-router-dom';
 import React, { useState, useEffect} from "react";
 
-import InnerGameScreen from "./gameScreenComponents/InnerGameScreen.jsx";
+import InnerGameScreen from "./CBLGameComponents/InnerGamescreen.jsx";
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
@@ -9,9 +9,9 @@ import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {useCBLUser} from "../Providers/CBLUserProvider.jsx";
 
-import "./GameScreen.css";
+import "./Gamescreen.css";
 
-function GameScreen (){
+function Gamescreen (){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
@@ -108,4 +108,4 @@ function GameScreen (){
 }
 
 
-export default GameScreen;
+export default Gamescreen;

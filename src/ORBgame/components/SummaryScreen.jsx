@@ -5,9 +5,9 @@ import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-import "./SummaryScreen.css";
+import "./Summaryscreen.css";
 
-function SummaryScreen (){
+function Summaryscreen (){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();3
@@ -56,4 +56,4 @@ function SummaryScreen (){
 }
 
 
-export default SummaryScreen;
+export default Summaryscreen;

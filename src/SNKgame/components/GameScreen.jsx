@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import GameBoard from "./gameComponents/GameBoard.jsx";
+import GameBoard from "./SNKGameComponents/GameBoard.jsx";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useSNKUser } from '../Providers/SNKUserProvider.jsx';
@@ -8,7 +8,7 @@ import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
 import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
-function GamesScreen (){
+function Gamesscreen(){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { SNKUser, setSNKUser } = useSNKUser();
@@ -56,4 +56,4 @@ function GamesScreen (){
 }
 
 
-export default GamesScreen;
+export default Gamesscreen;

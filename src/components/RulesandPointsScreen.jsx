@@ -5,9 +5,9 @@ import { usePlayer} from '../Providers/PlayerProvider.jsx';
 
 import {playSound} from "../Helpers/helpers.js";
 
-import "./RulesandPointsScreen.css";
+import "./RulesandPointsscreen.css";
 
-function RulesandPointsScreen (){
+function RulesandPointsscreen (){
 
     const { Player, setPlayer } = usePlayer();
 
@@ -54,4 +54,4 @@ function RulesandPointsScreen (){
 }
 
 
-export default RulesandPointsScreen;
+export default RulesandPointsscreen;

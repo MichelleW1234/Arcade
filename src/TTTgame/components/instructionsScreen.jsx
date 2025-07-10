@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
-function instructionsScreen() {
+function Instructionsscreen() {
 
   const { ActiveGame, setActiveGame} = useActiveGame();
 
@@ -32,7 +32,7 @@ function instructionsScreen() {
         <Link to="/selection" className = "generalbutton" onClick={() => quit()}>
           Quit Game
         </Link>
-        <Link to= "/TTTcoinFlip" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
+        <Link to= "/TTTcoinflip" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
           Continue
         </Link>
       </div>
@@ -43,4 +43,4 @@ function instructionsScreen() {
 
 }
   
-  export default instructionsScreen
+  export default Instructionsscreen;

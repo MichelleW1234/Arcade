@@ -12,7 +12,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
             setSPIUser(prev => {
                 const newMission = [...prev];
                 newMission[0].push(1);
-                newMission[1] = [2, "/SPIM2Instructions"];
+                newMission[1] = [2, "/SPIM2instructions"];
                 return newMission;                
             });
 
@@ -21,7 +21,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
             setSPIUser(prev => {
                 const newMission = [...prev];
                 newMission[0].push(2);
-                newMission[1] = [3, "/SPIM3Instructions"];
+                newMission[1] = [3, "/SPIM3instructions"];
                 return newMission;                
             });
 
@@ -30,7 +30,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
             setSPIUser(prev => {
                 const newMission = [...prev];
                 newMission[0].push(3);
-                newMission[1] = [4, "/SPIM4Instructions"];
+                newMission[1] = [4, "/SPIM4instructions"];
                 return newMission;                
             });
 

@@ -5,7 +5,7 @@ import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
-import {resetGame} from "../Helpers/TTThelpers.js";
+import {resetGame} from "../Helpers/helpers.js";
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
 import "./Summaryscreen.css";

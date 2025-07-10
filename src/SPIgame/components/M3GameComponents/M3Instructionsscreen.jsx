@@ -8,7 +8,7 @@ import laser from "../../../Images/image 9.svg";
 import laserMutant from "../../../Images/image 12.svg";
 import laserCannon from "../../../Images/image 18.svg";
 
-import {openingGuide, closingGuide} from '../../helpers/SPIhelpers.js';
+import {openingGuide, closingGuide} from '../../Helpers/helpers.js';
 import {playSound} from '../../../Helpers/helpers.js';
 
 import "../GameInstructionsscreen.css";

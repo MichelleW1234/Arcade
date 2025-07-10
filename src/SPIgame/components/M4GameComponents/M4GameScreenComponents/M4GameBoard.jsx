@@ -7,7 +7,7 @@ import { useSPIUser } from '../../../Providers/SPIUserProvider.jsx';
 
 import "./M4GameBoard.css";
 
-import {newBossState, bossHit, newBossPosition} from "../../../helpers/SPIhelpers.js";
+import {newBossState, bossHit, newBossPosition} from "../../../Helpers/helpers.js";
 
 import {playSound} from '../../../../Helpers/helpers.js';
 

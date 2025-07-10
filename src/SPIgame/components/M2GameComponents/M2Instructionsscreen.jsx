@@ -6,7 +6,7 @@ import alien from "../../../Images/image 8.svg";
 import laser from "../../../Images/image 9.svg";
 import laserCannon from "../../../Images/image 17.svg";
 
-import {openingGuide, closingGuide} from '../../helpers/SPIhelpers.js';
+import {openingGuide, closingGuide} from '../../Helpers/helpers.js';
 import {playSound} from '../../../Helpers/helpers.js';
 
 import "../GameInstructionsscreen.css";

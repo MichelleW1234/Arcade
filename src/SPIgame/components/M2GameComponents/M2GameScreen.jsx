@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import GameBoardM2 from "./M2GameScreenComponents/M2GameBoard.jsx";
 
 import { useSPIUser } from '../../Providers/SPIUserProvider.jsx';
-import {unlockNextMission} from "../../helpers/SPIhelpers.js";
+import {unlockNextMission} from "../../Helpers/helpers.js";
 
 import "../Gamescreen.css";
 

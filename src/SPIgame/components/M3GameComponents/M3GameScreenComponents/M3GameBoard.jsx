@@ -9,7 +9,7 @@ import { useSPIUser } from '../../../Providers/SPIUserProvider.jsx';
 
 import "../../GameBoard.css";
 
-import {aliensIncomingM1andM3, newWave, alienKilledM3, laserBlaster} from "../../../helpers/SPIhelpers.js";
+import {aliensIncomingM1andM3, newWave, alienKilledM3, laserBlaster} from "../../../Helpers/helpers.js";
 import { playSound } from '../../../../Helpers/helpers.js';
 
 

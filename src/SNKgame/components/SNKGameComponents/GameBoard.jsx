@@ -9,7 +9,7 @@ import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 
 import {playSound} from '../../../Helpers/helpers.js';
 
-import {changeSnakeDirection} from "../../Helpers/SNKhelpers.js";
+import {changeSnakeDirection} from "../../Helpers/helpers.js";
 
 import "./GameBoard.css";
 

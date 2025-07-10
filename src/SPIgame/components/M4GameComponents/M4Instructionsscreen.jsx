@@ -7,7 +7,7 @@ import rifle from "./M4GameScreenComponents/cursor.cur";
 import beamlight from "../../../Images/image 15.svg";
 import hpbar from "../../../Images/image 16.svg";
 
-import {openingGuide, closingGuide} from '../../helpers/SPIhelpers.js';
+import {openingGuide, closingGuide} from '../../Helpers/helpers.js';
 import {playSound} from '../../../Helpers/helpers.js';
 
 import "../GameInstructionsscreen.css";

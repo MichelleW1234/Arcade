@@ -8,7 +8,7 @@ import { useSPIUser } from '../../../Providers/SPIUserProvider.jsx';
 
 import "../../GameBoard.css";
 
-import {aliensIncomingM2, newWave, alienKilledM2, laserBlaster, getRandomElements} from "../../../helpers/SPIhelpers.js";
+import {aliensIncomingM2, newWave, alienKilledM2, laserBlaster, getRandomElements} from "../../../Helpers/helpers.js";
 
 
 function M2GameBoard({waveNumber, setWaveNumber}) {

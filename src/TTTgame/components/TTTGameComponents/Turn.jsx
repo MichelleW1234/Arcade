@@ -3,7 +3,7 @@ import {useState, useEffect, React} from 'react';
 
 import { useTTTUser } from '../../Providers/TTTUserProvider.jsx';
 
-import {computerMoveDecider, winnerwinnerchickendinner} from "../../Helpers/TTThelpers.js";
+import {computerMoveDecider, winnerwinnerchickendinner} from "../../Helpers/helpers.js";
 
 import {playSound} from "../../../Helpers/helpers.js";
 

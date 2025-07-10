@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import GameBoardM3 from "./M3GameScreenComponents/M3GameBoard.jsx";
 
 import { useSPIUser } from '../../Providers/SPIUserProvider.jsx';
-import {unlockNextMission} from "../../helpers/SPIhelpers.js";
+import {unlockNextMission} from "../../Helpers/helpers.js";
 
 import "../Gamescreen.css";
 

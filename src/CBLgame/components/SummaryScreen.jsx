@@ -40,8 +40,6 @@ function Summaryscreen (){
     
             </div>
 
-            <Link to = "/selection" className = "generalbutton" onClick={() => reset()}> Exit Game</Link>
-
             {Player[0] >= ActiveGame[1] ? (
 
                 <Link to = "/CBLgame" className = "generalbutton" onClick = {() => resetGame()}> Play Again </Link>
@@ -51,7 +49,9 @@ function Summaryscreen (){
                 <h1 className="largefont"> You don't have enough points to play again. </h1>
 
             )} 
-            
+
+            <Link to = "/selection" className = "generalbutton" onClick={() => reset()}> Exit Game</Link>
+
         </div>
 
     );

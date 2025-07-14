@@ -5,3 +5,44 @@
   align-items: center;
   min-height: 100vh;
 }
+
+
+.RPSgameBoard {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.125rem;               /* 50px */
+  background-color: rgb(117, 93, 255);
+  width: 37.5rem;                 /* 600px */
+  overflow-y: auto;
+  border-radius: 1.5625rem;       /* 25px */
+  gap: 3.125rem;                  /* 50px */
+
+  border-left: 0.5625rem solid rgb(50, 39, 112);    /* 9px */
+  border-bottom: 0.5625rem solid rgb(50, 39, 112);  /* 9px */
+  border-top: 0.125rem solid rgb(50, 39, 112);      /* 2px */
+  border-right: 0.125rem solid rgb(50, 39, 112);    /* 2px */
+
+  box-shadow: 0 0 2.5rem 0.5rem rgb(157, 139, 255); /* 40px 8px */
+  margin-top: 6.25rem;            /* 100px */
+}
+
+
+.RPSSign {
+  padding: 0.625rem;                  /* 10px */
+  border-radius: 1.5625rem;           /* 25px */
+  background-color: rgb(190, 176, 254);
+  border: 0.3125rem solid rgba(1, 255, 35, 0.586); /* 5px */
+  color: white;
+
+  font-size: 1.875rem;
+
+  animation: glowing-sign-shadows 4s infinite;
+}
+
+.RPSSignGlitch{
+
+  animation: sign-glitch 4s infinite;
+    
+}

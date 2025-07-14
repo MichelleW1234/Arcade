@@ -59,19 +59,18 @@ function Gamescreen (){
 
     return (
         <div>
-                    
-            {rounds < 11 ? (
 
-                <div>
+            <Navbar
+                setShowReferences = {setShowReferences}
+            />
 
-                    <Navbar
-                        setShowReferences = {setShowReferences}
-                    />
+            {showReferences && (<References/>)}
+            
+            <div className="RPSgameScreenLayout">
 
-                    {showReferences && (<References/>)}
-                    
-                    <div className="RPSgameScreenLayout">
+                {rounds < 11 ? (
 
+                    <>
                         <Round 
                             round={rounds} 
                             setShowFlag={setShowFlag}
@@ -90,24 +89,22 @@ function Gamescreen (){
                             />
 
                         )}
-                        
+                    </>
+
+                ) : (
+
+                    <div className = "RPSgameBoard">
+                        <h1 className = "RPSSign">
+                            <span className = "RPSSignGlitch">Game Over.</span>
+                        </h1>
+
+                        <Link to="/RPSsummary" className="generalbuttonGlitch" onClick={() => viewSummary()}>
+                            View Game Summary
+                        </Link>
                     </div>
-
-                </div>
-
-            ) : (
-
-                <div className="StartingScreenLayout">
-
-                    <h1 className = "headerwords"> Game <span className = "headerwordsGlitch">Over</span>. </h1>
-
-                    <Link to="/RPSsummary" className="generalbuttonGlitch" onClick={() => viewSummary()}>
-                        View Game Summary
-                    </Link>
-            
-                </div>
-
-            )}
+                    
+                )}
+            </div>
 
         </div>
     );

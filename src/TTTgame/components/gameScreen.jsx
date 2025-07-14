@@ -33,7 +33,6 @@ function Gamescreen() {
       </Link>
 
       <div className = "gameScreenLayout">
-          <h1 className ="headerwords"> Game Board: </h1>
           <GameBoard/>
       </div>
       

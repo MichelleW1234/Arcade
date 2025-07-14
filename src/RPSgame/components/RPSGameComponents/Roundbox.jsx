@@ -92,8 +92,8 @@ function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
 
     return (
 
-        <div className="RPSgameScreenContainer">
-            <h1 className = "RPSRoundNumberSign"><span className="RPSRoundNumberSignGlitch">Round:</span>{round}</h1>
+        <div className="RPSgameBoard">
+            <h1 className = "RPSSign"><span className="RPSSignGlitch">Round:</span>{round}</h1>
 
             <div className = "RPSdirections">
                 <p>Enter one of the following in the space below: </p>

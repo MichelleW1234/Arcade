@@ -18,7 +18,13 @@ function Startscreen() {
 
     <div className = "StartingScreenLayout">
 
+      <div className = "header-glow-box">
+        <span class="header-border top"></span>
+        <span class="header-border right"></span>
+        <span class="header-border bottom"></span>
+        <span class="header-border left"></span>
         <h1 className = "headerwords"> Loading <span className = "headerwordsGlitch">Tic-Tac-Toe</span>... </h1>
+      </div>
 
         <div className = "generalbuttonContainer">
           <Link to="/selection" className = "generalbutton" onClick={() => quit()}>

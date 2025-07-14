@@ -5,6 +5,8 @@ import {playSound} from "../Helpers/helpers.js";
 
 import { MusicContext } from '../Providers/MusicProvider.jsx';
 
+import "./ArcadeStartScreen.css";
+
 
 function ArcadeStartscreen (){
 
@@ -14,9 +16,11 @@ function ArcadeStartscreen (){
 
         <div className = "StartingScreenLayout">
 
-            <h1 className = "headerwords">
-                Welcome to The <span className = "headerwordsGlitch">Arcade</span>.
-            </h1>
+            <div className = "ArcadeTitleGlow">
+                <h1 className = "headerwords">
+                    Welcome to The <span className = "headerwordsGlitch">Arcade</span>.
+                </h1>
+            </div>
 
             <Link to="/rulesAndPoints" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
                 Enter

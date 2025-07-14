@@ -6,7 +6,7 @@
     border: 0.2rem solid rgb(255, 255, 255);
 
     box-shadow: 0 0 0.5rem 0.15rem rgb(255, 255, 255);
-    background-color: rgb(156, 224, 255);
+    background-color: rgba(156, 224, 255);
 
 }
 
@@ -18,14 +18,13 @@
     height: 25px;
     width: 25px;
 
-    filter: drop-shadow(0 0 0.5rem rgb(0, 255, 4));
 
 
 }
 
 .CWMBarNotAccurate {
 
-    height: 50px;
+    height: 40px;
     width: 30px;
 
     background-color: rgb(215, 242, 250);
@@ -39,7 +38,7 @@
 
 .CWMBarInRange {
 
-    height: 50px;
+    height: 40px;
     width: 30px;
 
     background-color: rgba(238, 255, 0, 0.799);
@@ -54,7 +53,7 @@
 
 .CWMBarClose {
 
-    height: 50px;
+    height: 40px;
     width: 30px;
 
     background-color: rgba(254, 169, 0, 0.799);
@@ -69,7 +68,7 @@
 
 .CWMBarVeryClose {
 
-    height: 50px;
+    height: 40px;
     width: 30px;
 
     background-color: rgba(255, 0, 0, 0.766);

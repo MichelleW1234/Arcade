@@ -1,12 +1,3 @@
-.ArcadeGameScreenLayout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3.125rem;  /* 50px */
-  gap: 3.125rem;      /* 50px */
-  min-height: 100vh;
-}
-
 .ArcadeGameBoard {
   background-color: rgb(204, 0, 255);
   width: 56.25rem;               /* 900px */

@@ -55,6 +55,11 @@ export const retrieveActiveGame = (index) => {
         gameControls[0] = "/CBLstart";
         gameControls[1] = 10;
 
+    } else if (index === 6){
+
+        gameControls[0] = "/CWMstart";
+        gameControls[1] = 20;
+
     }
     
     return gameControls;

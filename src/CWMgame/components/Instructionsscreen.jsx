@@ -1,10 +1,9 @@
-
 import { Link } from 'react-router-dom';
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
-function Startscreen (){
+function Instructionsscreen (){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
 
@@ -16,26 +15,33 @@ function Startscreen (){
     }
 
     return (
-        <div className = "StartingScreenLayout">
-            
-            <h1 className = "headerwords">
-                Loading <span className = "headerwordsGlitch">Space Invasion</span>...
+
+        <div className = "screenLayout">
+
+            <h1 className = "instructionsSign">
+                Instructions: 
             </h1>
-            
+            <p className = "largefont">
+                &gt; Instructions go here
+            </p>
+
             <div className = "generalbuttonContainer">
 
-                <Link to= "/selection" className = "generalbutton" onClick={() => exit()}>
+                <Link to="/selection" className = "generalbutton" onClick={() => exit()}>
                     Exit Game
                 </Link>
-                <Link to="/SPIinstructions" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
-                    Continue
+
+                <Link to="/CWMgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
+                    Start Game
                 </Link>
-                
+
             </div>
+            
         </div>
+
     );
 
 }
 
 
-export default Startscreen;
+export default Instructionsscreen;

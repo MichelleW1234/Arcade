@@ -20,7 +20,7 @@ function Startscreen (){
         <div className = "StartingScreenLayout">
             
             <h1 className = "headerwords">
-                Welcome to Rock-Paper-<span className = "headerwordsGlitch">Scissors.</span>
+                Loading <span className = "headerwordsGlitch">Rock-Paper-Scissors</span>...
             </h1>
             
             <div className = "generalbuttonContainer">
@@ -29,7 +29,7 @@ function Startscreen (){
                     Exit Game
                 </Link>
                 <Link to="/RPSinstructions" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
-                    Start Game
+                    Continue
                 </Link>
                 
             </div>

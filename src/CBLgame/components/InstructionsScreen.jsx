@@ -39,7 +39,7 @@ function Instructionsscreen (){
                 </Link>
 
                 <Link to="/CBLgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
-                    Go to Game
+                    Start Game
                 </Link>
 
             </div>

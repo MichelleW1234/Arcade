@@ -30,10 +30,10 @@ function Instructionsscreen() {
 
       <div className = "generalbuttonContainer">
         <Link to="/selection" className = "generalbutton" onClick={() => quit()}>
-          Quit Game
+          Exit Game
         </Link>
         <Link to= "/TTTcoinflip" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
-          Continue
+          Start Game
         </Link>
       </div>
       

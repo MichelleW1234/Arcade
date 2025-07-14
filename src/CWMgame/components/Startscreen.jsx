@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -16,23 +15,27 @@ function Startscreen (){
     }
 
     return (
+
         <div className = "StartingScreenLayout">
-            
+
             <h1 className = "headerwords">
-                Loading <span className = "headerwordsGlitch">Space Invasion</span>...
+                Loading <span className = "headerwordsGlitch"> Claw Machine</span>... 
             </h1>
-            
+
             <div className = "generalbuttonContainer">
 
-                <Link to= "/selection" className = "generalbutton" onClick={() => exit()}>
+                <Link to="/selection" className = "generalbutton" onClick={() => exit()}>
                     Exit Game
                 </Link>
-                <Link to="/SPIinstructions" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
+
+                <Link to="/CWMinstructions" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
                     Continue
                 </Link>
-                
+
             </div>
+            
         </div>
+
     );
 
 }

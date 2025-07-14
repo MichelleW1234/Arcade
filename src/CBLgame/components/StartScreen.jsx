@@ -19,7 +19,7 @@ function Startscreen (){
         <div className = "StartingScreenLayout">
 
             <h1 className = "headerwords">
-                Welcome to <span className = "headerwordsGlitch"> Color Blast.</span>
+                Loading <span className = "headerwordsGlitch"> Color Blast</span>...
             </h1>
 
             <div className = "generalbuttonContainer">
@@ -29,7 +29,7 @@ function Startscreen (){
                 </Link>
 
                 <Link to="/CBLinstructions" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
-                    Enter
+                    Continue
                 </Link>
 
             </div>

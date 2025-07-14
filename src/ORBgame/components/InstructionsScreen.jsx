@@ -35,7 +35,7 @@ function Instructionsscreen (){
                 </Link>
 
                 <Link to="/ORBgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
-                    Go to Game
+                    Start Game
                 </Link>
 
             </div>

@@ -36,7 +36,7 @@ function Instructionsscreen() {
           Quit Game
         </Link>
         <Link to= "/SPImission" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
-          Continue
+          Start Game
         </Link>
       </div>
       

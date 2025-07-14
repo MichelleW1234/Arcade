@@ -1,0 +1,57 @@
+.CWMBar{
+
+    display: grid;
+    grid-template-columns: repeat(31, 1fr);
+
+    border: 0.2rem solid rgb(255, 255, 255);
+
+    box-shadow: 0 0 0.75rem 0.35rem rgb(255, 255, 255);
+
+}
+
+.CWMBarCurrent{
+
+    height: 50px;
+    width: 30px;
+
+    background-color: rgb(45, 255, 37);
+
+}
+
+.CWMBarNotAccurate {
+
+    height: 50px;
+    width: 30px;
+
+    background-color: rgb(215, 242, 250);
+
+}
+
+.CWMBarInRange {
+
+    height: 50px;
+    width: 30px;
+
+    background-color: rgb(243, 255, 78);
+
+}
+
+
+.CWMBarClose {
+
+    height: 50px;
+    width: 30px;
+
+    background-color: rgb(255, 195, 74);
+
+}
+
+
+.CWMBarVeryClose {
+
+    height: 50px;
+    width: 30px;
+
+    background-color: rgb(255, 68, 68);
+
+}

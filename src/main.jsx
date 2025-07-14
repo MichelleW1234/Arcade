@@ -11,6 +11,7 @@ import {TTTUserProvider } from './TTTgame/Providers/TTTUserProvider.jsx';
 import {SNKUserProvider } from './SNKgame/Providers/SNKUserProvider.jsx'; 
 import {SPIUserProvider } from './SPIgame/Providers/SPIUserProvider.jsx'; 
 import {CBLUserProvider } from './CBLgame/Providers/CBLUserProvider.jsx'; 
+import {CWMUserProvider } from './CWMgame/Providers/CWMUserProvider.jsx'; 
 
 import App from './App.jsx';
 
@@ -19,9 +20,9 @@ createRoot(document.getElementById('root')).render(
     <MusicProvider>
     <PrizeProvider>
     <PlayerProvider><ActiveGameProvider>
-    <CBLUserProvider><SPIUserProvider><SNKUserProvider><TTTUserProvider><RPSUserProvider>
+    <CWMUserProvider><CBLUserProvider><SPIUserProvider><SNKUserProvider><TTTUserProvider><RPSUserProvider>
         <App />
-    </RPSUserProvider></TTTUserProvider></SNKUserProvider></SPIUserProvider></CBLUserProvider>
+    </RPSUserProvider></TTTUserProvider></SNKUserProvider></SPIUserProvider></CBLUserProvider></CWMUserProvider>
     </ActiveGameProvider></PlayerProvider>
     </PrizeProvider>
     </MusicProvider>

@@ -18,14 +18,14 @@ function Startscreen() {
 
     <div className = "StartingScreenLayout">
 
-        <h1 className = "headerwords"> <span className = "headerwordsGlitch">Welcome</span> to Tic-Tac-Toe.</h1>
+        <h1 className = "headerwords"> Loading <span className = "headerwordsGlitch">Tic-Tac-Toe</span>... </h1>
 
         <div className = "generalbuttonContainer">
           <Link to="/selection" className = "generalbutton" onClick={() => quit()}>
-            Quit Game
+            Exit Game
           </Link>
           <Link to= "/TTTinstructions" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
-            Instructions
+            Continue
           </Link>
         </div>
         

@@ -1,6 +1,6 @@
 /*
 Header:
-0 -> Number of aliens bonked
+0 -> Number of colors blasted
 */
 
 import React, { createContext, useContext, useState, useEffect } from "react";

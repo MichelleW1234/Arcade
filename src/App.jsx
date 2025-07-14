@@ -43,6 +43,11 @@ import CBLInstructionsscreen from "./CBLgame/components/Instructionsscreen.jsx";
 import CBLGamescreen from "./CBLgame/components/Gamescreen.jsx";
 import CBLSummaryscreen from "./CBLgame/components/Summaryscreen.jsx";
 
+import CWMStartscreen from "./CWMgame/components/Startscreen.jsx";
+import CWMInstructionsscreen from "./CWMgame/components/Instructionsscreen.jsx";
+import CWMGamescreen from "./CWMgame/components/Gamescreen.jsx";
+import CWMSummaryscreen from "./CWMgame/components/Summaryscreen.jsx";
+
 import NoPage from "./components/NoPage.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import {HashRouter, Routes, Route} from 'react-router-dom';
@@ -99,6 +104,11 @@ function App() {
         <Route path="/CBLinstructions" element={<CBLInstructionsscreen />}/>
         <Route path="/CBLgame" element={<CBLGamescreen />}/>
         <Route path="/CBLsummary" element={<CBLSummaryscreen />}/>
+
+        <Route path="/CWMstart" element={<CWMStartscreen />}/>
+        <Route path="/CWMinstructions" element={<CWMInstructionsscreen />}/>
+        <Route path="/CWMgame" element={<CWMGamescreen />}/>
+        <Route path="/CWMsummary" element={<CWMSummaryscreen />}/>
         
         {/*Page doesn't exist error*/}
         <Route path="*" element={<NoPage />} />

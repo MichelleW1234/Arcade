@@ -1,26 +1,27 @@
 .CBLResultsBoard {
     background-color: rgb(145, 200, 255);
-    padding: 3.5rem; /* 50px */
+    padding: 4rem;           /* kept as is, equals 56px */
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 1.875rem;             /* 30px converted to rem */
 
-    border-left: 0.5rem solid rgb(75, 105, 135);    /* 8px */
-    border-bottom: 0.5rem solid rgb(75, 105, 135);  /* 8px */
-    border-top: 0.25rem solid rgb(75, 105, 135);   /* 4px */
-    border-right: 0.25rem solid rgb(75, 105, 135);  /* 4px */
+    border-left: 0.5rem solid rgb(75, 105, 135);
+    border-bottom: 0.5rem solid rgb(75, 105, 135);
+    border-top: 0.25rem solid rgb(75, 105, 135);
+    border-right: 0.25rem solid rgb(75, 105, 135);
 
-    border-radius: 1.25rem; /* 20px */
+    border-radius: 1.25rem;
 
     animation: glowing-shadow4 4s infinite;
 }
 
+
 .CBLResultsWords {
     
     color: rgb(12, 0, 77);
-    font-size: 2.5rem; /* 40px */
+    font-size: 2.5rem;
 
 }
 
@@ -28,7 +29,7 @@
 .CBLResultsWordsGlitch {
 
     color: rgb(12, 0, 77);
-    font-size: 2.5rem; /* 40px */
+    font-size: 2.5rem;
 
     animation: sign-glitch 4s infinite;
 }

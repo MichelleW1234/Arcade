@@ -1,6 +1,4 @@
-.ArcadeTitleGlow{
-
-  padding: 30px;
+.ArcadeTitleGlow {
+  padding: 1.875rem;
   animation: glowing-shadow3 3s infinite;
-
 }

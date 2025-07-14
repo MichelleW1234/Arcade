@@ -20,7 +20,7 @@ function M3GameScreen() {
 
             {waveNumber <= 5 && SPIUser[2] == false ? (
 
-                <div className = "screenLayout">
+                <div className = "gameScreenLayout">
 
                     <div className="SPIouterContainer">
 
@@ -37,7 +37,7 @@ function M3GameScreen() {
 
             ): (
 
-                <div className = "screenLayout">
+                <div className = "gameScreenLayout">
 
                     <div className="SPIouterContainer">
 

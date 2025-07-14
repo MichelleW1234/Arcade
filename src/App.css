@@ -55,7 +55,7 @@ a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 6.25rem;   /* 100px */
+  margin-top: 12rem;   /* 100px */
   gap: 3.125rem;         /* 50px */
   padding-left: 3.125rem; /* 50px */
   padding-right: 3.125rem; /* 50px */
@@ -66,7 +66,7 @@ a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3.125rem; /* 50px */
+  margin-top: 7rem; /* 50px */
   gap: 3.125rem;        /* 50px */
 }
 
@@ -95,11 +95,12 @@ a:active {
 .header-glow-box {
   position: relative;
   display: inline-block;
-  padding: 20px 40px;
+  padding: 1.25rem 2.5rem;
   color: white;
-  font-size: 2rem;
+  font-size: 2rem; /* already in rem, no change needed */
   overflow: hidden;
 }
+
 
 .header-border {
   position: absolute;
@@ -110,36 +111,40 @@ a:active {
   top: 0;
   left: -100%;
   width: 100%;
-  height: 3px;
+  height: 0.1875rem;
   animation: top-move 4s linear infinite;
 }
+
 
 .header-border.right {
   top: -100%;
   right: 0;
-  width: 3px;
+  width: 0.1875rem;
   height: 100%;
   animation: right-move 4s linear infinite;
   animation-delay: 1s;
 }
 
+
 .header-border.bottom {
   bottom: 0;
   right: -100%;
   width: 100%;
-  height: 3px;
+  height: 0.1875rem;
   animation: bottom-move 4s linear infinite;
   animation-delay: 2s;
 }
 
+
 .header-border.left {
   bottom: -100%;
   left: 0;
-  width: 3px;
+  width: 0.1875rem;
   height: 100%;
   animation: left-move 4s linear infinite;
   animation-delay: 3s;
 }
+
 
 @keyframes top-move {
   0% { left: -100%; }

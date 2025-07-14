@@ -59,7 +59,7 @@ function M4Gamescreen() {
 
             {bossDefeated == false && SPIUser[2] == false ? (
 
-                <div className = "screenLayout">
+                <div className = "gameScreenLayout">
 
                     <div className="SPIouterContainerM4">
 
@@ -76,7 +76,7 @@ function M4Gamescreen() {
 
             ): (
 
-                <div className = "screenLayout">
+                <div className = "gameScreenLayout">
 
                     <div className="SPIouterContainerM4">
 

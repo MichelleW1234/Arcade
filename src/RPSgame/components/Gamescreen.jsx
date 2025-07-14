@@ -98,7 +98,7 @@ function Gamescreen (){
                             <span className = "RPSSignGlitch">Game Over.</span>
                         </h1>
 
-                        <Link to="/RPSsummary" className="generalbuttonGlitch" onClick={() => viewSummary()}>
+                        <Link to="/RPSsummary" className="RPSButton" onClick={() => viewSummary()}>
                             View Game Summary
                         </Link>
                     </div>

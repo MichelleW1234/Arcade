@@ -6,7 +6,6 @@
   min-height: 100vh;
 }
 
-
 .RPSgameBoard {
 
   display: flex;
@@ -45,4 +44,33 @@
 
   animation: sign-glitch 4s infinite;
     
+}
+
+.RPSButton {
+  font-size: 1.5625rem;              /* 25px */
+  padding: 0.625rem;                 /* 10px */
+  background-color: rgb(74, 243, 255);
+  border-left: 0.34375rem solid rgb(35, 120, 126);   /* 5.5px */
+  border-bottom: 0.34375rem solid rgb(35, 120, 126);   /* 5.5px */
+  border-top: 0.125rem solid rgb(35, 120, 126);     /* 5.5px */
+  border-right: 0.125rem solid rgb(35, 120, 126);  /* 5.5px */
+
+  animation: glowing-shadow2 3s infinite, button-glitch 3s infinite;
+
+}
+
+
+.RPSButton:hover {
+
+  background-color: rgb(0, 132, 142); 
+
+  border-left: 0.34375rem solid rgb(0, 71, 76);    /* 5.5px */
+  border-bottom: 0.34375rem solid rgb(0, 71, 76);  /* 5.5px */
+  border-top: 0.125rem solid rgb(0, 71, 76); /* 5.5px */
+  border-right: 0.125rem solid rgb(0, 71, 76); /* 5.5px */
+
+  color: white;
+    
+  animation: glowing-shadow8 3s infinite, button-glitch 3s infinite;
+
 }

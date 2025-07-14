@@ -18,7 +18,7 @@ function ArcadeStartscreen (){
 
             <div className = "ArcadeTitleGlow">
                 <h1 className = "headerwords">
-                    Welcome to The <span className = "headerwordsGlitch">Arcade</span>.
+                    Welcome to the <span className = "headerwordsGlitch">Arcade</span>.
                 </h1>
             </div>
 

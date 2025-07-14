@@ -1,4 +1,6 @@
-/*Universal things*/
+/* These CSS components are (or can be) used across multiple different screens and games*/
+
+/*Universal things */
 
 html {
   font-size: 16px;
@@ -33,7 +35,6 @@ a:active {
   color: inherit;
     
 }
-
 
 
 /*Screen layouts*/

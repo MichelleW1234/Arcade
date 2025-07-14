@@ -38,7 +38,7 @@ function TurnDecidingscreen() {
 
     return(
 
-        <div className = "StartingScreenLayout">
+        <div className = "TTTTurnScreenLayout">
 
             <h1 className ="headerwords"> Press this button: </h1>
 
@@ -48,15 +48,14 @@ function TurnDecidingscreen() {
 
             ) : (
 
-                <div className = "TTTcontainer">
-
+                <>
                     <h1 className ="largefont">{statement}</h1>
 
                     <Link to= "/TTTgame" className = "generalbuttonGlitch" onClick={() => playSound(18)}>
                         Begin Game
                     </Link>
+                </>
             
-                </div>
         
             )}
 

@@ -1,6 +1,9 @@
-.TTTcontainer {
+.TTTTurnScreenLayout{
+
     display: flex;
     flex-direction: column;
-    gap: 3.125rem; /* 50px */
     align-items: center;
+    margin-top: 15rem;   /* 100px */
+    gap: 3.125rem;         /* 50px */
+
 }

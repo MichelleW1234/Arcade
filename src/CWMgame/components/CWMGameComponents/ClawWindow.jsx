@@ -7,8 +7,6 @@ import "./ClawWindow.css";
 import Claw from "../../../Images/image 22.svg";
 import ClawCable from "../../../Images/image 23.svg";
 
-import { playSound } from "../../../Helpers/helpers.js";
-
 function ClawWindow({buttonHit, clawWentDown, setClawWentDown}) {
 
     const [clawExtension, setClawExtension] = useState(0);

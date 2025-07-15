@@ -2,6 +2,7 @@ import { Link} from 'react-router-dom';
 import React, { useState, useEffect, useRef} from "react";
 
 import ClawBar from "./CWMGameComponents/ClawBar.jsx";
+import ClawWindow from './CWMGameComponents/ClawWindow.jsx';
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 import {changePosition, clawGrab, chooseCat} from "../Helpers/helpers.js";
@@ -23,6 +24,8 @@ function Gamescreen (){
 
     const [currentPosition, setCurrentPosition] = useState(0);
     const [direction, setDirection] = useState(1);
+
+    const [clawWentDown, setClawWentDown] = useState(false);
 
     const currentPositionRef = useRef(currentPosition);
     useEffect(() => {
@@ -46,7 +49,6 @@ function Gamescreen (){
         const interval = setInterval(() => {
 
             changePosition(currentPositionRef.current, setCurrentPosition, directionRef.current, setDirection);
-            console.log(currentPosition);
 
         }, 30);
 
@@ -96,19 +98,31 @@ function Gamescreen (){
 
                     <div className="CWMGameBoardScreen">
 
-                        <div className = "CWMWindow">
-                            <img/>
-                        </div>
+                        <ClawWindow
+                            buttonHit = {buttonHit}
+                            clawWentDown = {clawWentDown}
+                            setClawWentDown = {setClawWentDown}
+                        />
 
                     </div>
 
                     {buttonHit == true ? (
 
-                        <Link to="/CWMsummary" className ="CWMButton" onClick = {() => claimPrize()}> Check Prize Door </Link>
+                        clawWentDown == true ? (
+                            
+                            <Link to="/CWMsummary" className ="CWMButton" onClick = {() => claimPrize()}> Check Prize Door </Link>
+
+                        ) : (
+
+                            <button className ="CWMButton">Grab</button>
+
+                        )
 
                     ) : (
 
+
                         <button className ="CWMButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
+                
 
                     )}
 

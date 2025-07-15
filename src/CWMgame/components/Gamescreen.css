@@ -1,6 +1,6 @@
 .CBLOuterGameContainer {
     background-color: rgb(116, 37, 252);
-    padding: 4rem;
+    padding: 2.5rem;
 
     border-top: 0.125rem solid rgb(58, 18, 127);         /* 2px */
     border-left: 0.5rem solid rgb(58, 18, 127);            /* 8px */
@@ -31,18 +31,7 @@
    
 }
 
-.CWMWindow{
 
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-
-    width: 100%;
-    height: 50px;
-
-    background-color: aliceblue;
-
-}
 
 
 .CWMButton{

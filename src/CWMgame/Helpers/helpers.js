@@ -76,6 +76,19 @@ export const clawGrab = (currentPosition, setResult, setButtonHit) => {
 }
 
 
+export const animateClaw = (clawExtension, setClawExtension, setClawWentDown) => {
+
+    if (clawExtension < 8){
+
+        setClawExtension(prev => prev + 1);
+
+    } else {
+
+        setClawWentDown(true);
+
+    }
+
+}
 
 
 export const chooseCat = () => {

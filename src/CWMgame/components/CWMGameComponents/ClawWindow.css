@@ -1,0 +1,32 @@
+.CWMOuterWindow{
+
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(186, 223, 255);
+
+}
+
+.CWMClawRowContainer{
+
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(11, 1fr);
+
+    width: 100%;
+
+}
+
+.CWMClawRow{
+
+    height: 60px;
+    width: 60px;
+
+}
+
+
+.CWMPrizes{
+
+    height: 90px;
+    background-color: rgb(186, 223, 255);
+
+}

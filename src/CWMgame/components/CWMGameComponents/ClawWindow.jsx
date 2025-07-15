@@ -6,6 +6,7 @@ import "./ClawWindow.css";
 
 import Claw from "../../../Images/image 22.svg";
 import ClawCable from "../../../Images/image 23.svg";
+import Prizes from "../../../Images/image 24.svg";
 
 function ClawWindow({buttonHit, clawWentDown, setClawWentDown}) {
 
@@ -43,22 +44,21 @@ function ClawWindow({buttonHit, clawWentDown, setClawWentDown}) {
                     row.map((cell, colIndex) => {
 
                         const clawcableHere = colIndex == 5 && rowIndex < clawExtension
-
                         const clawHere = colIndex == 5 && rowIndex == clawExtension
 
                         return(
 
                             clawHere ? (
 
-                                <img className="CWMClawRow" key={colIndex} src = {Claw}/>
+                                <img className="CWMClawRow" key={rowIndex + "," + colIndex} src = {Claw}/>
 
                             ) : clawcableHere ? (
 
-                                <img className="CWMClawRow" key={colIndex} src = {ClawCable}/>
+                                <img className="CWMClawRow" key={rowIndex + "," + colIndex} src = {ClawCable}/>
                                 
                             ) : (
 
-                                <div className="CWMClawRow" key={colIndex}></div>
+                                <div className="CWMClawRow" key={rowIndex + "," + colIndex}></div>
 
                             )
 
@@ -67,7 +67,7 @@ function ClawWindow({buttonHit, clawWentDown, setClawWentDown}) {
                 ))}
 
             </div>
-            <div className = "CWMPrizes"> </div>
+            <img className = "CWMPrizes" src = {Prizes}/>
         </div>
 
     );

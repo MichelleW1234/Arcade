@@ -1,11 +1,11 @@
 .CBLOuterGameContainer {
-    background-color: rgb(116, 37, 252);
+    background-color: rgb(59, 41, 196);
     padding: 2.5rem;
 
-    border-top: 0.125rem solid rgb(58, 18, 127);         /* 2px */
-    border-left: 0.5rem solid rgb(58, 18, 127);            /* 8px */
-    border-right: 0.125rem solid rgb(58, 18, 127);          /* 2px */
-    border-bottom: 0.5rem solid rgb(58, 18, 127);           /* 8px */
+    border-top: 0.125rem solid rgb(32, 22, 107);         /* 2px */
+    border-left: 0.5rem solid rgb(32, 22, 107);           /* 8px */
+    border-right: 0.125rem solid rgb(32, 22, 107);          /* 2px */
+    border-bottom: 0.5rem solid rgb(32, 22, 107);           /* 8px */
 
     border-radius: 1.875rem; /* 30px */
 
@@ -15,7 +15,7 @@
 
     gap: 1.875rem; /* 30px */
 
-    box-shadow: 0 0 1.25rem 0.5rem rgb(156, 98, 255); /* already in rem */
+    box-shadow: 0 0 1.25rem 0.5rem rgb(151, 137, 255);  /* already in rem */
 }
 
 

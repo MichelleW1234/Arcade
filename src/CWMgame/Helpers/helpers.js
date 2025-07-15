@@ -78,7 +78,7 @@ export const clawGrab = (currentPosition, setResult, setButtonHit) => {
 
 export const animateClaw = (clawExtension, setClawExtension, setClawWentDown) => {
 
-    if (clawExtension < 8){
+    if (clawExtension < 15){
 
         setClawExtension(prev => prev + 1);
 

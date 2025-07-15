@@ -2,7 +2,11 @@
 
     display: flex;
     flex-direction: column;
-    background-color: rgb(186, 223, 255);
+
+    background-color: rgb(203, 231, 255);
+    border: 10px solid rgb(0, 123, 255);
+
+    box-shadow: 0 0 1rem 0.5rem rgb(102, 191, 255);
 
 }
 
@@ -18,7 +22,7 @@
 
 .CWMClawRow{
 
-    height: 60px;
+    height: 45px;
     width: 60px;
 
 }
@@ -26,7 +30,7 @@
 
 .CWMPrizes{
 
-    height: 90px;
-    background-color: rgb(186, 223, 255);
+    height: 120px;
+    background-color: rgb(203, 231, 255);
 
 }

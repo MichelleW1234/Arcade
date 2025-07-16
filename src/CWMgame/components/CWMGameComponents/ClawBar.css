@@ -1,7 +1,7 @@
 .CWMBar{
 
     display: grid;
-    grid-template-columns: repeat(31, 1fr);
+    grid-template-columns: repeat(23, 1fr);
 
     border: 0.2rem solid rgb(255, 255, 255);
 
@@ -18,7 +18,7 @@
     z-index: 2;
 
     height: 25px;
-    width: 25px;
+    width: 30px;
 
     filter: 
         drop-shadow(0 0 0.3125rem rgba(47, 255, 0, 0.8))  /* 5px */
@@ -30,7 +30,7 @@
 .CWMBarNotAccurate {
 
     height: 35px;
-    width: 25px;
+    width: 30px;
 
     background-color: rgb(130, 207, 255);
 
@@ -44,7 +44,7 @@
 .CWMBarInRange {
 
     height: 35px;
-    width: 25px;
+    width: 30px;
 
     background-color: rgba(238, 255, 0, 0.799);
 
@@ -59,7 +59,7 @@
 .CWMBarClose {
 
     height: 35px;
-    width: 25px;
+    width: 30px;
 
     background-color: rgba(254, 169, 0, 0.799);
 
@@ -74,7 +74,7 @@
 .CWMBarVeryClose {
 
     height: 35px;
-    width: 25px;
+    width: 30px;
 
     background-color: rgba(255, 0, 0, 0.766);
 

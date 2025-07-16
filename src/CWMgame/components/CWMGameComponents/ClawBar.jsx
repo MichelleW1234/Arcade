@@ -7,7 +7,7 @@ import { playSound } from "../../../Helpers/helpers.js";
 
 function ClawBar({setButtonHit, setResult, currentPosition}) {
 
-    const array = Array.from({ length: 31 }, (_, i) => i);
+    const array = Array.from({ length: 23 }, (_, i) => i);
 
     return (
 
@@ -15,7 +15,7 @@ function ClawBar({setButtonHit, setResult, currentPosition}) {
             <div className = "CWMBar">
                 {array.map((index) => (
 
-                    index < 10 || index > 20 ? (
+                    index < 5 || index > 17 ? (
 
                         currentPosition == index ? (
 
@@ -29,7 +29,7 @@ function ClawBar({setButtonHit, setResult, currentPosition}) {
 
                         )
 
-                    ) : index < 13 || index > 17 ? (
+                    ) : index < 8 || index > 14 ? (
 
                         currentPosition == index ? (
 
@@ -43,7 +43,7 @@ function ClawBar({setButtonHit, setResult, currentPosition}) {
 
                         )
 
-                    ) : index < 15 || index > 15 ? (
+                    ) : index < 11 || index > 11 ? (
 
                         currentPosition == index ? (
 
@@ -60,7 +60,7 @@ function ClawBar({setButtonHit, setResult, currentPosition}) {
 
                         currentPosition == index ? (
 
-                             <div key={index} className="CWMBarVeryClose">
+                            <div key={index} className="CWMBarVeryClose">
                                 <img className="CWMBarCurrent"  key={index} src={positionIndicator}/>
                             </div>
 

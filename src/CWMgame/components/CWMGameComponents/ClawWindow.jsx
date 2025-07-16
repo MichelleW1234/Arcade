@@ -8,10 +8,10 @@ import Claw from "../../../Images/image 22.svg";
 import ClawCable from "../../../Images/image 23.svg";
 import Prizes from "../../../Images/image 24.svg";
 
-function ClawWindow({buttonHit, clawWentDown, setClawWentDown}) {
+function ClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition}) {
 
-    const [clawExtension, setClawExtension] = useState(0);
-    const array = Array.from({ length: 8 }, () => Array(11).fill(0));
+    const [clawExtension, setClawExtension] = useState([0,0]);
+    const array = Array.from({ length: 8 }, () => Array(23).fill(0));
 
     const clawExtensionRef = useRef(clawExtension);
     useEffect(() => {
@@ -28,7 +28,7 @@ function ClawWindow({buttonHit, clawWentDown, setClawWentDown}) {
     
         const interval = setInterval(() => {
 
-            animateClaw(clawExtensionRef.current, setClawExtension, setClawWentDown);
+            animateClaw(currentPosition, clawExtensionRef.current, setClawExtension, setClawWentDown);
 
         }, 100);
 
@@ -43,8 +43,8 @@ function ClawWindow({buttonHit, clawWentDown, setClawWentDown}) {
                 {array.map((row, rowIndex) => (
                     row.map((cell, colIndex) => {
 
-                        const clawcableHere = colIndex == 5 && rowIndex < clawExtension
-                        const clawHere = colIndex == 5 && rowIndex == clawExtension
+                        const clawcableHere = rowIndex < clawExtension[0] && colIndex == clawExtension[1]
+                        const clawHere = rowIndex == clawExtension[0] && colIndex == clawExtension[1]
 
                         return(
 

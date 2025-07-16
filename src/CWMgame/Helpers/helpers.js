@@ -16,7 +16,7 @@ export const changePosition = (currentPosition, setCurrentPosition, direction, s
 
     } else {
 
-        if (currentPosition === 30){
+        if (currentPosition === 22){
 
             setDirection(0);
             setCurrentPosition(prev => prev - 1);
@@ -35,11 +35,11 @@ export const changePosition = (currentPosition, setCurrentPosition, direction, s
 
 export const clawGrab = (currentPosition, setResult, setButtonHit) => {
 
-    if (currentPosition < 10 || currentPosition > 20){
+    if (currentPosition < 5 || currentPosition > 17){
 
         setResult(0);
 
-    } else if (currentPosition < 13 || currentPosition > 17) {
+    } else if (currentPosition < 8 || currentPosition > 14) {
 
         const prizeWon = Math.floor(Math.random() * 21);
 
@@ -49,7 +49,7 @@ export const clawGrab = (currentPosition, setResult, setButtonHit) => {
 
         }
 
-    } else if (currentPosition < 15 || currentPosition > 15) {
+    } else if (currentPosition < 11 || currentPosition > 11) {
 
         const prizeWon = Math.floor(Math.random() * 10);
 
@@ -76,11 +76,23 @@ export const clawGrab = (currentPosition, setResult, setButtonHit) => {
 }
 
 
-export const animateClaw = (clawExtension, setClawExtension, setClawWentDown) => {
+export const animateClaw = (currentPosition, clawExtension, setClawExtension, setClawWentDown) => {
 
-    if (clawExtension < 15){
+    if (clawExtension[1] != currentPosition){
 
-        setClawExtension(prev => prev + 1);
+        setClawExtension(prev => {
+            const updated = [...prev];
+            updated[1] += 1;
+            return updated;
+        });
+
+    } else if (clawExtension[0] < 15){
+
+        setClawExtension(prev => {
+            const updated = [...prev];
+            updated[0] += 1;
+            return updated;
+        });
 
     } else {
 

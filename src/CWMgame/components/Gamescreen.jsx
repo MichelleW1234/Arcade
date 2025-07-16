@@ -102,6 +102,7 @@ function Gamescreen (){
                             buttonHit = {buttonHit}
                             clawWentDown = {clawWentDown}
                             setClawWentDown = {setClawWentDown}
+                            currentPosition = {currentPosition}
                         />
 
                     </div>

@@ -15,10 +15,10 @@
 .CWMBarCurrent{
 
     position: relative;
-    z-index: 2;
+    z-index: 1;
 
     height: 25px;
-    width: 30px;
+    width: 25px;
 
     filter: 
         drop-shadow(0 0 0.3125rem rgba(47, 255, 0, 0.8))  /* 5px */

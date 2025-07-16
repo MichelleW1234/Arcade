@@ -8,15 +8,23 @@ import {playSound, retrieveActiveGame} from "../Helpers/helpers.js";
 
 import PrizeInventory from './GameSelectionComponents/PrizeInventory.jsx';
 
-import Bear from '../Images/image 1.svg';
-import Bee from '../Images/image 2.svg';
-import Heart from '../Images/image 3.svg';
-import GameBoy from '../Images/image 4.svg';
-import Robot from '../Images/image 5.svg';
-import Alien from '../Images/image 6.svg';
-import Spider from '../Images/image 7.svg';
-import Whale from "../Images/image 19.svg";
-import Carrot from "../Images/image 20.svg";
+import Bear from '../Images/ArcadePrizeImages/Bear.svg';
+import Bee from '../Images/ArcadePrizeImages/Bee.svg';
+import Heart from '../Images/ArcadePrizeImages/Valentine.svg';
+import GameBoy from '../Images/ArcadePrizeImages/GameBoy.svg';
+import Robot from '../Images/ArcadePrizeImages/Robot.svg';
+import Alien from '../Images/ArcadePrizeImages/Alien.svg';
+import Spider from '../Images/ArcadePrizeImages/Spider.svg';
+import Whale from "../Images/ArcadePrizeImages/Whale.svg";
+import Carrot from "../Images/ArcadePrizeImages/Carrot.svg";
+
+import RPS from "../Images/ArcadeGameImages/RPS.svg";
+import TTT from "../Images/ArcadeGameImages/TTT.svg";
+import SNK from "../Images/ArcadeGameImages/SNK.svg";
+import SPI from "../Images/ArcadeGameImages/SPI.svg";
+import ORB from "../Images/ArcadeGameImages/ORB.svg";
+import CBL from "../Images/ArcadeGameImages/CBL.svg";
+
 
 import "./GameSelectionscreen.css";
 
@@ -113,6 +121,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 Rock-Paper-Scissors
+                                <img className = "ArcadeGameImage" src = {RPS}/>
                                 <span className = "windowGlitch">(20 Points)</span>
                                 
                             </div>
@@ -130,7 +139,8 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Tic-Tac-Toe <br/><br/>
+                                Tic-Tac-Toe
+                                <img className = "ArcadeGameImage" src = {TTT}/>
                                 (10 Points)
                                 
                             </div>
@@ -148,7 +158,8 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Snake <br/> <br/>
+                                Snake
+                                <img className = "ArcadeGameImage" src = {SNK}/>
                                 (5 Points)
                                 
                             </div>
@@ -166,7 +177,8 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Space Invasion <br/> <br/>
+                                Space Invasion 
+                                <img className = "ArcadeGameImage" src = {SPI}/>
                                 (15 Points)
                                 
                             </div>
@@ -184,7 +196,8 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Orbit <br/> <br/>
+                                Orbit
+                                <img className = "ArcadeGameImage" src = {ORB}/>
                                 (5 Points)
                                 
                             </div>
@@ -202,7 +215,8 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Color Blast <br/> <br/>
+                                Color Blast
+                                <img className = "ArcadeGameImage" src = {CBL}/>
                                 (10 Points)
                                 
                             </div>

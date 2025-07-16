@@ -1,14 +1,14 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-import Bear from '../Images/image 1.svg';
-import Bee from '../Images/image 2.svg';
-import Heart from '../Images/image 3.svg';
-import GameBoy from '../Images/image 4.svg';
-import Robot from '../Images/image 5.svg';
-import Alien from '../Images/image 6.svg';
-import Spider from '../Images/image 7.svg';
-import Whale from "../Images/image 19.svg";
-import Carrot from "../Images/image 20.svg";
+import Bear from '../Images/ArcadePrizeImages/Bear.svg';
+import Bee from '../Images/ArcadePrizeImages/Bee.svg';
+import Heart from '../Images/ArcadePrizeImages/Valentine.svg';
+import GameBoy from '../Images/ArcadePrizeImages/GameBoy.svg';
+import Robot from '../Images/ArcadePrizeImages/Robot.svg';
+import Alien from '../Images/ArcadePrizeImages/Alien.svg';
+import Spider from '../Images/ArcadePrizeImages/Spider.svg';
+import Whale from "../Images/ArcadePrizeImages/Whale.svg";
+import Carrot from "../Images/ArcadePrizeImages/Carrot.svg";
 
 // Create the context
 const PrizeContext = createContext();

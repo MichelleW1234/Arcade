@@ -29,6 +29,7 @@ import SNK from "../Images/ArcadeGameImages/SNK.svg";
 import SPI from "../Images/ArcadeGameImages/SPI.svg";
 import ORB from "../Images/ArcadeGameImages/ORB.svg";
 import CBL from "../Images/ArcadeGameImages/CBL.svg";
+import CWM from "../Images/ArcadeGameImages/CWM.svg";
 
 
 import "./GameSelectionscreen.css";
@@ -240,7 +241,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 Claw Machine
-                                <img className = "ArcadeGameImage" src = {CBL}/>
+                                <img className = "ArcadeGameImage" src = {CWM}/>
                                 (5 Points)
                                 
                             </div>

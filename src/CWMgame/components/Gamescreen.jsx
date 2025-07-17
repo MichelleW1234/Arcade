@@ -64,7 +64,7 @@ function Gamescreen (){
         if (result == 1){
 
             const cat = chooseCat();
-            setCWMUser(cat);
+            setCWMUser([cat]);
 
             if (cat == 1){
 

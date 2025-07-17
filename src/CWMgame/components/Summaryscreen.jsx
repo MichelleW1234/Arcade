@@ -2,6 +2,12 @@ import { Link } from 'react-router-dom';
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import { useCWMUser } from '../Providers/CWMUserProvider.jsx';
+
+import BlackCat from "../../Images/ArcadePrizeImages/BlackCat.svg";
+import OrangeCat from "../../Images/ArcadePrizeImages/OrangeCat.svg";
+import SiameseCat from "../../Images/ArcadePrizeImages/SiameseCat.svg";
+import BritishShorthairCat from "../../Images/ArcadePrizeImages/BritishShorthairCat.svg";
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
@@ -11,18 +17,19 @@ function Summaryscreen (){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
+    const { CWMUser, setCWMUser} = useCWMUser();
 
     const resetGame = () => {
         
         playSound(19)
-        setCBLUser([0]);
+        setCWMUser([0]);
 
     }
 
     const reset = () => {
         
         playSound(4);
-        setCBLUser([0]);
+        setCWMUser([0]);
         setActiveGame(retrieveActiveGame(1));
 
     }
@@ -31,11 +38,60 @@ function Summaryscreen (){
 
         <div className = "screenLayout">
 
-            <div className = "CBLResultsBoard">
+            {CWMUser[0] === 1 ? (
 
-                <h1 className = "CBLResultsWords"> Results go here. </h1>
-    
-            </div>
+                <div className = "CBLResultsBoard">
+                    <h1 className = "CBLResultsWords"> 
+                        Congrats! You won a black cat:
+                    </h1>
+                    <img className = "CWMPrizeImage" src = {BlackCat}/>
+                    <h1>Check your prize inventory</h1>
+                </div>
+
+
+            ) : CWMUser[0] === 2 ? (
+
+                <div className = "CBLResultsBoard">
+                    <h1 className = "CBLResultsWords"> 
+                        Congrats! You won a orange cat:
+                    </h1>
+                    <img className = "CWMPrizeImage" src = {OrangeCat}/>
+                    <h1>Check your prize inventory</h1>
+                </div>
+
+            ) : CWMUser[0] === 3 ? (
+
+                <div className = "CBLResultsBoard">
+                    <h1 className = "CBLResultsWords"> 
+                        Congrats! You won a Siamese cat:
+                    </h1>
+                    <img className = "CWMPrizeImage" src = {SiameseCat}/>
+                    <h1>Check your prize inventory</h1>
+                </div>
+
+            ) : CWMUser[0] === 4 ? (
+
+                <div className = "CBLResultsBoard">
+                    <h1 className = "CBLResultsWords"> 
+                        Congrats! You won a British Shorthair cat:
+                    </h1>
+                    <img className = "CWMPrizeImage" src = {BritishShorthairCat}/>
+                    <h1>Check your prize inventory</h1>
+                </div>
+
+            ) : (
+
+                <div className = "CBLResultsBoard">
+                    <h1 className = "CBLResultsWords"> 
+                        Sorry, you didn't win anything.
+                    </h1>
+                    <h1 className = "CBLResultsWords"> 
+                        Better luck next time!
+                    </h1>
+                </div>
+
+
+            )}
 
             {Player[0] >= ActiveGame[1] ? (
 

@@ -14,11 +14,11 @@ export function CWMUserProvider({ children }) {
   const [CWMUser, setCWMUser] = useState(() => {
     try {
       const storedCWMUser = JSON.parse(sessionStorage.getItem("CWMUser"));
-      return Array.isArray(storedCWMUser) ? storedCWMUser : []; // Ensure it's an array
+      return Array.isArray(storedCWMUser) ? storedCWMUser : [0]; // Ensure it's an array
 
     } catch (error) {
 
-      return []; // Fallback if JSON parsing fails
+      return [0]; // Fallback if JSON parsing fails
     }
   });
 

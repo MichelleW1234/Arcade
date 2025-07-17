@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import "./ClawBar.css";
 import positionIndicator from "../../../Images/image 21.svg";
 
 import { playSound } from "../../../Helpers/helpers.js";
+
+import "./ClawBar.css";
 
 function ClawBar({setButtonHit, setResult, currentPosition}) {
 

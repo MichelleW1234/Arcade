@@ -21,7 +21,7 @@ function Summaryscreen (){
 
     const resetGame = () => {
         
-        playSound(19)
+        playSound(19);
         setCWMUser([0]);
 
     }

@@ -234,6 +234,25 @@ function GameSelectionscreen (){
                             </button>
 
                         </div>
+
+                        <div className = "ArcadeGameContainer">
+
+                            <div className = "ArcadeGame"> 
+                                
+                                Claw Machine
+                                <img className = "ArcadeGameImage" src = {CBL}/>
+                                (5 Points)
+                                
+                            </div>
+
+                            <button
+                            className={`gameButton ${activeButton === 7 ? 'active' : ''}`}
+                            onClick={() => handleClick(7)}
+                            >
+                                Select
+                            </button>
+
+                        </div>
                         
 
                     </div>

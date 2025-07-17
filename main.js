@@ -6,6 +6,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Define zoom globally
+let adjustedZoom = 0.7;
+
 function createWindow () {
   const win = new BrowserWindow({
     width: 800,
@@ -24,11 +27,24 @@ function createWindow () {
     win.loadFile(path.join(__dirname, 'dist', 'index.html'));
   }
 
-  // 🔧 Set zoom to normal (1 = 100%)
+
+  /*Accounting for consistency in zoom across different machines: */
+  const scaleFactor = screen.getPrimaryDisplay().scaleFactor;     // Get screen scale (DPI factor)
+  const baseZoom = 0.7;    // Define a base zoom
+  adjustedZoom = baseZoom / scaleFactor;    // Adjust for screen DPI
+
+
   win.webContents.on('did-finish-load', () => {
-    win.webContents.setZoomFactor(0.70);
+    win.webContents.setZoomFactor(adjustedZoom);
   });
 }
+
+app.on('browser-window-focus', () => {
+  const win = BrowserWindow.getFocusedWindow();
+  if (win) {
+    win.webContents.setZoomFactor(adjustedZoom);
+  }
+});
 
 app.whenReady().then(createWindow);
 
@@ -38,12 +54,4 @@ app.on('window-all-closed', () => {
 
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) createWindow();
-});
-
-
-app.on('browser-window-focus', () => {
-  const win = BrowserWindow.getFocusedWindow();
-  if (win) {
-    win.webContents.setZoomFactor(0.7);  // or 1.0, whatever you want as default
-  }
 });

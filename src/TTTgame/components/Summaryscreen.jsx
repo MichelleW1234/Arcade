@@ -35,9 +35,29 @@ function Summaryscreen() {
         <div className = "screenLayout">
 
             <div className = "StatsBoard">
-                <p> Result: </p>
-                <p> <span className = "StatsGlitch">{Player[0] < Player[1] ? ("You lost. :("): Player[0] > Player[1]  ? ("You won! :)") : ("It's a draw!")} </span></p>
-                <p>No one wins!</p>
+                {Player[0] < Player[1] ? (
+
+                    <>
+                        <p>The computer got three in a row.</p>
+                        <p><span className = "StatsGlitch"> You lost. </span></p>
+                    </>
+
+                ) : Player[0] > Player[1] ? (
+
+                    <>
+                        <p> You got three in a row. </p>
+                        <p><span className = "StatsGlitch"> You won! </span></p>
+                    </>
+
+                ) : (
+
+                    <>
+                        <p> It's a draw. </p>
+                        <p><span className = "StatsGlitch"> No one wins!</span></p>
+                    </>
+
+                )}
+
             </div>
 
             {Player[0] >= ActiveGame[1] ? (

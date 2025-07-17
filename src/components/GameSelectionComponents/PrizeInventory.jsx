@@ -41,18 +41,11 @@ function PrizeInventory (){
 
                             item[1] < 0 ? (
 
-                                Array.from({ length: Math.abs(item[1])}).map((_, repeatIndex) => (
-
-                                    <div key={`${index},${repeatIndex}`} className = "inventoryWindow">
-
-                                        <h1> {fullInventoryList[index][0]}</h1>
-                                        <br/>
-                                        <img className = "inventoryImage" src = {fullInventoryList[index][1]}/>
-
-                                    </div> 
-
-                                ))
-
+                                <div key={index} className = "inventoryWindow">
+                                    <h1> {fullInventoryList[index][0]}</h1>
+                                    <img className = "inventoryImage" src = {fullInventoryList[index][1]}/>
+                                    <h1>x{Math.abs(item[1])}</h1>
+                                </div>
 
                             ) : (
 

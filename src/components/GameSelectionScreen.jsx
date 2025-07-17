@@ -18,6 +18,11 @@ import Spider from '../Images/ArcadePrizeImages/Spider.svg';
 import Whale from "../Images/ArcadePrizeImages/Whale.svg";
 import Carrot from "../Images/ArcadePrizeImages/Carrot.svg";
 
+import BlackCat from "../Images/ArcadePrizeImages/BlackCat.svg";
+import OrangeCat from "../Images/ArcadePrizeImages/OrangeCat.svg";
+import SiameseCat from "../Images/ArcadePrizeImages/SiameseCat.svg";
+import BritishShorthairCat from "../Images/ArcadePrizeImages/BritishShorthairCat.svg";
+
 import RPS from "../Images/ArcadeGameImages/RPS.svg";
 import TTT from "../Images/ArcadeGameImages/TTT.svg";
 import SNK from "../Images/ArcadeGameImages/SNK.svg";
@@ -64,7 +69,9 @@ function GameSelectionscreen (){
         setActiveGame(retrieveActiveGame(1));
         setPrize([["Bear", 80, Bear], ["BumbleBee", 50, Bee], ["Valentine", 20, Heart], 
                     ["GameBoy", 100, GameBoy], ["Robot", 30, Robot], ["Alien", 20, Alien], 
-                    ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 50, Whale]]);
+                    ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 50, Whale],
+                    ["Black Cat", 0, BlackCat], ["Orange Cat", 0, OrangeCat], ["Siamese Cat", 0, SiameseCat],
+                    ["British Shorthair Cat", 0, BritishShorthairCat]]);
 
     }
 
@@ -103,10 +110,7 @@ function GameSelectionscreen (){
                 </ul>
             </div>
 
-            {showInventory && 
-                (<PrizeInventory
-                    Prize = {Prize}
-            />)}
+            {showInventory && <PrizeInventory/>}
 
             <div className = "gameScreenLayout">
 

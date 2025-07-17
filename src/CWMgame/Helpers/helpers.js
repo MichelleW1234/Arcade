@@ -109,20 +109,20 @@ export const chooseCat = () => {
 
     if (cat < 10) {
 
-        return 
+        return 1;
 
     } else if (cat < 15) {
 
-        return 
+        return 2;
 
     } else if (cat < 19) {
 
-        return 
+        return 3;
 
     } else {
     //The rarest cat
 
-        return 
+        return 4;
 
     }
 

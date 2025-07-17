@@ -10,6 +10,7 @@ import {changePosition, clawGrab, chooseCat} from "../Helpers/helpers.js";
 import { useCWMUser } from '../Providers/CWMUserProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import { usePrize} from '../../Providers/PrizeProvider.jsx';
 
 import "./Gamescreen.css";
 
@@ -18,6 +19,7 @@ function Gamescreen (){
     const { CWMUser, setCWMUser} = useCWMUser();
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
+    const { Prize, setPrize } = usePrize();
 
     const [buttonHit, setButtonHit] = useState(false);
     const [result, setResult] = useState(0);
@@ -63,6 +65,44 @@ function Gamescreen (){
 
             const cat = chooseCat();
             setCWMUser(cat);
+
+            if (cat == 1){
+
+                setPrize(prev => {
+                    const newArray = prev.map(row => [...row]); // Deep copy
+                    newArray[9][0] = "X";                         // Update the value
+                    newArray[9][1] -= 1;
+                    return newArray;
+                });
+
+            } else if (cat == 2){
+
+                setPrize(prev => {
+                    const newArray = prev.map(row => [...row]); // Deep copy
+                    newArray[10][0] = "X";                      // Update the value
+                    newArray[10][1] -= 1;
+                    return newArray;
+                });
+
+            } else if (cat == 3){
+
+                setPrize(prev => {
+                    const newArray = prev.map(row => [...row]); // Deep copy
+                    newArray[11][0] = "X";                       // Update the value
+                    newArray[11][1] -= 1;
+                    return newArray;
+                });
+
+            } else {
+
+                setPrize(prev => {
+                    const newArray = prev.map(row => [...row]); // Deep copy
+                    newArray[12][0] = "X";                       // Update the value
+                    newArray[12][1] -= 1;
+                    return newArray;
+                });
+
+            }
 
         }
 

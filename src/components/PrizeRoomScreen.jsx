@@ -37,41 +37,50 @@ function PrizeRoomscreen() {
 
                     {Prize.map((item, index) => (
 
-                        item[0] != "X" ? 
+                        item[1] > 0 ? (
+                
+                            item[0] != "X" ? (
 
-                            <div key = {index} className = "prizeWindowContainer">
+                                <div key = {index} className = "prizeWindowContainer">
 
-                                <h2 className = "prizeWindow">
-                                    Item: {item[0]} <br/>
-                                    Price: {item[1]} points <br/>
-                                    <br/>
-                                    <img className = "prizeImages" src = {item[2]}/>
-                                </h2>
+                                    <h2 className = "prizeWindow">
+                                        Item: {item[0]} <br/>
+                                        Price: {item[1]} points <br/>
+                                        <br/>
+                                        <img className = "prizeImages" src = {item[2]}/>
+                                    </h2>
 
 
-                                {item[1] <= Player[0] ?
+                                    {item[1] <= Player[0] ? (
 
-                                    <button className = "prizeButton"  onClick = {() => purchaseItem(index)}> Buy </button>
+                                        <button className = "prizeButton"  onClick = {() => purchaseItem(index)}> Buy </button>
 
-                                :
+                                    ) : (
 
-                                    <div className = "prizeButtonNonClick"> Unavailable </div>
+                                        <div className = "prizeButtonNonClick"> Unavailable </div>
 
-                                }
+                                    )}
 
-                            </div>
+                                </div>
 
-                        :
+                            ):(
 
-                            <div key = {index} className = "prizeWindowContainer">
+                                <div key = {index} className = "prizeWindowContainer">
 
-                                <h2 className = "prizeWindowBought">
-                                    X
-                                </h2>
+                                    <h2 className = "prizeWindowBought">
+                                        X
+                                    </h2>
 
-                                <div className = "prizeButtonNonClick"> Bought </div>
+                                    <div className = "prizeButtonNonClick"> Bought </div>
 
-                            </div>
+                                </div>
+
+                            )
+                        ) : (
+
+                            null
+
+                        )
 
                     ))}
 

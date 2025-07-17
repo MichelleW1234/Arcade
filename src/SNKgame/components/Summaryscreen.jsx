@@ -6,7 +6,7 @@ import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
 import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
-import "./Summaryscreen.css";
+import "../../components/GameSummaryscreen.css";
 
 function Summaryscreen(){
 
@@ -35,11 +35,10 @@ function Summaryscreen(){
 
         <div className = "screenLayout">
 
-            <div className = "SNKresultsSign"> 
+            <div className = "StatsBoard"> 
 
-                <h1 className = "SNKresultsFont">
-                    Total Points Earned: {SNKUser[1] * 2}
-                </h1>
+                <p> Total Apples Eaten: {SNKUser[1]} </p>
+                <p> <span className="StatsGlitch"> Total Points Earned: {SNKUser[1] * 2} </span></p>
 
             </div>
 

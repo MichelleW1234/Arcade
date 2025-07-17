@@ -4,10 +4,9 @@ import { useSPIUser } from '../Providers/SPIUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
-import "./Summaryscreen.css"
-
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
+import "../../components/GameSummaryscreen.css";
 
 function Summaryscreen() {
 
@@ -35,9 +34,9 @@ function Summaryscreen() {
 
         <div className = "screenLayout">
 
-            <div className = "SPIResultsBoard">
-                <h1> <span className='SPIWordsGlitch'>Missions Completed: {SPIUser[0].length}</span></h1>
-                <h1>Points Earned: {SPIUser[0].length * ActiveGame[1]}</h1>
+            <div className = "StatsBoard">
+                <p> Missions Completed: {SPIUser[0].length}</p>
+                <p> <span className="StatsGlitch"> Points Earned: {SPIUser[0].length * ActiveGame[1]}</span></p>
             </div>
 
             {Player[0] >= ActiveGame[1] ? (

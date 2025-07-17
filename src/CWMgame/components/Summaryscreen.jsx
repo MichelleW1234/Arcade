@@ -11,7 +11,7 @@ import BritishShorthairCat from "../../Images/ArcadePrizeImages/BritishShorthair
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-import "./Summaryscreen.css";
+import "../../components/GameSummaryscreen.css";
 
 function Summaryscreen (){
 
@@ -38,60 +38,51 @@ function Summaryscreen (){
 
         <div className = "screenLayout">
 
-            {CWMUser[0] === 1 ? (
+            <div className = "StatsBoard">
+                    
+                {CWMUser[0] === 1 ? (
 
-                <div className = "CBLResultsBoard">
-                    <h1 className = "CBLResultsWords"> 
-                        Congrats! You won a black cat:
-                    </h1>
-                    <img className = "CWMPrizeImage" src = {BlackCat}/>
-                    <h1>Check your prize inventory</h1>
-                </div>
-
-
-            ) : CWMUser[0] === 2 ? (
-
-                <div className = "CBLResultsBoard">
-                    <h1 className = "CBLResultsWords"> 
-                        Congrats! You won a orange cat:
-                    </h1>
-                    <img className = "CWMPrizeImage" src = {OrangeCat}/>
-                    <h1>Check your prize inventory</h1>
-                </div>
-
-            ) : CWMUser[0] === 3 ? (
-
-                <div className = "CBLResultsBoard">
-                    <h1 className = "CBLResultsWords"> 
-                        Congrats! You won a Siamese cat:
-                    </h1>
-                    <img className = "CWMPrizeImage" src = {SiameseCat}/>
-                    <h1>Check your prize inventory</h1>
-                </div>
-
-            ) : CWMUser[0] === 4 ? (
-
-                <div className = "CBLResultsBoard">
-                    <h1 className = "CBLResultsWords"> 
-                        Congrats! You won a British Shorthair cat:
-                    </h1>
-                    <img className = "CWMPrizeImage" src = {BritishShorthairCat}/>
-                    <h1>Check your prize inventory</h1>
-                </div>
-
-            ) : (
-
-                <div className = "CBLResultsBoard">
-                    <h1 className = "CBLResultsWords"> 
-                        Sorry, you didn't win anything.
-                    </h1>
-                    <h1 className = "CBLResultsWords"> 
-                        Better luck next time!
-                    </h1>
-                </div>
+                    <>
+                        <p> Congrats! You won a black cat: </p>
+                        <img className = "StatsImage" src = {BlackCat}/>
+                        <p> <span className="StatsGlitch">Check your prize inventory</span></p>
+                    </>
 
 
-            )}
+                ) : CWMUser[0] === 2 ? (
+
+                    <>
+                        <p> Congrats! You won a orange cat: </p>
+                        <img className = "StatsImage" src = {OrangeCat}/>
+                        <p> <span className="StatsGlitch">Check your prize inventory</span></p>
+                    </>
+
+                ) : CWMUser[0] === 3 ? (
+
+                    <>
+                        <p> Congrats! You won a Siamese cat: </p>
+                        <img className = "StatsImage" src = {SiameseCat}/>
+                        <p> <span className="StatsGlitch">Check your prize inventory</span></p>
+                    </>
+
+                ) : CWMUser[0] === 4 ? (
+
+                    <>
+                        <p> Congrats! You won a British Shorthair cat:</p>
+                        <img className = "StatsImage" src = {BritishShorthairCat}/>
+                        <p> <span className="StatsGlitch">Check your prize inventory</span></p>
+                    </>
+
+                ) : (
+
+                    <>
+                        <p> Sorry, you didn't win anything. </p>
+                        <p> <span className="StatsGlitch"> Better luck next time! </span></p>
+                    </>
+
+                )}
+
+            </div>
 
             {Player[0] >= ActiveGame[1] ? (
 

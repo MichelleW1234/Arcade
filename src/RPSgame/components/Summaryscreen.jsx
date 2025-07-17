@@ -5,9 +5,9 @@ import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
-import {resetLevel} from "../Helpers/Helpers.js";
+import {resetLevel} from "../Helpers/helpers.js";
 
-import "./Summaryscreen.css";
+import "../../components/GameSummaryscreen.css";
 
 function Summaryscreen (){
 
@@ -49,11 +49,10 @@ function Summaryscreen (){
 
   return (
       <div className="screenLayout">
-          <h1 className = "RPSGameSummarySign"><span className="RPSGameSummarySignGlitch">Game</span> Summary:  </h1>
-          <div className = "RPSStats">
+          <div className = "StatsBoard">
               <p> Computer Wins: {RPSUser[4]} </p>
               <p> User Wins: {RPSUser[3]} </p>
-              <p><span className = "RPSStatsGlitch">{winner}</span></p>
+              <p><span className = "StatsGlitch">{winner}</span></p>
           </div>
 
           {Player[0] >= ActiveGame[1] ? (

@@ -5,7 +5,7 @@ import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-import "./Summaryscreen.css";
+import "../../components/GameSummaryscreen.css";
 
 function Summaryscreen (){
 
@@ -23,15 +23,21 @@ function Summaryscreen (){
 
         <div className = "screenLayout">
 
-            <div className = "ORBResultsBoard">
+            <div className = "StatsBoard">
 
                 {Player[0] > Player[1] ? (
 
-                    <h1 className="ORBResultsWords"> You won! Nice job! </h1>
+                    <>
+                        <p> Target hit.</p>
+                        <p> <span className="StatsGlitch"> You won! Nice job! </span> </p>
+                    </>
 
                 ) : (
 
-                    <h1 className="ORBResultsWords"> You lost. Better luck next time! </h1>
+                    <>
+                        <p> Target missed. </p> 
+                        <p> <span className="StatsGlitch"> You lost. Better luck next time! </span> </p>
+                    </>
 
                 )}
     

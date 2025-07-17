@@ -8,7 +8,7 @@ import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {resetGame} from "../Helpers/helpers.js";
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-import "./Summaryscreen.css";
+import "../../components/GameSummaryscreen.css";
 
 function Summaryscreen() {
 
@@ -34,9 +34,10 @@ function Summaryscreen() {
     return (
         <div className = "screenLayout">
 
-            <div className = "TTTscoreboard">
-                <h1> Result: </h1>
-                <h1> <span className = "TTTResultsSignGlitch">{Player[0] < Player[1] ? ("You lost. :("): Player[0] > Player[1]  ? ("You won! :)") : ("It's a draw!")} </span></h1>
+            <div className = "StatsBoard">
+                <p> Result: </p>
+                <p> <span className = "StatsGlitch">{Player[0] < Player[1] ? ("You lost. :("): Player[0] > Player[1]  ? ("You won! :)") : ("It's a draw!")} </span></p>
+                <p>No one wins!</p>
             </div>
 
             {Player[0] >= ActiveGame[1] ? (

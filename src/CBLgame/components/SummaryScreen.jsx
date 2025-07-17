@@ -6,7 +6,7 @@ import {useCBLUser} from "../Providers/CBLUserProvider.jsx";
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-import "./Summaryscreen.css";
+import "../../components/GameSummaryscreen.css";
 
 function Summaryscreen (){
 
@@ -33,10 +33,10 @@ function Summaryscreen (){
 
         <div className = "screenLayout">
 
-            <div className = "CBLResultsBoard">
+            <div className = "StatsBoard">
 
-                <h1 className = "CBLResultsWords">Number of colors blasted: {CBLUser[0]}</h1>
-                <h1 className = "CBLResultsWordsGlitch">Points earned: {CBLUser[0]*3}</h1>
+                <p>Number of colors blasted: {CBLUser[0]}</p>
+                <p>  <span className="StatsGlitch"> Points earned: {CBLUser[0]*3} </span> </p>
     
             </div>
 

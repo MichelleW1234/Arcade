@@ -12,25 +12,22 @@
 
 }
 
-.CWMBarCurrent{
-
+.CWMBarCurrent {
     position: relative;
     z-index: 1;
 
-    height: 25px;
-    width: 25px;
+    height: 1.5625rem;   /* 25px / 16 */
+    width: 1.5625rem;    /* 25px / 16 */
 
     filter: 
-        drop-shadow(0 0 0.3125rem rgba(47, 255, 0, 0.8))  /* 5px */
-        drop-shadow(0 0 0.625rem rgba(47, 255, 0, 0.6))   /* 10px */
-        drop-shadow(0 0 1.25rem rgba(47, 255, 0, 0.4));   /* 20px */
-
+        drop-shadow(0 0 0.3125rem rgba(47, 255, 0, 0.8))   /* 5px */
+        drop-shadow(0 0 0.625rem rgba(47, 255, 0, 0.6))    /* 10px */
+        drop-shadow(0 0 1.25rem rgba(47, 255, 0, 0.4));    /* 20px */
 }
 
 .CWMBarNotAccurate {
-
-    height: 35px;
-    width: 30px;
+    height: 2.1875rem;      /* 35px / 16 */
+    width: 1.875rem;        /* 30px / 16 */
 
     background-color: rgb(130, 207, 255);
 
@@ -38,13 +35,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
-.CWMBarInRange {
 
-    height: 35px;
-    width: 30px;
+.CWMBarInRange {
+    height: 2.1875rem;      /* 35px / 16 */
+    width: 1.875rem;        /* 30px / 16 */
 
     background-color: rgba(238, 255, 0, 0.799);
 
@@ -52,14 +48,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 
 .CWMBarClose {
-
-    height: 35px;
-    width: 30px;
+    height: 2.1875rem;     /* 35px / 16 */
+    width: 1.875rem;       /* 30px / 16 */
 
     background-color: rgba(254, 169, 0, 0.799);
 
@@ -67,14 +61,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 
 .CWMBarVeryClose {
-
-    height: 35px;
-    width: 30px;
+    height: 2.1875rem;     /* 35px / 16 */
+    width: 1.875rem;       /* 30px / 16 */
 
     background-color: rgba(255, 0, 0, 0.766);
 
@@ -82,5 +74,4 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }

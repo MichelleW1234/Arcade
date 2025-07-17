@@ -20,6 +20,8 @@ import StartingGameOne from "../Music/StartingGameOne.mp3";
 import SPIcompleted from "../Music/SPIcompleted.mp3";
 import CBLSuccess from "../Music/CBLSuccess.mp3";
 import SPIMutantLaserSwitch from "../Music/SPIMutantLaserSwitch.mp3";
+import CWMClawActivate from "../Music/CWMClawActivate.mp3";
+
 
 export const retrieveActiveGame = (index) => {
     
@@ -110,7 +112,8 @@ export const playSound = (soundEffect) => {
         19: [StartingGameOne, 0.3],
         20: [SPIcompleted, 0.5],
         21: [CBLSuccess, 0.3],
-        22: [SPIMutantLaserSwitch, 0.5]
+        22: [SPIMutantLaserSwitch, 0.5],
+        23: [CWMClawActivate, 0.3]
 
     };
 

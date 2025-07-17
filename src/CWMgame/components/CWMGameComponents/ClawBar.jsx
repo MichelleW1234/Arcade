@@ -1,5 +1,3 @@
-import React, { useState, useEffect, useRef } from "react";
-
 import positionIndicator from "../../../Images/image 21.svg";
 
 import { playSound } from "../../../Helpers/helpers.js";

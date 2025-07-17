@@ -1,14 +1,13 @@
-.CWMOuterWindow{
-
+.CWMOuterWindow {
     display: flex;
     flex-direction: column;
 
     background-color: rgb(203, 231, 255);
-    border: 10px solid rgb(0, 123, 255);
+    border: 0.625rem solid rgb(0, 123, 255);   /* 10px / 16 */
 
-    box-shadow: 0 0 1rem 0.5rem rgb(102, 191, 255);
-
+    box-shadow: 0 0 1rem 0.5rem rgb(102, 191, 255);  /* already in rem, no change needed */
 }
+
 
 .CWMClawRowContainer{
 
@@ -18,17 +17,13 @@
 
 }
 
-.CWMClawRow{
-
-    height: 45px;
-    width: 30px;
-
+.CWMClawRow {
+    height: 2.8125rem;   /* 45px / 16 */
+    width: 1.875rem;     /* 30px / 16 */
 }
 
 
-.CWMPrizes{
-
-    height: 110px;
+.CWMPrizes {
+    height: 6.875rem;    /* 110px / 16 */
     background-color: rgb(203, 231, 255);
-
 }

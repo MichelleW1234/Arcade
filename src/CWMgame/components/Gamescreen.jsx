@@ -128,7 +128,7 @@ function Gamescreen (){
 
             <div className = "gameScreenLayout">
             
-                <div className = "CBLOuterGameContainer">
+                <div className = "CWMOuterGameContainer">
 
                     <ClawBar
                         setButtonHit = {setButtonHit}

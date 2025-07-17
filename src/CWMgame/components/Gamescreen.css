@@ -1,4 +1,4 @@
-.CBLOuterGameContainer {
+.CWMOuterGameContainer {
     background-color: rgb(59, 41, 196);
     padding: 2.5rem;
 
@@ -21,43 +21,38 @@
 
 
 .CWMGameBoardScreen {
-
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 3.125rem;        /* 50px / 16 */
 
     align-items: center;
-
-   
 }
 
 
 
-
-.CWMButton{
-
-    font-size: 25px;
-    padding: 15px;
+.CWMButton {
+    font-size: 1.5625rem;       /* 25px / 16 */
+    padding: 0.9375rem;         /* 15px / 16 */
 
     background-color: rgb(165, 211, 255);
 
-    border-left: 6px solid rgb(87, 113, 136);
-    border-bottom: 6px solid rgb(87, 113, 136);
-    border-top: 2px solid rgb(87, 113, 136);
-    border-right: 2px solid rgb(87, 113, 136);
-    
+    border-left: 0.35rem solid rgb(87, 113, 136);   /* 6px / 16 */
+    border-bottom: 0.35rem solid rgb(87, 113, 136); /* 6px / 16 */
+    border-top: 0.125rem solid rgb(87, 113, 136);    /* 2px / 16 */
+    border-right: 0.125rem solid rgb(87, 113, 136);  /* 2px / 16 */
+
+    border-radius: 0.9375rem;
 }
 
 
-.CWMButton:hover{
 
-    color: white; 
+.CWMButton:hover {
+    color: white;
 
     background-color: rgb(6, 89, 255);
 
-    border-left: 6px solid rgb(0, 36, 109);
-    border-bottom: 6px solid rgb(0, 36, 109);
-    border-top: 2px solid rgb(0, 36, 109);
-    border-right: 2px solid rgb(0, 36, 109);
-
+    border-left: 0.35rem solid rgb(0, 36, 109);   /* 6px / 16 */
+    border-bottom: 0.35rem solid rgb(0, 36, 109); /* 6px / 16 */
+    border-top: 0.125rem solid rgb(0, 36, 109);    /* 2px / 16 */
+    border-right: 0.125rem solid rgb(0, 36, 109);  /* 2px / 16 */
 }

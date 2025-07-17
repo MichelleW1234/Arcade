@@ -1,3 +1,5 @@
+import { playSound } from "../../Helpers/helpers";
+
 export const changePosition = (currentPosition, setCurrentPosition, direction, setDirection) => {
 
     if (direction === 0) {
@@ -13,7 +15,6 @@ export const changePosition = (currentPosition, setCurrentPosition, direction, s
 
         }
 
-
     } else {
 
         if (currentPosition === 22){
@@ -26,7 +27,6 @@ export const changePosition = (currentPosition, setCurrentPosition, direction, s
             setCurrentPosition(prev => prev + 1);
 
         }
-
 
     }
 
@@ -72,6 +72,7 @@ export const clawGrab = (currentPosition, setResult, setButtonHit) => {
     }
 
     setButtonHit(true);
+    playSound(23);
 
 }
 

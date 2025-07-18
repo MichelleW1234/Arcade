@@ -29,7 +29,7 @@ function PrizeRoomscreen() {
 
         <div className = "gameScreenLayout">
 
-            <div className = "instructionsSign"> Your balance: {Player[0]}</div>
+            <div className = "instructionsSign"> Your Points: {Player[0]}</div>
 
             <div className = "prizeRoomContainer"> 
 

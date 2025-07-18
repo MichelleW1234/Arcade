@@ -128,3 +128,53 @@ export const chooseCat = () => {
     }
 
 }
+
+
+export const chooseSport = () => {
+
+    const sport = Math.floor(Math.random() * 20);
+
+    if (sport < 10) {
+
+        return 1;
+
+    } else if (sport < 15) {
+
+        return 2;
+
+    } else if (sport < 19) {
+
+        return 3;
+
+    } else {
+
+        return 4;
+
+    }
+
+}
+
+
+export const chooseSpaceElement = () => {
+
+    const space = Math.floor(Math.random() * 20);
+
+    if (space < 10) {
+
+        return 1;
+
+    } else if (space < 15) {
+
+        return 2;
+
+    } else if (space < 19) {
+
+        return 3;
+
+    } else {
+
+        return 4;
+
+    }
+
+}

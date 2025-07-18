@@ -1,18 +1,18 @@
 import { Link} from 'react-router-dom';
 import React, { useState, useEffect, useRef} from "react";
 
-import ClawBar from "./CWMGameComponents/ClawBar.jsx";
-import ClawWindow from './CWMGameComponents/ClawWindow.jsx';
+import ClawBar from "../CWMGameComponents/ClawBar.jsx";
+import ClawWindow from './SpaceGameComponents/SpaceClawWindow.jsx';
 
-import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
-import {changePosition, clawGrab, chooseCat} from "../Helpers/helpers.js";
+import {playSound} from "../../../Helpers/helpers.js";
+import {changePosition, clawGrab, chooseSpaceElement} from "../../Helpers/helpers.js";
 
-import { useCWMUser } from '../Providers/CWMUserProvider.jsx';
-import { usePlayer } from '../../Providers/PlayerProvider.jsx';
-import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
-import { usePrize} from '../../Providers/PrizeProvider.jsx';
+import { useCWMUser } from '../../Providers/CWMUserProvider.jsx';
+import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
+import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
+import { usePrize} from '../../../Providers/PrizeProvider.jsx';
 
-import "./Gamescreen.css";
+import "./SpaceGamescreen.css";
 
 function Gamescreen (){
 
@@ -63,10 +63,10 @@ function Gamescreen (){
 
         if (result == 1){
 
-            const cat = chooseCat();
-            setCWMUser([cat]);
+            const space = chooseSpaceElement();
+            setCWMUser([space]);
 
-            if (cat == 1){
+            if (space == 1){
 
                 setPrize(prev => {
                     const newArray = prev.map(row => [...row]); // Deep copy
@@ -75,7 +75,7 @@ function Gamescreen (){
                     return newArray;
                 });
 
-            } else if (cat == 2){
+            } else if (space == 2){
 
                 setPrize(prev => {
                     const newArray = prev.map(row => [...row]); // Deep copy
@@ -84,7 +84,7 @@ function Gamescreen (){
                     return newArray;
                 });
 
-            } else if (cat == 3){
+            } else if (space == 3){
 
                 setPrize(prev => {
                     const newArray = prev.map(row => [...row]); // Deep copy
@@ -115,7 +115,6 @@ function Gamescreen (){
     
         playSound(4);
         setPlayer(([current, prev]) => [current - ActiveGame[1], current]);
-        setActiveGame(retrieveActiveGame(1));
 
     }
 
@@ -124,11 +123,11 @@ function Gamescreen (){
 
         <div>             
             
-            <Link to="/selection" className = "generalbutton" onClick={() => exitGame()}> Quit Game </Link>
+            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame()}> Quit Machine </Link>
 
             <div className = "gameScreenLayout">
             
-                <div className = "CWMOuterGameContainer">
+                <div className = "CWMSpaceOuterGameContainer">
 
                     <ClawBar
                         setButtonHit = {setButtonHit}
@@ -136,7 +135,7 @@ function Gamescreen (){
                         currentPosition = {currentPosition}
                     />
 
-                    <div className="CWMGameBoardScreen">
+                    <div className="CWMSpaceGameBoardScreen">
 
                         <ClawWindow
                             buttonHit = {buttonHit}
@@ -151,20 +150,18 @@ function Gamescreen (){
 
                         clawWentDown == true ? (
                             
-                            <Link to="/CWMsummary" className ="CWMButton" onClick = {() => claimPrize()}> Check Prize Door </Link>
+                            <Link to="/CWMspacesummary" className ="CWMSpaceButton" onClick = {() => claimPrize()}> Check Prize Door </Link>
 
                         ) : (
 
-                            <button className ="CWMButton">Grab</button>
+                            <button className ="CWMSpaceButton">Grab</button>
 
                         )
 
                     ) : (
 
-
-                        <button className ="CWMButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
+                        <button className ="CWMSpaceButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
                 
-
                     )}
 
     

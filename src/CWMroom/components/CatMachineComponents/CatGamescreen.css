@@ -1,0 +1,64 @@
+.CWMCatOuterGameContainer {
+    background-color: rgb(214, 132, 0);
+    padding: 2.5rem;
+
+    border-top: 0.125rem solid rgb(133, 70, 7);         /* 2px */
+    border-left: 0.5rem solid rgb(133, 70, 7);            /* 8px */
+    border-right: 0.125rem solid rgb(133, 70, 7);           /* 2px */
+    border-bottom: 0.5rem solid rgb(133, 70, 7);            /* 8px */
+
+    border-radius: 1.875rem; /* 30px */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1.875rem; /* 30px */
+
+    box-shadow: 0 0 1.25rem 0.5rem rgb(255, 184, 113);  /* already in rem */
+}
+
+
+
+.CWMCatGameBoardScreen {
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem;        /* 50px / 16 */
+
+    align-items: center;
+}
+
+
+
+.CWMCatButton {
+    font-size: 1.5625rem;       /* 25px / 16 */
+    padding: 0.9375rem;         /* 15px / 16 */
+
+    background-color: rgb(255, 221, 67);
+
+    border-left: 0.35rem solid rgb(155, 121, 0);   /* 6px / 16 */
+    border-bottom: 0.35rem solid rgb(155, 121, 0); /* 6px / 16 */
+    border-top: 0.125rem solid rgb(155, 121, 0);    /* 2px / 16 */
+    border-right: 0.125rem solid rgb(155, 121, 0);  /* 2px / 16 */
+
+    border-radius: 0.9375rem;
+
+    animation: glowing-shadow9 4s infinite, button-glitch 3s infinite;
+
+}
+
+
+
+.CWMCatButton:hover {
+    color: white;
+
+    background-color: rgb(112, 76, 0);
+
+    border-left: 0.35rem solid rgb(59, 40, 0);   /* 6px / 16 */
+    border-bottom: 0.35rem solid rgb(59, 40, 0); /* 6px / 16 */
+    border-top: 0.125rem solid rgb(59, 40, 0);    /* 2px / 16 */
+    border-right: 0.125rem solid rgb(59, 40, 0); /* 2px / 16 */
+
+    animation: glowing-shadow10 4s infinite, button-glitch 3s infinite;
+
+}

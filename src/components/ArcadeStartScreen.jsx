@@ -5,9 +5,6 @@ import {playSound} from "../Helpers/helpers.js";
 
 import { MusicContext } from '../Providers/MusicProvider.jsx';
 
-import "./ArcadeStartScreen.css";
-
-
 function ArcadeStartscreen (){
 
     const { audioRef } = useContext(MusicContext);
@@ -16,7 +13,7 @@ function ArcadeStartscreen (){
 
         <div className = "StartingScreenLayout">
 
-            <div className = "ArcadeTitleGlow">
+            <div className = "EnterTitleGlow">
                 <h1 className = "headerwords">
                     Welcome to the <span className = "headerwordsGlitch">Arcade</span>.
                 </h1>

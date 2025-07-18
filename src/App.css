@@ -71,6 +71,12 @@ a:active {
 }
 
 
+/*Specifically for entering rooms*/
+
+.EnterTitleGlow {
+  padding: 1.875rem;
+  animation: glowing-shadow3 3s infinite;
+}
 
 
 /*Specifically for headers in starting screens*/
@@ -632,6 +638,48 @@ a.navBarButton {
 }
 
 
+@keyframes glowing-shadow9 {
+  0% {
+    box-shadow: 
+      0 0 0.625rem 0.25rem rgb(253, 229, 70),     /* 10px 4px */
+      0 0 1.25rem 0.375rem rgb(252, 191, 79),     /* 20px 6px */
+      0 0 2.1875rem 0.5rem rgb(254, 170, 80);     /* 35px 8px */
+  }
+  50% {
+    box-shadow: 
+      0 0 0.625rem 0.25rem rgba(253, 229, 70, 0.38),     /* 10px 4px */
+      0 0 1.25rem 0.375rem rgba(252, 191, 79, 0.417),     /* 20px 6px */
+      0 0 2.1875rem 0.5rem rgba(254, 170, 80, 0.334);     /* 35px 8px */
+  }
+  100% {
+    box-shadow:
+      0 0 0.625rem 0.25rem rgb(253, 229, 70),     /* 10px 4px */
+      0 0 1.25rem 0.375rem rgb(252, 191, 79),     /* 20px 6px */
+      0 0 2.1875rem 0.5rem rgb(254, 170, 80);     /* 35px 8px */
+  }
+}
+
+
+@keyframes glowing-shadow10 {
+  0% {
+    box-shadow: 
+      0 0 0.625rem 0.375rem rgb(255, 168, 29),     /* 10px 4px */
+      0 0 1.25rem 0.5rem rgb(255, 152, 42);     /* 20px 6px */
+  }
+  50% {
+    box-shadow: 
+      0 0 0.625rem 0.375rem rgba(255, 168, 29, 0.425),     /* 10px 4px */
+      0 0 1.25rem 0.5rem rgba(255, 152, 42, 0.407);
+  }
+  100% {
+    box-shadow:
+      0 0 0.625rem 0.375rem rgb(255, 168, 29),     /* 10px 4px */
+      0 0 1.25rem 0.5rem rgb(255, 152, 42);     /* 20px 6px */
+  }
+}
+
+
+
 @keyframes glowing-sign-shadows {
   0% {
     box-shadow: 
@@ -667,6 +715,7 @@ a.navBarButton {
       drop-shadow(0 0 1.25rem rgba(255, 0, 247, 0.4));
   }
 }
+
 
 
 /*Animations: glowing components*/

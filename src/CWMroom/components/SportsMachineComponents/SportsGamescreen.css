@@ -1,4 +1,4 @@
-.CWMOuterGameContainer {
+.CWMSportsOuterGameContainer {
     background-color: rgb(59, 41, 196);
     padding: 2.5rem;
 
@@ -20,7 +20,7 @@
 
 
 
-.CWMGameBoardScreen {
+.CWMSportsGameBoardScreen {
     display: flex;
     flex-direction: column;
     gap: 3.125rem;        /* 50px / 16 */
@@ -30,7 +30,7 @@
 
 
 
-.CWMButton {
+.CWMSportsButton {
     font-size: 1.5625rem;       /* 25px / 16 */
     padding: 0.9375rem;         /* 15px / 16 */
 
@@ -42,11 +42,13 @@
     border-right: 0.125rem solid rgb(87, 113, 136);  /* 2px / 16 */
 
     border-radius: 0.9375rem;
+
+    animation: glowing-shadow8 4s infinite, button-glitch 3s infinite;
 }
 
 
 
-.CWMButton:hover {
+.CWMSportsButton:hover {
     color: white;
 
     background-color: rgb(6, 89, 255);
@@ -55,4 +57,7 @@
     border-bottom: 0.35rem solid rgb(0, 36, 109); /* 6px / 16 */
     border-top: 0.125rem solid rgb(0, 36, 109);    /* 2px / 16 */
     border-right: 0.125rem solid rgb(0, 36, 109);  /* 2px / 16 */
+
+    animation: glowing-shadow4 4s infinite, button-glitch 3s infinite;
+
 }

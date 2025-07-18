@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 
-import { usePlayer } from '../../Providers/PlayerProvider.jsx';
-import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
-import { useCWMUser } from '../Providers/CWMUserProvider.jsx';
+import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
+import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
+import { useCWMUser } from '../../Providers/CWMUserProvider.jsx';
 
-import BlackCat from "../../Images/ArcadePrizeImages/BlackCat.svg";
-import OrangeCat from "../../Images/ArcadePrizeImages/OrangeCat.svg";
-import SiameseCat from "../../Images/ArcadePrizeImages/SiameseCat.svg";
-import BritishShorthairCat from "../../Images/ArcadePrizeImages/BritishShorthairCat.svg";
+import BlackCat from "../../../Images/ArcadePrizeImages/BlackCat.svg";
+import OrangeCat from "../../../Images/ArcadePrizeImages/OrangeCat.svg";
+import SiameseCat from "../../../Images/ArcadePrizeImages/SiameseCat.svg";
+import BritishShorthairCat from "../../../Images/ArcadePrizeImages/BritishShorthairCat.svg";
 
-import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame} from "../../../Helpers/helpers.js";
 
-import "../../components/GameSummaryscreen.css";
+import "../../../components/GameSummaryscreen.css";
 
 function Summaryscreen (){
 
@@ -21,7 +21,7 @@ function Summaryscreen (){
 
     const resetGame = () => {
         
-        playSound(19);
+        playSound(18);
         setCWMUser([0]);
 
     }
@@ -30,7 +30,6 @@ function Summaryscreen (){
         
         playSound(4);
         setCWMUser([0]);
-        setActiveGame(retrieveActiveGame(1));
 
     }
 
@@ -43,8 +42,8 @@ function Summaryscreen (){
                 {CWMUser[0] === 1 ? (
 
                     <>
-                        <p> Congrats! You won a black cat: </p>
-                        <img className = "StatsImage" src = {BlackCat}/>
+                        <p> Congrats! You won : </p>
+                        <img className = "StatsImage" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -52,24 +51,24 @@ function Summaryscreen (){
                 ) : CWMUser[0] === 2 ? (
 
                     <>
-                        <p> Congrats! You won a orange cat: </p>
-                        <img className = "StatsImage" src = {OrangeCat}/>
+                        <p> Congrats! You won a : </p>
+                        <img className = "StatsImage"/>
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
                 ) : CWMUser[0] === 3 ? (
 
                     <>
-                        <p> Congrats! You won a Siamese cat: </p>
-                        <img className = "StatsImage" src = {SiameseCat}/>
+                        <p> Congrats! You won a : </p>
+                        <img className = "StatsImage" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
                 ) : CWMUser[0] === 4 ? (
 
                     <>
-                        <p> Congrats! You won a British Shorthair cat:</p>
-                        <img className = "StatsImage" src = {BritishShorthairCat}/>
+                        <p> Congrats! You won a :</p>
+                        <img className = "StatsImage"/>
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -86,15 +85,15 @@ function Summaryscreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/CWMgame" className = "generalbutton" onClick = {() => resetGame()}> Play Again </Link>
+                <Link to = "/CWMsportsgame" className = "generalbutton" onClick = {() => resetGame()}> Play Again </Link>
 
             ) : (
 
-                <h1 className="largefont"> You don't have enough points to play again. </h1>
+                <h1 className="largefont"> You don't have enough points to use the machine again. </h1>
 
             )} 
 
-            <Link to = "/selection" className = "generalbutton" onClick={() => reset()}> Exit Game</Link>
+            <Link to = "/CWMselection" className = "generalbutton" onClick={() => reset()}> Leave Machine </Link>
 
         </div>
 

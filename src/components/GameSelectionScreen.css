@@ -1,5 +1,4 @@
 .ArcadeGameBoard {
-  background-color: rgb(204, 0, 255);
   background-color: rgb(187, 0, 255);
   width: 60rem;               /* 900px */
   padding: 3rem;               /* 40px */
@@ -79,11 +78,6 @@
 
 }
 
-.buttonContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 3.125rem;  /* 50px */
-}
 
 .pointsSign {
   font-size: 2.1875rem;               /* 35px */

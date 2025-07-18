@@ -1,4 +1,4 @@
-.CWMOuterWindow {
+.CWMSportsOuterWindow {
     display: flex;
     flex-direction: column;
 
@@ -9,7 +9,7 @@
 }
 
 
-.CWMClawRowContainer{
+.CWMSportsClawRowContainer{
 
     display: grid;
     grid-template-rows: repeat(8, 1fr);
@@ -17,13 +17,13 @@
 
 }
 
-.CWMClawRow {
+.CWMSportsClawRow {
     height: 2.8125rem;   /* 45px / 16 */
     width: 1.875rem;     /* 30px / 16 */
 }
 
 
-.CWMPrizes {
+.CWMSportsPrizes {
     height: 6.875rem;    /* 110px / 16 */
     background-color: rgb(203, 231, 255);
 }

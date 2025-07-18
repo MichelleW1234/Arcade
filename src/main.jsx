@@ -11,7 +11,7 @@ import {TTTUserProvider } from './TTTgame/Providers/TTTUserProvider.jsx';
 import {SNKUserProvider } from './SNKgame/Providers/SNKUserProvider.jsx'; 
 import {SPIUserProvider } from './SPIgame/Providers/SPIUserProvider.jsx'; 
 import {CBLUserProvider } from './CBLgame/Providers/CBLUserProvider.jsx'; 
-import {CWMUserProvider } from './CWMgame/Providers/CWMUserProvider.jsx'; 
+import {CWMUserProvider } from './CWMroom/Providers/CWMUserProvider.jsx'; 
 
 import App from './App.jsx';
 

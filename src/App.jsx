@@ -3,6 +3,19 @@ import GameSelectionscreen from "./components/GameSelectionscreen.jsx";
 import RulesandPointsscreen from "./components/RulesandPointsscreen.jsx";
 import PrizeRoomscreen from "./components/PrizeRoomscreen.jsx";
 
+import CWMStartscreen from "./CWMroom/components/Startscreen.jsx";
+import CWMInstructionsscreen from "./CWMroom/components/Instructionsscreen.jsx";
+import CWMMachineSelectionscreen from "./CWMroom/components/MachineSelectionscreen.jsx";
+import CWMCatInstructionsscreen from "./CWMroom/components/CatMachineComponents/CatInstructionsscreen.jsx";
+import CWMCatGamescreen from "./CWMroom/components/CatMachineComponents/CatGamescreen.jsx";
+import CWMCatSummaryscreen from "./CWMroom/components/CatMachineComponents/CatSummaryscreen.jsx";
+import CWMSportsInstructionsscreen from "./CWMroom/components/SportsMachineComponents/SportsInstructionsscreen.jsx";
+import CWMSportsGamescreen from "./CWMroom/components/SportsMachineComponents/SportsGamescreen.jsx";
+import CWMSportsSummaryscreen from "./CWMroom/components/SportsMachineComponents/SportsSummaryscreen.jsx";
+import CWMSpaceInstructionsscreen from "./CWMroom/components/SpaceMachineComponents/SpaceInstructionsscreen.jsx";
+import CWMSpaceGamescreen from "./CWMroom/components/SpaceMachineComponents/SpaceGamescreen.jsx";
+import CWMSpaceSummaryscreen from "./CWMroom/components/SpaceMachineComponents/SpaceSummaryscreen.jsx";
+
 import RPSStartscreen from "./RPSgame/components/Startscreen.jsx";
 import RPSGamescreen from "./RPSgame/components/Gamescreen.jsx";
 import RPSInstructionsscreen from "./RPSgame/components/Instructionsscreen.jsx";
@@ -43,11 +56,6 @@ import CBLInstructionsscreen from "./CBLgame/components/Instructionsscreen.jsx";
 import CBLGamescreen from "./CBLgame/components/Gamescreen.jsx";
 import CBLSummaryscreen from "./CBLgame/components/Summaryscreen.jsx";
 
-import CWMStartscreen from "./CWMgame/components/Startscreen.jsx";
-import CWMInstructionsscreen from "./CWMgame/components/Instructionsscreen.jsx";
-import CWMGamescreen from "./CWMgame/components/Gamescreen.jsx";
-import CWMSummaryscreen from "./CWMgame/components/Summaryscreen.jsx";
-
 import NoPage from "./components/NoPage.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import {HashRouter, Routes, Route} from 'react-router-dom';
@@ -64,6 +72,19 @@ function App() {
         <Route path="/rulesAndPoints" element={<RulesandPointsscreen />}/>
         <Route path="/prizeRoom" element={<PrizeRoomscreen />}/>
         <Route path="/selection" element={<GameSelectionscreen />}/>
+
+        <Route path="/CWMstart" element={<CWMStartscreen />}/>
+        <Route path="/CWMinstructions" element={<CWMInstructionsscreen />}/>
+        <Route path="/CWMselection" element={<CWMMachineSelectionscreen />}/>
+        <Route path="/CWMcatinstructions" element={<CWMCatInstructionsscreen />}/>
+        <Route path="/CWMcatgame" element={<CWMCatGamescreen />}/>
+        <Route path="/CWMcatsummary" element={<CWMCatSummaryscreen />}/>
+        <Route path="/CWMsportsinstructions" element={<CWMSportsInstructionsscreen />}/>
+        <Route path="/CWMsportsgame" element={<CWMSportsGamescreen />}/>
+        <Route path="/CWMsportssummary" element={<CWMSportsSummaryscreen />}/>
+        <Route path="/CWMspaceinstructions" element={<CWMSpaceInstructionsscreen />}/>
+        <Route path="/CWMspacegame" element={<CWMSpaceGamescreen />}/>
+        <Route path="/CWMspacesummary" element={<CWMSpaceSummaryscreen />}/>
         
         <Route path="/RPSstart" element={<RPSStartscreen />}/>
         <Route path="/RPSinstructions" element={<RPSInstructionsscreen />}/>
@@ -104,11 +125,6 @@ function App() {
         <Route path="/CBLinstructions" element={<CBLInstructionsscreen />}/>
         <Route path="/CBLgame" element={<CBLGamescreen />}/>
         <Route path="/CBLsummary" element={<CBLSummaryscreen />}/>
-
-        <Route path="/CWMstart" element={<CWMStartscreen />}/>
-        <Route path="/CWMinstructions" element={<CWMInstructionsscreen />}/>
-        <Route path="/CWMgame" element={<CWMGamescreen />}/>
-        <Route path="/CWMsummary" element={<CWMSummaryscreen />}/>
         
         {/*Page doesn't exist error*/}
         <Route path="*" element={<NoPage />} />

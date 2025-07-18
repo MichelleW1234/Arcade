@@ -41,12 +41,10 @@ function GameSelectionscreen (){
     const { Player, setPlayer } = usePlayer(); 
     const { Prize, setPrize } = usePrize();
 
-
     const [activeButton, setActiveButton] = useState(1);
     const [currGamePath, setCurrGamePath] = useState(ActiveGame[0]);
 
     const [showInventory, setShowInventory] = useState(false);
-
 
     const handleClick = (index) => {
     
@@ -82,7 +80,14 @@ function GameSelectionscreen (){
         setShowInventory(prevState => !prevState);
 
     }
-    
+
+    const goToClawArcade = () => {
+
+        playSound(1);
+        const currGameInfo = retrieveActiveGame(7);
+        setActiveGame(currGameInfo);
+
+    }
 
     return (
         <div>
@@ -106,6 +111,12 @@ function GameSelectionscreen (){
                         <div className = "navBarButton" onClick ={() => displayInventory()}>
                             View Prize Inventory
                         </div>
+                    </li>
+
+                    <li>
+                        <Link to="/CWMstart" className = "navBarButton" onClick ={() => goToClawArcade()}>
+                            Go to Claw Arcade
+                        </Link>
                     </li>
 
                 </ul>
@@ -235,26 +246,6 @@ function GameSelectionscreen (){
                             </button>
 
                         </div>
-
-                        <div className = "ArcadeGameContainer">
-
-                            <div className = "ArcadeGame"> 
-                                
-                                Claw Machine
-                                <img className = "ArcadeGameImage" src = {CWM}/>
-                                (5 Points)
-                                
-                            </div>
-
-                            <button
-                            className={`gameButton ${activeButton === 7 ? 'active' : ''}`}
-                            onClick={() => handleClick(7)}
-                            >
-                                Select
-                            </button>
-
-                        </div>
-                        
 
                     </div>
 

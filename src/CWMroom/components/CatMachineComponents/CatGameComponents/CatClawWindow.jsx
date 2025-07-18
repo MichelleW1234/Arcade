@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import {animateClaw} from "../../Helpers/helpers.js";
+import {animateClaw} from "../../../Helpers/helpers.js";
 
-import "./ClawWindow.css";
+import "./CatClawWindow.css";
 
-import Claw from "../../../Images/image 22.svg";
-import ClawCable from "../../../Images/image 23.svg";
-import Prizes from "../../../Images/image 24.svg";
+import Claw from "../../../../Images/image 22.svg";
+import ClawCable from "../../../../Images/image 23.svg";
+import Prizes from "../../../../Images/image 24.svg";
 
 function ClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition}) {
 
@@ -38,8 +38,8 @@ function ClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition})
 
     return (
 
-        <div className="CWMOuterWindow">
-            <div className="CWMClawRowContainer">
+        <div className="CWMCatOuterWindow">
+            <div className="CWMCatClawRowContainer">
                 {array.map((row, rowIndex) => (
                     row.map((cell, colIndex) => {
 
@@ -50,15 +50,15 @@ function ClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition})
 
                             clawHere ? (
 
-                                <img className="CWMClawRow" key={rowIndex + "," + colIndex} src = {Claw}/>
+                                <img className="CWMCatClawRow" key={rowIndex + "," + colIndex} src = {Claw}/>
 
                             ) : clawcableHere ? (
 
-                                <img className="CWMClawRow" key={rowIndex + "," + colIndex} src = {ClawCable}/>
+                                <img className="CWMCatClawRow" key={rowIndex + "," + colIndex} src = {ClawCable}/>
                                 
                             ) : (
 
-                                <div className="CWMClawRow" key={rowIndex + "," + colIndex}></div>
+                                <div className="CWMCatClawRow" key={rowIndex + "," + colIndex}></div>
 
                             )
 
@@ -67,7 +67,7 @@ function ClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition})
                 ))}
 
             </div>
-            <img className = "CWMPrizes" src = {Prizes}/>
+            <img className = "CWMCatPrizes" src = {Prizes}/>
         </div>
 
     );

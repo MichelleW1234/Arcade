@@ -50,7 +50,9 @@ function MachineSelectionscreen (){
             <Link to="/selection" className = "generalbutton" onClick={() => exit()}>
                 Leave Claw Arcade
             </Link>
-            <div className = "screenLayout">
+            <div className = "gameScreenLayout">
+
+                <h1 className = "pointsSign"> Your Points: <span className = "pointsSignGlitch">{Player[0]}</span></h1>
 
                 <div className = "CWMGameSelectionBoard">
 

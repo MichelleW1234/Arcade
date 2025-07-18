@@ -4,6 +4,7 @@
 
     background-color: rgb(203, 231, 255);
     border: 0.625rem solid rgb(0, 123, 255);   /* 10px / 16 */
+    border: 0.625rem solid rgb(9, 0, 139);   /* 10px / 16 */
 
     box-shadow: 0 0 1rem 0.5rem rgb(102, 191, 255);  /* already in rem, no change needed */
 }

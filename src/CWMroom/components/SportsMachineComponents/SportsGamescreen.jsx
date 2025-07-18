@@ -4,8 +4,7 @@ import React, { useState, useEffect, useRef} from "react";
 import ClawBar from "../CWMGameComponents/ClawBar.jsx";
 import ClawWindow from './SportsGameComponents/SportsClawWindow.jsx';
 
-import {playSound} from "../../../Helpers/helpers.js";
-import {changePosition, clawGrab, chooseSport} from "../../Helpers/helpers.js";
+import {changePosition, clawGrab, claimPrize, exitGame} from "../../Helpers/helpers.js";
 
 import { useCWMUser } from '../../Providers/CWMUserProvider.jsx';
 import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
@@ -58,72 +57,11 @@ function Gamescreen (){
 
     }, [buttonHit]);
 
-
-    const claimPrize = () => {
-
-        if (result == 1){
-
-            const sport = chooseSport();
-            setCWMUser([sport]);
-
-            if (sport == 1){
-
-                setPrize(prev => {
-                    const newArray = prev.map(row => [...row]); // Deep copy
-                    newArray[9][0] = "X";                         // Update the value
-                    newArray[9][1] -= 1;
-                    return newArray;
-                });
-
-            } else if (sport == 2){
-
-                setPrize(prev => {
-                    const newArray = prev.map(row => [...row]); // Deep copy
-                    newArray[10][0] = "X";                      // Update the value
-                    newArray[10][1] -= 1;
-                    return newArray;
-                });
-
-            } else if (sport == 3){
-
-                setPrize(prev => {
-                    const newArray = prev.map(row => [...row]); // Deep copy
-                    newArray[11][0] = "X";                       // Update the value
-                    newArray[11][1] -= 1;
-                    return newArray;
-                });
-
-            } else {
-
-                setPrize(prev => {
-                    const newArray = prev.map(row => [...row]); // Deep copy
-                    newArray[12][0] = "X";                       // Update the value
-                    newArray[12][1] -= 1;
-                    return newArray;
-                });
-
-            }
-
-        }
-
-        setPlayer(([current, prev]) => [current - ActiveGame[1], current]);
-        playSound(2);
-
-    }
-
-    const exitGame = () => {
-    
-        playSound(4);
-        setPlayer(([current, prev]) => [current - ActiveGame[1], current]);
-
-    }
-
-
     return (
 
         <div>             
             
-            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame()}> Quit Machine </Link>
+            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame(setPlayer, ActiveGame[1])}> Quit Machine </Link>
 
             <div className = "gameScreenLayout">
             
@@ -150,7 +88,7 @@ function Gamescreen (){
 
                         clawWentDown == true ? (
                             
-                            <Link to="/CWMsportssummary" className ="CWMSportsButton" onClick = {() => claimPrize()}> Check Prize Door </Link>
+                            <Link to="/CWMsportssummary" className ="CWMSportsButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [9, 10, 11, 12])}> Check Prize Door </Link>
 
                         ) : (
 
@@ -165,11 +103,11 @@ function Gamescreen (){
                 
 
                     )}
-
     
                 </div>
 
             </div>
+            
         </div>
 
     );

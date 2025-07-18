@@ -292,5 +292,3 @@ const decideRoundWinnerLevel3 = (userMove, setResult) => {
     return -1;
 };
 
-
-

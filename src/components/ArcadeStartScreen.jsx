@@ -19,7 +19,7 @@ function ArcadeStartscreen (){
                 </h1>
             </div>
 
-            <Link to="/rulesAndPoints" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
+            <Link to="/rulesAndPoints" className = "generalbuttonGlitch" onClick = {() => playSound(24)}>
                 Enter
             </Link>
             

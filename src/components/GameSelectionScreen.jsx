@@ -76,15 +76,15 @@ function GameSelectionscreen (){
 
     const displayInventory = () => {
 
-        playSound(3);
+        playSound(25);
         setShowInventory(prevState => !prevState);
 
     }
 
     const goToClawArcade = () => {
 
-        playSound(1);
-        const currGameInfo = retrieveActiveGame(7);
+        playSound(24);
+        const currGameInfo = retrieveActiveGame(0);
         setActiveGame(currGameInfo);
 
     }
@@ -102,7 +102,7 @@ function GameSelectionscreen (){
                     </li>
 
                     <li>
-                        <Link to="/prizeRoom" className = "navBarButton" onClick ={() =>  playSound(1)}>
+                        <Link to="/prizeRoom" className = "navBarButton" onClick ={() =>  playSound(24)}>
                             Go to Prize Room
                         </Link>
                     </li>

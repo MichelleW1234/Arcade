@@ -21,13 +21,19 @@ import SPIcompleted from "../Music/SPIcompleted.mp3";
 import CBLSuccess from "../Music/CBLSuccess.mp3";
 import SPIMutantLaserSwitch from "../Music/SPIMutantLaserSwitch.mp3";
 import CWMClawActivate from "../Music/CWMClawActivate.mp3";
-
+import ArcadeEnteringRoom from "../Music/ArcadeEnteringRoom.mp3";
+import ArcadeCheckingInventory from "../Music/ArcadeCheckingInventory.mp3";
 
 export const retrieveActiveGame = (index) => {
     
     let gameControls = new Array(null, null, null, null, null);
 
-    if (index === 1){
+    if (index === 0){
+
+        gameControls[0] = "/CWMstart";
+        gameControls[1] = 5;
+
+    } else if (index === 1){
 
         gameControls[0] = "/RPSstart";
         gameControls[1] = 20;
@@ -56,11 +62,6 @@ export const retrieveActiveGame = (index) => {
 
         gameControls[0] = "/CBLstart";
         gameControls[1] = 10;
-
-    } else if (index === 7){
-
-        gameControls[0] = "/CWMstart";
-        gameControls[1] = 5;
 
     }
     
@@ -113,7 +114,9 @@ export const playSound = (soundEffect) => {
         20: [SPIcompleted, 0.5],
         21: [CBLSuccess, 0.3],
         22: [SPIMutantLaserSwitch, 0.5],
-        23: [CWMClawActivate, 0.3]
+        23: [CWMClawActivate, 0.3],
+        24: [ArcadeEnteringRoom, 1],
+        25: [ArcadeCheckingInventory, 0.5]
 
     };
 

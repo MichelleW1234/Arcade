@@ -104,45 +104,19 @@ export const animateClaw = (currentPosition, clawExtension, setClawExtension, se
 }
 
 
-export const chooseCat = () => {
+export const choosePrize = () => {
 
-    const cat = Math.floor(Math.random() * 20);
+    const prize = Math.floor(Math.random() * 20);
 
-    if (cat < 10) {
-
-        return 1;
-
-    } else if (cat < 15) {
-
-        return 2;
-
-    } else if (cat < 19) {
-
-        return 3;
-
-    } else {
-    //The rarest cat
-
-        return 4;
-
-    }
-
-}
-
-
-export const chooseSport = () => {
-
-    const sport = Math.floor(Math.random() * 20);
-
-    if (sport < 10) {
+    if (prize < 10) {
 
         return 1;
 
-    } else if (sport < 15) {
+    } else if (prize < 15) {
 
         return 2;
 
-    } else if (sport < 19) {
+    } else if (prize < 19) {
 
         return 3;
 
@@ -155,26 +129,63 @@ export const chooseSport = () => {
 }
 
 
-export const chooseSpaceElement = () => {
+export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCost, prizeIndices) => {
 
-    const space = Math.floor(Math.random() * 20);
+    if (result == 1){
 
-    if (space < 10) {
+        const prize = choosePrize();
+        setCWMUser([prize]);
 
-        return 1;
+        if (prize == 1){
 
-    } else if (space < 15) {
+            setPrize(prev => {
+                const newArray = prev.map(row => [...row]); // Deep copy
+                newArray[prizeIndices[0]][0] = "X";                         // Update the value
+                newArray[prizeIndices[0]][1] -= 1;
+                return newArray;
+            });
 
-        return 2;
+        } else if (prize == 2){
 
-    } else if (space < 19) {
+            setPrize(prev => {
+                const newArray = prev.map(row => [...row]); // Deep copy
+                newArray[prizeIndices[1]][0] = "X";                      // Update the value
+                newArray[prizeIndices[1]][1] -= 1;
+                return newArray;
+            });
 
-        return 3;
+        } else if (prize == 3){
 
-    } else {
+            setPrize(prev => {
+                const newArray = prev.map(row => [...row]); // Deep copy
+                newArray[prizeIndices[2]][0] = "X";                       // Update the value
+                newArray[prizeIndices[2]][1] -= 1;
+                return newArray;
+            });
 
-        return 4;
+        } else {
+
+            setPrize(prev => {
+                const newArray = prev.map(row => [...row]); // Deep copy
+                newArray[prizeIndices[3]][0] = "X";                       // Update the value
+                newArray[prizeIndices[3]][1] -= 1;
+                return newArray;
+            });
+
+        }
 
     }
 
+    setPlayer(([current, prev]) => [current - ActiveGameCost, current]);
+    playSound(2);
+
 }
+
+
+export const exitGame = (setPlayer, ActiveGameCost) => {
+
+    playSound(4);
+    setPlayer(([current, prev]) => [current - ActiveGameCost, current]);
+
+}
+

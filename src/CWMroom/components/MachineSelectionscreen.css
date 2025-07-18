@@ -1,16 +1,16 @@
 .CWMGameSelectionBoard{
 
-    background-color: rgb(0, 21, 255);
+    background-color: rgb(67, 18, 151);
     width: 55rem;               /* 900px */
     padding: 1.5rem;               /* 40px */
 
     border-radius: 1.25rem;        /* 20px */
-    border-left: 0.5rem solid rgb(0, 10, 122);     /* 8px */
-    border-bottom: 0.5rem solid rgb(0, 10, 122);    /* 8px */
-    border-top: 0.125rem solid rgb(0, 10, 122);    /* 2px */
-    border-right: 0.125rem solid rgb(0, 10, 122);   /* 2px */
+    border-left: 0.5rem solid rgb(29, 8, 66);    /* 8px */
+    border-bottom: 0.5rem solid rgb(29, 8, 66);     /* 8px */
+    border-top: 0.125rem solid rgb(29, 8, 66);     /* 2px */
+    border-right: 0.125rem solid rgb(29, 8, 66);    /* 2px */
 
-    box-shadow: 0 0 1rem 0.5rem rgb(0, 162, 255); /* 40px 10px */
+    box-shadow: 0 0 1rem 0.5rem rgb(145, 43, 255); /* 40px 10px */
 
 }
 

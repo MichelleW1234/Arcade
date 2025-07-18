@@ -4,8 +4,8 @@ import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
 
-import {resetLevel} from "../../Helpers/helpers.js";
-import {playSound, retrieveActiveGame, pointsDistribution} from "../../../Helpers/helpers.js";
+import {resetLevel, quitGame} from "../../Helpers/helpers.js";
+import {playSound} from "../../../Helpers/helpers.js";
 
 function Navbar ({setShowReferences}){
 
@@ -27,22 +27,12 @@ function Navbar ({setShowReferences}){
 
     }
 
-    const reset = () => {
-
-        playSound(4);
-        resetLevel(setRPSUser);
-        pointsDistribution(ActiveGame, 0, setPlayer);
-        setActiveGame(retrieveActiveGame(1));
-
-    }
-
-
     return (
         <div>
             <div className = "navbarContainer">
                 <ul className = "navbarMenu">
                     <li>
-                        <Link to= "/selection" className = "navBarButton" onClick ={() => reset()}>
+                        <Link to= "/selection" className = "navBarButton" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer)}>
                             Quit Game
                         </Link>
                     </li>

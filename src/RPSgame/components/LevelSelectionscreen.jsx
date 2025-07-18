@@ -6,8 +6,8 @@ import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 
-import { resetLevel, getInput, getReferences } from "../Helpers/helpers.js";
-import {playSound, retrieveActiveGame, pointsDistribution} from "../../Helpers/helpers.js";
+import {getInput, getReferences, quitGame} from "../Helpers/helpers.js";
+import {playSound} from "../../Helpers/helpers.js";
 
 import "./LevelSelectionscreen.css";
 
@@ -30,20 +30,11 @@ function LevelSelectionscreen (){
 
     };
 
-    const exitGame = () => {
-
-        playSound(4);
-        resetLevel(setRPSUser);
-        pointsDistribution(ActiveGame, 0, setPlayer);
-        setActiveGame(retrieveActiveGame(1));
-
-    }
-
     return (
 
         <div>
 
-            <Link to= "/selection" className = "generalbutton" onClick ={() => exitGame()}>
+            <Link to= "/selection" className = "generalbutton" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer)}>
                 Quit Game
             </Link>
 

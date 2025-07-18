@@ -1,3 +1,5 @@
+import {playSound, retrieveActiveGame, pointsDistribution} from "../../Helpers/helpers.js";
+
 export const resetLevel = (setRPSUser) => {
 
     const defaultInput = getInput(1);
@@ -292,3 +294,12 @@ const decideRoundWinnerLevel3 = (userMove, setResult) => {
     return -1;
 };
 
+
+export const quitGame = (setRPSUser, ActiveGame, setActiveGame, setPlayer) => {
+
+    playSound(4);
+    resetLevel(setRPSUser);
+    pointsDistribution(ActiveGame, 0, setPlayer);
+    setActiveGame(retrieveActiveGame(1));
+
+}

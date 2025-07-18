@@ -21,7 +21,7 @@ function Instructionsscreen (){
                 &gt; All claw machines cost 5 points to use. <br/>
             </p>
 
-            <Link to="/CWMselection" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
+            <Link to="/CWMselection" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
                 Continue
             </Link>
             

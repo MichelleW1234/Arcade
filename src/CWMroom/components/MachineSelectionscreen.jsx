@@ -18,7 +18,7 @@ function MachineSelectionscreen (){
 
     const exit = () => {
 
-        playSound(4);
+        playSound(24);
         setActiveGame(retrieveActiveGame(1));
 
     }
@@ -118,7 +118,7 @@ function MachineSelectionscreen (){
 
                 {Player[0] >= ActiveGame[1] ? (
                 
-                    <Link to={currGamePath} className = "generalbuttonGlitch" onClick = {() => playSound(2)}>
+                    <Link to={currGamePath} className = "generalbuttonGlitch" onClick = {() => playSound(19)}>
                         Go to game
                     </Link>
 

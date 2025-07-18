@@ -88,7 +88,7 @@ function PrizeRoomscreen() {
                 
             </div>
             
-            <Link to="/selection" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
+            <Link to="/selection" className = "generalbuttonGlitch" onClick = {() => playSound(24)}>
                 Leave Prize Room
             </Link>
 

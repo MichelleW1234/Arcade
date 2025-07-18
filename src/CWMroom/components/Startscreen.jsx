@@ -14,7 +14,7 @@ function Startscreen (){
                 </h1>
             </div>
 
-            <Link to="/CWMinstructions" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
+            <Link to="/CWMinstructions" className = "generalbuttonGlitch" onClick = {() => playSound(24)}>
                 Enter
             </Link>
             

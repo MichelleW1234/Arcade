@@ -63,7 +63,7 @@ function GameSelectionscreen (){
 
     const resetPoints = () => {
 
-        playSound(4);
+        playSound(24);
         setPlayer([0,0]);
         setActiveGame(retrieveActiveGame(1));
         setPrize([["Bear", 80, Bear], ["BumbleBee", 50, Bee], ["Valentine", 20, Heart], 
@@ -83,7 +83,7 @@ function GameSelectionscreen (){
 
     const goToClawArcade = () => {
 
-        playSound(24);
+        playSound(1);
         const currGameInfo = retrieveActiveGame(0);
         setActiveGame(currGameInfo);
 
@@ -103,7 +103,7 @@ function GameSelectionscreen (){
 
                     <li>
                         <Link to="/prizeRoom" className = "navBarButton" onClick ={() =>  playSound(24)}>
-                            Go to Prize Room
+                            Visit Prize Room
                         </Link>
                     </li>
 

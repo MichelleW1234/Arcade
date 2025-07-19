@@ -15,6 +15,10 @@ import OrangeCat from "../../Images/ArcadePrizeImages/OrangeCat.svg";
 import SiameseCat from "../../Images/ArcadePrizeImages/SiameseCat.svg";
 import BritishShorthairCat from "../../Images/ArcadePrizeImages/BritishShorthairCat.svg";
 
+import Basketball from "../../Images/ArcadePrizeImages/Basketball.svg";
+import Soccerball from "../../Images/ArcadePrizeImages/Soccerball.svg";
+import Paddle from "../../Images/ArcadePrizeImages/Paddle.svg";
+import Football from "../../Images/ArcadePrizeImages/Football.svg";
 
 import "./PrizeInventory.css";
 
@@ -25,7 +29,8 @@ function PrizeInventory (){
     const fullInventoryList = [["Bear", Bear], ["BumbleBee", Bee], ["Valentine", Heart], 
         ["GameBoy", GameBoy], ["Robot", Robot], ["Alien", Alien], ["Spider", Spider], 
         ["Carrot", Carrot], ["Whale", Whale], ["Black Cat", BlackCat], ["Orange Cat", OrangeCat], 
-        ["Siamese Cat", SiameseCat], ["British Shorthair Cat", BritishShorthairCat]];
+        ["Siamese Cat", SiameseCat], ["British Shorthair Cat", BritishShorthairCat], ["Football", Football], 
+        ["Ping Pong Paddle", Paddle], ["Soccerball", Soccerball], ["Basketball", Basketball]];
 
     return (
 

@@ -13,7 +13,7 @@ import { usePrize} from '../../../Providers/PrizeProvider.jsx';
 
 import "./SportsGamescreen.css";
 
-function Gamescreen (){
+function SportsGamescreen (){
 
     const { CWMUser, setCWMUser} = useCWMUser();
     const { Player, setPlayer} = usePlayer();
@@ -88,7 +88,7 @@ function Gamescreen (){
 
                         clawWentDown == true ? (
                             
-                            <Link to="/CWMsportssummary" className ="CWMSportsButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [9, 10, 11, 12])}> Check Prize Door </Link>
+                            <Link to="/CWMsportssummary" className ="CWMSportsButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [13, 14, 15, 16])}> Check Prize Door </Link>
 
                         ) : (
 
@@ -115,4 +115,4 @@ function Gamescreen (){
 }
 
 
-export default Gamescreen;
+export default SportsGamescreen;

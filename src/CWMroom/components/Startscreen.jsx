@@ -14,9 +14,14 @@ function Startscreen (){
                 </h1>
             </div>
 
-            <Link to="/CWMinstructions" className = "generalbuttonGlitch" onClick = {() => playSound(24)}>
-                Enter
-            </Link>
+            <div className="generalbuttonContainer">
+                <Link to="/selection" className = "generalbutton" onClick = {() => playSound(24)}>
+                    Leave
+                </Link>
+                <Link to="/CWMinstructions" className = "generalbuttonGlitch" onClick = {() => playSound(24)}>
+                    Enter
+                </Link>
+            </div>
             
         </div>
 

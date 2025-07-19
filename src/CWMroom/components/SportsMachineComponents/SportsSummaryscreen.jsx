@@ -4,34 +4,20 @@ import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { useCWMUser } from '../../Providers/CWMUserProvider.jsx';
 
-import BlackCat from "../../../Images/ArcadePrizeImages/BlackCat.svg";
-import OrangeCat from "../../../Images/ArcadePrizeImages/OrangeCat.svg";
-import SiameseCat from "../../../Images/ArcadePrizeImages/SiameseCat.svg";
-import BritishShorthairCat from "../../../Images/ArcadePrizeImages/BritishShorthairCat.svg";
+import Basketball from "../../../Images/ArcadePrizeImages/Basketball.svg";
+import Soccerball from "../../../Images/ArcadePrizeImages/Soccerball.svg";
+import Paddle from "../../../Images/ArcadePrizeImages/Paddle.svg";
+import Football from "../../../Images/ArcadePrizeImages/Football.svg";
 
-import {playSound, retrieveActiveGame} from "../../../Helpers/helpers.js";
+import {resetGame, reset} from "../../Helpers/helpers.js";
 
 import "../../../components/GameSummaryscreen.css";
 
-function Summaryscreen (){
+function SportsSummaryscreen (){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { CWMUser, setCWMUser} = useCWMUser();
-
-    const resetGame = () => {
-        
-        playSound(18);
-        setCWMUser([0]);
-
-    }
-
-    const reset = () => {
-        
-        playSound(4);
-        setCWMUser([0]);
-
-    }
 
     return (
 
@@ -42,8 +28,8 @@ function Summaryscreen (){
                 {CWMUser[0] === 1 ? (
 
                     <>
-                        <p> Congrats! You won : </p>
-                        <img className = "StatsImage" />
+                        <p> Congrats! You won a football: </p>
+                        <img className = "StatsImage" src = {Football}/>
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -51,24 +37,24 @@ function Summaryscreen (){
                 ) : CWMUser[0] === 2 ? (
 
                     <>
-                        <p> Congrats! You won a : </p>
-                        <img className = "StatsImage"/>
+                        <p> Congrats! You won a ping pong paddle: </p>
+                        <img className = "StatsImage" src = {Paddle}/>
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
                 ) : CWMUser[0] === 3 ? (
 
                     <>
-                        <p> Congrats! You won a : </p>
-                        <img className = "StatsImage" />
+                        <p> Congrats! You won a soccerball: </p>
+                        <img className = "StatsImage" src = {Soccerball}/>
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
                 ) : CWMUser[0] === 4 ? (
 
                     <>
-                        <p> Congrats! You won a :</p>
-                        <img className = "StatsImage"/>
+                        <p> Congrats! You won a football:</p>
+                        <img className = "StatsImage" src = {Basketball}/>
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -85,7 +71,7 @@ function Summaryscreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/CWMsportsgame" className = "generalbutton" onClick = {() => resetGame()}> Play Again </Link>
+                <Link to = "/CWMsportsgame" className = "generalbutton" onClick = {() => resetGame(setCWMUser)}> Play Again </Link>
 
             ) : (
 
@@ -93,7 +79,7 @@ function Summaryscreen (){
 
             )} 
 
-            <Link to = "/CWMselection" className = "generalbutton" onClick={() => reset()}> Leave Machine </Link>
+            <Link to = "/CWMselection" className = "generalbutton" onClick={() => reset(setCWMUser)}> Leave Machine </Link>
 
         </div>
 
@@ -102,4 +88,4 @@ function Summaryscreen (){
 }
 
 
-export default Summaryscreen;
+export default SportsSummaryscreen;

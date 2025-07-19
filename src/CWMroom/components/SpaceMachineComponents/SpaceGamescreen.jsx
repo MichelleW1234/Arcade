@@ -13,7 +13,7 @@ import { usePrize} from '../../../Providers/PrizeProvider.jsx';
 
 import "./SpaceGamescreen.css";
 
-function Gamescreen (){
+function SpaceGamescreen (){
 
     const { CWMUser, setCWMUser} = useCWMUser();
     const { Player, setPlayer} = usePlayer();
@@ -114,4 +114,4 @@ function Gamescreen (){
 }
 
 
-export default Gamescreen;
+export default SpaceGamescreen;

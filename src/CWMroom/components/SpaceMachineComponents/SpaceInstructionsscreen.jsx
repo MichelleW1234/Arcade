@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import {playSound} from '../../../Helpers/helpers.js';
 
-function CatInstructionsscreen (){
+function SpaceInstructionsscreen (){
 
     return (
 
@@ -21,9 +21,14 @@ function CatInstructionsscreen (){
                 &gt; NOTE: Beyond this point, you will lose points and win no prize if you quit in the middle of the game. <br/>
             </p>
 
-            <Link to="/CWMspacegame" className = "generalbuttonGlitch" onClick={() => playSound(18)}>
-                Continue
-            </Link>
+            <div className="generalbuttonContainer">
+                <Link to="/CWMselection" className = "generalbutton" onClick={() => playSound(4)}>
+                    Leave Machine
+                </Link>
+                <Link to="/CWMspacegame" className = "generalbuttonGlitch" onClick={() => playSound(18)}>
+                    Continue
+                </Link>
+            </div>
             
         </div>
 
@@ -32,4 +37,4 @@ function CatInstructionsscreen (){
 }
 
 
-export default CatInstructionsscreen;
+export default SpaceInstructionsscreen;

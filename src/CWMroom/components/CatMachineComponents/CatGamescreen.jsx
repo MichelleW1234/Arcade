@@ -13,7 +13,7 @@ import { usePrize} from '../../../Providers/PrizeProvider.jsx';
 
 import "./CatGamescreen.css";
 
-function Gamescreen (){
+function CatGamescreen (){
 
     const { CWMUser, setCWMUser} = useCWMUser();
     const { Player, setPlayer} = usePlayer();
@@ -116,4 +116,4 @@ function Gamescreen (){
 }
 
 
-export default Gamescreen;
+export default CatGamescreen;

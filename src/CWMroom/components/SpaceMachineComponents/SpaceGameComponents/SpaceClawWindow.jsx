@@ -8,7 +8,7 @@ import Claw from "../../../../Images/image 22.svg";
 import ClawCable from "../../../../Images/image 23.svg";
 
 
-function ClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition}) {
+function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition}) {
 
     const [clawExtension, setClawExtension] = useState([0,0]);
     const array = Array.from({ length: 8 }, () => Array(23).fill(0));
@@ -75,4 +75,4 @@ function ClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition})
 }
 
 
-export default ClawWindow;
+export default SpaceClawWindow;

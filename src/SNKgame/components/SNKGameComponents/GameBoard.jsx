@@ -56,6 +56,12 @@ function GameBoard (){
 
     useEffect(() => {
 
+        if (SNKUser[0] == true){
+
+            return;
+
+        }
+
         const interval = setInterval(() => {
 
             changeSnakeDirection(setSNKUser, activeDirectionRef.current, setSnake, snakeRef.current, appleLocationRef.current, setAppleLocation);
@@ -64,7 +70,7 @@ function GameBoard (){
 
         return () => clearInterval(interval);
 
-    }, [startButtonPressed]);
+    }, [startButtonPressed, SNKUser]);
 
 
     const buttonControls = (direction) => {

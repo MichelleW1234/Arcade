@@ -24,6 +24,12 @@ function Gamescreen (){
 
     useEffect(() => {
 
+        if (wrongColorBlasted == true) {
+
+            return;
+
+        }
+
         const interval = setInterval(() => {
 
             const newColor = Math.floor(Math.random() * 4);
@@ -33,7 +39,7 @@ function Gamescreen (){
 
         return () => clearInterval(interval);
 
-    }, []);
+    }, [wrongColorBlasted]);
     
 
     const exitGame = () => {
@@ -70,6 +76,7 @@ function Gamescreen (){
                         setColorAppearances = {setColorAppearances}
                         colorToBlast = {colorToBlast}
                         setWrongColorBlasted = {setWrongColorBlasted}
+                        wrongColorBlasted = {wrongColorBlasted}
                     />
     
                 </div>

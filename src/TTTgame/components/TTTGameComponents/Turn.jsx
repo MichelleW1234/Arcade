@@ -17,6 +17,12 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
     useEffect(() => {
 
+        if (TTTUser[1] != -1){
+
+            return;
+
+        }
+
         const interval = setInterval(() => {
 
             let result = winnerwinnerchickendinner(matrix, userMoves, computerMoves, setThreeInARow);
@@ -37,10 +43,16 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
         return () => clearInterval(interval);
 
-    }, [matrix]);
+    }, [matrix, TTTUser]);
 
     useEffect(() => {
 
+        if (TTTUser[1] != -1){
+
+            return;
+
+        }
+        
         const computerMove = () => {
 
             const move = computerMoveDecider(availableMoves, computerMoves, userMoves);
@@ -62,7 +74,7 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
         }
 
-    }, [currentTurn]);
+    }, [currentTurn, TTTUser]);
 
 
 

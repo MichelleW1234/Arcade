@@ -28,12 +28,19 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
 
     /* Listener for boss position rerendering and determining boss state*/
     useEffect(() => {
+
+        if (SPIUser[2] == true){
+
+            return;
+
+        }
+
         const interval = setInterval(() => {
             newBossState(setBossState);
         }, 850);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [SPIUser]);
 
     const exploded = () =>  {
 

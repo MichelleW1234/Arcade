@@ -54,16 +54,28 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
     /*Listener for aliens being shot*/
     useEffect(() => {
 
+        if (SPIUser[2] == true){
+
+            return;
+
+        }
+
         const interval = setInterval(() => {
             alienKilledM2(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, shieldedAliensRef.current, setShieldedAliens);
         }, 60);
 
         return () => clearInterval(interval);
 
-    }, []);
+    }, [SPIUser]);
 
     /* Listener for wave rerendering */
     useEffect(() => {
+
+        if (SPIUser[2] == true){
+
+            return;
+
+        }
 
         const interval = setInterval(() => {
             aliensIncomingM2(setAlienPositions, alienPositionsRef.current, setSPIUser, setShieldedAliens);
@@ -71,10 +83,16 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
 
         return () => clearInterval(interval);
 
-    }, [waveNumber]);
+    }, [waveNumber, SPIUser]);
 
     /* Listener for laser rerendering */
     useEffect(() => {
+
+        if (SPIUser[2] == true){
+
+            return;
+
+        }
 
         const interval = setInterval(() => {
             laserBlaster(laserPositionsRef.current, setLaserPositions, laserValueRef.current);
@@ -82,7 +100,7 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
 
         return () => clearInterval(interval);
 
-    }, []);
+    }, [SPIUser]);
 
 
 

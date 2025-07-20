@@ -7,7 +7,7 @@ import { useCBLUser } from "../../Providers/CBLUserProvider.jsx";
 import "./InnerGamescreen.css";
 import { playSound } from "../../../Helpers/helpers.js";
 
-function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlasted}) {
+function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlasted, wrongColorBlasted}) {
 
     const { CBLUser, setCBLUser } = useCBLUser();
 
@@ -24,6 +24,12 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
     }, [colorSpot]);
 
     useEffect(() => {
+
+        if (wrongColorBlasted == true){
+
+            return;
+
+        }
 
         const interval = setInterval(() => {
 
@@ -45,7 +51,7 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
 
         return () => clearInterval(interval);
 
-    }, []);
+    }, [wrongColorBlasted]);
 
 
     const blasted = (type) => {

@@ -43,7 +43,7 @@ function SpaceGamescreen (){
 
         if (buttonHit == true){
 
-            return
+            return;
 
         }
 

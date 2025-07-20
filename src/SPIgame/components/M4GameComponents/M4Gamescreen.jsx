@@ -26,13 +26,19 @@ function M4Gamescreen() {
     /* Timer */
     useEffect(() => {
 
+        if (SPIUser[2] == true){
+
+            return;
+
+        }
+
         const interval = setInterval(() => {
             setSeconds(prev => prev + 1);
         }, 1000);
 
         return () => clearInterval(interval);
 
-    }, []);
+    }, [SPIUser]);
 
     /*Beamlight battery runs out */
     useEffect(() => {

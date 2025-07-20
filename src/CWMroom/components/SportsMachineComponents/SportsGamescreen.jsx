@@ -43,7 +43,7 @@ function SportsGamescreen (){
 
         if (buttonHit == true){
 
-            return
+            return;
 
         }
 

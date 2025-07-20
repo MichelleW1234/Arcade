@@ -43,7 +43,7 @@ function CatGamescreen (){
 
         if (buttonHit == true){
 
-            return
+            return;
 
         }
 

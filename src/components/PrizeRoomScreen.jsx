@@ -20,7 +20,7 @@ function PrizeRoomscreen() {
         setPlayer(prevMatrix => [difference, prevMatrix[0]]);
 
         const newMatrix = Prize.map(Array => [...Array]);
-        newMatrix[index] = ["X"];
+        newMatrix[index][0] = "X";
         setPrize(prevMatrix => newMatrix);
         
     }

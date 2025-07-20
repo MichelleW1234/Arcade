@@ -34,6 +34,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   height: 21.875rem;          /* 350px */
   width: 16.875rem;           /* 270px */

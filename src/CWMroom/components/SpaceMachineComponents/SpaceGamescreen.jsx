@@ -89,7 +89,7 @@ function SpaceGamescreen (){
 
                         clawWentDown == true ? (
                             
-                            <Link to="/CWMspacesummary" className ="CWMSpaceButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [9, 10, 11, 12])}> Check Prize Door </Link>
+                            <Link to="/CWMspacesummary" className ="CWMSpaceButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [17, 18, 19, 20])}> Check Prize Door </Link>
 
                         ) : (
 

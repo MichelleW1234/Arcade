@@ -20,6 +20,11 @@ import Soccerball from "../Images/ArcadePrizeImages/Soccerball.svg";
 import Paddle from "../Images/ArcadePrizeImages/Paddle.svg";
 import Football from "../Images/ArcadePrizeImages/Football.svg";
 
+import Earth from "../Images/ArcadePrizeImages/Earth.svg";
+import Sun from "../Images/ArcadePrizeImages/Sun.svg";
+import Saturn from "../Images/ArcadePrizeImages/Saturn.svg";
+import Andromeda from "../Images/ArcadePrizeImages/Andromeda.svg";
+
 // Create the context
 const PrizeContext = createContext();
 
@@ -34,14 +39,16 @@ export function PrizeProvider({ children }) {
                                                         ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 50, Whale],
                                                         ["Black Cat", 0, BlackCat], ["Orange Cat", 0, OrangeCat], ["Siamese Cat", 0, SiameseCat],
                                                         ["British Shorthair Cat", 0, BritishShorthairCat], ["Football", 0, Football], ["Ping Pong Paddle", 0, Paddle], 
-                                                        ["Soccerball", 0, Soccerball], ["Basketball", 0, Basketball]];
+                                                        ["Soccerball", 0, Soccerball], ["Basketball", 0, Basketball], ["Andromeda Galaxy", 0, Andromeda], ["Sun", 0, Sun], 
+                                                        ["Saturn", 0, Saturn], ["Earth", 0, Earth]];
     } catch (error) {
       return [["Bear", 80, Bear], ["BumbleBee", 50, Bee], ["Valentine", 20, Heart],
               ["GameBoy", 100, GameBoy], ["Robot", 30, Robot], ["Alien", 20, Alien], 
               ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 50, Whale],
               ["Black Cat", 0, BlackCat], ["Orange Cat", 0, OrangeCat], ["Siamese Cat", 0, SiameseCat],
               ["British Shorthair Cat", 0, BritishShorthairCat], ["Football", 0, Football], ["Ping Pong Paddle", 0, Paddle], 
-              ["Soccerball", 0, Soccerball], ["Basketball", 0, Basketball]]; // Fallback if JSON parsing fails
+              ["Soccerball", 0, Soccerball], ["Basketball", 0, Basketball], ["Andromeda Galaxy", 0, Andromeda], ["Sun", 0, Sun], 
+              ["Saturn", 0, Saturn], ["Earth", 0, Earth]]; // Fallback if JSON parsing fails
     }
   });
 

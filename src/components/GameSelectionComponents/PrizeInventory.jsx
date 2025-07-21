@@ -20,6 +20,11 @@ import Soccerball from "../../Images/ArcadePrizeImages/Soccerball.svg";
 import Paddle from "../../Images/ArcadePrizeImages/Paddle.svg";
 import Football from "../../Images/ArcadePrizeImages/Football.svg";
 
+import Earth from "../../Images/ArcadePrizeImages/Earth.svg";
+import Sun from "../../Images/ArcadePrizeImages/Sun.svg";
+import Saturn from "../../Images/ArcadePrizeImages/Saturn.svg";
+import Andromeda from "../../Images/ArcadePrizeImages/Andromeda.svg";
+
 import "./PrizeInventory.css";
 
 function PrizeInventory (){
@@ -30,7 +35,8 @@ function PrizeInventory (){
         ["GameBoy", GameBoy], ["Robot", Robot], ["Alien", Alien], ["Spider", Spider], 
         ["Carrot", Carrot], ["Whale", Whale], ["Black Cat", BlackCat], ["Orange Cat", OrangeCat], 
         ["Siamese Cat", SiameseCat], ["British Shorthair Cat", BritishShorthairCat], ["Football", Football], 
-        ["Ping Pong Paddle", Paddle], ["Soccerball", Soccerball], ["Basketball", Basketball]];
+        ["Ping Pong Paddle", Paddle], ["Soccerball", Soccerball], ["Basketball", Basketball], ["Andromeda Galaxy", Andromeda], 
+        ["Sun", Sun], ["Saturn", Saturn], ["Earth", Earth]];
 
     return (
 

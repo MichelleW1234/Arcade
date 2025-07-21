@@ -14,10 +14,10 @@ function SpaceInstructionsscreen (){
             <p className = "largefont">
                 &gt; The prizes that you can win from this machine are space elements. <br/>
                 &gt; The ranking of the prizes from least to most rare is: <br/>
-                &nbsp; &nbsp; 1.  <br/>
-                &nbsp; &nbsp; 2.  <br/>
-                &nbsp; &nbsp; 3.  <br/>
-                &nbsp; &nbsp; 4.  <br/>
+                &nbsp; &nbsp; 1. Andromeda Galaxy <br/>
+                &nbsp; &nbsp; 2. Sun <br/>
+                &nbsp; &nbsp; 3. Saturn <br/>
+                &nbsp; &nbsp; 4. Earth <br/>
                 &gt; NOTE: Beyond this point, you will lose points and win no prize if you quit in the middle of the game. <br/>
             </p>
 

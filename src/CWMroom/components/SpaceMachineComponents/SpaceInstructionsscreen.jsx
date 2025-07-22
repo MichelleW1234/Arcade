@@ -12,7 +12,7 @@ function SpaceInstructionsscreen (){
                 Instructions: 
             </h1>
             <p className = "largefont">
-                &gt; The prizes that you can win from this machine are space elements. <br/>
+                &gt; The prizes that you can win from this machine are celestial bodies. <br/>
                 &gt; The ranking of the prizes from least to most rare is: <br/>
                 &nbsp; &nbsp; 1. Andromeda Galaxy <br/>
                 &nbsp; &nbsp; 2. Sun <br/>

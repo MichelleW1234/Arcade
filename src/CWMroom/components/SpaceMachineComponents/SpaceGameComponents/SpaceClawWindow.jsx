@@ -6,6 +6,7 @@ import "./SpaceClawWindow.css";
 
 import Claw from "../../../../Images/image 22.svg";
 import ClawCable from "../../../../Images/image 23.svg";
+import Prizes from "../../../../Images/image 26.svg";
 
 
 function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition}) {
@@ -67,7 +68,7 @@ function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosit
                 ))}
 
             </div>
-            <img className = "CWMSpacePrizes"/>
+            <img className = "CWMSpacePrizes" src = {Prizes}/>
         </div>
 
     );

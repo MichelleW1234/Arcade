@@ -10,7 +10,7 @@
     border-top: 0.125rem solid rgb(29, 8, 66);     /* 2px */
     border-right: 0.125rem solid rgb(29, 8, 66);    /* 2px */
 
-    box-shadow: 0 0 1rem 0.5rem rgb(145, 43, 255); /* 40px 10px */
+    box-shadow: 0 0 1rem 0.5rem rgb(157, 66, 255); /* 40px 10px */
 
 }
 
@@ -39,21 +39,21 @@
     flex-direction: column;
     height: 17rem;              /* 250px */
     width: 12rem;                /* 180px */
-    background-color: rgb(215, 174, 254);
+    background-color: rgb(241, 174, 254);
     align-items: center;
-    padding: 1.5rem;               /* 20px */
+    padding: 1.5rem 1.25rem;               /* 20px */
     gap: 1.25rem;                   /* 20px */
 
     font-size: 1.125rem;
     font-weight: bold;
 
-    border-left: 0.3125rem solid rgb(87, 0, 169);   /* 5px */
-    border-bottom: 0.3125rem solid rgb(87, 0, 169); /* 5px */
-    border-top: 0.125rem solid rgb(87, 0, 169);     /* 2px */
-    border-right: 0.125rem solid rgb(87, 0, 169);   /* 2px */
+    border-left: 0.3125rem solid rgb(152, 0, 182);   /* 5px */
+    border-bottom: 0.3125rem solid rgb(152, 0, 182); /* 5px */
+    border-top: 0.125rem solid rgb(152, 0, 182);     /* 2px */
+    border-right: 0.125rem solid rgb(152, 0, 182);   /* 2px */
     border-radius: 0.9375rem;             /* 15px */
 
-    box-shadow: 0 0 1rem 0.5rem rgb(195, 126, 255); /* 20px 6px */
+    box-shadow: 0 0 1rem 0.5rem rgb(228, 92, 255); /* 20px 6px */
 
 }
 
@@ -61,7 +61,7 @@
 
     font-size: 1.25rem;               /* 20px */
     padding: 0.625rem;                /* 10px */
-    background-color: rgb(242, 169, 255);
+    background-color: rgb(220, 131, 252);
 
     border-left: 0.3125rem solid rgb(105, 16, 120);   /* 5px */
     border-bottom: 0.3125rem solid rgb(105, 16, 120); /* 5px */
@@ -85,4 +85,12 @@
     color: white;
     animation: glowing-shadow7 4s infinite;
     
+}
+
+.CWMMachineImages{
+
+    width: 100%;
+
+    border: 5px solid rgb(71, 0, 224);
+
 }

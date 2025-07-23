@@ -6,6 +6,10 @@ import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
 import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
+import CatMachine from "../../Images/image 27.svg";
+import SportsMachine from "../../Images/image 28.svg";
+import SpaceMachine from "../../Images/image 29.svg";
+
 import "./MachineSelectionscreen.css";
 
 function MachineSelectionscreen (){
@@ -63,7 +67,7 @@ function MachineSelectionscreen (){
                             <div className = "CWMMachine"> 
                                 
                                 Cats
-                                <img/>
+                                <img className= "CWMMachineImages" src = {CatMachine}/>
                                 
                             </div>
 
@@ -81,7 +85,7 @@ function MachineSelectionscreen (){
                             <div className = "CWMMachine"> 
                                 
                                 Sports
-                                <img/>
+                                <img className = "CWMMachineImages" src={SportsMachine}/>
                                 
                             </div>
 
@@ -99,7 +103,7 @@ function MachineSelectionscreen (){
                             <div className = "CWMMachine"> 
                                 
                                 Space
-                                <img/>
+                                <img className= "CWMMachineImages" src = {SpaceMachine}/>
                                
                             </div>
 

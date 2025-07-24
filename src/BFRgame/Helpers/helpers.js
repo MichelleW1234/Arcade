@@ -1,11 +1,10 @@
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-export const incomingItem = (set) => {
+export const incomingItem = () => {
 
     const randomNumber = Math.floor(Math.random() * 2);
 
     return randomNumber;
-
 
 }
 
@@ -24,7 +23,7 @@ export const itemsShifting = (positions, setPositions) => {
 
     if (moreItems){
 
-        const newItem = [15, incomingItem()];
+        const newItem = [16, incomingItem()];
         newMatrixFiltered.push(newItem);
 
     }
@@ -35,16 +34,16 @@ export const itemsShifting = (positions, setPositions) => {
 
 export const checkHit = (positions, setPositions, setBFRUser, BFRUser) => {
 
-    let wrongBalloon = false;
+    let birdShot = false;
     let balloonPopped = false;
 
     for (const [r, c] of positions) {
-        if (r === 8 && c === 0) wrongBalloon = true;
+        if (r === 8 && c === 0) birdShot = true;
         if (r === 8 && c === 1) balloonPopped = true;
-        if (wrongBalloon || balloonPopped) break;
+        if (birdShot || balloonPopped) break;
     }
 
-    if (wrongBalloon) {
+    if (birdShot) {
 
         playSound(28);
 
@@ -60,14 +59,14 @@ export const checkHit = (positions, setPositions, setBFRUser, BFRUser) => {
 
         playSound(27);
 
-        let newMatrix = positions.filter(position => !(position[0] == 8 && position[1] == 1));
+        let newMatrix = positions.filter(position => !(position[0] == 8));
         setPositions(newMatrix);
 
         setBFRUser(prev => [prev[0] + 1]);
 
     }
 
-    if (!wrongBalloon && !balloonPopped){
+    if (!birdShot && !balloonPopped){
 
         playSound(26);
 

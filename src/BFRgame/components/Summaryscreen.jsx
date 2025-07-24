@@ -36,7 +36,7 @@ function Summaryscreen (){
 
             <div className = "StatsBoard">
                 <p>Balloons popped: {BFRUser[0]} </p>
-                <p>Points earned: {BFRUser[0]*2} </p>
+                <p> <span className="StatsGlitch">Points earned: {BFRUser[0]*2} </span></p>
             </div>
 
             {Player[0] >= ActiveGame[1] ? (

@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef} from "react";
 
 import InnerGameScreen from "./BFRGameComponents/InnerGamescreen.jsx";
 
-import {itemsShifting, checkHit} from "../Helpers/helpers.js";
+import {itemsShifting, checkHit, incomingItem} from "../Helpers/helpers.js";
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
@@ -19,7 +19,7 @@ function Gamescreen(){
     const { ActiveGame, setActiveGame} = useActiveGame();
     const {BFRUser, setBFRUser} = useBFRUser();
 
-    const [positions, setPositions] = useState([[19, 0]]);
+    const [positions, setPositions] = useState([[16, incomingItem()]]);
     const [laserBlast, setLaserBlast] = useState(false);
     const [timer, setTimer] = useState(1);
     const [gameOver, setGameOver] = useState(false);
@@ -44,7 +44,7 @@ function Gamescreen(){
 
             itemsShifting(positionsRef.current, setPositions);
 
-        }, 50);
+        }, 60);
 
         return () => clearInterval(interval);
 
@@ -74,6 +74,7 @@ function Gamescreen(){
 
         if (timer >= 30) {
 
+            playSound(6);
             setGameOver(true);
 
         }
@@ -123,10 +124,9 @@ function Gamescreen(){
             <Link to="/selection" className = "generalbutton" onClick={() => exitGame()}> Quit Game </Link>
 
             <div className = "gameScreenLayout">
-                <div className = "ORBOuterGameContainer">
+                <div className = "BFROuterGameContainer">
 
-                    <div> timer: {timer}</div>
-                    <div> Balloon score: {BFRUser[0]}</div>
+                    <div className="BFRsigns"> timer: {timer} | Balloon score: {BFRUser[0]}</div>
 
                     {gameOver === false ? (
 
@@ -136,7 +136,7 @@ function Gamescreen(){
                             laserBlast = {laserBlast}
                             />
 
-                            <button className = "ORBHitButton" onClick = {() => laserBlasted()}>Blast</button>
+                            <button className = "BFRFireButton" onClick = {() => laserBlasted()}>Fire</button>
                         </>
 
 
@@ -147,7 +147,7 @@ function Gamescreen(){
                                 <h1> Game over.</h1>
                             </div>
 
-                            <Link to="/BFRsummary" className = "ORBDoneButton" onClick = {() => claimPoints()}> View Summary</Link>
+                            <Link to="/BFRsummary" className = "BFRDoneButton" onClick = {() => claimPoints()}> View Summary</Link>
                         </>
 
                     )}

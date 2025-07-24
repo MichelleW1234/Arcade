@@ -3,43 +3,47 @@ import "./InnerGamescreen.css";
 
 function InnerGamescreen ({positions, laserBlast}){
 
-    const gameArray = Array.from({ length: 15 }, () => Array(20).fill(0));
+    const gameArray = Array.from({ length: 10 }, () => Array(17).fill(0));
     
     return (
 
-        <div className = "ORBGameBoardScreen">
+        <div className = "BFRGameBoardScreen">
             {gameArray.map((row, rowIndex) => (
                 row.map((cell, colIndex) => {
 
-                    const balloonHere = positions.some(
+                    const birdHere = positions.some(
                         ([r, c]) => r === colIndex && c === 0
                     ) &&
-                    rowIndex === 3;
+                    rowIndex === 2;
 
-                    const bombHere = positions.some(
+                    const balloonHere = positions.some(
                         ([r, c]) => r === colIndex && c === 1
                     ) &&
-                    rowIndex === 3;
+                    rowIndex === 2;
 
-                    const laserHere = laserBlast === true && colIndex === 10;
+                    const laserShot = laserBlast === true && colIndex === 8;
 
                     return (
 
-                        laserHere ? (
+                        laserShot ? (
                             
-                            <div key = {rowIndex + "," + colIndex} className="ORBGameBoardWinningCircle"></div>
-                            
+                            <img key = {rowIndex + "," + colIndex} className="BFRLaserColumn"/>
+                        
                         ) : balloonHere ? (
 
-                            <div key = {rowIndex + "," + colIndex} className="ORBGameBoardCurrentSlot"></div>
+                            <img key = {rowIndex + "," + colIndex} className="BFRBalloon"/>
 
-                        ) : bombHere ? (
+                        ) : birdHere ? (
 
-                            <div key = {rowIndex + "," + colIndex} className="ORBGameBoardWinningCircle"></div>
+                            <img key = {rowIndex + "," + colIndex} className="BFRBird"/>
+
+                        ) : colIndex == 8 ? (
+
+                            <div key = {rowIndex + "," + colIndex} className="BFRLaserField"/>
 
                         ) : (
 
-                            <div key = {rowIndex + "," + colIndex} className="ORBGameBoardEmptySpace"></div>
+                            <div key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace"></div>
 
                         )
     

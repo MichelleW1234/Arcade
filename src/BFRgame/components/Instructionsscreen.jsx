@@ -22,7 +22,11 @@ function Instructionsscreen (){
                 Instructions: 
             </h1>
             <p className = "largefont">
-                &gt; Instructions go here. <br/>
+                &gt; Press the button to shoot balloons that pass through the red line. <br/>
+                &gt; Every balloon that is shot is worth 2 points. <br/>
+                &gt; However, you will lose the same amount of points for every bird that is hit. <br/>
+                &gt; Shoot as many balloons as you can within the 30 second time limit. <br/>
+                &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
             </p>
 
             <div className = "generalbuttonContainer">

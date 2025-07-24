@@ -56,6 +56,11 @@ import CBLInstructionsscreen from "./CBLgame/components/Instructionsscreen.jsx";
 import CBLGamescreen from "./CBLgame/components/Gamescreen.jsx";
 import CBLSummaryscreen from "./CBLgame/components/Summaryscreen.jsx";
 
+import BFRStartscreen from "./BFRgame/components/Startscreen.jsx";
+import BFRInstructionsscreen from "./BFRgame/components/Instructionsscreen.jsx";
+import BFRGamescreen from "./BFRgame/components/Gamescreen.jsx";
+import BFRSummaryscreen from "./BFRgame/components/Summaryscreen.jsx";
+
 import NoPage from "./components/NoPage.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import {HashRouter, Routes, Route} from 'react-router-dom';
@@ -125,6 +130,11 @@ function App() {
         <Route path="/CBLinstructions" element={<CBLInstructionsscreen />}/>
         <Route path="/CBLgame" element={<CBLGamescreen />}/>
         <Route path="/CBLsummary" element={<CBLSummaryscreen />}/>
+
+        <Route path="/BFRstart" element={<BFRStartscreen />}/>
+        <Route path="/BFRinstructions" element={<BFRInstructionsscreen />}/>
+        <Route path="/BFRgame" element={<BFRGamescreen />}/>
+        <Route path="/BFRsummary" element={<BFRSummaryscreen />}/>
         
         {/*Page doesn't exist error*/}
         <Route path="*" element={<NoPage />} />

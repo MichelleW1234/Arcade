@@ -12,6 +12,7 @@ import {SNKUserProvider } from './SNKgame/Providers/SNKUserProvider.jsx';
 import {SPIUserProvider } from './SPIgame/Providers/SPIUserProvider.jsx'; 
 import {CBLUserProvider } from './CBLgame/Providers/CBLUserProvider.jsx'; 
 import {CWMUserProvider } from './CWMroom/Providers/CWMUserProvider.jsx'; 
+import { BFRUserProvider } from './BFRgame/Providers/BFRUserProvider.jsx';
 
 import App from './App.jsx';
 
@@ -20,9 +21,9 @@ createRoot(document.getElementById('root')).render(
     <MusicProvider>
     <PrizeProvider>
     <PlayerProvider><ActiveGameProvider>
-    <CWMUserProvider><CBLUserProvider><SPIUserProvider><SNKUserProvider><TTTUserProvider><RPSUserProvider>
+    <CWMUserProvider><BFRUserProvider><CBLUserProvider><SPIUserProvider><SNKUserProvider><TTTUserProvider><RPSUserProvider>
         <App />
-    </RPSUserProvider></TTTUserProvider></SNKUserProvider></SPIUserProvider></CBLUserProvider></CWMUserProvider>
+    </RPSUserProvider></TTTUserProvider></SNKUserProvider></SPIUserProvider></CBLUserProvider></BFRUserProvider></CWMUserProvider>
     </ActiveGameProvider></PlayerProvider>
     </PrizeProvider>
     </MusicProvider>

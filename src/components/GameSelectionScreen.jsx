@@ -39,7 +39,7 @@ import SNK from "../Images/ArcadeGameImages/SNK.svg";
 import SPI from "../Images/ArcadeGameImages/SPI.svg";
 import ORB from "../Images/ArcadeGameImages/ORB.svg";
 import CBL from "../Images/ArcadeGameImages/CBL.svg";
-
+import BFR from "../Images/ArcadeGameImages/BFR.svg";
 
 import "./GameSelectionscreen.css";
 
@@ -257,6 +257,27 @@ function GameSelectionscreen (){
                             </button>
 
                         </div>
+
+                        <div className = "ArcadeGameContainer">
+
+                            <div className = "ArcadeGame"> 
+                                
+                                Balloon Frenzy
+                                <img className = "ArcadeGameImage" src = {BFR}/>
+                                (10 Points)
+                                
+                            </div>
+
+                            
+                            <button
+                            className={`gameButton ${activeButton === 7 ? 'active' : ''}`}
+                            onClick={() => handleClick(7)}
+                            >
+                                Select
+                            </button>
+
+                        </div>
+
 
                     </div>
 

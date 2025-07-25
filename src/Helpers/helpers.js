@@ -23,6 +23,9 @@ import SPIMutantLaserSwitch from "../Music/SPIMutantLaserSwitch.mp3";
 import CWMClawActivate from "../Music/CWMClawActivate.mp3";
 import ArcadeEnteringRoom from "../Music/ArcadeEnteringRoom.mp3";
 import ArcadeCheckingInventory from "../Music/ArcadeCheckingInventory.mp3";
+import BFREmptyShot from "../Music/BFREmptyShot.mp3";
+import BFRBalloonPop from "../Music/BFRBalloonPop.mp3";
+import BFRBirdShot from "../Music/BFRBirdShot.mp3";
 
 export const retrieveActiveGame = (index) => {
     
@@ -61,6 +64,11 @@ export const retrieveActiveGame = (index) => {
     } else if (index === 6){
 
         gameControls[0] = "/CBLstart";
+        gameControls[1] = 10;
+
+    } else if (index === 7){
+
+        gameControls[0] = "/BFRstart";
         gameControls[1] = 10;
 
     }
@@ -116,7 +124,10 @@ export const playSound = (soundEffect) => {
         22: [SPIMutantLaserSwitch, 0.5],
         23: [CWMClawActivate, 0.3],
         24: [ArcadeEnteringRoom, 1],
-        25: [ArcadeCheckingInventory, 0.5]
+        25: [ArcadeCheckingInventory, 0.5],
+        26: [BFREmptyShot, 0.4],
+        27: [BFRBalloonPop, 0.5],
+        28: [BFRBirdShot, 0.5]
 
     };
 

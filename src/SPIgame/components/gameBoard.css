@@ -173,27 +173,15 @@
 .SPIlaserButtonNormal {
     background-color: #00ff26;
     font-size: 1.25rem;          /* 20px */
-    font-weight: bold;
     padding: 0.625rem;           /* 10px */
 
-    border-left: 0.3125rem solid #00ff26;  /* 5px */
-    border-bottom: 0.3125rem solid #00ff26; /* 5px */
+    border-left: 0.3125rem solid #00660f;  /* 5px */
+    border-bottom: 0.3125rem solid #00660f; /* 5px */
     border-top: 0.125rem solid #00660f;  /* 5px */
     border-right: 0.125rem solid #00660f; /* 5px */
 
-}
+    box-shadow: 0 0 0.625rem 0.25rem #00ff26; /* 10px 4px */
 
-
-.SPIlaserButtonNormal {
-    background-color: #00ff26;
-    font-size: 1.25rem;              /* 20px */
-    font-weight: bold;
-    padding: 0.625rem;               /* 10px */
-
-    border-left: 0.3125rem solid #00590d;    /* 5px */
-    border-bottom: 0.3125rem solid #00590d;  /* 5px */
-    border-right: 0.125rem solid #00590d;    /* 2px */
-    border-top: 0.125rem solid #00590d;      /* 2px */
 }
 
 
@@ -204,21 +192,26 @@
     border-bottom: 0.3125rem solid #000d02;  /* 5px */
     border-right: 0.125rem solid #000d02;    /* 2px */
     border-top: 0.125rem solid #000d02;      /* 2px */
+
+    box-shadow: 0 0 0.625rem 0.25rem #00a118; /* 10px 4px */
     
     color: white;
+
 }
 
 
 .SPIlaserButtonMutant {
     background-color: #fb00ff;
     font-size: 1.25rem;              /* 20px */
-    font-weight: bold;
     padding: 0.625rem;               /* 10px */
 
     border-left: 0.3125rem solid #640065;    /* 5px */
     border-bottom: 0.3125rem solid #640065;  /* 5px */
     border-top: 0.125rem solid #640065;     /* 5px */
     border-right: 0.125rem solid #640065;   /* 5px */
+
+    box-shadow: 0 0 0.625rem 0.25rem #fb00ff; /* 10px 4px */
+
 }
 
 
@@ -229,6 +222,8 @@
     border-bottom: 0.3125rem solid #330034;  /* 5px */
     border-top: 0.125rem solid #330034;     /* 5px */
     border-right: 0.125rem solid #330034;   /* 5px */
+
+    box-shadow: 0 0 0.625rem 0.25rem #a900ac; /* 10px 4px */
 
     color: white;
 }

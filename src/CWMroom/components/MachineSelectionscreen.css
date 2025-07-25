@@ -37,6 +37,9 @@
 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     height: 17rem;              /* 250px */
     width: 12rem;                /* 180px */
     background-color: rgb(241, 174, 254);
@@ -61,7 +64,7 @@
 
     font-size: 1.25rem;               /* 20px */
     padding: 0.625rem;                /* 10px */
-    background-color: rgb(220, 131, 252);
+    background-color: rgb(246, 143, 255);
 
     border-left: 0.3125rem solid rgb(105, 16, 120);   /* 5px */
     border-bottom: 0.3125rem solid rgb(105, 16, 120); /* 5px */

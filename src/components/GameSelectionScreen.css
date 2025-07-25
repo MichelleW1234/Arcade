@@ -30,6 +30,9 @@
 .ArcadeGame {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   height: 18rem;              /* 250px */
   width: 12rem;                /* 180px */
   background-color: rgb(179, 227, 255);

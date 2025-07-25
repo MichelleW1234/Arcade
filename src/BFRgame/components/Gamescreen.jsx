@@ -126,7 +126,7 @@ function Gamescreen(){
             <div className = "gameScreenLayout">
                 <div className = "BFROuterGameContainer">
 
-                    <div className="BFRsigns"> timer: {timer} | Balloon score: {BFRUser[0]}</div>
+                    <div className="BFRsigns"> Timer: {timer} | Balloon Score: {BFRUser[0]}</div>
 
                     {gameOver === false ? (
 

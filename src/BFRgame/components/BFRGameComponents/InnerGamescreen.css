@@ -21,19 +21,21 @@
     background-color: rgb(161, 197, 255);
 }
 
-.BFRLaserColumn {
+.BFRFieldUnactivated{
+
     height: 2.5rem;
     width: 2.5rem;
 
-    background-color: rgb(0, 255, 42);
+    background-color: rgba(0, 255, 72, 0.4);
+
 }
 
-.BFRLaserField{
+.BFRFieldActivated{
 
     height: 2.5rem;
     width: 2.5rem;
 
-    background-color: rgba(255, 17, 0, 0.485);
+    background-color: rgb(34, 255, 0);
 
 }
 

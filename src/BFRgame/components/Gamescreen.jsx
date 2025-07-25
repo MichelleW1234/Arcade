@@ -136,7 +136,7 @@ function Gamescreen(){
                             laserBlast = {laserBlast}
                             />
 
-                            <button className = "BFRFireButton" onClick = {() => laserBlasted()}>Fire</button>
+                            <button className = "BFRActivateButton" onClick = {() => laserBlasted()}>Activate</button>
                         </>
 
 

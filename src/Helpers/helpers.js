@@ -23,7 +23,7 @@ import SPIMutantLaserSwitch from "../Music/SPIMutantLaserSwitch.mp3";
 import CWMClawActivate from "../Music/CWMClawActivate.mp3";
 import ArcadeEnteringRoom from "../Music/ArcadeEnteringRoom.mp3";
 import ArcadeCheckingInventory from "../Music/ArcadeCheckingInventory.mp3";
-import BFRLaserEmptyShot from "../Music/BFRLaserEmptyShot.mp3";
+import BFREmptyShot from "../Music/BFREmptyShot.mp3";
 import BFRBalloonPop from "../Music/BFRBalloonPop.mp3";
 import BFRBirdShot from "../Music/BFRBirdShot.mp3";
 
@@ -125,7 +125,7 @@ export const playSound = (soundEffect) => {
         23: [CWMClawActivate, 0.3],
         24: [ArcadeEnteringRoom, 1],
         25: [ArcadeCheckingInventory, 0.5],
-        26: [BFRLaserEmptyShot, 0.4],
+        26: [BFREmptyShot, 0.4],
         27: [BFRBalloonPop, 0.5],
         28: [BFRBirdShot, 0.5]
 

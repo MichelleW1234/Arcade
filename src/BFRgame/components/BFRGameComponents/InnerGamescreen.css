@@ -21,23 +21,6 @@
     background-color: rgb(161, 197, 255);
 }
 
-
-.BFRBalloon {
-    height: 2.5rem;  /* 25px */
-    width: 2.5rem;   /* 25px */
-
-    background-color: rgb(135, 135, 0);
-}
-
-.BFRBird {
-    height: 2.5rem;  /* 25px */
-    width: 2.5rem;   /* 25px */
-
-    background-color: rgb(246, 255, 0);
-
-}
-
-
 .BFRLaserColumn {
     height: 2.5rem;  /* 25px */
     width: 2.5rem;   /* 25px */

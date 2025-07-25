@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef} from "react";
 import "./InnerGamescreen.css";
+import Balloon from "../../../Images/image 30.svg";
+import Bird from "../../../Images/image 31.svg";
+import Laser from "../../../Images/image 32.svg";
 
 function InnerGamescreen ({positions, laserBlast}){
 
@@ -27,23 +30,45 @@ function InnerGamescreen ({positions, laserBlast}){
 
                         laserShot ? (
                             
-                            <img key = {rowIndex + "," + colIndex} className="BFRLaserColumn"/>
+                            <img src = {Laser} key = {rowIndex + "," + colIndex} className="BFRLaserField"/>
                         
                         ) : balloonHere ? (
 
-                            <img key = {rowIndex + "," + colIndex} className="BFRBalloon"/>
+                            colIndex == 8 ? (
+
+                                <img src = {Balloon} key = {rowIndex + "," + colIndex} className="BFRLaserField"/>
+
+                            ) : (
+
+                                <img src = {Balloon} key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace"/>
+
+                            )
 
                         ) : birdHere ? (
 
-                            <img key = {rowIndex + "," + colIndex} className="BFRBird"/>
+                            colIndex == 8 ? (
 
-                        ) : colIndex == 8 ? (
+                                <img src = {Bird} key = {rowIndex + "," + colIndex} className="BFRLaserField"/>
 
-                            <div key = {rowIndex + "," + colIndex} className="BFRLaserField"/>
+
+                            ) : (
+
+                                <img src = {Bird} key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace"/>
+
+                            )
+                               
 
                         ) : (
+                            
+                            colIndex == 8 ? (
 
-                            <div key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace"></div>
+                                <div key = {rowIndex + "," + colIndex} className="BFRLaserField"/>
+
+                            ) : (
+
+                                <div key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace"></div>
+                        
+                            )
 
                         )
     

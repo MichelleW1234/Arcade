@@ -39,7 +39,7 @@ import SNK from "../Images/ArcadeGameImages/SNK.svg";
 import SPI from "../Images/ArcadeGameImages/SPI.svg";
 import ORB from "../Images/ArcadeGameImages/ORB.svg";
 import CBL from "../Images/ArcadeGameImages/CBL.svg";
-
+import BFR from "../Images/ArcadeGameImages/BFR.svg";
 
 import "./GameSelectionscreen.css";
 
@@ -263,7 +263,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 Balloon Frenzy
-                                <img className = "ArcadeGameImage" src = {CBL}/>
+                                <img className = "ArcadeGameImage" src = {BFR}/>
                                 (10 Points)
                                 
                             </div>

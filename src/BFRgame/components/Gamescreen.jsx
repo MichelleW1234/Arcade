@@ -44,7 +44,7 @@ function Gamescreen(){
 
             itemsShifting(positionsRef.current, setPositions);
 
-        }, 60);
+        }, 65);
 
         return () => clearInterval(interval);
 

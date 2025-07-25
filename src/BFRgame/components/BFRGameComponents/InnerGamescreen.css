@@ -9,29 +9,29 @@
     grid-template-rows: repeat(10, 1fr); 
 
     background-color: rgb(161, 197, 255);
-    box-shadow: 0 0 1rem 0.75rem rgb(161, 197, 255);  /* already in rem */
+    box-shadow: 0 0 1rem 0.75rem rgb(161, 197, 255);
 
 }
 
 
 .BFRGameBoardEmptySpace {
-    height: 2.5rem;  /* 25px */
-    width: 2.5rem;   /* 25px */
+    height: 2.5rem;
+    width: 2.5rem;
 
     background-color: rgb(161, 197, 255);
 }
 
 .BFRLaserColumn {
-    height: 2.5rem;  /* 25px */
-    width: 2.5rem;   /* 25px */
+    height: 2.5rem;
+    width: 2.5rem;
 
     background-color: rgb(0, 255, 42);
 }
 
 .BFRLaserField{
 
-    height: 2.5rem;  /* 25px */
-    width: 2.5rem;   /* 25px */
+    height: 2.5rem;
+    width: 2.5rem;
 
     background-color: rgba(255, 17, 0, 0.485);
 

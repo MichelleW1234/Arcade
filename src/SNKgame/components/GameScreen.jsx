@@ -17,20 +17,9 @@ function Gamesscreen(){
     const reset = () => {
     
         playSound(4);
+        
         setSNKUser([false, 0]);
-
-        const difference = Player[0] - ActiveGame[1];
-    
-        if (difference >= 0){
-    
-            setPlayer(prev => [difference, prev[0]]);
-    
-        } else {
-    
-            setPlayer(prev => [0, prev[0]]);
-    
-        }
-
+        setPlayer(prev => [(Player[0] - ActiveGame[1]), prev[0]]);
         setActiveGame(retrieveActiveGame(1))
     
     }

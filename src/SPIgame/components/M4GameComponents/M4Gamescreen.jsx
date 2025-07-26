@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 
 import GameBoardM4 from "./M4GameScreenComponents/M4GameBoard.jsx";
 
+import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
+import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useSPIUser } from '../../Providers/SPIUserProvider.jsx';
-import {unlockNextMission} from "../../Helpers/helpers.js"; 
+
+import {unlockNextMission, quitGame} from '../../Helpers/helpers.js';
 
 import "../Gamescreen.css";
 
@@ -12,6 +15,8 @@ import {playSound} from '../../../Helpers/helpers.js';
 
 function M4Gamescreen() {
 
+    const { ActiveGame, setActiveGame} = useActiveGame();
+    const { Player, setPlayer } = usePlayer();
     const {SPIUser, setSPIUser} = useSPIUser();
 
     const [bossDefeated, setBossDefeated] = useState(false);
@@ -62,6 +67,9 @@ function M4Gamescreen() {
     return (
 
         <div>
+            <Link to= "/selection" className = "generalbutton" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+                Quit Game
+            </Link>
 
             {bossDefeated == false && SPIUser[2] == false ? (
 

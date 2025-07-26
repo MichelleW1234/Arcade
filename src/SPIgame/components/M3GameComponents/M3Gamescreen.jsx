@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom';
 
 import GameBoardM3 from "./M3GameScreenComponents/M3GameBoard.jsx";
 
+import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
+import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useSPIUser } from '../../Providers/SPIUserProvider.jsx';
-import {unlockNextMission} from "../../Helpers/helpers.js";
+
+import {unlockNextMission, quitGame} from '../../Helpers/helpers.js';
 
 import "../Gamescreen.css";
 
 function M3GameScreen() {
 
+    const { ActiveGame, setActiveGame} = useActiveGame();
+    const { Player, setPlayer } = usePlayer();
     const {SPIUser, setSPIUser} = useSPIUser();
 
     const [waveNumber, setWaveNumber] = useState(1);
@@ -17,6 +22,9 @@ function M3GameScreen() {
     return (
 
         <div>
+            <Link to= "/selection" className = "generalbutton" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+                Quit Game
+            </Link>
 
             {waveNumber <= 5 && SPIUser[2] == false ? (
 

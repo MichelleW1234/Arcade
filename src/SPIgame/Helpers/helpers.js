@@ -1,5 +1,5 @@
 
-import {playSound} from '../../Helpers/helpers.js';
+import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
 //For transitioning to next mission:
 
@@ -424,4 +424,14 @@ export const bossHit = (setBossHealth, setBossDefeated) =>  {
 
     });
 
+}
+
+export const quitGame = (setSPIUser, Player, setPlayer, ActiveGame, setActiveGame) => {
+        
+    playSound(4);
+
+    setSPIUser([[],[1, "/SPIM1Instructions"], false]);
+    setPlayer(prev => [(Player[0] - ActiveGame[1]), prev[0]]);
+    setActiveGame(retrieveActiveGame(1));
+        
 }

@@ -6,16 +6,21 @@
 
 
 .SPImissionWindowUnlocked {
-    padding: 1.875rem;           /* 30px */
-    min-height: 21.875rem;       /* 350px */
-    width: 15.625rem;            /* 250px */
-    background-color: rgb(0, 253, 17);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.875rem;               /* 30px */
+
+    height: 21.875rem;       /* 350px */
+    width: 15.625rem;            /* 250px */
+
+    font-size: 1.875rem;
+    font-weight: bold;
+    padding: 1.5rem;           /* 30px */
+    gap: 3rem;               /* 30px */
+
+    background-color: rgb(31, 255, 46);
 
     box-shadow: 0 0 1.875rem 0.625rem rgb(0, 255, 34); /* 30px 10px */
 
@@ -29,17 +34,20 @@
 
 
 .SPImissionWindowLocked {
-    padding: 1.875rem;           /* 30px */
-    min-height: 21.875rem;       /* 350px */
-    width: 15.625rem;            /* 250px */
-    background-color: rgb(255, 49, 49);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    font-size: 1.25rem;          /* 20px */
+    height: 21.875rem;       /* 350px */
+    width: 15.625rem;            /* 250px */
+
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 1.5rem;           /* 30px */
+
+    background-color: rgb(255, 49, 49);
 
     border-left: 0.5rem solid rgb(102, 19, 19);    /* 8px */
     border-bottom: 0.5rem solid rgb(102, 19, 19);  /* 8px */
@@ -48,20 +56,24 @@
 
     box-shadow: 0 0 1.875rem 0.625rem rgb(250, 55, 97); /* 30px 10px */
     border-radius: 0.625rem;     /* 10px */
+
 }
 
-
-
 .SPImissionWindowCompleted {
-    padding: 1.875rem;           /* 30px */
-    min-height: 21.875rem;       /* 350px */
-    width: 15.625rem;            /* 250px */
-    background-color: rgb(111, 188, 255);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    height: 21.875rem;       /* 350px */
+    width: 15.625rem;            /* 250px */
+
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1.5rem;           /* 30px */
+
+    background-color: rgb(111, 188, 255);
 
     border-left: 0.5rem solid rgb(46, 80, 110);    /* 8px */
     border-bottom: 0.5rem solid rgb(46, 80, 110);  /* 8px */
@@ -75,54 +87,59 @@
 
 
 .SPImissionWindowUnavailable {
-    padding: 1.875rem;           /* 30px */
-    min-height: 21.875rem;       /* 350px */
-    width: 15.625rem;            /* 250px */
-    background-color: rgb(251, 52, 52);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
+    height: 21.875rem;       /* 350px */
+    width: 15.625rem;            /* 250px */
+
+    font-size: 5rem;           /* 40px */
+    font-weight: bold;
+    padding: 1.5rem;           /* 30px */
+
+    background-color: rgb(251, 52, 52);
+
     border-left: 0.5rem solid rgb(106, 22, 22);    /* 8px */
     border-bottom: 0.5rem solid rgb(106, 22, 22);  /* 8px */
     border-top: 0.1875rem solid rgb(106, 22, 22);  /* 3px */
     border-right: 0.1875rem solid rgb(106, 22, 22); /* 3px */
     
-    font-size: 2.5rem;           /* 40px */
     border-radius: 0.625rem;     /* 10px */
 
     box-shadow: 0 0 1.875rem 0.625rem rgb(253, 51, 10); /* 30px 10px */
+
 }
 
 
 .SPImissionStartButton {
     font-size: 1.5625rem;           /* 25px */
-    font-weight: bold;
-    background-color: rgb(255, 0, 251);
+    background-color: rgb(168, 197, 255);
     padding: 0.9375rem;             /* 15px */
     
-    border-left: 0.4375rem solid rgb(109, 0, 107);   /* 7px */
-    border-bottom: 0.4375rem solid rgb(109, 0, 107);  /* 7px */
-    border-top: 0.1875rem solid rgb(109, 0, 107);     /* 3px */
-    border-right: 0.1875rem solid rgb(109, 0, 107);   /* 3px */
+    border-left: 0.4375rem solid rgb(0, 49, 147);   /* 7px */
+    border-bottom: 0.4375rem solid rgb(0, 49, 147);  /* 7px */
+    border-top: 0.1875rem solid rgb(0, 49, 147);     /* 3px */
+    border-right: 0.1875rem solid rgb(0, 49, 147);   /* 3px */
 
-    animation: button-glitch 4s infinite, glowing-shadow3 4s infinite;
+    animation: button-glitch 4s infinite, glowing-shadow2 4s infinite;
+
 }
 
 
 .SPImissionStartButton:hover{
 
-    background-color: rgb(128, 0, 126);
+    background-color: rgb(0, 56, 168);
 
-    border-left: 0.4375rem solid rgb(66, 0, 65);  /* 7px */
-    border-bottom: 0.4375rem solid rgb(66, 0, 65);  /* 7px */
-    border-top: 0.1875rem solid rgb(66, 0, 65);     /* 3px */
-    border-right: 0.1875rem solid rgb(66, 0, 65);   /* 3px */
+    border-left: 0.4375rem solid rgb(0, 23, 68);  /* 7px */
+    border-bottom: 0.4375rem solid rgb(0, 23, 68);  /* 7px */
+    border-top: 0.1875rem solid rgb(0, 23, 68);     /* 3px */
+    border-right: 0.1875rem solid rgb(0, 23, 68);   /* 3px */
 
     color: white;
 
-    animation: button-glitch 4s infinite, glowing-shadow5 4s infinite;
+    animation: button-glitch 4s infinite, glowing-shadow4 4s infinite;
 
 }

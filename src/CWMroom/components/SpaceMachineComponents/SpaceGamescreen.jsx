@@ -62,7 +62,7 @@ function SpaceGamescreen (){
 
         <div>             
             
-            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame(setPlayer, ActiveGame[1])}> Quit Machine </Link>
+            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame(setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
 
             <div className = "gameScreenLayout">
             

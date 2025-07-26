@@ -5,7 +5,7 @@ import InnerGameScreen from "./ORBGameComponents/InnerGamescreen.jsx";
 
 import {orbiting} from "../Helpers/helpers.js";
 
-import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, claimPoints} from "../../Helpers/helpers.js";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -79,17 +79,15 @@ function Gamescreen(){
 
     };
 
-    const claimPoints = () => {
-
-        playSound(2);
+    const calculateWin = () => {
 
         if (circle[currentSlot][0] == winner[0] && circle[currentSlot][1] == winner[1]){
 
-            setPlayer(([current, prev]) => [current + ActiveGame[1], current]);
+            claimPoints(ActiveGame, Player, setPlayer, ActiveGame[1]);
 
         } else {
 
-            setPlayer(([current, prev]) => [current - ActiveGame[1], current]);
+            claimPoints(ActiveGame, Player, setPlayer, 0);
 
         }
 
@@ -146,7 +144,7 @@ function Gamescreen(){
 
                     ) : (
 
-                        <Link to="/ORBsummary" className = "ORBDoneButton" onClick={()=> claimPoints()}> View Result </Link>
+                        <Link to="/ORBsummary" className = "ORBDoneButton" onClick={()=> calculateWin()}> View Result </Link>
 
                     )}
 

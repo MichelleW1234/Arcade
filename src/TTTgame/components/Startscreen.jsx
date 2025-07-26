@@ -1,18 +1,11 @@
 import { Link } from 'react-router-dom';
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
-import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
+import {playSound, exitGame} from '../../Helpers/helpers.js';
 
 function Startscreen() {
 
   const { ActiveGame, setActiveGame} = useActiveGame();
-
-  const quit = () => {
-
-    playSound(4);
-    setActiveGame(retrieveActiveGame(1))
-
-  }
 
   return (
 
@@ -27,7 +20,7 @@ function Startscreen() {
       </div>
 
         <div className = "generalbuttonContainer">
-          <Link to="/selection" className = "generalbutton" onClick={() => quit()}>
+          <Link to="/selection" className = "generalbutton" onClick={() => exitGame(setActiveGame)}>
             Exit Game
           </Link>
           <Link to= "/TTTinstructions" className = "generalbuttonGlitch" onClick={() => playSound(1)}>

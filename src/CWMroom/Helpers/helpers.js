@@ -189,9 +189,10 @@ export const exitClawArcade = (setActiveGame) => {
 
 }
 
-export const exitGame = (setPlayer, ActiveGameCost) => {
+export const exitGame = (setPlayer, ActiveGameCost, setCWMUser) => {
 
     playSound(4);
+    setCWMUser([0]);
     setPlayer(([current, prev]) => [current - ActiveGameCost, current]);
 
 }

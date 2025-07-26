@@ -7,12 +7,20 @@ import rifle from "./M4GameScreenComponents/cursor.cur";
 import beamlight from "../../../Images/image 15.svg";
 import hpbar from "../../../Images/image 16.svg";
 
-import {openingGuide, closingGuide} from '../../Helpers/helpers.js';
+import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
+import { useSPIUser } from '../../Providers/SPIUserProvider.jsx';
+import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
+
 import {playSound} from '../../../Helpers/helpers.js';
+import {openingGuide, closingGuide, quitGame} from '../../Helpers/helpers.js';
 
 import "../GameInstructionsscreen.css";
 
 function M4Instructionsscreen() {
+
+  const { ActiveGame, setActiveGame} = useActiveGame();
+  const { Player, setPlayer } = usePlayer();
+  const {SPIUser, setSPIUser} = useSPIUser();
 
   const [aliensDetectedOn, setAliensDetectedOn] = useState(false);
   const [equipmentOn, setEquipmentOn] = useState(false);
@@ -81,6 +89,9 @@ function M4Instructionsscreen() {
       </div>
 
       <div className = "generalbuttonContainer">
+        <Link to= "/selection" className = "generalbutton" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+          Quit Game
+        </Link>
         <Link to= "/SPIM4game" className = "generalbuttonGlitch" onClick = {() => playSound(7)}>
             Enter Zone
         </Link>

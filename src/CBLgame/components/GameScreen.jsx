@@ -3,7 +3,7 @@ import React, { useState, useEffect} from "react";
 
 import InnerGameScreen from "./CBLGameComponents/InnerGamescreen.jsx";
 
-import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, claimPoints} from "../../Helpers/helpers.js";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -45,16 +45,10 @@ function Gamescreen (){
     const exitGame = () => {
         
         playSound(4);
+
+        setCBLUser([0]);
         setPlayer(([current, prev]) => [current - ActiveGame[1], current]);
         setActiveGame(retrieveActiveGame(1));
-
-    }
-
-    const claimPoints = () => {
-
-        const difference = (Player[0] - ActiveGame[1]) + CBLUser[0]*3;
-        setPlayer(([current, prev]) => [difference, current]);
-        playSound(2);
 
     }
 
@@ -101,7 +95,7 @@ function Gamescreen (){
                             
                         </div>
 
-                        <Link to="/CBLsummary" className = "CBLbutton" onClick = {() => claimPoints()}> View Results </Link>
+                        <Link to="/CBLsummary" className = "CBLbutton" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, CBLUser[0]*3)}> View Results </Link>
 
                     </div>
 

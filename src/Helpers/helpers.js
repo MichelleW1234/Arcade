@@ -95,6 +95,24 @@ export const pointsDistribution = (ActiveGame, winner, setPlayer) => {
 
 }
 
+export const claimPoints = (ActiveGame, Player, setPlayer, pointsEarned) => {
+
+    playSound(2);
+
+    const difference = (Player[0] - ActiveGame[1]) + pointsEarned;
+
+    if (difference >= 0){
+
+        setPlayer(prev => [difference, prev[0]]);
+
+    } else {
+
+        setPlayer(prev => [0, prev[0]]);
+
+    }
+
+}
+
 
 export const playSound = (soundEffect) => {
 
@@ -137,5 +155,13 @@ export const playSound = (soundEffect) => {
     const audio = new Audio(soundFile);
     audio.volume = volume;
     audio.play();
+
+}
+
+
+export const exitGame = (setActiveGame) => {
+
+    playSound(24);
+    setActiveGame(retrieveActiveGame(1));
 
 }

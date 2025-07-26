@@ -7,7 +7,7 @@ import { useSNKUser } from '../../Providers/SNKUserProvider.jsx';
 import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 
-import {playSound} from '../../../Helpers/helpers.js';
+import {playSound, claimPoints} from '../../../Helpers/helpers.js';
 
 import {changeSnakeDirection} from "../../Helpers/helpers.js";
 
@@ -115,25 +115,6 @@ function GameBoard (){
     }
 
 
-    const transaction = () => {
-
-        playSound(1);
-        const difference = Player[0] + (SNKUser[1] * 2) - ActiveGame[1];
-    
-        if (difference >= 0){
-    
-            setPlayer(prev => [difference, prev[0]]);
-    
-        } else {
-    
-            setPlayer(prev => [0, prev[0]]);
-    
-        }
-
-    }
-
-
-
     return (
 
         <div className = "SNKBoardcontainer">
@@ -179,7 +160,7 @@ function GameBoard (){
 
             :
 
-                <Link to= "/SNKsummary" className = "generalbuttonGlitch" onClick = {() => transaction()}>
+                <Link to= "/SNKsummary" className = "generalbuttonGlitch" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SNKUser[1] * 2))}>
                     View results
                 </Link>   
 

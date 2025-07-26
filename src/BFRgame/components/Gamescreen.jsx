@@ -5,7 +5,7 @@ import InnerGameScreen from "./BFRGameComponents/InnerGamescreen.jsx";
 
 import {itemsShifting, checkHit, incomingItem} from "../Helpers/helpers.js";
 
-import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, claimPoints} from "../../Helpers/helpers.js";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -103,16 +103,10 @@ function Gamescreen(){
     const exitGame = () => {
         
         playSound(4);
+
+        setBFRUser([0]);
         setPlayer(([current, prev]) => [current - ActiveGame[1], current]);
         setActiveGame(retrieveActiveGame(1));
-
-    }
-
-    const claimPoints = () => {
-        
-        playSound(1);
-        const difference = (Player[0] - ActiveGame[1]) + BFRUser[0]*2;
-        setPlayer(([current, prev]) => [difference, current]);
 
     }
 
@@ -147,7 +141,7 @@ function Gamescreen(){
                                 <h1> Game over.</h1>
                             </div>
 
-                            <Link to="/BFRsummary" className = "BFRDoneButton" onClick = {() => claimPoints()}> View Summary</Link>
+                            <Link to="/BFRsummary" className = "BFRDoneButton" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2))}> View Summary</Link>
                         </>
 
                     )}

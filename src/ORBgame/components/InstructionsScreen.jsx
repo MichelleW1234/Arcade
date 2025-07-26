@@ -1,25 +1,18 @@
 import { Link } from 'react-router-dom';
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
-import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
+import {playSound, exitGame} from '../../Helpers/helpers.js';
 
 function Instructionsscreen (){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
-
-    const exit = () => {
-
-        playSound(4);
-        setActiveGame(retrieveActiveGame(1));
-
-    }
 
     return (
 
         <div className = "screenLayout">
 
             <h1 className = "instructionsSign">
-                Instructions: 
+                Instructions:
             </h1>
             <p className = "largefont">
                 &gt; Press the stop button when the yellow light lands on green.<br/>
@@ -30,7 +23,7 @@ function Instructionsscreen (){
 
             <div className = "generalbuttonContainer">
 
-                <Link to="/selection" className = "generalbutton" onClick={() => exit()}>
+                <Link to="/selection" className = "generalbutton" onClick={() => exitGame(setActiveGame)}>
                     Exit Game
                 </Link>
 

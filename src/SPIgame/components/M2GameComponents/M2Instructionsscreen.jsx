@@ -6,12 +6,20 @@ import alien from "../../../Images/image 8.svg";
 import laser from "../../../Images/image 9.svg";
 import laserCannon from "../../../Images/image 17.svg";
 
-import {openingGuide, closingGuide} from '../../Helpers/helpers.js';
+import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
+import { useSPIUser } from '../../Providers/SPIUserProvider.jsx';
+import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
+
 import {playSound} from '../../../Helpers/helpers.js';
+import {openingGuide, closingGuide, quitGame} from '../../Helpers/helpers.js';
 
 import "../GameInstructionsscreen.css";
 
 function M2Instructionsscreen() {
+
+  const { ActiveGame, setActiveGame} = useActiveGame();
+  const { Player, setPlayer } = usePlayer();
+  const {SPIUser, setSPIUser} = useSPIUser();
 
   const [aliensDetectedOn, setAliensDetectedOn] = useState(false);
   const [waveInfoOn, setWaveInfoOn] = useState(false);
@@ -99,6 +107,9 @@ function M2Instructionsscreen() {
       </div>
 
       <div className = "generalbuttonContainer">
+        <Link to= "/selection" className = "generalbutton" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+          Quit Game
+        </Link>
         <Link to= "/SPIM2game" className = "generalbuttonGlitch" onClick = {() => playSound(7)}>
             Enter Zone
         </Link>

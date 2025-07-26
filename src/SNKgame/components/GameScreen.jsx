@@ -47,7 +47,7 @@ function Gamesscreen(){
 
                 <GameBoard/>
                 
-            </div>`
+            </div>
 
         </div>
 

@@ -4,7 +4,8 @@ import React, {useState} from 'react';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
-import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
+import {exitClawArcade} from '../Helpers/helpers.js';
+import {playSound} from '../../Helpers/helpers.js';
 
 import CatMachine from "../../Images/image 27.svg";
 import SportsMachine from "../../Images/image 28.svg";
@@ -20,12 +21,6 @@ function MachineSelectionscreen (){
     const [activeButton, setActiveButton] = useState(1);
     const [currGamePath, setCurrGamePath] = useState("/CWMcatinstructions");
 
-    const exit = () => {
-
-        playSound(24);
-        setActiveGame(retrieveActiveGame(1));
-
-    }
 
     const handleClick = (index) => {
     
@@ -51,7 +46,7 @@ function MachineSelectionscreen (){
     return (
 
         <div>
-            <Link to="/selection" className = "generalbutton" onClick={() => exit()}>
+            <Link to="/selection" className = "generalbutton" onClick={() => exitClawArcade(setActiveGame)}>
                 Leave Claw Arcade
             </Link>
             <div className = "gameScreenLayout">

@@ -280,11 +280,11 @@ a:active {
   top: 0;
   width: 100vw;
 
-  background-color: rgb(0, 229, 255);
+  background-color: rgb(112, 207, 255);
   padding: 1rem 1.25rem;          /* 10px 20px */
-  border-bottom: 0.375rem solid rgb(0, 90, 100); /* 6px */
+  border-bottom: 0.375rem solid rgb(0, 112, 167); /* 6px */
 
-  box-shadow: 0 0 2.5rem rgb(58, 252, 255); /* 40px */
+  box-shadow: 0 0 2.5rem rgb(154, 186, 255); /* 40px */
 
 }
 

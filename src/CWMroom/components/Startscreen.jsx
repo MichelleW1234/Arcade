@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
 
+import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+
+import {exitClawArcade} from '../Helpers/helpers.js';
 import {playSound} from '../../Helpers/helpers.js';
 
 function Startscreen (){
+
+    const { ActiveGame, setActiveGame} = useActiveGame();
 
     return (
 
@@ -15,7 +20,7 @@ function Startscreen (){
             </div>
 
             <div className="generalbuttonContainer">
-                <Link to="/selection" className = "generalbutton" onClick = {() => playSound(24)}>
+                <Link to="/selection" className = "generalbutton" onClick = {() => exitClawArcade(setActiveGame)}>
                     Leave
                 </Link>
                 <Link to="/CWMinstructions" className = "generalbuttonGlitch" onClick = {() => playSound(24)}>

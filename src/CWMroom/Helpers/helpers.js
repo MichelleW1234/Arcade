@@ -1,4 +1,4 @@
-import { playSound } from "../../Helpers/helpers";
+import { playSound, retrieveActiveGame} from "../../Helpers/helpers";
 
 export const changePosition = (currentPosition, setCurrentPosition, direction, setDirection) => {
 
@@ -181,6 +181,13 @@ export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCo
 
 }
 
+
+export const exitClawArcade = (setActiveGame) => {
+
+    playSound(24);
+    setActiveGame(retrieveActiveGame(1));
+
+}
 
 export const exitGame = (setPlayer, ActiveGameCost) => {
 

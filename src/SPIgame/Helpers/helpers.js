@@ -406,19 +406,22 @@ export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions,
 export const bossHit = (setBossHealth, setBossDefeated) =>  {
 
     setBossHealth(prevHealth => {
+        
         const newHealth = prevHealth - 1;
 
         if (newHealth <= 0) {
-            setBossDefeated(true);
-            
-            playSound(20);
 
+            setBossDefeated(true);
+            playSound(20);
             return 0;
+
+        } else {
+
+            playSound(8);
+            return newHealth;
+
         }
 
-        return newHealth;
     });
-
-    playSound(8); /* laser shot sound*/
 
 }

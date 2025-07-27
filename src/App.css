@@ -109,7 +109,8 @@ a:active {
 
 .header-border {
   position: absolute;
-  background: linear-gradient(to right, transparent, #b949ff, transparent);
+  background: linear-gradient(to right, transparent, #4c00ff, transparent);
+
 }
 
 .header-border.top {

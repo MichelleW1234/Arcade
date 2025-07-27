@@ -2,20 +2,28 @@ import { Link } from 'react-router-dom';
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import { useORBUser } from '../Providers/ORBUserProvider.jsx';
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
-
-import "../../components/GameSummaryscreen.css";
 
 function Summaryscreen (){
 
     const { Player, setPlayer} = usePlayer();
-    const { ActiveGame, setActiveGame} = useActiveGame();3
+    const { ActiveGame, setActiveGame} = useActiveGame();
+    const { ORBUser, setORBUser} = useORBUser();
 
     const reset = () => {
         
         playSound(4);
+        setORBUser([false]);
         setActiveGame(retrieveActiveGame(1));
+
+    }
+
+    const resetGame = () => {
+
+        playSound(19);
+        setORBUser([false]);
 
     }
 
@@ -25,7 +33,7 @@ function Summaryscreen (){
 
             <div className = "StatsBoard">
 
-                {Player[0] > Player[1] ? (
+                {ORBUser[0] === true ? (
 
                     <>
                         <p> Target hit.</p>
@@ -45,7 +53,7 @@ function Summaryscreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/ORBgame" className = "generalbutton" onClick = {() => playSound(19)}> Play Again </Link>
+                <Link to = "/ORBgame" className = "generalbutton" onClick = {() => resetGame()}> Play Again </Link>
 
             ) : (
 

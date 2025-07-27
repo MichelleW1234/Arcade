@@ -6,8 +6,6 @@ import { useBFRUser } from '../Providers/BFRUserProvider.jsx';
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-import "../../components/GameSummaryscreen.css";
-
 function Summaryscreen (){
 
     const { Player, setPlayer} = usePlayer();
@@ -35,8 +33,8 @@ function Summaryscreen (){
         <div className = "screenLayout">
 
             <div className = "StatsBoard">
-                <p>Balloons popped: {BFRUser[0]} </p>
-                <p> <span className="StatsGlitch">Points earned: {BFRUser[0]*2} </span></p>
+                <p>Balloons Popped: {BFRUser[0]} </p>
+                <p> <span className="StatsGlitch">Points Earned: {BFRUser[0]*2} </span></p>
             </div>
 
             {Player[0] >= ActiveGame[1] ? (

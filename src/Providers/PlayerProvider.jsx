@@ -14,9 +14,9 @@ export function PlayerProvider({ children }) {
   const [Player, setPlayer] = useState(() => {
     try {
       const storedPlayer = JSON.parse(sessionStorage.getItem("Player"));
-      return Array.isArray(storedPlayer) ? storedPlayer : [0, 0]; // Ensure it's an array
+      return Array.isArray(storedPlayer) ? storedPlayer : [0]; // Ensure it's an array
     } catch (error) {
-      return [0, 0]; // Fallback if JSON parsing fails
+      return [0]; // Fallback if JSON parsing fails
     }
   });
 

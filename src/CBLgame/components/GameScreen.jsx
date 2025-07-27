@@ -47,7 +47,7 @@ function Gamescreen (){
         playSound(4);
 
         setCBLUser([0]);
-        setPlayer(([current, prev]) => [current - ActiveGame[1], current]);
+        setPlayer([Player[0] - ActiveGame[1]]);
         setActiveGame(retrieveActiveGame(1));
 
     }
@@ -85,11 +85,11 @@ function Gamescreen (){
 
                             {wrongColorBlasted ? (
 
-                                <h1> You blasted the wrong color. </h1>
+                                <p> You blasted the wrong color. </p>
 
                             ) : (
 
-                                <h1> Game Over.</h1>
+                                <p> Game Over.</p>
 
                             )}
                             

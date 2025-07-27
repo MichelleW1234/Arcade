@@ -102,11 +102,11 @@ function M4Gamescreen() {
 
                                 blownUp == false ? (
 
-                                    <h1> Your beamlight ran out of power.</h1>
+                                    <p> Your beamlight ran out of power.</p>
 
                                 ) : (
 
-                                    <h1> You were blown up by the Queen. </h1>
+                                    <p> You were blown up by the Queen. </p>
 
                                 )
 

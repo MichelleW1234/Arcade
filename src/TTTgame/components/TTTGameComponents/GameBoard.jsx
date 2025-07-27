@@ -43,7 +43,7 @@ function GameBoard() {
 
                     {error === "" ? (
                                         
-                        <h1 className = "TTTturnBoard"> Current turn: {currentTurn === 1 ? "  You" : "  Computer"} </h1>
+                        <h1 className = "TTTturnBoard"> Active Player: {currentTurn === 1 ? "  You" : "  Computer"} </h1>
 
                     ) : (
 
@@ -77,7 +77,7 @@ function GameBoard() {
 
                     <div className = "TTTboard">
                         
-                        <h1 className = "TTTturnBoard"> Game Over! </h1>
+                        <h1 className = "TTTturnBoard"> Game Over. </h1>
 
                         <div className = "TTTfinished_chart_container">
 
@@ -120,7 +120,7 @@ function GameBoard() {
                     </div> 
 
                     <Link to= "/TTTsummary" className = "generalbuttonGlitch" onClick={() => results()}>
-                        Game Results
+                        View Results
                     </Link>
 
                 </div> 

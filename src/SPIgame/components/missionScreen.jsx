@@ -35,7 +35,7 @@ function Missionscreen() {
 
             <div className = "screenLayout">
 
-                <div className = "headerwords"> Your Mission<span className = "headerwordsGlitch">s</span>: </div>
+                <h1 className = "headerwords"> Your Mission<span className = "headerwordsGlitch">s</span>: </h1>
                 <div className = "SPImissionContainer">
                     {allMissions.map((mission, index) => (
                         SPIUser[2] == true ? (
@@ -80,7 +80,7 @@ function Missionscreen() {
                 {SPIUser[0].length == allMissions.length || SPIUser[2] == true ? (
 
                     <Link to= "/SPIsummary" className = "generalbuttonGlitch" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0].length*ActiveGame[1]))}>
-                        View Game Summary
+                        View Results
                     </Link>
 
                 ) : (

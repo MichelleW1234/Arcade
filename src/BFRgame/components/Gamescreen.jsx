@@ -105,7 +105,7 @@ function Gamescreen(){
         playSound(4);
 
         setBFRUser([0]);
-        setPlayer(([current, prev]) => [current - ActiveGame[1], current]);
+        setPlayer([Player[0] - ActiveGame[1]]);
         setActiveGame(retrieveActiveGame(1));
 
     }
@@ -138,10 +138,10 @@ function Gamescreen(){
 
                         <>
                             <div className = "BFREndingScreen">
-                                <h1> Game over.</h1>
+                                <p> Game Over.</p>
                             </div>
 
-                            <Link to="/BFRsummary" className = "BFRDoneButton" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2))}> View Summary</Link>
+                            <Link to="/BFRsummary" className = "BFRDoneButton" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2))}> View Results </Link>
                         </>
 
                     )}

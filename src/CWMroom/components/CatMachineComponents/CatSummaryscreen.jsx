@@ -11,8 +11,6 @@ import BritishShorthairCat from "../../../Images/ArcadePrizeImages/BritishShorth
 
 import {resetGame, reset} from "../../Helpers/helpers.js";
 
-import "../../../components/GameSummaryscreen.css";
-
 function CatSummaryscreen (){
 
     const { Player, setPlayer} = usePlayer();

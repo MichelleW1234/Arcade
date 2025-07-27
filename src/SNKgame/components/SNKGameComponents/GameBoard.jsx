@@ -119,33 +119,51 @@ function GameBoard (){
 
         <div className = "SNKBoardcontainer">
 
-            <div className = "SNKgameBoardSign"> Apples eaten: <span className = "SNKgameBoardSignGlitch">{SNKUser[1]}</span></div>
+            {startButtonPressed === false ? (
 
-            <div className = "SNKinnercontainer">
+                <>
+                    <div className = "SNKgameBoardSign"> Apples Eaten: <span className = "SNKgameBoardSignGlitch">{SNKUser[1]}</span></div>
 
-                {startButtonPressed === false ? (
+                    <div className = "SNKinnercontainer">
 
-                    <div className="SNKendinggameboard">
-                       Press any of the controls to begin.
+                        <div className="SNKgameboard">
+                            <p>Press any of the controls to begin.</p>
+                        </div>
+
+                    </div>
+                </>
+
+            ) : SNKUser[0] === false && snake.length < 600 ? (
+
+                <>
+                    <div className = "SNKgameBoardSign"> Apples Eaten: <span className = "SNKgameBoardSignGlitch">{SNKUser[1]}</span></div>
+
+                    <div className = "SNKinnercontainer">
+
+                        <InnerGameBoard
+                            snake = {snake}
+                            appleLocation = {appleLocation}
+                        />
+
                     </div>
 
+                </>
 
-                ) : SNKUser[0] === false && snake.length < 600 ? (
+            ):(
 
-                    <InnerGameBoard
-                        snake = {snake}
-                        appleLocation = {appleLocation}
-                    />
+                <>
+                <div className = "SNKgameBoardSign"> <span className = "SNKgameBoardSignGlitch">Game Over.</span></div>
+
+                <div className = "SNKinnercontainer">
                 
-                ):(
-            
-                    <div className = "SNKendinggameboard">
-                        Game Over.
+                    <div className = "SNKgameboard">
+                        <p>Game Over.</p>
                     </div>
-                        
-                )}
-               
-            </div>
+                            
+                </div>
+                </>
+
+            )}
             
             {SNKUser[0] === false && snake.length < 600 ? 
 
@@ -161,7 +179,7 @@ function GameBoard (){
             :
 
                 <Link to= "/SNKsummary" className = "generalbuttonGlitch" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SNKUser[1] * 2))}>
-                    View results
+                    View Results
                 </Link>   
 
             } 

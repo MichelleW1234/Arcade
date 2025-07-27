@@ -8,8 +8,6 @@ import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {resetGame} from "../Helpers/helpers.js";
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-import "../../components/GameSummaryscreen.css";
-
 function Summaryscreen() {
 
     const { TTTUser, setTTTUser} = useTTTUser();
@@ -35,14 +33,14 @@ function Summaryscreen() {
         <div className = "screenLayout">
 
             <div className = "StatsBoard">
-                {Player[0] < Player[1] ? (
+                {TTTUser[1] === 0 ? (
 
                     <>
                         <p>The computer got three in a row.</p>
                         <p><span className = "StatsGlitch"> You lost. </span></p>
                     </>
 
-                ) : Player[0] > Player[1] ? (
+                ) : TTTUser[1] === 1 ? (
 
                     <>
                         <p> You got three in a row. </p>

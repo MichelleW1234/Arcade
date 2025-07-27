@@ -6,8 +6,6 @@ import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-import "../../components/GameSummaryscreen.css";
-
 function Summaryscreen() {
 
     const {SPIUser, setSPIUser} = useSPIUser();

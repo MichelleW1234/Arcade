@@ -27,16 +27,9 @@ function Gamescreen (){
     const [result, setResult] = useState();
     const [terminationFlag, setTerminationFlag] = useState(false);
 
-    
-    const viewSummary  = () => {
-
-        playSound(1);
-        getPoints();
-
-    }
-
-    const getPoints  = () => {
+    const getWinner  = () => {
         
+        playSound(1);
         let winner;
 
         if (RPSUser[4] > RPSUser[3]){
@@ -98,8 +91,8 @@ function Gamescreen (){
                             <span className = "RPSSignGlitch">Game Over.</span>
                         </h1>
 
-                        <Link to="/RPSsummary" className="RPSButton" onClick={() => viewSummary()}>
-                            View Game Summary
+                        <Link to="/RPSsummary" className="RPSButton" onClick={() => getWinner()}>
+                            View Results
                         </Link>
                     </div>
                     

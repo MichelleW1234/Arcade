@@ -431,7 +431,7 @@ export const quitGame = (setSPIUser, Player, setPlayer, ActiveGame, setActiveGam
     playSound(4);
 
     setSPIUser([[],[1, "/SPIM1Instructions"], false]);
-    setPlayer(prev => [(Player[0] - ActiveGame[1]), prev[0]]);
+    setPlayer([Player[0] - ActiveGame[1]]);
     setActiveGame(retrieveActiveGame(1));
         
 }

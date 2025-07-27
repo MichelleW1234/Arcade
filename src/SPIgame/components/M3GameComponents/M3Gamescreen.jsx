@@ -54,11 +54,11 @@ function M3GameScreen() {
 
                             {SPIUser[2] == true ? (
 
-                                <h1> You died. </h1>
+                                <p> You died. </p>
 
                             ) : (
 
-                                <h1> You survived! Great job! </h1>
+                                <p> You survived! Great job! </p>
 
                             )}
                             

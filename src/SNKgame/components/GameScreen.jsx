@@ -19,7 +19,7 @@ function Gamesscreen(){
         playSound(4);
         
         setSNKUser([false, 0]);
-        setPlayer(prev => [(Player[0] - ActiveGame[1]), prev[0]]);
+        setPlayer([Player[0] - ActiveGame[1]]);
         setActiveGame(retrieveActiveGame(1))
     
     }

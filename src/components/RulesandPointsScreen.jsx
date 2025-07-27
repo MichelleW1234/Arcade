@@ -14,7 +14,7 @@ function RulesandPointsscreen (){
     const claimPoints = () => {
 
         playSound(2);
-        setPlayer([20, 20]);
+        setPlayer([20]);
 
     }
 
@@ -32,13 +32,13 @@ function RulesandPointsscreen (){
                 &gt; Once you are below the minimum number of points to play any of the games, you cannot earn anymore. <br/>
             </p>
 
-            <h1 className = "claimPointsSign"> Claim points: </h1>
+            <h1 className = "claimPointsSign"> Claim Points: </h1>
             <button className = "generalbutton" onClick={() => claimPoints()}>20 pts</button>
 
-            {Player[0] === 20 && Player[1] === 20 ? (
+            {Player[0] === 20 ? (
 
                 <Link to= "/selection" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
-                    Let's go!
+                    Let's Go!
                 </Link>
             
             ) : (

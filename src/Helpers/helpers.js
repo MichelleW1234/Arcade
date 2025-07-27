@@ -81,15 +81,11 @@ export const pointsDistribution = (ActiveGame, winner, setPlayer) => {
 
     if (winner == 1){
 
-        setPlayer(prev => [prev[0] + ActiveGame[1], prev[0]]);
+        setPlayer([Player[0] + ActiveGame[1]]);
 
     } else if (winner == 0){
 
-        setPlayer(prev => [prev[0] - ActiveGame[1], prev[0]]);
-
-    } else {
-
-        setPlayer(prev => [prev[0], prev[0]]);
+        setPlayer([Player[0] - ActiveGame[1]]);
 
     }
 
@@ -103,11 +99,11 @@ export const claimPoints = (ActiveGame, Player, setPlayer, pointsEarned) => {
 
     if (difference >= 0){
 
-        setPlayer(prev => [difference, prev[0]]);
+        setPlayer([difference]);
 
     } else {
 
-        setPlayer(prev => [0, prev[0]]);
+        setPlayer([0]);
 
     }
 

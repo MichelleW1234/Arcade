@@ -6,8 +6,6 @@ import {useCBLUser} from "../Providers/CBLUserProvider.jsx";
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-import "../../components/GameSummaryscreen.css";
-
 function Summaryscreen (){
 
     const { Player, setPlayer} = usePlayer();

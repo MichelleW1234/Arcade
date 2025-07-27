@@ -53,14 +53,17 @@
 .SPIendingScreen {
     height: 28.125rem;              /* 450px */
     width: 50.625rem;               /* 810px */
-    background-color: rgb(145, 215, 253);
-
-    padding: 5rem;                  /* 80px */
 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    padding: 5rem;                  /* 80px */
+    font-size: 1.8rem;
+    font-weight: bold;
+
+    background-color: rgb(145, 215, 253);
 
     border-left: 0.1875rem solid rgb(58, 93, 111);   /* 3px */
     border-bottom: 0.1875rem solid rgb(58, 93, 111); /* 3px */

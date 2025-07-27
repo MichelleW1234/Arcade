@@ -28,6 +28,9 @@
     height: 25rem;
     width: 40rem;
 
+    font-size: 1.8rem;
+    font-weight: bold;
+
     background-color: rgb(159, 209, 253);
     box-shadow: 0 0 1rem 0.5rem rgb(159, 209, 253);  /* already in rem */
 

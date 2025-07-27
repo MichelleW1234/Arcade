@@ -73,7 +73,7 @@ function GameSelectionscreen (){
     const resetPoints = () => {
 
         playSound(24);
-        setPlayer([0,0]);
+        setPlayer([0]);
         setActiveGame(retrieveActiveGame(1));
         setPrize([["Bear", 80, Bear], ["BumbleBee", 50, Bee], ["Valentine", 20, Heart], 
                     ["GameBoy", 100, GameBoy], ["Robot", 30, Robot], ["Alien", 20, Alien], 
@@ -286,7 +286,7 @@ function GameSelectionscreen (){
                 {Player[0] >= ActiveGame[1] ? (
 
                     <Link to={currGamePath} className = "generalbuttonGlitch" onClick = {() => playSound(2)}>
-                        Go to game
+                        Go to Game
                     </Link>
     
                 ) : (

@@ -176,7 +176,7 @@ export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCo
 
     }
 
-    setPlayer(([current, prev]) => [current - ActiveGameCost, current]);
+    setPlayer([Player[0] - ActiveGameCost]);
     playSound(2);
 
 }
@@ -193,7 +193,7 @@ export const exitGame = (setPlayer, ActiveGameCost, setCWMUser) => {
 
     playSound(4);
     setCWMUser([0]);
-    setPlayer(([current, prev]) => [current - ActiveGameCost, current]);
+    setPlayer([Player[0] - ActiveGameCost]);
 
 }
 

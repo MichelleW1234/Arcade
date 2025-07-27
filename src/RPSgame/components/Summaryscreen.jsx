@@ -7,8 +7,6 @@ import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 import {resetLevel} from "../Helpers/helpers.js";
 
-import "../../components/GameSummaryscreen.css";
-
 function Summaryscreen (){
 
   const {RPSUser, setRPSUser} = useRPSUser();
@@ -18,11 +16,11 @@ function Summaryscreen (){
 
   let winner;
 
-  if (Player[0] < Player[1]) {
+  if (RPSUser[4] > RPSUser[3]) {
 
     winner = "You lost. :(";
 
-  } else if (Player[0] > Player[1]) {
+  } else if (RPSUser[4] < RPSUser[3]) {
 
     winner = "You won! :)";
 

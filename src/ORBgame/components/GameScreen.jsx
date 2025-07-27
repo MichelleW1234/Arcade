@@ -5,10 +5,11 @@ import InnerGameScreen from "./ORBGameComponents/InnerGamescreen.jsx";
 
 import {orbiting} from "../Helpers/helpers.js";
 
-import {playSound, retrieveActiveGame, claimPoints} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, pointsDistribution} from "../../Helpers/helpers.js";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import { useORBUser } from '../Providers/ORBUserProvider.jsx';
 
 import "./Gamescreen.css";
 
@@ -16,6 +17,7 @@ function Gamescreen(){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
+    const { ORBUser, setORBUser} = useORBUser();
 
     const [stop, setStop] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -81,13 +83,14 @@ function Gamescreen(){
 
     const calculateWin = () => {
 
-        if (circle[currentSlot][0] == winner[0] && circle[currentSlot][1] == winner[1]){
+        if (success === true){
 
-            claimPoints(ActiveGame, Player, setPlayer, ActiveGame[1]);
+            pointsDistribution(ActiveGame, 1, setPlayer);
+            setORBUser([true]);
 
         } else {
 
-            claimPoints(ActiveGame, Player, setPlayer, 0);
+            pointsDistribution(ActiveGame, 0, setPlayer);
 
         }
 
@@ -97,7 +100,8 @@ function Gamescreen(){
     const exitGame = () => {
         
         playSound(4);
-        setPlayer(([current, prev]) => [current - ActiveGame[1], current]);
+        setORBUser([false]);
+        setPlayer([Player[0] - ActiveGame[1]]);
         setActiveGame(retrieveActiveGame(1));
 
     }
@@ -144,7 +148,7 @@ function Gamescreen(){
 
                     ) : (
 
-                        <Link to="/ORBsummary" className = "ORBDoneButton" onClick={()=> calculateWin()}> View Result </Link>
+                        <Link to="/ORBsummary" className = "ORBDoneButton" onClick={()=> calculateWin()}> View Results </Link>
 
                     )}
 

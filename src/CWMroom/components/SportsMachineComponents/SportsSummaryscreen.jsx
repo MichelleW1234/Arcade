@@ -11,8 +11,6 @@ import Football from "../../../Images/ArcadePrizeImages/Football.svg";
 
 import {resetGame, reset} from "../../Helpers/helpers.js";
 
-import "../../../components/GameSummaryscreen.css";
-
 function SportsSummaryscreen (){
 
     const { Player, setPlayer} = usePlayer();

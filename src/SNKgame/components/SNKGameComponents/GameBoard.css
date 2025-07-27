@@ -33,20 +33,21 @@
 }
 
 
-.SNKendinggameboard {
+.SNKgameboard {
     height: 25rem;      /* 400px */
     width: 37.5rem;     /* 600px */
 
     background-color: rgb(154, 208, 255);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    font-size:1.5rem;
+    font-size:1.8rem;
     font-weight: bold;
-
-    color:rgb(29, 13, 121);
+    
+    padding: 5rem;
 
 }
 

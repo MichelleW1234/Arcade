@@ -11,8 +11,6 @@ import Andromeda from "../../../Images/ArcadePrizeImages/Andromeda.svg";
 
 import {resetGame, reset} from "../../Helpers/helpers.js";
 
-import "../../../components/GameSummaryscreen.css";
-
 function SpaceSummaryscreen (){
 
     const { Player, setPlayer} = usePlayer();

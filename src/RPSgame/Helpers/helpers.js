@@ -1,4 +1,4 @@
-import {playSound, retrieveActiveGame, pointsDistribution} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
 export const resetLevel = (setRPSUser) => {
 
@@ -299,7 +299,7 @@ export const quitGame = (setRPSUser, ActiveGame, setActiveGame, setPlayer, Playe
 
     playSound(4);
     resetLevel(setRPSUser);
-    pointsDistribution(ActiveGame, 0, setPlayer, Player);
+    setPlayer([Player[0] - ActiveGame[1]]);
     setActiveGame(retrieveActiveGame(1));
 
 }

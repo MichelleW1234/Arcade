@@ -79,6 +79,8 @@ export const retrieveActiveGame = (index) => {
 
 export const pointsDistribution = (ActiveGame, winner, setPlayer, Player) => {
 
+    playSound(2);
+    
     if (winner == 1){
 
         setPlayer([Player[0] + ActiveGame[1]]);

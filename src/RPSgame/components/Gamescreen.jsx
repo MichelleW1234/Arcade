@@ -10,7 +10,7 @@ import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
-import {playSound, pointsDistribution} from "../../Helpers/helpers.js";
+import {pointsDistribution} from "../../Helpers/helpers.js";
 
 import "./Gamescreen.css";
 
@@ -29,7 +29,6 @@ function Gamescreen (){
 
     const getWinner  = () => {
         
-        playSound(1);
         let winner;
 
         if (RPSUser[4] > RPSUser[3]){

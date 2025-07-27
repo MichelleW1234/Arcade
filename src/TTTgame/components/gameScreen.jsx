@@ -8,7 +8,7 @@ import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
 
 import {resetGame} from "../Helpers/helpers.js";
-import {playSound, retrieveActiveGame, pointsDistribution} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
 function Gamescreen() {
 
@@ -20,7 +20,7 @@ function Gamescreen() {
 
     playSound(4);
     resetGame(setTTTUser);
-    pointsDistribution(ActiveGame, 0, setPlayer, Player);
+    setPlayer([Player[0] - ActiveGame[1]]);
     setActiveGame(retrieveActiveGame(1));
 
   }

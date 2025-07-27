@@ -49,7 +49,7 @@ function TurnDecidingscreen() {
             ) : (
 
                 <>
-                    <h1 className ="largefont">{statement}</h1>
+                    <p className ="largefont">{statement}</p>
 
                     <Link to= "/TTTgame" className = "generalbuttonGlitch" onClick={() => playSound(18)}>
                         Begin Game

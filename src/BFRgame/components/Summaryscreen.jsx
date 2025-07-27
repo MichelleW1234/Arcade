@@ -45,7 +45,7 @@ function Summaryscreen (){
 
             ) : (
 
-                <h1 className="largefont"> You don't have enough points to play again. </h1>
+                <p className="largefont"> You don't have enough points to play again. </p>
 
             )} 
 

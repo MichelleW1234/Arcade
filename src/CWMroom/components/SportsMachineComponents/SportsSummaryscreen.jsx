@@ -75,7 +75,7 @@ function SportsSummaryscreen (){
 
             ) : (
 
-                <h1 className="largefont"> You don't have enough points to use the machine again. </h1>
+                <p className="largefont"> You don't have enough points to use the machine again. </p>
 
             )} 
 

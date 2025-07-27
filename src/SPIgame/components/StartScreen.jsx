@@ -11,7 +11,6 @@ function Startscreen (){
     return (
         <div className = "StartingScreenLayout">
             
-            
             <div className = "header-glow-box">
                 <span className="header-border top"></span>
                 <span className="header-border right"></span>

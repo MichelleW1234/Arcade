@@ -85,12 +85,12 @@ function Gamescreen(){
 
         if (success === true){
 
-            pointsDistribution(ActiveGame, 1, setPlayer);
+            pointsDistribution(ActiveGame, 1, setPlayer, Player);
             setORBUser([true]);
 
         } else {
 
-            pointsDistribution(ActiveGame, 0, setPlayer);
+            pointsDistribution(ActiveGame, 0, setPlayer, Player);
 
         }
 

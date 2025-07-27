@@ -46,7 +46,7 @@ function Gamescreen (){
 
         }
         
-        pointsDistribution(ActiveGame, winner, setPlayer);
+        pointsDistribution(ActiveGame, winner, setPlayer, Player);
 
     }
 

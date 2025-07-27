@@ -20,7 +20,7 @@ function Gamescreen() {
 
     playSound(4);
     resetGame(setTTTUser);
-    pointsDistribution(ActiveGame, 0, setPlayer);
+    pointsDistribution(ActiveGame, 0, setPlayer, Player);
     setActiveGame(retrieveActiveGame(1));
 
   }

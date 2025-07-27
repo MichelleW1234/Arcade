@@ -29,7 +29,7 @@ function GameBoard() {
     const results = () => {
 
         playSound(1);
-        pointsDistribution(ActiveGame, TTTUser[1], setPlayer);
+        pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player);
 
     }
 

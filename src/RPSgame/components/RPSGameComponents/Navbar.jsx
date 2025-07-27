@@ -32,7 +32,7 @@ function Navbar ({setShowReferences}){
             <div className = "navbarContainer">
                 <ul className = "navbarMenu">
                     <li>
-                        <Link to= "/selection" className = "navBarButton" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer)}>
+                        <Link to= "/selection" className = "navBarButton" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player)}>
                             Quit Game
                         </Link>
                     </li>

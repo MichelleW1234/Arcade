@@ -62,7 +62,7 @@ function CatGamescreen (){
 
         <div>             
             
-            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame(setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
+            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
 
             <div className = "gameScreenLayout">
             
@@ -89,7 +89,7 @@ function CatGamescreen (){
 
                         clawWentDown == true ? (
                             
-                            <Link to="/CWMcatsummary" className ="CWMCatButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [9, 10, 11, 12])}> Check Prize Door </Link>
+                            <Link to="/CWMcatsummary" className ="CWMCatButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [9, 10, 11, 12])}> Check Prize Door </Link>
 
                         ) : (
 

@@ -61,7 +61,7 @@ function SportsGamescreen (){
 
         <div>             
             
-            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame(setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
+            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
 
             <div className = "gameScreenLayout">
             
@@ -88,7 +88,7 @@ function SportsGamescreen (){
 
                         clawWentDown == true ? (
                             
-                            <Link to="/CWMsportssummary" className ="CWMSportsButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [13, 14, 15, 16])}> Check Prize Door </Link>
+                            <Link to="/CWMsportssummary" className ="CWMSportsButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [13, 14, 15, 16])}> Check Prize Door </Link>
 
                         ) : (
 

@@ -77,7 +77,7 @@ export const retrieveActiveGame = (index) => {
 
 }
 
-export const pointsDistribution = (ActiveGame, winner, setPlayer) => {
+export const pointsDistribution = (ActiveGame, winner, setPlayer, Player) => {
 
     if (winner == 1){
 

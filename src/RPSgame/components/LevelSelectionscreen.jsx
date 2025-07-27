@@ -34,7 +34,7 @@ function LevelSelectionscreen (){
 
         <div>
 
-            <Link to= "/selection" className = "generalbutton" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer)}>
+            <Link to= "/selection" className = "generalbutton" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player)}>
                 Quit Game
             </Link>
 

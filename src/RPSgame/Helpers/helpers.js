@@ -295,11 +295,11 @@ const decideRoundWinnerLevel3 = (userMove, setResult) => {
 };
 
 
-export const quitGame = (setRPSUser, ActiveGame, setActiveGame, setPlayer) => {
+export const quitGame = (setRPSUser, ActiveGame, setActiveGame, setPlayer, Player) => {
 
     playSound(4);
     resetLevel(setRPSUser);
-    pointsDistribution(ActiveGame, 0, setPlayer);
+    pointsDistribution(ActiveGame, 0, setPlayer, Player);
     setActiveGame(retrieveActiveGame(1));
 
 }

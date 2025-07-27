@@ -129,7 +129,7 @@ export const choosePrize = () => {
 }
 
 
-export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCost, prizeIndices) => {
+export const claimPrize = (result, setCWMUser, setPrize, Player, setPlayer, ActiveGameCost, prizeIndices) => {
 
     if (result == 1){
 
@@ -189,7 +189,7 @@ export const exitClawArcade = (setActiveGame) => {
 
 }
 
-export const exitGame = (setPlayer, ActiveGameCost, setCWMUser) => {
+export const exitGame = (Player, setPlayer, ActiveGameCost, setCWMUser) => {
 
     playSound(4);
     setCWMUser([0]);

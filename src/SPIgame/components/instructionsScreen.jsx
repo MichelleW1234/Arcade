@@ -12,7 +12,7 @@ function Instructionsscreen() {
 
     <div className = "screenLayout">
 
-      <h1 className = "instructionsSign"> Instructions: </h1>
+      <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
 
       <p className = "largefont">  
         &gt; You are part of a task force assigned to destroy a dangerous alien hive that is a threat to the galaxy. <br/>

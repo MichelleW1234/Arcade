@@ -11,9 +11,8 @@ function Instructionsscreen (){
 
         <div className = "screenLayout">
 
-            <h1 className = "instructionsSign">
-                Instructions: 
-            </h1>
+            <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
+            
             <p className = "largefont">
                 &gt; Control when to activate the force field to keep balloons from passing through by popping them.<br/>
                 &gt; Every balloon that is popped is worth 2 points. <br/>

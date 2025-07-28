@@ -1,26 +1,26 @@
 .RPSdirections {
-  font-size: 1.5625rem;  /* 25px */
+  font-size: 1.5625rem;  
   color: rgb(255, 255, 255);
 }
 
 .RPStextbox {
-  font-size: 1.25rem;              /* 20px */
-  border-radius: 0.1875rem;        /* 3px */
-  padding: 0.3125rem;              /* 5px */
-  border-left: 0.3125rem solid black;   /* 5px */
-  border-bottom: 0.3125rem solid black; /* 5px */
+  font-size: 1.25rem;           
+  border-radius: 0.1875rem;      
+  padding: 0.3125rem;        
+  border-left: 0.3125rem solid black; 
+  border-bottom: 0.3125rem solid black; 
 
   animation: glowing-shadow2 4s infinite;
 }
 
 .RPSenterButton {
-  font-size: 1.5625rem;              /* 25px */
-  padding: 0.625rem;                 /* 10px */
+  font-size: 1.5625rem;            
+  padding: 0.625rem;             
   background-color: rgb(251, 80, 234);
-  border-left: 0.34375rem solid rgb(103, 31, 95);   /* 5.5px */
-  border-bottom: 0.34375rem solid rgb(103, 31, 95); /* 5.5px */
-  border-top: 0.125rem solid rgb(103, 31, 95);   /* 5.5px */
-  border-right: 0.125rem solid rgb(103, 31, 95); /* 5.5px */
+  border-left: 0.34375rem solid rgb(103, 31, 95);  
+  border-bottom: 0.34375rem solid rgb(103, 31, 95); 
+  border-top: 0.125rem solid rgb(103, 31, 95);  
+  border-right: 0.125rem solid rgb(103, 31, 95);
 
   animation: glowing-shadow5 4s infinite;
 
@@ -31,11 +31,10 @@
 
   background-color: rgb(118, 35, 111);
 
-  border-left: 0.34375rem solid rgb(48, 14, 44);   /* 5.5px */
-  border-bottom: 0.34375rem solid rgb(48, 14, 44);  /* 5.5px */
-  border-top: 0.125rem solid rgb(48, 14, 44);  /* 5.5px */
-  border-right: 0.125rem solid rgb(48, 14, 44); /* 5.5px */
-
+  border-left: 0.34375rem solid rgb(48, 14, 44);  
+  border-bottom: 0.34375rem solid rgb(48, 14, 44);  
+  border-top: 0.125rem solid rgb(48, 14, 44);  
+  border-right: 0.125rem solid rgb(48, 14, 44); 
 
   color: white;
     

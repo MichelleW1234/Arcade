@@ -22,7 +22,7 @@ function RulesandPointsscreen (){
 
         <div className = "screenLayout">
 
-            <h1 className = "instructionsSign"> Arcade Rules: </h1>
+            <h1 className = "instructionsSign"> <span className='signGlitch'>Arcade Rules:</span> </h1>
             <p className = "largefont">  
                 &gt; Your goal is to earn points to win as many prizes as you can. <br/>
                 &gt; You will receive 20 points initially. <br/>

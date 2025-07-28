@@ -120,11 +120,11 @@ function Gamescreen(){
             <div className = "gameScreenLayout">
                 <div className = "BFROuterGameContainer">
 
-                    <div className="BFRsigns"> Timer: {timer} | Balloon Score: {BFRUser[0]}</div>
-
                     {gameOver === false ? (
 
                         <>
+                            <h1 className="BFRsign"> <span className='signGlitch'> Timer: {timer} | Balloon Score: {BFRUser[0]}</span></h1>
+
                             <InnerGameScreen
                             positions={positions}
                             laserBlast = {laserBlast}
@@ -137,6 +137,9 @@ function Gamescreen(){
                     ) : (
 
                         <>
+
+                            <h1 className="BFRsign"> <span className='signGlitch'> Game Over. </span></h1>
+
                             <div className = "BFREndingScreen">
                                 <p> Game Over.</p>
                             </div>

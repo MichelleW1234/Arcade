@@ -93,20 +93,6 @@
   animation: glowing-sign-shadows 4s infinite;
 }
 
-
-.pointsSignGlitch{
-
-  animation: sign-glitch 3s infinite;
-
-}
-
-.windowGlitch{
-
-  animation: button-glitch 3.5s infinite;
-
-}
-
-
 .ArcadeGameImage {
   max-height: 6.875rem;
   border: 0.25rem solid rgb(55, 0, 255);

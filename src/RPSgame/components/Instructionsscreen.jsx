@@ -11,7 +11,7 @@ function Instructionsscreen (){
 
     return (
         <div className= "screenLayout">
-            <h1 className = "instructionsSign"> Instructions: </h1>
+            <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
             <p className="largefont">
                 &gt; A game has 10 rounds.<br/>
                 &gt; In each round, you either win or lose to the computer. <br/>

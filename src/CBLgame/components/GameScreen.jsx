@@ -64,7 +64,7 @@ function Gamescreen (){
             
                 <div className = "CBLOuterGameContainer">
 
-                    <div className="CBLsign"> Colors Blasted: {CBLUser[0]} </div>
+                    <h1 className="CBLsign"> <span className='signGlitch'>Colors Blasted: {CBLUser[0]} </span></h1>
 
                     <InnerGameScreen
                         setColorAppearances = {setColorAppearances}
@@ -79,7 +79,7 @@ function Gamescreen (){
 
                     <div className = "CBLOuterGameContainer">
 
-                        <div className="CBLsign"> Colors Blasted: {CBLUser[0]} </div>
+                        <h1 className="CBLsign"> <span className='signGlitch'> Game Over. </span></h1>
 
                         <div className = "CBLGameBoardEndingScreen">
 

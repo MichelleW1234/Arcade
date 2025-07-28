@@ -3,37 +3,37 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.875rem; /* 30px */
+    gap: 1.875rem; 
 }
 
 
 .SPIgameScreenM4 {
-    height: 32.5rem;                /* 520px */
-    width: 63.75rem;                /* 1020px */
+    height: 32.5rem;              
+    width: 63.75rem;          
 
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(4, 1fr);
 
-    border-left: 0.1875rem solid black;   /* 3px */
-    border-bottom: 0.1875rem solid black; /* 3px */
-    border-top: 0.1875rem solid black;    /* 3px */
-    border-right: 0.1875rem solid black;  /* 3px */
+    border-left: 0.1875rem solid black;   
+    border-bottom: 0.1875rem solid black; 
+    border-top: 0.1875rem solid black;   
+    border-right: 0.1875rem solid black; 
 
-    box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); /* 20px 10px */
+    box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); 
     background-color: #0e0040;
 
     cursor: url('cursor.cur'), auto;
 
-    gap: 0.625rem;                /* 10px */
-    padding: 1.25rem;             /* 20px */
+    gap: 0.625rem;               
+    padding: 1.25rem;        
 }
 
 
 .SPIemptySpaceM4 {
     background-color: #0e0040;
-    height: 5.625rem;  /* 90px */
-    width: 5.625rem;   /* 90px */
+    height: 5.625rem; 
+    width: 5.625rem;  
 
     display: flex;
     flex-direction: column;
@@ -44,31 +44,31 @@
 
 .SPIemptySpaceBossNormal {
     background-color: rgb(255, 255, 255);
-    height: 5.625rem;  /* 90px */
-    width: 5.625rem;   /* 90px */
+    height: 5.625rem; 
+    width: 5.625rem;  
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    box-shadow: 0 0 0.625rem 0.625rem rgb(255, 255, 255); /* 10px 10px */
-    border-radius: 3.125rem; /* 50px */
+    box-shadow: 0 0 0.625rem 0.625rem rgb(255, 255, 255); 
+    border-radius: 3.125rem; 
 }
 
 
 .SPIemptySpaceBossDanger {
     background-color: #54ff4b;
-    height: 5.625rem;  /* 90px */
-    width: 5.625rem;   /* 90px */
+    height: 5.625rem; 
+    width: 5.625rem;  
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    box-shadow: 0 0 0.625rem 0.625rem #54ff4b; /* 10px 10px */
-    border-radius: 3.125rem; /* 50px */
+    box-shadow: 0 0 0.625rem 0.625rem #54ff4b; 
+    border-radius: 3.125rem;
 }
 
 
@@ -76,10 +76,10 @@
 .SPIhealthbarContainer {
     display: grid;
     grid-template-columns: repeat(50, 1fr);
-    height: 2.5rem;   /* 40px */
-    width: 50rem;     /* 800px */
+    height: 2.5rem;  
+    width: 50rem;  
 
-    box-shadow: 0 0 1.25rem 0.625rem rgb(195, 117, 255); /* 20px 10px */
+    box-shadow: 0 0 1.25rem 0.625rem rgb(195, 117, 255); 
 }
 
 

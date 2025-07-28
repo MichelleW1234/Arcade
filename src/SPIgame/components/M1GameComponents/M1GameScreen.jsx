@@ -32,7 +32,7 @@ function M1GameScreen() {
 
                     <div className="SPIouterContainer">
 
-                        <div className = "SPIgameBoardSign"> Wave Number: {waveNumber}</div>
+                        <h1 className = "SPIgameBoardSign"> <span className='signGlitch'>Wave Number: {waveNumber}</span></h1>
 
                         <GameBoardM1
                             waveNumber = {waveNumber}
@@ -50,7 +50,7 @@ function M1GameScreen() {
 
                     <div className="SPIouterContainer">
 
-                        <div className = "SPIgameBoardSign"> Game Over. </div>
+                        <h1 className = "SPIgameBoardSign"> <span className='signGlitch'>Game Over. </span></h1>
                         <div className = "SPIendingScreen">
 
                             {SPIUser[2] == true ? (

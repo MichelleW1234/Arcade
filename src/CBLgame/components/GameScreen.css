@@ -49,7 +49,7 @@
     background-color: rgb(209, 129, 255);
     border: 0.3125rem solid rgba(0, 253, 46, 0.521); /* 5px */
 
-    animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
+    animation: glowing-sign-shadows 4s infinite;
 }
 
 .CBLbutton {

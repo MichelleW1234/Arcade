@@ -47,7 +47,7 @@ function LevelSelectionscreen (){
                     <div className = "RPSLevelsWindowContainer">
 
                         <div className = "RPSLevelsWindow"> 
-                            <h2>Rock, Paper, Scissors</h2>
+                            <p> <span className="windowGlitch">Rock, Paper, Scissors</span> </p>
                         </div>
                         <button
                         className={`RPSLevelButton ${activeButton === 1 ? 'active' : ''}`}
@@ -61,7 +61,7 @@ function LevelSelectionscreen (){
                     <div className = "RPSLevelsWindowContainer">
 
                         <div className = "RPSLevelsWindow"> 
-                            <h2>Rock, Paper, Scissors, <span className="RPSLevelGlitch">Lizard, Spock</span></h2> 
+                            <p>Rock, Paper, Scissors, <span className="RPSLevelGlitch">Lizard, Spock</span></p> 
                         </div>
                         <button
                         className={`RPSLevelButton ${activeButton === 2 ? 'active' : ''}`}
@@ -75,7 +75,7 @@ function LevelSelectionscreen (){
                     <div className = "RPSLevelsWindowContainer">
 
                         <div className = "RPSLevelsWindow"> 
-                            <h2>Rock, Paper, Scissors, Gun, Shield</h2>
+                            <p>Rock, Paper, Scissors, Gun, Shield</p>
                         </div>
                         <button
                         className={`RPSLevelButton ${activeButton === 3 ? 'active' : ''}`}

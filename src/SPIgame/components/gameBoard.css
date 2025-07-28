@@ -3,13 +3,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.875rem; /* 30px */
+    gap: 1.875rem; 
 }
 
 
 .SPIgameScreenM1 {
-    height: 28.5rem;                 /* 456px */
-    width: 51rem;                    /* 816px */
+    height: 28.5rem;              
+    width: 51rem;                
 
     padding: 0rem;
 
@@ -19,18 +19,18 @@
 
     background-color: #1d0086;
 
-    border-left: 0.1875rem solid rgb(19, 13, 82);   /* 3px */
-    border-bottom: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
-    border-top: 0.1875rem solid rgb(19, 13, 82);     /* 3px */
-    border-right: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
+    border-left: 0.1875rem solid rgb(19, 13, 82);  
+    border-bottom: 0.1875rem solid rgb(19, 13, 82);  
+    border-top: 0.1875rem solid rgb(19, 13, 82);   
+    border-right: 0.1875rem solid rgb(19, 13, 82); 
 
-    box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); /* 20px 10px */
+    box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255);
 }
 
 
 .SPIgameScreenM2 {
-    height: 28.5rem;                 /* 456px */
-    width: 51rem;                    /* 816px */
+    height: 28.5rem;               
+    width: 51rem;             
 
     padding: 0rem;
 
@@ -40,18 +40,18 @@
 
     background-color: #180070;
 
-    border-left: 0.1875rem solid rgb(19, 13, 82);   /* 3px */
-    border-bottom: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
-    border-top: 0.1875rem solid rgb(19, 13, 82);     /* 3px */
-    border-right: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
+    border-left: 0.1875rem solid rgb(19, 13, 82);   
+    border-bottom: 0.1875rem solid rgb(19, 13, 82);  
+    border-top: 0.1875rem solid rgb(19, 13, 82);  
+    border-right: 0.1875rem solid rgb(19, 13, 82);  
 
-    box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); /* 20px 10px */
+    box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); 
 }
 
 
 .SPIgameScreenM3 {
-    height: 28.5rem;                 /* 456px */
-    width: 51rem;                    /* 816px */
+    height: 28.5rem;          
+    width: 51rem;      
 
     padding: 0rem;
 
@@ -61,12 +61,12 @@
 
     background-color: #13005a;
 
-    border-left: 0.1875rem solid rgb(19, 13, 82);   /* 3px */
-    border-bottom: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
-    border-top: 0.1875rem solid rgb(19, 13, 82);     /* 3px */
-    border-right: 0.1875rem solid rgb(19, 13, 82);  /* 3px */
+    border-left: 0.1875rem solid rgb(19, 13, 82);  
+    border-bottom: 0.1875rem solid rgb(19, 13, 82);  
+    border-top: 0.1875rem solid rgb(19, 13, 82);  
+    border-right: 0.1875rem solid rgb(19, 13, 82); 
 
-    box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); /* 20px 10px */
+    box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255);
 }
 
 
@@ -77,8 +77,8 @@
 
 .SPIemptySpaceM1 {
     background-color: #1d0086;
-    height: 1.875rem;  /* 30px */
-    width: 1.875rem;   /* 30px */
+    height: 1.875rem; 
+    width: 1.875rem; 
 
     display: flex;
     flex-direction: column;
@@ -90,8 +90,8 @@
 
 .SPIemptySpaceM2 {
     background-color: #180070;
-    height: 1.875rem;  /* 30px */
-    width: 1.875rem;   /* 30px */
+    height: 1.875rem; 
+    width: 1.875rem;  
 
     display: flex;
     flex-direction: column;
@@ -102,8 +102,8 @@
 
 .SPIemptySpaceM3 {
     background-color: #13005a;
-    height: 1.875rem;  /* 30px */
-    width: 1.875rem;   /* 30px */
+    height: 1.875rem;  
+    width: 1.875rem;  
 
     display: flex;
     flex-direction: column;
@@ -121,46 +121,46 @@
 
 .SPISlider {
     -webkit-appearance: none;
-    width: 50.625rem;               /* 810px */
-    height: 1.875rem;               /* 30px */
+    width: 50.625rem;             
+    height: 1.875rem;            
     outline: none;
 
     background-color: rgb(0, 255, 132);
 
-    border-left: 0.3125rem solid rgb(0, 120, 62); /* 5px */
-    border-bottom: 0.3125rem solid rgb(0, 120, 62); /* 5px */
-    border-top: 0.125rem solid rgb(0, 120, 62);    /* 2px */
-    border-right: 0.125rem solid rgb(0, 120, 62);   /* 2px */
+    border-left: 0.3125rem solid rgb(0, 120, 62); 
+    border-bottom: 0.3125rem solid rgb(0, 120, 62); 
+    border-top: 0.125rem solid rgb(0, 120, 62);   
+    border-right: 0.125rem solid rgb(0, 120, 62);  
 
-    box-shadow: 0 0 0.625rem 0.25rem rgb(169, 255, 202); /* 10px 4px */
+    box-shadow: 0 0 0.625rem 0.25rem rgb(169, 255, 202); 
 }
 
 
 .SPISlider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 1.875rem;                /* 30px */
-    height: 3.125rem;               /* 50px */
+    width: 1.875rem;               
+    height: 3.125rem;             
     background-color: #ff00ea;
     cursor: pointer;
 
-    border-left: 0.3125rem solid #7a0070;   /* 5px */
-    border-bottom: 0.3125rem solid #7a0070;  /* 5px */
-    border-top: 0.125rem solid #7a0070;     /* 2px */
-    border-right: 0.125rem solid #7a0070;   /* 2px */
+    border-left: 0.3125rem solid #7a0070;   
+    border-bottom: 0.3125rem solid #7a0070; 
+    border-top: 0.125rem solid #7a0070;    
+    border-right: 0.125rem solid #7a0070;  
 }
 
   
 /* for Firefox */
 .SPISlider::-moz-range-thumb {
-    width: 1.875rem;                /* 30px */
-    height: 3.125rem;               /* 50px */
+    width: 1.875rem;                
+    height: 3.125rem;             
     background-color: #ff00ea;
     cursor: pointer;
 
-    border-left: 0.3125rem solid #7a0070;    /* 5px */
-    border-bottom: 0.3125rem solid #7a0070;  /* 5px */
-    border-top: 0.125rem solid #7a0070;      /* 2px */
-    border-right: 0.125rem solid #7a0070;    /* 2px */
+    border-left: 0.3125rem solid #7a0070;  
+    border-bottom: 0.3125rem solid #7a0070; 
+    border-top: 0.125rem solid #7a0070;     
+    border-right: 0.125rem solid #7a0070;   
 }
 
 
@@ -172,15 +172,15 @@
 
 .SPIlaserButtonNormal {
     background-color: #00ff26;
-    font-size: 1.25rem;          /* 20px */
-    padding: 0.625rem;           /* 10px */
+    font-size: 1.25rem;        
+    padding: 0.625rem;          
 
-    border-left: 0.3125rem solid #00660f;  /* 5px */
-    border-bottom: 0.3125rem solid #00660f; /* 5px */
-    border-top: 0.125rem solid #00660f;  /* 5px */
-    border-right: 0.125rem solid #00660f; /* 5px */
+    border-left: 0.3125rem solid #00660f; 
+    border-bottom: 0.3125rem solid #00660f;
+    border-top: 0.125rem solid #00660f;
+    border-right: 0.125rem solid #00660f; 
 
-    box-shadow: 0 0 0.625rem 0.25rem #00ff26; /* 10px 4px */
+    box-shadow: 0 0 0.625rem 0.25rem #00ff26; 
 
 }
 
@@ -188,12 +188,12 @@
 .SPIlaserButtonNormal:hover {
     background-color: #003508;
 
-    border-left: 0.3125rem solid #000d02;    /* 5px */
-    border-bottom: 0.3125rem solid #000d02;  /* 5px */
-    border-right: 0.125rem solid #000d02;    /* 2px */
-    border-top: 0.125rem solid #000d02;      /* 2px */
+    border-left: 0.3125rem solid #000d02;    
+    border-bottom: 0.3125rem solid #000d02;  
+    border-right: 0.125rem solid #000d02;   
+    border-top: 0.125rem solid #000d02;     
 
-    box-shadow: 0 0 0.625rem 0.25rem #00a118; /* 10px 4px */
+    box-shadow: 0 0 0.625rem 0.25rem #00a118;
     
     color: white;
 
@@ -202,15 +202,15 @@
 
 .SPIlaserButtonMutant {
     background-color: #fb00ff;
-    font-size: 1.25rem;              /* 20px */
-    padding: 0.625rem;               /* 10px */
+    font-size: 1.25rem;             
+    padding: 0.625rem;            
 
-    border-left: 0.3125rem solid #640065;    /* 5px */
-    border-bottom: 0.3125rem solid #640065;  /* 5px */
-    border-top: 0.125rem solid #640065;     /* 5px */
-    border-right: 0.125rem solid #640065;   /* 5px */
+    border-left: 0.3125rem solid #640065;   
+    border-bottom: 0.3125rem solid #640065;  
+    border-top: 0.125rem solid #640065;   
+    border-right: 0.125rem solid #640065;  
 
-    box-shadow: 0 0 0.625rem 0.25rem #fb00ff; /* 10px 4px */
+    box-shadow: 0 0 0.625rem 0.25rem #fb00ff; 
 
 }
 
@@ -218,12 +218,12 @@
 .SPIlaserButtonMutant:hover {
     background-color: #650066;
 
-    border-left: 0.3125rem solid #330034;    /* 5px */
-    border-bottom: 0.3125rem solid #330034;  /* 5px */
-    border-top: 0.125rem solid #330034;     /* 5px */
-    border-right: 0.125rem solid #330034;   /* 5px */
+    border-left: 0.3125rem solid #330034;   
+    border-bottom: 0.3125rem solid #330034; 
+    border-top: 0.125rem solid #330034;   
+    border-right: 0.125rem solid #330034;  
 
-    box-shadow: 0 0 0.625rem 0.25rem #a900ac; /* 10px 4px */
+    box-shadow: 0 0 0.625rem 0.25rem #a900ac; 
 
     color: white;
 }

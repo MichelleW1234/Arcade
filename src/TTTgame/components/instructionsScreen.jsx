@@ -12,8 +12,8 @@ function Instructionsscreen() {
 
     <div className = "screenLayout">
 
-      <h1 className = "instructionsSign"> Instructions: </h1>
-
+      <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
+      
       <p className = "largefont">   
         &gt; Your opponent is this computer. <br/>
         &gt; The board is a standard 3x3 with 9 total cells. <br/>

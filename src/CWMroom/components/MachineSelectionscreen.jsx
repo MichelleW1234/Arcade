@@ -51,7 +51,7 @@ function MachineSelectionscreen (){
             </Link>
             <div className = "gameScreenLayout">
 
-                <h1 className = "pointsSign"> Your Points: <span className = "pointsSignGlitch">{Player[0]}</span></h1>
+                <h1 className = "pointsSign"> Your Points: <span className = "signGlitch">{Player[0]}</span></h1>
 
                 <div className = "CWMGameSelectionBoard">
 
@@ -61,7 +61,7 @@ function MachineSelectionscreen (){
 
                             <div className = "CWMMachine"> 
                                 
-                                Cats
+                                <p> <span className='windowGlitch'>Cats</span></p>
                                 <img className= "CWMMachineImages" src = {CatMachine}/>
                                 
                             </div>
@@ -79,7 +79,7 @@ function MachineSelectionscreen (){
 
                             <div className = "CWMMachine"> 
                                 
-                                Sports
+                                <p>Sports</p>
                                 <img className = "CWMMachineImages" src={SportsMachine}/>
                                 
                             </div>
@@ -97,7 +97,7 @@ function MachineSelectionscreen (){
 
                             <div className = "CWMMachine"> 
                                 
-                                Space
+                                <p>Space</p>
                                 <img className= "CWMMachineImages" src = {SpaceMachine}/>
                                
                             </div>

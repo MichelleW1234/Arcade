@@ -3,18 +3,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3.125rem;                  /* 50px */
+    gap: 3.125rem;               
 
     background-color: rgb(13, 0, 255);
 
-    border-left: 0.5625rem solid rgb(6, 0, 117);    /* 9px */
-    border-bottom: 0.5625rem solid rgb(6, 0, 117);   /* 9px */
-    border-top: 0.25rem solid rgb(6, 0, 117);       /* 4px */
-    border-right: 0.25rem solid rgb(6, 0, 117);      /* 4px */
-    border-radius: 1.5625rem;               /* 25px */
-    padding: 1.875rem;                      /* 30px */
+    border-left: 0.5625rem solid rgb(6, 0, 117);  
+    border-bottom: 0.5625rem solid rgb(6, 0, 117);  
+    border-top: 0.25rem solid rgb(6, 0, 117);      
+    border-right: 0.25rem solid rgb(6, 0, 117);   
+    border-radius: 1.5625rem;            
+    padding: 1.875rem;               
 
-    box-shadow: 0 0 1.875rem 0.625rem rgb(0, 157, 255); /* 30px 10px */
+    box-shadow: 0 0 1.875rem 0.625rem rgb(0, 157, 255); 
 }
 
 
@@ -23,52 +23,52 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3.125rem;                  /* 50px */
+    gap: 3.125rem;                
 
     background-color: rgb(13, 0, 255);
 
-    border-left: 0.5625rem solid rgb(6, 0, 117);    /* 9px */
-    border-bottom: 0.5625rem solid rgb(6, 0, 117);  /* 9px */
-    border-top: 0.25rem solid rgb(6, 0, 117);       /* 4px */
-    border-right: 0.25rem solid rgb(6, 0, 117);     /* 4px */
-    border-radius: 1.5625rem;                        /* 25px */
-    padding: 1.875rem;                               /* 30px */
+    border-left: 0.5625rem solid rgb(6, 0, 117);   
+    border-bottom: 0.5625rem solid rgb(6, 0, 117); 
+    border-top: 0.25rem solid rgb(6, 0, 117);      
+    border-right: 0.25rem solid rgb(6, 0, 117);    
+    border-radius: 1.5625rem;                  
+    padding: 1.875rem;              
 
-    box-shadow: 0 0 1.875rem 0.625rem rgb(0, 157, 255); /* 30px 10px */
+    box-shadow: 0 0 1.875rem 0.625rem rgb(0, 157, 255); 
 }
 
 
 .SPIgameBoardSign {
-    font-size: 2.1875rem;           /* 35px */
-    border-radius: 1.875rem;        /* 30px */
-    padding: 0.625rem;              /* 10px */
+    font-size: 2.1875rem;        
+    border-radius: 1.875rem;    
+    padding: 0.625rem;       
     color: white;
     background-color: rgb(133, 147, 251);
-    border: 0.3125rem solid rgba(0, 253, 46, 0.521); /* 5px */
+    border: 0.3125rem solid rgba(0, 253, 46, 0.521);
 
-    animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
+    animation: glowing-sign-shadows 4s infinite;
 }
 
 
 .SPIendingScreen {
-    height: 28.125rem;              /* 450px */
-    width: 50.625rem;               /* 810px */
+    height: 28.125rem;          
+    width: 50.625rem;       
 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 
-    padding: 5rem;                  /* 80px */
+    padding: 5rem;               
     font-size: 1.8rem;
     font-weight: bold;
 
     background-color: rgb(145, 215, 253);
 
-    border-left: 0.1875rem solid rgb(58, 93, 111);   /* 3px */
-    border-bottom: 0.1875rem solid rgb(58, 93, 111); /* 3px */
-    border-top: 0.1875rem solid rgb(58, 93, 111);    /* 3px */
-    border-right: 0.1875rem solid rgb(58, 93, 111);  /* 3px */
+    border-left: 0.1875rem solid rgb(58, 93, 111); 
+    border-bottom: 0.1875rem solid rgb(58, 93, 111); 
+    border-top: 0.1875rem solid rgb(58, 93, 111);  
+    border-right: 0.1875rem solid rgb(58, 93, 111);  
 
-    box-shadow: 0 0 1.25rem 0.625rem rgb(131, 208, 252); /* 20px 10px */
+    box-shadow: 0 0 1.25rem 0.625rem rgb(131, 208, 252); 
 }

@@ -137,7 +137,7 @@ function GameSelectionscreen (){
 
             <div className = "gameScreenLayout">
 
-                <h1 className = "pointsSign"> Your Points: <span className = "pointsSignGlitch">{Player[0]}</span></h1>
+                <h1 className = "pointsSign"> Your Points: <span className = "signGlitch">{Player[0]}</span></h1>
             
                 <div className = "ArcadeGameBoard">
 
@@ -147,9 +147,9 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Rock-Paper-Scissors
+                                <p>Rock-Paper-Scissors</p>
                                 <img className = "ArcadeGameImage" src = {RPS}/>
-                                <span className = "windowGlitch">(20 Points)</span>
+                                <p><span className = "windowGlitch">(20 Points)</span></p>
                                 
                             </div>
 
@@ -166,9 +166,9 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Tic-Tac-Toe
+                                <p>Tic-Tac-Toe</p>
                                 <img className = "ArcadeGameImage" src = {TTT}/>
-                                (10 Points)
+                                <p>(10 Points)</p>
                                 
                             </div>
 
@@ -185,9 +185,9 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Snake
+                                <p>Snake</p>
                                 <img className = "ArcadeGameImage" src = {SNK}/>
-                                (5 Points)
+                                <p>(5 Points)</p>
                                 
                             </div>
 
@@ -204,9 +204,9 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Space Invasion 
+                                <p>Space Invasion </p>
                                 <img className = "ArcadeGameImage" src = {SPI}/>
-                                (15 Points)
+                                <p>(15 Points)</p>
                                 
                             </div>
 
@@ -223,9 +223,9 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Orbit
+                                <p>Orbit</p>
                                 <img className = "ArcadeGameImage" src = {ORB}/>
-                                (5 Points)
+                                <p>(5 Points)</p>
                                 
                             </div>
 
@@ -242,9 +242,9 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Color Blast
+                                <p>Color Blast</p>
                                 <img className = "ArcadeGameImage" src = {CBL}/>
-                                (10 Points)
+                                <p>(10 Points)</p>
                                 
                             </div>
 
@@ -262,9 +262,9 @@ function GameSelectionscreen (){
 
                             <div className = "ArcadeGame"> 
                                 
-                                Balloon Frenzy
+                                <p>Balloon Frenzy</p>
                                 <img className = "ArcadeGameImage" src = {BFR}/>
-                                (10 Points)
+                                <p>(10 Points)</p>
                                 
                             </div>
 

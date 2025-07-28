@@ -29,7 +29,7 @@ function M4Instructionsscreen() {
 
     <div className = "screenLayout">
 
-      <h1 className = "instructionsSign"> Station 4: The Nest </h1>
+      <h1 className = "instructionsSign"> <span className='signGlitch'> Station 4: The Nest </span></h1>
 
       <h1 className = "SPIMissionDescription"> 
         Mission Description: Defeat the boss.

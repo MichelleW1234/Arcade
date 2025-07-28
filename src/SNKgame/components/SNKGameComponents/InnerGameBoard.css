@@ -1,26 +1,26 @@
 .SNKsnakeLink {
-    height: 1.25rem;       /* 20px */
-    width: 1.25rem;        /* 20px */
+    height: 1.25rem;      
+    width: 1.25rem;     
     background-color: rgb(0, 255, 30);
-    border: 0.125rem solid rgb(0, 114, 13);  /* 2px */
+    border: 0.125rem solid rgb(0, 114, 13); 
 }
 
 .SNKApple {
-    height: 1.25rem;       /* 20px */
-    width: 1.25rem;        /* 20px */
+    height: 1.25rem;      
+    width: 1.25rem;      
     background-color: rgb(255, 0, 0);
-    border: 0.125rem solid rgb(120, 0, 0);  /* 2px */
+    border: 0.125rem solid rgb(120, 0, 0); 
 }
 
 .SNKemptySpace {
-    height: 1.25rem;        /* 20px */
-    width: 1.25rem;         /* 20px */
+    height: 1.25rem;       
+    width: 1.25rem;       
     background-color: rgb(154, 208, 255);
 }
 
 .SNKrenderedgameboard {
-    height: 25rem;         /* 400px */
-    width: 37.5rem;        /* 600px */
+    height: 25rem;        
+    width: 37.5rem;       
     display: grid;
     grid-template-columns: repeat(30, 1fr);
     grid-template-rows: repeat(20, 1fr);

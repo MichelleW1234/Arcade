@@ -1,49 +1,49 @@
 .TTTboard {
-    height: 31.25rem;          /* 500px */
-    width: 31.25rem;           /* 500px */
+    height: 31.25rem;         
+    width: 31.25rem;           
     background-color: rgb(26, 156, 255);
 
-    border-left: 0.625rem solid rgb(10, 62, 102);   /* 10px */
-    border-bottom: 0.625rem solid rgb(10, 62, 102);  /* 10px */
-    border-top: 0.125rem solid rgb(10, 62, 102);     /* 2px */
-    border-right: 0.125rem solid rgb(10, 62, 102);   /* 2px */
-    border-radius: 0.625rem;               /* 10px */
-    gap: 1.875rem;                        /* 30px */
+    border-left: 0.625rem solid rgb(10, 62, 102);  
+    border-bottom: 0.625rem solid rgb(10, 62, 102);  
+    border-top: 0.125rem solid rgb(10, 62, 102);    
+    border-right: 0.125rem solid rgb(10, 62, 102);   
+    border-radius: 0.625rem;              
+    gap: 1.875rem;            
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.875rem;                    /* 30px */
+    padding: 1.875rem;                   
 
     animation: glowing-shadow1 4s infinite;
 }
 
 
 .TTTturnBoard {
-    height: 5rem;            /* 80px */
-    width: 25rem;            /* 400px */
+    height: 5rem;           
+    width: 25rem;           
     background-color: rgb(146, 205, 249);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.625rem;       /* 10px */
+    padding: 0.625rem;      
     color: rgb(255, 255, 255);
 
-    border: 0.5rem solid rgb(141, 255, 160);   /* 8px */
+    border: 0.5rem solid rgb(141, 255, 160);   
 
-    border-radius: 0.9375rem; /* 15px */
-    font-size: 1.625rem;      /* 26px */
+    border-radius: 0.9375rem;
+    font-size: 1.625rem;   
 
-    animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
+    animation: glowing-sign-shadows 4s infinite;
 }
 
 
 .TTTfinished_chart_container {
-    height: 18.75rem;       /* 300px */
-    width: 18.75rem;        /* 300px */
+    height: 18.75rem;      
+    width: 18.75rem;        
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    grid-template-rows: repeat(3, 1fr);    /* 3 rows */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr);   
 
     animation: glowing-shadow2 4s infinite;
 }
@@ -53,9 +53,9 @@
 .TTTresulting_chart_win {
     background-color: rgb(246, 255, 0);
     
-    border: 0.125rem solid rgb(116, 120, 0); /* 2px */
+    border: 0.125rem solid rgb(116, 120, 0); 
 
-    font-size: 5rem; /* 80px */
+    font-size: 5rem; 
     text-align: center;
 
     box-shadow: 
@@ -68,9 +68,9 @@
 .TTTresulting_chart {
     background-color: rgb(204, 252, 255);
     
-    border: 0.125rem solid rgb(85, 105, 106); /* 2px */
+    border: 0.125rem solid rgb(85, 105, 106); 
 
-    font-size: 5rem; /* 80px */
+    font-size: 5rem; 
     text-align: center;
 
     box-shadow: 
@@ -84,6 +84,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3.125rem; /* 50px */
+    gap: 3.125rem; 
 }
 

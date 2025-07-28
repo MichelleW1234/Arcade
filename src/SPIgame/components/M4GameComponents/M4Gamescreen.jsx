@@ -77,7 +77,7 @@ function M4Gamescreen() {
 
                     <div className="SPIouterContainerM4">
 
-                        <div className = "SPIgameBoardSign"> Timer: {seconds}</div>
+                        <h1 className = "SPIgameBoardSign"> <span className='signGlitch'>Timer: {seconds}</span></h1>
 
                         <GameBoardM4
                             setBossDefeated = {setBossDefeated}
@@ -94,7 +94,7 @@ function M4Gamescreen() {
 
                     <div className="SPIouterContainerM4">
 
-                        <div className = "SPIgameBoardSign"> Game Over. </div>
+                        <h1 className = "SPIgameBoardSign"> <span className='signGlitch'>Game Over. </span></h1>
                         
                         <div className = "SPIendingScreen">
 

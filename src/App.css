@@ -44,8 +44,8 @@ a:active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8rem;       /* 75px in rem */
-  margin-top: 20rem;  /* 200px in rem */
+  gap: 8rem;      
+  margin-top: 20rem; 
 
 }
 
@@ -55,10 +55,10 @@ a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 12rem;   /* 100px */
-  gap: 3.125rem;         /* 50px */
-  padding-left: 3.125rem; /* 50px */
-  padding-right: 3.125rem; /* 50px */
+  margin-top: 12rem;  
+  gap: 3.125rem;       
+  padding-left: 3.125rem; 
+  padding-right: 3.125rem;
 
 }
 
@@ -66,8 +66,8 @@ a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 7rem; /* 50px */
-  gap: 3.125rem;        /* 50px */
+  margin-top: 7rem; 
+  gap: 3.125rem;   
 }
 
 
@@ -83,12 +83,12 @@ a:active {
 
 .headerwords {
   color: rgb(68, 0, 255);
-  font-size: 3.125rem; /* 50px ÷ 16 = 3.125rem */
+  font-size: 3.125rem; 
   text-shadow: 
-    0.1875rem -0.125rem 0rem rgb(0, 179, 255),   /* 3px, -2px, 0 */
-    0.1875rem 0.125rem 0rem rgb(234, 0, 255),    /* 3px, 2px, 0 */
-    -0.25rem -0.25rem 0.625rem rgba(0, 255, 242, 0.422), /* -4px, -4px, 10px */
-    0.25rem 0.25rem 0.625rem rgba(0, 255, 242, 0.422);   /* 4px, 4px, 10px */
+    0.1875rem -0.125rem 0rem rgb(0, 179, 255),  
+    0.1875rem 0.125rem 0rem rgb(234, 0, 255), 
+    -0.25rem -0.25rem 0.625rem rgba(0, 255, 242, 0.422), 
+    0.25rem 0.25rem 0.625rem rgba(0, 255, 242, 0.422); 
 }
 
 .headerwordsGlitch{
@@ -182,7 +182,7 @@ a:active {
 /*Font styles*/
 
 .largefont {
-  font-size: 1.875rem; /* 30px ÷ 16 = 1.875rem */
+  font-size: 1.875rem; 
   color: rgb(255, 255, 255);
   text-shadow: 
     0.03rem 0.03rem 0.25rem #f700ff,
@@ -197,18 +197,18 @@ a:active {
 .generalbuttonContainer {
   display: flex;
   flex-direction: row;
-  gap: 5rem; /* 80px ÷ 16 = 5rem */
+  gap: 5rem; 
 }
 
 .generalbutton {
 
   background-color: rgb(102, 255, 237);
-  font-size: 1.875rem;          /* 30px */
-  padding: 0.625rem;            /* 10px */
-  border-left: 0.375rem solid rgb(43, 117, 108);   /* 6px */
-  border-bottom: 0.375rem solid rgb(43, 117, 108); /* 6px */
-  border-right: 0.125rem solid rgb(43, 117, 108);   /* 6px */
-  border-top: 0.125rem solid rgb(43, 117, 108); /* 6px */
+  font-size: 1.875rem;         
+  padding: 0.625rem;        
+  border-left: 0.375rem solid rgb(43, 117, 108);  
+  border-bottom: 0.375rem solid rgb(43, 117, 108); 
+  border-right: 0.125rem solid rgb(43, 117, 108);  
+  border-top: 0.125rem solid rgb(43, 117, 108);
 
   animation: glowing-shadow1 4s infinite;
 
@@ -219,10 +219,10 @@ a:active {
   background-color: rgb(58, 13, 173);
   color: white;
 
-  border-left: 0.375rem solid rgb(23, 4, 71);   /* 6px */
-  border-bottom: 0.375rem solid rgb(23, 4, 71); /* 6px */
-  border-top: 0.125rem solid rgb(23, 4, 71);   /* 6px */
-  border-right: 0.125rem solid rgb(23, 4, 71); /* 6px */
+  border-left: 0.375rem solid rgb(23, 4, 71);  
+  border-bottom: 0.375rem solid rgb(23, 4, 71);
+  border-top: 0.125rem solid rgb(23, 4, 71);  
+  border-right: 0.125rem solid rgb(23, 4, 71); 
 
   animation: glowing-shadow4 4s infinite;
 
@@ -231,12 +231,12 @@ a:active {
 .generalbuttonGlitch {
 
   background-color: rgb(102, 255, 237);
-  font-size: 1.875rem;            /* 30px */
-  padding: 0.625rem;              /* 10px */
-  border-left: 0.375rem solid rgb(43, 117, 108);   /* 6px */
-  border-bottom: 0.375rem solid rgb(43, 117, 108); /* 6px */
-  border-right: 0.125rem solid rgb(43, 117, 108);   /* 6px */
-  border-top: 0.125rem solid rgb(43, 117, 108); /* 6px */
+  font-size: 1.875rem;           
+  padding: 0.625rem;       
+  border-left: 0.375rem solid rgb(43, 117, 108);   
+  border-bottom: 0.375rem solid rgb(43, 117, 108); 
+  border-right: 0.125rem solid rgb(43, 117, 108);  
+  border-top: 0.125rem solid rgb(43, 117, 108); 
 
   animation: button-glitch 4s infinite, glowing-shadow1 4s infinite;
 
@@ -247,28 +247,34 @@ a:active {
   background-color: rgb(58, 13, 173);
   color: white;
 
-  border-left: 0.375rem solid rgb(23, 4, 71);   /* 6px */
-  border-bottom: 0.375rem solid rgb(23, 4, 71); /* 6px */
-  border-top: 0.125rem solid rgb(23, 4, 71);   /* 6px */
-  border-right: 0.125rem solid rgb(23, 4, 71); /* 6px */
+  border-left: 0.375rem solid rgb(23, 4, 71);  
+  border-bottom: 0.375rem solid rgb(23, 4, 71); 
+  border-top: 0.125rem solid rgb(23, 4, 71); 
+  border-right: 0.125rem solid rgb(23, 4, 71); 
 
   animation: button-glitch 4s infinite, glowing-shadow4 4s infinite;
 
 }
 
 
-/*Sion styles*/
+/*Sign styles*/
 
 .instructionsSign {
 
-  font-size: 2.1875rem;          /* 35px */
-  border-radius: 1.875rem;       /* 30px */
-  padding: 0.625rem;             /* 10px */
+  font-size: 2.1875rem;        
+  border-radius: 1.875rem;      
+  padding: 0.625rem;      
   color: white;
   background-color: rgb(243, 154, 255);
-  border: 0.3125rem solid rgba(0, 253, 46, 0.521); /* 5px */
+  border: 0.3125rem solid rgba(0, 253, 46, 0.521); 
 
-  animation: sign-glitch 3s infinite, glowing-sign-shadows 4s infinite;
+  animation: glowing-sign-shadows 4s infinite;
+
+}
+
+.signGlitch{
+
+  animation: sign-glitch 3s infinite;
 
 }
 
@@ -282,10 +288,10 @@ a:active {
   width: 100vw;
 
   background-color: rgb(112, 207, 255);
-  padding: 1rem 1.25rem;          /* 10px 20px */
-  border-bottom: 0.375rem solid rgb(0, 112, 167); /* 6px */
+  padding: 1rem 1.25rem;          
+  border-bottom: 0.375rem solid rgb(0, 112, 167); 
 
-  box-shadow: 0 0 2.5rem rgb(154, 186, 255); /* 40px */
+  box-shadow: 0 0 2.5rem rgb(154, 186, 255); 
 
 }
 
@@ -293,41 +299,41 @@ a:active {
   display: flex;
   flex-direction: row;
   list-style: none;
-  gap: 1.25rem; /* 20px */
+  gap: 1.25rem;
 }
 
 .navBarButton {
-  font-size: 1.5625rem;          /* 25px */
+  font-size: 1.5625rem;       
   font-weight: bold;
   color: rgb(255, 255, 255);
   background-color: rgb(246, 61, 252);
-  padding: 0.625rem;             /* 10px */
-  border-left: 0.34375rem solid rgb(121, 28, 125);  /* 5.5px */
-  border-bottom: 0.34375rem solid rgb(121, 28, 125); /* 5.5px */
-  border-right: 0.15625rem solid rgb(121, 28, 125); /* 2.5px */
-  border-top: 0.15625rem solid rgb(121, 28, 125);   /* 2.5px */
+  padding: 0.625rem;           
+  border-left: 0.34375rem solid rgb(121, 28, 125); 
+  border-bottom: 0.34375rem solid rgb(121, 28, 125); 
+  border-right: 0.15625rem solid rgb(121, 28, 125);
+  border-top: 0.15625rem solid rgb(121, 28, 125);  
 
   box-shadow: 
-    0 0 0.625rem 0.125rem rgb(187, 0, 255),  /* 10px 2px */
-    0 0 0.625rem 0.25rem rgb(106, 0, 255),    /* 10px 4px */
-    0 0 0.625rem 0.375rem rgb(0, 242, 255);  /* 10px 6px */
+    0 0 0.625rem 0.125rem rgb(187, 0, 255),  
+    0 0 0.625rem 0.25rem rgb(106, 0, 255),   
+    0 0 0.625rem 0.375rem rgb(0, 242, 255); 
 }
 
 .navBarButton:hover {
     
   background-color: #4d1fd4;
 
-  border-left: 0.34375rem solid #291072;  /* 5.5px */
-  border-bottom: 0.34375rem solid #291072; /* 5.5px */
-  border-right: 0.15625rem solid #291072; /* 2.5px */
-  border-top: 0.15625rem solid #291072;   /* 2.5px */
+  border-left: 0.34375rem solid #291072; 
+  border-bottom: 0.34375rem solid #291072; 
+  border-right: 0.15625rem solid #291072; 
+  border-top: 0.15625rem solid #291072; 
 
   color: white;
 
   box-shadow: 
-    0 0 0.625rem 0.125rem rgb(21, 0, 255),  /* 10px 2px */
-    0 0 0.625rem 0.25rem rgb(0, 132, 255),    /* 10px 4px */
-    0 0 0.625rem 0.375rem rgb(0, 242, 255);  /* 10px 6px */
+    0 0 0.625rem 0.125rem rgb(21, 0, 255),  
+    0 0 0.625rem 0.25rem rgb(0, 132, 255),  
+    0 0 0.625rem 0.375rem rgb(0, 242, 255);  
   
 }
 
@@ -346,7 +352,20 @@ a.navBarButton {
 
 
 
+
+/*Game windows*/
+
+.windowGlitch{
+
+  animation: button-glitch 3.5s infinite;
+
+}
+
+
+
+
 /*Game Summary Screen labels*/
+
 .StatsBoard {
 
   display: flex;
@@ -356,19 +375,19 @@ a.navBarButton {
   
   background-color: rgb(145, 200, 255);
   color: rgb(12, 0, 77);
-  box-shadow: 0 0 2.5rem 0.375rem rgb(109, 150, 253); /* 40px 6px */
+  box-shadow: 0 0 2.5rem 0.375rem rgb(109, 150, 253); 
 
-  width: 45rem;          /* 700px */
-  padding: 3rem;        /* 30px */
-  gap: 3.125rem;            /* 50px */
-  border-radius: 0.5rem;    /* 8px */
+  width: 45rem;       
+  padding: 3rem;        
+  gap: 3.125rem;            
+  border-radius: 0.5rem;   
 
-  border-left: 0.375rem solid rgb(0, 59, 118);   /* 6px */
-  border-bottom: 0.375rem solid rgb(0, 59, 118); /* 6px */
-  border-top: 0.0625rem solid rgb(0, 59, 118);   /* 1px */
-  border-right: 0.0625rem solid rgb(0, 59, 118); /* 1px */
+  border-left: 0.375rem solid rgb(0, 59, 118);   
+  border-bottom: 0.375rem solid rgb(0, 59, 118); 
+  border-top: 0.0625rem solid rgb(0, 59, 118);  
+  border-right: 0.0625rem solid rgb(0, 59, 118); 
 
-  font-size: 2rem;          /* 32px */
+  font-size: 2rem;         
   font-weight: bold;
 
 }
@@ -384,9 +403,9 @@ a.navBarButton {
   max-height: 10rem;
 
   filter: 
-    drop-shadow(0 0 0.3125rem rgb(255, 255, 255))  /* 5px */
-    drop-shadow(0 0 0.625rem rgb(228, 241, 255))   /* 10px */
-    drop-shadow(0 0 1.25rem rgb(198, 217, 255));   /* 20px */
+    drop-shadow(0 0 0.3125rem rgb(255, 255, 255))  
+    drop-shadow(0 0 0.625rem rgb(228, 241, 255))   
+    drop-shadow(0 0 1.25rem rgb(198, 217, 255));   
 
 }
 
@@ -404,19 +423,19 @@ a.navBarButton {
       -0.125rem -0.125rem 0.25rem #00ffff;
   }
   45%, 46% {
-    transform: translate(-0.3125rem, -0.125rem); /* -5px, -2px */
+    transform: translate(-0.3125rem, -0.125rem); 
     text-shadow: 
       0.25rem -0.25rem 0.25rem #c800ff, 
       -0.25rem 0.25rem 0.25rem #007bff;
   }
   47%, 49% {
-    transform: translate(0.25rem, 0.1875rem); /* 4px, 3px */
+    transform: translate(0.25rem, 0.1875rem); 
     text-shadow: 
       -0.25rem 0.125rem 0.25rem #ff8400, 
       0.25rem -0.125rem 0.25rem #00ff7f;
   }
   50%, 52% {
-    transform: translate(-0.1875rem, 0.3125rem); /* -3px, 5px */
+    transform: translate(-0.1875rem, 0.3125rem); 
     text-shadow: 
       0.3125rem -0.3125rem 0.25rem #fd2828, 
       -0.3125rem 0.3125rem 0.25rem #5661fc;
@@ -444,19 +463,19 @@ a.navBarButton {
       -0.125rem -0.125rem 0.25rem #00ffffc3;
   }
   45%, 46% {
-    transform: translate(-0.3125rem, -0.125rem); /* -5px, -2px */
+    transform: translate(-0.3125rem, -0.125rem); 
     text-shadow: 
       0.25rem -0.25rem 0.25rem #c800ff, 
       -0.25rem 0.25rem 0.25rem #00ccff;
   }
   47%, 49% {
-    transform: translate(0.25rem, 0.1875rem); /* 4px, 3px */
+    transform: translate(0.25rem, 0.1875rem); 
     text-shadow: 
       -0.25rem 0.125rem 0.25rem #ff7bf2, 
       0.25rem -0.125rem 0.25rem #6cff71;
   }
   50%, 52% {
-    transform: translate(-0.1875rem, 0.3125rem); /* -3px, 5px */
+    transform: translate(-0.1875rem, 0.3125rem); 
     text-shadow: 
       0.3125rem -0.3125rem 0.25rem #ff00a2, 
       -0.3125rem 0.3125rem 0.25rem #57f4ff;
@@ -486,19 +505,19 @@ a.navBarButton {
       0.25rem 0.25rem 0.625rem rgba(0, 255, 242, 0.422);
   }
   45%, 46% {
-    transform: translate(-0.3125rem, -0.125rem); /* -5px, -2px */
+    transform: translate(-0.3125rem, -0.125rem); 
     text-shadow: 
       0.25rem -0.25rem 0.25rem #c800ff, 
       -0.25rem 0.25rem 0.25rem #00ccff;
   }
   47%, 49% {
-    transform: translate(0.25rem, 0.1875rem); /* 4px, 3px */
+    transform: translate(0.25rem, 0.1875rem); 
     text-shadow: 
       -0.25rem 0.125rem 0.25rem #ff7bf2, 
       0.25rem -0.125rem 0.25rem #6c6cff;
   }
   50%, 52% {
-    transform: translate(-0.1875rem, 0.3125rem); /* -3px, 5px */
+    transform: translate(-0.1875rem, 0.3125rem); 
     text-shadow: 
       0.3125rem -0.3125rem 0.25rem #ff00a2, 
       -0.3125rem 0.3125rem 0.25rem #57f4ff;
@@ -526,9 +545,9 @@ a.navBarButton {
 @keyframes glowing-shadow1 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.25rem rgb(0, 242, 255),      /* 10px 4px */
-      0 0 1.875rem 0.375rem rgb(247, 0, 255),     /* 30px 6px */
-      0 0 3.125rem 0.625rem rgb(153, 0, 255);     /* 50px 10px */
+      0 0 0.625rem 0.25rem rgb(0, 242, 255),    
+      0 0 1.875rem 0.375rem rgb(247, 0, 255),     
+      0 0 3.125rem 0.625rem rgb(153, 0, 255);     
   }
   50% {
     box-shadow: 
@@ -548,9 +567,9 @@ a.navBarButton {
 @keyframes glowing-shadow2 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.125rem rgb(150, 255, 250),  /* 10px 2px */
-      0 0 1.25rem 0.25rem rgb(0, 242, 255),      /* 20px 4px */
-      0 0 1.875rem 0.375rem rgb(0, 200, 255);    /* 30px 6px */
+      0 0 0.625rem 0.125rem rgb(150, 255, 250),  
+      0 0 1.25rem 0.25rem rgb(0, 242, 255),      
+      0 0 1.875rem 0.375rem rgb(0, 200, 255);   
   }
   50% {
     box-shadow: 
@@ -570,9 +589,9 @@ a.navBarButton {
 @keyframes glowing-shadow3 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.125rem rgb(240, 32, 255),  /* 10px 2px */
-      0 0 1.25rem 0.25rem rgb(180, 42, 255),    /* 20px 4px */
-      0 0 2.1875rem 0.375rem rgb(33, 37, 255);  /* 35px 6px */
+      0 0 0.625rem 0.125rem rgb(240, 32, 255),  
+      0 0 1.25rem 0.25rem rgb(180, 42, 255),    
+      0 0 2.1875rem 0.375rem rgb(33, 37, 255);  
   }
   50% {
     box-shadow: 
@@ -592,9 +611,9 @@ a.navBarButton {
 @keyframes glowing-shadow4 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.25rem rgb(70, 143, 253),     /* 10px 4px */
-      0 0 1.25rem 0.375rem rgb(117, 79, 252),     /* 20px 6px */
-      0 0 2.1875rem 0.5rem rgb(153, 80, 254);     /* 35px 8px */
+      0 0 0.625rem 0.25rem rgb(70, 143, 253),     
+      0 0 1.25rem 0.375rem rgb(117, 79, 252),     
+      0 0 2.1875rem 0.5rem rgb(153, 80, 254);     
   }
   50% {
     box-shadow: 
@@ -614,8 +633,8 @@ a.navBarButton {
 @keyframes glowing-shadow5 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.1875rem rgb(242, 62, 255),   /* 10px 3px */
-      0 0 1.25rem 0.375rem rgb(0, 251, 255);      /* 20px 6px */
+      0 0 0.625rem 0.1875rem rgb(242, 62, 255),  
+      0 0 1.25rem 0.375rem rgb(0, 251, 255);      
   }
   50% {
     box-shadow: 
@@ -633,8 +652,8 @@ a.navBarButton {
 @keyframes glowing-shadow6 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.125rem rgba(255, 62, 62),       /* 10px 2px */
-      0 0 1.25rem 0.25rem rgb(196, 70, 255);          /* 20px 4px */
+      0 0 0.625rem 0.125rem rgba(255, 62, 62),      
+      0 0 1.25rem 0.25rem rgb(196, 70, 255);          
   }
   50% {
     box-shadow: 
@@ -652,8 +671,8 @@ a.navBarButton {
 @keyframes glowing-shadow7 {
   0% {
     box-shadow: 
-      0 0 1.25rem 0.25rem rgb(165, 22, 175),  /* 10px 2px */
-      0 0 1.25rem 0.25rem rgb(131, 30, 186);    /* 20px 4px */
+      0 0 1.25rem 0.25rem rgb(165, 22, 175),  
+      0 0 1.25rem 0.25rem rgb(131, 30, 186);    
   }
   50% {
     box-shadow: 
@@ -662,8 +681,8 @@ a.navBarButton {
   }
   100% {
     box-shadow:
-      0 0 1.25rem 0.125rem rgb(165, 22, 175),  /* 10px 2px */
-      0 0 1.25rem 0.25rem rgb(131, 30, 186);  /* 35px 6px */
+      0 0 1.25rem 0.125rem rgb(165, 22, 175), 
+      0 0 1.25rem 0.25rem rgb(131, 30, 186); 
   }
 }
 
@@ -671,18 +690,18 @@ a.navBarButton {
 @keyframes glowing-shadow8 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.125rem rgb(130, 218, 215),  /* 10px 2px */
-      0 0 1.25rem 0.25rem rgb(0, 190, 200)     /* 20px 4px */
+      0 0 0.625rem 0.125rem rgb(130, 218, 215),  
+      0 0 1.25rem 0.25rem rgb(0, 190, 200);
   }
   50% {
     box-shadow: 
       0 0 0.625rem 0.125rem rgba(150, 255, 250, 0.365),
-      0 0 1.25rem 0.25rem #00f2ff65
+      0 0 1.25rem 0.25rem #00f2ff65;
   }
   100% {
     box-shadow:
-      0 0 0.625rem 0.125rem rgb(130, 218, 215),  /* 10px 2px */
-      0 0 1.25rem 0.25rem rgb(0, 190, 200)     /* 20px 4px */  
+      0 0 0.625rem 0.125rem rgb(130, 218, 215),
+      0 0 1.25rem 0.25rem rgb(0, 190, 200);
   }
 }
 
@@ -690,21 +709,21 @@ a.navBarButton {
 @keyframes glowing-shadow9 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.25rem rgb(253, 229, 70),     /* 10px 4px */
-      0 0 1.25rem 0.375rem rgb(252, 191, 79),     /* 20px 6px */
-      0 0 2.1875rem 0.5rem rgb(254, 170, 80);     /* 35px 8px */
+      0 0 0.625rem 0.25rem rgb(253, 229, 70),  
+      0 0 1.25rem 0.375rem rgb(252, 191, 79),   
+      0 0 2.1875rem 0.5rem rgb(254, 170, 80);    
   }
   50% {
     box-shadow: 
-      0 0 0.625rem 0.25rem rgba(253, 229, 70, 0.38),     /* 10px 4px */
-      0 0 1.25rem 0.375rem rgba(252, 191, 79, 0.417),     /* 20px 6px */
-      0 0 2.1875rem 0.5rem rgba(254, 170, 80, 0.334);     /* 35px 8px */
+      0 0 0.625rem 0.25rem rgba(253, 229, 70, 0.38),     
+      0 0 1.25rem 0.375rem rgba(252, 191, 79, 0.417),     
+      0 0 2.1875rem 0.5rem rgba(254, 170, 80, 0.334);     
   }
   100% {
     box-shadow:
-      0 0 0.625rem 0.25rem rgb(253, 229, 70),     /* 10px 4px */
-      0 0 1.25rem 0.375rem rgb(252, 191, 79),     /* 20px 6px */
-      0 0 2.1875rem 0.5rem rgb(254, 170, 80);     /* 35px 8px */
+      0 0 0.625rem 0.25rem rgb(253, 229, 70),     
+      0 0 1.25rem 0.375rem rgb(252, 191, 79),    
+      0 0 2.1875rem 0.5rem rgb(254, 170, 80);    
   }
 }
 
@@ -712,54 +731,54 @@ a.navBarButton {
 @keyframes glowing-shadow10 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.375rem rgb(255, 168, 29),     /* 10px 4px */
-      0 0 1.25rem 0.5rem rgb(255, 152, 42);     /* 20px 6px */
+      0 0 0.625rem 0.375rem rgb(255, 168, 29),     
+      0 0 1.25rem 0.5rem rgb(255, 152, 42);     
   }
   50% {
     box-shadow: 
-      0 0 0.625rem 0.375rem rgba(255, 168, 29, 0.425),     /* 10px 4px */
+      0 0 0.625rem 0.375rem rgba(255, 168, 29, 0.425),     
       0 0 1.25rem 0.5rem rgba(255, 152, 42, 0.407);
   }
   100% {
     box-shadow:
-      0 0 0.625rem 0.375rem rgb(255, 168, 29),     /* 10px 4px */
-      0 0 1.25rem 0.5rem rgb(255, 152, 42);     /* 20px 6px */
+      0 0 0.625rem 0.375rem rgb(255, 168, 29),     
+      0 0 1.25rem 0.5rem rgb(255, 152, 42);    
   }
 }
 
 @keyframes glowing-shadow11 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.375rem rgb(9, 255, 0),     /* 10px 4px */
-      0 0 1.25rem 0.5rem rgb(5, 151, 0);      /* 20px 6px */
+      0 0 0.625rem 0.375rem rgb(9, 255, 0),     
+      0 0 1.25rem 0.5rem rgb(5, 151, 0);     
   }
   50% {
     box-shadow: 
-      0 0 0.625rem 0.375rem rgba(9, 255, 0, 0.476),     /* 10px 4px */
-      0 0 1.25rem 0.5rem rgba(5, 151, 0, 0.462);      /* 20px 6px */
+      0 0 0.625rem 0.375rem rgba(9, 255, 0, 0.476),    
+      0 0 1.25rem 0.5rem rgba(5, 151, 0, 0.462);     
   }
   100% {
     box-shadow:
-      0 0 0.625rem 0.375rem rgb(9, 255, 0),     /* 10px 4px */
-      0 0 1.25rem 0.5rem rgb(5, 151, 0);      /* 20px 6px */
+      0 0 0.625rem 0.375rem rgb(9, 255, 0),     
+      0 0 1.25rem 0.5rem rgb(5, 151, 0);      
   }
 }
 
 @keyframes glowing-shadow12 {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.375rem rgb(5, 146, 0),     /* 10px 4px */
-      0 0 1.25rem 0.5rem rgb(0, 50, 186);      /* 20px 6px */
+      0 0 0.625rem 0.375rem rgb(5, 146, 0),     
+      0 0 1.25rem 0.5rem rgb(0, 50, 186);    
   }
   50% {
     box-shadow: 
-      0 0 0.625rem 0.375rem rgba(5, 146, 0, 0.416),     /* 10px 4px */
-      0 0 1.25rem 0.5rem rgba(0, 50, 186, 0.457);      /* 20px 6px */
+      0 0 0.625rem 0.375rem rgba(5, 146, 0, 0.416),     
+      0 0 1.25rem 0.5rem rgba(0, 50, 186, 0.457);     
   }
   100% {
     box-shadow:
-      0 0 0.625rem 0.375rem rgb(5, 146, 0),     /* 10px 4px */
-      0 0 1.25rem 0.5rem rgb(0, 50, 186);      /* 20px 6px */
+      0 0 0.625rem 0.375rem rgb(5, 146, 0),     
+      0 0 1.25rem 0.5rem rgb(0, 50, 186);     
   }
 }
 
@@ -768,9 +787,9 @@ a.navBarButton {
 @keyframes glowing-sign-shadows {
   0% {
     box-shadow: 
-      0 0 0.625rem 0.3125rem rgb(0, 255, 94),    /* 10px 5px */
-      0 0 1.875rem 0.4375rem rgb(0, 204, 255),  /* 30px 7px */
-      0 0 3.125rem 0.5625rem rgb(251, 0, 255);  /* 50px 9px */
+      0 0 0.625rem 0.3125rem rgb(0, 255, 94),    
+      0 0 1.875rem 0.4375rem rgb(0, 204, 255),  
+      0 0 3.125rem 0.5625rem rgb(251, 0, 255); 
   }
   50% {
     box-shadow: 
@@ -789,9 +808,9 @@ a.navBarButton {
 @keyframes pulse-glow {
   0% {
     filter: 
-      drop-shadow(0 0 0.3125rem rgba(21, 0, 255, 0.8))  /* 5px */
-      drop-shadow(0 0 0.625rem rgba(21, 0, 255, 0.6))   /* 10px */
-      drop-shadow(0 0 1.25rem rgba(21, 0, 255, 0.4));   /* 20px */
+      drop-shadow(0 0 0.3125rem rgba(21, 0, 255, 0.8)) 
+      drop-shadow(0 0 0.625rem rgba(21, 0, 255, 0.6))  
+      drop-shadow(0 0 1.25rem rgba(21, 0, 255, 0.4));   
   }
   100% {
     filter: 

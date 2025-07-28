@@ -31,7 +31,7 @@ function M3Instructionsscreen() {
 
     <div className = "screenLayout">
 
-      <h1 className = "instructionsSign"> Station 3: The Core </h1>
+      <h1 className = "instructionsSign"> <span className='signGlitch'>Station 3: The Core </span></h1>
 
       <h1 className = "SPIMissionDescription"> 
         Mission Description: Exterminate all oncoming waves before they reach you.

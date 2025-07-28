@@ -11,9 +11,8 @@ function Instructionsscreen (){
 
         <div className = "screenLayout">
 
-            <h1 className = "instructionsSign">
-                Instructions: 
-            </h1>
+            <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
+            
             <p className = "largefont">
                 &gt; Your goal is to use the controls to guide the snake to eat the apples. <br/>
                 &gt; By pressing the corresponding buttons, you can guide the snake to move it up, down, left, and right. <br/>

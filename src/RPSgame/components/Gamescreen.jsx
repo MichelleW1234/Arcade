@@ -87,7 +87,7 @@ function Gamescreen (){
 
                     <div className = "RPSgameBoard">
                         <h1 className = "RPSSign">
-                            <span className = "RPSSignGlitch">Game Over.</span>
+                            <span className = "signGlitch">Game Over.</span>
                         </h1>
 
                         <Link to="/RPSsummary" className="RPSButton" onClick={() => getWinner()}>

@@ -11,9 +11,7 @@ function Instructionsscreen (){
 
         <div className = "screenLayout">
 
-            <h1 className = "instructionsSign">
-                Instructions: 
-            </h1>
+            <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
             <p className = "largefont">
                 &gt; There are four different colors: blue, yellow, pink, and green.<br/>
                 &gt; Click on a circle in the gameboard if it flashes the correct color.<br/>

@@ -1,5 +1,5 @@
 .RPSgameScreenLayout {
-  gap: 0.625rem;  /* 10px */
+  gap: 0.625rem; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,51 +11,51 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3.125rem;               /* 50px */
-  background-color: rgb(117, 93, 255);
-  width: 37.5rem;                 /* 600px */
   overflow-y: auto;
-  border-radius: 1.5625rem;       /* 25px */
-  gap: 3.125rem;                  /* 50px */
 
-  border-left: 0.5625rem solid rgb(50, 39, 112);    /* 9px */
-  border-bottom: 0.5625rem solid rgb(50, 39, 112);  /* 9px */
-  border-top: 0.125rem solid rgb(50, 39, 112);      /* 2px */
-  border-right: 0.125rem solid rgb(50, 39, 112);    /* 2px */
+  width: 37.5rem;      
+  padding: 3.125rem;                    
+  gap: 3.125rem;  
+  margin-top: 6.25rem;            
 
-  box-shadow: 0 0 2.5rem 0.5rem rgb(157, 139, 255); /* 40px 8px */
-  margin-top: 6.25rem;            /* 100px */
+  border-radius: 1.5625rem;      
+
+  background-color: rgb(117, 93, 255);
+
+  border-left: 0.5625rem solid rgb(50, 39, 112);   
+  border-bottom: 0.5625rem solid rgb(50, 39, 112); 
+  border-top: 0.125rem solid rgb(50, 39, 112);     
+  border-right: 0.125rem solid rgb(50, 39, 112);  
+
+  box-shadow: 0 0 2.5rem 0.5rem rgb(157, 139, 255);
+
 }
 
 
 .RPSSign {
-  padding: 0.625rem;                  /* 10px */
-  border-radius: 1.5625rem;           /* 25px */
+  padding: 0.625rem;                 
+  border-radius: 1.5625rem;          
   background-color: rgb(190, 176, 254);
-  border: 0.3125rem solid rgba(1, 255, 35, 0.586); /* 5px */
+  border: 0.3125rem solid rgba(1, 255, 35, 0.586); 
   color: white;
 
   font-size: 1.875rem;
 
   animation: glowing-sign-shadows 4s infinite;
+  
 }
 
-.RPSSignGlitch{
-
-  animation: sign-glitch 4s infinite;
-    
-}
 
 .RPSButton {
-  font-size: 1.5625rem;              /* 25px */
-  padding: 0.625rem;                 /* 10px */
+  font-size: 1.5625rem;            
+  padding: 0.625rem;               
   background-color: rgb(74, 243, 255);
-  border-left: 0.34375rem solid rgb(35, 120, 126);   /* 5.5px */
-  border-bottom: 0.34375rem solid rgb(35, 120, 126);   /* 5.5px */
-  border-top: 0.125rem solid rgb(35, 120, 126);     /* 5.5px */
-  border-right: 0.125rem solid rgb(35, 120, 126);  /* 5.5px */
+  border-left: 0.34375rem solid rgb(35, 120, 126);   
+  border-bottom: 0.34375rem solid rgb(35, 120, 126);  
+  border-top: 0.125rem solid rgb(35, 120, 126);    
+  border-right: 0.125rem solid rgb(35, 120, 126); 
 
-  animation: glowing-shadow2 3s infinite, button-glitch 3s infinite;
+  animation: glowing-shadow2 3s infinite, button-glitch 4s infinite;
 
 }
 
@@ -64,10 +64,10 @@
 
   background-color: rgb(0, 132, 142); 
 
-  border-left: 0.34375rem solid rgb(0, 71, 76);    /* 5.5px */
-  border-bottom: 0.34375rem solid rgb(0, 71, 76);  /* 5.5px */
-  border-top: 0.125rem solid rgb(0, 71, 76); /* 5.5px */
-  border-right: 0.125rem solid rgb(0, 71, 76); /* 5.5px */
+  border-left: 0.34375rem solid rgb(0, 71, 76);   
+  border-bottom: 0.34375rem solid rgb(0, 71, 76); 
+  border-top: 0.125rem solid rgb(0, 71, 76); 
+  border-right: 0.125rem solid rgb(0, 71, 76); 
 
   color: white;
     

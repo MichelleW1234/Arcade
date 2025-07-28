@@ -8,9 +8,8 @@ function CatInstructionsscreen (){
 
         <div className = "screenLayout">
 
-            <h1 className = "instructionsSign">
-                Instructions: 
-            </h1>
+            <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
+            
             <p className = "largefont">
                 &gt; The prizes that you can win from this machine are cats. <br/>
                 &gt; The ranking of the prizes from least to most rare is: <br/>

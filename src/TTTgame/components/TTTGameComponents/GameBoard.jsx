@@ -36,7 +36,7 @@ function GameBoard() {
 
                     {error === "" ? (
                                         
-                        <h1 className = "TTTturnBoard"> Active Player: {currentTurn === 1 ? "  You" : "  Computer"} </h1>
+                        <h1 className = "TTTturnBoard"> <span className='signGlitch'>Active Player: {currentTurn === 1 ? "  You" : "  Computer"} </span></h1>
 
                     ) : (
 
@@ -70,7 +70,7 @@ function GameBoard() {
 
                     <div className = "TTTboard">
                         
-                        <h1 className = "TTTturnBoard"> Game Over. </h1>
+                        <h1 className = "TTTturnBoard"> <span className='signGlitch'>Game Over.</span></h1>
 
                         <div className = "TTTfinished_chart_container">
 

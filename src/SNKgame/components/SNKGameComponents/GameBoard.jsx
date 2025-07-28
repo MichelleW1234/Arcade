@@ -122,7 +122,7 @@ function GameBoard (){
             {startButtonPressed === false ? (
 
                 <>
-                    <div className = "SNKgameBoardSign"> Apples Eaten: <span className = "SNKgameBoardSignGlitch">{SNKUser[1]}</span></div>
+                    <h1 className = "SNKgameBoardSign">  <span className = "signGlitch">Apples Eaten: {SNKUser[1]}</span></h1>
 
                     <div className = "SNKinnercontainer">
 
@@ -136,7 +136,7 @@ function GameBoard (){
             ) : SNKUser[0] === false && snake.length < 600 ? (
 
                 <>
-                    <div className = "SNKgameBoardSign"> Apples Eaten: <span className = "SNKgameBoardSignGlitch">{SNKUser[1]}</span></div>
+                    <h1 className = "SNKgameBoardSign">  <span className = "signGlitch">Apples Eaten: {SNKUser[1]}</span></h1>
 
                     <div className = "SNKinnercontainer">
 
@@ -152,12 +152,12 @@ function GameBoard (){
             ):(
 
                 <>
-                <div className = "SNKgameBoardSign"> <span className = "SNKgameBoardSignGlitch">Game Over.</span></div>
+                <h1 className = "SNKgameBoardSign"> <span className = "signGlitch">Game Over.</span></h1>
 
                 <div className = "SNKinnercontainer">
                 
                     <div className = "SNKgameboard">
-                        <p>Game Over.</p>
+                        <p> Game Over.</p>
                     </div>
                             
                 </div>

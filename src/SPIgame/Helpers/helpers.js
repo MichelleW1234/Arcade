@@ -11,7 +11,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
 
             setSPIUser(prev => {
                 const newMission = [...prev];
-                newMission[0].push(1);
+                newMission[0] += 1;
                 newMission[1] = [2, "/SPIM2instructions"];
                 return newMission;                
             });
@@ -20,7 +20,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
 
             setSPIUser(prev => {
                 const newMission = [...prev];
-                newMission[0].push(2);
+                newMission[0] += 1;
                 newMission[1] = [3, "/SPIM3instructions"];
                 return newMission;                
             });
@@ -29,7 +29,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
 
             setSPIUser(prev => {
                 const newMission = [...prev];
-                newMission[0].push(3);
+                newMission[0] += 1;
                 newMission[1] = [4, "/SPIM4instructions"];
                 return newMission;                
             });
@@ -38,7 +38,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
 
             setSPIUser(prev => {
                 const newMission = [...prev];
-                newMission[0].push(4);
+                newMission[0] += 1;
                 newMission[1] = -1;
                 return newMission;                
             });
@@ -456,7 +456,7 @@ export const quitGame = (setSPIUser, Player, setPlayer, ActiveGame, setActiveGam
         
     playSound(4);
 
-    setSPIUser([[],[1, "/SPIM1Instructions"], false]);
+    setSPIUser([0,[1, "/SPIM1Instructions"], false]);
     setPlayer([Player[0] - ActiveGame[1]]);
     setActiveGame(retrieveActiveGame(1));
         

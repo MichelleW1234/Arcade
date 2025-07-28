@@ -1,10 +1,6 @@
 /*
 0 -> href path to starting page of active game
 1 -> Number of points to play (and that can be gained or lost)
-2 -> 
-3 -> 
-4 -> 
-5 -> 
 */
 
 import React, { createContext, useContext, useState, useEffect } from "react";

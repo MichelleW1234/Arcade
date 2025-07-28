@@ -16,9 +16,9 @@ export function SPIUserProvider({ children }) {
   const [SPIUser, setSPIUser] = useState(() => {
     try {
       const storedSPIUser = JSON.parse(sessionStorage.getItem("SPIUser"));
-      return Array.isArray(storedSPIUser) ? storedSPIUser : [[],[1, "/SPIM1Instructions"], false]; // Ensure it's an array
+      return Array.isArray(storedSPIUser) ? storedSPIUser : [0,[1, "/SPIM1Instructions"], false]; // Ensure it's an array
     } catch (error) {
-      return [[],[1, "/SPIM1Instructions"], false]; // Fallback if JSON parsing fails
+      return [0,[1, "/SPIM1Instructions"], false]; // Fallback if JSON parsing fails
     }
   });
 

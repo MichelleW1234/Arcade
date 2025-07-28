@@ -16,14 +16,14 @@ function Summaryscreen() {
     const resetGame = () => {
 
         playSound(19);
-        setSPIUser([[],[1, "/SPIM1Instructions"], false]);
+        setSPIUser([0,[1, "/SPIM1Instructions"], false]);
 
     }
 
     const reset = () => {
 
         playSound(4);
-        setSPIUser([[],[1, "/SPIM1Instructions"], false]);
+        setSPIUser([0,[1, "/SPIM1Instructions"], false]);
         setActiveGame(retrieveActiveGame(1));
 
     }
@@ -33,8 +33,8 @@ function Summaryscreen() {
         <div className = "screenLayout">
 
             <div className = "StatsBoard">
-                <p> Missions Completed: {SPIUser[0].length}</p>
-                <p> <span className="StatsGlitch"> Points Earned: {SPIUser[0].length * ActiveGame[1]}</span></p>
+                <p> Missions Completed: {SPIUser[0]}</p>
+                <p> <span className="StatsGlitch"> Points Earned: {SPIUser[0] * ActiveGame[1]}</span></p>
             </div>
 
             {Player[0] >= ActiveGame[1] ? (

@@ -46,7 +46,7 @@ function Missionscreen() {
                             
                             </div>
 
-                        ) : SPIUser[0].includes(mission) ? (
+                        ) : SPIUser[0] >= mission ? (
                             <div key = {mission} className= "SPImissionWindowCompleted">
                                 
                                 <p>Mission {mission} Completed</p>
@@ -77,9 +77,9 @@ function Missionscreen() {
                     ))}
                 </div>
 
-                {SPIUser[0].length == allMissions.length || SPIUser[2] == true ? (
+                {SPIUser[0] == allMissions.length || SPIUser[2] == true ? (
 
-                    <Link to= "/SPIsummary" className = "generalbuttonGlitch" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0].length*ActiveGame[1]))}>
+                    <Link to= "/SPIsummary" className = "generalbuttonGlitch" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0]*ActiveGame[1]))}>
                         View Results
                     </Link>
 

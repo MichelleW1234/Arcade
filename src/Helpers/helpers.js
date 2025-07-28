@@ -29,7 +29,7 @@ import BFRBirdShot from "../Music/BFRBirdShot.mp3";
 
 export const retrieveActiveGame = (index) => {
     
-    let gameControls = new Array(null, null, null, null, null);
+    let gameControls = new Array(null, null);
 
     if (index === 0){
 

@@ -47,6 +47,7 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
         shieldedAliensRef.current = shieldedAliens;
     }, [shieldedAliens]);
 
+    const waveIncremented = useRef(false);
 
     /* Clear and restart their interval whenever anything in their dependency array changes
     so that callback always uses the current value */
@@ -61,7 +62,7 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
         }
 
         const interval = setInterval(() => {
-            alienKilledM2(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, shieldedAliensRef.current, setShieldedAliens);
+            alienKilledM2(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, shieldedAliensRef.current, setShieldedAliens, waveIncremented);
         }, 60);
 
         return () => clearInterval(interval);

@@ -112,7 +112,7 @@ function M4Gamescreen() {
 
                             ) : (
 
-                                <h1> You defeated the Queen in time and have saved your ship! Great job! </h1>
+                                <p> You defeated the Queen in time and have saved your ship! Great job! </p>
 
                             )}
                             

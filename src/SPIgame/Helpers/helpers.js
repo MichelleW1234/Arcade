@@ -285,7 +285,11 @@ export const laserBlasterM4 = (laserPositions, setLaserPositions, laserValue) =>
 
 //For determining alien deaths:
 
-export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber) => {
+export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, waveIncremented) => {
+
+    if (waveIncremented.current) {
+        return; // STOP immediately if wave is already in progress
+    }
 
     const newPositions =  alienPositions.filter(
         alien => !(laserPositions.some(laser => 
@@ -300,10 +304,16 @@ export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions,
         playSound(9);
     }
 
-    if (newPositions.length === 0) {
+    if (newPositions.length === 0 && !waveIncremented.current) {
+
+        waveIncremented.current = true;
         setWaveNumber(prev => prev + 1);
         setAlienPositions(newWave(1));
         playSound(10);
+
+        setTimeout(() => {
+            waveIncremented.current = false;
+        }, 200);
 
     } else {
 
@@ -320,7 +330,11 @@ export const getRandomElements = (array, count) => {
 }
 
 
-export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, shieldedAliens, setShieldedAliens) => {
+export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, shieldedAliens, setShieldedAliens, waveIncremented) => {
+
+    if (waveIncremented.current) {
+        return; // STOP immediately if wave is already in progress
+    }
 
     const newPositions =  alienPositions.filter(alien => !(
         laserPositions.some(([laserRow, laserCol]) =>
@@ -339,14 +353,18 @@ export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions,
         playSound(9);
     }
 
+    if (newPositions.length === 0 && !waveIncremented.current) {
 
-    if (newPositions.length === 0) {
-
+        waveIncremented.current = true;
         setWaveNumber(prev => prev + 1);
         const newWaveMatrix = newWave(2);
-        playSound(10);
         setAlienPositions(newWaveMatrix);
         setShieldedAliens(getRandomElements(newWaveMatrix, 3));
+        playSound(10);
+
+        setTimeout(() => {
+            waveIncremented.current = false;
+        }, 200);
 
     } else {
 
@@ -357,7 +375,11 @@ export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions,
 }
 
 
-export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, mutantLaserOn) => {
+export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, waveIncremented, mutantLaserOn) => {
+
+    if (waveIncremented.current) {
+        return; // STOP immediately if wave is already in progress
+    }
 
     let newPositions = []
     if (mutantLaserOn === true){
@@ -388,11 +410,15 @@ export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions,
         playSound(9);
     }
     
-    if (newPositions.length === 0) {
+    if (newPositions.length === 0 && !waveIncremented.current) {
 
+        waveIncremented.current = true;
         setWaveNumber(prev => prev + 1);
         setAlienPositions(newWave(3));
         playSound(10);
+        setTimeout(() => {
+            waveIncremented.current = false;
+        }, 200);
 
     } else {
 

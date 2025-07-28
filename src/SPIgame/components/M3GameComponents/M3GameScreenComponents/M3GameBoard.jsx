@@ -25,7 +25,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
     const [alienPositions, setAlienPositions] = useState(newWave(3));
     const [mutantLaserOn, setMutantLaserOn] = useState(false);
 
-  
+
     /* Refs avoid stale values and store the latest values for use inside 
     interval callbacks in useEffect without triggering re-renders*/
     const alienPositionsRef = useRef(alienPositions);
@@ -43,6 +43,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
         laserValueRef.current = laserValue;
     }, [laserValue]);
 
+    const waveIncremented = useRef(false);
 
     /* Clear and restart their interval whenever anything in their dependency array changes
     so that callback always uses the current value */
@@ -57,7 +58,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
         }
 
         const interval = setInterval(() => {
-            alienKilledM3(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, mutantLaserOn);
+            alienKilledM3(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, waveIncremented, mutantLaserOn);
         }, 60);
 
         return () => clearInterval(interval);

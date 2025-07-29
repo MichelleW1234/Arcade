@@ -115,9 +115,12 @@
 
 
 .SPImissionStartButton {
-    font-size: 1.5625rem;          
-    background-color: rgb(168, 197, 255);
-    padding: 0.9375rem;         
+    
+    font-size: 1.5625rem;  
+    padding: 0.9375rem;     
+    font-weight: normal;
+
+    background-color: rgb(168, 197, 255);       
     
     border-left: 0.4375rem solid rgb(0, 49, 147);  
     border-bottom: 0.4375rem solid rgb(0, 49, 147);  

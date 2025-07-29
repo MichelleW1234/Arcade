@@ -1,16 +1,16 @@
 .CWMGameSelectionBoard{
 
     background-color: rgb(67, 18, 151);
-    width: 55rem;               /* 900px */
-    padding: 1.5rem;               /* 40px */
+    width: 55rem;           
+    padding: 1.5rem;       
 
-    border-radius: 1.25rem;        /* 20px */
-    border-left: 0.5rem solid rgb(29, 8, 66);    /* 8px */
-    border-bottom: 0.5rem solid rgb(29, 8, 66);     /* 8px */
-    border-top: 0.125rem solid rgb(29, 8, 66);     /* 2px */
-    border-right: 0.125rem solid rgb(29, 8, 66);    /* 2px */
+    border-radius: 1.25rem;    
+    border-left: 0.5rem solid rgb(29, 8, 66);   
+    border-bottom: 0.5rem solid rgb(29, 8, 66);    
+    border-top: 0.125rem solid rgb(29, 8, 66);  
+    border-right: 0.125rem solid rgb(29, 8, 66);   
 
-    box-shadow: 0 0 1rem 0.5rem rgb(157, 66, 255); /* 40px 10px */
+    box-shadow: 0 0 1rem 0.5rem rgb(157, 66, 255); 
 
 }
 
@@ -19,8 +19,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 3.75rem;       /* 60px */
-    padding: 1rem;   /* 20px */
+    gap: 3.75rem;     
+    padding: 1rem;  
 
 }
 
@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;  /* 20px */
+    gap: 2rem; 
 
 }
 
@@ -40,36 +40,36 @@
     align-items: center;
     justify-content: center;
 
-    height: 17rem;              /* 250px */
-    width: 12rem;                /* 180px */
+    height: 17rem;           
+    width: 12rem;             
     background-color: rgb(241, 174, 254);
     align-items: center;
-    padding: 1.5rem 1.25rem;               /* 20px */
-    gap: 1.25rem;                   /* 20px */
+    padding: 1.5rem 1.25rem;          
+    gap: 1.25rem;             
 
     font-size: 1.125rem;
     font-weight: bold;
 
-    border-left: 0.3125rem solid rgb(152, 0, 182);   /* 5px */
-    border-bottom: 0.3125rem solid rgb(152, 0, 182); /* 5px */
-    border-top: 0.125rem solid rgb(152, 0, 182);     /* 2px */
-    border-right: 0.125rem solid rgb(152, 0, 182);   /* 2px */
-    border-radius: 0.9375rem;             /* 15px */
+    border-left: 0.3125rem solid rgb(152, 0, 182); 
+    border-bottom: 0.3125rem solid rgb(152, 0, 182); 
+    border-top: 0.125rem solid rgb(152, 0, 182);   
+    border-right: 0.125rem solid rgb(152, 0, 182);  
+    border-radius: 0.9375rem;       
 
-    box-shadow: 0 0 1rem 0.5rem rgb(228, 92, 255); /* 20px 6px */
+    box-shadow: 0 0 1rem 0.5rem rgb(228, 92, 255); 
 
 }
 
 .CWMMachineButton{
 
-    font-size: 1.25rem;               /* 20px */
-    padding: 0.625rem;                /* 10px */
+    font-size: 1.25rem;             
+    padding: 0.625rem;           
     background-color: rgb(246, 143, 255);
 
-    border-left: 0.3125rem solid rgb(105, 16, 120);   /* 5px */
-    border-bottom: 0.3125rem solid rgb(105, 16, 120); /* 5px */
-    border-right: 0.125rem solid rgb(105, 16, 120);/* 5px */
-    border-top: 0.125rem solid rgb(105, 16, 120); /* 5px */
+    border-left: 0.3125rem solid rgb(105, 16, 120);  
+    border-bottom: 0.3125rem solid rgb(105, 16, 120); 
+    border-right: 0.125rem solid rgb(105, 16, 120);
+    border-top: 0.125rem solid rgb(105, 16, 120); 
 
     animation: glowing-shadow3 4s infinite;
 
@@ -80,10 +80,10 @@
 
     background-color: rgb(140, 0, 175);
 
-    border-left: 0.3125rem solid rgb(60, 0, 75);   /* 5px */
-    border-bottom: 0.3125rem solid rgb(60, 0, 75); /* 5px */
-    border-right: 0.125rem solid rgb(60, 0, 75);  /* 5px */
-    border-top: 0.125rem solid rgb(60, 0, 75);  /* 5px */
+    border-left: 0.3125rem solid rgb(60, 0, 75);   
+    border-bottom: 0.3125rem solid rgb(60, 0, 75); 
+    border-right: 0.125rem solid rgb(60, 0, 75); 
+    border-top: 0.125rem solid rgb(60, 0, 75); 
 
     color: white;
     animation: glowing-shadow7 4s infinite;
@@ -93,7 +93,6 @@
 .CWMMachineImages{
 
     width: 100%;
-
-    border: 5px solid rgb(71, 0, 224);
+    border: 0.3125rem solid rgb(71, 0, 224);
 
 }

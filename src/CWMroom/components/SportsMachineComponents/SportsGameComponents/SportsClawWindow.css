@@ -3,10 +3,10 @@
     flex-direction: column;
 
     background-color: rgb(203, 231, 255);
-    border: 0.625rem solid rgb(0, 123, 255);   /* 10px / 16 */
-    border: 0.625rem solid rgb(9, 0, 139);   /* 10px / 16 */
+    border: 0.625rem solid rgb(0, 123, 255);  
+    border: 0.625rem solid rgb(9, 0, 139);  
 
-    box-shadow: 0 0 1rem 0.5rem rgb(102, 191, 255);  /* already in rem, no change needed */
+    box-shadow: 0 0 1rem 0.5rem rgb(102, 191, 255);  
 }
 
 
@@ -19,12 +19,12 @@
 }
 
 .CWMSportsClawRow {
-    height: 2.8125rem;   /* 45px / 16 */
-    width: 1.875rem;     /* 30px / 16 */
+    height: 2.8125rem;   
+    width: 1.875rem;    
 }
 
 
 .CWMSportsPrizes {
-    height: 9.4rem;    /* 110px / 16 */
+    height: 9.4rem;   
     background-color: rgb(203, 231, 255);
 }

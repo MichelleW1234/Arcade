@@ -9,8 +9,8 @@
 
     box-shadow: 0 0 1rem 0.65rem rgb(107, 181, 255);
 
-    gap: 0.5rem;        /* 8px */
-    padding: 2.5rem;    /* 40px */
+    gap: 0.5rem;       
+    padding: 2.5rem;    
 }
 
 
@@ -21,11 +21,11 @@
 
     background-color: rgb(0, 0, 0);
 
-    border: 0.3rem solid rgb(255, 112, 255);  /* ~4.8px */
-    box-shadow: 0 0 1rem 0.6rem rgb(255, 112, 255); /* already in rem */
+    border: 0.3rem solid rgb(255, 112, 255); 
+    box-shadow: 0 0 1rem 0.6rem rgb(255, 112, 255); 
 
-    gap: 0.5rem;     /* 8px */
-    padding: 2.5rem; /* 40px */
+    gap: 0.5rem;    
+    padding: 2.5rem; 
 }
 
 
@@ -36,11 +36,11 @@
 
     background-color: rgb(0, 0, 0);
 
-    border: 0.3rem solid rgb(104, 255, 129);           /* ~4.8px */
-    box-shadow: 0 0 1rem 0.6rem rgb(104, 255, 129);     /* already in rem */
+    border: 0.3rem solid rgb(104, 255, 129);          
+    box-shadow: 0 0 1rem 0.6rem rgb(104, 255, 129);    
 
-    gap: 0.5rem;        /* 8px */
-    padding: 2.5rem;    /* 40px */
+    gap: 0.5rem;     
+    padding: 2.5rem;  
 }
 
 
@@ -51,11 +51,11 @@
 
     background-color: rgb(0, 0, 0);
 
-    border: 0.3rem solid rgb(253, 255, 111);           /* ~4.8px */
-    box-shadow: 0 0 1rem 0.6rem rgb(253, 255, 111);    /* already in rem */
+    border: 0.3rem solid rgb(253, 255, 111);          
+    box-shadow: 0 0 1rem 0.6rem rgb(253, 255, 111);    
 
-    gap: 0.5rem;       /* 8px */
-    padding: 2.5rem;   /* 40px */
+    gap: 0.5rem;       
+    padding: 2.5rem;  
 }
 
 
@@ -66,14 +66,14 @@
     background-color: rgb(195, 252, 255);
 
     border-radius: 50%;
-    border: 0; /* no units needed for zero */
+    border: 0; 
 }
 
 
 .CBLGameBoardHole:hover{
 
-    box-shadow: 0 0 1rem 0.25rem  rgb(195, 252, 255); /* already in rem */
-    border: 3px solid  rgb(195, 252, 255);
+    box-shadow: 0 0 1rem 0.25rem  rgb(195, 252, 255); 
+
 }
 
 .CBLGameBoardColorOne {
@@ -83,66 +83,66 @@
     background-color: rgb(17, 0, 255);
 
     border-radius: 50%;
-    border: 0; /* no units needed for zero */
+    border: 0; 
 }
 
 
 .CBLGameBoardColorOne:hover{
 
-    box-shadow: 0 0 1rem 0.25rem rgb(82, 70, 255); /* already in rem */
+    box-shadow: 0 0 1rem 0.25rem rgb(82, 70, 255); 
 
 }
 
 .CBLGameBoardColorTwo{
 
-    height: 7rem;  /* 25px */
-    width: 7rem;   /* 25px */
+    height: 7rem;  
+    width: 7rem;  
 
     background-color: rgb(255, 0, 238);
 
     border-radius: 50%;
-    border: 0; /* no units needed for zero */
+    border: 0; 
 
 }
 
 .CBLGameBoardColorTwo:hover{
 
-    box-shadow: 0 0 1rem 0.25rem rgb(255, 79, 243); /* already in rem */
+    box-shadow: 0 0 1rem 0.25rem rgb(255, 79, 243);
 
 }
 
 .CBLGameBoardColorThree{
 
-    height: 7rem;  /* 25px */
-    width: 7rem;   /* 25px */
+    height: 7rem;  
+    width: 7rem;  
 
     background-color: rgb(0, 255, 47);
 
     border-radius: 50%;
-    border: 0; /* no units needed for zero */
+    border: 0; 
 
 }
 
 .CBLGameBoardColorThree:hover{
 
-    box-shadow: 0 0 1rem 0.25rem rgb(76, 255, 109); /* already in rem */
+    box-shadow: 0 0 1rem 0.25rem rgb(76, 255, 109); 
 
 }
 
 .CBLGameBoardColorFour{
 
-    height: 7rem;  /* 25px */
-    width: 7rem;   /* 25px */
+    height: 7rem;  
+    width: 7rem;   
 
     background-color: rgb(255, 242, 0);
 
     border-radius: 50%;
-    border: 0; /* no units needed for zero */
+    border: 0;
 
 }
 
 .CBLGameBoardColorFour:hover{
 
-    box-shadow: 0 0 1rem 0.25rem rgb(255, 246, 82); /* already in rem */
+    box-shadow: 0 0 1rem 0.25rem rgb(255, 246, 82); 
 
 }

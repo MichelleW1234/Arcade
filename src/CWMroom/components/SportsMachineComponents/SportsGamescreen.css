@@ -1,21 +1,22 @@
 .CWMSportsOuterGameContainer {
-    background-color: rgb(59, 41, 196);
-    padding: 2.5rem;
-
-    border-top: 0.125rem solid rgb(32, 22, 107);         /* 2px */
-    border-left: 0.5rem solid rgb(32, 22, 107);           /* 8px */
-    border-right: 0.125rem solid rgb(32, 22, 107);          /* 2px */
-    border-bottom: 0.5rem solid rgb(32, 22, 107);           /* 8px */
-
-    border-radius: 1.875rem; /* 30px */
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    gap: 1.875rem; /* 30px */
+    padding: 2.5rem;
+    gap: 1.875rem; 
 
-    box-shadow: 0 0 1.25rem 0.5rem rgb(151, 137, 255);  /* already in rem */
+    border-radius: 1.875rem; 
+
+    background-color: rgb(59, 41, 196);
+    border-top: 0.125rem solid rgb(32, 22, 107);    
+    border-left: 0.5rem solid rgb(32, 22, 107);     
+    border-right: 0.125rem solid rgb(32, 22, 107);      
+    border-bottom: 0.5rem solid rgb(32, 22, 107);       
+
+    box-shadow: 0 0 1.25rem 0.5rem rgb(151, 137, 255);
+
 }
 
 
@@ -23,23 +24,24 @@
 .CWMSportsGameBoardScreen {
     display: flex;
     flex-direction: column;
-    gap: 3.125rem;        /* 50px / 16 */
-
     align-items: center;
+
+    gap: 3.125rem;    
+
 }
 
 
 
 .CWMSportsButton {
-    font-size: 1.5625rem;       /* 25px / 16 */
-    padding: 0.9375rem;         /* 15px / 16 */
+    font-size: 1.5625rem;     
+    padding: 0.9375rem;        
 
     background-color: rgb(165, 211, 255);
 
-    border-left: 0.35rem solid rgb(87, 113, 136);   /* 6px / 16 */
-    border-bottom: 0.35rem solid rgb(87, 113, 136); /* 6px / 16 */
-    border-top: 0.125rem solid rgb(87, 113, 136);    /* 2px / 16 */
-    border-right: 0.125rem solid rgb(87, 113, 136);  /* 2px / 16 */
+    border-left: 0.35rem solid rgb(87, 113, 136);  
+    border-bottom: 0.35rem solid rgb(87, 113, 136); 
+    border-top: 0.125rem solid rgb(87, 113, 136);    
+    border-right: 0.125rem solid rgb(87, 113, 136);  
 
     border-radius: 0.9375rem;
 
@@ -53,10 +55,10 @@
 
     background-color: rgb(6, 89, 255);
 
-    border-left: 0.35rem solid rgb(0, 36, 109);   /* 6px / 16 */
-    border-bottom: 0.35rem solid rgb(0, 36, 109); /* 6px / 16 */
-    border-top: 0.125rem solid rgb(0, 36, 109);    /* 2px / 16 */
-    border-right: 0.125rem solid rgb(0, 36, 109);  /* 2px / 16 */
+    border-left: 0.35rem solid rgb(0, 36, 109);  
+    border-bottom: 0.35rem solid rgb(0, 36, 109); 
+    border-top: 0.125rem solid rgb(0, 36, 109);   
+    border-right: 0.125rem solid rgb(0, 36, 109); 
 
     animation: glowing-shadow4 4s infinite, button-glitch 3s infinite;
 

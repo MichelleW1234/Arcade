@@ -2,20 +2,20 @@
     background-color: rgb(158, 47, 255);
     padding: 4rem;
 
-    border-top: 0.125rem solid rgb(75, 22, 121);         /* 2px */
-    border-left: 0.5rem solid rgb(75, 22, 121);          /* 8px */
-    border-right: 0.125rem solid rgb(75, 22, 121);       /* 2px */
-    border-bottom: 0.5rem solid rgb(75, 22, 121);        /* 8px */
+    border-top: 0.125rem solid rgb(75, 22, 121);       
+    border-left: 0.5rem solid rgb(75, 22, 121);     
+    border-right: 0.125rem solid rgb(75, 22, 121);      
+    border-bottom: 0.5rem solid rgb(75, 22, 121);       
 
-    border-radius: 1.875rem; /* 30px */
+    border-radius: 1.875rem; 
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    gap: 1.875rem; /* 30px */
+    gap: 1.875rem; 
 
-    box-shadow: 0 0 1.25rem 0.5rem rgb(157, 60, 241); /* already in rem */
+    box-shadow: 0 0 1.25rem 0.5rem rgb(157, 60, 241); 
 }
 
 
@@ -32,35 +32,35 @@
     font-weight: bold;
 
     background-color: rgb(159, 209, 253);
-    box-shadow: 0 0 1rem 0.5rem rgb(159, 209, 253);  /* already in rem */
+    box-shadow: 0 0 1rem 0.5rem rgb(159, 209, 253); 
 
-    border: 0.125rem solid rgb(91, 118, 142);           /* 2px */
-    border-left: 0.3125rem solid rgb(91, 118, 142);     /* 5px */
-    border-right: 0.125rem solid rgb(91, 118, 142);     /* 2px */
-    border-bottom: 0.3125rem solid rgb(91, 118, 142);   /* 5px */
+    border: 0.125rem solid rgb(91, 118, 142);          
+    border-left: 0.3125rem solid rgb(91, 118, 142);     
+    border-right: 0.125rem solid rgb(91, 118, 142);    
+    border-bottom: 0.3125rem solid rgb(91, 118, 142);   
 }
 
 
 .CBLsign {
-    font-size: 2rem;                          /* OK */
-    border-radius: 1.875rem;                  /* 30px */
-    padding: 0.625rem;                        /* 10px */
+    font-size: 2rem;                        
+    border-radius: 1.875rem;               
+    padding: 0.625rem;                     
     color: white;
     background-color: rgb(209, 129, 255);
-    border: 0.3125rem solid rgba(0, 253, 46, 0.521); /* 5px */
+    border: 0.3125rem solid rgba(0, 253, 46, 0.521); 
 
     animation: glowing-sign-shadows 4s infinite;
 }
 
 .CBLbutton {
-    font-size: 1.875rem; /* 30px */
+    font-size: 1.875rem; 
     background-color: rgb(44, 255, 199);
-    padding: 0.9375rem; /* 15px */
+    padding: 0.9375rem; 
 
-    border-top: 0.125rem solid rgb(17, 95, 74);        /* 2px */
-    border-left: 0.4rem solid rgb(17, 95, 74);         /* 8px */
-    border-right: 0.125rem solid rgb(17, 95, 74);      /* 2px */
-    border-bottom: 0.4rem solid rgb(17, 95, 74);       /* 8px */
+    border-top: 0.125rem solid rgb(17, 95, 74);      
+    border-left: 0.4rem solid rgb(17, 95, 74);       
+    border-right: 0.125rem solid rgb(17, 95, 74);    
+    border-bottom: 0.4rem solid rgb(17, 95, 74);      
 
     animation: glowing-shadow2 4s infinite, button-glitch 4s infinite;
 }
@@ -72,10 +72,10 @@
 
     background-color: rgb(21, 122, 95);
 
-    border-top: 0.125rem solid rgb(11, 65, 50);  /* 2px */
-    border-left: 0.4rem solid rgb(11, 65, 50);         /* 8px */
-    border-right: 0.125rem solid rgb(11, 65, 50);    /* 2px */
-    border-bottom: 0.4rem solid rgb(11, 65, 50);  /* 8px */
+    border-top: 0.125rem solid rgb(11, 65, 50);  
+    border-left: 0.4rem solid rgb(11, 65, 50);        
+    border-right: 0.125rem solid rgb(11, 65, 50);   
+    border-bottom: 0.4rem solid rgb(11, 65, 50);
 
     animation: glowing-shadow8 4s infinite, button-glitch 4s infinite;
 

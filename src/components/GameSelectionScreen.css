@@ -1,30 +1,30 @@
 .ArcadeGameBoard {
   background-color: rgb(187, 0, 255);
-  width: 60rem;               /* 900px */
-  padding: 3rem;               /* 40px */
+  width: 60rem;             
+  padding: 3rem;             
 
-  border-radius: 1.25rem;        /* 20px */
-  border-left: 0.5rem solid rgb(94, 0, 128);     /* 8px */
-  border-bottom: 0.5rem solid rgb(94, 0, 128);   /* 8px */
-  border-top: 0.125rem solid rgb(94, 0, 128);    /* 2px */
-  border-right: 0.125rem solid rgb(94, 0, 128);  /* 2px */
+  border-radius: 1.25rem;      
+  border-left: 0.5rem solid rgb(94, 0, 128);    
+  border-bottom: 0.5rem solid rgb(94, 0, 128);  
+  border-top: 0.125rem solid rgb(94, 0, 128);  
+  border-right: 0.125rem solid rgb(94, 0, 128); 
 
-  box-shadow: 0 0 1rem 0.5rem rgb(179, 68, 249); /* 40px 10px */
+  box-shadow: 0 0 1rem 0.5rem rgb(179, 68, 249);
 }
 
 .ArcadeGameBoardInner {
   display: flex;
   flex-direction: row;
   overflow: auto;
-  gap: 3.75rem;       /* 60px */
-  padding: 1.25rem;   /* 20px */
+  gap: 3.75rem;      
+  padding: 1.25rem;  
 }
 
 .ArcadeGameContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;  /* 20px */
+  gap: 2rem;  
 }
 
 .ArcadeGame {
@@ -33,35 +33,35 @@
   align-items: center;
   justify-content: center;
 
-  height: 18rem;              /* 250px */
-  width: 12rem;                /* 180px */
+  height: 18rem;            
+  width: 12rem;              
   background-color: rgb(179, 227, 255);
   align-items: center;
-  padding: 1.5rem;               /* 20px */
-  gap: 1.25rem;                   /* 20px */
+  padding: 1.5rem;           
+  gap: 1.25rem;               
 
   font-size: 1.125rem;
   font-weight: bold;
 
-  border-left: 0.3125rem solid rgb(68, 93, 95);   /* 5px */
-  border-bottom: 0.3125rem solid rgb(68, 93, 95); /* 5px */
-  border-top: 0.125rem solid rgb(68, 93, 95);     /* 2px */
-  border-right: 0.125rem solid rgb(68, 93, 95);   /* 2px */
-  border-radius: 0.9375rem;             /* 15px */
+  border-left: 0.3125rem solid rgb(68, 93, 95);   
+  border-bottom: 0.3125rem solid rgb(68, 93, 95);
+  border-top: 0.125rem solid rgb(68, 93, 95);    
+  border-right: 0.125rem solid rgb(68, 93, 95);   
+  border-radius: 0.9375rem;           
 
-  box-shadow: 0 0 1rem 0.5rem rgb(150, 234, 255); /* 20px 6px */
+  box-shadow: 0 0 1rem 0.5rem rgb(150, 234, 255); 
 }
 
 
 .gameButton {
-  font-size: 1.25rem;               /* 20px */
-  padding: 0.625rem;                /* 10px */
+  font-size: 1.25rem;            
+  padding: 0.625rem;            
   background-color: aqua;
 
-  border-left: 0.3125rem solid rgb(0, 108, 108);   /* 5px */
-  border-bottom: 0.3125rem solid rgb(0, 108, 108); /* 5px */
-  border-right: 0.125rem solid rgb(0, 108, 108); /* 5px */
-  border-top: 0.125rem solid rgb(0, 108, 108); /* 5px */
+  border-left: 0.3125rem solid rgb(0, 108, 108);  
+  border-bottom: 0.3125rem solid rgb(0, 108, 108); 
+  border-right: 0.125rem solid rgb(0, 108, 108); 
+  border-top: 0.125rem solid rgb(0, 108, 108); 
 
   animation: glowing-shadow1 4s infinite;
 }
@@ -71,10 +71,10 @@
 
   background-color: blue;
 
-  border-left: 0.3125rem solid rgb(0, 0, 116);   /* 5px */
-  border-bottom: 0.3125rem solid rgb(0, 0, 116); /* 5px */
-  border-right: 0.125rem solid rgb(0, 0, 116);  /* 5px */
-  border-top: 0.125rem solid rgb(0, 0, 116);  /* 5px */
+  border-left: 0.3125rem solid rgb(0, 0, 116);  
+  border-bottom: 0.3125rem solid rgb(0, 0, 116); 
+  border-right: 0.125rem solid rgb(0, 0, 116); 
+  border-top: 0.125rem solid rgb(0, 0, 116); 
 
   color: white;
   animation: glowing-shadow4 4s infinite;
@@ -83,12 +83,12 @@
 
 
 .pointsSign {
-  font-size: 2.1875rem;               /* 35px */
-  border-radius: 1.875rem;            /* 30px */
-  padding: 0.625rem;                  /* 10px */
+  font-size: 2.1875rem;             
+  border-radius: 1.875rem;           
+  padding: 0.625rem;               
   color: white;
   background-color: rgb(243, 154, 255);
-  border: 0.3125rem solid rgba(0, 253, 46, 0.521);  /* 5px */
+  border: 0.3125rem solid rgba(0, 253, 46, 0.521); 
 
   animation: glowing-sign-shadows 4s infinite;
 }

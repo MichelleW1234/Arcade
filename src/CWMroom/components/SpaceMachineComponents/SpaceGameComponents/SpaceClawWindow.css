@@ -3,9 +3,9 @@
     flex-direction: column;
 
     background-color: rgb(203, 231, 255);
-    border: 0.625rem solid rgb(71, 0, 104);   /* 10px / 16 */
+    border: 0.625rem solid rgb(71, 0, 104);  
 
-    box-shadow: 0 0 1rem 0.5rem rgb(211, 122, 255);  /* already in rem, no change needed */
+    box-shadow: 0 0 1rem 0.5rem rgb(211, 122, 255);  
 }
 
 
@@ -18,12 +18,12 @@
 }
 
 .CWMSpaceClawRow {
-    height: 2.8125rem;   /* 45px / 16 */
-    width: 1.875rem;     /* 30px / 16 */
+    height: 2.8125rem;  
+    width: 1.875rem;    
 }
 
 
 .CWMSpacePrizes {
-    height: 9.655rem;    /* 110px / 16 */
+    height: 9.655rem;   
     background-color: rgb(203, 231, 255);
 }

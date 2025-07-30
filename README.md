@@ -1,4 +1,4 @@
-Things that I would like to do:
+Things that I (might) do in the future:
 - Connect buttons to the keyboard
 - Add a backend that saves user progress
 - Create badges for achievements

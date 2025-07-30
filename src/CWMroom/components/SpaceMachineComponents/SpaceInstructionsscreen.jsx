@@ -24,7 +24,7 @@ function SpaceInstructionsscreen (){
                 <Link to="/CWMselection" className = "generalbutton" onClick={() => playSound(4)}>
                     Leave Machine
                 </Link>
-                <Link to="/CWMspacegame" className = "generalbuttonGlitch" onClick={() => playSound(18)}>
+                <Link to="/CWMspacegame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
                     Continue
                 </Link>
             </div>

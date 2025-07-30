@@ -24,7 +24,7 @@ function CatInstructionsscreen (){
                 <Link to="/CWMselection" className = "generalbutton" onClick={() => playSound(4)}>
                     Leave Machine
                 </Link>
-                <Link to="/CWMcatgame" className = "generalbuttonGlitch" onClick={() => playSound(18)}>
+                <Link to="/CWMcatgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
                     Continue
                 </Link>
             </div>

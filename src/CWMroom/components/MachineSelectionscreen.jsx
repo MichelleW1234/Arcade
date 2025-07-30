@@ -117,7 +117,7 @@ function MachineSelectionscreen (){
 
                 {Player[0] >= ActiveGame[1] ? (
                 
-                    <Link to={currGamePath} className = "generalbuttonGlitch" onClick = {() => playSound(19)}>
+                    <Link to={currGamePath} className = "generalbuttonGlitch" onClick = {() => playSound(2)}>
                         Go to Machine
                     </Link>
 

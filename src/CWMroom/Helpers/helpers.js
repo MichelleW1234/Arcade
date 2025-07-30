@@ -199,7 +199,7 @@ export const exitGame = (Player, setPlayer, ActiveGameCost, setCWMUser) => {
 
 export const resetGame = (setCWMUser) => {
     
-    playSound(18);
+    playSound(19);
     setCWMUser([0]);
 
 }

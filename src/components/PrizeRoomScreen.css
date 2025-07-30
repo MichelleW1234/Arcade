@@ -79,27 +79,28 @@
   padding: 0.625rem;         
   font-size: 1.5625rem;     
 
-  background-color: rgb(255, 41, 251);
+  background-color: rgb(96, 255, 68);
 
-  border-left: 0.375rem solid rgb(90, 14, 89);    
-  border-bottom: 0.375rem solid  rgb(90, 14, 89);  
-  border-right: 0.125rem solid rgb(90, 14, 89);  
-  border-top: 0.125rem solid  rgb(90, 14, 89); 
-  
+  border-left: 0.375rem solid rgb(18, 122, 0);   
+  border-bottom: 0.375rem solid  rgb(18, 122, 0);   
+  border-right: 0.125rem solid rgb(18, 122, 0);    
+  border-top: 0.125rem solid  rgb(18, 122, 0);   
 
-  animation: glowing-shadow3 4s infinite;
+  animation: glowing-shadow11 4s infinite;
 }
 
 
 .prizeButton:hover{
 
-  background-color: rgb(99, 15, 97);
+  background-color: rgb(18, 122, 0);
 
-  border-left: 0.375rem solid rgb(44, 7, 43);   
-  border-bottom: 0.375rem solid rgb(44, 7, 43);  
-  border-right: 0.125rem solid rgb(44, 7, 43);   
-  border-top: 0.125rem solid rgb(44, 7, 43);  
+  border-left: 0.375rem solid rgb(9, 58, 0); 
+  border-bottom: 0.375rem solid rgb(9, 58, 0); 
+  border-right: 0.125rem solid rgb(9, 58, 0);  
+  border-top: 0.125rem solid rgb(9, 58, 0);   
   color: white;
+
+  animation: glowing-shadow12 4s infinite;
 
 }
 

@@ -1,5 +1,5 @@
-import ArcadeButtonStart from "../Music/ArcadeButtonStart.mp3";
-import ArcadeButtonSet from "../Music/ArcadeButtonSet.mp3";
+import ArcadeButtonContinue from "../Music/ArcadeButtonContinue.mp3";
+import ArcadeButtonPointsCashed from "../Music/ArcadeButtonPointsCashed.mp3";
 import ArcadeButtonSelect from "../Music/ArcadeButtonSelect.mp3";
 import ArcadeButtonRestart from "../Music/ArcadeButtonRestart.mp3";
 import ArcadeButtonError from "../Music/ArcadeButtonError.mp3";
@@ -116,8 +116,8 @@ export const playSound = (soundEffect) => {
 
     const soundDictionary = {
 
-        1: [ArcadeButtonStart, 0.3],
-        2: [ArcadeButtonSet, 0.3],
+        1: [ArcadeButtonContinue, 0.3],
+        2: [ArcadeButtonPointsCashed, 0.3],
         3: [ArcadeButtonSelect, 0.3],
         4: [ArcadeButtonRestart, 1],
         5: [ArcadeButtonError, 0.3],

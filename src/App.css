@@ -10,6 +10,10 @@ body {
 
   min-height: 100vh;
   background: linear-gradient(rgb(22, 3, 40) 10%, rgb(125, 14, 135) 70%, rgb(42, 7, 98));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
   user-select: none;
     
 }

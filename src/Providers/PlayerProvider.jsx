@@ -1,6 +1,5 @@
 /*
-0 -> cumulative points that user CURRENTLY has
-1 -> cumulative points that user PREVIOUSLY had (before last game played)
+0 -> cumulative points that user currently has
 */
 
 import React, { createContext, useContext, useState, useEffect } from "react";

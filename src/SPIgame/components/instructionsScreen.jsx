@@ -15,13 +15,14 @@ function Instructionsscreen() {
       <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
 
       <p className = "largefont">  
-        &gt; You are part of a task force assigned to destroy a dangerous alien hive that is a threat to the galaxy. <br/>
+        &gt; You are part of a space crew that has been assigned the task of destroying a dangerous alien hive that has become a threat to the galaxy. <br/>
         &gt; In order to fully extinguish the hive, you must embark on 4 missions. <br/>
         &gt; Starting from the beginning, you must complete the current mission in order to move onto the next one.  <br/>
         &gt; Every mission has helpful information before you start, so be sure to read through it carefully. <br/>
         &gt; If you die at any time, the game ends.  <br/>
-        &gt; You gain points per mission completed. <br/>
-        &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/><br/>
+        &gt; You gain 15 points per mission completed. <br/>
+        &gt; It costs 15 points to play this game. <br/> 
+        &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
         Note from creator: This game may glitch. If it does, it'll only be in favor of the player.
       </p>
 

@@ -16,8 +16,9 @@ function Instructionsscreen (){
             <p className = "largefont">
                 &gt; Control when to activate the force field to keep balloons from passing through by popping them.<br/>
                 &gt; Every balloon that is popped is worth 2 points. <br/>
-                &gt; However, you will lose the same amount of points for every bird that is hit instead. <br/>
+                &gt; You will lose 2 points for every bird that is hit instead. <br/>
                 &gt; Pop as many balloons as you can within the 30 second time limit. <br/>
+                &gt; It costs 10 points to play this game. <br/>
                 &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
             </p>
 

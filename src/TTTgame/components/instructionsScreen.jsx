@@ -15,9 +15,9 @@ function Instructionsscreen() {
       <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
       
       <p className = "largefont">   
-        &gt; Your opponent is this computer. <br/>
-        &gt; The board is a standard 3x3 with 9 total cells. <br/>
+        &gt; This is a standard game of tic-tac-toe against the computer on 3x3 board with 9 cells. <br/>
         &gt; You will determine who makes the first move by flipping a coin. <br/>
+        &gt; If you win, you gain 10 points. If you lose, you lose 10 points. If there is no winner, you don't gain or lose any points. <br/>
         &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
       </p>
 

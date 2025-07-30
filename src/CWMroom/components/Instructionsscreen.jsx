@@ -11,7 +11,7 @@ function Instructionsscreen (){
             <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
             
             <p className = "largefont">
-                &gt; In this area, rather than earning points, you can win prizes, which get added to your inventory. <br/>
+                &gt; In this section of the arcade, rather than earning points, you can win prizes, which get added to your inventory. <br/>
                 &gt; There are multiple claw machines that contain different prize categories. <br/>
                 &gt; All claw machines follow the same rules: <br/>
                 &nbsp; &nbsp; &bull; Press the Grab button for the claw to grab. <br/>

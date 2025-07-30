@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, screen} from 'electron';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -37,6 +37,7 @@ function createWindow () {
   win.webContents.on('did-finish-load', () => {
     win.webContents.setZoomFactor(adjustedZoom);
   });
+
 }
 
 app.on('browser-window-focus', () => {

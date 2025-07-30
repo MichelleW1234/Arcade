@@ -8,8 +8,6 @@
 
 
 .SPIgameScreenM4 {
-    height: 32.5rem;              
-    width: 63.75rem;          
 
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -25,15 +23,15 @@
 
     cursor: url('cursor.cur'), auto;
 
-    gap: 0.625rem;               
+    gap: 1.5rem;               
     padding: 1.25rem;        
 }
 
 
 .SPIemptySpaceM4 {
     background-color: #0e0040;
-    height: 5.625rem; 
-    width: 5.625rem;  
+    height: 5.2rem; 
+    width: 5.2rem;  
 
     display: flex;
     flex-direction: column;
@@ -44,13 +42,15 @@
 
 .SPIemptySpaceBossNormal {
     background-color: rgb(255, 255, 255);
-    height: 5.625rem; 
-    width: 5.625rem;  
+    height: 5.2rem; 
+    width: 5.2rem;  
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    padding: 1rem;
 
     box-shadow: 0 0 0.625rem 0.625rem rgb(255, 255, 255); 
     border-radius: 3.125rem; 
@@ -59,8 +59,8 @@
 
 .SPIemptySpaceBossDanger {
     background-color: #54ff4b;
-    height: 5.625rem; 
-    width: 5.625rem;  
+    height: 5.2rem; 
+    width: 5.2rem;  
 
     display: flex;
     flex-direction: column;
@@ -72,11 +72,10 @@
 }
 
 
-
 .SPIhealthbarContainer {
     display: grid;
     grid-template-columns: repeat(50, 1fr);
-    height: 2.5rem;  
+    height: 2rem;  
     width: 50rem;  
 
     box-shadow: 0 0 1.25rem 0.625rem rgb(195, 117, 255); 

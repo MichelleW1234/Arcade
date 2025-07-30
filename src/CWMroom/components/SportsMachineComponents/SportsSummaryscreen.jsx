@@ -51,7 +51,7 @@ function SportsSummaryscreen (){
                 ) : CWMUser[0] === 4 ? (
 
                     <>
-                        <p> Congrats! You won a football:</p>
+                        <p> Congrats! You won a basketball:</p>
                         <img className = "StatsImage" src = {Basketball}/>
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>

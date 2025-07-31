@@ -182,13 +182,6 @@ export const claimPrize = (result, setCWMUser, setPrize, Player, setPlayer, Acti
 }
 
 
-export const exitClawArcade = (setActiveGame) => {
-
-    playSound(24);
-    setActiveGame(retrieveActiveGame(1));
-
-}
-
 export const exitGame = (Player, setPlayer, ActiveGameCost, setCWMUser) => {
 
     playSound(4);

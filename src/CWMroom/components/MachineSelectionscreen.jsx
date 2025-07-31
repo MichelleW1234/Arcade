@@ -4,8 +4,7 @@ import React, {useState} from 'react';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
-import {exitClawArcade} from '../Helpers/helpers.js';
-import {playSound} from '../../Helpers/helpers.js';
+import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
 import CatMachine from "../../Images/image 27.svg";
 import SportsMachine from "../../Images/image 28.svg";
@@ -43,10 +42,17 @@ function MachineSelectionscreen (){
 
     };
 
+    const exitClawArcade = () => {
+
+        playSound(24);
+        setActiveGame(retrieveActiveGame(1));
+
+    }
+
     return (
 
         <div>
-            <Link to="/selection" className = "generalbutton" onClick={() => exitClawArcade(setActiveGame)}>
+            <Link to="/selection" className = "generalbutton" onClick={() => exitClawArcade()}>
                 Leave Claw Arcade
             </Link>
             <div className = "gameScreenLayout">

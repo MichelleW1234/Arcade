@@ -1,11 +1,3 @@
-.RPSgameScreenLayout {
-  gap: 0.625rem; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-}
-
 .RPSgameBoard {
 
   display: flex;

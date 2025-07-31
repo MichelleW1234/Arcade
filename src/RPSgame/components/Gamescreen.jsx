@@ -60,7 +60,7 @@ function Gamescreen (){
                 setShowReferences = {setShowReferences}
             />)}
             
-            <div className="RPSgameScreenLayout">
+            <div className="gameScreenLayout">
 
                 {rounds < 11 ? (
 

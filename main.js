@@ -1,4 +1,4 @@
-import { app, BrowserWindow} from 'electron';
+import { app, BrowserWindow, screen} from 'electron';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -24,6 +24,23 @@ function createWindow () {
   } else {
     win.loadFile(path.join(__dirname, 'dist', 'index.html'));
   }
+
+  win.webContents.on('did-finish-load', () => {
+    const display = screen.getDisplayNearestPoint(win.getBounds());
+    const scaleFactor = display.scaleFactor;
+    const baseZoom = 1.4;
+    const normalizedZoom = baseZoom / scaleFactor;
+
+    console.log(`scaleFactor: ${scaleFactor}, zoomFactor set to: ${normalizedZoom}`);
+    win.webContents.setZoomFactor(normalizedZoom);
+  });
+
+  // Block zooming in/out/reset
+  win.webContents.on('before-input-event', (event, input) => {
+    if ((input.control || input.meta) && ['=', '-', '+', '0'].includes(input.key)) {
+      event.preventDefault();
+    }
+  });
 
 }
 

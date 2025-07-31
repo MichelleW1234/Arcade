@@ -36,6 +36,14 @@ function createWindow () {
     win.webContents.setZoomFactor(normalizedZoom);
   });
 
+  win.on('focus', () => {
+    const display = screen.getDisplayNearestPoint(win.getBounds());
+    const scaleFactor = display.scaleFactor;
+    const baseZoom = 1.35;
+    const normalizedZoom = baseZoom / scaleFactor;
+    win.webContents.setZoomFactor(normalizedZoom);
+  });
+
   // Block zooming in/out/reset
   win.webContents.on('before-input-event', (event, input) => {
     if ((input.control || input.meta) && ['=', '-', '+', '0'].includes(input.key)) {

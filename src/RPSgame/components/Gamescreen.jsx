@@ -56,7 +56,9 @@ function Gamescreen (){
                 setShowReferences = {setShowReferences}
             />
 
-            {showReferences && (<References/>)}
+            {showReferences && (<References
+                setShowReferences = {setShowReferences}
+            />)}
             
             <div className="RPSgameScreenLayout">
 

@@ -133,7 +133,10 @@ function GameSelectionscreen (){
                 </ul>
             </div>
 
-            {showInventory && <PrizeInventory/>}
+            {showInventory && 
+            <PrizeInventory
+                setShowInventory = {setShowInventory}
+            />}
 
             <div className = "gameScreenLayout">
 

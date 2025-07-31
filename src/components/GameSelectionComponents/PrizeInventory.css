@@ -1,23 +1,14 @@
-.inventoryfloatingFlag{
+.inventoryOuterContainer {
 
     display: flex;
     flex-direction: column;
-    position: absolute;
-
-    min-width: 100vw;
-    min-height: 100vh;
     align-items: center;
-    z-index: 1;
 
-    background-color: rgba(0, 47, 255, 0.5);
-
-}
-
-.inventoryOuterContainer {
+    gap: 3rem;
 
     background-color: rgb(0, 145, 255);
     padding: 3.125rem;       
-    margin-top: 6.25rem;    
+    margin-top: 10rem;    
 
     border-bottom: 0.5rem solid rgb(0, 61, 108); 
     border-left: 0.5rem solid rgb(0, 61, 108);  
@@ -78,3 +69,30 @@
     animation: pulse-glow 2s infinite alternate;
 }
 
+.inventoryButton{
+
+    background-color: rgb(102, 207, 255);
+    font-size: 1.5rem;         
+    padding: 0.625rem;        
+    border-left: 0.375rem solid rgb(0, 68, 99);
+    border-bottom: 0.375rem solid rgb(0, 68, 99);
+    border-right: 0.125rem solid rgb(0, 68, 99); 
+    border-top: 0.125rem solid rgb(0, 68, 99);
+
+    animation: glowing-shadow8 4s infinite, button-glitch 4s infinite;
+
+}
+
+.inventoryButton:hover{
+
+    background-color: rgb(0, 27, 234);
+    color: white; 
+
+    border-left: 0.375rem solid rgb(0, 15, 126);
+    border-bottom: 0.375rem solid rgb(0, 15, 126);
+    border-right: 0.125rem solid rgb(0, 15, 126); 
+    border-top: 0.125rem solid rgb(0, 15, 126);
+
+    animation: glowing-shadow13 4s infinite, button-glitch 4s infinite;
+
+}

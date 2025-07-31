@@ -29,7 +29,7 @@ function Results ({result, rounds, setRounds, setShowFlag, terminationFlag}){
     }
 
     return (
-        <div className = "RPSfloatingFlag">
+        <div className = "navBarFloatingFlag">
 
             <div className = "RPSresultsContainer"> 
                 

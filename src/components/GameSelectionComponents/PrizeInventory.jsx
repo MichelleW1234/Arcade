@@ -26,8 +26,9 @@ import Saturn from "../../Images/ArcadePrizeImages/Saturn.svg";
 import Andromeda from "../../Images/ArcadePrizeImages/Andromeda.svg";
 
 import "./PrizeInventory.css";
+import { playSound } from '../../Helpers/helpers.js';
 
-function PrizeInventory (){
+function PrizeInventory ({setShowInventory}){
 
     const { Prize, setPrize } = usePrize();
 
@@ -38,9 +39,16 @@ function PrizeInventory (){
         ["Ping Pong Paddle", Paddle], ["Soccerball", Soccerball], ["Basketball", Basketball], ["Andromeda Galaxy", Andromeda], 
         ["Sun", Sun], ["Saturn", Saturn], ["Earth", Earth]];
 
+    const closeInventory = () => {
+
+        setShowInventory(false);
+        playSound(25);
+
+    }
+
     return (
 
-        <div className = "inventoryfloatingFlag">
+        <div className = "navBarFloatingFlag">
 
             <div className = "inventoryOuterContainer">
 
@@ -77,6 +85,8 @@ function PrizeInventory (){
                     ))}
 
                 </div>
+
+                <button className = "inventoryButton" onClick = {() => closeInventory()}> Close </button>
 
             </div>
 

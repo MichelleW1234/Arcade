@@ -6,14 +6,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Define zoom globally
-let adjustedZoom = 0.7;
-
 function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
     fullscreen: true,
+    resizable: false,
     webPreferences: {
       nodeIntegration: true
     }
@@ -27,25 +25,25 @@ function createWindow () {
     win.loadFile(path.join(__dirname, 'dist', 'index.html'));
   }
 
-
-  /*Accounting for consistency in zoom across different machines: */
-  const scaleFactor = screen.getPrimaryDisplay().scaleFactor;     // Get screen scale (DPI factor)
-  const baseZoom = 0.7;    // Define a base zoom
-  adjustedZoom = baseZoom / scaleFactor;    // Adjust for screen DPI
-
-
+  // Accounting for machines with different DPI scaling
   win.webContents.on('did-finish-load', () => {
-    win.webContents.setZoomFactor(adjustedZoom);
+    const display = screen.getDisplayNearestPoint(win.getBounds());
+    const scaleFactor = display.scaleFactor;
+    const baseZoom = 1.35;
+    const normalizedZoom = baseZoom / scaleFactor;
+
+    console.log(`scaleFactor: ${scaleFactor}, zoomFactor set to: ${normalizedZoom}`);
+    win.webContents.setZoomFactor(normalizedZoom);
+  });
+
+  // Block zooming in/out/reset
+  win.webContents.on('before-input-event', (event, input) => {
+    if ((input.control || input.meta) && ['=', '-', '+', '0'].includes(input.key)) {
+      event.preventDefault();
+    }
   });
 
 }
-
-app.on('browser-window-focus', () => {
-  const win = BrowserWindow.getFocusedWindow();
-  if (win) {
-    win.webContents.setZoomFactor(adjustedZoom);
-  }
-});
 
 app.whenReady().then(createWindow);
 

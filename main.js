@@ -31,8 +31,6 @@ function createWindow () {
     const scaleFactor = display.scaleFactor;
     const baseZoom = 1.35;
     const normalizedZoom = baseZoom / scaleFactor;
-
-    console.log(`scaleFactor: ${scaleFactor}, zoomFactor set to: ${normalizedZoom}`);
     win.webContents.setZoomFactor(normalizedZoom);
   });
 
@@ -42,13 +40,6 @@ function createWindow () {
     const baseZoom = 1.35;
     const normalizedZoom = baseZoom / scaleFactor;
     win.webContents.setZoomFactor(normalizedZoom);
-  });
-
-  // Block zooming in/out/reset
-  win.webContents.on('before-input-event', (event, input) => {
-    if ((input.control || input.meta) && ['=', '-', '+', '0'].includes(input.key)) {
-      event.preventDefault();
-    }
   });
 
 }

@@ -25,10 +25,11 @@ function createWindow () {
     win.loadFile(path.join(__dirname, 'dist', 'index.html'));
   }
 
+  // Accounting for machines with different DPI scaling
   win.webContents.on('did-finish-load', () => {
     const display = screen.getDisplayNearestPoint(win.getBounds());
     const scaleFactor = display.scaleFactor;
-    const baseZoom = 1.4;
+    const baseZoom = 1.35;
     const normalizedZoom = baseZoom / scaleFactor;
 
     console.log(`scaleFactor: ${scaleFactor}, zoomFactor set to: ${normalizedZoom}`);

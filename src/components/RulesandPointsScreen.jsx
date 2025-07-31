@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom';
+import React, {useState } from 'react';
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 
@@ -11,10 +12,13 @@ function RulesandPointsscreen (){
 
     const { Player, setPlayer } = usePlayer();
 
+    const [pointsClaimed, setPointsClaimed] = useState(false);
+
     const claimPoints = () => {
 
         playSound(2);
         setPlayer([20]);
+        setPointsClaimed(true);
 
     }
 
@@ -33,7 +37,16 @@ function RulesandPointsscreen (){
             </p>
 
             <h1 className = "claimPointsSign"> Claim Points: </h1>
-            <button className = "generalbutton" onClick={() => claimPoints()}>20 pts</button>
+
+            {pointsClaimed == false ? (
+
+                <button className = "generalbutton" onClick={() => claimPoints()}>20 pts</button>
+
+            ) : (
+
+                <div className = "pointsClaimedButton"> 20 pts </div>
+
+            )}
 
             {Player[0] === 20 ? (
 

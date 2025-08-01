@@ -9,6 +9,8 @@ import Alien from '../../Images/ArcadePrizeImages/Alien.svg';
 import Spider from '../../Images/ArcadePrizeImages/Spider.svg';
 import Whale from "../../Images/ArcadePrizeImages/Whale.svg";
 import Carrot from "../../Images/ArcadePrizeImages/Carrot.svg";
+import Hippo from "../../Images/ArcadePrizeImages/Hippo.svg";
+import Cow from "../../Images/ArcadePrizeImages/Cow.svg";
 
 import BlackCat from "../../Images/ArcadePrizeImages/BlackCat.svg";
 import OrangeCat from "../../Images/ArcadePrizeImages/OrangeCat.svg";
@@ -37,7 +39,7 @@ function PrizeInventory ({setShowInventory}){
         ["Carrot", Carrot], ["Whale", Whale], ["Black Cat", BlackCat], ["Orange Cat", OrangeCat], 
         ["Siamese Cat", SiameseCat], ["British Shorthair Cat", BritishShorthairCat], ["Football", Football], 
         ["Ping Pong Paddle", Paddle], ["Soccerball", Soccerball], ["Basketball", Basketball], ["Andromeda Galaxy", Andromeda], 
-        ["Sun", Sun], ["Saturn", Saturn], ["Earth", Earth]];
+        ["Sun", Sun], ["Saturn", Saturn], ["Earth", Earth], ["Cow", Cow], ["Hippo", Hippo]];
 
     const closeInventory = () => {
 

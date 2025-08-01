@@ -1,4 +1,4 @@
-import { app, BrowserWindow, screen} from 'electron';
+import { app, BrowserWindow, screen, Menu} from 'electron';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -24,6 +24,18 @@ function createWindow () {
   } else {
     win.loadFile(path.join(__dirname, 'dist', 'index.html'));
   }
+
+  const template = [
+    {
+      label: 'View',
+      submenu: [
+        { role: 'toggledevtools' },
+      ],
+    },
+  ];
+
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
 
   // Accounting for machines with different DPI scaling
   win.webContents.on('did-finish-load', () => {

@@ -21,7 +21,7 @@ function SportsInstructionsscreen (){
             </p>
 
             <div className="generalbuttonContainer">
-                <Link to="/CWMselection" className = "generalbutton" onClick={() => playSound(4)}>
+                <Link to="/CWMselection" className = "generalbutton" onClick={() => playSound(2)}>
                     Leave Machine
                 </Link>
                 <Link to="/CWMsportsgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>

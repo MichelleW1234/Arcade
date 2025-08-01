@@ -159,7 +159,7 @@ export const playSound = (soundEffect) => {
 
 export const exitGame = (setActiveGame) => {
 
-    playSound(24);
+    playSound(2);
     setActiveGame(retrieveActiveGame(1));
 
 }

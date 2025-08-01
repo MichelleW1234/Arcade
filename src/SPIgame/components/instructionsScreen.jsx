@@ -23,7 +23,7 @@ function Instructionsscreen() {
         &gt; You gain 15 points per mission completed. <br/>
         &gt; It costs 15 points to play this game. <br/> 
         &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
-        Note from creator: This game may glitch. If it does, it'll only be in favor of the player.
+        Note from creator: This game may glitch. Good luck!
       </p>
 
       <div className = "generalbuttonContainer">

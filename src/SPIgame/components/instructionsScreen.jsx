@@ -22,7 +22,7 @@ function Instructionsscreen() {
         &gt; If you die at any time, the game ends.  <br/>
         &gt; You gain 15 points per mission completed. <br/>
         &gt; It costs 15 points to play this game. <br/> 
-        &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
+        &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/> <br/>
         Note from creator: This game may glitch. Good luck!
       </p>
 

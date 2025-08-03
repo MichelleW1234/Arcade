@@ -49,7 +49,7 @@ a:active {
   align-items: center;
   justify-content: center;
   gap: 8rem;      
-  padding-top: 20rem; 
+  height: 100vh;
 
 }
 
@@ -62,7 +62,7 @@ a:active {
   gap: 3.125rem;       
   padding-left: 3.125rem; 
   padding-right: 3.125rem;  
-  padding-top: 12rem;  
+  padding-top: 12rem;
 
 }
 
@@ -70,7 +70,7 @@ a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 7rem; 
+  padding-top: 7rem;
   gap: 3.125rem;   
 }
 

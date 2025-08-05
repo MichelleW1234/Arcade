@@ -283,6 +283,26 @@ function GameSelectionscreen (){
 
                         </div>
 
+                        <div className = "ArcadeGameContainer">
+
+                            <div className = "ArcadeGame"> 
+                                
+                                <p>Sky Maze</p>
+                                <img className = "ArcadeGameImage" src = {BFR}/>
+                                <p>(15 Points)</p>
+                            
+                            </div>
+
+                            
+                            <button
+                            className={`gameButton ${activeButton === 8 ? 'active' : ''}`}
+                            onClick={() => handleClick(8)}
+                            >
+                                Select
+                            </button>
+
+                        </div>
+
 
                     </div>
 

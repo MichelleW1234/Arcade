@@ -1,0 +1,54 @@
+.SMZGameBoardScreen {
+
+    display: grid;
+    grid-template-columns: repeat(17, 1fr);
+    grid-template-rows: repeat(10, 1fr); 
+
+    border-top: 0.125rem solid rgb(0, 31, 80);    
+    border-left: 0.3125rem solid rgb(0, 31, 80);   
+    border-right: 0.125rem solid rgb(0, 31, 80);  
+    border-bottom: 0.3125rem solid rgb(0, 31, 80); 
+
+    background-color: rgb(161, 197, 255);
+    box-shadow: 0 0 1rem 0.75rem rgb(161, 197, 255);
+
+}
+
+.SMZGameBoardEmptySpace {
+    height: 2.2rem;
+    width: 3rem;
+
+    background-color: rgb(161, 197, 255);
+}
+
+
+.SMZFieldActivated{
+
+    height: 2.2rem;
+    width: 3rem;
+
+    background-color: rgb(34, 255, 0);
+
+}
+
+
+
+.SMZStartFlag{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  position: absolute;
+  z-index: 1;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(84, 115, 255, 0.5);
+
+}

@@ -61,6 +61,11 @@ import BFRInstructionsscreen from "./BFRgame/components/Instructionsscreen.jsx";
 import BFRGamescreen from "./BFRgame/components/Gamescreen.jsx";
 import BFRSummaryscreen from "./BFRgame/components/Summaryscreen.jsx";
 
+import SMZStartscreen from "./SMZgame/components/Startscreen.jsx";
+import SMZInstructionsscreen from "./SMZgame/components/Instructionsscreen.jsx";
+import SMZGamescreen from "./SMZgame/components/Gamescreen.jsx";
+import SMZSummaryscreen from "./SMZgame/components/Summaryscreen.jsx";
+
 import NoPage from "./components/NoPage.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import {HashRouter, Routes, Route} from 'react-router-dom';
@@ -135,6 +140,11 @@ function App() {
         <Route path="/BFRinstructions" element={<BFRInstructionsscreen />}/>
         <Route path="/BFRgame" element={<BFRGamescreen />}/>
         <Route path="/BFRsummary" element={<BFRSummaryscreen />}/>
+
+        <Route path="/SMZstart" element={<SMZStartscreen />}/>
+        <Route path="/SMZinstructions" element={<SMZInstructionsscreen />}/>
+        <Route path="/SMZgame" element={<SMZGamescreen />}/>
+        <Route path="/SMZsummary" element={<SMZSummaryscreen />}/>
         
         {/*Page doesn't exist error*/}
         <Route path="*" element={<NoPage />} />

@@ -51,11 +51,11 @@
     border-right: 0.125rem solid rgb(0, 31, 80);   
     border-bottom: 0.3125rem solid rgb(0, 31, 80); 
 
-    background-color: rgb(161, 197, 255);
-    box-shadow: 0 0 1rem 0.75rem rgb(161, 244, 255);
+    box-shadow: 0 0 1rem 0.75rem rgb(132, 210, 255);
 
     background-image: 
-        url("../../Images/ArcadeGameBackgroundImages/BFR.svg");
+        url("../../Images/ArcadeGameBackgroundImages/BFR.svg"),
+        linear-gradient(to bottom, rgb(110, 125, 255), rgb(131, 222, 253));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

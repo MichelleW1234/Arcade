@@ -10,7 +10,12 @@
     border-bottom: 0.3125rem solid rgb(0, 31, 80); 
 
     background-color: rgb(161, 197, 255);
-    box-shadow: 0 0 1rem 0.75rem rgb(161, 197, 255);
+    box-shadow: 0 0 1rem 0.75rem rgb(161, 220, 255);
+
+    background-image: url("../../../Images/ArcadeGameBackgroundImages/BFR.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
 }
 
@@ -18,8 +23,6 @@
 .BFRGameBoardEmptySpace {
     height: 2.5rem;
     width: 2.5rem;
-
-    background-color: rgb(161, 197, 255);
 }
 
 .BFRFieldUnactivated{

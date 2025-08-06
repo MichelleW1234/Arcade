@@ -15,7 +15,6 @@
 .SNKemptySpace {
     height: 1.25rem;       
     width: 1.25rem;       
-    background-color: rgb(154, 208, 255);
 }
 
 .SNKrenderedgameboard {
@@ -24,4 +23,5 @@
     display: grid;
     grid-template-columns: repeat(30, 1fr);
     grid-template-rows: repeat(20, 1fr);
+
 }

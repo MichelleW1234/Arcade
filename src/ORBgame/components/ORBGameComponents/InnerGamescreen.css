@@ -11,6 +11,11 @@
     background-color: rgb(161, 216, 255);
     box-shadow: 0 0 1rem 0.75rem rgb(161, 216, 255); 
 
+    background-image: url("../../../Images/ArcadeGameBackgroundImages/ORB.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     gap: 0.5rem; 
 }
 
@@ -19,7 +24,6 @@
     height: 1.5625rem; 
     width: 1.5625rem; 
 
-    background-color: rgb(161, 216, 255);
 }
 
 

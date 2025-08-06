@@ -14,7 +14,10 @@ function Instructionsscreen (){
             <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
             
             <p className = "largefont">
-                &gt; Instructions go here. <br/>
+                &gt; Move the bird up and down to avoid incoming walls and to travel as far as possible. <br/>
+                &gt; Every 5 meters traveled is approximately equal to 1 point. <br/>
+                &gt; It costs 15 points to play this game. <br/> 
+                &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
             </p>
 
             <div className = "generalbuttonContainer">

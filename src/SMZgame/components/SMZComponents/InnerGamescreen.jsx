@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef} from "react";
 import "./InnerGamescreen.css";
-import Bird from "../../../Images/image 31.svg";
+import Bird from "../../../Images/image 33.svg";
+import Wall from "../../../Images/image 32.svg";
 
 function InnerGamescreen ({wallPositions, birdPosition, startButtonClicked}){
 
@@ -10,10 +11,9 @@ function InnerGamescreen ({wallPositions, birdPosition, startButtonClicked}){
 
         <>
          
-            
             <div className = "SMZGameBoardScreen">
-                   {!startButtonClicked && 
-                <div className = "SMZStartFlag"> Press any of the controls to start</div>}
+
+                {!startButtonClicked && <div className = "SMZStartFlag"> Press any of the controls to start</div>}
 
                 {gameArray.map((row, rowIndex) => (
                     row.map((cell, colIndex) => {
@@ -29,7 +29,7 @@ function InnerGamescreen ({wallPositions, birdPosition, startButtonClicked}){
 
                             wallHere ? (
 
-                                <div key = {rowIndex + "," + colIndex} className="SMZFieldActivated"> </div>
+                                <img src = {Wall} key = {rowIndex + "," + colIndex} className="SMZGameBoardWall"/>
 
                             ) : birdHere ? (
 
@@ -37,7 +37,7 @@ function InnerGamescreen ({wallPositions, birdPosition, startButtonClicked}){
 
                             ) : (
                                 
-                                <img key = {rowIndex + "," + colIndex} className="SMZGameBoardEmptySpace"/>
+                                <div key = {rowIndex + "," + colIndex} className="SMZGameBoardEmptySpace"> </div>
 
                             )
 
@@ -47,6 +47,7 @@ function InnerGamescreen ({wallPositions, birdPosition, startButtonClicked}){
                 ))}
 
             </div>
+            
         </>
 
     );

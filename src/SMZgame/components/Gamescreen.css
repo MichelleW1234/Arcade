@@ -35,8 +35,8 @@
 
 .SMZEndingScreen {
 
-    height: 23rem;
-    width: 50rem;
+    height: 25rem;
+    width: 40rem;
 
     font-size: 2rem;
     font-weight: bold;
@@ -57,19 +57,25 @@
 }
 
 
+.SMZButtonContainer{
+
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+}
+
 .SMZControlButton {
 
-    font-size: 5rem;
-    padding: 2rem 4rem;
+    font-size: 3rem;
+    padding: 1rem 2rem;
 
     background-color: rgb(103, 219, 255);
 
-    border-top: 0.2rem solid rgb(0, 128, 167);     
-    border-right: 0.2rem solid rgb(0, 128, 167);         
-    border-left: 0.5rem solid rgb(0, 128, 167);    
-    border-bottom: 0.5rem solid rgb(0, 128, 167);     
-
-    border-radius: 0.5rem;
+    border-top: 0.15rem solid rgb(0, 128, 167);     
+    border-right: 0.15rem solid rgb(0, 128, 167);         
+    border-left: 0.4rem solid rgb(0, 128, 167);    
+    border-bottom: 0.4rem solid rgb(0, 128, 167);     
 
     animation: glowing-shadow2 4s infinite;
 }
@@ -81,10 +87,10 @@
 
     color: white;
 
-    border-top: 0.2rem solid rgb(0, 44, 101);   
-    border-right: 0.2rem solid rgb(0, 44, 101);       
-    border-left: 0.5rem solid rgb(0, 44, 101);     
-    border-bottom: 0.5rem solid rgb(0, 44, 101);   
+    border-top: 0.15rem solid rgb(0, 44, 101);   
+    border-right: 0.15rem solid rgb(0, 44, 101);       
+    border-left: 0.4rem solid rgb(0, 44, 101);     
+    border-bottom: 0.4rem solid rgb(0, 44, 101);   
 
     animation: glowing-shadow4 4s infinite;
 }
@@ -119,14 +125,5 @@
     border-bottom: 0.375rem solid rgb(0, 52, 75);   
 
     animation: glowing-shadow4 4s infinite, button-glitch 4s infinite;
-
-}
-
-
-.SMZButtonContainer{
-
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
 
 }

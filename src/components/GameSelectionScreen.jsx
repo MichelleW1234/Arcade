@@ -42,6 +42,7 @@ import SPI from "../Images/ArcadeGameImages/SPI.svg";
 import ORB from "../Images/ArcadeGameImages/ORB.svg";
 import CBL from "../Images/ArcadeGameImages/CBL.svg";
 import BFR from "../Images/ArcadeGameImages/BFR.svg";
+import SMZ from "../Images/ArcadeGameImages/SMZ.svg";
 
 import "./GameSelectionscreen.css";
 
@@ -288,7 +289,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 <p>Sky Maze</p>
-                                <img className = "ArcadeGameImage" src = {BFR}/>
+                                <img className = "ArcadeGameImage" src = {SMZ}/>
                                 <p>(15 Points)</p>
                             
                             </div>

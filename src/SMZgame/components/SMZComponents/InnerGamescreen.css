@@ -9,29 +9,10 @@
     border-right: 0.125rem solid rgb(0, 31, 80);  
     border-bottom: 0.3125rem solid rgb(0, 31, 80); 
 
-    background-color: rgb(161, 197, 255);
-    box-shadow: 0 0 1rem 0.75rem rgb(161, 197, 255);
+    background-color: rgb(137, 182, 255);
+    box-shadow: 0 0 1rem 0.75rem rgb(145, 187, 255);
 
 }
-
-.SMZGameBoardEmptySpace {
-    height: 2.2rem;
-    width: 3rem;
-
-    background-color: rgb(161, 197, 255);
-}
-
-
-.SMZFieldActivated{
-
-    height: 2.2rem;
-    width: 3rem;
-
-    background-color: rgb(34, 255, 0);
-
-}
-
-
 
 .SMZStartFlag{
 
@@ -50,5 +31,23 @@
   width: 100%;
 
   background-color: rgba(84, 115, 255, 0.5);
+
+}
+
+
+.SMZGameBoardEmptySpace {
+    height: 2.2rem;
+    width: 3rem;
+
+    background-color: rgb(137, 182, 255);
+}
+
+
+.SMZFieldActivated{
+
+    height: 2.2rem;
+    width: 3rem;
+
+    background-color: rgb(34, 255, 0);
 
 }

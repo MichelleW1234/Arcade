@@ -37,7 +37,7 @@ function InnerGamescreen ({wallPositions, birdPosition, startButtonClicked}){
 
                             ) : (
                                 
-                                <div key = {rowIndex + "," + colIndex} className="SMZGameBoardEmptySpace"> </div>
+                                <img key = {rowIndex + "," + colIndex} className="SMZGameBoardEmptySpace"/>
 
                             )
 

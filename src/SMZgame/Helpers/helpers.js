@@ -62,11 +62,13 @@ export const birdFlyingUpwards = (birdPosition, setBirdPosition, startButtonClic
     if (startButtonClicked == false){
 
         setStartButtonClicked(true);
+        playSound(3);
 
     } else {
 
         if (birdPosition[0] > 0){
 
+            playSound(3);
             setBirdPosition(prev => [prev[0] - 1, prev[1]]);
 
         } else {
@@ -85,11 +87,13 @@ export const birdFlyingDownwards = (birdPosition, setBirdPosition, startButtonCl
     if (startButtonClicked == false){
 
         setStartButtonClicked(true);
+        playSound(3);
 
     } else {
 
         if (birdPosition[0] < 9){
 
+            playSound(3);
             setBirdPosition(prev => [prev[0] + 1, prev[1]]);
 
         } else {

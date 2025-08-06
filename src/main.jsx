@@ -14,6 +14,7 @@ import {ORBUserProvider } from './ORBgame/Providers/ORBUserProvider.jsx';
 import {CBLUserProvider } from './CBLgame/Providers/CBLUserProvider.jsx'; 
 import {CWMUserProvider } from './CWMroom/Providers/CWMUserProvider.jsx'; 
 import { BFRUserProvider } from './BFRgame/Providers/BFRUserProvider.jsx';
+import { SMZUserProvider } from './SMZgame/Providers/SMZUserProvider.jsx';
 
 import App from './App.jsx';
 
@@ -22,9 +23,9 @@ createRoot(document.getElementById('root')).render(
     <MusicProvider>
     <PrizeProvider>
     <PlayerProvider><ActiveGameProvider>
-    <CWMUserProvider><BFRUserProvider><CBLUserProvider><ORBUserProvider><SPIUserProvider><SNKUserProvider><TTTUserProvider><RPSUserProvider>
+    <CWMUserProvider><SMZUserProvider><BFRUserProvider><CBLUserProvider><ORBUserProvider><SPIUserProvider><SNKUserProvider><TTTUserProvider><RPSUserProvider>
         <App />
-    </RPSUserProvider></TTTUserProvider></SNKUserProvider></SPIUserProvider></ORBUserProvider></CBLUserProvider></BFRUserProvider></CWMUserProvider>
+    </RPSUserProvider></TTTUserProvider></SNKUserProvider></SPIUserProvider></ORBUserProvider></CBLUserProvider></BFRUserProvider></SMZUserProvider></CWMUserProvider>
     </ActiveGameProvider></PlayerProvider>
     </PrizeProvider>
     </MusicProvider>

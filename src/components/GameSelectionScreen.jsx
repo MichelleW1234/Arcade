@@ -42,6 +42,7 @@ import SPI from "../Images/ArcadeGameImages/SPI.svg";
 import ORB from "../Images/ArcadeGameImages/ORB.svg";
 import CBL from "../Images/ArcadeGameImages/CBL.svg";
 import BFR from "../Images/ArcadeGameImages/BFR.svg";
+import SMZ from "../Images/ArcadeGameImages/SMZ.svg";
 
 import "./GameSelectionscreen.css";
 
@@ -277,6 +278,26 @@ function GameSelectionscreen (){
                             <button
                             className={`gameButton ${activeButton === 7 ? 'active' : ''}`}
                             onClick={() => handleClick(7)}
+                            >
+                                Select
+                            </button>
+
+                        </div>
+
+                        <div className = "ArcadeGameContainer">
+
+                            <div className = "ArcadeGame"> 
+                                
+                                <p>Sky Maze</p>
+                                <img className = "ArcadeGameImage" src = {SMZ}/>
+                                <p>(15 Points)</p>
+                            
+                            </div>
+
+                            
+                            <button
+                            className={`gameButton ${activeButton === 8 ? 'active' : ''}`}
+                            onClick={() => handleClick(8)}
                             >
                                 Select
                             </button>

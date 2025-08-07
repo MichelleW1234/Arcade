@@ -93,6 +93,11 @@
 .CWMMachineImages{
 
     width: 100%;
-    border: 0.3125rem solid rgb(71, 0, 224);
+
+    border-top: 0.1rem solid rgb(55, 0, 255);
+    border-right: 0.1rem solid rgb(55, 0, 255);
+    border-left: 0.1rem solid rgb(157, 0, 255);
+    border-bottom: 0.1rem solid rgb(157, 0, 255);
+    animation: pulse-glow 3s infinite alternate;
 
 }

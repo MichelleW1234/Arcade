@@ -31,13 +31,13 @@
     font-size: 1.8rem;
     font-weight: bold;
 
-    background-color: rgb(159, 209, 253);
-    box-shadow: 0 0 1rem 0.5rem rgb(159, 209, 253); 
+    background-color: rgb(126, 195, 255);
+    box-shadow: 0 0 1rem 0.5rem rgb(126, 195, 255); 
 
-    border: 0.125rem solid rgb(91, 118, 142);          
-    border-left: 0.3125rem solid rgb(91, 118, 142);     
-    border-right: 0.125rem solid rgb(91, 118, 142);    
-    border-bottom: 0.3125rem solid rgb(91, 118, 142);   
+    border: 0.3rem solid rgb(0, 107, 200);         
+    border-left: 0.3rem solid rgb(0, 107, 200);      
+    border-right: 0.3rem solid rgb(0, 107, 200);     
+    border-bottom: 0.3rem solid rgb(0, 107, 200);    
 }
 
 

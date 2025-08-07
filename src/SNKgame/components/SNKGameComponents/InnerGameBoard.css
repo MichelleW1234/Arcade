@@ -1,8 +1,8 @@
 .SNKsnakeLink {
     height: 1.25rem;      
     width: 1.25rem;     
-    background-color: rgb(0, 255, 30);
-    border: 0.125rem solid rgb(0, 114, 13); 
+    background-color: rgb(7, 54, 0); 
+    border: 0.125rem solid rgb(2, 15, 0); 
 }
 
 .SNKApple {
@@ -23,5 +23,10 @@
     display: grid;
     grid-template-columns: repeat(30, 1fr);
     grid-template-rows: repeat(20, 1fr);
+
+    background-image: url("../../../Images/ArcadeGameBackgroundImages/SNK.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
 }

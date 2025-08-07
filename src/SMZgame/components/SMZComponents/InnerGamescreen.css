@@ -4,12 +4,12 @@
   grid-template-columns: repeat(17, 1fr);
   grid-template-rows: repeat(10, 1fr); 
 
-  border-top: 0.125rem solid rgb(0, 31, 80);    
-  border-left: 0.3125rem solid rgb(0, 31, 80);   
-  border-right: 0.125rem solid rgb(0, 31, 80);  
-  border-bottom: 0.3125rem solid rgb(0, 31, 80); 
+  border-top: 0.3rem solid rgb(0, 31, 80);    
+  border-left: 0.3rem solid rgb(0, 31, 80);   
+  border-right: 0.3rem solid rgb(0, 31, 80);  
+  border-bottom: 0.3rem solid rgb(0, 31, 80); 
 
-  background-color: rgb(137, 182, 255);
+  box-shadow: 0 0 1rem 0.75rem rgb(208, 161, 255);
 
   background-image: 
     url("../../../Images/ArcadeGameBackgroundImages/SMZ.svg"),
@@ -17,8 +17,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
-  box-shadow: 0 0 1rem 0.75rem rgb(145, 187, 255);
 
 }
 

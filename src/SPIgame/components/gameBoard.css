@@ -19,10 +19,16 @@
 
     background-color: #1d0086;
 
-    border-left: 0.1875rem solid rgb(19, 13, 82);  
-    border-bottom: 0.1875rem solid rgb(19, 13, 82);  
-    border-top: 0.1875rem solid rgb(19, 13, 82);   
-    border-right: 0.1875rem solid rgb(19, 13, 82); 
+    border-left: 0.3rem solid rgb(19, 13, 82);  
+    border-bottom: 0.3rem solid rgb(19, 13, 82);  
+    border-top: 0.3rem solid rgb(19, 13, 82);   
+    border-right: 0.3rem solid rgb(19, 13, 82); 
+
+    background-image: 
+        url("../../Images/ArcadeGameBackgroundImages/SPIM1.svg"),
+        linear-gradient(to bottom, #0d0082, rgb(73, 0, 146));
+    background-size: cover;
+    background-position: center;
 
     box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255);
 }
@@ -40,16 +46,25 @@
 
     background-color: #180070;
 
-    border-left: 0.1875rem solid rgb(19, 13, 82);   
-    border-bottom: 0.1875rem solid rgb(19, 13, 82);  
-    border-top: 0.1875rem solid rgb(19, 13, 82);  
-    border-right: 0.1875rem solid rgb(19, 13, 82);  
+    background-image: 
+        url("../../Images/ArcadeGameBackgroundImages/SPIM2.svg"),
+        linear-gradient(to bottom, #180070, rgb(44, 0, 78));
+    background-size: cover;
+    background-position: center;
+
+
+
+    border-left: 0.3rem solid rgb(19, 13, 82);   
+    border-bottom: 0.3rem solid rgb(19, 13, 82);  
+    border-top: 0.3rem solid rgb(19, 13, 82);  
+    border-right: 0.3rem solid rgb(19, 13, 82);  
 
     box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); 
 }
 
 
 .SPIgameScreenM3 {
+
     height: 28.5rem;          
     width: 51rem;      
 
@@ -59,16 +74,19 @@
     grid-template-columns: repeat(27, 1fr);
     grid-template-rows: repeat(15, 1fr);
 
-    background-color: #13005a;
+    background-image: 
+        url("../../Images/ArcadeGameBackgroundImages/SPIM3.svg"),
+        linear-gradient(to bottom, #13005a, rgb(31, 0, 55));
+    background-size: cover;
+    background-position: center;
 
-    border-left: 0.1875rem solid rgb(19, 13, 82);  
-    border-bottom: 0.1875rem solid rgb(19, 13, 82);  
-    border-top: 0.1875rem solid rgb(19, 13, 82);  
-    border-right: 0.1875rem solid rgb(19, 13, 82); 
+    border-left: 0.3rem solid rgb(19, 13, 82);  
+    border-bottom: 0.3rem solid rgb(19, 13, 82);  
+    border-top: 0.3rem solid rgb(19, 13, 82);  
+    border-right: 0.3rem solid rgb(19, 13, 82); 
 
     box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255);
 }
-
 
 
 

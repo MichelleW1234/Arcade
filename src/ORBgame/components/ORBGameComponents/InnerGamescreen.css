@@ -1,20 +1,22 @@
 .ORBGameBoardScreen {
-    border-top: 0.125rem solid rgb(75, 101, 120);    
-    border-left: 0.3125rem solid rgb(75, 101, 120);  
-    border-right: 0.125rem solid rgb(75, 101, 120);  
-    border-bottom: 0.3125rem solid rgb(75, 101, 120);
 
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(15, 1fr); 
 
-    background-color: rgb(161, 216, 255);
-    box-shadow: 0 0 1rem 0.75rem rgb(161, 216, 255); 
+    background: radial-gradient(
+        circle,
+        rgb(225, 255, 107) 0%,
+        rgb(101, 255, 216) 20%,
+        rgb(83, 103, 255) 80%
+    );
 
-    background-image: url("../../../Images/ArcadeGameBackgroundImages/ORB.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    border-top: 0.35rem solid rgb(19, 0, 125);
+    border-left: 0.35rem solid rgb(19, 0, 125);
+    border-right: 0.35rem solid rgb(19, 0, 125); 
+    border-bottom: 0.35rem solid rgb(19, 0, 125);
+
+    box-shadow: 0 0 2rem 0.5rem rgb(108, 255, 218); 
 
     gap: 0.5rem; 
 }
@@ -31,7 +33,7 @@
     height: 1.5625rem; 
     width: 1.5625rem;  
 
-    background-color: rgb(135, 135, 0);
+    background-color: rgb(71, 71, 0);
 }
 
 

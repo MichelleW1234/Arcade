@@ -13,13 +13,14 @@
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(4, 1fr);
 
-    border-left: 0.1875rem solid black;   
-    border-bottom: 0.1875rem solid black; 
-    border-top: 0.1875rem solid black;   
-    border-right: 0.1875rem solid black; 
+    border-left: 0.3rem solid black;   
+    border-bottom: 0.3rem solid black; 
+    border-top: 0.3rem solid black;   
+    border-right: 0.3rem solid black; 
 
     box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); 
-    background-color: #0e0040;
+
+    background: linear-gradient(to bottom, #160064, rgb(0, 0, 0));
 
     cursor: url('cursor.cur'), auto;
 
@@ -29,7 +30,7 @@
 
 
 .SPIemptySpaceM4 {
-    background-color: #0e0040;
+
     height: 5.2rem; 
     width: 5.2rem;  
 

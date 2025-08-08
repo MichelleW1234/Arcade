@@ -10,6 +10,8 @@
     width: 1.25rem;      
     background-color: rgb(255, 0, 0);
     border: 0.125rem solid rgb(120, 0, 0); 
+
+    animation: red-glow 4s infinite;
 }
 
 .SNKemptySpace {

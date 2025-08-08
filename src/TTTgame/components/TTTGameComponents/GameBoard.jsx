@@ -27,13 +27,12 @@ function GameBoard() {
     const [currentTurn, setCurrentTurn] = useState(TTTUser[0]);
 
     return (
-        
-        <div>
+
+        <div className = "TTTboard">
 
             {TTTUser[1] === -1 ? (
 
-                <div className = "TTTboard">
-
+                    <>
                     {error === "" ? (
                                         
                         <h1 className = "TTTturnBoard"> <span className='signGlitch'>Active Player: {currentTurn === 1 ? "  You" : "  Computer"} </span></h1>
@@ -61,64 +60,59 @@ function GameBoard() {
                         setCurrentTurn = {setCurrentTurn}
 
                     />
+                </>
+
+        ) : (
+                        
+            <>
+                
+                <h1 className = "TTTturnBoard"> <span className='signGlitch'>Game Over.</span></h1>
+
+                <div className = "TTTfinished_chart_container">
+
+                    {matrix.map((item, index) => (
+
+                        matrix[index] === 1 ? (
+
+                            threeInARow.includes(index) ? (
+
+                                <div key = {index} className="TTTresulting_chart_win"> O </div>
+
+                            ) : (
+
+                                <div key = {index} className="TTTresulting_chart"> O </div>
+
+                            )
+                            
+                        ) : matrix[index] === 0 ? (
+
+                            threeInARow.includes(index) ? (
+
+                                <div key = {index} className="TTTresulting_chart_win"> X </div>
+
+                            ) : (
+
+                                <div key = {index} className="TTTresulting_chart"> X </div>
+
+                            )
+
+                        ) : (
+
+                            <div key = {index} className="TTTresulting_chart"> </div>
+
+                        )
+
+                    ))}
 
                 </div>
 
-            ) : (
+                <Link to= "/TTTsummary" className = "generalbuttonGlitch" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player)}>
+                    View Results
+                </Link>
 
-                <div className = "TTTendingContainer"> 
+            </>
 
-                    <div className = "TTTboard">
-                        
-                        <h1 className = "TTTturnBoard"> <span className='signGlitch'>Game Over.</span></h1>
-
-                        <div className = "TTTfinished_chart_container">
-
-                            {matrix.map((item, index) => (
-
-                                matrix[index] === 1 ? (
-
-                                    threeInARow.includes(index) ? (
-
-                                        <div key = {index} className="TTTresulting_chart_win"> O </div>
-        
-                                    ) : (
-
-                                        <div key = {index} className="TTTresulting_chart"> O </div>
-
-                                    )
-                                    
-                                ) : matrix[index] === 0 ? (
-
-                                    threeInARow.includes(index) ? (
-
-                                        <div key = {index} className="TTTresulting_chart_win"> X </div>
-        
-                                    ) : (
-
-                                        <div key = {index} className="TTTresulting_chart"> X </div>
-
-                                    )
-
-                                ) : (
-
-                                    <div key = {index} className="TTTresulting_chart"> </div>
-
-                                )
-
-                            ))}
-
-                        </div>
-
-                    </div> 
-
-                    <Link to= "/TTTsummary" className = "generalbuttonGlitch" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player)}>
-                        View Results
-                    </Link>
-
-                </div> 
-                
-            )} 
+        )}  
 
         </div>
         

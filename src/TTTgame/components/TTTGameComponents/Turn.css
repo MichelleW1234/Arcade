@@ -1,6 +1,5 @@
 .TTTchart_container {
-    height: 18.75rem; 
-    width: 18.75rem;  
+
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     grid-template-rows: repeat(3, 1fr);   
@@ -10,6 +9,10 @@
 
 
 .TTTchart_button {
+
+    height: 8rem; 
+    width: 8rem;  
+
     background-color: rgb(204, 252, 255);
     border: 0.125rem solid rgb(2, 0, 138); 
 
@@ -36,11 +39,17 @@
 
 
 .TTTchart_selected_computer {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 8rem; 
+    width: 8rem;  
+
+    font-size: 6rem;
     background-color: rgb(255, 0, 255);
     border: 0.125rem solid rgb(89, 1, 89);
-
-    font-size: 5rem;
-    text-align: center;
 
     box-shadow:
         0 0 0.125rem 0.125rem rgb(240, 32, 255),
@@ -50,11 +59,18 @@
 
 
 .TTTchart_selected_user {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 8rem; 
+    width: 8rem;  
+
+    font-size: 6rem; 
+
     background-color: rgb(13, 0, 255);
     border: 0.125rem solid rgb(5, 0, 105); 
-    
-    font-size: 5rem; 
-    text-align: center;
 
     box-shadow: 
         0 0 0.125rem 0.125rem rgb(0, 42, 255),

@@ -21,7 +21,7 @@
   flex-direction: row;
   overflow-x: auto;
 
-  width: 45vw;
+  width: 44vw;
   gap: 2rem;  
   padding: 1rem; 
 }
@@ -50,7 +50,7 @@
   justify-content: center;
   overflow-y: auto;
 
-  width: 13rem;              
+  width: 14rem;              
   height: 15rem;           
 
   font-size: 1.5rem;

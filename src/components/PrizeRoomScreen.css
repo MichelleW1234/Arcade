@@ -1,6 +1,6 @@
 .prizeRoomContainer {
   background-color: rgb(98, 0, 255);
-  padding: 5rem;             
+  padding: 4rem;             
 
   border-left: 0.625rem solid rgb(37, 0, 98);    
   border-bottom: 0.625rem solid rgb(37, 0, 98);  
@@ -12,12 +12,12 @@
 }
 
 
-.prizeRoomInnerContainer {
-  max-width: 56.25rem;      
+.prizeRoomInnerContainer {     
   display: flex;
   flex-direction: row;
   overflow-y: auto;
 
+  width: 45vw; 
   padding: 0.625rem;        
   gap: 1.875rem;          
 }

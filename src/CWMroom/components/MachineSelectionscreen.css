@@ -1,8 +1,8 @@
 .CWMGameSelectionBoard{
 
     background-color: rgb(67, 18, 151);
-    width: 55rem;           
-    padding: 3rem;       
+    width: 43.5vw;           
+    padding: 2rem;       
 
     border-radius: 1.25rem;    
     border-left: 0.5rem solid rgb(29, 8, 66);   
@@ -18,9 +18,9 @@
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    overflow-x: auto;
     gap: 3.75rem;     
-    padding: 1rem;  
+    padding: 2rem;  
 
 }
 

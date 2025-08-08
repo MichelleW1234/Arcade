@@ -14,8 +14,13 @@ body {
   background-size: cover;
   overflow-y: auto;
   user-select: none;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
     
 }
+
 
 *{
 
@@ -303,6 +308,7 @@ a:active {
   display: flex;
   flex-direction: row;
   list-style: none;
+  flex-wrap: wrap;
   gap: 1.25rem;
 }
 

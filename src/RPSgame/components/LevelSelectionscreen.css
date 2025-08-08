@@ -1,11 +1,4 @@
-.RPSlevelsContainer {
-
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-
-  padding: 3.125rem; 
-  gap: 1rem;       
+.RPSlevelsContainer {     
 
   background-color: rgb(98, 0, 255);
 
@@ -17,7 +10,22 @@
 
   box-shadow: 0 0 1.875rem 0.25rem rgb(0, 204, 255); 
 
+  padding: 1rem 2rem; 
+
 }
+
+
+.RPSlevelsInnerContainer {
+
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+
+  width: 45vw;
+  gap: 2rem;  
+  padding: 1rem; 
+}
+
 
 .RPSLevelsWindowContainer {
 

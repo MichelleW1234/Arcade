@@ -9,6 +9,7 @@ function Startscreen (){
     const { ActiveGame, setActiveGame} = useActiveGame();
 
     return (
+
         <div className = "StartingScreenLayout">
             
             <div className = "header-glow-box">
@@ -30,6 +31,7 @@ function Startscreen (){
                 
             </div>
         </div>
+
     );
 
 }

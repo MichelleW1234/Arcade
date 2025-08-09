@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import useKeyboardShortcut from "../hooks/useKeyboardShortcut";
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 import { usePrize} from '../Providers/PrizeProvider.jsx';
@@ -11,6 +12,12 @@ function PrizeRoomscreen() {
 
     const { Player, setPlayer } = usePlayer();
     const { Prize, setPrize } = usePrize();
+
+    const navigate = useNavigate();
+    useKeyboardShortcut("Enter", () => {
+        playSound(24);
+        navigate("/selection");
+    });
 
     const purchaseItem = (index) => {
 

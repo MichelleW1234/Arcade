@@ -1,6 +1,7 @@
 
-import { Link } from 'react-router-dom';
-import React, {useState } from 'react';
+import {useNavigate, Link } from 'react-router-dom';
+import {useState, useRef} from 'react';
+import useKeyboardShortcut from "../hooks/useKeyboardShortcut";
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 
@@ -9,6 +10,18 @@ import {playSound} from "../Helpers/helpers.js";
 import "./RulesandPointsscreen.css";
 
 function RulesandPointsscreen (){
+
+    const claimPointsButtonRef = useRef(null);
+    useKeyboardShortcut("Enter", () => {
+        claimPointsButtonRef.current?.click();
+    });
+
+    const navigate = useNavigate();
+    useKeyboardShortcut("Enter", () => {
+        playSound(1);
+        navigate("/selection");
+    });
+    
 
     const { Player, setPlayer } = usePlayer();
 
@@ -40,7 +53,7 @@ function RulesandPointsscreen (){
 
             {pointsClaimed == false ? (
 
-                <button className = "generalbutton" onClick={() => claimPoints()}>20 pts</button>
+                <button ref={claimPointsButtonRef} className = "generalbutton" onClick={() => claimPoints()}>20 pts</button>
 
             ) : (
 

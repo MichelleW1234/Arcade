@@ -1,8 +1,15 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import {playSound} from '../../Helpers/helpers.js';
 
 function Instructionsscreen (){
+
+    const navigate = useNavigate();
+    useKeyboardShortcut("Enter", () => {
+        playSound(1);
+        navigate("/CWMselection");
+    });
 
     return (
 

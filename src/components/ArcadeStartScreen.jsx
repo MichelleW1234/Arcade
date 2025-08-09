@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useContext} from 'react';
+import useKeyboardShortcut from "../hooks/useKeyboardShortcut";
 
 import {playSound} from "../Helpers/helpers.js";
 
@@ -8,6 +9,13 @@ import { MusicContext } from '../Providers/MusicProvider.jsx';
 function ArcadeStartscreen (){
 
     const { audioRef } = useContext(MusicContext);
+    
+    const navigate = useNavigate();
+    useKeyboardShortcut("Enter", () => {
+        playSound(24);
+        navigate("/rulesAndPoints");
+    });
+    
 
     return (
 

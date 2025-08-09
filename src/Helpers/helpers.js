@@ -31,47 +31,47 @@ export const retrieveActiveGame = (index) => {
     
     let gameControls = new Array(null, null);
 
-    if (index === 0){
+    if (index === -1){
 
         gameControls[0] = "/CWMstart";
         gameControls[1] = 5;
 
-    } else if (index === 1){
+    } else if (index === 0){
 
         gameControls[0] = "/RPSstart";
         gameControls[1] = 20;
 
-    } else if (index === 2){
+    } else if (index === 1){
 
         gameControls[0] = "/TTTstart";
         gameControls[1] = 10;
 
-    } else if (index === 3){
+    } else if (index === 2){
 
         gameControls[0] = "/SNKstart";
         gameControls[1] = 5;
 
-    } else if (index === 4){
+    } else if (index === 3){
 
         gameControls[0] = "/SPIstart";
         gameControls[1] = 15;
 
-    } else if (index === 5){
+    } else if (index === 4){
 
         gameControls[0] = "/ORBstart";
         gameControls[1] = 5;
 
-    } else if (index === 6){
+    } else if (index === 5){
 
         gameControls[0] = "/CBLstart";
         gameControls[1] = 10;
 
-    } else if (index === 7){
+    } else if (index === 6){
 
         gameControls[0] = "/BFRstart";
         gameControls[1] = 10;
 
-    } else if (index === 8){
+    } else if (index === 7){
 
         gameControls[0] = "/SMZstart";
         gameControls[1] = 15;
@@ -165,6 +165,6 @@ export const playSound = (soundEffect) => {
 export const exitGame = (setActiveGame) => {
 
     playSound(2);
-    setActiveGame(retrieveActiveGame(1));
+    setActiveGame(retrieveActiveGame(0));
 
 }

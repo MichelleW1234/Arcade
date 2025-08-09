@@ -74,7 +74,7 @@ function NavBar ({setShowInventory}){
 
         playSound(24);
         setPlayer([0]);
-        setActiveGame(retrieveActiveGame(1));
+        setActiveGame(retrieveActiveGame(0));
         setPrize([["Bear", 80, Bear], ["BumbleBee", 50, Bee], ["Valentine", 20, Heart], 
                     ["GameBoy", 100, GameBoy], ["Robot", 30, Robot], ["Alien", 20, Alien], 
                     ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 70, Whale],

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -14,21 +15,21 @@ function Summaryscreen (){
   const { ActiveGame, setActiveGame} = useActiveGame();
   const { Player, setPlayer } = usePlayer();
 
-  let winner;
+  const navigate = useNavigate();
 
-  if (RPSUser[4] > RPSUser[3]) {
+  useKeyboardShortcut("Escape", () => {
+    reset();
+    navigate("/selection");
+  });
 
-    winner = "You lost. :(";
+  useKeyboardShortcut("Enter", () => {
+    if (Player[0] >= ActiveGame[1]){
+      resetGame();
+      navigate("/RPSlevels");
+    }
+  });
 
-  } else if (RPSUser[4] < RPSUser[3]) {
 
-    winner = "You won! :)";
-
-  } else {
-
-    winner = "You tied. No one wins!";
-
-  }
 
   const resetGame = () => {
 
@@ -48,9 +49,23 @@ function Summaryscreen (){
   return (
       <div className="screenLayout">
           <div className = "StatsBoard">
+
               <p> Computer Wins: {RPSUser[4]} </p>
               <p> User Wins: {RPSUser[3]} </p>
-              <p><span className = "StatsGlitch">{winner}</span></p>
+              {RPSUser[4] > RPSUser[3] ? (
+
+                <p><span className = "StatsGlitch">You lost. </span></p>
+
+              ) : RPSUser[4] < RPSUser[3] ? (
+
+                <p><span className = "StatsGlitch">You won! </span></p>
+
+              ) : (
+
+                <p><span className = "StatsGlitch"> You tied. No one wins! </span></p>
+
+              )}
+
           </div>
 
           {Player[0] >= ActiveGame[1] ? (

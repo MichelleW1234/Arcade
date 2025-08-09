@@ -1,6 +1,6 @@
-import React, { useState} from "react";
-import { Link } from 'react-router-dom';
-
+import { useNavigate, Link } from 'react-router-dom';
+import {useState, useRef} from 'react';
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
@@ -13,11 +13,49 @@ import "./LevelSelectionscreen.css";
 
 function LevelSelectionscreen (){
 
-    const [activeButton, setActiveButton] = useState(1);
+    const [activeButton, setActiveButton] = useState(0);
 
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { RPSUser, setRPSUser} = useRPSUser();
     const {Player, setPlayer} = usePlayer();
+
+
+    const navigate = useNavigate();
+    useKeyboardShortcut("Escape", () => {
+        quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player);
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        playSound(18);
+        navigate("/RPSgame");
+    });
+    
+    const totalButtons = 3;
+    const leftRightButtonsRef = useRef([]);
+    useKeyboardShortcut("ArrowLeft", () => {
+        setActiveButton((prev) => {
+            const newIndex = (prev - 1 + totalButtons) % totalButtons;
+            setActiveButton(newIndex);
+            const currLevelInput = getInput(newIndex);
+            const currLevelReferences = getReferences(newIndex);
+            setRPSUser([newIndex, currLevelInput, currLevelReferences, 0, 0]);
+            return newIndex;
+        });
+        playSound(3);
+    });
+    useKeyboardShortcut("ArrowRight", () => {
+        setActiveButton((prev) => {
+            const newIndex = (prev + 1) % totalButtons;
+            setActiveButton(newIndex);
+            const currLevelInput = getInput(newIndex);
+            const currLevelReferences = getReferences(newIndex);
+            setRPSUser([newIndex, currLevelInput, currLevelReferences, 0, 0]);
+            return newIndex;
+        });
+        playSound(3);
+    });
+
 
     const handleClick = (index) => {
 
@@ -26,7 +64,7 @@ function LevelSelectionscreen (){
 
         const currLevelInput = getInput(index);
         const currLevelReferences = getReferences(index);
-        setRPSUser([index, currLevelInput, currLevelReferences, 0, 0])
+        setRPSUser([index, currLevelInput, currLevelReferences, 0, 0]);
 
     };
 
@@ -51,8 +89,9 @@ function LevelSelectionscreen (){
                                 <p> <span className="windowGlitch">Rock, Paper, Scissors</span> </p>
                             </div>
                             <button
-                            className={`RPSLevelButton ${activeButton === 1 ? 'active' : ''}`}
-                            onClick={() => handleClick(1)}
+                            ref={(el) => (leftRightButtonsRef.current[0] = el)}
+                            className={`RPSLevelButton ${activeButton === 0 ? 'active' : ''}`}
+                            onClick={() => handleClick(0)}
                             >
                                 Select
                             </button>
@@ -65,8 +104,9 @@ function LevelSelectionscreen (){
                                 <p>Rock, Paper, Scissors, <span className="RPSLevelGlitch">Lizard, Spock</span></p> 
                             </div>
                             <button
-                            className={`RPSLevelButton ${activeButton === 2 ? 'active' : ''}`}
-                            onClick={() => handleClick(2)}
+                            ref={(el) => (leftRightButtonsRef.current[1] = el)}
+                            className={`RPSLevelButton ${activeButton === 1 ? 'active' : ''}`}
+                            onClick={() => handleClick(1)}
                             >
                                 Select
                             </button>
@@ -79,8 +119,9 @@ function LevelSelectionscreen (){
                                 <p>Rock, Paper, Scissors, Gun, Shield</p>
                             </div>
                             <button
-                            className={`RPSLevelButton ${activeButton === 3 ? 'active' : ''}`}
-                            onClick={() => handleClick(3)}
+                            ref={(el) => (leftRightButtonsRef.current[2] = el)}
+                            className={`RPSLevelButton ${activeButton === 2 ? 'active' : ''}`}
+                            onClick={() => handleClick(2)}
                             >
                                 Select
                             </button>

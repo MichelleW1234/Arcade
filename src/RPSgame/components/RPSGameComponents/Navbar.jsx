@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import {useRef} from 'react';
+import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
@@ -13,9 +15,27 @@ function Navbar ({setShowReferences}){
     const {Player, setPlayer} = usePlayer();
     const {RPSUser, setRPSUser} = useRPSUser();
 
+
+    const navigate = useNavigate();
+    useKeyboardShortcut("1", () => {
+        quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player);
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("2", () => {
+        resetGame();
+        navigate("/RPSlevels");
+    });
+
+    const moveReferencesButtonRef = useRef(null);
+    useKeyboardShortcut("3", () => {
+        moveReferencesButtonRef.current?.click();
+    });
+
+
     const displayReferences = () => {
 
-        playSound(3);
+        playSound(25);
         setShowReferences(prevState => !prevState);
 
     }
@@ -44,7 +64,7 @@ function Navbar ({setShowReferences}){
                     </li>
 
                     <li>
-                        <button className = "navBarButton" onClick = {() => displayReferences()}> Move References </button>
+                        <button ref = {moveReferencesButtonRef} className = "navBarButton" onClick = {() => displayReferences()}> Move References </button>
                     </li>
                 </ul>
             </div>

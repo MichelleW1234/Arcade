@@ -1,5 +1,6 @@
-import React, { useState} from "react";
-import { Link } from 'react-router-dom';
+import {useNavigate, Link } from 'react-router-dom';
+import { useRef, useState} from "react";
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import Round from "./RPSGameComponents/Roundbox.jsx";
 import Results from "./RPSGameComponents/Results.jsx";
@@ -26,6 +27,23 @@ function Gamescreen (){
     const [showFlag, setShowFlag] = useState(false);
     const [result, setResult] = useState();
     const [terminationFlag, setTerminationFlag] = useState(false);
+
+    const navigate = useNavigate();
+    useKeyboardShortcut("Enter", () => {
+        if (rounds >= 11 || terminationFlag == true){
+            getWinner();
+            navigate("/RPSsummary");
+        }
+    });
+
+    const closeButtonRef = useRef(null);
+    useKeyboardShortcut("Enter", () => {
+        console.log(showFlag);
+        if (showFlag == true){
+            closeButtonRef.current?.click();
+        }
+    });
+    
 
     const getWinner  = () => {
         
@@ -67,6 +85,7 @@ function Gamescreen (){
                     <>
                         <Round 
                             round={rounds} 
+                            showFlag = {showFlag}
                             setShowFlag={setShowFlag}
                             setResult = {setResult}
                             setTerminationFlag = {setTerminationFlag}
@@ -80,6 +99,7 @@ function Gamescreen (){
                                 setRounds={setRounds}
                                 setShowFlag={setShowFlag}
                                 terminationFlag = {terminationFlag}
+                                closeButtonRef = {closeButtonRef}
                             />
 
                         )}

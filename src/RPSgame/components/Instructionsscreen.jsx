@@ -1,5 +1,6 @@
 
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
@@ -8,6 +9,18 @@ import {playSound, exitGame} from '../../Helpers/helpers.js';
 function Instructionsscreen (){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
+
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        exitGame(setActiveGame);
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        playSound(19);
+        navigate("/RPSlevels");
+    });
 
     return (
         <div className= "screenLayout">

@@ -1,5 +1,6 @@
-import { Link} from 'react-router-dom';
-import React, { useState, useEffect, useRef} from "react";
+import { useNavigate, Link} from 'react-router-dom';
+import { useState, useEffect, useRef} from "react";
+import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 
 import ClawBar from "../CWMGameComponents/ClawBar.jsx";
 import ClawWindow from './SportsGameComponents/SportsClawWindow.jsx';
@@ -27,6 +28,28 @@ function SportsGamescreen (){
     const [direction, setDirection] = useState(1);
 
     const [clawWentDown, setClawWentDown] = useState(false);
+
+
+    const clawGrabRef = useRef(null);
+    useKeyboardShortcut("Enter", () => {
+        clawGrabRef.current?.click();
+    });
+
+
+    const navigate = useNavigate();
+    useKeyboardShortcut("Enter", () => {
+        if (clawWentDown == true){
+            claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [13, 14, 15, 16]);
+            navigate("/CWMsportssummary");
+        }
+    });
+
+    useKeyboardShortcut("Escape", () => {
+        exitGame(Player, setPlayer, ActiveGame[1], setCWMUser);
+        navigate("/CWMselection");
+    });
+    
+
 
     const currentPositionRef = useRef(currentPosition);
     useEffect(() => {
@@ -99,7 +122,7 @@ function SportsGamescreen (){
                     ) : (
 
 
-                        <button className ="CWMSportsButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
+                        <button ref = {clawGrabRef} className ="CWMSportsButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
                 
 
                     )}

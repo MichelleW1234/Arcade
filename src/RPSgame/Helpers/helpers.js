@@ -2,12 +2,12 @@ import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
 export const resetLevel = (setRPSUser) => {
 
-    const defaultInput = getInput(1);
-    const defaultReferences = getReferences(1);
+    const defaultInput = getInput(0);
+    const defaultReferences = getReferences(0);
 
     setRPSUser((prev) => {
         const updatedUser = [...prev];
-        updatedUser[0] = 1;
+        updatedUser[0] = 0;
         updatedUser[1] = defaultInput;
         updatedUser[2] = defaultReferences;
         updatedUser[3] = 0;
@@ -24,7 +24,7 @@ export const getInput = (level) => {
                          ["Rock", "Paper", "Scissors", "Lizard", "Spock"],
                          ["Rock", "Paper", "Scissors", "Gun", "Shield"]];
 
-    return levelInputs[level-1];
+    return levelInputs[level];
 
 };
 
@@ -56,7 +56,7 @@ export const getReferences = (level) => {
           "Scissors beats Paper", 
           "Scissors loses to Rock"]];
             
-    return levelReferences[level-1];
+    return levelReferences[level];
 
 };
 
@@ -68,11 +68,11 @@ export const decideRoundWinnerFunction = (level, userMove, setResult) => {
 
     let result;
 
-    if (level === 1){
+    if (level === 0){
 
         result = decideRoundWinnerLevel1(userMove, setResult);
 
-    } else if (level === 2){
+    } else if (level === 1){
 
         result = decideRoundWinnerLevel2(userMove, setResult);
 
@@ -295,11 +295,12 @@ const decideRoundWinnerLevel3 = (userMove, setResult) => {
 };
 
 
+
 export const quitGame = (setRPSUser, ActiveGame, setActiveGame, setPlayer, Player) => {
 
-    playSound(4);
-    resetLevel(setRPSUser);
-    setPlayer([Player[0] - ActiveGame[1]]);
-    setActiveGame(retrieveActiveGame(1));
+playSound(4);
+resetLevel(setRPSUser);
+setPlayer([Player[0] - ActiveGame[1]]);
+setActiveGame(retrieveActiveGame(1));
 
 }

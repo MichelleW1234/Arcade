@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
+import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 
 import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
@@ -16,6 +17,19 @@ function CatSummaryscreen (){
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { CWMUser, setCWMUser} = useCWMUser();
+
+    const navigate = useNavigate();
+    useKeyboardShortcut("Enter", () => {
+        if (Player[0] >= ActiveGame[1]){
+            resetGame(setCWMUser);
+            navigate("/CWMcatgame");
+        }
+    });
+
+    useKeyboardShortcut("Escape", () => {
+        reset(setCWMUser);
+        navigate("/CWMselection");
+    });
 
     return (
 

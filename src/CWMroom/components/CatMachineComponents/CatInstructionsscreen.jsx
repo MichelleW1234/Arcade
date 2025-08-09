@@ -1,8 +1,21 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 
 import {playSound} from '../../../Helpers/helpers.js';
 
 function CatInstructionsscreen (){
+
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        playSound(2);
+        navigate("/CWMselection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        playSound(19);
+        navigate("/CWMcatgame");
+    });
 
     return (
 

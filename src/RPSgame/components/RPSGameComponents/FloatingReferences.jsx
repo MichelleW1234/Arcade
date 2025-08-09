@@ -12,7 +12,7 @@ function FloatingReferences ({setShowReferences}){
     const closeReferences = () => {
 
         setShowReferences(false);
-        playSound(3);
+        playSound(25);
 
     }
 

@@ -2,7 +2,7 @@ import "./Results.css";
 
 import {playSound} from "../../../Helpers/helpers.js";
 
-function Results ({result, rounds, setRounds, setShowFlag, terminationFlag}){
+function Results ({result, rounds, setRounds, setShowFlag, terminationFlag, closeButtonRef}){
 
     const handleHideFlag = () => {
 
@@ -42,7 +42,7 @@ function Results ({result, rounds, setRounds, setShowFlag, terminationFlag}){
                     </p>
                 ))}
 
-                    <button className = "generalbutton" onClick={() => handleHideFlag()}> Close </button>
+                    <button ref = {closeButtonRef} className = "generalbutton" onClick={() => handleHideFlag()}> Close </button>
             </div>
 
         </div>

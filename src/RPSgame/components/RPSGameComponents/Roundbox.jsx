@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
 
@@ -8,14 +8,33 @@ import {playSound} from "../../../Helpers/helpers.js";
 
 import "./Roundbox.css";
 
-function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
+function Roundbox ({round, showFlag, setShowFlag, setResult, setTerminationFlag}){
 
     const { RPSUser, setRPSUser } = useRPSUser();
     const currInput = RPSUser[1];
     const currLevel= RPSUser[0];
 
+    const [inputValue, setInputValue] = useState("");
     const [error, setError] = useState("");
 
+    const inputRef = useRef(null);
+    useEffect(() => {
+        if (!showFlag){
+            inputRef.current?.focus();
+        }
+    }, [showFlag]);
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter" && showFlag != true) {
+            e.preventDefault(); // prevent form submission or default behaviors
+            ProcessingInput();
+        }
+    };
+
+    // For textbox:
+    const handleChange = (e) => {
+        setInputValue(e.target.value);
+    };
 
     const ProcessingInput = () => {
         
@@ -82,13 +101,6 @@ function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
 
     };
 
-    const [inputValue, setInputValue] = useState("");
-
-    // For textbox:
-    const handleChange = (e) => {
-        setInputValue(e.target.value);
-    };
-
 
     return (
 
@@ -105,8 +117,11 @@ function Roundbox ({round, setShowFlag, setResult, setTerminationFlag}){
             <input 
                 className = "RPStextbox"
                 type="text"
+                ref={inputRef}
                 value={inputValue}
                 onChange={handleChange}
+                onKeyDown={handleKeyDown}
+                disabled={showFlag}
                 placeholder="Type here..."
             />
 

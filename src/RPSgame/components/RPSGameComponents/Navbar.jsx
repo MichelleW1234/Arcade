@@ -9,7 +9,7 @@ import { useRPSUser} from '../../Providers/RPSUserProvider.jsx';
 import {resetLevel, quitGame} from "../../Helpers/helpers.js";
 import {playSound} from "../../../Helpers/helpers.js";
 
-function Navbar ({setShowReferences}){
+function Navbar ({showReferences, setShowReferences, showFlag}){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
     const {Player, setPlayer} = usePlayer();
@@ -18,18 +18,24 @@ function Navbar ({setShowReferences}){
 
     const navigate = useNavigate();
     useKeyboardShortcut("1", () => {
-        quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player);
-        navigate("/selection");
+        if (showReferences == false && showFlag == false){
+            quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player);
+            navigate("/selection");
+        }
     });
 
     useKeyboardShortcut("2", () => {
-        resetGame();
-        navigate("/RPSlevels");
+        if (showReferences == false && showFlag == false){
+            resetGame();
+            navigate("/RPSlevels");
+        }
     });
 
     const moveReferencesButtonRef = useRef(null);
     useKeyboardShortcut("3", () => {
-        moveReferencesButtonRef.current?.click();
+        if (showFlag == false){
+            moveReferencesButtonRef.current?.click();
+        }
     });
 
 

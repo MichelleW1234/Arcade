@@ -34,7 +34,7 @@ import Sun from "../../Images/ArcadePrizeImages/Sun.svg";
 import Saturn from "../../Images/ArcadePrizeImages/Saturn.svg";
 import Andromeda from "../../Images/ArcadePrizeImages/Andromeda.svg";
 
-function NavBar ({setShowInventory}){
+function NavBar ({showInventory, setShowInventory}){
 
     const { ActiveGame, setActiveGame } = useActiveGame(); 
     const { Player, setPlayer } = usePlayer(); 
@@ -42,18 +42,24 @@ function NavBar ({setShowInventory}){
 
     const navigate = useNavigate();
     useKeyboardShortcut("1", () => {
-        resetPoints();
-        navigate("/arcadeStart");
+        if (showInventory == false){
+            resetPoints();
+            navigate("/arcadeStart");
+        }
     });
 
     useKeyboardShortcut("2", () => {
-        playSound(24);
-        navigate("/prizeRoom");
+        if (showInventory == false){
+            playSound(24);
+            navigate("/prizeRoom");
+        }
     });
 
     useKeyboardShortcut("4", () => {
-        goToClawArcade();
-        navigate("/CWMstart");
+        if (showInventory == false){
+            goToClawArcade();
+            navigate("/CWMstart");
+        }
     });
 
     const viewPrizeInventoryButtonRef = useRef(null);

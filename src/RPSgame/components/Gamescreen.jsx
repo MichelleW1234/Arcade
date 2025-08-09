@@ -30,17 +30,20 @@ function Gamescreen (){
 
     const navigate = useNavigate();
     useKeyboardShortcut("Enter", () => {
-        if (rounds >= 11 || terminationFlag == true){
-            getWinner();
-            navigate("/RPSsummary");
+        if (showReferences == false && showFlag == false){
+            if (rounds >= 11 || terminationFlag == true){
+                getWinner();
+                navigate("/RPSsummary");
+            }
         }
     });
 
     const closeButtonRef = useRef(null);
     useKeyboardShortcut("Enter", () => {
-        console.log(showFlag);
-        if (showFlag == true){
-            closeButtonRef.current?.click();
+        if (showReferences == false){
+            if (showFlag == true){
+                closeButtonRef.current?.click();
+            }
         }
     });
     
@@ -71,7 +74,9 @@ function Gamescreen (){
         <div>
 
             <Navbar
+                showReferences = {showReferences}
                 setShowReferences = {setShowReferences}
+                showFlag = {showFlag}
             />
 
             {showReferences && (<References
@@ -85,6 +90,7 @@ function Gamescreen (){
                     <>
                         <Round 
                             round={rounds} 
+                            showReferences = {showReferences}
                             showFlag = {showFlag}
                             setShowFlag={setShowFlag}
                             setResult = {setResult}

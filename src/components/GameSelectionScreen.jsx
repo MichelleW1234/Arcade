@@ -35,34 +35,38 @@ function GameSelectionscreen (){
     const totalButtons = 8;
     const leftRightButtonsRef = useRef([]);
     useKeyboardShortcut("ArrowLeft", () => {
-        setActiveButton((prev) => {
-            const newIndex = (prev - 1 + totalButtons) % totalButtons;
-            const currGameInfo = retrieveActiveGame(newIndex);
-            setActiveGame(currGameInfo);
-            return newIndex;
-        });
-        playSound(3);
+        if (showInventory == false){
+            setActiveButton((prev) => {
+                const newIndex = (prev - 1 + totalButtons) % totalButtons;
+                const currGameInfo = retrieveActiveGame(newIndex);
+                setActiveGame(currGameInfo);
+                return newIndex;
+            });
+            playSound(3);
+        }
     });
     useKeyboardShortcut("ArrowRight", () => {
-        setActiveButton((prev) => {
-            const newIndex = (prev + 1) % totalButtons;
-            const currGameInfo = retrieveActiveGame(newIndex);
-            setActiveGame(currGameInfo);
-            return newIndex;
-        });
-        playSound(3);
+        if (showInventory == false){
+            setActiveButton((prev) => {
+                const newIndex = (prev + 1) % totalButtons;
+                const currGameInfo = retrieveActiveGame(newIndex);
+                setActiveGame(currGameInfo);
+                return newIndex;
+            });
+            playSound(3);
+        }
     });
 
     const navigate = useNavigate();
     useKeyboardShortcut("Enter", () => {
+        if (showInventory == false){
+            if (Player[0] >= ActiveGame[1]){
 
-        if (Player[0] >= ActiveGame[1]){
+                playSound(2);
+                navigate(currGamePath);
 
-            playSound(2);
-            navigate(currGamePath);
-
+            }
         }
-
     });
 
     const handleClick = (index) => {
@@ -89,6 +93,7 @@ function GameSelectionscreen (){
             />}
 
             <NavBar
+                showInventory = {showInventory}
                 setShowInventory = {setShowInventory}
             />
 

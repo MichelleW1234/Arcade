@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
 
@@ -14,6 +15,22 @@ function Summaryscreen() {
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { Player, setPlayer} = usePlayer();
 
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        reset();
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        if (Player[0] >= ActiveGame[1]){
+        playAgain();
+        navigate("/TTTcoinFlip");
+        }
+    });
+
+
+
     const playAgain = () => {
 
         playSound(19);
@@ -25,7 +42,7 @@ function Summaryscreen() {
 
         playSound(4);
         resetGame(setTTTUser);
-        setActiveGame(retrieveActiveGame(1));
+        setActiveGame(retrieveActiveGame(0));
 
     }
 

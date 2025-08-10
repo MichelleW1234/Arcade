@@ -42,7 +42,7 @@ function Summaryscreen (){
 
     playSound(4);
     resetLevel(setRPSUser);
-    setActiveGame(retrieveActiveGame(1));
+    setActiveGame(retrieveActiveGame(0));
 
   }
 

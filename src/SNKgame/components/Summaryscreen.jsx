@@ -41,7 +41,7 @@ function Summaryscreen(){
     
         playSound(4);
         setSNKUser([false, 0]);
-        setActiveGame(retrieveActiveGame(0))
+        setActiveGame(retrieveActiveGame(0));
     
     }
     

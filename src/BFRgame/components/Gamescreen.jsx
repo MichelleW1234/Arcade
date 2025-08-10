@@ -1,5 +1,6 @@
-import { Link} from 'react-router-dom';
-import React, { useState, useEffect, useRef} from "react";
+import { useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect, useRef} from "react";
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import InnerGameScreen from "./BFRGameComponents/InnerGamescreen.jsx";
 
@@ -23,6 +24,28 @@ function Gamescreen(){
     const [laserBlast, setLaserBlast] = useState(false);
     const [timer, setTimer] = useState(1);
     const [gameOver, setGameOver] = useState(false);
+
+
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        exitGame();
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        if (gameOver == true ){
+            claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2));
+            navigate("/BFRsummary");
+        } else {
+            laserBlasted();
+        }
+    });
+
+
+
+
+
 
     const positionsRef = useRef(positions);
     useEffect(() => {
@@ -106,7 +129,7 @@ function Gamescreen(){
 
         setBFRUser([0]);
         setPlayer([Player[0] - ActiveGame[1]]);
-        setActiveGame(retrieveActiveGame(1));
+        setActiveGame(retrieveActiveGame(0));
 
     }
 

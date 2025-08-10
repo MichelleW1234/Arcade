@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {playSound, exitGame} from '../../Helpers/helpers.js';
@@ -6,6 +7,18 @@ import {playSound, exitGame} from '../../Helpers/helpers.js';
 function Startscreen (){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
+
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        exitGame(setActiveGame);
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        playSound(1);
+        navigate("/CBLinstructions");
+    });
 
     return (
 

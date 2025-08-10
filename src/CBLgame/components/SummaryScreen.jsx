@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -12,6 +13,24 @@ function Summaryscreen (){
     const { ActiveGame, setActiveGame} = useActiveGame();
     const {CBLUser, setCBLUser} = useCBLUser();
 
+
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        reset();
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        if (Player[0] >= ActiveGame[1]){
+            resetGame();
+            navigate("/CBLgame");
+        }
+    });
+
+
+
+
     const resetGame = () => {
         
         playSound(19)
@@ -23,7 +42,7 @@ function Summaryscreen (){
         
         playSound(4);
         setCBLUser([0]);
-        setActiveGame(retrieveActiveGame(1));
+        setActiveGame(retrieveActiveGame(0));
 
     }
 

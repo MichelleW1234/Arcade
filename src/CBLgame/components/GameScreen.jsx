@@ -1,5 +1,6 @@
-import { Link} from 'react-router-dom';
-import React, { useState, useEffect} from "react";
+import { useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect} from "react";
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import InnerGameScreen from "./CBLGameComponents/InnerGamescreen.jsx";
 
@@ -21,6 +22,24 @@ function Gamescreen (){
     const [colorAppearances, setColorAppearances] = useState(0);
 
     const [wrongColorBlasted, setWrongColorBlasted] = useState(false);
+
+
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        exitGame();
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        if (colorAppearances >= 50 || wrongColorBlasted == true ){
+            claimPoints(ActiveGame, Player, setPlayer, CBLUser[0]*3);
+            navigate("/CBLsummary");
+        }
+    });
+
+
+
 
     useEffect(() => {
 
@@ -48,7 +67,7 @@ function Gamescreen (){
 
         setCBLUser([0]);
         setPlayer([Player[0] - ActiveGame[1]]);
-        setActiveGame(retrieveActiveGame(1));
+        setActiveGame(retrieveActiveGame(0));
 
     }
 
@@ -62,18 +81,18 @@ function Gamescreen (){
 
                 {colorAppearances < 50 && wrongColorBlasted == false ? (
             
-                <div className = "CBLOuterGameContainer">
+                    <div className = "CBLOuterGameContainer">
 
-                    <h1 className="CBLsign"> <span className='signGlitch'>Colors Blasted: {CBLUser[0]} </span></h1>
+                        <h1 className="CBLsign"> <span className='signGlitch'>Colors Blasted: {CBLUser[0]} </span></h1>
 
-                    <InnerGameScreen
-                        setColorAppearances = {setColorAppearances}
-                        colorToBlast = {colorToBlast}
-                        setWrongColorBlasted = {setWrongColorBlasted}
-                        wrongColorBlasted = {wrongColorBlasted}
-                    />
-    
-                </div>
+                        <InnerGameScreen
+                            setColorAppearances = {setColorAppearances}
+                            colorToBlast = {colorToBlast}
+                            setWrongColorBlasted = {setWrongColorBlasted}
+                            wrongColorBlasted = {wrongColorBlasted}
+                        />
+        
+                    </div>
 
                 ) : (
 

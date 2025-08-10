@@ -1,5 +1,6 @@
-import { Link} from 'react-router-dom';
-import React, { useState, useEffect, useRef} from "react";
+import { useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect, useRef} from "react";
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import InnerGameScreen from "./SMZComponents/InnerGamescreen.jsx";
 
@@ -28,6 +29,35 @@ function Gamescreen(){
     const [startButtonClicked, setStartButtonClicked] = useState(false);
     const [gameOver, setGameOver] = useState(false);
 
+
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        exitGame();
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        if (gameOver == true){
+            claimPoints(ActiveGame, Player, setPlayer, Math.floor(distance / 5));
+            navigate("/SMZsummary");
+        }
+    });
+
+    useKeyboardShortcut("ArrowUp", () => {
+        birdFlyingUpwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
+    });
+
+    useKeyboardShortcut("ArrowDown", () => {
+        birdFlyingDownwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
+    });
+
+
+
+
+
+
+
     const wallPositionsRef = useRef(wallPositions);
     useEffect(() => {
         wallPositionsRef.current = wallPositions;
@@ -49,6 +79,24 @@ function Gamescreen(){
         const interval = setInterval(() => {
 
             birdFlyingForward(wallPositionsRef.current, setWallPositions);
+
+        }, 80);
+
+        return () => clearInterval(interval);
+
+    }, [gameOver, startButtonClicked]);
+
+
+     useEffect(() => {
+
+        if (startButtonClicked == false || gameOver == true){
+
+            return;
+
+        }
+
+        const interval = setInterval(() => {
+
             setDistance(prev => {
 
                 const newDistance = prev + 1;
@@ -105,7 +153,7 @@ function Gamescreen(){
 
         setSMZUser([0]);
         setPlayer([Player[0] - ActiveGame[1]]);
-        setActiveGame(retrieveActiveGame(1));
+        setActiveGame(retrieveActiveGame(0));
 
     }
 

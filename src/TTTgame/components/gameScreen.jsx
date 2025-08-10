@@ -42,6 +42,9 @@ function Gamescreen() {
     }
   });
 
+
+
+  
   const reset = () => {
 
     playSound(4);

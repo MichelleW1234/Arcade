@@ -1,5 +1,6 @@
-import { Link} from 'react-router-dom';
-import React, { useState, useEffect, useRef} from "react";
+import { useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect, useRef} from "react";
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import InnerGameScreen from "./ORBGameComponents/InnerGamescreen.jsx";
 
@@ -40,6 +41,25 @@ function Gamescreen(){
         ...circleBottom,
         ...circleLeft,
     ];
+
+
+
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        exitGame();
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        if (stop == true){
+            calculateWin();
+            navigate("/ORBsummary");
+        } else {
+            stopped();
+        }
+    });
+
 
 
     const currentSlotRef = useRef(currentSlot);
@@ -102,7 +122,7 @@ function Gamescreen(){
         playSound(4);
         setORBUser([false]);
         setPlayer([Player[0] - ActiveGame[1]]);
-        setActiveGame(retrieveActiveGame(1));
+        setActiveGame(retrieveActiveGame(0));
 
     }
 

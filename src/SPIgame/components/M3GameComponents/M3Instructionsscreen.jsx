@@ -1,6 +1,7 @@
 
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useState} from 'react';
+import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 
 import alienMutant from "../../../Images/image 10.svg";
 import alien from "../../../Images/image 8.svg";
@@ -26,6 +27,67 @@ function M3Instructionsscreen() {
   const [aliensDetectedOn, setAliensDetectedOn] = useState(false);
   const [waveInfoOn, setWaveInfoOn] = useState(false);
   const [equipmentOn, setEquipmentOn] = useState(false);
+
+
+  const navigate = useNavigate();
+
+  useKeyboardShortcut("Enter", () => {
+    if (aliensDetectedOn == false && waveInfoOn == false && equipmentOn == false){
+      playSound(7);
+      navigate("/SPIM3game");
+    }
+  });
+
+  useKeyboardShortcut("Escape", () => {
+    if (aliensDetectedOn == false && waveInfoOn == false && equipmentOn == false){
+      quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
+      navigate("/selection");
+    }
+  });
+
+  useKeyboardShortcut("1", () => {
+    if (waveInfoOn == false && equipmentOn == false){
+      if (aliensDetectedOn == true){
+
+        setAliensDetectedOn(closingGuide());
+
+      } else {
+
+        setAliensDetectedOn(openingGuide());
+
+      }
+    }
+  });
+
+  useKeyboardShortcut("2", () => {
+    if (aliensDetectedOn == false && equipmentOn == false){
+      if (waveInfoOn == true){
+
+        setWaveInfoOn(closingGuide());
+
+      } else {
+
+        setWaveInfoOn(openingGuide());
+
+      }
+    }
+  });
+
+  useKeyboardShortcut("3", () => {
+    if (waveInfoOn == false && aliensDetectedOn == false){
+      if (equipmentOn == true){
+
+        setEquipmentOn(closingGuide());
+
+      } else {
+
+        setEquipmentOn(openingGuide());
+
+      }
+    }
+  });
+
+
 
   return (
 

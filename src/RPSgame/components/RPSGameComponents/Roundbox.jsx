@@ -24,6 +24,8 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, set
         }
     }, [showFlag]);
 
+    // For textbox:
+
     const handleKeyDown = (e) => {
         if (showReferences == false){
             if (e.key === "Enter" && showFlag != true) {
@@ -33,7 +35,6 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, set
         }
     };
 
-    // For textbox:
     const handleChange = (e) => {
         setInputValue(e.target.value);
     };

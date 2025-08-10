@@ -296,6 +296,35 @@ const decideRoundWinnerLevel3 = (userMove, setResult) => {
 
 
 
+export const handleHideFlag = (terminationFlag, rounds, setRounds, setShowFlag) => {
+
+        playSound(3);
+        if (terminationFlag == true){
+
+            setRounds(11);
+            setShowFlag(false);
+            playSound(6);
+
+        } else {
+
+            if (rounds == 10){
+
+                playSound(6);
+
+            }
+
+            setRounds((prevRounds) => prevRounds + 1);
+            setShowFlag(false);
+
+        }
+
+    }
+
+
+
+
+
+
 export const quitGame = (setRPSUser, ActiveGame, setActiveGame, setPlayer, Player) => {
 
     playSound(4);

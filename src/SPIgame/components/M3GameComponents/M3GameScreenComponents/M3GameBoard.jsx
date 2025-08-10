@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import useKeyboardShortcut from "../../../../hooks/useKeyboardShortcut";
 
 import AlienNormal from '../../../../Images/image 8.svg';
 import AlienMutant from '../../../../Images/image 10.svg';
@@ -25,7 +26,13 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
     const [alienPositions, setAlienPositions] = useState(newWave(3));
     const [mutantLaserOn, setMutantLaserOn] = useState(false);
 
+    const LaserSwitchButtonRef = useRef(null);
+    useKeyboardShortcut("Shift", () => {
+        changeLaser();
+    });
 
+
+    
     /* Refs avoid stale values and store the latest values for use inside 
     interval callbacks in useEffect without triggering re-renders*/
     const alienPositionsRef = useRef(alienPositions);
@@ -101,8 +108,8 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
 
 
-    const changeLaser = () => {
 
+    const changeLaser = () => {
 
         if (mutantLaserOn === false) {
 
@@ -192,17 +199,10 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
                 max="26"
                 value={laserValue}
                 onChange={(e) => setLaserValue(Number(e.target.value))}
+                onPointerUp = {() => LaserSwitchButtonRef.current?.focus()}
             />
 
-            {mutantLaserOn === true ? (
-
-                <button className = "SPIlaserButtonMutant" onClick={() => changeLaser()}> Change Laser </button>
-
-            ) : (
-
-                <button className = "SPIlaserButtonNormal" onClick={() => changeLaser()} > Change Laser </button>
-
-            )}
+            <button ref = {LaserSwitchButtonRef} className={mutantLaserOn ? "SPIlaserButtonMutant" : "SPIlaserButtonNormal"} onClick={() => changeLaser()}> Change Laser </button>
 
         </div>
 

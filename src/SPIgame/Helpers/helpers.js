@@ -458,6 +458,6 @@ export const quitGame = (setSPIUser, Player, setPlayer, ActiveGame, setActiveGam
 
     setSPIUser([0,[1, "/SPIM1Instructions"], false]);
     setPlayer([Player[0] - ActiveGame[1]]);
-    setActiveGame(retrieveActiveGame(1));
+    setActiveGame(retrieveActiveGame(0));
         
 }

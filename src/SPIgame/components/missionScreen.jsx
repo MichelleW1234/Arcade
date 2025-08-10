@@ -1,5 +1,6 @@
+import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useSPIUser } from '../Providers/SPIUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -21,9 +22,30 @@ function Missionscreen() {
 
     const [currGamePath, setCurrGamePath] = useState(SPIUser[1][1]);
 
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        if (SPIUser[0] == allMissions.length || SPIUser[2] == true){
+            claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0]*ActiveGame[1]))
+            navigate("/SPIsummary");
+        } else {
+            playSound(12);
+            navigate(currGamePath);
+        }
+    });
+
+
+
     useEffect(() => {
         setCurrGamePath(SPIUser[1][1]); 
     }, [SPIUser[1][1]]); 
+
+    
 
     return (
 

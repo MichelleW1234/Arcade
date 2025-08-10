@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 
 import GameBoardM2 from "./M2GameScreenComponents/M2GameBoard.jsx";
 
@@ -18,6 +19,22 @@ function M2GameScreen() {
     const {SPIUser, setSPIUser} = useSPIUser();
 
     const [waveNumber, setWaveNumber] = useState(1);
+
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        if ( waveNumber > 5 || SPIUser[2] == true){
+            unlockNextMission(SPIUser, setSPIUser);
+            navigate("/SPImission");
+        }
+    });
+
+
 
     return (
 

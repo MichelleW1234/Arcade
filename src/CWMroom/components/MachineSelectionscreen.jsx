@@ -1,5 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom';
-import {useState, useRef} from 'react';
+import {useState} from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -33,7 +33,6 @@ function MachineSelectionscreen (){
     });
 
     const totalButtons = 3;
-    const leftRightButtonsRef = useRef([]);
     useKeyboardShortcut("ArrowLeft", () => {
         setActiveButton((prev) => {
             const newIndex = (prev - 1 + totalButtons) % totalButtons;
@@ -130,7 +129,6 @@ function MachineSelectionscreen (){
                             </div>
 
                             <button
-                            ref={(el) => (leftRightButtonsRef.current[0] = el)}
                             className={`CWMMachineButton ${activeButton === 0 ? 'active' : ''}`}
                             onClick={() => handleClick(0)}
                             >
@@ -149,7 +147,6 @@ function MachineSelectionscreen (){
                             </div>
 
                             <button
-                            ref={(el) => (leftRightButtonsRef.current[1] = el)}
                             className={`CWMMachineButton ${activeButton === 1 ? 'active' : ''}`}
                             onClick={() => handleClick(1)}
                             >
@@ -168,7 +165,6 @@ function MachineSelectionscreen (){
                             </div>
 
                             <button
-                            ref={(el) => (leftRightButtonsRef.current[2] = el)}
                             className={`CWMMachineButton ${activeButton === 2 ? 'active' : ''}`}
                             onClick={() => handleClick(2)}
                             >

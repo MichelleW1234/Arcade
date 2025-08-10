@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useState} from 'react';
+import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 
 import boss from "../../../Images/image 13.svg";
 import bossDanger from "../../../Images/image 14.svg";
@@ -24,6 +25,45 @@ function M4Instructionsscreen() {
 
   const [aliensDetectedOn, setAliensDetectedOn] = useState(false);
   const [equipmentOn, setEquipmentOn] = useState(false);
+
+
+  const navigate = useNavigate();
+  
+  useKeyboardShortcut("Enter", () => {
+    if (aliensDetectedOn == false && equipmentOn == false){
+      playSound(7);
+      navigate("/SPIM4game");
+    }
+  });
+
+  useKeyboardShortcut("Escape", () => {
+    if (aliensDetectedOn == false && equipmentOn == false){
+      quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
+      navigate("/selection");
+    }
+  });
+
+  useKeyboardShortcut("1", () => {
+    if (equipmentOn == false){
+      if (aliensDetectedOn == true){
+        setAliensDetectedOn(closingGuide());
+      } else {
+        setAliensDetectedOn(openingGuide());
+      }
+    }
+  });
+
+  useKeyboardShortcut("2", () => {
+    if (aliensDetectedOn == false){
+      if (equipmentOn == true){
+        setEquipmentOn(closingGuide());
+      } else {
+        setEquipmentOn(openingGuide());
+      }
+    }
+  });
+
+
 
   return (
 

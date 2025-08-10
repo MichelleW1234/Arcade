@@ -1,5 +1,5 @@
 import {useNavigate, Link } from 'react-router-dom';
-import { useRef, useState} from "react";
+import {useState} from "react";
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import Round from "./RPSGameComponents/Roundbox.jsx";
@@ -11,6 +11,7 @@ import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
+import {handleHideFlag} from "../Helpers/helpers.js";
 import {pointsDistribution} from "../../Helpers/helpers.js";
 
 import "./Gamescreen.css";
@@ -28,24 +29,23 @@ function Gamescreen (){
     const [result, setResult] = useState();
     const [terminationFlag, setTerminationFlag] = useState(false);
 
+
     const navigate = useNavigate();
+    
     useKeyboardShortcut("Enter", () => {
         if (showReferences == false && showFlag == false){
             if (rounds >= 11 || terminationFlag == true){
                 getWinner();
                 navigate("/RPSsummary");
             }
-        }
-    });
-
-    const closeButtonRef = useRef(null);
-    useKeyboardShortcut("Enter", () => {
-        if (showReferences == false){
+        } else if (showReferences == false){
             if (showFlag == true){
-                closeButtonRef.current?.click();
+                handleHideFlag(terminationFlag, rounds, setRounds, setShowFlag);
             }
         }
     });
+
+
     
 
     const getWinner  = () => {
@@ -105,7 +105,7 @@ function Gamescreen (){
                                 setRounds={setRounds}
                                 setShowFlag={setShowFlag}
                                 terminationFlag = {terminationFlag}
-                                closeButtonRef = {closeButtonRef}
+                                /*closeButtonRef = {closeButtonRef}*/
                             />
 
                         )}

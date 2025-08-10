@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 
 import GameBoardM1 from "./M1GameScreenComponents/M1GameBoard.jsx";
 
@@ -18,6 +19,26 @@ function M1GameScreen() {
     const {SPIUser, setSPIUser} = useSPIUser();
 
     const [waveNumber, setWaveNumber] = useState(1);
+
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        if ( waveNumber > 5 || SPIUser[2] == true){
+            unlockNextMission(SPIUser, setSPIUser);
+            navigate("/SPImission");
+        }
+    });
+
+    const chooseFirstButtonRef = useRef(null);
+    useKeyboardShortcut("Enter", () => {
+        chooseFirstButtonRef.current?.click();
+    });
+
 
     return (
 
@@ -39,7 +60,6 @@ function M1GameScreen() {
                             setWaveNumber = {setWaveNumber}
                         />
 
-                        
                     </div>
 
                 </div>

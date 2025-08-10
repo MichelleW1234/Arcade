@@ -46,27 +46,20 @@ function Gamesscreen(){
         }
     });
 
-    const UpButtonRef = useRef(null);
     useKeyboardShortcut("ArrowUp", () => {
-        UpButtonRef.current?.click();
+        buttonControls(2);
     });
 
-
-    const DownButtonRef = useRef(null);
     useKeyboardShortcut("ArrowDown", () => {
-        DownButtonRef.current?.click();
+        buttonControls(3);
     });
 
-
-    const LeftButtonRef = useRef(null);
     useKeyboardShortcut("ArrowLeft", () => {
-        LeftButtonRef.current?.click();
+        buttonControls(0);
     });
 
-
-    const RightButtonRef = useRef(null);
     useKeyboardShortcut("ArrowRight", () => {
-        RightButtonRef.current?.click();
+        buttonControls(1);
     });
 
 
@@ -234,10 +227,10 @@ function Gamesscreen(){
 
                         <div className = "SNKbuttonsContainer">
                             
-                            <button ref = {LeftButtonRef} className = "SNKcontrolButton" onClick={() => buttonControls(0)}> {"\u2190"} </button>
-                            <button ref = {RightButtonRef} className = "SNKcontrolButton" onClick={() => buttonControls(1)}> {"\u2192"} </button>
-                            <button ref = {UpButtonRef} className = "SNKcontrolButton" onClick={() => buttonControls(2)}> {"\u2191"} </button>
-                            <button ref = {DownButtonRef} className = "SNKcontrolButton" onClick={() => buttonControls(3)}> {"\u2193"} </button>
+                            <button className = "SNKcontrolButton" onClick={() => buttonControls(0)}> {"\u2190"} </button>
+                            <button className = "SNKcontrolButton" onClick={() => buttonControls(1)}> {"\u2192"} </button>
+                            <button className = "SNKcontrolButton" onClick={() => buttonControls(2)}> {"\u2191"} </button>
+                            <button className = "SNKcontrolButton" onClick={() => buttonControls(3)}> {"\u2193"} </button>
 
                         </div>
 

@@ -1,5 +1,5 @@
 import {useNavigate, Link } from 'react-router-dom';
-import {useState, useRef} from 'react';
+import {useState} from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
@@ -14,15 +14,15 @@ function TurnDecidingscreen() {
 
     const [statement, setStatement] = useState("");
 
-    const chooseFirstButtonRef = useRef(null);
-    useKeyboardShortcut("Enter", () => {
-        chooseFirstButtonRef.current?.click();
-    });
-
     const navigate = useNavigate();
+    
     useKeyboardShortcut("Enter", () => {
-        playSound(18);
-        navigate("/TTTgame");
+        if (TTTUser[0] === -1) {
+            coinFlip();
+        } else {
+            playSound(18);
+            navigate("/TTTgame");
+        }
     });
     
 
@@ -57,7 +57,7 @@ function TurnDecidingscreen() {
 
             {TTTUser[0] === -1 ? (
                 
-                <button ref = {chooseFirstButtonRef} className = "generalbuttonGlitch" onClick={() => coinFlip()}> Flip Coin </button>
+                <button className = "generalbuttonGlitch" onClick={() => coinFlip()}> Flip Coin </button>
 
             ) : (
 

@@ -30,15 +30,12 @@ function CatGamescreen (){
     const [clawWentDown, setClawWentDown] = useState(false);
 
 
-    const clawGrabRef = useRef(null);
-    useKeyboardShortcut("Enter", () => {
-        clawGrabRef.current?.click();
-    });
-
-
     const navigate = useNavigate();
     useKeyboardShortcut("Enter", () => {
-        if (clawWentDown == true){
+        if (buttonHit == false){
+            clawGrab(currentPosition, setResult, setButtonHit);
+
+        } else if (clawWentDown == true){
             claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [9, 10, 11, 12]);
             navigate("/CWMcatsummary");
         }
@@ -123,7 +120,7 @@ function CatGamescreen (){
                     ) : (
 
 
-                        <button ref = {clawGrabRef} className ="CWMCatButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
+                        <button className ="CWMCatButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
                 
                     )}
 

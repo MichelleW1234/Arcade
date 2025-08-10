@@ -29,15 +29,12 @@ function SpaceGamescreen (){
 
     const [clawWentDown, setClawWentDown] = useState(false);
 
-
-    const clawGrabRef = useRef(null);
-    useKeyboardShortcut("Enter", () => {
-        clawGrabRef.current?.click();
-    });
-
     const navigate = useNavigate();
     useKeyboardShortcut("Enter", () => {
-        if (clawWentDown == true){
+        if (buttonHit == false){
+            clawGrab(currentPosition, setResult, setButtonHit);
+
+        } else if (clawWentDown == true){
             claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [17, 18, 19, 20]);
             navigate("/CWMspacesummary");
         }
@@ -123,7 +120,7 @@ function SpaceGamescreen (){
 
                     ) : (
 
-                        <button ref = {clawGrabRef} className ="CWMSpaceButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
+                        <button className ="CWMSpaceButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
                 
                     )}
 

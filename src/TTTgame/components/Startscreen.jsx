@@ -1,5 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom';
-import useKeyboardShortcut from "../../hooks/useKeyboardShortcut"
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {playSound, exitGame} from '../../Helpers/helpers.js';

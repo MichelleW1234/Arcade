@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef} from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { useEffect, useState} from 'react';
+import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 
 import GameBoardM4 from "./M4GameScreenComponents/M4GameBoard.jsx";
 
@@ -23,6 +24,20 @@ function M4Gamescreen() {
     const [seconds, setSeconds] = useState(0);
     const [blownUp, setBlownUp] = useState(false);
     const [bossRoared, setBossRoared] = useState(false);
+
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        if (bossDefeated == true || SPIUser[2] == true){
+            unlockNextMission(SPIUser, setSPIUser);
+            navigate("/SPImission");
+        }
+    });
 
 
     /* Clear and restart their interval whenever anything in their dependency array changes

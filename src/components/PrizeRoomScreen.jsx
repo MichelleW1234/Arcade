@@ -14,11 +14,14 @@ function PrizeRoomscreen() {
     const { Prize, setPrize } = usePrize();
 
     const navigate = useNavigate();
+
     useKeyboardShortcut("Enter", () => {
         playSound(24);
         navigate("/selection");
     });
 
+
+    
     const purchaseItem = (index) => {
 
         playSound(17);

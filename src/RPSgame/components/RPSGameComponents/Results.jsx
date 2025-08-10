@@ -1,32 +1,8 @@
 import "./Results.css";
 
-import {playSound} from "../../../Helpers/helpers.js";
+import {handleHideFlag} from "../../Helpers/helpers.js";
 
-function Results ({result, rounds, setRounds, setShowFlag, terminationFlag, closeButtonRef}){
-
-    const handleHideFlag = () => {
-
-        playSound(3);
-        if (terminationFlag == true){
-
-            setRounds(11);
-            setShowFlag(false);
-            playSound(6);
-
-        } else {
-
-            if (rounds == 10){
-
-                playSound(6);
-
-            }
-
-            setRounds((prevRounds) => prevRounds + 1);
-            setShowFlag(false);
-
-        }
-
-    }
+function Results ({result, rounds, setRounds, setShowFlag, terminationFlag}){
 
     return (
         <div className = "navBarFloatingFlag">
@@ -42,7 +18,7 @@ function Results ({result, rounds, setRounds, setShowFlag, terminationFlag, clos
                     </p>
                 ))}
 
-                    <button ref = {closeButtonRef} className = "generalbutton" onClick={() => handleHideFlag()}> Close </button>
+                    <button className = "generalbutton" onClick={() => handleHideFlag(terminationFlag, rounds, setRounds, setShowFlag)}> Close </button>
             </div>
 
         </div>

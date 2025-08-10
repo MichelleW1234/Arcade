@@ -1,5 +1,4 @@
 import { useNavigate, Link } from 'react-router-dom';
-import {useRef} from 'react';
 import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
@@ -31,10 +30,9 @@ function Navbar ({showReferences, setShowReferences, showFlag}){
         }
     });
 
-    const moveReferencesButtonRef = useRef(null);
     useKeyboardShortcut("3", () => {
         if (showFlag == false){
-            moveReferencesButtonRef.current?.click();
+            displayReferences();
         }
     });
 
@@ -70,7 +68,7 @@ function Navbar ({showReferences, setShowReferences, showFlag}){
                     </li>
 
                     <li>
-                        <button ref = {moveReferencesButtonRef} className = "navBarButton" onClick = {() => displayReferences()}> Move References </button>
+                        <button className = "navBarButton" onClick = {() => displayReferences()}> Move References </button>
                     </li>
                 </ul>
             </div>

@@ -1,4 +1,4 @@
-import {useEffect, useState, useRef} from 'react';
+import {useEffect, useState} from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import useKeyboardShortcut from "../hooks/useKeyboardShortcut";
 
@@ -33,7 +33,6 @@ function GameSelectionscreen (){
     const [showInventory, setShowInventory] = useState(false);
 
     const totalButtons = 8;
-    const leftRightButtonsRef = useRef([]);
     useKeyboardShortcut("ArrowLeft", () => {
         if (showInventory == false){
             setActiveButton((prev) => {
@@ -68,6 +67,9 @@ function GameSelectionscreen (){
             }
         }
     });
+
+
+
 
     const handleClick = (index) => {
     
@@ -116,7 +118,6 @@ function GameSelectionscreen (){
                             </div>
 
                             <button
-                            ref={(el) => (leftRightButtonsRef.current[0] = el)}
                             className={`gameButton ${activeButton === 0 ? 'active' : ''}`}
                             onClick={() => handleClick(0)}
                             >
@@ -136,7 +137,6 @@ function GameSelectionscreen (){
                             </div>
 
                             <button
-                            ref={(el) => (leftRightButtonsRef.current[1] = el)}
                             className={`gameButton ${activeButton === 1 ? 'active' : ''}`}
                             onClick={() => handleClick(1)}
                             >
@@ -156,7 +156,6 @@ function GameSelectionscreen (){
                             </div>
 
                             <button
-                            ref={(el) => (leftRightButtonsRef.current[2] = el)}
                             className={`gameButton ${activeButton === 2 ? 'active' : ''}`}
                             onClick={() => handleClick(2)}
                             >
@@ -176,7 +175,6 @@ function GameSelectionscreen (){
                             </div>
 
                             <button
-                            ref={(el) => (leftRightButtonsRef.current[3] = el)}
                             className={`gameButton ${activeButton === 3 ? 'active' : ''}`}
                             onClick={() => handleClick(3)}
                             >
@@ -196,7 +194,6 @@ function GameSelectionscreen (){
                             </div>
 
                             <button
-                            ref={(el) => (leftRightButtonsRef.current[4] = el)}
                             className={`gameButton ${activeButton === 4 ? 'active' : ''}`}
                             onClick={() => handleClick(4)}
                             >
@@ -217,7 +214,6 @@ function GameSelectionscreen (){
 
                             
                             <button
-                            ref={(el) => (leftRightButtonsRef.current[5] = el)}
                             className={`gameButton ${activeButton === 5 ? 'active' : ''}`}
                             onClick={() => handleClick(5)}
                             >
@@ -238,7 +234,6 @@ function GameSelectionscreen (){
 
                             
                             <button
-                            ref={(el) => (leftRightButtonsRef.current[6] = el)}
                             className={`gameButton ${activeButton === 6 ? 'active' : ''}`}
                             onClick={() => handleClick(6)}
                             >
@@ -259,7 +254,6 @@ function GameSelectionscreen (){
 
                             
                             <button
-                            ref={(el) => (leftRightButtonsRef.current[7] = el)}
                             className={`gameButton ${activeButton === 7 ? 'active' : ''}`}
                             onClick={() => handleClick(7)}
                             >

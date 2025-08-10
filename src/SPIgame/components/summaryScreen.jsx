@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useSPIUser } from '../Providers/SPIUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -12,6 +13,20 @@ function Summaryscreen() {
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { Player, setPlayer } = usePlayer();
 
+    const navigate = useNavigate();
+
+    useKeyboardShortcut("Escape", () => {
+        reset();
+        navigate("/selection");
+    });
+
+    useKeyboardShortcut("Enter", () => {
+        if (Player[0] >= ActiveGame[1]){
+            resetGame();
+            navigate("/SPImission");
+        }
+    });
+
 
     const resetGame = () => {
 
@@ -24,7 +39,7 @@ function Summaryscreen() {
 
         playSound(4);
         setSPIUser([0,[1, "/SPIM1Instructions"], false]);
-        setActiveGame(retrieveActiveGame(1));
+        setActiveGame(retrieveActiveGame(0));
 
     }
 

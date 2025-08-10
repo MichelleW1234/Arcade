@@ -1,5 +1,4 @@
 import {useNavigate, Link } from 'react-router-dom';
-import {useRef} from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
@@ -55,16 +54,15 @@ function NavBar ({showInventory, setShowInventory}){
         }
     });
 
+    useKeyboardShortcut("3", () => {
+       displayInventory();
+    });
+
     useKeyboardShortcut("4", () => {
         if (showInventory == false){
             goToClawArcade();
             navigate("/CWMstart");
         }
-    });
-
-    const viewPrizeInventoryButtonRef = useRef(null);
-    useKeyboardShortcut("3", () => {
-       viewPrizeInventoryButtonRef.current?.click();
     });
 
 
@@ -118,7 +116,7 @@ function NavBar ({showInventory, setShowInventory}){
                 </li>
 
                 <li>
-                    <div ref={viewPrizeInventoryButtonRef} className = "navBarButton" onClick ={() => displayInventory()}>
+                    <div className = "navBarButton" onClick ={() => displayInventory()}>
                         View Prize Inventory
                     </div>
                 </li>

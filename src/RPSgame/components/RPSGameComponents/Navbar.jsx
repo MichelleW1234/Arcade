@@ -21,20 +21,26 @@ function Navbar ({showReferences, setShowReferences, showFlag}){
             quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player);
             navigate("/selection");
         }
-    });
+    },
+        ".QuitGame"
+    );
 
     useKeyboardShortcut("2", () => {
         if (showReferences == false && showFlag == false){
             resetGame();
             navigate("/RPSlevels");
         }
-    });
+    },
+        ".ChangeVariation"
+    );
 
     useKeyboardShortcut("3", () => {
         if (showFlag == false){
             displayReferences();
         }
-    });
+    },
+        ".MoveReferences"
+    );
 
 
     const displayReferences = () => {
@@ -56,19 +62,19 @@ function Navbar ({showReferences, setShowReferences, showFlag}){
             <div className = "navbarContainer">
                 <ul className = "navbarMenu">
                     <li>
-                        <Link to= "/selection" className = "navBarButton" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player)}>
+                        <Link to= "/selection" className = "navBarButton QuitGame" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player)}>
                             Quit Game
                         </Link>
                     </li>
 
                     <li>
-                        <Link to="/RPSlevels" className = "navBarButton" onClick ={() => resetGame()}>
+                        <Link to="/RPSlevels" className = "navBarButton ChangeVariation" onClick ={() => resetGame()}>
                             Change Variation
                         </Link>
                     </li>
 
                     <li>
-                        <button className = "navBarButton" onClick = {() => displayReferences()}> Move References </button>
+                        <button className = "navBarButton MoveReferences" onClick = {() => displayReferences()}> Move References </button>
                     </li>
                 </ul>
             </div>

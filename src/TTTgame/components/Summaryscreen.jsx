@@ -20,14 +20,18 @@ function Summaryscreen() {
     useKeyboardShortcut("Escape", () => {
         reset();
         navigate("/selection");
-    });
+    },
+        ".ExitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         if (Player[0] >= ActiveGame[1]){
         playAgain();
         navigate("/TTTcoinFlip");
         }
-    });
+    },
+        ".PlayAgain"
+    );
 
 
 
@@ -77,7 +81,7 @@ function Summaryscreen() {
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to= "/TTTcoinFlip" className = "generalbutton" onClick={() => playAgain()}>
+                <Link to= "/TTTcoinFlip" className = "generalbutton PlayAgain" onClick={() => playAgain()}>
                     Play Again
                 </Link>
 
@@ -87,7 +91,7 @@ function Summaryscreen() {
 
             )}
 
-            <Link to= "/selection" className = "generalbutton" onClick={() => reset()}>
+            <Link to= "/selection" className = "generalbutton ExitGame" onClick={() => reset()}>
                 Exit Game
             </Link>
 

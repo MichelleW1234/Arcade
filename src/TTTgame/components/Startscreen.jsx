@@ -13,12 +13,16 @@ function Startscreen() {
   useKeyboardShortcut("Escape", () => {
     exitGame(setActiveGame);
     navigate("/selection");
-  });
+  },
+    ".ExitGame"
+  );
 
   useKeyboardShortcut("Enter", () => {
     playSound(1);
     navigate("/TTTinstructions");
-  });
+  },
+    ".Continue"
+  );
 
   return (
 
@@ -33,10 +37,10 @@ function Startscreen() {
       </div>
 
         <div className = "generalbuttonContainer">
-          <Link to="/selection" className = "generalbutton" onClick={() => exitGame(setActiveGame)}>
+          <Link to="/selection" className = "generalbutton ExitGame" onClick={() => exitGame(setActiveGame)}>
             Exit Game
           </Link>
-          <Link to= "/TTTinstructions" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
+          <Link to= "/TTTinstructions" className = "generalbuttonGlitch Continue" onClick={() => playSound(1)}>
             Continue
           </Link>
         </div>

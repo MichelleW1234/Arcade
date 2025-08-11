@@ -24,12 +24,16 @@ function SportsSummaryscreen (){
             resetGame(setCWMUser);
             navigate("/CWMsportsgame");
         }
-    });
+    },
+        ".PlayAgain"
+    );
 
     useKeyboardShortcut("Escape", () => {
         reset(setCWMUser);
         navigate("/CWMselection");
-    });
+    },
+        ".LeaveMachine"
+    );
 
 
     return (
@@ -84,7 +88,7 @@ function SportsSummaryscreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/CWMsportsgame" className = "generalbutton" onClick = {() => resetGame(setCWMUser)}> Play Again </Link>
+                <Link to = "/CWMsportsgame" className = "generalbutton PlayAgain" onClick = {() => resetGame(setCWMUser)}> Play Again </Link>
 
             ) : (
 
@@ -92,7 +96,7 @@ function SportsSummaryscreen (){
 
             )} 
 
-            <Link to = "/CWMselection" className = "generalbutton" onClick={() => reset(setCWMUser)}> Leave Machine </Link>
+            <Link to = "/CWMselection" className = "generalbutton LeaveMachine" onClick={() => reset(setCWMUser)}> Leave Machine </Link>
 
         </div>
 

@@ -203,7 +203,8 @@
 }
 
 
-.SPIlaserButtonNormal:hover {
+.SPIlaserButtonNormal:hover,
+.SPIlaserButtonNormal.active {
     background-color: #003508;
 
     border-left: 0.3125rem solid #000d02;    
@@ -233,7 +234,8 @@
 }
 
 
-.SPIlaserButtonMutant:hover {
+.SPIlaserButtonMutant:hover,
+.SPIlaserButtonMutant.active{
     background-color: #650066;
 
     border-left: 0.3125rem solid #330034;   

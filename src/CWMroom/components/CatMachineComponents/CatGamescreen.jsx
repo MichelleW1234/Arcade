@@ -33,12 +33,18 @@ function CatGamescreen (){
     const navigate = useNavigate();
     useKeyboardShortcut("Enter", () => {
         if (buttonHit == false){
-            document.querySelectorAll(".Grab").forEach(el => el.classList.add("active"));
+            document.querySelectorAll(".Grab").forEach(el => {
+                    el.classList.add("active");
+                    setTimeout(() => el.classList.remove("active"), 100);
+            });
             document.querySelectorAll(".CheckPrizeDoor").forEach(el => el.classList.remove("active"));
 
             clawGrab(currentPosition, setResult, setButtonHit);
         } else if (clawWentDown == true){
-            document.querySelectorAll(".CheckPrizeDoor").forEach(el => el.classList.add("active"));
+            document.querySelectorAll(".CheckPrizeDoor").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
             document.querySelectorAll(".Grab").forEach(el => el.classList.remove("active"));
 
             claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [9, 10, 11, 12]);

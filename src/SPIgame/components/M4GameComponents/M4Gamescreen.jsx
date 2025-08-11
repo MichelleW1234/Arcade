@@ -30,14 +30,18 @@ function M4Gamescreen() {
     useKeyboardShortcut("Escape", () => {
         quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
         navigate("/selection");
-    });
+    },
+        ".QuitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         if (bossDefeated == true || SPIUser[2] == true){
             unlockNextMission(SPIUser, setSPIUser);
             navigate("/SPImission");
         }
-    });
+    },
+        ".ReturntoMissionsScreen"
+    );
 
 
     /* Clear and restart their interval whenever anything in their dependency array changes
@@ -82,7 +86,7 @@ function M4Gamescreen() {
     return (
 
         <div>
-            <Link to= "/selection" className = "generalbutton" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+            <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
                 Quit Game
             </Link>
 
@@ -135,7 +139,7 @@ function M4Gamescreen() {
                         
                     </div>
 
-                    <Link to="/SPImission" className = "generalbuttonGlitch" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
+                    <Link to="/SPImission" className = "generalbuttonGlitch ReturntoMissionsScreen" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
                         Return to Missions Screen
                     </Link>
 

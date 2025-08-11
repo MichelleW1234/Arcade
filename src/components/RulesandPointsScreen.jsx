@@ -18,13 +18,19 @@ function RulesandPointsscreen (){
 
     useKeyboardShortcut("Enter", () => {
         if (Player[0] === 20 && pointsClaimed == true){
-            document.querySelectorAll(".LetsGo").forEach(el => el.classList.add("active"));
+            document.querySelectorAll(".LetsGo").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
             document.querySelectorAll(".\\32 0pts").forEach(el => el.classList.remove("active"));
 
             playSound(1);
             navigate("/selection");
         } else {
-            document.querySelectorAll(".\\32 0pts").forEach(el => el.classList.add("active"));
+            document.querySelectorAll(".\\32 0pts").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
             document.querySelectorAll(".LetsGo").forEach(el => el.classList.remove("active"));
 
             claimPoints();

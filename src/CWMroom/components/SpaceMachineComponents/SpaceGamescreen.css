@@ -48,7 +48,8 @@
 
 
 
-.CWMSpaceButton:hover {
+.CWMSpaceButton:hover,
+.CWMSpaceButton.active {
     color: white;
 
     background-color: rgb(130, 0, 137);

@@ -18,8 +18,20 @@ function TurnDecidingscreen() {
     
     useKeyboardShortcut("Enter", () => {
         if (TTTUser[0] === -1) {
+            document.querySelectorAll(".FlipCoin").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".BeginGame").forEach(el => el.classList.remove("active"));
+
             coinFlip();
         } else {
+            document.querySelectorAll(".BeginGame").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".FlipCoin").forEach(el => el.classList.remove("active"));
+
             playSound(18);
             navigate("/TTTgame");
         }
@@ -57,14 +69,14 @@ function TurnDecidingscreen() {
 
             {TTTUser[0] === -1 ? (
                 
-                <button className = "generalbuttonGlitch" onClick={() => coinFlip()}> Flip Coin </button>
+                <button className = "generalbuttonGlitch FlipCoin" onClick={() => coinFlip()}> Flip Coin </button>
 
             ) : (
 
                 <>
                     <p className ="largefont">{statement}</p>
 
-                    <Link to= "/TTTgame" className = "generalbuttonGlitch" onClick={() => playSound(18)}>
+                    <Link to= "/TTTgame" className = "generalbuttonGlitch BeginGame" onClick={() => playSound(18)}>
                         Begin Game
                     </Link>
                 </>

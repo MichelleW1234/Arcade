@@ -32,9 +32,21 @@ function SpaceGamescreen (){
     const navigate = useNavigate();
     useKeyboardShortcut("Enter", () => {
         if (buttonHit == false){
+            document.querySelectorAll(".Grab").forEach(el => {
+                    el.classList.add("active");
+                    setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".CheckPrizeDoor").forEach(el => el.classList.remove("active"));
+            
             clawGrab(currentPosition, setResult, setButtonHit);
 
         } else if (clawWentDown == true){
+            document.querySelectorAll(".CheckPrizeDoor").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".Grab").forEach(el => el.classList.remove("active"));
+
             claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [17, 18, 19, 20]);
             navigate("/CWMspacesummary");
         }
@@ -43,7 +55,9 @@ function SpaceGamescreen (){
     useKeyboardShortcut("Escape", () => {
         exitGame(Player, setPlayer, ActiveGame[1], setCWMUser);
         navigate("/CWMselection");
-    });
+    },
+        ".QuitMachine"
+    );
 
 
 
@@ -83,7 +97,7 @@ function SpaceGamescreen (){
 
         <div>             
             
-            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
+            <Link to="/CWMselection" className = "generalbutton QuitMachine" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
 
             <div className = "gameScreenLayout">
             
@@ -110,7 +124,7 @@ function SpaceGamescreen (){
 
                         clawWentDown == true ? (
                             
-                            <Link to="/CWMspacesummary" className ="CWMSpaceButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [17, 18, 19, 20])}> Check Prize Door </Link>
+                            <Link to="/CWMspacesummary" className ="CWMSpaceButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [17, 18, 19, 20])}> Check Prize Door </Link>
 
                         ) : (
 
@@ -120,7 +134,7 @@ function SpaceGamescreen (){
 
                     ) : (
 
-                        <button className ="CWMSpaceButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
+                        <button className ="CWMSpaceButton Grab" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
                 
                     )}
 

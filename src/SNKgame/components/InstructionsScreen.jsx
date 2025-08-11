@@ -13,12 +13,16 @@ function Instructionsscreen (){
     useKeyboardShortcut("Escape", () => {
         exitGame(setActiveGame);
         navigate("/selection");
-    });
+    },
+        ".ExitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         playSound(19)
         navigate("/SNKgame");
-    });
+    },
+        ".StartGame"
+    );
 
     return (
 
@@ -35,11 +39,11 @@ function Instructionsscreen (){
 
             <div className = "generalbuttonContainer">
 
-                <Link to="/selection" className = "generalbutton" onClick={() => exitGame(setActiveGame)}>
+                <Link to="/selection" className = "generalbutton ExitGame" onClick={() => exitGame(setActiveGame)}>
                     Exit Game
                 </Link>
 
-                <Link to="/SNKgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
+                <Link to="/SNKgame" className = "generalbuttonGlitch StartGame" onClick={() => playSound(19)}>
                     Start Game
                 </Link>
 

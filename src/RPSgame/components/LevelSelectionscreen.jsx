@@ -24,12 +24,16 @@ function LevelSelectionscreen (){
     useKeyboardShortcut("Escape", () => {
         quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player);
         navigate("/selection");
-    });
+    },
+        ".QuitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         playSound(18);
         navigate("/RPSgame");
-    });
+    },
+        ".ContinuetoGame"
+    );
     
     const totalButtons = 3;
     useKeyboardShortcut("ArrowLeft", () => {
@@ -71,7 +75,7 @@ function LevelSelectionscreen (){
 
         <div>
 
-            <Link to= "/selection" className = "generalbutton" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player)}>
+            <Link to= "/selection" className = "generalbutton QuitGame" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player)}>
                 Quit Game
             </Link>
 
@@ -127,7 +131,7 @@ function LevelSelectionscreen (){
 
                 </div>
 
-                <Link to= "/RPSgame" className = "generalbuttonGlitch" onClick={() => playSound(18)}>
+                <Link to= "/RPSgame" className = "generalbuttonGlitch ContinuetoGame" onClick={() => playSound(18)}>
                     Continue to Game
                 </Link>
                 

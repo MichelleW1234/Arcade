@@ -133,7 +133,8 @@
 }
 
 
-.SPImissionStartButton:hover{
+.SPImissionStartButton:hover,
+.SPImissionStartButton.active{
 
     background-color: rgb(0, 56, 168);
 

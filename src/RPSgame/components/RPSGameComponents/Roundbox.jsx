@@ -30,6 +30,12 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, set
         if (showReferences == false){
             if (e.key === "Enter" && showFlag != true) {
                 e.preventDefault(); // prevent form submission or default behaviors
+
+                document.querySelectorAll(".Enter").forEach(el => {
+                    el.classList.add("active");
+                    setTimeout(() => el.classList.remove("active"), 100);
+                });
+
                 ProcessingInput();
             }
         }
@@ -128,7 +134,7 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, set
                 placeholder="Type here..."
             />
 
-            <button className = "RPSenterButton" onClick={() => ProcessingInput()}>Enter </button>
+            <button className = "RPSenterButton Enter" onClick={() => ProcessingInput()}>Enter </button>
 
             {error && <p style={{ color: 'red' }}>{error}</p>}
 

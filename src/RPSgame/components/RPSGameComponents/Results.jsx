@@ -18,7 +18,7 @@ function Results ({result, rounds, setRounds, setShowFlag, terminationFlag}){
                     </p>
                 ))}
 
-                    <button className = "generalbutton" onClick={() => handleHideFlag(terminationFlag, rounds, setRounds, setShowFlag)}> Close </button>
+                    <button className = "generalbutton Close" onClick={() => handleHideFlag(terminationFlag, rounds, setRounds, setShowFlag)}> Close </button>
             </div>
 
         </div>

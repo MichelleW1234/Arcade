@@ -20,14 +20,18 @@ function Summaryscreen (){
   useKeyboardShortcut("Escape", () => {
     reset();
     navigate("/selection");
-  });
+  },
+    ".ExitGame"
+  );
 
   useKeyboardShortcut("Enter", () => {
     if (Player[0] >= ActiveGame[1]){
       resetGame();
       navigate("/RPSlevels");
     }
-  });
+  },
+    ".PlayAgain"
+  );
 
 
 
@@ -70,7 +74,7 @@ function Summaryscreen (){
 
           {Player[0] >= ActiveGame[1] ? (
 
-            <Link to="/RPSlevels" className = "generalbutton" onClick={() => resetGame()}>
+            <Link to="/RPSlevels" className = "generalbutton PlayAgain" onClick={() => resetGame()}>
               Play Again
             </Link>
 
@@ -80,7 +84,7 @@ function Summaryscreen (){
 
           )}
           
-          <Link to="/selection" className = "generalbutton" onClick={() => reset()}>
+          <Link to="/selection" className = "generalbutton ExitGame" onClick={() => reset()}>
             Exit Game
           </Link>
             

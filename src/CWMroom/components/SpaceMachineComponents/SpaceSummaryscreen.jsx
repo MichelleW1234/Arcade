@@ -24,12 +24,16 @@ function SpaceSummaryscreen (){
             resetGame(setCWMUser);
             navigate("/CWMspacegame");
         }
-    });
+    },
+        ".PlayAgain"
+    );
 
     useKeyboardShortcut("Escape", () => {
         reset(setCWMUser);
         navigate("/CWMselection");
-    });
+    },
+        ".LeaveMachine"
+    );
 
     return (
 
@@ -83,7 +87,7 @@ function SpaceSummaryscreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/CWMspacegame" className = "generalbutton" onClick = {() => resetGame(setCWMUser)}> Play Again </Link>
+                <Link to = "/CWMspacegame" className = "generalbutton PlayAgain" onClick = {() => resetGame(setCWMUser)}> Play Again </Link>
 
             ) : (
 
@@ -91,7 +95,7 @@ function SpaceSummaryscreen (){
 
             )} 
 
-            <Link to = "/CWMselection" className = "generalbutton" onClick={() => reset(setCWMUser)}> Leave Machine </Link>
+            <Link to = "/CWMselection" className = "generalbutton LeaveMachine" onClick={() => reset(setCWMUser)}> Leave Machine </Link>
 
         </div>
 

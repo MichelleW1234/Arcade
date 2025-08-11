@@ -33,14 +33,18 @@ function Gamescreen() {
   useKeyboardShortcut("Escape", () => {
     reset();
     navigate("/selection");
-  });
+  },
+    ".QuitGame"
+  );
 
   useKeyboardShortcut("Enter", () => {
     if (TTTUser[1] != -1){
       pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player);
       navigate("/TTTsummary");
     }
-  });
+  },
+    ".ViewResults"
+  );
 
 
 
@@ -58,7 +62,7 @@ function Gamescreen() {
 
     <div>
 
-      <Link to= "/selection" className = "generalbutton" onClick={() => reset()}>
+      <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => reset()}>
         Quit Game
       </Link>
 
@@ -144,7 +148,7 @@ function Gamescreen() {
 
               </div>
 
-              <Link to= "/TTTsummary" className = "generalbuttonGlitch" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player)}>
+              <Link to= "/TTTsummary" className = "generalbuttonGlitch ViewResults" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player)}>
                 View Results
               </Link>
 

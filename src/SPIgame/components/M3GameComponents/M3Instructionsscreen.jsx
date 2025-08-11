@@ -36,14 +36,18 @@ function M3Instructionsscreen() {
       playSound(7);
       navigate("/SPIM3game");
     }
-  });
+  },
+    ".EnterZone"
+  );
 
   useKeyboardShortcut("Escape", () => {
     if (aliensDetectedOn == false && waveInfoOn == false && equipmentOn == false){
       quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
       navigate("/selection");
     }
-  });
+  },
+    ".QuitGame"
+  );
 
   useKeyboardShortcut("1", () => {
     if (waveInfoOn == false && equipmentOn == false){
@@ -57,7 +61,9 @@ function M3Instructionsscreen() {
 
       }
     }
-  });
+  },
+    ".AlienGuide"
+  );
 
   useKeyboardShortcut("2", () => {
     if (aliensDetectedOn == false && equipmentOn == false){
@@ -71,7 +77,9 @@ function M3Instructionsscreen() {
 
       }
     }
-  });
+  },
+    ".WaveGuide"
+  );
 
   useKeyboardShortcut("3", () => {
     if (waveInfoOn == false && aliensDetectedOn == false){
@@ -85,7 +93,9 @@ function M3Instructionsscreen() {
 
       }
     }
-  });
+  },
+    ".EquipmentGuide"
+  );
 
 
 
@@ -121,7 +131,7 @@ function M3Instructionsscreen() {
 
         ) : (
 
-          <button className = "SPIGuideButton"  onClick = {() => setAliensDetectedOn(openingGuide())}> Alien Guide
+          <button className = "SPIGuideButton AlienGuide" onClick = {() => setAliensDetectedOn(openingGuide())}> Alien Guide
           </button>
         )}
 
@@ -141,7 +151,7 @@ function M3Instructionsscreen() {
 
         ) : (
 
-          <button className = "SPIGuideButton" onClick = {() => setWaveInfoOn(openingGuide())}> Wave Guide
+          <button className = "SPIGuideButton WaveGuide" onClick = {() => setWaveInfoOn(openingGuide())}> Wave Guide
           </button>
         )}
 
@@ -163,7 +173,7 @@ function M3Instructionsscreen() {
 
         ) : (
 
-          <button className = "SPIGuideButton" onClick = {() => setEquipmentOn(openingGuide())}> Equipment Guide
+          <button className = "SPIGuideButton EquipmentGuide" onClick = {() => setEquipmentOn(openingGuide())}> Equipment Guide
           </button>
 
         )}
@@ -171,10 +181,10 @@ function M3Instructionsscreen() {
       </div>
 
       <div className = "generalbuttonContainer">
-        <Link to= "/selection" className = "generalbutton" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+        <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
           Quit Game
         </Link>
-        <Link to= "/SPIM3game" className = "generalbuttonGlitch" onClick = {() => playSound(7)}>
+        <Link to= "/SPIM3game" className = "generalbuttonGlitch EnterZone" onClick = {() => playSound(7)}>
             Enter Zone
         </Link>
       </div>

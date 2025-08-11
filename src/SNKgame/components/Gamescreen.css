@@ -81,7 +81,8 @@
 
 
 
-.SNKcontrolButton:hover{
+.SNKcontrolButton:hover,
+.SNKcontrolButton.active{
 
     background-color: rgb(97, 0, 94);
     color:rgb(255, 255, 255);

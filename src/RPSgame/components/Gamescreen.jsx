@@ -35,11 +35,23 @@ function Gamescreen (){
     useKeyboardShortcut("Enter", () => {
         if (showReferences == false && showFlag == false){
             if (rounds >= 11 || terminationFlag == true){
+                document.querySelectorAll(".ViewResults").forEach(el => {
+                    el.classList.add("active");
+                    setTimeout(() => el.classList.remove("active"), 100);
+                });
+                document.querySelectorAll(".Close").forEach(el => el.classList.remove("active"));
+
                 getWinner();
                 navigate("/RPSsummary");
             }
         } else if (showReferences == false){
             if (showFlag == true){
+                document.querySelectorAll(".Close").forEach(el => {
+                    el.classList.add("active");
+                    setTimeout(() => el.classList.remove("active"), 100);
+                });
+                document.querySelectorAll(".ViewResults").forEach(el => el.classList.remove("active"));
+
                 handleHideFlag(terminationFlag, rounds, setRounds, setShowFlag);
             }
         }
@@ -105,7 +117,6 @@ function Gamescreen (){
                                 setRounds={setRounds}
                                 setShowFlag={setShowFlag}
                                 terminationFlag = {terminationFlag}
-                                /*closeButtonRef = {closeButtonRef}*/
                             />
 
                         )}
@@ -118,7 +129,7 @@ function Gamescreen (){
                             <span className = "signGlitch">Game Over.</span>
                         </h1>
 
-                        <Link to="/RPSsummary" className="RPSButton" onClick={() => getWinner()}>
+                        <Link to="/RPSsummary" className="RPSButton ViewResults" onClick={() => getWinner()}>
                             View Results
                         </Link>
                     </div>

@@ -29,8 +29,13 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
     const LaserSwitchButtonRef = useRef(null);
     useKeyboardShortcut("Shift", () => {
         changeLaser();
-    });
+    },
+        ".ChangeLaser"
+    );
 
+    useEffect(() => {
+        LaserSwitchButtonRef.current?.focus();
+    }, []);
 
     
     /* Refs avoid stale values and store the latest values for use inside 
@@ -199,10 +204,12 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
                 max="26"
                 value={laserValue}
                 onChange={(e) => setLaserValue(Number(e.target.value))}
-                onPointerUp = {() => LaserSwitchButtonRef.current?.focus()}
+                onPointerUp={() => LaserSwitchButtonRef.current?.focus()}
+                onPointerCancel={() => LaserSwitchButtonRef.current?.focus()}
+                onPointerLeave={() => LaserSwitchButtonRef.current?.focus()}
             />
 
-            <button ref = {LaserSwitchButtonRef} className={mutantLaserOn ? "SPIlaserButtonMutant" : "SPIlaserButtonNormal"} onClick={() => changeLaser()}> Change Laser </button>
+            <button ref = {LaserSwitchButtonRef} className={mutantLaserOn ? "SPIlaserButtonMutant ChangeLaser" : "SPIlaserButtonNormal ChangeLaser"} onClick={() => changeLaser()}> Change Laser </button>
 
         </div>
 

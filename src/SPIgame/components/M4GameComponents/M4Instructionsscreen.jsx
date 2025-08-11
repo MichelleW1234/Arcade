@@ -34,14 +34,18 @@ function M4Instructionsscreen() {
       playSound(7);
       navigate("/SPIM4game");
     }
-  });
+  },
+    ".EnterZone"
+  );
 
   useKeyboardShortcut("Escape", () => {
     if (aliensDetectedOn == false && equipmentOn == false){
       quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
       navigate("/selection");
     }
-  });
+  },
+    ".QuitGame"
+  );
 
   useKeyboardShortcut("1", () => {
     if (equipmentOn == false){
@@ -51,7 +55,9 @@ function M4Instructionsscreen() {
         setAliensDetectedOn(openingGuide());
       }
     }
-  });
+  },
+    ".AlienGuide"
+  );
 
   useKeyboardShortcut("2", () => {
     if (aliensDetectedOn == false){
@@ -61,7 +67,9 @@ function M4Instructionsscreen() {
         setEquipmentOn(openingGuide());
       }
     }
-  });
+  },
+    ".EquipmentGuide"
+  );
 
 
 
@@ -96,7 +104,7 @@ function M4Instructionsscreen() {
 
         ) : (
 
-          <button className = "SPIGuideButton"  onClick = {() => setAliensDetectedOn(openingGuide())}> Alien Guide
+          <button className = "SPIGuideButton AlienGuide" onClick = {() => setAliensDetectedOn(openingGuide())}> Alien Guide
           </button>
         )}
         
@@ -121,7 +129,7 @@ function M4Instructionsscreen() {
 
         ) : (
 
-          <button className = "SPIGuideButton" onClick = {() => setEquipmentOn(openingGuide())}> Equipment Guide
+          <button className = "SPIGuideButton EquipmentGuide" onClick = {() => setEquipmentOn(openingGuide())}> Equipment Guide
           </button>
 
         )}
@@ -129,10 +137,10 @@ function M4Instructionsscreen() {
       </div>
 
       <div className = "generalbuttonContainer">
-        <Link to= "/selection" className = "generalbutton" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+        <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
           Quit Game
         </Link>
-        <Link to= "/SPIM4game" className = "generalbuttonGlitch" onClick = {() => playSound(7)}>
+        <Link to= "/SPIM4game" className = "generalbuttonGlitch EnterZone" onClick = {() => playSound(7)}>
             Enter Zone
         </Link>
       </div>

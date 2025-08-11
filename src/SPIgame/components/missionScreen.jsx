@@ -27,13 +27,27 @@ function Missionscreen() {
     useKeyboardShortcut("Escape", () => {
         quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
         navigate("/selection");
-    });
+    },
+        ".QuitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         if (SPIUser[0] == allMissions.length || SPIUser[2] == true){
+            document.querySelectorAll(".ViewResults").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".Start").forEach(el => el.classList.remove("active"));
+
             claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0]*ActiveGame[1]))
             navigate("/SPIsummary");
         } else {
+            document.querySelectorAll(".Start").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".ViewResults").forEach(el => el.classList.remove("active"));
+
             playSound(12);
             navigate(currGamePath);
         }
@@ -51,7 +65,7 @@ function Missionscreen() {
 
         <div>
 
-            <Link to="/selection" className = "generalbutton" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
                 Quit Game
             </Link>
 
@@ -81,7 +95,7 @@ function Missionscreen() {
                             <div key = {mission} className="SPImissionWindowUnlocked">
 
                                 <p> Mission {mission}:  {missionNames[index]}</p>
-                                <Link to= {currGamePath} className = "SPImissionStartButton" onClick = {()=> playSound(12)}>
+                                <Link to= {currGamePath} className = "SPImissionStartButton Start" onClick = {()=> playSound(12)}>
                                     Start
                                 </Link>
                             
@@ -101,7 +115,7 @@ function Missionscreen() {
 
                 {SPIUser[0] == allMissions.length || SPIUser[2] == true ? (
 
-                    <Link to= "/SPIsummary" className = "generalbuttonGlitch" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0]*ActiveGame[1]))}>
+                    <Link to= "/SPIsummary" className = "generalbuttonGlitch ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0]*ActiveGame[1]))}>
                         View Results
                     </Link>
 

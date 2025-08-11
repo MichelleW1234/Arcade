@@ -27,7 +27,8 @@
 }
 
 
-.RPSenterButton:hover {
+.RPSenterButton:hover,
+.RPSenterButton.active {
 
   background-color: rgb(118, 35, 111);
 

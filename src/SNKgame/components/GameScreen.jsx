@@ -37,30 +37,42 @@ function Gamesscreen(){
     useKeyboardShortcut("Escape", () => {
         reset();
         navigate("/selection");
-    });
+    },
+        ".QuitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         if (startButtonPressed === true && SNKUser[0] === true || snake.length >= 600 ){
             claimPoints(ActiveGame, Player, setPlayer, (SNKUser[1] * 2));
             navigate("/SNKsummary");
         }
-    });
+    },
+        ".ViewResults"
+    );
 
     useKeyboardShortcut("ArrowUp", () => {
         buttonControls(2);
-    });
+    },
+        ".Up"
+    );
 
     useKeyboardShortcut("ArrowDown", () => {
         buttonControls(3);
-    });
+    },
+        ".Down"
+    );
 
     useKeyboardShortcut("ArrowLeft", () => {
         buttonControls(0);
-    });
+    },
+        ".Left"
+    );
 
     useKeyboardShortcut("ArrowRight", () => {
         buttonControls(1);
-    });
+    },
+        ".Right"
+    );
 
 
 
@@ -169,7 +181,7 @@ function Gamesscreen(){
 
         <div>
 
-            <Link to="/selection" className = "generalbutton" onClick={() => reset()}>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => reset()}>
                 Quit Game
             </Link>
 
@@ -227,16 +239,16 @@ function Gamesscreen(){
 
                         <div className = "SNKbuttonsContainer">
                             
-                            <button className = "SNKcontrolButton" onClick={() => buttonControls(0)}> {"\u2190"} </button>
-                            <button className = "SNKcontrolButton" onClick={() => buttonControls(1)}> {"\u2192"} </button>
-                            <button className = "SNKcontrolButton" onClick={() => buttonControls(2)}> {"\u2191"} </button>
-                            <button className = "SNKcontrolButton" onClick={() => buttonControls(3)}> {"\u2193"} </button>
+                            <button className = "SNKcontrolButton Left" onClick={() => buttonControls(0)}> {"\u2190"} </button>
+                            <button className = "SNKcontrolButton Right" onClick={() => buttonControls(1)}> {"\u2192"} </button>
+                            <button className = "SNKcontrolButton Up" onClick={() => buttonControls(2)}> {"\u2191"} </button>
+                            <button className = "SNKcontrolButton Down" onClick={() => buttonControls(3)}> {"\u2193"} </button>
 
                         </div>
 
                     :
 
-                        <Link to= "/SNKsummary" className = "generalbuttonGlitch" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SNKUser[1] * 2))}>
+                        <Link to= "/SNKsummary" className = "generalbuttonGlitch ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SNKUser[1] * 2))}>
                             View Results
                         </Link>   
 

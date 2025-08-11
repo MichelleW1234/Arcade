@@ -50,7 +50,8 @@
 
 
 
-.CWMSportsButton:hover {
+.CWMSportsButton:hover,
+.CWMSportsButton.active {
     color: white;
 
     background-color: rgb(6, 89, 255);

@@ -18,14 +18,18 @@ function Summaryscreen(){
     useKeyboardShortcut("Escape", () => {
         reset();
         navigate("/selection");
-    });
+    },
+        ".QuitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         if (Player[0] >= ActiveGame[1]){
             resetGame()
             navigate("/SNKgame");
         }
-    });
+    },
+        ".PlayAgain"
+    );
 
 
 
@@ -59,7 +63,7 @@ function Summaryscreen(){
 
             {Player[0] >= ActiveGame[1] ? 
 
-                <Link to="/SNKgame" className = "generalbutton" onClick={() => resetGame()}>
+                <Link to="/SNKgame" className = "generalbutton PlayAgain" onClick={() => resetGame()}>
                     Play Again
                 </Link>
 
@@ -69,7 +73,7 @@ function Summaryscreen(){
 
             }
 
-            <Link to="/selection" className = "generalbutton" onClick={() => reset()}>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => reset()}>
                 Quit Game
             </Link>
             

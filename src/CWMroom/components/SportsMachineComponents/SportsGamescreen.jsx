@@ -33,8 +33,20 @@ function SportsGamescreen (){
     const navigate = useNavigate();
     useKeyboardShortcut("Enter", () => {
         if (buttonHit == false){
+            document.querySelectorAll(".Grab").forEach(el => {
+                    el.classList.add("active");
+                    setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".CheckPrizeDoor").forEach(el => el.classList.remove("active"));
+
             clawGrab(currentPosition, setResult, setButtonHit);
         } else if (clawWentDown == true){
+            document.querySelectorAll(".CheckPrizeDoor").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".Grab").forEach(el => el.classList.remove("active"));
+
             claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [13, 14, 15, 16]);
             navigate("/CWMsportssummary");
         }
@@ -43,7 +55,9 @@ function SportsGamescreen (){
     useKeyboardShortcut("Escape", () => {
         exitGame(Player, setPlayer, ActiveGame[1], setCWMUser);
         navigate("/CWMselection");
-    });
+    },
+        ".QuitMachine"
+    );
     
 
 
@@ -80,7 +94,7 @@ function SportsGamescreen (){
 
         <div>             
             
-            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
+            <Link to="/CWMselection" className = "generalbutton QuitMachine" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
 
             <div className = "gameScreenLayout">
             
@@ -107,7 +121,7 @@ function SportsGamescreen (){
 
                         clawWentDown == true ? (
                             
-                            <Link to="/CWMsportssummary" className ="CWMSportsButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [13, 14, 15, 16])}> Check Prize Door </Link>
+                            <Link to="/CWMsportssummary" className ="CWMSportsButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [13, 14, 15, 16])}> Check Prize Door </Link>
 
                         ) : (
 
@@ -118,7 +132,7 @@ function SportsGamescreen (){
                     ) : (
 
 
-                        <button className ="CWMSportsButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
+                        <button className ="CWMSportsButton Grab" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
                 
 
                     )}

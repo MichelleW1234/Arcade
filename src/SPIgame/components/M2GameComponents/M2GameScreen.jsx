@@ -25,21 +25,25 @@ function M2GameScreen() {
     useKeyboardShortcut("Escape", () => {
         quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
         navigate("/selection");
-    });
+    },
+        ".QuitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         if ( waveNumber > 5 || SPIUser[2] == true){
             unlockNextMission(SPIUser, setSPIUser);
             navigate("/SPImission");
         }
-    });
+    },
+        ".BacktoMissionsScreen"
+    );
 
 
 
     return (
 
         <div>
-            <Link to= "/selection" className = "generalbutton" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+            <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
                 Quit Game
             </Link>
 
@@ -84,7 +88,7 @@ function M2GameScreen() {
                         
                     </div>
 
-                    <Link to="/SPImission" className = "generalbuttonGlitch" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
+                    <Link to="/SPImission" className = "generalbuttonGlitch BacktoMissionsScreen" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
                         Back to Missions Screen
                     </Link>
 

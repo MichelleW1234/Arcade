@@ -204,8 +204,8 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setSPIUser, 
 
 export const newBossPosition = () => {
 
-    const newRow = Math.floor(Math.random() * 4);
-    const newCol = Math.floor(Math.random() * 9);
+    const newRow = Math.floor(Math.random() * 5);
+    const newCol = Math.floor(Math.random() * 7);
 
     return [newRow, newCol];
 
@@ -255,28 +255,6 @@ export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
     setLaserPositions(newMatrix);
 
 }
-
-export const laserBlasterM4 = (laserPositions, setLaserPositions, laserValue) => {
-
-   let newMatrix = laserPositions.map(innerArray => [...innerArray]);
-   newMatrix = newMatrix.filter(row => row[0] !== 0);
-
-    for (let i = 0; i < newMatrix.length; i++) {
-
-        newMatrix[i][0] -= 1;
-
-    }
-
-    if (!(newMatrix.some(row => row[0] >= 4))){
-
-        newMatrix.push([5, laserValue]);
-
-    }
-    
-    setLaserPositions(newMatrix);
-
-}
-
 
 
 

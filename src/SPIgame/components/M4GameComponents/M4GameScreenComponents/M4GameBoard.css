@@ -10,8 +10,8 @@
 .SPIgameScreenM4 {
 
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 
     border-left: 0.3rem solid black;   
     border-bottom: 0.3rem solid black; 
@@ -43,7 +43,7 @@
 
 .SPIemptySpaceBossNormal {
     background-color: rgb(255, 255, 255);
-    height: 5.2rem; 
+    height: 5.2em; 
     width: 5.2rem;  
 
     display: flex;
@@ -60,7 +60,7 @@
 
 .SPIemptySpaceBossDanger {
     background-color: #54ff4b;
-    height: 5.2rem; 
+    height:5.2rem; 
     width: 5.2rem;  
 
     display: flex;

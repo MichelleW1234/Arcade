@@ -103,29 +103,29 @@ const decideRoundWinnerLevel1 = (userMove, setResult) => {
     if (computerResponse === userResponse){
 
         if (userResponse === 1){
-            setResult(["Your response: rock", "Computer's response: rock", "It's a tie!"]);
+            setResult(["You: rock", "Computer: rock", "It's a tie!"]);
         } else if (userResponse === 2){
-            setResult(["Your response: paper", "Computer's response: paper" , "It's a tie!"]);
+            setResult(["You: paper", "Computer: paper" , "It's a tie!"]);
         } else {
-            setResult(["Your response: scissors" , "Computer's response: scissors" , "It's a tie!"]); 
+            setResult(["You: scissors" , "Computer: scissors" , "It's a tie!"]); 
         }
     } else if (computerResponse === 1 && userResponse === 2){
-        setResult(["Your response: paper" , "Computer's response: rock" , "You get a point!"]);
+        setResult(["You: paper" , "Computer: rock" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 1 && userResponse === 3){
-        setResult(["Your response: scissors" , "Computer's response: rock" , "The Computer gets a point!"]);
+        setResult(["You: scissors" , "Computer: rock" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 2 && userResponse === 1){
-        setResult(["Your response: rock" , "Computer's response: paper" , "The Computer gets a point!"]);
+        setResult(["You: rock" , "Computer: paper" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 2 && userResponse === 3){
-        setResult(["Your response: scissors" , "Computer's response: paper" , "You get a point!"]);
+        setResult(["You: scissors" , "Computer: paper" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 3 && userResponse === 1){
-        setResult(["Your response: rock" , "Computer's response: scissors" , "You get a point!"]);
+        setResult(["You: rock" , "Computer: scissors" , "You get a point!"]);
         return 1;
     } else{
-        setResult(["Your response: paper" , "Computer's response: scissors" , "The Computer gets a point!"]);
+        setResult(["You: paper" , "Computer: scissors" , "The Computer gets a point!"]);
         return 0;
     }
     return -1;
@@ -139,75 +139,75 @@ const decideRoundWinnerLevel2 = (userMove, setResult) => {
 
     if (computerResponse === userResponse){
         if (userResponse === 1){
-            setResult(["Your response: rock", "Computer's response: rock", "It's a tie!"]);
+            setResult(["You: rock", "Computer: rock", "It's a tie!"]);
         } else if (userResponse === 2){
-            setResult(["Your response: paper", "Computer's response: paper" , "It's a tie!"]);
+            setResult(["You: paper", "Computer: paper" , "It's a tie!"]);
         } else if (userResponse === 3){
-            setResult(["Your response: scissors" , "Computer's response: scissors" , "It's a tie!"]); 
+            setResult(["You: scissors" , "Computer: scissors" , "It's a tie!"]); 
         } else if (userResponse === 4){
-            setResult(["Your response: lizard" , "Computer's response: lizard" , "It's a tie!"]); 
+            setResult(["You: lizard" , "Computer: lizard" , "It's a tie!"]); 
         } else {
-            setResult(["Your response: spock" , "Computer's response: spock" , "It's a tie!"]); 
+            setResult(["You: spock" , "Computer: spock" , "It's a tie!"]); 
         }
     } else if (computerResponse === 1 && userResponse === 2){
-        setResult(["Your response: paper" , "Computer's response: rock" , "You get a point!"]);
+        setResult(["You: paper" , "Computer: rock" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 1 && userResponse === 3){
-        setResult(["Your response: scissors" , "Computer's response: rock" , "The Computer gets a point!"]);
+        setResult(["You: scissors" , "Computer: rock" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 1 && userResponse === 4){
-        setResult(["Your response: lizard" , "Computer's response: rock" , "The Computer gets a point!"]);
+        setResult(["You: lizard" , "Computer: rock" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 1 && userResponse === 5){
-        setResult(["Your response: spock" , "Computer's response: rock" , "You get a point!"]);
+        setResult(["You: spock" , "Computer: rock" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 2 && userResponse === 1){
-        setResult(["Your response: rock" , "Computer's response: paper" , "The Computer gets a point!"]);
+        setResult(["You: rock" , "Computer: paper" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 2 && userResponse === 3){
-        setResult(["Your response: scissors" , "Computer's response: paper" , "You get a point!"]);
+        setResult(["You: scissors" , "Computer: paper" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 2 && userResponse === 4){
-        setResult(["Your response: lizard" , "Computer's response: paper" , "You get a point!"]);
+        setResult(["You: lizard" , "Computer: paper" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 2 && userResponse === 5){
-        setResult(["Your response: spock" , "Computer's response: paper" , "The Computer gets a point!"]);
+        setResult(["You: spock" , "Computer: paper" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 3 && userResponse === 1){
-        setResult(["Your response: rock" , "Computer's response: scissors" , "You get a point!"]);
+        setResult(["You: rock" , "Computer: scissors" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 3 && userResponse === 2){
-        setResult(["Your response: paper" , "Computer's response: scissors" , "The Computer gets a point!"]);
+        setResult(["You: paper" , "Computer: scissors" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 3 && userResponse === 4){
-        setResult(["Your response: lizard" , "Computer's response: scissors" , "The Computer gets a point!"]);
+        setResult(["You: lizard" , "Computer: scissors" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 3 && userResponse === 5){
-        setResult(["Your response: spock" , "Computer's response: scissors" , "You get a point!"]);
+        setResult(["You: spock" , "Computer: scissors" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 4 && userResponse === 1){
-        setResult(["Your response: rock" , "Computer's response: lizard" , "You get a point!"]);
+        setResult(["You: rock" , "Computer: lizard" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 4 && userResponse === 2){
-        setResult(["Your response: paper" , "Computer's response: lizard" , "The Computer gets a point!"]);
+        setResult(["You: paper" , "Computer: lizard" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 4 && userResponse === 3){
-        setResult(["Your response: scissors" , "Computer's response: lizard" , "You get a point!"]);
+        setResult(["You: scissors" , "Computer: lizard" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 4 && userResponse === 5){
-        setResult(["Your response: spock" , "Computer's response: lizard" , "The Computer gets a point!"]);
+        setResult(["You: spock" , "Computer: lizard" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 5 && userResponse === 1){
-        setResult(["Your response: rock" , "Computer's response: spock" , "The Computer gets a point!"]);
+        setResult(["You: rock" , "Computer: spock" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 5 && userResponse === 2){
-        setResult(["Your response: paper" , "Computer's response: spock" , "You get a point!"]);
+        setResult(["You: paper" , "Computer: spock" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 5 && userResponse === 3){
-        setResult(["Your response: scissors" , "Computer's response: spock" , "The Computer gets a point!"]);
+        setResult(["You: scissors" , "Computer: spock" , "The Computer gets a point!"]);
         return 0;
     } else {
-        setResult(["Your response: lizard" , "Computer's response: spock" , "You get a point!"]);
+        setResult(["You: lizard" , "Computer: spock" , "You get a point!"]);
         return 1;
     }
     return -1;
@@ -220,75 +220,75 @@ const decideRoundWinnerLevel3 = (userMove, setResult) => {
 
     if (computerResponse === userResponse){
         if (userResponse === 1){
-            setResult(["Your response: rock", "Computer's response: rock", "It's a tie!"]);
+            setResult(["You: rock", "Computer: rock", "It's a tie!"]);
         } else if (userResponse === 2){
-            setResult(["Your response: paper", "Computer's response: paper" , "It's a tie!"]);
+            setResult(["You: paper", "Computer: paper" , "It's a tie!"]);
         } else if (userResponse === 3){
-            setResult(["Your response: scissors" , "Computer's response: scissors" , "It's a tie!"]); 
+            setResult(["You: scissors" , "Computer: scissors" , "It's a tie!"]); 
         } else if (userResponse === 4){
-            setResult(["Your response: gun" , "Computer's response: gun" , "It's a tie!"]);
+            setResult(["You: gun" , "Computer: gun" , "It's a tie!"]);
         } else {
-            setResult(["Your response: shield" , "Computer's response: shield" , "It's a tie!"]);
+            setResult(["You: shield" , "Computer: shield" , "It's a tie!"]);
         }
     } else if (computerResponse === 1 && userResponse === 2){
-        setResult(["Your response: paper" , "Computer's response: rock" , "You get a point!"]);
+        setResult(["You: paper" , "Computer: rock" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 1 && userResponse === 3){
-        setResult(["Your response: scissors" , "Computer's response: rock" , "The Computer gets a point!"]);
+        setResult(["You: scissors" , "Computer: rock" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 1 && userResponse === 4){
-        setResult(["Your response: gun" , "Computer's response: rock" , "You get a point!"]);
+        setResult(["You: gun" , "Computer: rock" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 1 && userResponse === 5){
-        setResult(["Your response: shield" , "Computer's response: rock" , "The Computer gets a point!"]);
+        setResult(["You: shield" , "Computer: rock" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 2 && userResponse === 1){
-        setResult(["Your response: rock" , "Computer's response: paper" , "The Computer gets a point!"]);
+        setResult(["You: rock" , "Computer: paper" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 2 && userResponse === 3){
-        setResult(["Your response: scissors" , "Computer's response: paper" , "You get a point!"]);
+        setResult(["You: scissors" , "Computer: paper" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 2 && userResponse === 4){
-        setResult(["Your response: gun" , "Computer's response: paper" , "You get a point!"]);
+        setResult(["You: gun" , "Computer: paper" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 2 && userResponse === 5){
-        setResult(["Your response: shield" , "Computer's response: paper" , "The Computer gets a point!"]);
+        setResult(["You: shield" , "Computer: paper" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 3 && userResponse === 1) {
-        setResult(["Your response: rock" , "Computer's response: scissors" , "You get a point!"]);
+        setResult(["You: rock" , "Computer: scissors" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 3 && userResponse === 2) {
-        setResult(["Your response: paper" , "Computer's response: scissors" , "The Computer gets a point!"]);
+        setResult(["You: paper" , "Computer: scissors" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 3 && userResponse === 4) {
-        setResult(["Your response: gun" , "Computer's response: scissors" , "You get a point!"]);
+        setResult(["You: gun" , "Computer: scissors" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 3 && userResponse === 5){
-        setResult(["Your response: shield" , "Computer's response: scissors" , "The Computer gets a point!"]);
+        setResult(["You: shield" , "Computer: scissors" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 4 && userResponse === 1) {
-        setResult(["Your response: rock" , "Computer's response: gun" , "The Computer gets a point!"]);
+        setResult(["You: rock" , "Computer: gun" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 4 && userResponse === 2) {
-        setResult(["Your response: paper" , "Computer's response: gun" , "The Computer gets a point!"]);
+        setResult(["You: paper" , "Computer: gun" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 4 && userResponse === 3) {
-        setResult(["Your response: scissors" , "Computer's response: gun" , "The Computer gets a point!"]);
+        setResult(["You: scissors" , "Computer: gun" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 4 && userResponse === 5){
-        setResult(["Your response: shield" , "Computer's response: gun" , "Game terminates immediately!"]);
+        setResult(["You: shield" , "Computer: gun" , "Game terminates immediately!"]);
         return 3;
     } else if (computerResponse === 5 && userResponse === 1) {
-        setResult(["Your response: rock" , "Computer's response: shield" , "You get a point!"]);
+        setResult(["You: rock" , "Computer: shield" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 5 && userResponse === 2) {
-        setResult(["Your response: paper" , "Computer's response: shield" , "You get a point!"]);
+        setResult(["You: paper" , "Computer: shield" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 5 && userResponse === 3) {
-        setResult(["Your response: scissors" , "Computer's response: shield" , "You get a point!"]);
+        setResult(["You: scissors" , "Computer: shield" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 5 && userResponse === 4){
-        setResult(["Your response: gun" , "Computer's response: shield" , "Game terminates immediately!"]);
+        setResult(["You: gun" , "Computer: shield" , "Game terminates immediately!"]);
         return -3;
     }
     return -1;

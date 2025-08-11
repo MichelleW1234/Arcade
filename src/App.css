@@ -225,7 +225,8 @@ a:active {
 
 }
 
-.generalbutton:hover{
+.generalbutton:hover,
+.generalbutton.active{
 
   background-color: rgb(58, 13, 173);
   color: white;
@@ -253,7 +254,8 @@ a:active {
 
 }
 
-.generalbuttonGlitch:hover{
+.generalbuttonGlitch:hover,
+.generalbuttonGlitch.active{
 
   background-color: rgb(58, 13, 173);
   color: white;
@@ -331,7 +333,8 @@ a:active {
     0 0 0.625rem 0.375rem rgb(0, 242, 255); 
 }
 
-.navBarButton:hover {
+.navBarButton:hover,
+.navBarButton.active {
     
   background-color: #4d1fd4;
 

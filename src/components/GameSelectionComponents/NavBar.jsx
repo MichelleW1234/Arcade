@@ -45,25 +45,33 @@ function NavBar ({showInventory, setShowInventory}){
             resetPoints();
             navigate("/arcadeStart");
         }
-    });
+    },
+        ".LeaveArcade"
+    );
 
     useKeyboardShortcut("2", () => {
         if (showInventory == false){
             playSound(24);
             navigate("/prizeRoom");
         }
-    });
+    },
+        ".VisitPrizeRoom"
+    );
 
     useKeyboardShortcut("3", () => {
        displayInventory();
-    });
+    },
+        ".ViewPrizeInventory"
+    );
 
     useKeyboardShortcut("4", () => {
         if (showInventory == false){
             goToClawArcade();
             navigate("/CWMstart");
         }
-    });
+    },
+        ".GotoClawArcade"
+    );
 
 
     
@@ -104,25 +112,25 @@ function NavBar ({showInventory, setShowInventory}){
             <ul className = "navbarMenu">
                 
                 <li>
-                    <Link to="/arcadeStart" className = "navBarButton" onClick ={() => resetPoints()}>
+                    <Link to="/arcadeStart" className = "navBarButton LeaveArcade" onClick ={() => resetPoints()}>
                         Leave Arcade
                     </Link>
                 </li>
 
                 <li>
-                    <Link to="/prizeRoom" className = "navBarButton" onClick ={() =>  playSound(24)}>
+                    <Link to="/prizeRoom" className = "navBarButton VisitPrizeRoom" onClick ={() =>  playSound(24)}>
                         Visit Prize Room
                     </Link>
                 </li>
 
                 <li>
-                    <div className = "navBarButton" onClick ={() => displayInventory()}>
+                    <div className = "navBarButton ViewPrizeInventory" onClick ={() => displayInventory()}>
                         View Prize Inventory
                     </div>
                 </li>
 
                 <li>
-                    <Link to="/CWMstart" className = "navBarButton" onClick ={() => goToClawArcade()}>
+                    <Link to="/CWMstart" className = "navBarButton GotoClawArcade" onClick ={() => goToClawArcade()}>
                         Go to Claw Arcade
                     </Link>
                 </li>

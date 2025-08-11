@@ -24,12 +24,16 @@ function CatSummaryscreen (){
             resetGame(setCWMUser);
             navigate("/CWMcatgame");
         }
-    });
+    },
+        ".PlayAgain"
+    );
 
     useKeyboardShortcut("Escape", () => {
         reset(setCWMUser);
         navigate("/CWMselection");
-    });
+    },
+        ".LeaveMachine"
+    );
 
     return (
 
@@ -83,7 +87,7 @@ function CatSummaryscreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/CWMcatgame" className = "generalbutton" onClick = {() => resetGame(setCWMUser)}> Play Again </Link>
+                <Link to = "/CWMcatgame" className = "generalbutton PlayAgain" onClick = {() => resetGame(setCWMUser)}> Play Again </Link>
 
             ) : (
 
@@ -91,7 +95,7 @@ function CatSummaryscreen (){
 
             )} 
 
-            <Link to = "/CWMselection" className = "generalbutton" onClick={() => reset(setCWMUser)}> Leave Machine </Link>
+            <Link to = "/CWMselection" className = "generalbutton LeaveMachine" onClick={() => reset(setCWMUser)}> Leave Machine </Link>
 
         </div>
 

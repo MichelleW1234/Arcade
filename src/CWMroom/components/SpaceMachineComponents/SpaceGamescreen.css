@@ -61,3 +61,22 @@
     animation: glowing-shadow7 4s infinite, button-glitch 3s infinite;
 
 }
+
+
+.CWMSpaceButtonGrabbed {
+    font-size: 1.5625rem;      
+    padding: 0.9375rem;       
+    border-radius: 0.9375rem;
+
+    color: white;
+
+    background-color: rgb(130, 0, 137);
+
+    border-left: 0.35rem solid rgb(74, 0, 78);   
+    border-bottom: 0.35rem solid rgb(74, 0, 78); 
+    border-top: 0.125rem solid rgb(74, 0, 78);   
+    border-right: 0.125rem solid rgb(74, 0, 78); 
+
+    animation: glowing-shadow7 4s infinite, button-glitch 3s infinite;
+
+}

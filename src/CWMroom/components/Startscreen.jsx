@@ -14,12 +14,19 @@ function Startscreen (){
     useKeyboardShortcut("Escape", () => {
         leave();
         navigate("/selection");
-    });
+    },
+        ".Leave"
+    );
 
     useKeyboardShortcut("Enter", () => {
         playSound(24);
         navigate("/CWMinstructions");
-    });
+    },
+        ".Enter"
+    );
+
+
+
 
     const leave = () => {
     
@@ -39,10 +46,10 @@ function Startscreen (){
             </div>
 
             <div className="generalbuttonContainer">
-                <Link to="/selection" className = "generalbutton" onClick = {() => leave()}>
+                <Link to="/selection" className = "generalbutton Leave" onClick = {() => leave()}>
                     Leave
                 </Link>
-                <Link to="/CWMinstructions" className = "generalbuttonGlitch" onClick = {() => playSound(24)}>
+                <Link to="/CWMinstructions" className = "generalbuttonGlitch Enter" onClick = {() => playSound(24)}>
                     Enter
                 </Link>
             </div>

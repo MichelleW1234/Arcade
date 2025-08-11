@@ -18,7 +18,11 @@ function PrizeRoomscreen() {
     useKeyboardShortcut("Enter", () => {
         playSound(24);
         navigate("/selection");
-    });
+    },
+
+        ".LeavePrizeRoom"
+
+    );
 
 
     
@@ -97,7 +101,7 @@ function PrizeRoomscreen() {
                 
             </div>
             
-            <Link to="/selection" className = "generalbuttonGlitch" onClick = {() => playSound(24)}>
+            <Link to="/selection" className = "generalbuttonGlitch LeavePrizeRoom" onClick = {() => playSound(24)}>
                 Leave Prize Room
             </Link>
 

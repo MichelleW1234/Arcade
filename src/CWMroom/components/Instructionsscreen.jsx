@@ -9,7 +9,9 @@ function Instructionsscreen (){
     useKeyboardShortcut("Enter", () => {
         playSound(1);
         navigate("/CWMselection");
-    });
+    },
+        ".Continue"
+    );
 
     return (
 
@@ -27,7 +29,7 @@ function Instructionsscreen (){
                 &gt; All claw machines cost 5 points to use. <br/>
             </p>
 
-            <Link to="/CWMselection" className = "generalbuttonGlitch" onClick={() => playSound(1)}>
+            <Link to="/CWMselection" className = "generalbuttonGlitch Continue" onClick={() => playSound(1)}>
                 Continue
             </Link>
             

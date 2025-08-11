@@ -10,12 +10,16 @@ function CatInstructionsscreen (){
     useKeyboardShortcut("Escape", () => {
         playSound(2);
         navigate("/CWMselection");
-    });
+    },
+        ".LeaveMachine"
+    );
 
     useKeyboardShortcut("Enter", () => {
         playSound(19);
         navigate("/CWMcatgame");
-    });
+    },
+        ".Continue"
+    );
 
     return (
 
@@ -34,10 +38,10 @@ function CatInstructionsscreen (){
             </p>
 
             <div className="generalbuttonContainer">
-                <Link to="/CWMselection" className = "generalbutton" onClick={() => playSound(2)}>
+                <Link to="/CWMselection" className = "generalbutton LeaveMachine" onClick={() => playSound(2)}>
                     Leave Machine
                 </Link>
-                <Link to="/CWMcatgame" className = "generalbuttonGlitch" onClick={() => playSound(19)}>
+                <Link to="/CWMcatgame" className = "generalbuttonGlitch Continue" onClick={() => playSound(19)}>
                     Continue
                 </Link>
             </div>

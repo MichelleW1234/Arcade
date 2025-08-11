@@ -14,7 +14,10 @@ function ArcadeStartscreen (){
     useKeyboardShortcut("Enter", () => {
         playSound(24);
         navigate("/rulesAndPoints");
-    });
+        
+    },
+        ".Enter"
+    );
     
 
     return (
@@ -27,7 +30,7 @@ function ArcadeStartscreen (){
                 </h1>
             </div>
 
-            <Link to="/rulesAndPoints" className = "generalbuttonGlitch" onClick = {() => playSound(24)}>
+            <Link to="/rulesAndPoints" className = "generalbuttonGlitch Enter" onClick = {() => playSound(24)}>
                 Enter
             </Link>
             

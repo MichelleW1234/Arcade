@@ -114,7 +114,7 @@ function SpaceGamescreen (){
 
                         ) : (
 
-                            <button className ="CWMSpaceButton">Grab</button>
+                            <button className ="CWMSpaceButtonGrabbed">Grab</button>
 
                         )
 

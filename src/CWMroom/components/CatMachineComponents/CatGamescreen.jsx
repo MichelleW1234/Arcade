@@ -33,9 +33,14 @@ function CatGamescreen (){
     const navigate = useNavigate();
     useKeyboardShortcut("Enter", () => {
         if (buttonHit == false){
-            clawGrab(currentPosition, setResult, setButtonHit);
+            document.querySelectorAll(".Grab").forEach(el => el.classList.add("active"));
+            document.querySelectorAll(".CheckPrizeDoor").forEach(el => el.classList.remove("active"));
 
+            clawGrab(currentPosition, setResult, setButtonHit);
         } else if (clawWentDown == true){
+            document.querySelectorAll(".CheckPrizeDoor").forEach(el => el.classList.add("active"));
+            document.querySelectorAll(".Grab").forEach(el => el.classList.remove("active"));
+
             claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [9, 10, 11, 12]);
             navigate("/CWMcatsummary");
         }
@@ -44,7 +49,9 @@ function CatGamescreen (){
     useKeyboardShortcut("Escape", () => {
         exitGame(Player, setPlayer, ActiveGame[1], setCWMUser);
         navigate("/CWMselection");
-    });
+    },
+        ".QuitMachine"
+    );
 
 
 
@@ -82,7 +89,7 @@ function CatGamescreen (){
 
         <div>             
             
-            <Link to="/CWMselection" className = "generalbutton" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
+            <Link to="/CWMselection" className = "generalbutton QuitMachine" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
 
             <div className = "gameScreenLayout">
             
@@ -109,18 +116,18 @@ function CatGamescreen (){
 
                         clawWentDown == true ? (
                             
-                            <Link to="/CWMcatsummary" className ="CWMCatButton" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [9, 10, 11, 12])}> Check Prize Door </Link>
+                            <Link to="/CWMcatsummary" className ="CWMCatButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [9, 10, 11, 12])}> Check Prize Door </Link>
 
                         ) : (
 
-                            <button className ="CWMCatButton">Grab</button>
+                            <button className ="CWMCatButtonGrabbed">Grab</button>
 
                         )
 
                     ) : (
 
 
-                        <button className ="CWMCatButton" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
+                        <button className ="CWMCatButton Grab" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
                 
                     )}
 

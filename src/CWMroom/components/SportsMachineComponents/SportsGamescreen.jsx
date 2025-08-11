@@ -111,7 +111,7 @@ function SportsGamescreen (){
 
                         ) : (
 
-                            <button className ="CWMSportsButton">Grab</button>
+                            <button className ="CWMSportsButtonGrabbed">Grab</button>
 
                         )
 

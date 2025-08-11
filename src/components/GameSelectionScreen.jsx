@@ -66,7 +66,9 @@ function GameSelectionscreen (){
 
             }
         }
-    });
+    },
+        ".GotoGame"
+    );
 
 
 
@@ -269,7 +271,7 @@ function GameSelectionscreen (){
 
                 {Player[0] >= ActiveGame[1] ? (
 
-                    <Link to={currGamePath} className = "generalbuttonGlitch" onClick = {() => playSound(2)}>
+                    <Link to={currGamePath} className = "generalbuttonGlitch GotoGame" onClick = {() => playSound(2)}>
                         Go to Game
                     </Link>
     

@@ -63,3 +63,21 @@
     animation: glowing-shadow4 4s infinite, button-glitch 3s infinite;
 
 }
+
+
+.CWMSportsButtonGrabbed {
+    font-size: 1.5625rem;     
+    padding: 0.9375rem;        
+    border-radius: 0.9375rem;
+
+    color: white;
+
+    background-color: rgb(6, 89, 255);
+
+    border-left: 0.35rem solid rgb(0, 36, 109);  
+    border-bottom: 0.35rem solid rgb(0, 36, 109); 
+    border-top: 0.125rem solid rgb(0, 36, 109);   
+    border-right: 0.125rem solid rgb(0, 36, 109); 
+
+    animation: glowing-shadow4 4s infinite, button-glitch 3s infinite;
+}

@@ -25,12 +25,16 @@ function MachineSelectionscreen (){
     useKeyboardShortcut("Escape", () => {
         exitClawArcade();
         navigate("/selection");
-    });
+    },
+        ".LeaveClawArcade"
+    );
 
     useKeyboardShortcut("Enter", () => {
         playSound(2);
         navigate(currGamePath);
-    });
+    },
+        ".GotoMachine"
+    );
 
     const totalButtons = 3;
     useKeyboardShortcut("ArrowLeft", () => {
@@ -108,7 +112,7 @@ function MachineSelectionscreen (){
     return (
 
         <div>
-            <Link to="/selection" className = "generalbutton" onClick={() => exitClawArcade()}>
+            <Link to="/selection" className = "generalbutton LeaveClawArcade" onClick={() => exitClawArcade()}>
                 Leave Claw Arcade
             </Link>
             <div className = "gameScreenLayout">
@@ -179,7 +183,7 @@ function MachineSelectionscreen (){
 
                 {Player[0] >= ActiveGame[1] ? (
                 
-                    <Link to={currGamePath} className = "generalbuttonGlitch" onClick = {() => playSound(2)}>
+                    <Link to={currGamePath} className = "generalbuttonGlitch GotoMachine" onClick = {() => playSound(2)}>
                         Go to Machine
                     </Link>
 

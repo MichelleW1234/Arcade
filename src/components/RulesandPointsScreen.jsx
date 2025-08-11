@@ -10,22 +10,29 @@ import "./RulesandPointsscreen.css";
 
 function RulesandPointsscreen (){
 
+    const { Player, setPlayer } = usePlayer();
+
+    const [pointsClaimed, setPointsClaimed] = useState(false);
+
     const navigate = useNavigate();
 
     useKeyboardShortcut("Enter", () => {
         if (Player[0] === 20 && pointsClaimed == true){
+            document.querySelectorAll(".LetsGo").forEach(el => el.classList.add("active"));
+            document.querySelectorAll(".\\32 0pts").forEach(el => el.classList.remove("active"));
+
             playSound(1);
             navigate("/selection");
         } else {
+            document.querySelectorAll(".\\32 0pts").forEach(el => el.classList.add("active"));
+            document.querySelectorAll(".LetsGo").forEach(el => el.classList.remove("active"));
+
             claimPoints();
         }
     });
 
-    
 
-    const { Player, setPlayer } = usePlayer();
 
-    const [pointsClaimed, setPointsClaimed] = useState(false);
 
     const claimPoints = () => {
 
@@ -53,7 +60,7 @@ function RulesandPointsscreen (){
 
             {pointsClaimed == false ? (
 
-                <button className = "generalbutton" onClick={() => claimPoints()}>20 pts</button>
+                <button className = "generalbutton \\32 0pts" onClick={() => claimPoints()}>20 pts</button>
 
             ) : (
 
@@ -63,7 +70,7 @@ function RulesandPointsscreen (){
 
             {Player[0] === 20 ? (
 
-                <Link to= "/selection" className = "generalbuttonGlitch" onClick = {() => playSound(1)}>
+                <Link to= "/selection" className = "generalbuttonGlitch LetsGo" onClick = {() => playSound(1)}>
                     Let's Go!
                 </Link>
             

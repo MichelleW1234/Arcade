@@ -35,22 +35,30 @@ function Gamescreen(){
     useKeyboardShortcut("Escape", () => {
         exitGame();
         navigate("/selection");
-    });
+    },
+        ".QuitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         if (gameOver == true){
             claimPoints(ActiveGame, Player, setPlayer, Math.floor(distance / 5));
             navigate("/SMZsummary");
         }
-    });
+    },
+        ".ViewResults"
+    );
 
     useKeyboardShortcut("ArrowUp", () => {
         birdFlyingUpwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
-    });
+    },
+        ".Up"
+    );
 
     useKeyboardShortcut("ArrowDown", () => {
         birdFlyingDownwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
-    });
+    },
+        ".Down"
+    );
 
 
 
@@ -162,7 +170,7 @@ function Gamescreen(){
 
         <div>             
             
-            <Link to="/selection" className = "generalbutton" onClick={() => exitGame()}> Quit Game </Link>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> Quit Game </Link>
 
             <div className = "gameScreenLayout">
                 <div className = "SMZOuterGameContainer">
@@ -179,8 +187,8 @@ function Gamescreen(){
                             />
 
                             <div className = "SMZButtonContainer">
-                                <button className = "SMZControlButton" onClick = {() => birdFlyingUpwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked)}> &uarr; </button>
-                                <button className = "SMZControlButton" onClick = {() => birdFlyingDownwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked)}> &darr; </button>
+                                <button className = "SMZControlButton Up" onClick = {() => birdFlyingUpwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked)}> &uarr; </button>
+                                <button className = "SMZControlButton Down" onClick = {() => birdFlyingDownwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked)}> &darr; </button>
                             </div>
                         </>
 
@@ -195,7 +203,7 @@ function Gamescreen(){
                                 <p> Game Over.</p>
                             </div>
 
-                            <Link to="/SMZsummary" className = "SMZDoneButton" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, Math.floor(distance / 5))}> View Results </Link>
+                            <Link to="/SMZsummary" className = "SMZDoneButton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, Math.floor(distance / 5))}> View Results </Link>
                         </>
 
                     )}

@@ -29,14 +29,18 @@ function Gamescreen (){
     useKeyboardShortcut("Escape", () => {
         exitGame();
         navigate("/selection");
-    });
+    },
+        ".QuitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         if (colorAppearances >= 50 || wrongColorBlasted == true ){
             claimPoints(ActiveGame, Player, setPlayer, CBLUser[0]*3);
             navigate("/CBLsummary");
         }
-    });
+    },
+        ".ViewResults"
+    );
 
 
 
@@ -75,7 +79,7 @@ function Gamescreen (){
 
         <div>             
             
-            <Link to="/selection" className = "generalbutton" onClick={() => exitGame()}> Quit Game </Link>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> Quit Game </Link>
 
             <div className = "gameScreenLayout">
 
@@ -114,7 +118,7 @@ function Gamescreen (){
                             
                         </div>
 
-                        <Link to="/CBLsummary" className = "CBLbutton" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, CBLUser[0]*3)}> View Results </Link>
+                        <Link to="/CBLsummary" className = "CBLbutton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, CBLUser[0]*3)}> View Results </Link>
 
                     </div>
 

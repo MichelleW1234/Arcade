@@ -31,13 +31,27 @@ function Gamescreen(){
     useKeyboardShortcut("Escape", () => {
         exitGame();
         navigate("/selection");
-    });
+    },
+        ".QuitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         if (gameOver == true ){
+            document.querySelectorAll(".ViewResults").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".Activate").forEach(el => el.classList.remove("active"));
+
             claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2));
             navigate("/BFRsummary");
         } else {
+            document.querySelectorAll(".Activate").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".ViewResults").forEach(el => el.classList.remove("active"));
+
             laserBlasted();
         }
     });
@@ -138,7 +152,7 @@ function Gamescreen(){
 
         <div>             
             
-            <Link to="/selection" className = "generalbutton" onClick={() => exitGame()}> Quit Game </Link>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> Quit Game </Link>
 
             <div className = "gameScreenLayout">
                 <div className = "BFROuterGameContainer">
@@ -153,7 +167,7 @@ function Gamescreen(){
                             laserBlast = {laserBlast}
                             />
 
-                            <button className = "BFRActivateButton" onClick = {() => laserBlasted()}>Activate</button>
+                            <button className = "BFRActivateButton Activate" onClick = {() => laserBlasted()}>Activate</button>
                         </>
 
 
@@ -167,7 +181,7 @@ function Gamescreen(){
                                 <p> Game Over.</p>
                             </div>
 
-                            <Link to="/BFRsummary" className = "BFRDoneButton" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2))}> View Results </Link>
+                            <Link to="/BFRsummary" className = "BFRDoneButton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2))}> View Results </Link>
                         </>
 
                     )}

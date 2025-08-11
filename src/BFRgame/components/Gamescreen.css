@@ -82,7 +82,8 @@
 }
 
 
-.BFRActivateButton:hover {
+.BFRActivateButton:hover,
+.BFRActivateButton.active {
 
     background-color: rgb(41, 112, 0);
 
@@ -114,7 +115,8 @@
 }
 
 
-.BFRDoneButton:hover {
+.BFRDoneButton:hover,
+.BFRDoneButton.active {
 
     color: white;
 

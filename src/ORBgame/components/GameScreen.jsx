@@ -49,13 +49,27 @@ function Gamescreen(){
     useKeyboardShortcut("Escape", () => {
         exitGame();
         navigate("/selection");
-    });
+    },
+        ".QuitGame"
+    );
 
     useKeyboardShortcut("Enter", () => {
         if (stop == true){
+            document.querySelectorAll(".ViewResults").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".Stop").forEach(el => el.classList.remove("active"));
+
             calculateWin();
             navigate("/ORBsummary");
         } else {
+            document.querySelectorAll(".Stop").forEach(el => {
+                el.classList.add("active");
+                setTimeout(() => el.classList.remove("active"), 100);
+            });
+            document.querySelectorAll(".ViewResults").forEach(el => el.classList.remove("active"));
+
             stopped();
         }
     });
@@ -131,7 +145,7 @@ function Gamescreen(){
 
         <div>             
             
-            <Link to="/selection" className = "generalbutton" onClick={() => exitGame()}> Quit Game </Link>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> Quit Game </Link>
 
             <div className = "gameScreenLayout">
 
@@ -164,11 +178,11 @@ function Gamescreen(){
 
                     {stop == false ? (
 
-                        <button className = "ORBHitButton" onClick={() => stopped()}> STOP </button>
+                        <button className = "ORBHitButton Stop" onClick={() => stopped()}> STOP </button>
 
                     ) : (
 
-                        <Link to="/ORBsummary" className = "ORBDoneButton" onClick={()=> calculateWin()}> View Results </Link>
+                        <Link to="/ORBsummary" className = "ORBDoneButton ViewResults" onClick={()=> calculateWin()}> View Results </Link>
 
                     )}
 

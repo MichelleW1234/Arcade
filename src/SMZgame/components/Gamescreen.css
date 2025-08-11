@@ -87,7 +87,8 @@
 }
 
 
-.SMZControlButton:hover {
+.SMZControlButton:hover,
+.SMZControlButton.active {
 
     background-color: rgb(0, 110, 255);
 
@@ -119,7 +120,8 @@
 }
 
 
-.SMZDoneButton:hover {
+.SMZDoneButton:hover,
+.SMZDoneButton.active {
 
     color: white;
 

@@ -11,8 +11,8 @@ body {
   min-height: 100vh;
 
   background-image: 
-    url("./Images/ArcadeStartingScreen2.svg"),
-    linear-gradient(rgb(22, 3, 40) 10%, rgb(125, 14, 135) 70%, rgb(42, 7, 98));
+    url("./Images/ArcadeStartingScreen.svg"),
+    linear-gradient(rgb(14, 3, 25) 15%, rgb(110, 11, 119) 65%, rgb(28, 0, 89));
   background-repeat: no-repeat, no-repeat;
   background-size: contain, cover;
   background-position: center, center;

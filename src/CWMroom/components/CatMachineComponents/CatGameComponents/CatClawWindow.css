@@ -2,11 +2,18 @@
     display: flex;
     flex-direction: column;
 
-    background-color: rgb(203, 231, 255);
+    background-color: rgba(159, 210, 255, 0.829);
     border: 0.625rem solid rgb(149, 27, 0);   
 
     box-shadow: 0 0 1rem 0.5rem rgb(255, 188, 139);  
+
+    background-image: url("../../../../Images/ArcadeGameBackgroundImages/CWM.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
 }
+
 
 
 .CWMCatClawRowContainer{
@@ -23,7 +30,22 @@
 }
 
 
+.CWMCatPrizesContainer{
+    position: relative; 
+    width: 100%;
+    height: 100%;
+}
+
 .CWMCatPrizes {
-    height: 10.27rem;   
-    background-color: rgb(203, 231, 255);
+    display: block;
+    height: 10.27rem;  
+}
+
+.CWMCatoverlayPrizeWindow {
+    position: absolute;
+    background-color: rgba(255, 225, 154, 0.275);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

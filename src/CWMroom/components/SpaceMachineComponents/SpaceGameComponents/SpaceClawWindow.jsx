@@ -68,7 +68,10 @@ function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosit
                 ))}
 
             </div>
-            <img className = "CWMSpacePrizes" src = {Prizes}/>
+            <div className="CWMSpacePrizesContainer">
+                <img className = "CWMSpacePrizes" src = {Prizes}/>
+                <div className="CWMSpaceoverlayPrizeWindow "></div>
+            </div>
         </div>
 
     );

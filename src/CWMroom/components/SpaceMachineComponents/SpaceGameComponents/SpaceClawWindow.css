@@ -2,10 +2,16 @@
     display: flex;
     flex-direction: column;
 
-    background-color: rgb(203, 231, 255);
+    background-color: rgba(203, 231, 255, 0.726);
     border: 0.625rem solid rgb(71, 0, 104);  
 
     box-shadow: 0 0 1rem 0.5rem rgb(211, 122, 255);  
+
+    background-image: url("../../../../Images/ArcadeGameBackgroundImages/CWM.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
 }
 
 
@@ -22,8 +28,22 @@
     width: 1.875rem;    
 }
 
+.CWMSpacePrizesContainer{ 
+    position: relative; 
+    width: 100%;
+    height: 100%;
+}
 
 .CWMSpacePrizes {
+    display: block;
     height: 9.655rem;   
-    background-color: rgb(203, 231, 255);
+}
+
+.CWMSpaceoverlayPrizeWindow {
+    position: absolute;
+    background-color: rgba(173, 133, 255, 0.275);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

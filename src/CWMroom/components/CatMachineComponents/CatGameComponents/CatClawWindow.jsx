@@ -67,7 +67,11 @@ function CatClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPositio
                 ))}
 
             </div>
-            <img className = "CWMCatPrizes" src = {Prizes}/>
+            <div className="CWMCatPrizesContainer">
+                <img className = "CWMCatPrizes" src = {Prizes}/>
+                <div class="CWMCatoverlayPrizeWindow"></div>
+            </div>
+
         </div>
 
     );

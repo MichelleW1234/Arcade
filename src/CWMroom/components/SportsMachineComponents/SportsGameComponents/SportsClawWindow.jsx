@@ -67,7 +67,11 @@ function SportsClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosi
                 ))}
 
             </div>
-            <img className = "CWMSportsPrizes" src = {Prizes}/>
+            <div className="CWMSportsPrizesContainer">
+                <img className = "CWMSportsPrizes" src = {Prizes}/>
+                <div className="CWMSportsoverlayPrizeWindow"></div>
+            </div>
+            
         </div>
 
     );

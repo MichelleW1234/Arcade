@@ -7,9 +7,9 @@ import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
 import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
-import CatMachine from "../../Images/image 27.svg";
-import SportsMachine from "../../Images/image 28.svg";
-import SpaceMachine from "../../Images/image 29.svg";
+import CatMachine from "../../Images/ArcadeGameImages/CWMCat.svg";
+import SportsMachine from "../../Images/ArcadeGameImages/CWMSports.svg";
+import SpaceMachine from "../../Images/ArcadeGameImages/CWMSpace.svg";
 
 import "./MachineSelectionscreen.css";
 
@@ -30,8 +30,10 @@ function MachineSelectionscreen (){
     );
 
     useKeyboardShortcut("Enter", () => {
-        playSound(2);
-        navigate(currGamePath);
+        if (Player[0] >= ActiveGame[1]){
+            playSound(2);
+            navigate(currGamePath);
+        }
     },
         ".GotoMachine"
     );

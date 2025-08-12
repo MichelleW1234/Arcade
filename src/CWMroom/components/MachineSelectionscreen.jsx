@@ -29,7 +29,11 @@ function MachineSelectionscreen (){
         ".LeaveClawArcade"
     );
 
-    useKeyboardShortcut("Enter", () => {
+    useKeyboardShortcut("Enter", (event) => {
+
+        event.preventDefault();
+        event.stopPropagation();
+
         if (Player[0] >= ActiveGame[1]){
             playSound(2);
             navigate(currGamePath);

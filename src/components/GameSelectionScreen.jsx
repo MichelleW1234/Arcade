@@ -57,7 +57,11 @@ function GameSelectionscreen (){
     });
 
     const navigate = useNavigate();
-    useKeyboardShortcut("Enter", () => {
+    useKeyboardShortcut("Enter", (event) => {
+
+        event.preventDefault();
+        event.stopPropagation();
+
         if (showInventory == false){
             if (Player[0] >= ActiveGame[1]){
 

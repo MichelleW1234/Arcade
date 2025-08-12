@@ -9,10 +9,15 @@ html {
 body {
 
   min-height: 100vh;
-  background: linear-gradient(rgb(22, 3, 40) 10%, rgb(125, 14, 135) 70%, rgb(42, 7, 98));
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow-y: auto;
+
+  background-image: 
+    url("./Images/ArcadeStartingScreen2.svg"),
+    linear-gradient(rgb(22, 3, 40) 10%, rgb(125, 14, 135) 70%, rgb(42, 7, 98));
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, cover;
+  background-position: center, center;
+  background-attachment: fixed, scroll;
+
   user-select: none;
     
 }
@@ -54,15 +59,8 @@ a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30rem;
-  gap: 8rem;      
-
-  min-height: 100vh;
-
-  background-image: url("./Images/ArcadeStartingScreen.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  padding-top: 40vh;
+  gap: 8rem;
 
 }
 
@@ -76,6 +74,10 @@ a:active {
   padding-right: 3.125rem;  
   padding-top: 15rem;
 
+  padding-left: 6vh; 
+  padding-right: 6vh;  
+  padding-top: 20vh;
+
 }
 
 .gameScreenLayout {
@@ -84,6 +86,9 @@ a:active {
   align-items: center;
   padding-top: 10rem;
   gap: 3.125rem;   
+
+  padding-top: 10vh;
+
 }
 
 

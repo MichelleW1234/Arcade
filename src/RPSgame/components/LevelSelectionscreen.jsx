@@ -28,7 +28,11 @@ function LevelSelectionscreen (){
         ".QuitGame"
     );
 
-    useKeyboardShortcut("Enter", () => {
+    useKeyboardShortcut("Enter", (event) => {
+
+        event.preventDefault();
+        event.stopPropagation();
+
         playSound(18);
         navigate("/RPSgame");
     },

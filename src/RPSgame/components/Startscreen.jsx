@@ -34,7 +34,7 @@ function Startscreen (){
                 <span className="header-border right"></span>
                 <span className="header-border bottom"></span>
                 <span className="header-border left"></span>
-                <h1 className = "headerwords">Loading <span className='headerwordsGlitch'>Rock-Paper-Scissors...</span></h1>
+                <h1 className = "headerwords"> Loading <span className='headerwordsGlitch'>Rock-Paper-Scissors...</span></h1>
             </div>
             
             <div className = "generalbuttonContainer">

@@ -12,11 +12,10 @@ export function MusicProvider({ children }) {
         const audio = audioRef.current;
         audio.loop = true;
         audio.volume = 0.45;
-        /*
+
         audio.play().catch((err) => {
             console.warn('Autoplay failed:', err);
         });
-        */
 
         return () => {
             audio.pause(); // Stop the audio when the component is unmounted

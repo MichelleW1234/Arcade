@@ -43,7 +43,9 @@ function MachineSelectionscreen (){
     );
 
     const totalButtons = 3;
-    useKeyboardShortcut("ArrowLeft", () => {
+    useKeyboardShortcut("ArrowLeft", (event) => {
+        event.preventDefault();
+
         setActiveButton((prev) => {
             const newIndex = (prev - 1 + totalButtons) % totalButtons;
             if (newIndex == 0){
@@ -63,7 +65,9 @@ function MachineSelectionscreen (){
         });
         playSound(3);
     });
-    useKeyboardShortcut("ArrowRight", () => {
+    useKeyboardShortcut("ArrowRight", (event) => {
+        event.preventDefault();
+
         setActiveButton((prev) => {
             const newIndex = (prev + 1) % totalButtons;
             if (newIndex == 0){

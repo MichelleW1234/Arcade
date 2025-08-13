@@ -33,7 +33,9 @@ function GameSelectionscreen (){
     const [showInventory, setShowInventory] = useState(false);
 
     const totalButtons = 8;
-    useKeyboardShortcut("ArrowLeft", () => {
+    useKeyboardShortcut("ArrowLeft", (event) => {
+        event.preventDefault();
+
         if (showInventory == false){
             setActiveButton((prev) => {
                 const newIndex = (prev - 1 + totalButtons) % totalButtons;
@@ -44,7 +46,9 @@ function GameSelectionscreen (){
             playSound(3);
         }
     });
-    useKeyboardShortcut("ArrowRight", () => {
+    useKeyboardShortcut("ArrowRight", (event) => {
+        event.preventDefault();
+
         if (showInventory == false){
             setActiveButton((prev) => {
                 const newIndex = (prev + 1) % totalButtons;

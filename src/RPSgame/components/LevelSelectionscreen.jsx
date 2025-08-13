@@ -40,7 +40,9 @@ function LevelSelectionscreen (){
     );
     
     const totalButtons = 3;
-    useKeyboardShortcut("ArrowLeft", () => {
+    useKeyboardShortcut("ArrowLeft", (event) => {
+        event.preventDefault();
+
         setActiveButton((prev) => {
             const newIndex = (prev - 1 + totalButtons) % totalButtons;
             setActiveButton(newIndex);
@@ -51,7 +53,9 @@ function LevelSelectionscreen (){
         });
         playSound(3);
     });
-    useKeyboardShortcut("ArrowRight", () => {
+    useKeyboardShortcut("ArrowRight", (event) => {
+        event.preventDefault();
+
         setActiveButton((prev) => {
             const newIndex = (prev + 1) % totalButtons;
             setActiveButton(newIndex);

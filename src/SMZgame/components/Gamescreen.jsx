@@ -48,13 +48,17 @@ function Gamescreen(){
         ".ViewResults"
     );
 
-    useKeyboardShortcut("ArrowUp", () => {
+    useKeyboardShortcut("ArrowUp", (event) => {
+        event.preventDefault();
+
         birdFlyingUpwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
     },
         ".Up"
     );
 
-    useKeyboardShortcut("ArrowDown", () => {
+    useKeyboardShortcut("ArrowDown", (event) => {
+        event.preventDefault();
+
         birdFlyingDownwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
     },
         ".Down"

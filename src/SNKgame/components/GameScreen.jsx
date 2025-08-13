@@ -50,25 +50,33 @@ function Gamesscreen(){
         ".ViewResults"
     );
 
-    useKeyboardShortcut("ArrowUp", () => {
+    useKeyboardShortcut("ArrowUp", (event) => {
+        event.preventDefault();
+
         buttonControls(2);
     },
         ".Up"
     );
 
-    useKeyboardShortcut("ArrowDown", () => {
+    useKeyboardShortcut("ArrowDown", (event) => {
+        event.preventDefault();
+
         buttonControls(3);
     },
         ".Down"
     );
 
-    useKeyboardShortcut("ArrowLeft", () => {
+    useKeyboardShortcut("ArrowLeft", (event) => {
+        event.preventDefault();
+
         buttonControls(0);
     },
         ".Left"
     );
 
-    useKeyboardShortcut("ArrowRight", () => {
+    useKeyboardShortcut("ArrowRight", (event) => {
+        event.preventDefault();
+
         buttonControls(1);
     },
         ".Right"

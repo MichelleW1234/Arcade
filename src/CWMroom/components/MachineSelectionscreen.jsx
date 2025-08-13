@@ -1,5 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom';
-import {useState} from 'react';
+import {useRef, useState} from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -43,6 +43,7 @@ function MachineSelectionscreen (){
     );
 
     const totalButtons = 3;
+    const itemRefs = useRef([]);
     useKeyboardShortcut("ArrowLeft", (event) => {
         event.preventDefault();
 
@@ -61,6 +62,14 @@ function MachineSelectionscreen (){
                 setCurrGamePath("/CWMspaceinstructions");
 
             }
+
+             // scroll the new element into view
+            itemRefs.current[newIndex]?.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center"
+            });
+
             return newIndex;
         });
         playSound(3);
@@ -83,6 +92,14 @@ function MachineSelectionscreen (){
                 setCurrGamePath("/CWMspaceinstructions");
 
             }
+
+            // scroll the new element into view
+            itemRefs.current[newIndex]?.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center"
+            });
+
             return newIndex;
         });
         playSound(3);
@@ -135,7 +152,8 @@ function MachineSelectionscreen (){
 
                     <div className = "CWMGameSelectionBoardInner">
 
-                        <div className = "CWMMachineOptionContainer">
+                        <div className = "CWMMachineOptionContainer"
+                            ref={(el) => (itemRefs.current[0] = el)}>
 
                             <div className = "CWMMachine"> 
                                 
@@ -153,7 +171,8 @@ function MachineSelectionscreen (){
 
                         </div>
 
-                        <div className = "CWMMachineOptionContainer">
+                        <div className = "CWMMachineOptionContainer"
+                            ref={(el) => (itemRefs.current[1] = el)}>
 
                             <div className = "CWMMachine"> 
                                 
@@ -171,7 +190,8 @@ function MachineSelectionscreen (){
                             
                         </div>
 
-                        <div className = "CWMMachineOptionContainer">
+                        <div className = "CWMMachineOptionContainer"
+                            ref={(el) => (itemRefs.current[2] = el)}>
 
                             <div className = "CWMMachine"> 
                                 

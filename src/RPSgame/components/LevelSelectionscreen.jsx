@@ -1,5 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom';
-import {useState} from 'react';
+import {useRef, useState} from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -40,6 +40,7 @@ function LevelSelectionscreen (){
     );
     
     const totalButtons = 3;
+    const itemRefs = useRef([]);
     useKeyboardShortcut("ArrowLeft", (event) => {
         event.preventDefault();
 
@@ -49,6 +50,14 @@ function LevelSelectionscreen (){
             const currLevelInput = getInput(newIndex);
             const currLevelReferences = getReferences(newIndex);
             setRPSUser([newIndex, currLevelInput, currLevelReferences, 0, 0]);
+
+            // scroll the new element into view
+            itemRefs.current[newIndex]?.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center"
+            });
+
             return newIndex;
         });
         playSound(3);
@@ -62,6 +71,14 @@ function LevelSelectionscreen (){
             const currLevelInput = getInput(newIndex);
             const currLevelReferences = getReferences(newIndex);
             setRPSUser([newIndex, currLevelInput, currLevelReferences, 0, 0]);
+
+            // scroll the new element into view
+            itemRefs.current[newIndex]?.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center"
+            });
+
             return newIndex;
         });
         playSound(3);
@@ -96,7 +113,9 @@ function LevelSelectionscreen (){
                     <p className='largefont'>[&larr;] [&rarr;]</p>
 
                     <div className = "RPSlevelsInnerContainer">
-                        <div className = "RPSLevelsWindowContainer">
+
+                        <div className = "RPSLevelsWindowContainer"
+                            ref={(el) => (itemRefs.current[0] = el)}>
 
                             <div className = "RPSLevelsWindow"> 
                                 <p> <span className="windowGlitch">Rock, Paper, Scissors</span> </p>
@@ -110,7 +129,8 @@ function LevelSelectionscreen (){
 
                         </div>   
 
-                        <div className = "RPSLevelsWindowContainer">
+                        <div className = "RPSLevelsWindowContainer"
+                            ref={(el) => (itemRefs.current[1] = el)}>
 
                             <div className = "RPSLevelsWindow"> 
                                 <p>Rock, Paper, Scissors, <span className="RPSLevelGlitch">Lizard, Spock</span></p> 
@@ -124,7 +144,8 @@ function LevelSelectionscreen (){
 
                         </div>    
 
-                        <div className = "RPSLevelsWindowContainer">
+                        <div className = "RPSLevelsWindowContainer"
+                            ref={(el) => (itemRefs.current[2] = el)}>
 
                             <div className = "RPSLevelsWindow"> 
                                 <p>Rock, Paper, Scissors, Gun, Shield</p>
@@ -137,6 +158,7 @@ function LevelSelectionscreen (){
                             </button>
 
                         </div> 
+
                     </div>  
 
                 </div>

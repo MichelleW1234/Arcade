@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import {useRef, useEffect, useState} from 'react';
 import useKeyboardShortcut from "../hooks/useKeyboardShortcut";
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
@@ -33,6 +33,7 @@ function GameSelectionscreen (){
     const [showInventory, setShowInventory] = useState(false);
 
     const totalButtons = 8;
+    const itemRefs = useRef([]);
     useKeyboardShortcut("ArrowLeft", (event) => {
         event.preventDefault();
 
@@ -41,6 +42,14 @@ function GameSelectionscreen (){
                 const newIndex = (prev - 1 + totalButtons) % totalButtons;
                 const currGameInfo = retrieveActiveGame(newIndex);
                 setActiveGame(currGameInfo);
+
+                // scroll the new element into view
+                itemRefs.current[newIndex]?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "center"
+                });
+                
                 return newIndex;
             });
             playSound(3);
@@ -54,6 +63,14 @@ function GameSelectionscreen (){
                 const newIndex = (prev + 1) % totalButtons;
                 const currGameInfo = retrieveActiveGame(newIndex);
                 setActiveGame(currGameInfo);
+
+                // scroll the new element into view
+                itemRefs.current[newIndex]?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "center"
+                });
+
                 return newIndex;
             });
             playSound(3);
@@ -119,7 +136,8 @@ function GameSelectionscreen (){
 
                     <div className = "ArcadeGameBoardInner">
 
-                        <div className = "ArcadeGameContainer">
+                        <div className = "ArcadeGameContainer" 
+                            ref={(el) => (itemRefs.current[0] = el)}>
 
                             <div className = "ArcadeGame"> 
                                 
@@ -139,7 +157,8 @@ function GameSelectionscreen (){
                             
                         </div>
 
-                        <div className = "ArcadeGameContainer">
+                        <div className = "ArcadeGameContainer"
+                            ref={(el) => (itemRefs.current[1] = el)}>
 
                             <div className = "ArcadeGame"> 
                                 
@@ -158,7 +177,8 @@ function GameSelectionscreen (){
                             
                         </div>
 
-                        <div className = "ArcadeGameContainer">
+                        <div className = "ArcadeGameContainer"
+                            ref={(el) => (itemRefs.current[2] = el)}>
 
                             <div className = "ArcadeGame"> 
                                 
@@ -177,7 +197,8 @@ function GameSelectionscreen (){
 
                         </div>
 
-                        <div className = "ArcadeGameContainer">
+                        <div className = "ArcadeGameContainer"
+                            ref={(el) => (itemRefs.current[3] = el)}>
 
                             <div className = "ArcadeGame"> 
                                 
@@ -196,7 +217,8 @@ function GameSelectionscreen (){
 
                         </div>
 
-                        <div className = "ArcadeGameContainer">
+                        <div className = "ArcadeGameContainer"
+                            ref={(el) => (itemRefs.current[4] = el)}>
 
                             <div className = "ArcadeGame"> 
                                 
@@ -215,7 +237,8 @@ function GameSelectionscreen (){
 
                         </div>
 
-                        <div className = "ArcadeGameContainer">
+                        <div className = "ArcadeGameContainer"
+                             ref={(el) => (itemRefs.current[5] = el)}>
 
                             <div className = "ArcadeGame"> 
                                 
@@ -235,7 +258,8 @@ function GameSelectionscreen (){
 
                         </div>
 
-                        <div className = "ArcadeGameContainer">
+                        <div className = "ArcadeGameContainer"
+                             ref={(el) => (itemRefs.current[6] = el)}>
 
                             <div className = "ArcadeGame"> 
                                 
@@ -255,7 +279,8 @@ function GameSelectionscreen (){
 
                         </div>
 
-                        <div className = "ArcadeGameContainer">
+                        <div className = "ArcadeGameContainer"
+                             ref={(el) => (itemRefs.current[7] = el)}>
 
                             <div className = "ArcadeGame"> 
                                 

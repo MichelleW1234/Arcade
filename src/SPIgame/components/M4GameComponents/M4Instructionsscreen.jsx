@@ -104,7 +104,8 @@ function M4Instructionsscreen() {
 
         ) : (
 
-          <button className = "SPIGuideButton AlienGuide" onClick = {() => setAliensDetectedOn(openingGuide())}> Alien Guide
+          <button className = "SPIGuideButton AlienGuide" onClick = {() => setAliensDetectedOn(openingGuide())}> 
+            <div className="buttonNameContainer"> Alien Guide <br/> <span className = "buttonKeyDescription"> [1] </span></div>
           </button>
         )}
         
@@ -129,7 +130,8 @@ function M4Instructionsscreen() {
 
         ) : (
 
-          <button className = "SPIGuideButton EquipmentGuide" onClick = {() => setEquipmentOn(openingGuide())}> Equipment Guide
+          <button className = "SPIGuideButton EquipmentGuide" onClick = {() => setEquipmentOn(openingGuide())}>
+            <div className="buttonNameContainer"> Equipment Guide <br/> <span className = "buttonKeyDescription"> [2] </span></div> 
           </button>
 
         )}
@@ -138,10 +140,10 @@ function M4Instructionsscreen() {
 
       <div className = "generalbuttonContainer">
         <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
-          Quit Game
+          <div className="buttonNameContainer"> Quit Game <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
         </Link>
         <Link to= "/SPIM4game" className = "generalbuttonGlitch EnterZone" onClick = {() => playSound(7)}>
-            Enter Zone
+          <div className="buttonNameContainer"> Enter Zone <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
         </Link>
       </div>
       

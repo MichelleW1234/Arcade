@@ -79,7 +79,9 @@ function Gamescreen (){
 
         <div>             
             
-            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> Quit Game </Link>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> 
+                <div className="buttonNameContainer"> Quit Game <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
+            </Link>
 
             <div className = "gameScreenLayout">
 
@@ -118,7 +120,9 @@ function Gamescreen (){
                             
                         </div>
 
-                        <Link to="/CBLsummary" className = "CBLbutton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, CBLUser[0]*3)}> View Results </Link>
+                        <Link to="/CBLsummary" className = "CBLbutton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, CBLUser[0]*3)}> 
+                            <div className="buttonNameContainer">View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                        </Link>
 
                     </div>
 

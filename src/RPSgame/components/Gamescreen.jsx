@@ -130,7 +130,7 @@ function Gamescreen (){
                         </h1>
 
                         <Link to="/RPSsummary" className="RPSButton ViewResults" onClick={() => getWinner()}>
-                            View Results
+                            <div className="buttonNameContainer"> View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                         </Link>
                     </div>
                     

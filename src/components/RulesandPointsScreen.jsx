@@ -66,18 +66,21 @@ function RulesandPointsscreen (){
 
             {pointsClaimed == false ? (
 
-                <button className = "generalbutton \\32 0pts" onClick={() => claimPoints()}>20 pts</button>
+                <button className = "generalbutton \\32 0pts" onClick={() => claimPoints()}>
+                    <div className="buttonNameContainer">20 pts <br/> <span className='buttonKeyDescription'>[Return]</span></div>
+                </button>
 
             ) : (
 
-                <div className = "pointsClaimedButton"> 20 pts </div>
+                <div className = "pointsClaimedButton"> <div className="buttonNameContainer">20 pts <br/> <span className='buttonKeyDescription'>[Return]</span></div>
+                </div>
 
             )}
 
             {Player[0] === 20 ? (
 
                 <Link to= "/selection" className = "generalbuttonGlitch LetsGo" onClick = {() => playSound(1)}>
-                    Let's Go!
+                    <div className="buttonNameContainer"> Let's Go! <br/> <span className='buttonKeyDescription'>[Return]</span></div>
                 </Link>
             
             ) : (

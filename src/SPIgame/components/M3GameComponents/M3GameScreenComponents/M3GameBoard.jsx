@@ -209,7 +209,9 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
                 onPointerLeave={() => LaserSwitchButtonRef.current?.focus()}
             />
 
-            <button ref = {LaserSwitchButtonRef} className={mutantLaserOn ? "SPIlaserButtonMutant ChangeLaser" : "SPIlaserButtonNormal ChangeLaser"} onClick={() => changeLaser()}> Change Laser </button>
+            <button ref = {LaserSwitchButtonRef} className={mutantLaserOn ? "SPIlaserButtonMutant ChangeLaser" : "SPIlaserButtonNormal ChangeLaser"} onClick={() => changeLaser()}> 
+                <div className="buttonNameContainer"> Change Laser <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+            </button>
 
         </div>
 

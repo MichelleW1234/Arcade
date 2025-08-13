@@ -32,7 +32,7 @@
 
 .CWMCatButton {
     font-size: 1.5625rem;    
-    padding: 0.9375rem;
+    padding: 1rem 2rem;
     border-radius: 0.9375rem;       
 
     background-color: rgb(255, 221, 67);
@@ -67,7 +67,7 @@
 .CWMCatButtonGrabbed{
 
     font-size: 1.5625rem;    
-    padding: 0.9375rem;   
+    padding: 1rem 2rem; 
     border-radius: 0.9375rem;    
 
     color: white;

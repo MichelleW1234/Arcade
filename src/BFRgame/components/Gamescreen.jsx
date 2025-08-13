@@ -152,7 +152,9 @@ function Gamescreen(){
 
         <div>             
             
-            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> Quit Game </Link>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> 
+                <div className="buttonNameContainer">Quit Game<br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
+            </Link>
 
             <div className = "gameScreenLayout">
                 <div className = "BFROuterGameContainer">
@@ -167,7 +169,9 @@ function Gamescreen(){
                             laserBlast = {laserBlast}
                             />
 
-                            <button className = "BFRActivateButton Activate" onClick = {() => laserBlasted()}>Activate</button>
+                            <button className = "BFRActivateButton Activate" onClick = {() => laserBlasted()}>
+                                <div className="buttonNameContainer">Activate <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                            </button>
                         </>
 
 
@@ -181,7 +185,9 @@ function Gamescreen(){
                                 <p> Game Over.</p>
                             </div>
 
-                            <Link to="/BFRsummary" className = "BFRDoneButton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2))}> View Results </Link>
+                            <Link to="/BFRsummary" className = "BFRDoneButton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2))}> 
+                                <div className="buttonNameContainer"> View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                            </Link>
                         </>
 
                     )}

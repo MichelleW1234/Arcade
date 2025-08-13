@@ -224,8 +224,8 @@ a:active {
 .generalbutton {
 
   background-color: rgb(102, 255, 237);
-  font-size: 2rem;         
-  padding: 0.625rem;        
+  font-size: 2rem;           
+  padding: 0.8rem 1.8rem;          
   border-left: 0.375rem solid rgb(43, 117, 108);  
   border-bottom: 0.375rem solid rgb(43, 117, 108); 
   border-right: 0.125rem solid rgb(43, 117, 108);  
@@ -253,8 +253,9 @@ a:active {
 .generalbuttonGlitch {
 
   background-color: rgb(102, 255, 237);
+
   font-size: 2rem;           
-  padding: 0.625rem;       
+  padding: 0.8rem 1.8rem;       
   border-left: 0.375rem solid rgb(43, 117, 108);   
   border-bottom: 0.375rem solid rgb(43, 117, 108); 
   border-right: 0.125rem solid rgb(43, 117, 108);  
@@ -276,6 +277,19 @@ a:active {
   border-right: 0.125rem solid rgb(23, 4, 71); 
 
   animation: button-glitch 4s infinite, glowing-shadow4 4s infinite;
+
+}
+
+
+.buttonNameContainer{
+
+  text-align: center;
+
+}
+
+.buttonKeyDescription{
+
+  font-size: 1rem;
 
 }
 

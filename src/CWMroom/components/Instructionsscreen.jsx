@@ -30,7 +30,7 @@ function Instructionsscreen (){
             </p>
 
             <Link to="/CWMselection" className = "generalbuttonGlitch Continue" onClick={() => playSound(1)}>
-                Continue
+                <div className="buttonNameContainer"> Continue <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
             </Link>
             
         </div>

@@ -190,7 +190,7 @@ function Gamesscreen(){
         <div>
 
             <Link to="/selection" className = "generalbutton QuitGame" onClick={() => reset()}>
-                Quit Game
+                <div className="buttonNameContainer">Quit Game <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
             <div className = "gameScreenLayout">
@@ -247,17 +247,17 @@ function Gamesscreen(){
 
                         <div className = "SNKbuttonsContainer">
                             
-                            <button className = "SNKcontrolButton Left" onClick={() => buttonControls(0)}> {"\u2190"} </button>
-                            <button className = "SNKcontrolButton Right" onClick={() => buttonControls(1)}> {"\u2192"} </button>
-                            <button className = "SNKcontrolButton Up" onClick={() => buttonControls(2)}> {"\u2191"} </button>
-                            <button className = "SNKcontrolButton Down" onClick={() => buttonControls(3)}> {"\u2193"} </button>
+                            <button className = "SNKcontrolButton Left" onClick={() => buttonControls(0)}> [&larr;] </button>
+                            <button className = "SNKcontrolButton Right" onClick={() => buttonControls(1)}> [&rarr;] </button>
+                            <button className = "SNKcontrolButton Up" onClick={() => buttonControls(2)}> [&uarr;] </button>
+                            <button className = "SNKcontrolButton Down" onClick={() => buttonControls(3)}> [&darr;] </button>
 
                         </div>
 
                     :
 
                         <Link to= "/SNKsummary" className = "generalbuttonGlitch ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SNKUser[1] * 2))}>
-                            View Results
+                            <div className="buttonNameContainer"> View Results<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                         </Link>   
 
                     } 

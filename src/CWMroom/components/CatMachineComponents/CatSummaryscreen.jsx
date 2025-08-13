@@ -87,7 +87,9 @@ function CatSummaryscreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/CWMcatgame" className = "generalbutton PlayAgain" onClick = {() => resetGame(setCWMUser)}> Play Again </Link>
+                <Link to = "/CWMcatgame" className = "generalbutton PlayAgain" onClick = {() => resetGame(setCWMUser)}> 
+                    <div className="buttonNameContainer"> Play Again<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                </Link>
 
             ) : (
 
@@ -95,7 +97,9 @@ function CatSummaryscreen (){
 
             )} 
 
-            <Link to = "/CWMselection" className = "generalbutton LeaveMachine" onClick={() => reset(setCWMUser)}> Leave Machine </Link>
+            <Link to = "/CWMselection" className = "generalbutton LeaveMachine" onClick={() => reset(setCWMUser)}> 
+                <div className="buttonNameContainer"> Leave Machine<br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
+            </Link>
 
         </div>
 

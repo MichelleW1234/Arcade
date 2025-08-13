@@ -145,7 +145,9 @@ function Gamescreen(){
 
         <div>             
             
-            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> Quit Game </Link>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> 
+                <div className="buttonNameContainer"> Quit Game  <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
+            </Link>
 
             <div className = "gameScreenLayout">
 
@@ -178,11 +180,15 @@ function Gamescreen(){
 
                     {stop == false ? (
 
-                        <button className = "ORBHitButton Stop" onClick={() => stopped()}> STOP </button>
+                        <button className = "ORBHitButton Stop" onClick={() => stopped()}> 
+                            <div className="buttonNameContainer">STOP<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                        </button>
 
                     ) : (
 
-                        <Link to="/ORBsummary" className = "ORBDoneButton ViewResults" onClick={()=> calculateWin()}> View Results </Link>
+                        <Link to="/ORBsummary" className = "ORBDoneButton ViewResults" onClick={()=> calculateWin()}> 
+                            <div className="buttonNameContainer"> View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                        </Link>
 
                     )}
 

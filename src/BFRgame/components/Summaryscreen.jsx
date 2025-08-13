@@ -61,7 +61,9 @@ function Summaryscreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/BFRgame" className = "generalbutton PlayAgain" onClick = {() => resetGame()}> Play Again </Link>
+                <Link to = "/BFRgame" className = "generalbutton PlayAgain" onClick = {() => resetGame()}> 
+                    <div className="buttonNameContainer"> Play Again<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                </Link>
 
             ) : (
 
@@ -69,7 +71,9 @@ function Summaryscreen (){
 
             )} 
 
-            <Link to = "/selection" className = "generalbutton ExitGame" onClick={() => reset()}> Exit Game</Link>
+            <Link to = "/selection" className = "generalbutton ExitGame" onClick={() => reset()}> 
+                <div className="buttonNameContainer"> Exit Game <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
+            </Link>
 
             
         </div>

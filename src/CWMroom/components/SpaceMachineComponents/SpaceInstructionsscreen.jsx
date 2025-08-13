@@ -39,10 +39,10 @@ function SpaceInstructionsscreen (){
 
             <div className="generalbuttonContainer">
                 <Link to="/CWMselection" className = "generalbutton LeaveMachine" onClick={() => playSound(2)}>
-                    Leave Machine
+                    <div className="buttonNameContainer"> Leave Machine<br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
                 </Link>
                 <Link to="/CWMspacegame" className = "generalbuttonGlitch Continue" onClick={() => playSound(19)}>
-                    Continue
+                    <div className="buttonNameContainer"> Continue <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                 </Link>
             </div>
             

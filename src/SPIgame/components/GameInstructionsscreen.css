@@ -75,7 +75,7 @@
 .SPIGuideButtonContainer {
     display: flex;
     flex-direction: row;
-    gap: 3.125rem; 
+    gap: 4rem; 
 }
 
 
@@ -84,7 +84,7 @@
     color: rgb(12, 48, 18);
 
     font-size: 1.5625rem;            
-    padding: 0.9375rem;          
+    padding: 1rem 2rem;          
 
     border-left: 0.3125rem solid rgb(19, 82, 29);    
     border-bottom: 0.3125rem solid rgb(19, 82, 29);  

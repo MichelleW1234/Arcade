@@ -188,8 +188,8 @@
 
 .SPIlaserButtonNormal {
     background-color: #00ff26;
-    font-size: 1.25rem;        
-    padding: 0.625rem;          
+    font-size: 1.4rem;      
+    padding: 0.8rem 1.8rem;          
 
     border-left: 0.3125rem solid #00660f; 
     border-bottom: 0.3125rem solid #00660f;
@@ -219,8 +219,8 @@
 
 .SPIlaserButtonMutant {
     background-color: #fb00ff;
-    font-size: 1.25rem;             
-    padding: 0.625rem;            
+    font-size: 1.4rem;             
+    padding: 0.8rem 1.8rem;           
 
     border-left: 0.3125rem solid #640065;   
     border-bottom: 0.3125rem solid #640065;  

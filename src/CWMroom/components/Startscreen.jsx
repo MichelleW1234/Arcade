@@ -47,10 +47,10 @@ function Startscreen (){
 
             <div className="generalbuttonContainer">
                 <Link to="/selection" className = "generalbutton Leave" onClick = {() => leave()}>
-                    Leave
+                    <div className="buttonNameContainer"> Leave <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
                 </Link>
                 <Link to="/CWMinstructions" className = "generalbuttonGlitch Enter" onClick = {() => playSound(24)}>
-                    Enter
+                    <div className="buttonNameContainer"> Enter <br/> <span className = "buttonKeyDescription"> [return] </span></div>
                 </Link>
             </div>
             

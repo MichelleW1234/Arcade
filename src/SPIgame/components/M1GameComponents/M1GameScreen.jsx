@@ -42,7 +42,7 @@ function M1GameScreen() {
 
         <div>
             <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
-                Quit Game
+                <div className="buttonNameContainer"> Quit Game <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
             {waveNumber <= 5 && SPIUser[2] == false ? (
@@ -86,7 +86,7 @@ function M1GameScreen() {
                     </div>
 
                     <Link to="/SPImission" className = "generalbuttonGlitch BacktoMissionsScreen" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
-                        Back to Missions Screen
+                        <div className="buttonNameContainer"> Back to Missions Screen <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                     </Link>
 
                 </div>

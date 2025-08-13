@@ -69,7 +69,9 @@ function TurnDecidingscreen() {
 
             {TTTUser[0] === -1 ? (
                 
-                <button className = "generalbuttonGlitch FlipCoin" onClick={() => coinFlip()}> Flip Coin </button>
+                <button className = "generalbuttonGlitch FlipCoin" onClick={() => coinFlip()}> 
+                    <div className="buttonNameContainer"> Flip Coin  <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                </button>
 
             ) : (
 
@@ -77,7 +79,7 @@ function TurnDecidingscreen() {
                     <p className ="largefont">{statement}</p>
 
                     <Link to= "/TTTgame" className = "generalbuttonGlitch BeginGame" onClick={() => playSound(18)}>
-                        Begin Game
+                        <div className="buttonNameContainer"> Begin Game <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                     </Link>
                 </>
             

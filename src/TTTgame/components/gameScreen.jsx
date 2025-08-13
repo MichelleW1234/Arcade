@@ -63,7 +63,7 @@ function Gamescreen() {
     <div>
 
       <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => reset()}>
-        Quit Game
+        <div className="buttonNameContainer"> Quit Game<br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
       </Link>
 
       <div className = "gameScreenLayout">
@@ -149,7 +149,7 @@ function Gamescreen() {
               </div>
 
               <Link to= "/TTTsummary" className = "generalbuttonGlitch ViewResults" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player)}>
-                View Results
+                <div className="buttonNameContainer"> View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
               </Link>
 
             </>

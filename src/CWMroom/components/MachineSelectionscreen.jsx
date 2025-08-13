@@ -123,13 +123,15 @@ function MachineSelectionscreen (){
 
         <div>
             <Link to="/selection" className = "generalbutton LeaveClawArcade" onClick={() => exitClawArcade()}>
-                Leave Claw Arcade
+                <div className="buttonNameContainer"> Leave Claw Arcade <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
             <div className = "gameScreenLayout">
 
                 <h1 className = "pointsSign"> Your Points: <span className = "signGlitch">{Player[0]}</span></h1>
 
                 <div className = "CWMGameSelectionBoard">
+
+                    <p className='largefont'>[&larr;] [&rarr;]</p>
 
                     <div className = "CWMGameSelectionBoardInner">
 
@@ -194,7 +196,7 @@ function MachineSelectionscreen (){
                 {Player[0] >= ActiveGame[1] ? (
                 
                     <Link to={currGamePath} className = "generalbuttonGlitch GotoMachine" onClick = {() => playSound(2)}>
-                        Go to Machine
+                        <div className="buttonNameContainer"> Go to Machine <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                     </Link>
 
                 ) : (

@@ -95,7 +95,9 @@ function CatGamescreen (){
 
         <div>             
             
-            <Link to="/CWMselection" className = "generalbutton QuitMachine" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
+            <Link to="/CWMselection" className = "generalbutton QuitMachine" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> 
+                <div className="buttonNameContainer"> Quit Machine <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
+            </Link>
 
             <div className = "gameScreenLayout">
             
@@ -122,18 +124,25 @@ function CatGamescreen (){
 
                         clawWentDown == true ? (
                             
-                            <Link to="/CWMcatsummary" className ="CWMCatButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [9, 10, 11, 12])}> Check Prize Door </Link>
+                            <Link to="/CWMcatsummary" className ="CWMCatButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [9, 10, 11, 12])}>
+                                <div className="buttonNameContainer"> Check Prize Door <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                            </Link>
 
                         ) : (
 
-                            <button className ="CWMCatButtonGrabbed">Grab</button>
+                            <button className ="CWMCatButtonGrabbed">
+                                <div className="buttonNameContainer"> Grab<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                            </button>
 
                         )
 
                     ) : (
 
 
-                        <button className ="CWMCatButton Grab" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
+                        <button className ="CWMCatButton Grab" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>
+                            <div className="buttonNameContainer"> Grab<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                           
+                        </button>
                 
                     )}
 

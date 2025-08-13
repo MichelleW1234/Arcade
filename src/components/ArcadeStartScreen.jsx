@@ -31,7 +31,7 @@ function ArcadeStartscreen (){
             </div>
 
             <Link to="/rulesAndPoints" className = "generalbuttonGlitch Enter" onClick = {() => playSound(24)}>
-                Enter
+                <div className="buttonNameContainer">Enter <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
             </Link>
             
         </div>

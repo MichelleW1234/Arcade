@@ -63,18 +63,20 @@ function Navbar ({showReferences, setShowReferences, showFlag}){
                 <ul className = "navbarMenu">
                     <li>
                         <Link to= "/selection" className = "navBarButton QuitGame" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player)}>
-                            Quit Game
+                            <div className="buttonNameContainer">Quit Game<br/> <span className = "buttonKeyDescription"> [1] </span></div>
                         </Link>
                     </li>
 
                     <li>
                         <Link to="/RPSlevels" className = "navBarButton ChangeVariation" onClick ={() => resetGame()}>
-                            Change Variation
+                            <div className="buttonNameContainer"> Change Variation <br/> <span className = "buttonKeyDescription"> [2] </span></div>
                         </Link>
                     </li>
 
                     <li>
-                        <button className = "navBarButton MoveReferences" onClick = {() => displayReferences()}> Move References </button>
+                        <button className = "navBarButton MoveReferences" onClick = {() => displayReferences()}> 
+                            <div className="buttonNameContainer"> Move References  <br/> <span className = "buttonKeyDescription"> [3] </span></div>
+                        </button>
                     </li>
                 </ul>
             </div>

@@ -102,7 +102,7 @@ function PrizeRoomscreen() {
             </div>
             
             <Link to="/selection" className = "generalbuttonGlitch LeavePrizeRoom" onClick = {() => playSound(24)}>
-                Leave Prize Room
+                <div className="buttonNameContainer"> Leave Prize Room <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
             </Link>
 
         </div>

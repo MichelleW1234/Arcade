@@ -113,25 +113,25 @@ function NavBar ({showInventory, setShowInventory}){
                 
                 <li>
                     <Link to="/arcadeStart" className = "navBarButton LeaveArcade" onClick ={() => resetPoints()}>
-                        Leave Arcade
+                        <div className="buttonNameContainer">  Leave Arcade <br/> <span className = "buttonKeyDescription"> [1] </span></div>
                     </Link>
                 </li>
 
                 <li>
                     <Link to="/prizeRoom" className = "navBarButton VisitPrizeRoom" onClick ={() =>  playSound(24)}>
-                        Visit Prize Room
+                        <div className="buttonNameContainer"> Visit Prize Room <br/> <span className = "buttonKeyDescription"> [2] </span></div>
                     </Link>
                 </li>
 
                 <li>
                     <div className = "navBarButton ViewPrizeInventory" onClick ={() => displayInventory()}>
-                        View Prize Inventory
+                        <div className="buttonNameContainer"> View Prize Inventory <br/> <span className = "buttonKeyDescription"> [3] </span></div>
                     </div>
                 </li>
 
                 <li>
                     <Link to="/CWMstart" className = "navBarButton GotoClawArcade" onClick ={() => goToClawArcade()}>
-                        Go to Claw Arcade
+                        <div className="buttonNameContainer"> Go to Claw Arcade <br/> <span className = "buttonKeyDescription"> [4] </span></div>
                     </Link>
                 </li>
 

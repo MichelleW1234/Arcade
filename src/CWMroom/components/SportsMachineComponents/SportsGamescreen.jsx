@@ -94,7 +94,9 @@ function SportsGamescreen (){
 
         <div>             
             
-            <Link to="/CWMselection" className = "generalbutton QuitMachine" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> Quit Machine </Link>
+            <Link to="/CWMselection" className = "generalbutton QuitMachine" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> 
+                <div className="buttonNameContainer"> Quit Machine <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
+            </Link>
 
             <div className = "gameScreenLayout">
             
@@ -121,18 +123,24 @@ function SportsGamescreen (){
 
                         clawWentDown == true ? (
                             
-                            <Link to="/CWMsportssummary" className ="CWMSportsButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [13, 14, 15, 16])}> Check Prize Door </Link>
+                            <Link to="/CWMsportssummary" className ="CWMSportsButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [13, 14, 15, 16])}> 
+                                <div className="buttonNameContainer"> Check Prize Door <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                            </Link>
 
                         ) : (
 
-                            <button className ="CWMSportsButtonGrabbed">Grab</button>
+                            <button className ="CWMSportsButtonGrabbed">
+                                <div className="buttonNameContainer">Grab <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                            </button>
 
                         )
 
                     ) : (
 
 
-                        <button className ="CWMSportsButton Grab" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>Grab</button>
+                        <button className ="CWMSportsButton Grab" onClick = {() => clawGrab(currentPosition, setResult, setButtonHit)}>
+                            <div className="buttonNameContainer"> Grab<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                        </button>
                 
 
                     )}

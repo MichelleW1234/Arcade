@@ -3,9 +3,8 @@
     flex-direction: column;
     align-items: center;
 
-    height: 48.125rem; 
-    width: 43.75rem;   
     background-color: rgb(8, 0, 255);
+    
     gap: 2.5rem;       
     padding: 3.125rem;  
 
@@ -48,9 +47,7 @@
     background-size: cover;
     background-position: center;
 
-    background-color: rgb(154, 208, 255);
-
-    font-size:1.8rem;
+    font-size: 1.8rem;
     font-weight: bold;
     
     padding: 5rem;
@@ -67,14 +64,14 @@
 
 .SNKcontrolButton {
     background-color: rgb(255, 0, 247);
-    font-size: 3.125rem;          
+    font-size: 2.5rem;       
+    
+    padding: 0.5rem;
 
     border-left: 0.3125rem solid rgb(119, 0, 115);   
     border-bottom: 0.3125rem solid rgb(119, 0, 115); 
     border-right: 0.125rem solid rgb(119, 0, 115);  
-    border-top: 0.125rem solid rgb(119, 0, 115); 
-
-    width: 4.6875rem;            
+    border-top: 0.125rem solid rgb(119, 0, 115);    
 
     animation: glowing-shadow5 4s infinite;
 }

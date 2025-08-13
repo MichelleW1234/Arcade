@@ -87,7 +87,7 @@ function M4Gamescreen() {
 
         <div>
             <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
-                Quit Game
+                <div className="buttonNameContainer"> Quit Game<br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
             {bossDefeated == false && SPIUser[2] == false ? (
@@ -140,7 +140,7 @@ function M4Gamescreen() {
                     </div>
 
                     <Link to="/SPImission" className = "generalbuttonGlitch ReturntoMissionsScreen" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
-                        Return to Missions Screen
+                        <div className="buttonNameContainer"> Return to Missions Screen <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                     </Link>
 
                 </div>

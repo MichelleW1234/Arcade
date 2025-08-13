@@ -66,7 +66,7 @@ function Missionscreen() {
         <div>
 
             <Link to="/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
-                Quit Game
+                <div className="buttonNameContainer"> Quit Game<br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
             <div className = "screenLayout">
@@ -96,7 +96,7 @@ function Missionscreen() {
 
                                 <p> Mission {mission}:  {missionNames[index]}</p>
                                 <Link to= {currGamePath} className = "SPImissionStartButton Start" onClick = {()=> playSound(12)}>
-                                    Start
+                                    <div className="buttonNameContainer">Start <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                                 </Link>
                             
                             </div>
@@ -116,7 +116,7 @@ function Missionscreen() {
                 {SPIUser[0] == allMissions.length || SPIUser[2] == true ? (
 
                     <Link to= "/SPIsummary" className = "generalbuttonGlitch ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0]*ActiveGame[1]))}>
-                        View Results
+                        <div className="buttonNameContainer">View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                     </Link>
 
                 ) : (

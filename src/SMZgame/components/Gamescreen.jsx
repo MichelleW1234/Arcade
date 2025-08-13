@@ -174,7 +174,9 @@ function Gamescreen(){
 
         <div>             
             
-            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> Quit Game </Link>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => exitGame()}> 
+                <div className="buttonNameContainer"> Quit Game <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
+            </Link>
 
             <div className = "gameScreenLayout">
                 <div className = "SMZOuterGameContainer">
@@ -191,8 +193,8 @@ function Gamescreen(){
                             />
 
                             <div className = "SMZButtonContainer">
-                                <button className = "SMZControlButton Up" onClick = {() => birdFlyingUpwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked)}> &uarr; </button>
-                                <button className = "SMZControlButton Down" onClick = {() => birdFlyingDownwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked)}> &darr; </button>
+                                <button className = "SMZControlButton Up" onClick = {() => birdFlyingUpwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked)}> [&uarr;] </button>
+                                <button className = "SMZControlButton Down" onClick = {() => birdFlyingDownwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked)}> [&darr;] </button>
                             </div>
                         </>
 
@@ -207,7 +209,9 @@ function Gamescreen(){
                                 <p> Game Over.</p>
                             </div>
 
-                            <Link to="/SMZsummary" className = "SMZDoneButton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, Math.floor(distance / 5))}> View Results </Link>
+                            <Link to="/SMZsummary" className = "SMZDoneButton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, Math.floor(distance / 5))}> 
+                                <div className="buttonNameContainer"> View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                            </Link>
                         </>
 
                     )}

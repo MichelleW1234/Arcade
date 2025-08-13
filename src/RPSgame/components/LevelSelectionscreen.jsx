@@ -84,7 +84,7 @@ function LevelSelectionscreen (){
         <div>
 
             <Link to= "/selection" className = "generalbutton QuitGame" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player)}>
-                Quit Game
+                <div className="buttonNameContainer">Quit Game<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
             </Link>
 
             <div className = "gameScreenLayout">
@@ -92,6 +92,8 @@ function LevelSelectionscreen (){
                 <h1 className = "headerwords"> Variations: </h1>
 
                 <div className = "RPSlevelsContainer">
+
+                    <p className='largefont'>[&larr;] [&rarr;]</p>
 
                     <div className = "RPSlevelsInnerContainer">
                         <div className = "RPSLevelsWindowContainer">
@@ -140,7 +142,7 @@ function LevelSelectionscreen (){
                 </div>
 
                 <Link to= "/RPSgame" className = "generalbuttonGlitch ContinuetoGame" onClick={() => playSound(18)}>
-                    Continue to Game
+                    <div className="buttonNameContainer">Continue to Game <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                 </Link>
                 
             </div>

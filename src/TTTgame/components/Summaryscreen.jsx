@@ -82,7 +82,8 @@ function Summaryscreen() {
             {Player[0] >= ActiveGame[1] ? (
 
                 <Link to= "/TTTcoinFlip" className = "generalbutton PlayAgain" onClick={() => playAgain()}>
-                    Play Again
+                    <div className="buttonNameContainer">Play Again<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                    
                 </Link>
 
             ) : (
@@ -92,7 +93,7 @@ function Summaryscreen() {
             )}
 
             <Link to= "/selection" className = "generalbutton ExitGame" onClick={() => reset()}>
-                Exit Game
+                <div className="buttonNameContainer">Exit Game<br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
         </div>

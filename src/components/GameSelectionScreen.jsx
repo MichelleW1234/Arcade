@@ -114,6 +114,8 @@ function GameSelectionscreen (){
                 <h1 className = "pointsSign"> Your Points: <span className = "signGlitch">{Player[0]}</span></h1>
             
                 <div className = "ArcadeGameBoard">
+                    
+                    <p className='largefont'>[&larr;] [&rarr;]</p>
 
                     <div className = "ArcadeGameBoardInner">
 
@@ -132,6 +134,7 @@ function GameSelectionscreen (){
                             onClick={() => handleClick(0)}
                             >
                                 Select
+
                             </button>
                             
                         </div>
@@ -280,7 +283,7 @@ function GameSelectionscreen (){
                 {Player[0] >= ActiveGame[1] ? (
 
                     <Link to={currGamePath} className = "generalbuttonGlitch GotoGame" onClick = {() => playSound(2)}>
-                        Go to Game
+                        <div className="buttonNameContainer">  Go to Game <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                     </Link>
     
                 ) : (

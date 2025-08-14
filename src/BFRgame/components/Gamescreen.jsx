@@ -36,7 +36,7 @@ function Gamescreen(){
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (gameOver == true ){
+        if (gameOver == true){
             document.querySelectorAll(".ViewResults").forEach(el => {
                 el.classList.add("active");
                 setTimeout(() => el.classList.remove("active"), 100);

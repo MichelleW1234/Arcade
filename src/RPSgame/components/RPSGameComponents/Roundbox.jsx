@@ -8,7 +8,7 @@ import {playSound} from "../../../Helpers/helpers.js";
 
 import "./Roundbox.css";
 
-function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, setTerminationFlag}){
+function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, terminationFlag, setTerminationFlag}){
 
     const { RPSUser, setRPSUser } = useRPSUser();
     const currInput = RPSUser[1];
@@ -27,7 +27,7 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, set
     // For textbox:
 
     const handleKeyDown = (e) => {
-        if (showReferences == false){
+        if (showReferences == false && round < 11 && terminationFlag == false){
             if (e.key === "Enter" && showFlag != true) {
                 e.preventDefault(); // prevent form submission or default behaviors
 

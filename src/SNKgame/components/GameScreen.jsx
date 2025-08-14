@@ -51,33 +51,41 @@ function Gamesscreen(){
     );
 
     useKeyboardShortcut("ArrowUp", (event) => {
-        event.preventDefault();
+        if (SNKUser[0] === false && snake.length < 600 ){
+            event.preventDefault();
 
-        buttonControls(2);
+            buttonControls(2);
+        }
     },
         ".Up"
     );
 
     useKeyboardShortcut("ArrowDown", (event) => {
-        event.preventDefault();
+        if (SNKUser[0] === false && snake.length < 600 ){
+            event.preventDefault();
 
-        buttonControls(3);
+            buttonControls(3);
+        }
     },
         ".Down"
     );
 
     useKeyboardShortcut("ArrowLeft", (event) => {
-        event.preventDefault();
+        if (SNKUser[0] === false && snake.length < 600 ){
+            event.preventDefault();
 
-        buttonControls(0);
+            buttonControls(0);
+        }
     },
         ".Left"
     );
 
     useKeyboardShortcut("ArrowRight", (event) => {
-        event.preventDefault();
+        if (SNKUser[0] === false && snake.length < 600 ){
+            event.preventDefault();
 
-        buttonControls(1);
+            buttonControls(1);
+        }
     },
         ".Right"
     );

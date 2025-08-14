@@ -62,7 +62,7 @@ function RulesandPointsscreen (){
                 &gt; Once you are below the minimum number of points to play any of the games, you cannot win any more points. <br/>
             </p>
 
-            <h1 className = "claimPointsSign"> Claim Points: </h1>
+            <h1 className = "instructionsSign"> Claim Points: </h1>
 
             {pointsClaimed == false ? (
 

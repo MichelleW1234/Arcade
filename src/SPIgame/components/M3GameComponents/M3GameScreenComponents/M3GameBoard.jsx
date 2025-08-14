@@ -28,7 +28,10 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
     const LaserSwitchButtonRef = useRef(null);
     useKeyboardShortcut("Shift", () => {
-        changeLaser();
+        if (waveNumber <= 5 && SPIUser[2] == false){
+
+            changeLaser();
+        }
     },
         ".ChangeLaser"
     );

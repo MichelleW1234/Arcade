@@ -106,6 +106,7 @@ function Gamescreen (){
                             showFlag = {showFlag}
                             setShowFlag={setShowFlag}
                             setResult = {setResult}
+                            terminationFlag = {terminationFlag}
                             setTerminationFlag = {setTerminationFlag}
                         />
 

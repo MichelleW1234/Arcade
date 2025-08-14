@@ -49,17 +49,24 @@ function Gamescreen(){
     );
 
     useKeyboardShortcut("ArrowUp", (event) => {
-        event.preventDefault();
 
-        birdFlyingUpwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
+        if (gameOver == false){
+            event.preventDefault();
+
+            birdFlyingUpwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
+        }
+    
     },
         ".Up"
     );
 
     useKeyboardShortcut("ArrowDown", (event) => {
-        event.preventDefault();
 
-        birdFlyingDownwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
+        if (gameOver == false){
+            event.preventDefault();
+
+            birdFlyingDownwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
+        }
     },
         ".Down"
     );

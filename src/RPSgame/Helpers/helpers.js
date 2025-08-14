@@ -276,7 +276,7 @@ const decideRoundWinnerLevel3 = (userMove, setResult) => {
         setResult(["You: scissors" , "Computer: gun" , "The Computer gets a point!"]);
         return 0;
     } else if (computerResponse === 4 && userResponse === 5){
-        setResult(["You: shield" , "Computer: gun" , "Game terminates immediately!"]);
+        setResult(["You: shield" , "Computer: gun" , "Game over!"]);
         return 3;
     } else if (computerResponse === 5 && userResponse === 1) {
         setResult(["You: rock" , "Computer: shield" , "You get a point!"]);
@@ -288,7 +288,7 @@ const decideRoundWinnerLevel3 = (userMove, setResult) => {
         setResult(["You: scissors" , "Computer: shield" , "You get a point!"]);
         return 1;
     } else if (computerResponse === 5 && userResponse === 4){
-        setResult(["You: gun" , "Computer: shield" , "Game terminates immediately!"]);
+        setResult(["You: gun" , "Computer: shield" , "Game over!"]);
         return -3;
     }
     return -1;

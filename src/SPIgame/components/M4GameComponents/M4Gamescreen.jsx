@@ -139,7 +139,7 @@ function M4Gamescreen() {
                         
                     </div>
 
-                    <Link to="/SPImission" className = "generalbuttonGlitch ReturntoMissionsScreen" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
+                    <Link to="/SPImission" className = "SPIbutton ReturntoMissionsScreen" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
                         <div className="buttonNameContainer"> Return to Missions Screen <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                     </Link>
 

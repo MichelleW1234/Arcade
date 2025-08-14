@@ -148,7 +148,7 @@ function Gamescreen() {
 
               </div>
 
-              <Link to= "/TTTsummary" className = "generalbuttonGlitch ViewResults" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player)}>
+              <Link to= "/TTTsummary" className = "TTTbutton ViewResults" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player)}>
                 <div className="buttonNameContainer"> View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
               </Link>
 

@@ -264,7 +264,7 @@ function Gamesscreen(){
 
                     :
 
-                        <Link to= "/SNKsummary" className = "generalbuttonGlitch ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SNKUser[1] * 2))}>
+                        <Link to= "/SNKsummary" className = "SNKdonebutton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SNKUser[1] * 2))}>
                             <div className="buttonNameContainer"> View Results<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                         </Link>   
 

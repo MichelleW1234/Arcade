@@ -88,7 +88,7 @@ function M3GameScreen() {
                         
                     </div>
 
-                    <Link to="/SPImission" className = "generalbuttonGlitch BacktoMissionsScreen" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
+                    <Link to="/SPImission" className = "SPIbutton BacktoMissionsScreen" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
                         <div className="buttonNameContainer"> Back to Missions Screen <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                     </Link>
 

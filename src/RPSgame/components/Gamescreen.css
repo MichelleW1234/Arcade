@@ -39,13 +39,15 @@
 
 
 .RPSButton {
-  font-size: 1.5625rem;            
-  padding: 1rem 2rem;               
-  background-color: rgb(74, 243, 255);
-  border-left: 0.34375rem solid rgb(35, 120, 126);   
-  border-bottom: 0.34375rem solid rgb(35, 120, 126);  
-  border-top: 0.125rem solid rgb(35, 120, 126);    
-  border-right: 0.125rem solid rgb(35, 120, 126); 
+  font-size: 1.5625rem;                      
+
+  background-color: rgb(102, 255, 237);
+         
+  padding: 0.8rem 1.8rem;       
+  border-left: 0.375rem solid rgb(43, 117, 108);   
+  border-bottom: 0.375rem solid rgb(43, 117, 108); 
+  border-right: 0.125rem solid rgb(43, 117, 108);  
+  border-top: 0.125rem solid rgb(43, 117, 108); 
 
   animation: glowing-shadow2 3s infinite, button-glitch 4s infinite;
 
@@ -57,8 +59,8 @@
 
   background-color: rgb(0, 132, 142); 
 
-  border-left: 0.34375rem solid rgb(0, 71, 76);   
-  border-bottom: 0.34375rem solid rgb(0, 71, 76); 
+  border-left: 0.375rem solid rgb(0, 71, 76);   
+  border-bottom: 0.375rem solid rgb(0, 71, 76); 
   border-top: 0.125rem solid rgb(0, 71, 76); 
   border-right: 0.125rem solid rgb(0, 71, 76); 
 

@@ -115,7 +115,7 @@ function Missionscreen() {
 
                 {SPIUser[0] == allMissions.length || SPIUser[2] == true ? (
 
-                    <Link to= "/SPIsummary" className = "generalbuttonGlitch ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0]*ActiveGame[1]))}>
+                    <Link to= "/SPIsummary" className = "SPIbutton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0]*ActiveGame[1]))}>
                         <div className="buttonNameContainer">View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                     </Link>
 

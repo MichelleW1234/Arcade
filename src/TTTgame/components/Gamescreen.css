@@ -91,3 +91,35 @@
         0 0 0.375rem 0.375rem rgb(0, 200, 255);
 }
 
+
+.TTTbutton{
+
+    font-size: 1.8rem;  
+    padding: 0.8rem 1.8rem;                                 
+
+    background-color: rgb(102, 255, 237);
+            
+    border-left: 0.375rem solid rgb(43, 117, 108);   
+    border-bottom: 0.375rem solid rgb(43, 117, 108); 
+    border-right: 0.125rem solid rgb(43, 117, 108);  
+    border-top: 0.125rem solid rgb(43, 117, 108); 
+
+    animation: glowing-shadow2 3s infinite, button-glitch 4s infinite;
+
+}
+
+.TTTbutton:hover,
+.TTTbutton.active{
+
+  background-color: rgb(0, 132, 142); 
+
+  border-left: 0.375rem solid rgb(0, 71, 76);   
+  border-bottom: 0.375rem solid rgb(0, 71, 76); 
+  border-top: 0.125rem solid rgb(0, 71, 76); 
+  border-right: 0.125rem solid rgb(0, 71, 76); 
+
+  color: white;
+    
+  animation: glowing-shadow8 3s infinite, button-glitch 3s infinite;
+
+}

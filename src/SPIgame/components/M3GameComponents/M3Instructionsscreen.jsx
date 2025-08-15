@@ -167,7 +167,7 @@ function M3Instructionsscreen() {
                 &nbsp; &bull; Modes: <br/>
                 &nbsp; &bull; Pulse Type - Normal: <img src={laser} ></img> <br/>
                 &nbsp; &bull; Pulse Type - Mutant: <img src={laserMutant} ></img> <br/>
-                &nbsp; &bull; To Use: Move slider to aim at target. Press buttom to switch between modes. <br/>
+                &nbsp; &bull; To Use: Move slider to aim at target. Press button (Shift) to switch between modes. <br/>
               </p>
               <button className = "SPIGuideCloseButtons" onClick={() => setEquipmentOn(closingGuide())}> Close </button>
             </div>

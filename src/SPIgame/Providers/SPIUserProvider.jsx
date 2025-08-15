@@ -1,6 +1,6 @@
 /*
 Header:
-0 -> completed missions List
+0 -> # of completed missions
 1 -> [current unlocked mission, corresponding screen link]
 2 -> died?
 */

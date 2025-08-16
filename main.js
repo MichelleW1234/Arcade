@@ -41,7 +41,7 @@ function createWindow () {
   win.webContents.on('did-finish-load', () => {
     const display = screen.getDisplayNearestPoint(win.getBounds());
     const scaleFactor = display.scaleFactor;
-    const baseZoom = 1.4;
+    const baseZoom = 1.32;
     const normalizedZoom = baseZoom / scaleFactor;
     win.webContents.setZoomFactor(normalizedZoom);
   });
@@ -49,7 +49,7 @@ function createWindow () {
   win.on('focus', () => {
     const display = screen.getDisplayNearestPoint(win.getBounds());
     const scaleFactor = display.scaleFactor;
-    const baseZoom = 1.4;
+    const baseZoom = 1.32;
     const normalizedZoom = baseZoom / scaleFactor;
     win.webContents.setZoomFactor(normalizedZoom);
   });

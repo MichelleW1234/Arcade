@@ -18,7 +18,7 @@ export function RPSUserProvider({ children }) {
   const [RPSUser, setRPSUser] = useState(() => {
     try {
       const storedRPSUser = JSON.parse(sessionStorage.getItem("RPSUser"));
-      return Array.isArray(storedRPSUser) ? storedRPSUser : [1, ["Rock", "Paper", "Scissors"], ["Rock beats Scissors", 
+      return Array.isArray(storedRPSUser) ? storedRPSUser : [0, ["Rock", "Paper", "Scissors"], ["Rock beats Scissors", 
         "Rock loses to Paper",
         "Paper beats Rock", 
         "Paper loses to Scissors",
@@ -27,7 +27,7 @@ export function RPSUserProvider({ children }) {
 
     } catch (error) {
 
-      return [1, ["Rock", "Paper", "Scissors"], ["Rock beats Scissors", 
+      return [0, ["Rock", "Paper", "Scissors"], ["Rock beats Scissors", 
         "Rock loses to Paper",
         "Paper beats Rock", 
         "Paper loses to Scissors",

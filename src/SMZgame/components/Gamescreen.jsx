@@ -99,7 +99,7 @@ function Gamescreen(){
 
             birdFlyingForward(wallPositionsRef.current, setWallPositions);
 
-        }, 80);
+        }, 85);
 
         return () => clearInterval(interval);
 

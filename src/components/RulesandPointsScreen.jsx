@@ -3,6 +3,7 @@ import {useState} from 'react';
 import useKeyboardShortcut from "../hooks/useKeyboardShortcut";
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
+import { useTermination } from '../Providers/TerminationProvider.jsx';
 
 import {playSound} from "../Helpers/helpers.js";
 
@@ -11,6 +12,7 @@ import "./RulesandPointsscreen.css";
 function RulesandPointsscreen (){
 
     const { Player, setPlayer } = usePlayer();
+    const { Termination, setTermination } = useTermination();
 
     const [pointsClaimed, setPointsClaimed] = useState(false);
 
@@ -24,7 +26,7 @@ function RulesandPointsscreen (){
             });
             document.querySelectorAll(".\\32 0pts").forEach(el => el.classList.remove("active"));
 
-            playSound(1);
+            enterArcade();
             navigate("/selection");
         } else {
             document.querySelectorAll(".\\32 0pts").forEach(el => {
@@ -38,7 +40,12 @@ function RulesandPointsscreen (){
     });
 
 
+    const enterArcade = () => {
 
+        playSound(1)
+        setTermination([false]);
+
+    }
 
     const claimPoints = () => {
 
@@ -79,7 +86,7 @@ function RulesandPointsscreen (){
 
             {Player[0] === 20 ? (
 
-                <Link to= "/selection" className = "generalbuttonGlitch LetsGo" onClick = {() => playSound(1)}>
+                <Link to= "/selection" className = "generalbuttonGlitch LetsGo" onClick = {() => enterArcade()}>
                     <div className="buttonNameContainer"> Let's Go! <br/> <span className='buttonKeyDescription'>[Return]</span></div>
                 </Link>
             

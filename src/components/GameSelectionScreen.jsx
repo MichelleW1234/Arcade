@@ -1,6 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import {useRef, useEffect, useState} from 'react';
-import useKeyboardShortcut from "../hooks/useKeyboardShortcut";
+import useKeyboardShortcut from "../hooks/useKeyboardShortcut.js";
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../Providers/ActiveGameProvider.jsx';

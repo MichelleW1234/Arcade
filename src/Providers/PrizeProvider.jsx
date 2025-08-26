@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 import Bear from '../Images/ArcadePrizeImages/Bear.svg';
 import Bee from '../Images/ArcadePrizeImages/Bee.svg';
@@ -30,6 +30,43 @@ import Andromeda from "../Images/ArcadePrizeImages/Andromeda.svg";
 // Create the context
 const PrizeContext = createContext();
 
+export function PrizeProvider({ children }) {
+
+  const defaultPrizes = [["Bear", 80, Bear], ["BumbleBee", 50, Bee], ["Valentine", 20, Heart],
+              ["GameBoy", 100, GameBoy], ["Robot", 30, Robot], ["Alien", 20, Alien], 
+              ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 70, Whale],
+              ["Black Cat", 0, BlackCat], ["Orange Cat", 0, OrangeCat], ["Siamese Cat", 0, SiameseCat],
+              ["British Shorthair Cat", 0, BritishShorthairCat], ["Football", 0, Football], ["Ping Pong Paddle", 0, Paddle], 
+              ["Soccerball", 0, Soccerball], ["Basketball", 0, Basketball], ["Andromeda Galaxy", 0, Andromeda], ["Sun", 0, Sun], 
+              ["Saturn", 0, Saturn], ["Earth", 0, Earth], ["Cow", 40, Cow], ["Hippo", 40, Hippo]];
+
+  const [Prize, setPrize] = useState(() => {
+    try {
+      const stored = JSON.parse(localStorage.getItem("Prize"));
+      return Array.isArray(stored) ? stored : defaultPrizes;
+    } catch {
+      return defaultPrizes;
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("Prize", JSON.stringify(Prize));
+  }, [Prize]);
+
+  return (
+    <PrizeContext.Provider value={{ Prize, setPrize }}>
+      {children}
+    </PrizeContext.Provider>
+  );
+}
+
+export function usePrize() {
+  return useContext(PrizeContext);
+}
+
+
+
+/*
 // Create a provider component
 export function PrizeProvider({ children }) {
 
@@ -70,3 +107,5 @@ export function PrizeProvider({ children }) {
 export function usePrize() {
   return useContext(PrizeContext);
 }
+
+*/

@@ -1,4 +1,5 @@
 import ArcadeStartscreen from "./components/ArcadeStartscreen.jsx";
+import Continuationscreen from "./components/Continuationscreen.jsx";
 import GameSelectionscreen from "./components/GameSelectionscreen.jsx";
 import RulesandPointsscreen from "./components/RulesandPointsscreen.jsx";
 import PrizeRoomscreen from "./components/PrizeRoomscreen.jsx";
@@ -66,19 +67,26 @@ import SMZInstructionsscreen from "./SMZgame/components/Instructionsscreen.jsx";
 import SMZGamescreen from "./SMZgame/components/Gamescreen.jsx";
 import SMZSummaryscreen from "./SMZgame/components/Summaryscreen.jsx";
 
+import { useTermination } from './Providers/TerminationProvider.jsx';
+
 import NoPage from "./components/NoPage.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import {HashRouter, Routes, Route} from 'react-router-dom';
 import "./App.css";
 
 function App() {
+
+  const { Termination, setTermination } = useTermination();
+
   return (
     <div className = "innerboarder">
     <HashRouter>
       <ScrollToTop />
       <Routes>
-        <Route index element={<ArcadeStartscreen />}/>
+        <Route index element={Termination[0] ? <ArcadeStartscreen /> : <Continuationscreen />}/>
+        
         <Route path="/arcadeStart" element={<ArcadeStartscreen />}/>
+        <Route path="/continuation" element={<Continuationscreen />}/>
         <Route path="/rulesAndPoints" element={<RulesandPointsscreen />}/>
         <Route path="/prizeRoom" element={<PrizeRoomscreen />}/>
         <Route path="/selection" element={<GameSelectionscreen />}/>

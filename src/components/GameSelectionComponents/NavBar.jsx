@@ -4,6 +4,7 @@ import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePrize } from '../../Providers/PrizeProvider.jsx';
+import { useTermination } from '../../Providers/TerminationProvider.jsx';
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
 import Bear from '../../Images/ArcadePrizeImages/Bear.svg';
@@ -38,6 +39,7 @@ function NavBar ({showInventory, setShowInventory}){
     const { ActiveGame, setActiveGame } = useActiveGame(); 
     const { Player, setPlayer } = usePlayer(); 
     const { Prize, setPrize } = usePrize();
+    const { Termination, setTermination } = useTermination();
 
     const navigate = useNavigate();
     useKeyboardShortcut("1", () => {
@@ -94,6 +96,7 @@ function NavBar ({showInventory, setShowInventory}){
                     ["British Shorthair Cat", 0, BritishShorthairCat], ["Football", 0, Football], ["Ping Pong Paddle", 0, Paddle], 
                     ["Soccerball", 0, Soccerball], ["Basketball", 0, Basketball], ["Andromeda Galaxy", 0, Andromeda], ["Sun", 0, Sun], 
                     ["Saturn", 0, Saturn], ["Earth", 0, Earth], ["Cow", 40, Cow], ["Hippo", 40, Hippo]]);
+        setTermination([true]);
 
     }
 

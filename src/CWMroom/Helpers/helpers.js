@@ -1,4 +1,4 @@
-import { playSound, retrieveActiveGame} from "../../Helpers/helpers";
+import { playSound} from "../../Helpers/helpers";
 
 export const changePosition = (currentPosition, setCurrentPosition, direction, setDirection) => {
 
@@ -31,6 +31,7 @@ export const changePosition = (currentPosition, setCurrentPosition, direction, s
     }
 
 };
+
 
 
 export const clawGrab = (currentPosition, setResult, setButtonHit) => {
@@ -77,6 +78,7 @@ export const clawGrab = (currentPosition, setResult, setButtonHit) => {
 }
 
 
+
 export const animateClaw = (currentPosition, clawExtension, setClawExtension, setClawWentDown) => {
 
     if (clawExtension[1] != currentPosition){
@@ -104,7 +106,8 @@ export const animateClaw = (currentPosition, clawExtension, setClawExtension, se
 }
 
 
-export const choosePrize = () => {
+
+const choosePrize = () => {
 
     const prize = Math.floor(Math.random() * 20);
 
@@ -127,6 +130,7 @@ export const choosePrize = () => {
     }
 
 }
+
 
 
 export const claimPrize = (result, setCWMUser, setPrize, Player, setPlayer, ActiveGameCost, prizeIndices) => {
@@ -182,6 +186,7 @@ export const claimPrize = (result, setCWMUser, setPrize, Player, setPlayer, Acti
 }
 
 
+
 export const exitGame = (Player, setPlayer, ActiveGameCost, setCWMUser) => {
 
     playSound(4);
@@ -190,6 +195,8 @@ export const exitGame = (Player, setPlayer, ActiveGameCost, setCWMUser) => {
 
 }
 
+
+
 export const resetGame = (setCWMUser) => {
     
     playSound(19);
@@ -197,10 +204,11 @@ export const resetGame = (setCWMUser) => {
 
 }
 
+
+
 export const reset = (setCWMUser) => {
     
     playSound(4);
     setCWMUser([0]);
 
 }
-

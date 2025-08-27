@@ -18,6 +18,8 @@ export const resetLevel = (setRPSUser) => {
 
 }
 
+
+
 export const getInput = (level) => {
 
     const levelInputs = [["Rock", "Paper", "Scissors"],
@@ -27,6 +29,8 @@ export const getInput = (level) => {
     return levelInputs[level];
 
 };
+
+
 
 export const getReferences = (level) => {
 
@@ -62,8 +66,6 @@ export const getReferences = (level) => {
 
 
 
-
-
 export const decideRoundWinnerFunction = (level, userMove, setResult) => {
 
     let result;
@@ -93,6 +95,8 @@ const computerGeneratedResponse = (moveRange) => {
     return Math.floor(Math.random() * moveRange) + 1;
 
 };
+
+
 
 const decideRoundWinnerLevel1 = (userMove, setResult) => {
 
@@ -130,6 +134,7 @@ const decideRoundWinnerLevel1 = (userMove, setResult) => {
     }
     return -1;
 };
+
 
 
 const decideRoundWinnerLevel2 = (userMove, setResult) => {
@@ -212,6 +217,8 @@ const decideRoundWinnerLevel2 = (userMove, setResult) => {
     }
     return -1;
 };
+
+
 
 const decideRoundWinnerLevel3 = (userMove, setResult) => {
 
@@ -298,30 +305,27 @@ const decideRoundWinnerLevel3 = (userMove, setResult) => {
 
 export const handleHideFlag = (terminationFlag, rounds, setRounds, setShowFlag) => {
 
-        playSound(3);
-        if (terminationFlag == true){
+    playSound(3);
+    if (terminationFlag == true){
 
-            setRounds(11);
-            setShowFlag(false);
+        setRounds(11);
+        setShowFlag(false);
+        playSound(6);
+
+    } else {
+
+        if (rounds == 10){
+
             playSound(6);
-
-        } else {
-
-            if (rounds == 10){
-
-                playSound(6);
-
-            }
-
-            setRounds((prevRounds) => prevRounds + 1);
-            setShowFlag(false);
 
         }
 
+        setRounds((prevRounds) => prevRounds + 1);
+        setShowFlag(false);
+
     }
 
-
-
+}
 
 
 

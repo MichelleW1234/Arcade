@@ -1,18 +1,4 @@
-export const resetGame = (setTTTUser) => {
-
-    setTTTUser((prev) => {
-        const updatedUser = [...prev];
-        updatedUser[0] = -1;
-        updatedUser[1] = -1;
-
-        return updatedUser;
-    });
-
-}
-
-
-
-export const sequenceFilter = (array, availableMoves) => {
+const sequenceFilter = (array, availableMoves) => {
 
     const winningSequences = [[0, 1, 2], 
                             [3, 4, 5],
@@ -56,6 +42,8 @@ export const sequenceFilter = (array, availableMoves) => {
 
 }
 
+
+
 export const computerMoveDecider = (availableMoves, computerMoves, userMoves) => {
 
     let computerMove = -1;
@@ -82,6 +70,8 @@ export const computerMoveDecider = (availableMoves, computerMoves, userMoves) =>
     return computerMove;
 
 }
+
+
 
 export const winnerwinnerchickendinner = (matrix, userMoves, computerMoves, setThreeInARow) => {
 
@@ -121,5 +111,19 @@ export const winnerwinnerchickendinner = (matrix, userMoves, computerMoves, setT
     }
 
     return -1;
+
+}
+
+
+
+export const resetGame = (setTTTUser) => {
+
+    setTTTUser((prev) => {
+        const updatedUser = [...prev];
+        updatedUser[0] = -1;
+        updatedUser[1] = -1;
+
+        return updatedUser;
+    });
 
 }

@@ -22,6 +22,8 @@ export const wallHeight = (column) => {
 
 }
 
+
+
 export const birdFlyingForward = (wallPositions, setWallPositions) => {
 
     let newWalls = wallPositions.map(row =>
@@ -53,56 +55,6 @@ export const birdFlyingForward = (wallPositions, setWallPositions) => {
     }
 
     setWallPositions(newWallsFiltered);
-
-}
-
-
-export const birdFlyingUpwards = (birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked) => {
-
-    if (startButtonClicked == false){
-
-        setStartButtonClicked(true);
-        playSound(3);
-
-    } else {
-
-        if (birdPosition[0] > 0){
-
-            playSound(3);
-            setBirdPosition(prev => [prev[0] - 1, prev[1]]);
-
-        } else {
-
-            playSound(5);
-
-        }
-
-    }
-
-}
-
-
-export const birdFlyingDownwards = (birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked) => {
-
-    if (startButtonClicked == false){
-
-        setStartButtonClicked(true);
-        playSound(3);
-
-    } else {
-
-        if (birdPosition[0] < 9){
-
-            playSound(3);
-            setBirdPosition(prev => [prev[0] + 1, prev[1]]);
-
-        } else {
-
-            playSound(5);
-
-        }
-
-    }
 
 }
 

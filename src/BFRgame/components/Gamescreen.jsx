@@ -5,7 +5,7 @@ import { useExitPoints } from "../../hooks/useExitPoints";
 
 import InnerGameScreen from "./BFRGameComponents/InnerGamescreen.jsx";
 
-import {itemsShifting, checkHit, incomingItem} from "../Helpers/helpers.js";
+import {itemsShifting, incomingItem} from "../Helpers/helpers.js";
 
 import {playSound, retrieveActiveGame, claimPoints} from "../../Helpers/helpers.js";
 
@@ -125,9 +125,55 @@ function Gamescreen(){
     }, [timer]);
 
 
+
+
+    const checkHit = () => {
+
+        let birdShot = false;
+        let balloonPopped = false;
+
+        for (const [r, c] of positions) {
+            if (r === 8 && c === 0) birdShot = true;
+            if (r === 8 && c === 1) balloonPopped = true;
+            if (birdShot || balloonPopped) break;
+        }
+
+        if (birdShot) {
+
+            playSound(28);
+
+            if (BFRUser[0] > 0){
+
+                setBFRUser(prev => [prev[0] - 1]);
+
+            }
+
+        }
+
+        if (balloonPopped) {
+
+            playSound(27);
+
+            let newMatrix = positions.filter(position => !(position[0] == 8));
+            setPositions(newMatrix);
+
+            setBFRUser(prev => [prev[0] + 1]);
+
+        }
+
+        if (!birdShot && !balloonPopped){
+
+            playSound(26);
+
+        }
+
+    }
+
+
+
     const laserBlasted = () => {
 
-        checkHit(positions, setPositions, setBFRUser, BFRUser);
+        checkHit();
 
         setLaserBlast(true);
 

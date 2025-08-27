@@ -5,7 +5,7 @@ import { useExitPoints } from "../../hooks/useExitPoints";
 
 import InnerGameScreen from "./SMZComponents/InnerGamescreen.jsx";
 
-import {birdFlyingUpwards, birdFlyingForward, birdFlyingDownwards, wallHeight, checkHit} from "../Helpers/helpers.js";
+import {birdFlyingForward, wallHeight, checkHit} from "../Helpers/helpers.js";
 
 import {playSound, retrieveActiveGame, claimPoints} from "../../Helpers/helpers.js";
 
@@ -54,7 +54,7 @@ function Gamescreen(){
         if (gameOver == false){
             event.preventDefault();
 
-            birdFlyingUpwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
+            birdFlyingUpwards();
         }
     
     },
@@ -66,7 +66,7 @@ function Gamescreen(){
         if (gameOver == false){
             event.preventDefault();
 
-            birdFlyingDownwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked);
+            birdFlyingDownwards();
         }
     },
         ".Down"
@@ -111,7 +111,7 @@ function Gamescreen(){
     }, [gameOver, startButtonClicked]);
 
 
-     useEffect(() => {
+    useEffect(() => {
 
         if (startButtonClicked == false || gameOver == true){
 
@@ -171,6 +171,57 @@ function Gamescreen(){
     }, [wallHit, fullDistanceTraveled]);
 
 
+    const birdFlyingUpwards = () => {
+
+        if (startButtonClicked == false){
+
+            setStartButtonClicked(true);
+            playSound(3);
+
+        } else {
+
+            if (birdPosition[0] > 0){
+
+                playSound(3);
+                setBirdPosition(prev => [prev[0] - 1, prev[1]]);
+
+            } else {
+
+                playSound(5);
+
+            }
+
+        }
+
+    }
+
+
+
+    const birdFlyingDownwards = () => {
+
+        if (startButtonClicked == false){
+
+            setStartButtonClicked(true);
+            playSound(3);
+
+        } else {
+
+            if (birdPosition[0] < 9){
+
+                playSound(3);
+                setBirdPosition(prev => [prev[0] + 1, prev[1]]);
+
+            } else {
+
+                playSound(5);
+
+            }
+
+        }
+
+    }
+
+
     const exitGame = () => {
         
         playSound(4);
@@ -205,8 +256,8 @@ function Gamescreen(){
                             />
 
                             <div className = "SMZButtonContainer">
-                                <button className = "SMZControlButton Up" onClick = {() => birdFlyingUpwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked)}> [&uarr;] </button>
-                                <button className = "SMZControlButton Down" onClick = {() => birdFlyingDownwards(birdPosition, setBirdPosition, startButtonClicked, setStartButtonClicked)}> [&darr;] </button>
+                                <button className = "SMZControlButton Up" onClick = {() => birdFlyingUpwards()}> [&uarr;] </button>
+                                <button className = "SMZControlButton Down" onClick = {() => birdFlyingDownwards()}> [&darr;] </button>
                             </div>
                         </>
 

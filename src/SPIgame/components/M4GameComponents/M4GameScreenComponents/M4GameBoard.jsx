@@ -7,7 +7,7 @@ import { useSPIUser } from '../../../Providers/SPIUserProvider.jsx';
 
 import "./M4GameBoard.css";
 
-import {newBossState, bossHit, newBossPosition} from "../../../Helpers/helpers.js";
+import {newBossState, newBossPosition} from "../../../Helpers/helpers.js";
 
 import {playSound} from '../../../../Helpers/helpers.js';
 
@@ -41,6 +41,32 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
 
         return () => clearInterval(interval);
     }, [SPIUser]);
+
+
+
+    const bossHit = () =>  {
+
+        setBossHealth(prevHealth => {
+            
+            const newHealth = prevHealth - 1;
+
+            if (newHealth <= 0) {
+
+                setBossDefeated(true);
+                playSound(20);
+                return 0;
+
+            } else {
+
+                playSound(8);
+                return newHealth;
+
+            }
+
+        });
+
+    }
+
 
     const exploded = () =>  {
 
@@ -81,7 +107,7 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
                                     <div
                                         key={rowIndex + "," + colIndex}
                                         className= "SPIemptySpaceBossNormal"
-                                        onClick={() => bossHit(setBossHealth, setBossDefeated)}
+                                        onClick={() => bossHit()}
                                     >
                                         <img src={bossNormal} alt="bossNormal"/>
                                     </div>

@@ -164,6 +164,8 @@ export const aliensIncomingM1andM3 = (setAlienPositions, alienPositions, setSPIU
 
 }
 
+
+
 export const aliensIncomingM2 = (setAlienPositions, alienPositions, setSPIUser, setShieldedAliens) => {
 
     const newMatrix = alienPositions.map(innerArray => [...innerArray]);
@@ -202,6 +204,8 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setSPIUser, 
 
 }
 
+
+
 export const newBossPosition = () => {
 
     const newRow = Math.floor(Math.random() * 5);
@@ -210,6 +214,8 @@ export const newBossPosition = () => {
     return [newRow, newCol];
 
 }
+
+
 
 export const newBossState = (setBossState) => {
 
@@ -221,11 +227,6 @@ export const newBossState = (setBossState) => {
     setBossState([newPosition, dangerState]);
 
 }
-
-
-
-
-
 
 
 
@@ -255,9 +256,6 @@ export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
     setLaserPositions(newMatrix);
 
 }
-
-
-
 
 
 
@@ -302,10 +300,12 @@ export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions,
 }
 
 
+
 export const getRandomElements = (array, count) => {
   const shuffled = [...array].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
 }
+
 
 
 export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, shieldedAliens, setShieldedAliens, waveIncremented) => {
@@ -351,6 +351,7 @@ export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions,
     }
 
 }
+
 
 
 export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, waveIncremented, mutantLaserOn) => {
@@ -407,28 +408,6 @@ export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions,
 }
 
 
-export const bossHit = (setBossHealth, setBossDefeated) =>  {
-
-    setBossHealth(prevHealth => {
-        
-        const newHealth = prevHealth - 1;
-
-        if (newHealth <= 0) {
-
-            setBossDefeated(true);
-            playSound(20);
-            return 0;
-
-        } else {
-
-            playSound(8);
-            return newHealth;
-
-        }
-
-    });
-
-}
 
 export const quitGame = (setSPIUser, Player, setPlayer, ActiveGame, setActiveGame) => {
         

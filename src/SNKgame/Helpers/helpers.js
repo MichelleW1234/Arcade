@@ -60,6 +60,7 @@ const bumpChecker = (activeDirection, setSNKUser, snake) => {
 }
 
 
+
 const newApple = (setAppleLocation, snake) => {
 
     const gameboardHeight = 20;
@@ -80,6 +81,8 @@ const newApple = (setAppleLocation, snake) => {
     }
 
 }
+
+
 
 const editSnake = (snake, setSnake, newSnakeHead, appleEaten) => {
 
@@ -102,6 +105,7 @@ const editSnake = (snake, setSnake, newSnakeHead, appleEaten) => {
     setSnake(prevMatrix => newMatrix);
 
 }
+
 
 
 export const changeSnakeDirection = (setSNKUser, activeDirection, setSnake, snake, appleLocation, setAppleLocation) => {

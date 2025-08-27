@@ -31,7 +31,7 @@ function Continuationscreen (){
             </div>
 
             <Link to="/selection" className = "generalbuttonGlitch Enter" onClick = {() => playSound(24)}>
-                <div className="buttonNameContainer">Continue <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                <div className="buttonNameContainer"> Enter <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
             </Link>
             
         </div>

@@ -1,6 +1,7 @@
 /*
 0 ->  player is fully outside the Arcade?
 */
+
 import { createContext, useContext, useState, useEffect } from "react";
 
 const TerminationContext = createContext();

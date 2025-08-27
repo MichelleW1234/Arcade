@@ -3,6 +3,7 @@ import {useState} from 'react';
 import useKeyboardShortcut from "../hooks/useKeyboardShortcut";
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
+import { useTermination } from '../Providers/TerminationProvider.jsx';
 
 import {playSound} from "../Helpers/helpers.js";
 
@@ -11,6 +12,7 @@ import "./RulesandPointsscreen.css";
 function RulesandPointsscreen (){
 
     const { Player, setPlayer } = usePlayer();
+    const { Termination, setTermination } = useTermination();
 
     const [pointsClaimed, setPointsClaimed] = useState(false);
 
@@ -38,13 +40,12 @@ function RulesandPointsscreen (){
     });
 
 
-
-
     const claimPoints = () => {
 
         playSound(2);
         setPlayer([20]);
         setPointsClaimed(true);
+        setTermination([false]);
 
     }
 
@@ -60,6 +61,7 @@ function RulesandPointsscreen (){
                 &gt; If you quit a game while you are actively playing it, you will automatically lose points. <br/>
                 &gt; You can purchase prizes at any time, however, it's your job to manage your points. <br/>
                 &gt; Once you are below the minimum number of points to play any of the games, you cannot win any more points. <br/>
+                &gt; Your progress will be restored if you close and reenter the app, however, exiting while playing a game will cost you points. <br/>
             </p>
 
             <h1 className = "instructionsSign"> Claim Points: </h1>

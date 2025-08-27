@@ -2,27 +2,26 @@
 0 -> cumulative points that user currently has
 */
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
-// Create the context
 const PlayerContext = createContext();
 
-// Create a provider component
 export function PlayerProvider({ children }) {
-
+  // Load initial state from localStorage
   const [Player, setPlayer] = useState(() => {
     try {
-      const storedPlayer = JSON.parse(sessionStorage.getItem("Player"));
-      return Array.isArray(storedPlayer) ? storedPlayer : [0]; // Ensure it's an array
-    } catch (error) {
-      return [0]; // Fallback if JSON parsing fails
+      const stored = JSON.parse(localStorage.getItem("Player"));
+      return Array.isArray(stored) ? stored : [0];
+    } catch {
+      return [0]; // fallback
     }
   });
 
-  // Save input to localStorage whenever it changes
+  // Persist whenever Player changes
   useEffect(() => {
-    sessionStorage.setItem("Player", JSON.stringify(Player));
+    localStorage.setItem("Player", JSON.stringify(Player));
   }, [Player]);
+  
 
   return (
     <PlayerContext.Provider value={{ Player, setPlayer }}>
@@ -31,7 +30,7 @@ export function PlayerProvider({ children }) {
   );
 }
 
-// Custom hook to use the context
 export function usePlayer() {
   return useContext(PlayerContext);
 }
+

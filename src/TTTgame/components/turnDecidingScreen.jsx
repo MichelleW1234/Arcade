@@ -1,8 +1,11 @@
 import {useNavigate, Link } from 'react-router-dom';
 import {useState} from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
+import { useExitPoints } from "../../hooks/useExitPoints";
 
 import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
+import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 
 import {playSound} from '../../Helpers/helpers.js';
 
@@ -11,6 +14,8 @@ import './TurnDecidingscreen.css';
 function TurnDecidingscreen() {
 
     const { TTTUser, setTTTUser} = useTTTUser();
+    const { ActiveGame, setActiveGame} = useActiveGame();
+    const {Player, setPlayer} = usePlayer();
 
     const [statement, setStatement] = useState("");
 
@@ -35,6 +40,13 @@ function TurnDecidingscreen() {
             playSound(18);
             navigate("/TTTgame");
         }
+    });
+    
+
+    useExitPoints(() => {
+        const adjustedPoints = [Player[0] - ActiveGame[1]];
+        localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+        setPlayer(adjustedPoints);
     });
     
 

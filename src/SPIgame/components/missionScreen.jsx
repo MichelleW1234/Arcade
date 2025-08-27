@@ -1,6 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect} from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
+import { useExitPoints } from "../../hooks/useExitPoints";
 
 import { useSPIUser } from '../Providers/SPIUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -51,6 +52,14 @@ function Missionscreen() {
             playSound(12);
             navigate(currGamePath);
         }
+    });
+
+
+
+    useExitPoints(() => {
+        const adjustedPoints = [Player[0] - ActiveGame[1]];
+        localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+        setPlayer(adjustedPoints);
     });
 
 

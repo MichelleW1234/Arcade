@@ -1,5 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom';
-import useKeyboardShortcut from "../hooks/useKeyboardShortcut";
+import useKeyboardShortcut from "../hooks/useKeyboardShortcut.js";
 
 import { usePlayer} from '../Providers/PlayerProvider.jsx';
 import { usePrize} from '../Providers/PrizeProvider.jsx';

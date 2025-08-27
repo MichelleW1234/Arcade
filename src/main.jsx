@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { ActiveGameProvider } from './Providers/ActiveGameProvider.jsx'; 
 import { PlayerProvider } from './Providers/PlayerProvider.jsx'; 
 import { PrizeProvider } from './Providers/PrizeProvider.jsx';
+import { TerminationProvider } from './Providers/TerminationProvider.jsx';
 import { MusicProvider } from './Providers/MusicProvider.jsx'; 
 
 import { RPSUserProvider } from './RPSgame/Providers/RPSUserProvider.jsx'; 
@@ -21,13 +22,13 @@ import App from './App.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <MusicProvider>
-    <PrizeProvider>
-    <PlayerProvider><ActiveGameProvider>
+    <TerminationProvider>
+    <PlayerProvider><PrizeProvider><ActiveGameProvider>
     <CWMUserProvider><SMZUserProvider><BFRUserProvider><CBLUserProvider><ORBUserProvider><SPIUserProvider><SNKUserProvider><TTTUserProvider><RPSUserProvider>
-        <App />
+      <App />
     </RPSUserProvider></TTTUserProvider></SNKUserProvider></SPIUserProvider></ORBUserProvider></CBLUserProvider></BFRUserProvider></SMZUserProvider></CWMUserProvider>
-    </ActiveGameProvider></PlayerProvider>
-    </PrizeProvider>
+    </ActiveGameProvider></PrizeProvider></PlayerProvider>
+    </TerminationProvider>
     </MusicProvider>
   </StrictMode>,
 )

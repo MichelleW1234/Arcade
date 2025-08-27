@@ -1,6 +1,8 @@
 import { useNavigate, Link } from 'react-router-dom';
 import {useState} from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
+import { useExitPoints } from "../../hooks/useExitPoints";
+
 
 import Turn from './TTTGameComponents/Turn.jsx';
 
@@ -47,6 +49,11 @@ function Gamescreen() {
   );
 
 
+  useExitPoints(() => {
+    const adjustedPoints = [Player[0] - ActiveGame[1]];
+    localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+    setPlayer(adjustedPoints);
+  });
 
   
   const reset = () => {

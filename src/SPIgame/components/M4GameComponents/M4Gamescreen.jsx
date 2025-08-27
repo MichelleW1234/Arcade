@@ -1,6 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState} from 'react';
 import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
+import { useExitPoints } from "../../../hooks/useExitPoints";
 
 import GameBoardM4 from "./M4GameScreenComponents/M4GameBoard.jsx";
 
@@ -42,6 +43,13 @@ function M4Gamescreen() {
     },
         ".ReturntoMissionsScreen"
     );
+
+
+    useExitPoints(() => {
+        const adjustedPoints = [Player[0] - ActiveGame[1]];
+        localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+        setPlayer(adjustedPoints);
+    });
 
 
     /* Clear and restart their interval whenever anything in their dependency array changes

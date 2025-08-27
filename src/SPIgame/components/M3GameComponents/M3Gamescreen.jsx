@@ -1,6 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useState} from 'react';
 import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
+import { useExitPoints } from "../../../hooks/useExitPoints";
 
 import GameBoardM3 from "./M3GameScreenComponents/M3GameBoard.jsx";
 
@@ -38,6 +39,12 @@ function M3GameScreen() {
         ".BacktoMissionsScreen"
     );
 
+
+    useExitPoints(() => {
+        const adjustedPoints = [Player[0] - ActiveGame[1]];
+        localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+        setPlayer(adjustedPoints);
+    });
     
 
     return (

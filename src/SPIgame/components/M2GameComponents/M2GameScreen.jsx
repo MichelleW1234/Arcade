@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
+import { useExitPoints } from "../../../hooks/useExitPoints";
 
 import GameBoardM2 from "./M2GameScreenComponents/M2GameBoard.jsx";
 
@@ -38,6 +39,12 @@ function M2GameScreen() {
         ".BacktoMissionsScreen"
     );
 
+
+    useExitPoints(() => {
+        const adjustedPoints = [Player[0] - ActiveGame[1]];
+        localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+        setPlayer(adjustedPoints);
+    });
 
 
     return (

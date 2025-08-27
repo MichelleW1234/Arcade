@@ -1,6 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect, useRef} from "react";
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
+import { useExitPoints } from "../../hooks/useExitPoints";
 
 import InnerGameScreen from "./BFRGameComponents/InnerGamescreen.jsx";
 
@@ -58,6 +59,11 @@ function Gamescreen(){
 
 
 
+    useExitPoints(() => {
+        const adjustedPoints = [Player[0] - ActiveGame[1]];
+        localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+        setPlayer(adjustedPoints);
+    });
 
 
 

@@ -25,7 +25,7 @@ createRoot(document.getElementById('root')).render(
     <TerminationProvider>
     <PlayerProvider><PrizeProvider><ActiveGameProvider>
     <CWMUserProvider><SMZUserProvider><BFRUserProvider><CBLUserProvider><ORBUserProvider><SPIUserProvider><SNKUserProvider><TTTUserProvider><RPSUserProvider>
-        <App />
+      <App />
     </RPSUserProvider></TTTUserProvider></SNKUserProvider></SPIUserProvider></ORBUserProvider></CBLUserProvider></BFRUserProvider></SMZUserProvider></CWMUserProvider>
     </ActiveGameProvider></PrizeProvider></PlayerProvider>
     </TerminationProvider>

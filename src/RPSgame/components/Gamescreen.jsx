@@ -1,6 +1,7 @@
 import {useNavigate, Link } from 'react-router-dom';
 import {useState} from "react";
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
+import { useExitPoints } from "../../hooks/useExitPoints";
 
 import Round from "./RPSGameComponents/Roundbox.jsx";
 import Results from "./RPSGameComponents/Results.jsx";
@@ -57,6 +58,13 @@ function Gamescreen (){
         }
     });
 
+
+
+    useExitPoints(() => {
+        const adjustedPoints = [Player[0] - ActiveGame[1]];
+        localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+        setPlayer(adjustedPoints);
+    });
 
     
 

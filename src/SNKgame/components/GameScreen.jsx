@@ -1,6 +1,7 @@
 import {useNavigate, Link } from 'react-router-dom';
 import {useRef, useEffect, useState } from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
+import { useExitPoints } from "../../hooks/useExitPoints";
 
 import InnerGameBoard from "./SNKGameComponents/InnerGameBoard.jsx";
 
@@ -90,6 +91,13 @@ function Gamesscreen(){
         ".Right"
     );
 
+
+
+    useExitPoints(() => {
+        const adjustedPoints = [Player[0] - ActiveGame[1]];
+        localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+        setPlayer(adjustedPoints);
+    });
 
 
 

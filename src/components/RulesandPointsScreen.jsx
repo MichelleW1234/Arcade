@@ -26,7 +26,7 @@ function RulesandPointsscreen (){
             });
             document.querySelectorAll(".\\32 0pts").forEach(el => el.classList.remove("active"));
 
-            enterArcade();
+            playSound(1);
             navigate("/selection");
         } else {
             document.querySelectorAll(".\\32 0pts").forEach(el => {
@@ -40,18 +40,12 @@ function RulesandPointsscreen (){
     });
 
 
-    const enterArcade = () => {
-
-        playSound(1)
-        setTermination([false]);
-
-    }
-
     const claimPoints = () => {
 
         playSound(2);
         setPlayer([20]);
         setPointsClaimed(true);
+        setTermination([false]);
 
     }
 
@@ -86,7 +80,7 @@ function RulesandPointsscreen (){
 
             {Player[0] === 20 ? (
 
-                <Link to= "/selection" className = "generalbuttonGlitch LetsGo" onClick = {() => enterArcade()}>
+                <Link to= "/selection" className = "generalbuttonGlitch LetsGo" onClick = {() => playSound(1)}>
                     <div className="buttonNameContainer"> Let's Go! <br/> <span className='buttonKeyDescription'>[Return]</span></div>
                 </Link>
             

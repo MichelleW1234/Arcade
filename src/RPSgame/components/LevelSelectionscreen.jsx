@@ -1,6 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom';
 import {useRef, useState} from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
+import { useExitPoints } from "../../hooks/useExitPoints";
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
@@ -83,6 +84,15 @@ function LevelSelectionscreen (){
         });
         playSound(3);
     });
+
+
+
+    useExitPoints(() => {
+        const adjustedPoints = [Player[0] - ActiveGame[1]];
+        localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+        setPlayer(adjustedPoints);
+    });
+
 
 
     const handleClick = (index) => {

@@ -20,6 +20,7 @@ export function PlayerProvider({ children }) {
   useEffect(() => {
     localStorage.setItem("Player", JSON.stringify(Player));
   }, [Player]);
+  
 
   return (
     <PlayerContext.Provider value={{ Player, setPlayer }}>

@@ -61,6 +61,7 @@ function RulesandPointsscreen (){
                 &gt; If you quit a game while you are actively playing it, you will automatically lose points. <br/>
                 &gt; You can purchase prizes at any time, however, it's your job to manage your points. <br/>
                 &gt; Once you are below the minimum number of points to play any of the games, you cannot win any more points. <br/>
+                &gt; Your progress will be restored if you close and reenter the app, however, exiting while playing a game will cost you points. <br/>
             </p>
 
             <h1 className = "instructionsSign"> Claim Points: </h1>

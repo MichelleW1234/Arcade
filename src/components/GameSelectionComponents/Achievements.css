@@ -17,7 +17,7 @@
     flex-wrap: wrap;
 
     height: 65vh;   
-    gap: 8rem;
+    gap: 5rem;
     padding: 5rem;
     font-size: 0.75rem;
 
@@ -32,6 +32,7 @@
     align-items: center;
     justify-content: center;
 
+    width: 20rem;
     gap: 2rem;   
 
 }
@@ -39,8 +40,7 @@
 
 .AchievementsBadge {
 
-    max-height: 10rem;
-    width: 12.5rem; 
+    height: 10rem;
 
     animation: pulse-glow 2s infinite alternate;
 }

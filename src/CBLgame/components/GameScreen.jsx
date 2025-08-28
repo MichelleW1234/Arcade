@@ -5,11 +5,12 @@ import { useExitPoints } from "../../hooks/useExitPoints";
 
 import InnerGameScreen from "./CBLGameComponents/InnerGamescreen.jsx";
 
-import {playSound, retrieveActiveGame, claimPoints} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, claimPoints, achievementsUpdate} from "../../Helpers/helpers.js";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import {useCBLUser} from "../Providers/CBLUserProvider.jsx";
+import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 
 import "./Gamescreen.css";
 
@@ -18,6 +19,7 @@ function Gamescreen (){
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const {CBLUser, setCBLUser} = useCBLUser();
+    const { Achievements, setAchievements} = useAchievements();
 
     const [colorToBlast, setColorToBlast] = useState(Math.floor(Math.random() * 4));
     const [colorAppearances, setColorAppearances] = useState(0);
@@ -36,7 +38,7 @@ function Gamescreen (){
 
     useKeyboardShortcut("Enter", () => {
         if (colorAppearances >= 50 || wrongColorBlasted == true ){
-            claimPoints(ActiveGame, Player, setPlayer, CBLUser[0]*3);
+            result();
             navigate("/CBLsummary");
         }
     },
@@ -80,6 +82,21 @@ function Gamescreen (){
         setActiveGame(retrieveActiveGame(0));
 
     }
+
+
+    const result = () => {
+    
+        if (CBLUser[0] >= 15){
+
+            achievementsUpdate(setAchievements, 6);
+
+        }
+
+        claimPoints(ActiveGame, Player, setPlayer, CBLUser[0]*3);
+
+    }
+
+
 
     return (
 
@@ -126,7 +143,7 @@ function Gamescreen (){
                             
                         </div>
 
-                        <Link to="/CBLsummary" className = "CBLbutton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, CBLUser[0]*3)}> 
+                        <Link to="/CBLsummary" className = "CBLbutton ViewResults" onClick = {() => result()}> 
                             <div className="buttonNameContainer">View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                         </Link>
 

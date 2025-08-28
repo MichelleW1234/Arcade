@@ -6,10 +6,11 @@ import { useExitPoints } from "../../hooks/useExitPoints";
 import { useSPIUser } from '../Providers/SPIUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
+import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 
 import "./Missionscreen.css";
 
-import {playSound, claimPoints} from '../../Helpers/helpers.js';
+import {playSound, claimPoints, achievementsUpdate} from '../../Helpers/helpers.js';
 import {quitGame} from '../Helpers/helpers.js';
 
 function Missionscreen() {
@@ -20,6 +21,7 @@ function Missionscreen() {
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { Player, setPlayer } = usePlayer();
     const {SPIUser, setSPIUser} = useSPIUser();
+    const { Achievements, setAchievements} = useAchievements();
 
     const [currGamePath, setCurrGamePath] = useState(SPIUser[1][1]);
 
@@ -40,7 +42,7 @@ function Missionscreen() {
             });
             document.querySelectorAll(".Start").forEach(el => el.classList.remove("active"));
 
-            claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0]*ActiveGame[1]))
+            result();
             navigate("/SPIsummary");
         } else {
             document.querySelectorAll(".Start").forEach(el => {
@@ -69,6 +71,18 @@ function Missionscreen() {
     }, [SPIUser[1][1]]); 
 
     
+    const result = () => {
+    
+        if (SPIUser[0] == 4){
+    
+            achievementsUpdate(setAchievements, 4);
+    
+        }
+    
+        claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0]*ActiveGame[1]));
+    
+    }
+
 
     return (
 
@@ -124,7 +138,7 @@ function Missionscreen() {
 
                 {SPIUser[0] == allMissions.length || SPIUser[2] == true ? (
 
-                    <Link to= "/SPIsummary" className = "SPIbutton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SPIUser[0]*ActiveGame[1]))}>
+                    <Link to= "/SPIsummary" className = "SPIbutton ViewResults" onClick = {() => result()}>
                         <div className="buttonNameContainer">View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                     </Link>
 

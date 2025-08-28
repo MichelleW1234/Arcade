@@ -7,11 +7,12 @@ import InnerGameScreen from "./SMZComponents/InnerGamescreen.jsx";
 
 import {birdFlyingForward, wallHeight, checkHit} from "../Helpers/helpers.js";
 
-import {playSound, retrieveActiveGame, claimPoints} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, claimPoints, achievementsUpdate} from "../../Helpers/helpers.js";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { useSMZUser} from '../Providers/SMZUserProvider.jsx';
+import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 
 import "./Gamescreen.css";
 
@@ -20,6 +21,7 @@ function Gamescreen(){
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { SMZUser, setSMZUser} = useSMZUser();
+    const { Achievements, setAchievements} = useAchievements();
 
     const [wallPositions, setWallPositions] = useState([wallHeight(16)]);
     const [birdPosition, setBirdPosition] = useState([5,5]);
@@ -42,7 +44,7 @@ function Gamescreen(){
 
     useKeyboardShortcut("Enter", () => {
         if (gameOver == true){
-            claimPoints(ActiveGame, Player, setPlayer, Math.floor(distance / 5));
+            result();
             navigate("/SMZsummary");
         }
     },
@@ -232,6 +234,19 @@ function Gamescreen(){
 
     }
 
+    const result = () => {
+            
+        if (distance >= 500){
+    
+            achievementsUpdate(setAchievements, 8);
+    
+        }
+
+        claimPoints(ActiveGame, Player, setPlayer, Math.floor(distance / 5));
+    
+    }
+    
+
 
     return (
 
@@ -272,7 +287,7 @@ function Gamescreen(){
                                 <p> Game Over.</p>
                             </div>
 
-                            <Link to="/SMZsummary" className = "SMZDoneButton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, Math.floor(distance / 5))}> 
+                            <Link to="/SMZsummary" className = "SMZDoneButton ViewResults" onClick = {() => result()}> 
                                 <div className="buttonNameContainer"> View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                             </Link>
                         </>

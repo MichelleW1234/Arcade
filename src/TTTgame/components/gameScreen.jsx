@@ -8,10 +8,11 @@ import Turn from './TTTGameComponents/Turn.jsx';
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
+import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
 
 import {resetGame} from "../Helpers/helpers.js";
-import {playSound, retrieveActiveGame, pointsDistribution} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, pointsDistribution, achievementsUpdate} from "../../Helpers/helpers.js";
 
 import "./Gamescreen.css";
 
@@ -20,6 +21,7 @@ function Gamescreen() {
   const { ActiveGame, setActiveGame} = useActiveGame();
   const { Player, setPlayer} = usePlayer();
   const { TTTUser, setTTTUser} = useTTTUser();
+  const { Achievements, setAchievements} = useAchievements();
 
   const [error, setError] = useState("");
   const [availableMoves, setAvailableMoves] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8]);
@@ -41,7 +43,7 @@ function Gamescreen() {
 
   useKeyboardShortcut("Enter", () => {
     if (TTTUser[1] != -1){
-      pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player);
+      result();
       navigate("/TTTsummary");
     }
   },
@@ -62,6 +64,18 @@ function Gamescreen() {
     resetGame(setTTTUser);
     setPlayer([Player[0] - ActiveGame[1]]);
     setActiveGame(retrieveActiveGame(0));
+
+  }
+
+  const result = () => {
+
+    if (TTTUser[1] == 1){
+
+      achievementsUpdate(setAchievements, 2);
+
+    }
+
+    pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player);
 
   }
 
@@ -155,7 +169,7 @@ function Gamescreen() {
 
               </div>
 
-              <Link to= "/TTTsummary" className = "TTTbutton ViewResults" onClick={() => pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player)}>
+              <Link to= "/TTTsummary" className = "TTTbutton ViewResults" onClick={() => result()}>
                 <div className="buttonNameContainer"> View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
               </Link>
 

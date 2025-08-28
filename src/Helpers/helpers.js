@@ -179,6 +179,8 @@ export const achievementsUpdate = (setAchievements, index) => {
 
         if (newAchievements[index][0] == newAchievements[index][1]) {
 
+            newAchievements[index][0] = 0;
+            newAchievements[index][4] += 1;
             newAchievements[0][0] = true;
 
         }

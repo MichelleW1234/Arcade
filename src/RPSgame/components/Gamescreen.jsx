@@ -93,7 +93,6 @@ function Gamescreen (){
             achievementsUpdate(setAchievements, 1);
 
         }
-
         
         pointsDistribution(ActiveGame, winner, setPlayer, Player);
 

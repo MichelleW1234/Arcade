@@ -4,14 +4,16 @@ import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 import { useSPIUser } from '../Providers/SPIUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
+import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 
-import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, resetAchievementsUpdate} from "../../Helpers/helpers.js";
 
 function Summaryscreen() {
 
     const {SPIUser, setSPIUser} = useSPIUser();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { Player, setPlayer } = usePlayer();
+    const { Achievements, setAchievements} = useAchievements();
 
     const navigate = useNavigate();
 
@@ -36,6 +38,7 @@ function Summaryscreen() {
 
         playSound(19);
         setSPIUser([0,[1, "/SPIM1Instructions"], false]);
+        resetAchievementsUpdate(Achievements, setAchievements);
 
     }
 
@@ -44,6 +47,7 @@ function Summaryscreen() {
         playSound(4);
         setSPIUser([0,[1, "/SPIM1Instructions"], false]);
         setActiveGame(retrieveActiveGame(0));
+        resetAchievementsUpdate(Achievements, setAchievements);
 
     }
 
@@ -55,6 +59,17 @@ function Summaryscreen() {
                 <p> Missions Completed: {SPIUser[0]}</p>
                 <p> <span className="StatsGlitch"> Points Earned: {SPIUser[0] * ActiveGame[1]}</span></p>
             </div>
+
+            {Achievements[0][0] == true ? (
+
+                <p className = "largefont"> Congrats! You've won an achievement!</p>
+
+            ) : (
+
+                null
+
+            )}
+
 
             {Player[0] >= ActiveGame[1] ? (
 

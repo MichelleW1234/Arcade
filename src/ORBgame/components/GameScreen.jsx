@@ -7,11 +7,12 @@ import InnerGameScreen from "./ORBGameComponents/InnerGamescreen.jsx";
 
 import {orbiting} from "../Helpers/helpers.js";
 
-import {playSound, retrieveActiveGame, pointsDistribution} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, pointsDistribution, achievementsUpdate} from "../../Helpers/helpers.js";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { useORBUser } from '../Providers/ORBUserProvider.jsx';
+import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 
 import "./Gamescreen.css";
 
@@ -20,6 +21,7 @@ function Gamescreen(){
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { ORBUser, setORBUser} = useORBUser();
+    const { Achievements, setAchievements} = useAchievements();
 
     const [stop, setStop] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -127,6 +129,7 @@ function Gamescreen(){
 
         if (success === true){
 
+            achievementsUpdate(setAchievements, 5);
             pointsDistribution(ActiveGame, 1, setPlayer, Player);
             setORBUser([true]);
 

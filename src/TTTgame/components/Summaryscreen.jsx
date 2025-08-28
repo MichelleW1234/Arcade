@@ -2,18 +2,19 @@ import { useNavigate, Link } from 'react-router-dom';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useTTTUser } from '../Providers/TTTUserProvider.jsx';
-
+import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 
 import {resetGame} from "../Helpers/helpers.js";
-import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, resetAchievementsUpdate} from "../../Helpers/helpers.js";
 
 function Summaryscreen() {
 
     const { TTTUser, setTTTUser} = useTTTUser();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { Player, setPlayer} = usePlayer();
+    const { Achievements, setAchievements} = useAchievements();
 
     const navigate = useNavigate();
 
@@ -39,6 +40,7 @@ function Summaryscreen() {
 
         playSound(19);
         resetGame(setTTTUser);
+        resetAchievementsUpdate(Achievements, setAchievements);
 
     }
     
@@ -47,6 +49,7 @@ function Summaryscreen() {
         playSound(4);
         resetGame(setTTTUser);
         setActiveGame(retrieveActiveGame(0));
+        resetAchievementsUpdate(Achievements, setAchievements);
 
     }
 
@@ -78,6 +81,17 @@ function Summaryscreen() {
                 )}
 
             </div>
+
+            {Achievements[0][0] == true ? (
+
+                <p className = "largefont"> Congrats! You've won an achievement!</p>
+
+            ) : (
+
+                null
+
+            )}
+
 
             {Player[0] >= ActiveGame[1] ? (
 

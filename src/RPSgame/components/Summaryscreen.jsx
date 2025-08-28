@@ -78,7 +78,7 @@ function Summaryscreen (){
 
           {Achievements[0][0] == true ? (
 
-            <p className = "largefont"> Congrats! You've won a new achievement!</p>
+            <p className = "largefont"> Congrats! You've won an achievement!</p>
 
           ) : (
 

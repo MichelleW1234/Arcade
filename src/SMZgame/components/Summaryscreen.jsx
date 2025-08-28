@@ -4,15 +4,16 @@ import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { useSMZUser} from '../Providers/SMZUserProvider.jsx';
+import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 
-import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, resetAchievementsUpdate} from "../../Helpers/helpers.js";
 
 function Summaryscreen (){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { SMZUser, setSMZUser} = useSMZUser();
-
+    const { Achievements, setAchievements} = useAchievements();
 
     const navigate = useNavigate();
 
@@ -40,6 +41,7 @@ function Summaryscreen (){
         playSound(4);
         setSMZUser([0]);
         setActiveGame(retrieveActiveGame(0));
+        resetAchievementsUpdate(Achievements, setAchievements);
 
     }
 
@@ -47,6 +49,7 @@ function Summaryscreen (){
         
         playSound(19);
         setSMZUser([0]);
+        resetAchievementsUpdate(Achievements, setAchievements);
 
     }
 
@@ -59,6 +62,16 @@ function Summaryscreen (){
                 <p>Distance Traveled: {SMZUser[0]} meters</p>
                 <p> <span className="StatsGlitch">Points Earned: {Math.floor(SMZUser[0]/5)}</span></p>
             </div>
+
+            {Achievements[0][0] == true ? (
+
+                <p className = "largefont"> Congrats! You've won an achievement!</p>
+
+            ) : (
+
+                null
+
+            )}
 
             {Player[0] >= ActiveGame[1] ? (
 

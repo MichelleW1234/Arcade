@@ -8,9 +8,10 @@ import InnerGameBoard from "./SNKGameComponents/InnerGameBoard.jsx";
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useSNKUser } from '../Providers/SNKUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
+import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 
 import {changeSnakeDirection} from "../Helpers/helpers.js";
-import {claimPoints, playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
+import {claimPoints, playSound, retrieveActiveGame, achievementsUpdate} from '../../Helpers/helpers.js';
 
 import "./Gamescreen.css";
 
@@ -19,6 +20,7 @@ function Gamesscreen(){
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { SNKUser, setSNKUser } = useSNKUser();
     const { Player, setPlayer} = usePlayer();
+    const { Achievements, setAchievements} = useAchievements();
 
     const gameboardHeight = 20;
     const gameboardWidth = 30;
@@ -43,9 +45,13 @@ function Gamesscreen(){
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (startButtonPressed === true && SNKUser[0] === true || snake.length >= 600 ){
-            claimPoints(ActiveGame, Player, setPlayer, (SNKUser[1] * 2));
-            navigate("/SNKsummary");
+        if (startButtonPressed === true){
+            if(SNKUser[0] === true || snake.length >= 600){
+
+                result();
+                navigate("/SNKsummary");
+
+            }
         }
     },
         ".ViewResults"
@@ -201,6 +207,20 @@ function Gamesscreen(){
     
     }
 
+
+    const result = () => {
+
+        if (SNKUser[1] >= 50){
+
+            achievementsUpdate(setAchievements, 3);
+
+        }
+
+        claimPoints(ActiveGame, Player, setPlayer, (SNKUser[1] * 2));
+
+    }
+
+
     return (
 
         <div>
@@ -272,7 +292,7 @@ function Gamesscreen(){
 
                     :
 
-                        <Link to= "/SNKsummary" className = "SNKdonebutton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (SNKUser[1] * 2))}>
+                        <Link to= "/SNKsummary" className = "SNKdonebutton ViewResults" onClick = {() => result()}>
                             <div className="buttonNameContainer"> View Results<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                         </Link>   
 

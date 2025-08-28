@@ -7,11 +7,12 @@ import InnerGameScreen from "./BFRGameComponents/InnerGamescreen.jsx";
 
 import {itemsShifting, incomingItem} from "../Helpers/helpers.js";
 
-import {playSound, retrieveActiveGame, claimPoints} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, claimPoints, achievementsUpdate} from "../../Helpers/helpers.js";
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { useBFRUser } from '../Providers/BFRUserProvider.jsx';
+import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 
 import "./Gamescreen.css";
 
@@ -20,6 +21,7 @@ function Gamescreen(){
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const {BFRUser, setBFRUser} = useBFRUser();
+    const { Achievements, setAchievements} = useAchievements();
 
     const [positions, setPositions] = useState([[16, incomingItem()]]);
     const [laserBlast, setLaserBlast] = useState(false);
@@ -44,7 +46,7 @@ function Gamescreen(){
             });
             document.querySelectorAll(".Activate").forEach(el => el.classList.remove("active"));
 
-            claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2));
+            result();
             navigate("/BFRsummary");
         } else {
             document.querySelectorAll(".Activate").forEach(el => {
@@ -199,6 +201,18 @@ function Gamescreen(){
 
     }
 
+    const result = () => {
+        
+        if (BFRUser[0] >= 15){
+
+            achievementsUpdate(setAchievements, 7);
+
+        }
+
+        claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2));
+
+    }
+
 
     return (
 
@@ -237,7 +251,7 @@ function Gamescreen(){
                                 <p> Game Over.</p>
                             </div>
 
-                            <Link to="/BFRsummary" className = "BFRDoneButton ViewResults" onClick = {() => claimPoints(ActiveGame, Player, setPlayer, (BFRUser[0]*2))}> 
+                            <Link to="/BFRsummary" className = "BFRDoneButton ViewResults" onClick = {() => result()}> 
                                 <div className="buttonNameContainer"> View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                             </Link>
                         </>

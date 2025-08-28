@@ -31,11 +31,12 @@ function Achievements ({setShowAchievements}){
                             
                         ) : (
 
-                            item[0] >= item[1] ? (
+                            item[4] > 0 ? (
 
                                 <div key={index} className = "AchievementsWindow">
                                     <h1> {item[2]}</h1>
                                     <img className = "AchievementsBadge" src = {item[3]}/>
+                                    <h1> x{item[4]}</h1>
                                 </div>
 
                             ):(

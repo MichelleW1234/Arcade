@@ -9,6 +9,7 @@ import {playSound, retrieveActiveGame} from "../Helpers/helpers.js";
 
 import PrizeInventory from './GameSelectionComponents/PrizeInventory.jsx';
 import NavBar from './GameSelectionComponents/NavBar.jsx';
+import Achievements from './GameSelectionComponents/Achievements.jsx';
 
 import RPS from "../Images/ArcadeGameImages/RPS.svg";
 import TTT from "../Images/ArcadeGameImages/TTT.svg";
@@ -31,13 +32,14 @@ function GameSelectionscreen (){
     const [currGamePath, setCurrGamePath] = useState(ActiveGame[0]);
 
     const [showInventory, setShowInventory] = useState(false);
+    const [showAchievements, setShowAchievements] = useState(false);
 
     const totalButtons = 8;
     const itemRefs = useRef([]);
     useKeyboardShortcut("ArrowLeft", (event) => {
         event.preventDefault();
 
-        if (showInventory == false){
+        if (showInventory == false && showAchievements == false){
             setActiveButton((prev) => {
                 const newIndex = (prev - 1 + totalButtons) % totalButtons;
                 const currGameInfo = retrieveActiveGame(newIndex);
@@ -58,7 +60,7 @@ function GameSelectionscreen (){
     useKeyboardShortcut("ArrowRight", (event) => {
         event.preventDefault();
 
-        if (showInventory == false){
+        if (showInventory == false && showAchievements == false){
             setActiveButton((prev) => {
                 const newIndex = (prev + 1) % totalButtons;
                 const currGameInfo = retrieveActiveGame(newIndex);
@@ -83,7 +85,7 @@ function GameSelectionscreen (){
         event.preventDefault();
         event.stopPropagation();
 
-        if (showInventory == false){
+        if (showInventory == false && showAchievements == false){
             if (Player[0] >= ActiveGame[1]){
 
                 playSound(2);
@@ -121,9 +123,16 @@ function GameSelectionscreen (){
                 setShowInventory = {setShowInventory}
             />}
 
+            {showAchievements && 
+            <Achievements
+                setShowAchievements = {setShowAchievements}
+            />}
+
             <NavBar
                 showInventory = {showInventory}
                 setShowInventory = {setShowInventory}
+                showAchievements = {showAchievements}
+                setShowAchievements = {setShowAchievements}
             />
 
             <div className = "gameScreenLayout">

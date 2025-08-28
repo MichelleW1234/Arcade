@@ -34,7 +34,7 @@ import Sun from "../../Images/ArcadePrizeImages/Sun.svg";
 import Saturn from "../../Images/ArcadePrizeImages/Saturn.svg";
 import Andromeda from "../../Images/ArcadePrizeImages/Andromeda.svg";
 
-function NavBar ({showInventory, setShowInventory}){
+function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchievements}){
 
     const { ActiveGame, setActiveGame } = useActiveGame(); 
     const { Player, setPlayer } = usePlayer(); 
@@ -43,7 +43,7 @@ function NavBar ({showInventory, setShowInventory}){
 
     const navigate = useNavigate();
     useKeyboardShortcut("1", () => {
-        if (showInventory == false){
+        if (showInventory == false && showAchievements == false){
             resetPoints();
             navigate("/arcadeStart");
         }
@@ -52,7 +52,7 @@ function NavBar ({showInventory, setShowInventory}){
     );
 
     useKeyboardShortcut("2", () => {
-        if (showInventory == false){
+        if (showInventory == false && showAchievements == false){
             playSound(24);
             navigate("/prizeRoom");
         }
@@ -61,13 +61,15 @@ function NavBar ({showInventory, setShowInventory}){
     );
 
     useKeyboardShortcut("3", () => {
-       displayInventory();
+        if (showAchievements == false){
+            displayInventory();
+        }
     },
         ".ViewPrizeInventory"
     );
 
     useKeyboardShortcut("4", () => {
-        if (showInventory == false){
+        if (showInventory == false && showAchievements == false){
             goToClawArcade();
             navigate("/CWMstart");
         }
@@ -75,6 +77,13 @@ function NavBar ({showInventory, setShowInventory}){
         ".GotoClawArcade"
     );
 
+    useKeyboardShortcut("5", () => {
+        if (showInventory == false){
+            displayAchievements();
+        }
+    },
+        ".ViewAchievements"
+    );
 
     
     const displayInventory = () => {
@@ -108,6 +117,14 @@ function NavBar ({showInventory, setShowInventory}){
 
     }
 
+    const displayAchievements = () => {
+    
+        playSound(25);
+        setShowAchievements(prevState => !prevState);
+
+    }
+
+
     return (
 
         <div className = "navbarContainer">
@@ -136,6 +153,12 @@ function NavBar ({showInventory, setShowInventory}){
                     <Link to="/CWMstart" className = "navBarButton GotoClawArcade" onClick ={() => goToClawArcade()}>
                         <div className="buttonNameContainer"> Go to Claw Arcade <br/> <span className = "buttonKeyDescription"> [4] </span></div>
                     </Link>
+                </li>
+
+                <li>
+                    <div className = "navBarButton ViewAchievements" onClick ={() => displayAchievements()}>
+                        <div className="buttonNameContainer"> View Achievements <br/> <span className = "buttonKeyDescription"> [5] </span></div>
+                    </div>
                 </li>
 
             </ul>

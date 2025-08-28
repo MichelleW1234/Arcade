@@ -1,5 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom';
-import {useRef, useState} from 'react';
+import {useRef, useState, useEffect} from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
@@ -44,70 +44,50 @@ function MachineSelectionscreen (){
 
     const totalButtons = 3;
     const itemRefs = useRef([]);
+
     useKeyboardShortcut("ArrowLeft", (event) => {
         event.preventDefault();
 
-        setActiveButton((prev) => {
-            const newIndex = (prev - 1 + totalButtons) % totalButtons;
-            if (newIndex == 0){
-
-                setCurrGamePath("/CWMcatinstructions");
-
-            } else if (newIndex == 1){
-
-                setCurrGamePath("/CWMsportsinstructions");
-
-            } else if (newIndex == 2){
-
-                setCurrGamePath("/CWMspaceinstructions");
-
-            }
-
-             // scroll the new element into view
-            itemRefs.current[newIndex]?.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-                inline: "center"
-            });
-
-            return newIndex;
-        });
+        setActiveButton(prev => (prev - 1 + totalButtons) % totalButtons);
         playSound(3);
+
     });
+
     useKeyboardShortcut("ArrowRight", (event) => {
         event.preventDefault();
 
-        setActiveButton((prev) => {
-            const newIndex = (prev + 1) % totalButtons;
-            if (newIndex == 0){
-
-                setCurrGamePath("/CWMcatinstructions");
-
-            } else if (newIndex == 1){
-
-                setCurrGamePath("/CWMsportsinstructions");
-
-            } else if (newIndex == 2){
-
-                setCurrGamePath("/CWMspaceinstructions");
-
-            }
-
-            // scroll the new element into view
-            itemRefs.current[newIndex]?.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-                inline: "center"
-            });
-
-            return newIndex;
-        });
+        setActiveButton(prev => (prev + 1) % totalButtons);
         playSound(3);
     });
 
+    useEffect(() => {
+
+        switch (activeButton) {
+            case 0:
+                setCurrGamePath("/CWMcatinstructions");
+                break;
+            case 1:
+                setCurrGamePath("/CWMsportsinstructions");
+                break;
+            case 2:
+                setCurrGamePath("/CWMspaceinstructions");
+                break;
+            default:
+                break;
+        }
+
+        // Scroll the active element into view
+        itemRefs.current[activeButton]?.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center"
+        });
+    }, [activeButton]);
 
 
 
+
+    
     const handleClick = (index) => {
     
         playSound(3);

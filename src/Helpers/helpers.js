@@ -168,3 +168,40 @@ export const exitGame = (setActiveGame) => {
     setActiveGame(retrieveActiveGame(0));
 
 }
+
+
+
+export const achievementsUpdate = (setAchievements, index) => {
+
+    setAchievements(prev => {
+        const newAchievements = prev.map(inner => [...inner]);
+        newAchievements[index][0] += 1;
+
+        if (newAchievements[index][0] == newAchievements[index][1]) {
+
+            newAchievements[0][0] = true;
+
+        }
+
+        return newAchievements;
+
+    });
+
+}
+
+export const resetAchievementsUpdate = (Achievements, setAchievements) => {
+
+    if (Achievements[0][0] == true){
+
+        setAchievements(prev => {
+
+            const newAchievements = prev.map(inner => [...inner]);
+            newAchievements[0][0] = false;
+
+            return newAchievements;
+
+        });
+
+    }
+
+}

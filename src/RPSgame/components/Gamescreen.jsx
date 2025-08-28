@@ -11,9 +11,10 @@ import References from "./RPSGameComponents/FloatingReferences.jsx";
 import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
+import { useAchievements} from '../../Providers/AchievementsProvider.jsx';
 
 import {handleHideFlag} from "../Helpers/helpers.js";
-import {pointsDistribution} from "../../Helpers/helpers.js";
+import {pointsDistribution, achievementsUpdate} from "../../Helpers/helpers.js";
 
 import "./Gamescreen.css";
 
@@ -21,6 +22,7 @@ function Gamescreen (){
 
     const { ActiveGame, setActiveGame } = useActiveGame();
     const { Player, setPlayer } = usePlayer();
+    const { Achievements, setAchievements} = useAchievements();
 
     const { RPSUser, setRPSUser } = useRPSUser();
 
@@ -85,6 +87,13 @@ function Gamescreen (){
             winner = -1;
 
         }
+
+        if (winner == 1){
+
+            achievementsUpdate(setAchievements, 1);
+
+        }
+
         
         pointsDistribution(ActiveGame, winner, setPlayer, Player);
 

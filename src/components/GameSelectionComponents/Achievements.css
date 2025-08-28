@@ -41,8 +41,8 @@
 .AchievementsBadge {
 
     height: 10rem;
-
     animation: pulse-glow 2s infinite alternate;
+    
 }
 
 

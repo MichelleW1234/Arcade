@@ -1,5 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom';
-import {useRef, useState} from 'react';
+import {useRef, useState, useEffect} from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 import { useExitPoints } from "../../hooks/useExitPoints";
 
@@ -42,48 +42,36 @@ function LevelSelectionscreen (){
     
     const totalButtons = 3;
     const itemRefs = useRef([]);
+
     useKeyboardShortcut("ArrowLeft", (event) => {
         event.preventDefault();
 
-        setActiveButton((prev) => {
-            const newIndex = (prev - 1 + totalButtons) % totalButtons;
-            setActiveButton(newIndex);
-            const currLevelInput = getInput(newIndex);
-            const currLevelReferences = getReferences(newIndex);
-            setRPSUser([newIndex, currLevelInput, currLevelReferences, 0, 0]);
-
-            // scroll the new element into view
-            itemRefs.current[newIndex]?.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-                inline: "center"
-            });
-
-            return newIndex;
-        });
+        setActiveButton(prev => (prev - 1 + totalButtons) % totalButtons);
         playSound(3);
     });
+
     useKeyboardShortcut("ArrowRight", (event) => {
         event.preventDefault();
 
-        setActiveButton((prev) => {
-            const newIndex = (prev + 1) % totalButtons;
-            setActiveButton(newIndex);
-            const currLevelInput = getInput(newIndex);
-            const currLevelReferences = getReferences(newIndex);
-            setRPSUser([newIndex, currLevelInput, currLevelReferences, 0, 0]);
-
-            // scroll the new element into view
-            itemRefs.current[newIndex]?.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-                inline: "center"
-            });
-
-            return newIndex;
-        });
+        setActiveButton(prev => (prev + 1) % totalButtons);
         playSound(3);
     });
+
+    useEffect(() => {
+        const currLevelInput = getInput(activeButton);
+        const currLevelReferences = getReferences(activeButton);
+
+        setRPSUser([activeButton, currLevelInput, currLevelReferences, 0, 0]);
+
+        // scroll the new element into view
+        itemRefs.current[activeButton]?.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center"
+        });
+    }, [activeButton]);
+
+
 
 
 

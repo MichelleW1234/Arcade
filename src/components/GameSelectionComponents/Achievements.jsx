@@ -25,16 +25,24 @@ function Achievements ({setShowAchievements}){
 
                     {Achievements.map((item, index) => 
 
-                        item[1] >= item[1] ? (
+                        index === 0 ? (
+ 
+                            null 
+                            
+                        ) : (
 
-                            <div key={index} className = "AchievementsWindow">
-                                <h1> {item[2]}</h1>
-                                <img className = "AchievementsBadge" src = {item[3]}/>
-                            </div>
+                            item[0] >= item[1] ? (
 
-                        ):(
+                                <div key={index} className = "AchievementsWindow">
+                                    <h1> {item[2]}</h1>
+                                    <img className = "AchievementsBadge" src = {item[3]}/>
+                                </div>
 
-                            null
+                            ):(
+
+                                null
+
+                            )
 
                         )
 

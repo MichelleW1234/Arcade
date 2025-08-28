@@ -36,48 +36,37 @@ function GameSelectionscreen (){
 
     const totalButtons = 8;
     const itemRefs = useRef([]);
+
     useKeyboardShortcut("ArrowLeft", (event) => {
         event.preventDefault();
 
-        if (showInventory == false && showAchievements == false){
-            setActiveButton((prev) => {
-                const newIndex = (prev - 1 + totalButtons) % totalButtons;
-                const currGameInfo = retrieveActiveGame(newIndex);
-                setActiveGame(currGameInfo);
-
-                // scroll the new element into view
-                itemRefs.current[newIndex]?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "nearest",
-                    inline: "center"
-                });
-                
-                return newIndex;
-            });
+        if (showInventory == false && showAchievements == false) {
+            setActiveButton(prev => (prev - 1 + totalButtons) % totalButtons);
             playSound(3);
         }
     });
+
     useKeyboardShortcut("ArrowRight", (event) => {
         event.preventDefault();
 
         if (showInventory == false && showAchievements == false){
-            setActiveButton((prev) => {
-                const newIndex = (prev + 1) % totalButtons;
-                const currGameInfo = retrieveActiveGame(newIndex);
-                setActiveGame(currGameInfo);
-
-                // scroll the new element into view
-                itemRefs.current[newIndex]?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "nearest",
-                    inline: "center"
-                });
-
-                return newIndex;
-            });
+            setActiveButton(prev => (prev + 1) % totalButtons);
             playSound(3);
         }
     });
+
+    useEffect(() => {
+        const currGameInfo = retrieveActiveGame(activeButton);
+        setActiveGame(currGameInfo);
+
+        // scroll the new element into view
+        itemRefs.current[activeButton]?.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center"
+        });
+    }, [activeButton]);
+
 
     const navigate = useNavigate();
     useKeyboardShortcut("Enter", (event) => {

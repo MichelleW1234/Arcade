@@ -4,13 +4,15 @@ import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 import { useRPSUser} from '../Providers/RPSUserProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer} from '../../Providers/PlayerProvider.jsx';
+import { useAchievements} from '../../Providers/AchievementsProvider.jsx';
 
-import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
+import {playSound, retrieveActiveGame, resetAchievementsUpdate} from "../../Helpers/helpers.js";
 import {resetLevel} from "../Helpers/helpers.js";
 
 function Summaryscreen (){
 
   const {RPSUser, setRPSUser} = useRPSUser();
+  const { Achievements, setAchievements} = useAchievements();
 
   const { ActiveGame, setActiveGame} = useActiveGame();
   const { Player, setPlayer } = usePlayer();
@@ -39,6 +41,7 @@ function Summaryscreen (){
 
     playSound(19);
     resetLevel(setRPSUser);
+    resetAchievementsUpdate(Achievements, setAchievements);
 
   }
 
@@ -47,6 +50,7 @@ function Summaryscreen (){
     playSound(4);
     resetLevel(setRPSUser);
     setActiveGame(retrieveActiveGame(0));
+    resetAchievementsUpdate(Achievements, setAchievements);
 
   }
 
@@ -58,7 +62,7 @@ function Summaryscreen (){
               <p> User Wins: {RPSUser[3]} </p>
               {RPSUser[4] > RPSUser[3] ? (
 
-                <p><span className = "StatsGlitch">You lost. </span></p>
+                <p><span className = "StatsGlitch"> You lost. </span></p>
 
               ) : RPSUser[4] < RPSUser[3] ? (
 
@@ -71,6 +75,16 @@ function Summaryscreen (){
               )}
 
           </div>
+
+          {Achievements[0][0] == true ? (
+
+            <p className = "largefont"> Congrats! You've won a new achievement!</p>
+
+          ) : (
+
+            null
+
+          )}
 
           {Player[0] >= ActiveGame[1] ? (
 

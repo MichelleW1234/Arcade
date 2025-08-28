@@ -23,7 +23,8 @@ const AchievementsContext = createContext();
 
 export function AchievementsProvider({ children }) {
 
-  const defaultAchievementsList = [[0, 5, "Won 5 games of Rock-Paper-Scissors", Andromeda], 
+  const defaultAchievementsList = [[false], 
+                                   [0, 5, "Won 5 games of Rock-Paper-Scissors", Andromeda], 
                                    [0, 10, "Won 10 games of Tic-Tac-Toe", Andromeda], 
                                    [0, 50, "Ate 50 Apples in Snake", Andromeda], 
                                    [0, 1, "Completed all 4 missions in Space Invasion", Andromeda], 

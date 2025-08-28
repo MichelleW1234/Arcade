@@ -5,7 +5,7 @@
     align-items: center;
 
     gap: 3rem;
-    padding: 5rem;       
+    padding: 5rem;    
 
 }
 
@@ -19,9 +19,7 @@
     height: 65vh;   
     gap: 5rem;
     padding: 5rem;
-    font-size: 0.75rem;
 
-    color: white;
 
 }
 
@@ -34,6 +32,11 @@
 
     width: 20rem;
     gap: 2rem;   
+    font-size: 0.85rem;
+
+    color: white;
+
+    animation: pulse-glow 2s infinite alternate;
 
 }
 
@@ -41,7 +44,6 @@
 .AchievementsBadge {
 
     height: 10rem;
-    animation: pulse-glow 2s infinite alternate;
     
 }
 

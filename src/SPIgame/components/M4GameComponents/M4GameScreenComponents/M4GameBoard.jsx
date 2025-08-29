@@ -44,28 +44,41 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
 
 
 
+
+
     const bossHit = () =>  {
+
+        let newHealth;
 
         setBossHealth(prevHealth => {
             
-            const newHealth = prevHealth - 1;
+            newHealth = prevHealth - 1;
 
             if (newHealth <= 0) {
 
-                setBossDefeated(true);
-                playSound(20);
                 return 0;
 
             } else {
 
-                playSound(8);
                 return newHealth;
 
             }
 
         });
 
+        if (newHealth <= 0) {
+
+            setBossDefeated(true);
+            playSound(20);
+
+        } else {
+
+            playSound(8);
+
+        }
+
     }
+
 
 
     const exploded = () =>  {

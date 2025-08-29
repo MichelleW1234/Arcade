@@ -76,7 +76,7 @@ const newApple = (setAppleLocation, snake) => {
             Y = Math.floor(Math.random() * gameboardWidth);
         } while (snake.some(([sx, sy]) => sx === X && sy === Y));
     
-        setAppleLocation(prev => [X, Y]);
+        setAppleLocation([X, Y]);
 
     }
 
@@ -102,7 +102,7 @@ const editSnake = (snake, setSnake, newSnakeHead, appleEaten) => {
 
     }
 
-    setSnake(prevMatrix => newMatrix);
+    setSnake(newMatrix);
 
 }
 

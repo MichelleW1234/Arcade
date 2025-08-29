@@ -111,8 +111,6 @@ function CatGamescreen (){
                 <div className = "CWMCatOuterGameContainer">
 
                     <ClawBar
-                        setButtonHit = {setButtonHit}
-                        setResult = {setResult}
                         currentPosition = {currentPosition}
                     />
 

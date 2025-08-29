@@ -110,8 +110,6 @@ function SportsGamescreen (){
                 <div className = "CWMSportsOuterGameContainer">
 
                     <ClawBar
-                        setButtonHit = {setButtonHit}
-                        setResult = {setResult}
                         currentPosition = {currentPosition}
                     />
 

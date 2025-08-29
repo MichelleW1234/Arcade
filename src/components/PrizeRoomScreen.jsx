@@ -34,7 +34,7 @@ function PrizeRoomscreen() {
 
         const newMatrix = Prize.map(Array => [...Array]);
         newMatrix[index][0] = "X";
-        setPrize(prevMatrix => newMatrix);
+        setPrize(newMatrix);
         
     }
 

@@ -123,17 +123,16 @@ function Gamescreen(){
 
         const interval = setInterval(() => {
 
+            let newDistance;
+
             setDistance(prev => {
-
-                const newDistance = prev + 1;
-
-                if (newDistance > 1000) {
-                    setFullDistanceTraveled(true);
-                }
-
+                newDistance = prev + 1;
                 return newDistance;
-
             });
+
+            if (newDistance > 1000) {
+                setFullDistanceTraveled(true);
+            }
 
         }, 100);
 

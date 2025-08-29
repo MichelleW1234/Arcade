@@ -111,8 +111,6 @@ function SpaceGamescreen (){
                 <div className = "CWMSpaceOuterGameContainer">
 
                     <ClawBar
-                        setButtonHit = {setButtonHit}
-                        setResult = {setResult}
                         currentPosition = {currentPosition}
                     />
 

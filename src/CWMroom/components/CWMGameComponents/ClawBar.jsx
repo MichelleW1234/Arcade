@@ -2,7 +2,7 @@ import positionIndicator from "../../../Images/image 21.svg";
 
 import "./ClawBar.css";
 
-function ClawBar({setButtonHit, setResult, currentPosition}) {
+function ClawBar({currentPosition}) {
 
     const array = Array.from({ length: 23 }, (_, i) => i);
 

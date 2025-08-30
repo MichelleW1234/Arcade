@@ -393,9 +393,9 @@ a.navBarButton {
 
   display: flex;
   flex-direction: column;
-  position: fixed;
-
+  justify-content: center;
   align-items: center;
+  position: fixed;
   z-index: 1;
 
   top: 0;

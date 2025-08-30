@@ -15,7 +15,7 @@ function PrizeRoomscreen() {
 
     const navigate = useNavigate();
 
-    useKeyboardShortcut("Enter", () => {
+    useKeyboardShortcut("Escape", () => {
         playSound(24);
         navigate("/selection");
     },
@@ -102,7 +102,7 @@ function PrizeRoomscreen() {
             </div>
             
             <Link to="/selection" className = "generalbuttonGlitch LeavePrizeRoom" onClick = {() => playSound(24)}>
-                <div className="buttonNameContainer"> Leave Prize Room <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                <div className="buttonNameContainer"> Leave Prize Room <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
         </div>

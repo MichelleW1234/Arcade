@@ -77,7 +77,6 @@ function Gamescreen (){
     const exitGame = () => {
         
         playSound(4);
-
         setCBLUser([0]);
         setPlayer([Player[0] - ActiveGame[1]]);
         setActiveGame(retrieveActiveGame(0));

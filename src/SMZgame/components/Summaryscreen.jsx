@@ -35,7 +35,6 @@ function Summaryscreen (){
 
 
 
-
     const reset = () => {
         
         playSound(4);

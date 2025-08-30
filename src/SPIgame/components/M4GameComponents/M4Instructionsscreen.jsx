@@ -2,6 +2,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useState} from 'react';
 import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 import { useExitPoints } from "../../../hooks/useExitPoints";
+import { storage } from "../../../storage";
 
 import boss from "../../../Images/image 13.svg";
 import bossDanger from "../../../Images/image 14.svg";
@@ -73,14 +74,12 @@ function M4Instructionsscreen() {
   );
 
 
-
   useExitPoints(() => {
       const adjustedPoints = [Player[0] - ActiveGame[1]];
-      localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+      storage.set("Player", adjustedPoints);
       setPlayer(adjustedPoints);
   });
-
-
+    
 
   return (
 

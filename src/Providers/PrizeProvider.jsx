@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { storage } from "../storage";
 
 import Bear from '../Images/ArcadePrizeImages/Bear.svg';
 import Bee from '../Images/ArcadePrizeImages/Bee.svg';
@@ -41,16 +42,11 @@ export function PrizeProvider({ children }) {
               ["Saturn", 0, Saturn], ["Earth", 0, Earth], ["Cow", 40, Cow], ["Hippo", 40, Hippo]];
 
   const [Prize, setPrize] = useState(() => {
-    try {
-      const stored = JSON.parse(localStorage.getItem("Prize"));
-      return Array.isArray(stored) ? stored : defaultPrizes;
-    } catch {
-      return defaultPrizes;
-    }
+    return storage.get("Prize", defaultPrizes);
   });
 
   useEffect(() => {
-    localStorage.setItem("Prize", JSON.stringify(Prize));
+    storage.set("Prize", Prize);
   }, [Prize]);
 
   return (

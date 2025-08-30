@@ -31,19 +31,25 @@ function Achievements ({setShowAchievements}){
                             
                         ) : (
 
-                            item[4] > 0 ? (
+                            <div key={index} className = "AchievementsWindow">
 
-                                <div key={index} className = "AchievementsWindow">
-                                    <h1> {item[2]}</h1>
+                                <h1 className = "AchievementsFont"> {item[2]}</h1>
+                                <br/>
+
+                                {item[4] > 0 ? ( 
+
                                     <img className = "AchievementsBadge" src = {item[3]}/>
-                                    <h1> x{item[4]}</h1>
-                                </div>
 
-                            ):(
+                                ):(
 
-                                null
+                                    <h1 className = "AchievementLocked"> Achievement Locked </h1>
 
-                            )
+                                )}
+
+                                <br/>
+                                <h1 className = "AchievementsFont"> x{item[4]}</h1>
+
+                            </div>
 
                         )
 

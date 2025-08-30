@@ -32,11 +32,10 @@
 
     width: 20rem;
     gap: 2rem;   
-    font-size: 0.85rem;
+    padding: 3rem;
+    border-radius: 1rem;
 
-    color: white;
-
-    animation: pulse-glow 2s infinite alternate;
+    box-shadow: 0 0 1rem 0.7rem rgb(198, 220, 255);
 
 }
 
@@ -44,8 +43,31 @@
 .AchievementsBadge {
 
     height: 10rem;
+
+    animation: pulse-glow 2s infinite alternate;
     
 }
+
+
+.AchievementsFont{
+
+    font-size: 1.6rem;
+    color: rgb(225, 236, 255);
+
+    animation: pulse-glow 2s infinite alternate;
+
+}
+
+
+.AchievementLocked{
+
+    font-size: 2rem;
+    color: rgb(148, 0, 0);
+
+    animation: pulse-glow 2s infinite alternate;
+
+}
+
 
 
 .AchievementsButton{

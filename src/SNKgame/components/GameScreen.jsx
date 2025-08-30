@@ -2,6 +2,7 @@ import {useNavigate, Link } from 'react-router-dom';
 import {useRef, useEffect, useState } from 'react';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 import { useExitPoints } from "../../hooks/useExitPoints";
+import { storage } from "../../storage";
 
 import InnerGameBoard from "./SNKGameComponents/InnerGameBoard.jsx";
 
@@ -98,13 +99,11 @@ function Gamesscreen(){
     );
 
 
-
     useExitPoints(() => {
         const adjustedPoints = [Player[0] - ActiveGame[1]];
-        localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+        storage.set("Player", adjustedPoints);
         setPlayer(adjustedPoints);
     });
-
 
 
     /* Refs avoid stale values and store the latest values for use inside 

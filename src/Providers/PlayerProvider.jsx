@@ -1,27 +1,18 @@
-/*
-0 -> cumulative points that user currently has
-*/
-
 import { createContext, useContext, useState, useEffect } from "react";
+import { storage } from "../storage";
 
 const PlayerContext = createContext();
 
 export function PlayerProvider({ children }) {
-  // Load initial state from localStorage
+  // Load initial state
   const [Player, setPlayer] = useState(() => {
-    try {
-      const stored = JSON.parse(localStorage.getItem("Player"));
-      return Array.isArray(stored) ? stored : [0];
-    } catch {
-      return [0]; // fallback
-    }
+    return storage.get("Player", [0]);
   });
 
   // Persist whenever Player changes
   useEffect(() => {
-    localStorage.setItem("Player", JSON.stringify(Player));
+    storage.set("Player", Player);
   }, [Player]);
-  
 
   return (
     <PlayerContext.Provider value={{ Player, setPlayer }}>
@@ -33,4 +24,3 @@ export function PlayerProvider({ children }) {
 export function usePlayer() {
   return useContext(PlayerContext);
 }
-

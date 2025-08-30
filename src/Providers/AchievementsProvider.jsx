@@ -15,10 +15,11 @@ for each achievement array:
   3 -> badge image
   4 -> # of badges won
 */
-
 import Andromeda from "../Images/ArcadePrizeImages/Andromeda.svg";
 
 import { createContext, useContext, useState, useEffect } from "react";
+
+import { storage } from "../storage";
 
 const AchievementsContext = createContext();
 
@@ -34,20 +35,13 @@ export function AchievementsProvider({ children }) {
                                    [0, 1, "Popped 15 balloons in Balloon Frenzy", Andromeda, 0], 
                                    [0, 1, "Traveled 500 meters in Sky Maze", Andromeda, 0]];
 
-  // Load initial state from localStorage
   const [Achievements, setAchievements] = useState(() => {
-    try {
-      const stored = JSON.parse(localStorage.getItem("Achievements"));
-      return Array.isArray(stored) ? stored : defaultAchievementsList;
-    } catch {
-      return defaultAchievementsList; // fallback
-    }
+    return storage.get("Achievements", defaultAchievementsList);
   });
 
   useEffect(() => {
-    localStorage.setItem("Achievements", JSON.stringify(Achievements));
+    storage.set("Achievements", Achievements);
   }, [Achievements]);
-  
 
   return (
     <AchievementsContext.Provider value={{ Achievements, setAchievements }}>
@@ -59,4 +53,3 @@ export function AchievementsProvider({ children }) {
 export function useAchievements() {
   return useContext(AchievementsContext);
 }
-

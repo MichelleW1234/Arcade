@@ -2,6 +2,7 @@ import { useNavigate, Link} from 'react-router-dom';
 import { useState, useEffect, useRef} from "react";
 import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 import { useExitPoints } from "../../../hooks/useExitPoints";
+import { storage } from "../../../storage";
 
 import ClawBar from "../CWMGameComponents/ClawBar.jsx";
 import ClawWindow from './SportsGameComponents/SportsClawWindow.jsx';
@@ -63,7 +64,7 @@ function SportsGamescreen (){
 
     useExitPoints(() => {
         const adjustedPoints = [Player[0] - ActiveGame[1]];
-        localStorage.setItem("Player", JSON.stringify(adjustedPoints));
+        storage.set("Player", adjustedPoints);
         setPlayer(adjustedPoints);
     });
 

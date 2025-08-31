@@ -8,8 +8,7 @@
     border-radius: 1.875rem; 
     gap: 1.875rem; 
 
-    background-color: rgb(103, 1, 162);
-
+    background: linear-gradient(to bottom, rgb(122, 0, 192),rgb(59, 0, 93));
     border-top: 0.125rem solid rgb(46, 0, 72);       
     border-left: 0.5rem solid rgb(46, 0, 72);       
     border-right: 0.125rem solid rgb(46, 0, 72);      

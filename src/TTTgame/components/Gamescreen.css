@@ -9,7 +9,7 @@
     padding: 3rem;      
     gap: 3rem;            
 
-    background-color: rgb(26, 156, 255);
+    background: linear-gradient(to bottom, rgb(26, 156, 255), rgb(0, 62, 110));
 
     border-left: 0.625rem solid rgb(10, 62, 102);  
     border-bottom: 0.625rem solid rgb(10, 62, 102);  

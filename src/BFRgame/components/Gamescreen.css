@@ -1,6 +1,6 @@
 .BFROuterGameContainer {
 
-    background-color: rgb(72, 0, 255);
+    background: linear-gradient(to bottom, rgb(72, 0, 255), rgb(29, 0, 103));
     padding: 3rem;
 
     border-top: 0.125rem solid rgb(28, 0, 98);     

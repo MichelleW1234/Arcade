@@ -1,5 +1,6 @@
 .ORBOuterGameContainer {
-    background-color: rgb(0, 157, 255);
+
+    background: linear-gradient(to bottom, rgb(0, 157, 255), rgb(0, 64, 132));
     padding: 3rem; 
 
     border-top: 0.125rem solid rgb(0, 76, 123);    
@@ -54,7 +55,7 @@
     font-size: 1.875rem;     
     padding: 0.8rem 1.8rem;     
 
-    background-color: red;
+    background-color: rgb(220, 0, 0);
 
     border-top: 0.125rem solid rgb(143, 0, 0);     
     border-right: 0.125rem solid rgb(143, 0, 0);   

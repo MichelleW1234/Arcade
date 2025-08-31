@@ -1,5 +1,6 @@
 .CBLOuterGameContainer {
-    background-color: rgb(158, 47, 255);
+
+    background: linear-gradient(to bottom, rgb(152, 45, 246), rgb(59, 17, 96));
     padding: 4rem;
 
     border-top: 0.125rem solid rgb(75, 22, 121);       

@@ -5,7 +5,7 @@
     justify-content: center;
     gap: 3.125rem;               
 
-    background-color: rgb(13, 0, 255);
+    background: linear-gradient(to bottom, rgb(13, 0, 255), rgb(5, 0, 108));
 
     border-left: 0.5625rem solid rgb(6, 0, 117);  
     border-bottom: 0.5625rem solid rgb(6, 0, 117);  
@@ -25,7 +25,8 @@
     justify-content: center;
     gap: 3.125rem;                
 
-    background-color: rgb(13, 0, 255);
+    /*background-color: rgb(13, 0, 255);*/
+    background: linear-gradient(to bottom, rgb(13, 0, 255), rgb(5, 0, 108));
 
     border-left: 0.5625rem solid rgb(6, 0, 117);   
     border-bottom: 0.5625rem solid rgb(6, 0, 117); 

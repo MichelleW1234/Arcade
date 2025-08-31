@@ -1,6 +1,6 @@
 .CWMGameSelectionBoard{
 
-    background-color: rgb(67, 18, 151);
+    background: linear-gradient(to bottom, rgb(92, 23, 210), rgb(32, 0, 88));
     text-align: center;       
     width: 44.9vw;     
     padding: 2rem;       

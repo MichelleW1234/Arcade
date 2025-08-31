@@ -1,6 +1,6 @@
 .RPSlevelsContainer {     
 
-  background-color: rgb(98, 0, 255);
+  background: linear-gradient(to bottom, rgb(98, 0, 255), rgb(36, 0, 93));
 
   text-align: center;
 

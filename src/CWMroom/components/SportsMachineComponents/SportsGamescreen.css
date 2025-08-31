@@ -9,7 +9,7 @@
 
     border-radius: 1.875rem; 
 
-    background-color: rgb(59, 41, 196);
+    background: linear-gradient(to bottom, rgb(57, 36, 215), rgb(13, 0, 114));
     border-top: 0.125rem solid rgb(32, 22, 107);    
     border-left: 0.5rem solid rgb(32, 22, 107);     
     border-right: 0.125rem solid rgb(32, 22, 107);      

@@ -78,7 +78,7 @@ function TurnDecidingscreen() {
 
         <div className = "TTTTurnScreenLayout">
 
-            <h1 className ="headerwords"> Press this button: </h1>
+            <h1 className = "instructionsSign"> <span className='signGlitch'>Press the Button:</span></h1>
 
             {TTTUser[0] === -1 ? (
                 

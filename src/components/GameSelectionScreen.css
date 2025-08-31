@@ -1,6 +1,6 @@
 .ArcadeGameBoard {
 
-  background-color: rgb(187, 0, 255);
+  background: linear-gradient(to bottom, rgb(192, 20, 255), rgb(71, 0, 97));
   width: 55vw;             
   padding: 3.5rem;    
   

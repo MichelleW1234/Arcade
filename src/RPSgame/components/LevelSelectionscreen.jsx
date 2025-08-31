@@ -104,7 +104,7 @@ function LevelSelectionscreen (){
 
             <div className = "gameScreenLayout">
 
-                <h1 className = "headerwords"> Variations: </h1>
+                <h1 className = "instructionsSign"> <span className='signGlitch'>Variations:</span></h1>
 
                 <div className = "RPSlevelsContainer">
 

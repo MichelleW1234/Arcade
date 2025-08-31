@@ -7,9 +7,9 @@
     width: 50vw;
 
     gap: 3rem;
-    padding: 3.125rem;       
+    padding: 3.125rem;
 
-    background-color: rgb(0, 145, 255);
+    background-color: rgb(0, 115, 203);
     border-bottom: 0.5rem solid rgb(0, 61, 108); 
     border-left: 0.5rem solid rgb(0, 61, 108);  
     border-top: 0.125rem solid rgb(0, 61, 108); 
@@ -17,7 +17,7 @@
 
     border-radius: 1.25rem;  
 
-    box-shadow: 0 0 1.25rem 0.625rem rgb(112, 179, 255);
+    box-shadow: 0 0 1rem 0.75rem rgb(112, 179, 255);
 }
 
 .inventoryInnerContainer {

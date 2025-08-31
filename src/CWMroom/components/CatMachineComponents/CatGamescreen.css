@@ -1,5 +1,6 @@
 .CWMCatOuterGameContainer {
-    background-color: rgb(214, 132, 0);
+
+    background: linear-gradient(to bottom, rgb(214, 132, 0), rgb(89, 55, 0));
     padding: 2.5rem;
 
     border-top: 0.125rem solid rgb(133, 70, 7);        

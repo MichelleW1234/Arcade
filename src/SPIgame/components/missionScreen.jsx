@@ -9,6 +9,8 @@ import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 
+import Lock from "../../Images/image 35.svg";
+
 import "./Missionscreen.css";
 
 import {playSound, claimPoints, achievementsUpdate} from '../../Helpers/helpers.js';
@@ -129,7 +131,7 @@ function Missionscreen() {
 
                             <div key = {mission} className="SPImissionWindowLocked">
 
-                                <p> Locked </p>
+                                <img className = "SPILocked" src = {Lock}/>
                             
                             </div>
 

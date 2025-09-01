@@ -44,12 +44,22 @@
 }
 
 
-.AchievementsBadge {
+.AchievementsBadgeUnlocked {
 
-    height: 10rem;
+    height: 12rem;
+    padding: 1.5rem;
+    border-radius: 2rem;
 
+    box-shadow: 0 0 1rem 0.7rem rgb(244, 198, 255);
     animation: pulse-glow 2s infinite alternate;
     
+}
+
+.AchievementsBadgeLocked{
+
+    height: 12rem;
+    animation: pulse-glow 2s infinite alternate;
+
 }
 
 

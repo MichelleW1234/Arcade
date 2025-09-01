@@ -2,6 +2,8 @@ import { useAchievements} from '../../Providers/AchievementsProvider.jsx';
 
 import { playSound } from '../../Helpers/helpers.js';
 
+import Lock from "../../Images/image 34.svg";
+
 import "./Achievements.css";
 
 function Achievements ({setShowAchievements}){
@@ -38,16 +40,19 @@ function Achievements ({setShowAchievements}){
 
                                 {item[4] > 0 ? ( 
 
-                                    <img className = "AchievementsBadge" src = {item[3]}/>
+                                    <>
+                                        <img className = "AchievementsBadgeUnlocked" src = {item[3]}/>
+                                        <h1 className = "AchievementsFont"> x{item[4]}</h1>
+                                    </>
 
                                 ):(
 
-                                    <h1 className = "AchievementLocked"> Achievement Locked </h1>
+                                    <>
+                                        <img className = "AchievementsBadgeLocked" src = {Lock}/>
+                                        <h1 className = "AchievementsFont"> Locked </h1>
+                                    </>
 
                                 )}
-
-                                <br/>
-                                <h1 className = "AchievementsFont"> x{item[4]}</h1>
 
                             </div>
 

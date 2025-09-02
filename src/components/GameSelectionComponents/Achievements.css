@@ -47,13 +47,15 @@
 .AchievementsBadgeUnlocked {
 
     height: 12rem;
+    height: 13.5rem;
     padding: 1.5rem;
     border-radius: 2rem;
 
-    box-shadow: 0 0 1rem 0.7rem rgb(229, 198, 255);
+    filter: 
+      drop-shadow(0 0 0.6rem rgb(220, 200, 255)) 
+      drop-shadow(0 0 0.8rem rgb(220, 200, 255))  
+      drop-shadow(0 0 1rem rgb(220, 200, 255)); 
 
-    animation: pulse-glow 2s infinite alternate;
-    
 }
 
 .AchievementsBadgeLocked{
@@ -90,9 +92,10 @@
 
 .AchievementsButton{
 
-    background-color: rgb(228, 110, 255);
+    background-color: rgb(232, 130, 255);
     font-size: 2rem;         
-    padding: 0.5rem 1rem;        
+    padding: 0.8rem 1.8rem; 
+    
     border-left: 0.375rem solid rgb(87, 0, 99);
     border-bottom: 0.375rem solid rgb(87, 0, 99);
     border-right: 0.125rem solid rgb(87, 0, 99);

@@ -38,7 +38,7 @@ function Achievements ({setShowAchievements}){
                                 <h1 className = "AchievementsFont"> {item[2]}</h1>
                                 <br/>
 
-                                {item[4] > 0 ? ( 
+                                {index %2 == 0 ? ( 
 
                                     <>
                                         <img className = "AchievementsBadgeUnlocked" src = {item[3]}/>

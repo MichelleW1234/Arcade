@@ -8,9 +8,11 @@
 
     gap: 3rem;
     padding: 3.5rem;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
 
-    box-shadow: 0 0 1rem 0.75rem rgb(174, 191, 255);
+    box-shadow: 0 0 1rem 0.8rem rgb(148, 172, 255);
+
+    background: linear-gradient(to bottom, rgba(0, 200, 255, 0.453), rgba(22, 0, 67, 0.491));
 
 }
 
@@ -65,12 +67,11 @@
 
     background-color: rgb(181, 202, 255);
 
-    font-size: 1.8rem;      
+    font-size: 2rem;      
     padding: 0.8rem 1.8rem;  
-    border-radius: 0.5rem;
 
-    border-left: 0.375rem solid rgb(0, 50, 178);
-    border-bottom: 0.375rem solid rgb(0, 50, 178);
+    border-left: 0.4rem solid rgb(0, 50, 178);
+    border-bottom: 0.4rem solid rgb(0, 50, 178);
     border-right: 0.125rem solid rgb(0, 50, 178); 
     border-top: 0.125rem solid rgb(0, 50, 178);
 
@@ -83,8 +84,8 @@
     background-color: rgb(0, 27, 234);
     color: white; 
 
-    border-left: 0.375rem solid rgb(0, 15, 126);
-    border-bottom: 0.375rem solid rgb(0, 15, 126);
+    border-left: 0.4rem solid rgb(0, 15, 126);
+    border-bottom: 0.4rem solid rgb(0, 15, 126);
     border-right: 0.125rem solid rgb(0, 15, 126); 
     border-top: 0.125rem solid rgb(0, 15, 126);
 

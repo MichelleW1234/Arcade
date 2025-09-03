@@ -8,47 +8,43 @@ function InnerGamescreen ({wallPositions, birdPosition, startButtonClicked}){
     const gameArray = Array.from({ length: 10 }, () => Array(17).fill(0));
     
     return (
-
-        <>
          
-            <div className = "SMZGameBoardScreen">
+        <div className = "SMZGameBoardScreen">
 
-                {!startButtonClicked && <div className = "SMZStartFlag"> Press any of the controls to start</div>}
+            {!startButtonClicked && <div className = "SMZStartFlag"> Press any of the controls to start</div>}
 
-                {gameArray.map((row, rowIndex) => (
-                    row.map((cell, colIndex) => {
+            {gameArray.map((row, rowIndex) => (
+                row.map((cell, colIndex) => {
 
-                        const birdHere = birdPosition[0] === rowIndex && birdPosition[1] === colIndex;
+                    const birdHere = birdPosition[0] === rowIndex && birdPosition[1] === colIndex;
 
-                        const wallHere = wallPositions
-                            .flat()
-                            .some(([r, c]) => r === rowIndex && c === colIndex);
+                    const wallHere = wallPositions
+                        .flat()
+                        .some(([r, c]) => r === rowIndex && c === colIndex);
 
 
-                        return (
+                    return (
 
-                            wallHere ? (
+                        wallHere ? (
 
-                                <img src = {Wall} key = {rowIndex + "," + colIndex} className="SMZGameBoardWall"/>
+                            <img src = {Wall} key = {rowIndex + "," + colIndex} className="SMZGameBoardWall"/>
 
-                            ) : birdHere ? (
+                        ) : birdHere ? (
 
-                                <img src = {Bird} key = {rowIndex + "," + colIndex} className="SMZGameBoardEmptySpace"/>
+                            <img src = {Bird} key = {rowIndex + "," + colIndex} className="SMZGameBoardEmptySpace"/>
 
-                            ) : (
-                                
-                                <div key = {rowIndex + "," + colIndex} className="SMZGameBoardEmptySpace"> </div>
-
-                            )
+                        ) : (
+                            
+                            <div key = {rowIndex + "," + colIndex} className="SMZGameBoardEmptySpace"> </div>
 
                         )
 
-                    })
-                ))}
+                    )
 
-            </div>
-            
-        </>
+                })
+            ))}
+
+        </div>
 
     );
 

@@ -25,7 +25,7 @@ function Achievements ({setShowAchievements}){
 
                 <div className = "AchievementsInnerContainer">
 
-                    {Achievements.map((item, index) => 
+                    {Achievements.map((item, index) => (
 
                         index === 0 ? (
  
@@ -58,7 +58,7 @@ function Achievements ({setShowAchievements}){
 
                         )
 
-                    )}
+                    ))}
 
                 </div>
 

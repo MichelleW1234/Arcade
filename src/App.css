@@ -465,14 +465,15 @@ a.navBarButton {
 }
 
 
-/* Scroolbars */
+/* Scrollbars */
+
 
 ::-webkit-scrollbar {
   width: 0.8rem; 
 }
-
+ 
 ::-webkit-scrollbar-track {
-  background: #0c0042;   
+  background: #0c0042;  
   border-radius: 1rem;     
 }
 

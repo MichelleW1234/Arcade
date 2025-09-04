@@ -1,9 +1,8 @@
 .CWMGameSelectionBoard{
 
     background: linear-gradient(to bottom, rgb(92, 23, 210), rgb(32, 0, 88));
-    text-align: center;       
-    width: 44.9vw;     
-    padding: 2rem;       
+    text-align: center;            
+    padding: 2rem 4rem;       
 
     border-radius: 1.25rem;    
     border-left: 0.5rem solid rgb(29, 8, 66);   
@@ -20,8 +19,10 @@
     display: flex;
     flex-direction: row;
     overflow-x: auto;
+    
     gap: 3.75rem;     
     padding: 2rem;  
+    width: 41.5vw;
 
 }
 

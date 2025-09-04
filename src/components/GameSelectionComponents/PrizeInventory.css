@@ -4,10 +4,8 @@
     flex-direction: column;
     align-items: center;
 
-    width: 50vw;
-
     gap: 3rem;
-    padding: 3.5rem;
+    padding: 3rem 4rem; 
     border-radius: 1rem;
 
     box-shadow: 0 0 1rem 0.8rem rgb(148, 172, 255);
@@ -22,7 +20,7 @@
     flex-direction: row;
     overflow-y: auto;
 
-    width: 100%;
+    width: 45vw;
     height: 30rem;    
 
     padding: 3rem;
@@ -38,10 +36,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     width: 20rem;
     gap: 1rem;
-    padding: 1.875rem;     
+    padding: 1.875rem;        
     font-size: 0.75rem; 
     border-radius: 1rem;            
 
@@ -56,7 +53,7 @@
 
 
 .inventoryImage {
-    /*max-height: 10rem;*/
+
     height: 10rem;
     width: 12.5rem; 
 

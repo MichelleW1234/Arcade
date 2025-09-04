@@ -13,7 +13,7 @@
 
   background-image: 
     url("../../../Images/ArcadeGameBackgroundImages/SMZ.svg"),
-    linear-gradient(to bottom, rgb(137, 108, 254), rgb(255, 207, 102));
+    linear-gradient(to bottom, rgb(119, 85, 255), rgb(255, 207, 102));
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -45,8 +45,6 @@
 
   height: 2.2rem;
   width: 3rem;
-
-  /*background-color: rgb(137, 182, 255);*/
   
 }
 

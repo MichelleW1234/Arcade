@@ -41,25 +41,23 @@ function Gamescreen(){
 
     useKeyboardShortcut("Enter", () => {
         if (gameOver == true){
-            document.querySelectorAll(".ViewResults").forEach(el => {
-                el.classList.add("active");
-                setTimeout(() => el.classList.remove("active"), 100);
-            });
-            document.querySelectorAll(".Activate").forEach(el => el.classList.remove("active"));
-
             result();
             navigate("/BFRsummary");
-        } else {
-            document.querySelectorAll(".Activate").forEach(el => {
-                el.classList.add("active");
-                setTimeout(() => el.classList.remove("active"), 100);
-            });
-            document.querySelectorAll(".ViewResults").forEach(el => el.classList.remove("active"));
+        }
+    },
+        ".ViewResults"
+    );
 
+
+    useKeyboardShortcut("Shift", () => {
+        if (gameOver == false){
             laserBlasted();
         }
-    });
+    },
+        ".Activate"
+    );
 
+    
 
 
     useExitPoints(() => {
@@ -237,7 +235,7 @@ function Gamescreen(){
                             />
 
                             <button className = "BFRActivateButton Activate" onClick = {() => laserBlasted()}>
-                                <div className="buttonNameContainer">Activate <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                                <div className="buttonNameContainer">Activate <br/> <span className = "buttonKeyDescription"> [Shift] </span></div>
                             </button>
                         </>
 

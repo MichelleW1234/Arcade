@@ -21,8 +21,8 @@ function Gamescreen(){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
-    const { ORBUser, setORBUser} = useORBUser();
-    const { Achievements, setAchievements} = useAchievements();
+    const { setORBUser} = useORBUser();
+    const { setAchievements} = useAchievements();
 
     const [stop, setStop] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -58,7 +58,7 @@ function Gamescreen(){
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (stop == true){
+        if (stop === true){
             document.querySelectorAll(".ViewResults").forEach(el => {
                 el.classList.add("active");
                 setTimeout(() => el.classList.remove("active"), 100);
@@ -94,7 +94,7 @@ function Gamescreen(){
 
     useEffect(() => {
     
-        if (stop == true) {
+        if (stop === true) {
 
             return;
 
@@ -117,7 +117,7 @@ function Gamescreen(){
         setStop(true);
         playSound(6);
 
-        if (circle[currentSlot][0] == winner[0] && circle[currentSlot][1] == winner[1]){
+        if (circle[currentSlot][0] === winner[0] && circle[currentSlot][1] === winner[1]){
 
             setSuccess(true);
 
@@ -130,12 +130,12 @@ function Gamescreen(){
         if (success === true){
 
             achievementsUpdate(setAchievements, 5);
-            pointsDistribution(ActiveGame, 1, setPlayer, Player);
+            pointsDistribution(ActiveGame, 1, setPlayer);
             setORBUser([true]);
 
         } else {
 
-            pointsDistribution(ActiveGame, 0, setPlayer, Player);
+            pointsDistribution(ActiveGame, 0, setPlayer);
 
         }
 
@@ -146,7 +146,7 @@ function Gamescreen(){
         
         playSound(4);
         setORBUser([false]);
-        setPlayer([Player[0] - ActiveGame[1]]);
+        setPlayer(prev => [prev[0] - ActiveGame[1]]);
         setActiveGame(retrieveActiveGame(0));
 
     }
@@ -164,7 +164,7 @@ function Gamescreen(){
 
                 <div className = "ORBOuterGameContainer">
 
-                    {stop == false ? (
+                    {stop === false ? (
 
                         <div className = "ORBGameBoardLightContainer">
                             <div className = "ORBGameBoardLightGo">  </div>
@@ -189,7 +189,7 @@ function Gamescreen(){
 
                     />
 
-                    {stop == false ? (
+                    {stop === false ? (
 
                         <button className = "ORBHitButton Stop" onClick={() => stopped()}> 
                             <div className="buttonNameContainer">STOP<br/> <span className = "buttonKeyDescription"> [Return] </span></div>

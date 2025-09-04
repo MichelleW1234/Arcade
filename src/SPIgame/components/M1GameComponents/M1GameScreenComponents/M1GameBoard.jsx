@@ -47,7 +47,7 @@ function M1GameBoard({waveNumber, setWaveNumber}) {
     /*Listener for aliens being shot*/
     useEffect(() => {
 
-        if (SPIUser[2] == true){
+        if (SPIUser[2] === true){
 
             return;
 
@@ -65,7 +65,7 @@ function M1GameBoard({waveNumber, setWaveNumber}) {
     /* Listener for wave rerendering */
     useEffect(() => {
 
-        if (SPIUser[2] == true){
+        if (SPIUser[2] === true){
 
             return;
 
@@ -82,7 +82,7 @@ function M1GameBoard({waveNumber, setWaveNumber}) {
      /* Listener for laser rerendering */
     useEffect(() => {
 
-        if (SPIUser[2] == true){
+        if (SPIUser[2] === true){
 
             return;
 
@@ -104,7 +104,7 @@ function M1GameBoard({waveNumber, setWaveNumber}) {
             <div className = "SPIgameScreenM1"> 
 
                 {gameBoardMatrix.map((row, rowIndex) => (
-                    row.map((num, colIndex) => {
+                    row.map((_, colIndex) => {
 
                         const isAlienHere = alienPositions.some(
                             ([alienRow, alienCol]) => alienRow === rowIndex && alienCol === colIndex

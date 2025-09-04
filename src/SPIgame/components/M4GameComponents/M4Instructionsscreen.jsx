@@ -23,7 +23,7 @@ function M4Instructionsscreen() {
 
   const { ActiveGame, setActiveGame} = useActiveGame();
   const { Player, setPlayer } = usePlayer();
-  const {SPIUser, setSPIUser} = useSPIUser();
+  const {setSPIUser} = useSPIUser();
 
   const [aliensDetectedOn, setAliensDetectedOn] = useState(false);
   const [equipmentOn, setEquipmentOn] = useState(false);
@@ -32,7 +32,7 @@ function M4Instructionsscreen() {
   const navigate = useNavigate();
   
   useKeyboardShortcut("Enter", () => {
-    if (aliensDetectedOn == false && equipmentOn == false){
+    if (aliensDetectedOn === false && equipmentOn === false){
       playSound(7);
       navigate("/SPIM4game");
     }
@@ -41,8 +41,8 @@ function M4Instructionsscreen() {
   );
 
   useKeyboardShortcut("Escape", () => {
-    if (aliensDetectedOn == false && equipmentOn == false){
-      quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
+    if (aliensDetectedOn === false && equipmentOn === false){
+      quitGame(setSPIUser, setPlayer, ActiveGame, setActiveGame);
       navigate("/selection");
     }
   },
@@ -50,8 +50,8 @@ function M4Instructionsscreen() {
   );
 
   useKeyboardShortcut("1", () => {
-    if (equipmentOn == false){
-      if (aliensDetectedOn == true){
+    if (equipmentOn === false){
+      if (aliensDetectedOn === true){
         setAliensDetectedOn(closingGuide());
       } else {
         setAliensDetectedOn(openingGuide());
@@ -62,8 +62,8 @@ function M4Instructionsscreen() {
   );
 
   useKeyboardShortcut("2", () => {
-    if (aliensDetectedOn == false){
-      if (equipmentOn == true){
+    if (aliensDetectedOn === false){
+      if (equipmentOn === true){
         setEquipmentOn(closingGuide());
       } else {
         setEquipmentOn(openingGuide());
@@ -147,7 +147,7 @@ function M4Instructionsscreen() {
       </div>
 
       <div className = "generalbuttonContainer">
-        <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+        <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, setPlayer, ActiveGame, setActiveGame)}>
           <div className="buttonNameContainer"> Quit Game <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
         </Link>
         <Link to= "/SPIM4game" className = "generalbuttonGlitch EnterZone" onClick = {() => playSound(7)}>

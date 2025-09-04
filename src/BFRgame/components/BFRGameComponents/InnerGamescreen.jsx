@@ -1,4 +1,3 @@
-import React, { useState, useEffect, useRef} from "react";
 import "./InnerGamescreen.css";
 import Balloon from "../../../Images/image 30.svg";
 import Bird from "../../../Images/image 31.svg";
@@ -11,7 +10,7 @@ function InnerGamescreen ({positions, laserBlast}){
 
         <div className = "BFRGameBoardScreen">
             {gameArray.map((row, rowIndex) => (
-                row.map((cell, colIndex) => {
+                row.map((_, colIndex) => {
 
                     const birdHere = positions.some(
                         ([r, c]) => r === colIndex && c === 0
@@ -33,7 +32,7 @@ function InnerGamescreen ({positions, laserBlast}){
                         
                         ) : balloonHere ? (
 
-                            colIndex == 8 ? (
+                            colIndex === 8 ? (
 
                                 <img src = {Balloon} key = {rowIndex + "," + colIndex} className="BFRFieldUnactivated"/>
 
@@ -45,7 +44,7 @@ function InnerGamescreen ({positions, laserBlast}){
 
                         ) : birdHere ? (
 
-                            colIndex == 8 ? (
+                            colIndex === 8 ? (
 
                                 <img src = {Bird} key = {rowIndex + "," + colIndex} className="BFRFieldUnactivated"/>
 
@@ -59,7 +58,7 @@ function InnerGamescreen ({positions, laserBlast}){
 
                         ) : (
                             
-                            colIndex == 8 ? (
+                            colIndex === 8 ? (
 
                                 <div key = {rowIndex + "," + colIndex} className="BFRFieldUnactivated"/>
 

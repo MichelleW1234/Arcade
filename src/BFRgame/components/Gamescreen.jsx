@@ -22,7 +22,7 @@ function Gamescreen(){
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const {BFRUser, setBFRUser} = useBFRUser();
-    const { Achievements, setAchievements} = useAchievements();
+    const { setAchievements} = useAchievements();
 
     const [positions, setPositions] = useState([[16, incomingItem()]]);
     const [laserBlast, setLaserBlast] = useState(false);
@@ -40,7 +40,7 @@ function Gamescreen(){
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (gameOver == true){
+        if (gameOver === true){
             result();
             navigate("/BFRsummary");
         }
@@ -50,7 +50,7 @@ function Gamescreen(){
 
 
     useKeyboardShortcut("Shift", () => {
-        if (gameOver == false){
+        if (gameOver === false){
             laserBlasted();
         }
     },
@@ -78,7 +78,7 @@ function Gamescreen(){
     
     useEffect(() => {
 
-        if (gameOver == true){
+        if (gameOver === true){
 
             return;
 
@@ -97,7 +97,7 @@ function Gamescreen(){
     
     useEffect(() => {
 
-        if (gameOver == true){
+        if (gameOver === true){
 
             return;
 
@@ -155,7 +155,7 @@ function Gamescreen(){
 
             playSound(27);
 
-            let newMatrix = positions.filter(position => !(position[0] == 8));
+            let newMatrix = positions.filter(position => !(position[0] === 8));
             setPositions(newMatrix);
 
             setBFRUser(prev => [prev[0] + 1]);
@@ -195,7 +195,7 @@ function Gamescreen(){
         playSound(4);
 
         setBFRUser([0]);
-        setPlayer([Player[0] - ActiveGame[1]]);
+        setPlayer(prev => [prev[0] - ActiveGame[1]]);
         setActiveGame(retrieveActiveGame(0));
 
     }

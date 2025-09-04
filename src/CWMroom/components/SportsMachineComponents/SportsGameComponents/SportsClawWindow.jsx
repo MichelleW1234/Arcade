@@ -20,7 +20,7 @@ function SportsClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosi
 
     useEffect(() => {
     
-        if (buttonHit == false || clawWentDown == true){
+        if (buttonHit === false || clawWentDown === true){
 
             return;
 
@@ -41,10 +41,10 @@ function SportsClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosi
         <div className="CWMSportsOuterWindow">
             <div className="CWMSportsClawRowContainer">
                 {array.map((row, rowIndex) => (
-                    row.map((cell, colIndex) => {
+                    row.map((_, colIndex) => {
 
-                        const clawcableHere = rowIndex < clawExtension[0] && colIndex == clawExtension[1]
-                        const clawHere = rowIndex == clawExtension[0] && colIndex == clawExtension[1]
+                        const clawcableHere = rowIndex < clawExtension[0] && colIndex === clawExtension[1]
+                        const clawHere = rowIndex === clawExtension[0] && colIndex === clawExtension[1]
 
                         return(
 

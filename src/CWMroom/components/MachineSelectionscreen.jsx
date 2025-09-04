@@ -16,7 +16,7 @@ import "./MachineSelectionscreen.css";
 function MachineSelectionscreen (){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
-    const { Player, setPlayer } = usePlayer(); 
+    const { Player } = usePlayer(); 
 
     const [activeButton, setActiveButton] = useState(0);
     const [currGamePath, setCurrGamePath] = useState("/CWMcatinstructions");
@@ -93,15 +93,15 @@ function MachineSelectionscreen (){
         playSound(3);
         setActiveButton(index);
 
-        if (index == 0){
+        if (index === 0){
 
             setCurrGamePath("/CWMcatinstructions");
 
-        } else if (index == 1){
+        } else if (index === 1){
 
             setCurrGamePath("/CWMsportsinstructions");
 
-        } else if (index == 2){
+        } else if (index === 2){
 
             setCurrGamePath("/CWMspaceinstructions");
 

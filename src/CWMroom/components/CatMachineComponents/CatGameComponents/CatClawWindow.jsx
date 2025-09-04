@@ -20,7 +20,7 @@ function CatClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPositio
 
     useEffect(() => {
     
-        if (buttonHit == false || clawWentDown == true){
+        if (buttonHit === false || clawWentDown === true){
 
             return;
 
@@ -41,10 +41,10 @@ function CatClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPositio
         <div className="CWMCatOuterWindow">
             <div className="CWMCatClawRowContainer">
                 {array.map((row, rowIndex) => (
-                    row.map((cell, colIndex) => {
+                    row.map((_, colIndex) => {
 
-                        const clawcableHere = rowIndex < clawExtension[0] && colIndex == clawExtension[1]
-                        const clawHere = rowIndex == clawExtension[0] && colIndex == clawExtension[1]
+                        const clawcableHere = rowIndex < clawExtension[0] && colIndex === clawExtension[1]
+                        const clawHere = rowIndex === clawExtension[0] && colIndex === clawExtension[1]
 
                         return(
 

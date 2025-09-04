@@ -29,7 +29,7 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
     /* Listener for boss position rerendering and determining boss state*/
     useEffect(() => {
 
-        if (SPIUser[2] == true){
+        if (SPIUser[2] === true){
 
             return;
 
@@ -50,9 +50,9 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
 
         let newHealth;
 
-        setBossHealth(prevHealth => {
+        setBossHealth(prev => {
             
-            newHealth = prevHealth - 1;
+            newHealth = prev - 1;
 
             if (newHealth <= 0) {
 
@@ -96,7 +96,7 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
             <div className = "SPIgameScreenM4"> 
 
                 {gameBoardMatrix.map((row, rowIndex) => (
-                    row.map((num, colIndex) => {
+                    row.map((_, colIndex) => {
 
                         const isBossHere =
                             bossState[0][0] === rowIndex && bossState[0][1] === colIndex;
@@ -105,7 +105,7 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
 
                             isBossHere ? (
 
-                                bossState[1] == true ? (
+                                bossState[1] === true ? (
 
                                     <div
                                         key={rowIndex + "," + colIndex}

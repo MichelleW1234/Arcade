@@ -1,6 +1,6 @@
 export const orbiting = (circle, currentSlot, setCurrentSlot) => {
 
-    if (currentSlot == circle.length-1){
+    if (currentSlot === circle.length-1){
 
         setCurrentSlot(0);
 

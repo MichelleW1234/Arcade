@@ -13,7 +13,7 @@ function Summaryscreen() {
 
     const { TTTUser, setTTTUser} = useTTTUser();
     const { ActiveGame, setActiveGame} = useActiveGame();
-    const { Player, setPlayer} = usePlayer();
+    const { Player} = usePlayer();
     const { Achievements, setAchievements} = useAchievements();
 
     const navigate = useNavigate();
@@ -82,7 +82,7 @@ function Summaryscreen() {
 
             </div>
 
-            {Achievements[0][0] == true ? (
+            {Achievements[0][0] === true ? (
 
                 <p className = "largefont"> Congrats! You've won an achievement!</p>
 

@@ -22,7 +22,7 @@ function M2Instructionsscreen() {
 
   const { ActiveGame, setActiveGame} = useActiveGame();
   const { Player, setPlayer } = usePlayer();
-  const {SPIUser, setSPIUser} = useSPIUser();
+  const { setSPIUser} = useSPIUser();
 
   const [aliensDetectedOn, setAliensDetectedOn] = useState(false);
   const [waveInfoOn, setWaveInfoOn] = useState(false);
@@ -32,7 +32,7 @@ function M2Instructionsscreen() {
   const navigate = useNavigate();
 
   useKeyboardShortcut("Enter", () => {
-    if (aliensDetectedOn == false && waveInfoOn == false && equipmentOn == false){
+    if (aliensDetectedOn === false && waveInfoOn === false && equipmentOn === false){
       playSound(7);
       navigate("/SPIM2game");
     }
@@ -41,8 +41,8 @@ function M2Instructionsscreen() {
   );
 
   useKeyboardShortcut("Escape", () => {
-    if (aliensDetectedOn == false && waveInfoOn == false && equipmentOn == false){
-      quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
+    if (aliensDetectedOn === false && waveInfoOn === false && equipmentOn === false){
+      quitGame(setSPIUser, setPlayer, ActiveGame, setActiveGame);
       navigate("/selection");
     }
   },
@@ -50,8 +50,8 @@ function M2Instructionsscreen() {
   );
 
   useKeyboardShortcut("1", () => {
-    if (waveInfoOn == false && equipmentOn == false){
-      if (aliensDetectedOn == true){
+    if (waveInfoOn === false && equipmentOn === false){
+      if (aliensDetectedOn === true){
 
         setAliensDetectedOn(closingGuide());
 
@@ -66,8 +66,8 @@ function M2Instructionsscreen() {
   );
 
   useKeyboardShortcut("2", () => {
-    if (aliensDetectedOn == false && equipmentOn == false){
-      if (waveInfoOn == true){
+    if (aliensDetectedOn === false && equipmentOn === false){
+      if (waveInfoOn === true){
 
         setWaveInfoOn(closingGuide());
 
@@ -82,8 +82,8 @@ function M2Instructionsscreen() {
   );
 
   useKeyboardShortcut("3", () => {
-    if (waveInfoOn == false && aliensDetectedOn == false){
-      if (equipmentOn == true){
+    if (waveInfoOn === false && aliensDetectedOn === false){
+      if (equipmentOn === true){
 
         setEquipmentOn(closingGuide());
 
@@ -191,7 +191,7 @@ function M2Instructionsscreen() {
       </div>
 
       <div className = "generalbuttonContainer">
-        <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+        <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, setPlayer, ActiveGame, setActiveGame)}>
           <div className="buttonNameContainer"> Quit Game <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
         </Link>
         <Link to= "/SPIM2game" className = "generalbuttonGlitch EnterZone" onClick = {() => playSound(7)}>

@@ -30,14 +30,14 @@ function M4Gamescreen() {
     const navigate = useNavigate();
 
     useKeyboardShortcut("Escape", () => {
-        quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
+        quitGame(setSPIUser, setPlayer, ActiveGame, setActiveGame);
         navigate("/selection");
     },
         ".QuitGame"
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (bossDefeated == true || SPIUser[2] == true){
+        if (bossDefeated === true || SPIUser[2] === true){
             unlockNextMission(SPIUser, setSPIUser);
             navigate("/SPImission");
         }
@@ -59,7 +59,7 @@ function M4Gamescreen() {
     /* Timer */
     useEffect(() => {
 
-        if (SPIUser[2] == true){
+        if (SPIUser[2] === true){
 
             return;
 
@@ -76,11 +76,11 @@ function M4Gamescreen() {
     /*Beamlight battery runs out */
     useEffect(() => {
 
-        if (seconds >= 60 && bossDefeated == false && blownUp == false) {
+        if (seconds >= 60 && bossDefeated === false && blownUp === false) {
 
             setSPIUser(prev => [prev[0], prev[1], true]);
 
-            if (bossRoared == false){
+            if (bossRoared === false){
 
                 playSound(14);
                 setBossRoared(true);
@@ -95,13 +95,13 @@ function M4Gamescreen() {
     return (
 
         <div>
-            <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+            <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, setPlayer, ActiveGame, setActiveGame)}>
                 <div className="buttonNameContainer"> Quit Game<br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
             <div className = "gameScreenLayout">
 
-                {bossDefeated == false && SPIUser[2] == false ? (
+                {bossDefeated === false && SPIUser[2] === false ? (
 
                     <div className="SPIouterContainerM4">
 
@@ -124,9 +124,9 @@ function M4Gamescreen() {
                             
                             <div className = "SPIendingScreen">
 
-                                {SPIUser[2] == true ? (
+                                {SPIUser[2] === true ? (
 
-                                    blownUp == false ? (
+                                    blownUp === false ? (
 
                                         <p> Your beamlight ran out of power.</p>
 

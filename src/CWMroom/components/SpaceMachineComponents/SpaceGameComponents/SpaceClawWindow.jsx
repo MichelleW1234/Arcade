@@ -21,7 +21,7 @@ function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosit
 
     useEffect(() => {
     
-        if (buttonHit == false || clawWentDown == true){
+        if (buttonHit === false || clawWentDown === true){
 
             return;
 
@@ -42,10 +42,10 @@ function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosit
         <div className="CWMSpaceOuterWindow">
             <div className="CWMSpaceClawRowContainer">
                 {array.map((row, rowIndex) => (
-                    row.map((cell, colIndex) => {
+                    row.map((_, colIndex) => {
 
-                        const clawcableHere = rowIndex < clawExtension[0] && colIndex == clawExtension[1]
-                        const clawHere = rowIndex == clawExtension[0] && colIndex == clawExtension[1]
+                        const clawcableHere = rowIndex < clawExtension[0] && colIndex === clawExtension[1]
+                        const clawHere = rowIndex === clawExtension[0] && colIndex === clawExtension[1]
 
                         return(
 

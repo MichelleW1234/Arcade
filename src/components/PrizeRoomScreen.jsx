@@ -30,7 +30,7 @@ function PrizeRoomscreen() {
 
         playSound(17);
         
-        setPlayer([Player[0] - Prize[index][1]]);
+        setPlayer(prev => [prev[0] - Prize[index][1]]);
 
         const newMatrix = Prize.map(Array => [...Array]);
         newMatrix[index][0] = "X";
@@ -52,7 +52,7 @@ function PrizeRoomscreen() {
 
                         item[1] > 0 ? (
                 
-                            item[0] != "X" ? (
+                            item[0] !== "X" ? (
 
                                 <div key = {index} className = "prizeWindowContainer">
 

@@ -12,7 +12,7 @@ function Summaryscreen() {
 
     const {SPIUser, setSPIUser} = useSPIUser();
     const { ActiveGame, setActiveGame} = useActiveGame();
-    const { Player, setPlayer } = usePlayer();
+    const { Player} = usePlayer();
     const { Achievements, setAchievements} = useAchievements();
 
     const navigate = useNavigate();
@@ -60,7 +60,7 @@ function Summaryscreen() {
                 <p> <span className="StatsGlitch"> Points Earned: {SPIUser[0] * ActiveGame[1]}</span></p>
             </div>
 
-            {Achievements[0][0] == true ? (
+            {Achievements[0][0] === true ? (
 
                 <p className = "largefont"> Congrats! You've won an achievement!</p>
 

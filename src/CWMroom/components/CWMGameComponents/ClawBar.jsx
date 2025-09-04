@@ -14,7 +14,7 @@ function ClawBar({currentPosition}) {
 
                     index < 5 || index > 17 ? (
 
-                        currentPosition == index ? (
+                        currentPosition === index ? (
 
                             <div key={index} className="CWMBarNotAccurate">
                                 <img className="CWMBarCurrent" key={index} src={positionIndicator}/>
@@ -28,7 +28,7 @@ function ClawBar({currentPosition}) {
 
                     ) : index < 8 || index > 14 ? (
 
-                        currentPosition == index ? (
+                        currentPosition === index ? (
 
                             <div key={index} className="CWMBarInRange">
                                 <img className="CWMBarCurrent"  key={index} src={positionIndicator}/>
@@ -42,7 +42,7 @@ function ClawBar({currentPosition}) {
 
                     ) : index < 11 || index > 11 ? (
 
-                        currentPosition == index ? (
+                        currentPosition === index ? (
 
                             <div key={index} className="CWMBarClose">
                                 <img className="CWMBarCurrent"  key={index} src={positionIndicator}/>
@@ -55,7 +55,7 @@ function ClawBar({currentPosition}) {
 
                     ) : (
 
-                        currentPosition == index ? (
+                        currentPosition === index ? (
 
                             <div key={index} className="CWMBarVeryClose">
                                 <img className="CWMBarCurrent"  key={index} src={positionIndicator}/>

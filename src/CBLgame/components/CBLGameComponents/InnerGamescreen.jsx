@@ -9,7 +9,7 @@ import { playSound } from "../../../Helpers/helpers.js";
 
 function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlasted, wrongColorBlasted}) {
 
-    const { CBLUser, setCBLUser } = useCBLUser();
+    const { setCBLUser } = useCBLUser();
 
     const [colorSpot, setColorSpot] = useState([Math.floor(Math.random() * 16), Math.floor(Math.random() * 4)]);
     const [colorBlasted, setColorBlasted] = useState(false);
@@ -25,7 +25,7 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
 
     useEffect(() => {
 
-        if (wrongColorBlasted == true){
+        if (wrongColorBlasted === true){
 
             return;
 
@@ -87,9 +87,9 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
         }>
 
             {gameArray.map((row, rowIndex) => (
-                row.map((cell, colIndex) => {
+                row.map((_, colIndex) => {
 
-                    const colorHere = colorSpot[0] == rowIndex * 4 + colIndex;
+                    const colorHere = colorSpot[0] === rowIndex * 4 + colIndex;
 
                     return (
 

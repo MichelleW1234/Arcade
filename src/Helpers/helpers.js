@@ -82,17 +82,17 @@ export const retrieveActiveGame = (index) => {
 
 }
 
-export const pointsDistribution = (ActiveGame, winner, setPlayer, Player) => {
+export const pointsDistribution = (ActiveGame, winner, setPlayer) => {
 
     playSound(2);
     
-    if (winner == 1){
+    if (winner === 1){
 
-        setPlayer([Player[0] + ActiveGame[1]]);
+        setPlayer(prev => [prev[0] + ActiveGame[1]]);
 
-    } else if (winner == 0){
+    } else if (winner === 0){
 
-        setPlayer([Player[0] - ActiveGame[1]]);
+        setPlayer(prev => [prev[0] - ActiveGame[1]]);
 
     }
 
@@ -177,7 +177,7 @@ export const achievementsUpdate = (setAchievements, index) => {
         const newAchievements = prev.map(inner => [...inner]);
         newAchievements[index][0] += 1;
 
-        if (newAchievements[index][0] == newAchievements[index][1]) {
+        if (newAchievements[index][0] === newAchievements[index][1]) {
 
             newAchievements[index][0] = 0;
             newAchievements[index][4] += 1;
@@ -193,7 +193,7 @@ export const achievementsUpdate = (setAchievements, index) => {
 
 export const resetAchievementsUpdate = (Achievements, setAchievements) => {
 
-    if (Achievements[0][0] == true){
+    if (Achievements[0][0] === true){
 
         setAchievements(prev => {
 

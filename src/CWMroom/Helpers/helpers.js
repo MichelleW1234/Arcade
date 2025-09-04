@@ -1,12 +1,12 @@
 import { playSound} from "../../Helpers/helpers";
 
-export const changePosition = (currentPosition, setCurrentPosition, direction, setDirection) => {
+export const changePosition = (currentPosition, setCurrentPosition, direction) => {
 
-    if (direction === 0) {
+    if (direction.current === 0) {
 
         if (currentPosition === 0){
 
-            setDirection(1);
+            direction.current = 1;
             setCurrentPosition(prev => prev + 1);
 
         } else {
@@ -19,7 +19,7 @@ export const changePosition = (currentPosition, setCurrentPosition, direction, s
 
         if (currentPosition === 22){
 
-            setDirection(0);
+            direction.current = 0;
             setCurrentPosition(prev => prev - 1);
 
         } else {
@@ -44,7 +44,7 @@ export const clawGrab = (currentPosition, setResult, setButtonHit) => {
 
         const prizeWon = Math.floor(Math.random() * 21);
 
-        if (prizeWon == 10) {
+        if (prizeWon === 10) {
 
             setResult(1);
 
@@ -54,7 +54,7 @@ export const clawGrab = (currentPosition, setResult, setButtonHit) => {
 
         const prizeWon = Math.floor(Math.random() * 10);
 
-        if (prizeWon == 5) {
+        if (prizeWon === 5) {
 
             setResult(1);
 
@@ -64,7 +64,7 @@ export const clawGrab = (currentPosition, setResult, setButtonHit) => {
 
         const prizeWon = Math.floor(Math.random() * 2);
 
-        if (prizeWon == 1) {
+        if (prizeWon === 1) {
 
             setResult(1);
 
@@ -81,7 +81,7 @@ export const clawGrab = (currentPosition, setResult, setButtonHit) => {
 
 export const animateClaw = (currentPosition, clawExtension, setClawExtension, setClawWentDown) => {
 
-    if (clawExtension[1] != currentPosition){
+    if (clawExtension[1] !== currentPosition){
 
         setClawExtension(prev => {
             const updated = [...prev];
@@ -133,14 +133,14 @@ const choosePrize = () => {
 
 
 
-export const claimPrize = (result, setCWMUser, setPrize, Player, setPlayer, ActiveGameCost, prizeIndices) => {
+export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCost, prizeIndices) => {
 
-    if (result == 1){
+    if (result === 1){
 
         const prize = choosePrize();
         setCWMUser([prize]);
 
-        if (prize == 1){
+        if (prize === 1){
 
             setPrize(prev => {
                 const newArray = prev.map(row => [...row]); // Deep copy
@@ -149,7 +149,7 @@ export const claimPrize = (result, setCWMUser, setPrize, Player, setPlayer, Acti
                 return newArray;
             });
 
-        } else if (prize == 2){
+        } else if (prize === 2){
 
             setPrize(prev => {
                 const newArray = prev.map(row => [...row]); // Deep copy
@@ -158,7 +158,7 @@ export const claimPrize = (result, setCWMUser, setPrize, Player, setPlayer, Acti
                 return newArray;
             });
 
-        } else if (prize == 3){
+        } else if (prize === 3){
 
             setPrize(prev => {
                 const newArray = prev.map(row => [...row]); // Deep copy
@@ -180,18 +180,18 @@ export const claimPrize = (result, setCWMUser, setPrize, Player, setPlayer, Acti
 
     }
 
-    setPlayer([Player[0] - ActiveGameCost]);
+    setPlayer(prev => [prev[0] - ActiveGameCost]);
     playSound(2);
 
 }
 
 
 
-export const exitGame = (Player, setPlayer, ActiveGameCost, setCWMUser) => {
+export const exitGame = (setPlayer, ActiveGameCost, setCWMUser) => {
 
     playSound(4);
     setCWMUser([0]);
-    setPlayer([Player[0] - ActiveGameCost]);
+    setPlayer(prev => [prev[0] - ActiveGameCost]);
 
 }
 

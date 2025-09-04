@@ -7,7 +7,7 @@ import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
 function Startscreen (){
 
-    const { ActiveGame, setActiveGame} = useActiveGame();
+    const { setActiveGame} = useActiveGame();
 
     const navigate = useNavigate();
 

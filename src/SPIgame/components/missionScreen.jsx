@@ -24,21 +24,21 @@ function Missionscreen() {
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { Player, setPlayer } = usePlayer();
     const {SPIUser, setSPIUser} = useSPIUser();
-    const { Achievements, setAchievements} = useAchievements();
+    const {setAchievements} = useAchievements();
 
     const [currGamePath, setCurrGamePath] = useState(SPIUser[1][1]);
 
     const navigate = useNavigate();
 
     useKeyboardShortcut("Escape", () => {
-        quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
+        quitGame(setSPIUser, setPlayer, ActiveGame, setActiveGame);
         navigate("/selection");
     },
         ".QuitGame"
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (SPIUser[0] == allMissions.length || SPIUser[2] == true){
+        if (SPIUser[0] === allMissions.length || SPIUser[2] === true){
             document.querySelectorAll(".ViewResults").forEach(el => {
                 el.classList.add("active");
                 setTimeout(() => el.classList.remove("active"), 100);
@@ -76,7 +76,7 @@ function Missionscreen() {
     
     const result = () => {
     
-        if (SPIUser[0] == 4){
+        if (SPIUser[0] === 4){
     
             achievementsUpdate(setAchievements, 4);
     
@@ -91,7 +91,7 @@ function Missionscreen() {
 
         <div>
 
-            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+            <Link to="/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, setPlayer, ActiveGame, setActiveGame)}>
                 <div className="buttonNameContainer"> Quit Game<br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
@@ -100,7 +100,7 @@ function Missionscreen() {
                 <h1 className = "headerwords"> Your Mission<span className = "headerwordsGlitch">s</span>: </h1>
                 <div className = "SPImissionContainer">
                     {allMissions.map((mission, index) => (
-                        SPIUser[2] == true ? (
+                        SPIUser[2] === true ? (
 
                             <div key = {mission} className="SPImissionWindowUnavailable">
                                 
@@ -116,7 +116,7 @@ function Missionscreen() {
                             </div>
 
 
-                        ) : SPIUser[1][0] == mission ? (
+                        ) : SPIUser[1][0] === mission ? (
 
                             <div key = {mission} className="SPImissionWindowUnlocked">
 
@@ -139,7 +139,7 @@ function Missionscreen() {
                     ))}
                 </div>
 
-                {SPIUser[0] == allMissions.length || SPIUser[2] == true ? (
+                {SPIUser[0] === allMissions.length || SPIUser[2] === true ? (
 
                     <Link to= "/SPIsummary" className = "SPIbutton ViewResults" onClick = {() => result()}>
                         <div className="buttonNameContainer">View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>

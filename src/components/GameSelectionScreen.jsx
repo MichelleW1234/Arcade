@@ -26,7 +26,7 @@ import "./GameSelectionscreen.css";
 function GameSelectionscreen (){
 
     const { ActiveGame, setActiveGame } = useActiveGame(); 
-    const { Player, setPlayer } = usePlayer(); 
+    const { Player } = usePlayer(); 
 
     const [activeButton, setActiveButton] = useState(0);
     const [currGamePath, setCurrGamePath] = useState(ActiveGame[0]);
@@ -40,7 +40,7 @@ function GameSelectionscreen (){
     useKeyboardShortcut("ArrowLeft", (event) => {
         event.preventDefault();
 
-        if (showInventory == false && showAchievements == false) {
+        if (showInventory === false && showAchievements === false) {
             setActiveButton(prev => (prev - 1 + totalButtons) % totalButtons);
             playSound(3);
         }
@@ -49,7 +49,7 @@ function GameSelectionscreen (){
     useKeyboardShortcut("ArrowRight", (event) => {
         event.preventDefault();
 
-        if (showInventory == false && showAchievements == false){
+        if (showInventory === false && showAchievements === false){
             setActiveButton(prev => (prev + 1) % totalButtons);
             playSound(3);
         }
@@ -74,7 +74,7 @@ function GameSelectionscreen (){
         event.preventDefault();
         event.stopPropagation();
 
-        if (showInventory == false && showAchievements == false){
+        if (showInventory === false && showAchievements === false){
             if (Player[0] >= ActiveGame[1]){
 
                 playSound(2);

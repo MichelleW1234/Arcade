@@ -21,8 +21,8 @@ function Gamescreen(){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
-    const { SMZUser, setSMZUser} = useSMZUser();
-    const { Achievements, setAchievements} = useAchievements();
+    const { setSMZUser} = useSMZUser();
+    const { setAchievements} = useAchievements();
 
     const [wallPositions, setWallPositions] = useState([wallHeight(16)]);
     const [birdPosition, setBirdPosition] = useState([5,5]);
@@ -44,7 +44,7 @@ function Gamescreen(){
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (gameOver == true){
+        if (gameOver === true){
             result();
             navigate("/SMZsummary");
         }
@@ -54,7 +54,7 @@ function Gamescreen(){
 
     useKeyboardShortcut("ArrowUp", (event) => {
 
-        if (gameOver == false){
+        if (gameOver === false){
             event.preventDefault();
 
             birdFlyingUpwards();
@@ -66,7 +66,7 @@ function Gamescreen(){
 
     useKeyboardShortcut("ArrowDown", (event) => {
 
-        if (gameOver == false){
+        if (gameOver === false){
             event.preventDefault();
 
             birdFlyingDownwards();
@@ -84,7 +84,6 @@ function Gamescreen(){
     });
 
 
-
     const wallPositionsRef = useRef(wallPositions);
     useEffect(() => {
         wallPositionsRef.current = wallPositions;
@@ -95,9 +94,11 @@ function Gamescreen(){
         birdPositionRef.current = birdPosition;
     }, [birdPosition]);
     
+
+    
     useEffect(() => {
 
-        if (startButtonClicked == false || gameOver == true){
+        if (startButtonClicked === false || gameOver === true){
 
             return;
 
@@ -116,7 +117,7 @@ function Gamescreen(){
 
     useEffect(() => {
 
-        if (startButtonClicked == false || gameOver == true){
+        if (startButtonClicked === false || gameOver === true){
 
             return;
 
@@ -143,7 +144,7 @@ function Gamescreen(){
 
     useEffect(() => {
 
-        if (startButtonClicked == false || gameOver == true){
+        if (startButtonClicked === false || gameOver === true){
 
             return;
 
@@ -162,7 +163,7 @@ function Gamescreen(){
 
     useEffect(() => {
 
-        if (wallHit == true || fullDistanceTraveled == true) {
+        if (wallHit === true || fullDistanceTraveled === true) {
 
             playSound(6);
             setGameOver(true);
@@ -175,7 +176,7 @@ function Gamescreen(){
 
     const birdFlyingUpwards = () => {
 
-        if (startButtonClicked == false){
+        if (startButtonClicked === false){
 
             setStartButtonClicked(true);
             playSound(3);
@@ -201,7 +202,7 @@ function Gamescreen(){
 
     const birdFlyingDownwards = () => {
 
-        if (startButtonClicked == false){
+        if (startButtonClicked === false){
 
             setStartButtonClicked(true);
             playSound(3);
@@ -229,7 +230,7 @@ function Gamescreen(){
         playSound(4);
 
         setSMZUser([0]);
-        setPlayer([Player[0] - ActiveGame[1]]);
+        setPlayer(prev => [prev[0] - ActiveGame[1]]);
         setActiveGame(retrieveActiveGame(0));
 
     }

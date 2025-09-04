@@ -9,7 +9,7 @@ function InnerGamescreen ({circle, currentSlot, winner}){
 
         <div className = "ORBGameBoardScreen">
             {gameArray.map((row, rowIndex) => (
-                row.map((cell, colIndex) => {
+                row.map((_, colIndex) => {
 
                     const circlePart = circle.some(
                         ([r, c]) => r === rowIndex && c === colIndex

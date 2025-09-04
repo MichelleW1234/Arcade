@@ -18,22 +18,19 @@ import "./SpaceGamescreen.css";
 
 function SpaceGamescreen (){
 
-    const { CWMUser, setCWMUser} = useCWMUser();
+    const { setCWMUser} = useCWMUser();
     const { Player, setPlayer} = usePlayer();
-    const { ActiveGame, setActiveGame} = useActiveGame();
-    const { Prize, setPrize } = usePrize();
+    const { ActiveGame} = useActiveGame();
+    const { setPrize } = usePrize();
 
     const [buttonHit, setButtonHit] = useState(false);
     const [result, setResult] = useState(0);
-
     const [currentPosition, setCurrentPosition] = useState(0);
-    const [direction, setDirection] = useState(1);
-
     const [clawWentDown, setClawWentDown] = useState(false);
 
     const navigate = useNavigate();
     useKeyboardShortcut("Enter", () => {
-        if (buttonHit == false){
+        if (buttonHit === false){
             document.querySelectorAll(".Grab").forEach(el => {
                     el.classList.add("active");
                     setTimeout(() => el.classList.remove("active"), 100);
@@ -42,20 +39,20 @@ function SpaceGamescreen (){
             
             clawGrab(currentPosition, setResult, setButtonHit);
 
-        } else if (clawWentDown == true){
+        } else if (clawWentDown === true){
             document.querySelectorAll(".CheckPrizeDoor").forEach(el => {
                 el.classList.add("active");
                 setTimeout(() => el.classList.remove("active"), 100);
             });
             document.querySelectorAll(".Grab").forEach(el => el.classList.remove("active"));
 
-            claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [17, 18, 19, 20]);
+            claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [17, 18, 19, 20]);
             navigate("/CWMspacesummary");
         }
     });
 
     useKeyboardShortcut("Escape", () => {
-        exitGame(Player, setPlayer, ActiveGame[1], setCWMUser);
+        exitGame(setPlayer, ActiveGame[1], setCWMUser);
         navigate("/CWMselection");
     },
         ".QuitMachine"
@@ -74,15 +71,14 @@ function SpaceGamescreen (){
         currentPositionRef.current = currentPosition;
     }, [currentPosition]);
 
-    const directionRef = useRef(direction);
-    useEffect(() => {
-        directionRef.current = direction;
-    }, [direction]);
+    const directionRef = useRef(1);
+
+
 
 
     useEffect(() => {
 
-        if (buttonHit == true){
+        if (buttonHit === true){
 
             return;
 
@@ -90,7 +86,7 @@ function SpaceGamescreen (){
 
         const interval = setInterval(() => {
 
-            changePosition(currentPositionRef.current, setCurrentPosition, directionRef.current, setDirection);
+            changePosition(currentPositionRef.current, setCurrentPosition, directionRef);
 
         }, 30);
 
@@ -103,7 +99,7 @@ function SpaceGamescreen (){
 
         <div>             
             
-            <Link to="/CWMselection" className = "generalbutton QuitMachine" onClick={() => exitGame(Player, setPlayer, ActiveGame[1], setCWMUser)}> 
+            <Link to="/CWMselection" className = "generalbutton QuitMachine" onClick={() => exitGame(setPlayer, ActiveGame[1], setCWMUser)}> 
                 <div className="buttonNameContainer">Quit Machine <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
@@ -122,11 +118,11 @@ function SpaceGamescreen (){
                         currentPosition = {currentPosition}
                     />
 
-                    {buttonHit == true ? (
+                    {buttonHit === true ? (
 
-                        clawWentDown == true ? (
+                        clawWentDown === true ? (
                             
-                            <Link to="/CWMspacesummary" className ="CWMSpaceButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, Player, setPlayer, ActiveGame[1], [17, 18, 19, 20])}> 
+                            <Link to="/CWMspacesummary" className ="CWMSpaceButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [17, 18, 19, 20])}> 
                                 <div className="buttonNameContainer">Check Prize Door<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                             </Link>
 

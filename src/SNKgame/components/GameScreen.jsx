@@ -21,12 +21,11 @@ function Gamesscreen(){
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { SNKUser, setSNKUser } = useSNKUser();
     const { Player, setPlayer} = usePlayer();
-    const { Achievements, setAchievements} = useAchievements();
+    const { setAchievements} = useAchievements();
 
     const gameboardHeight = 20;
     const gameboardWidth = 30;
 
-    const [activeDirection, setActiveDirection] = useState(-1);
     const [snake, setSnake] = useState([[0, 0]]);
     const [appleLocation, setAppleLocation] = useState([
         Math.floor(Math.random() * gameboardHeight),
@@ -119,20 +118,16 @@ function Gamesscreen(){
         appleLocationRef.current = appleLocation;
     }, [appleLocation]);
 
-    const activeDirectionRef = useRef(activeDirection);
-    useEffect(() => {
-        activeDirectionRef.current = activeDirection;
-    }, [activeDirection]);
-
     const canChangeDirectionRef = useRef(true);
 
+    const activeDirectionRef = useRef(-1);
 
     /* Clear and restart their interval whenever anything in their dependency array changes
     so that callback always uses the current value */
 
     useEffect(() => {
 
-        if (SNKUser[0] == true){
+        if (SNKUser[0] === true){
 
             return;
 
@@ -161,28 +156,28 @@ function Gamesscreen(){
 
             if (!canChangeDirectionRef.current) return;
 
-            if (direction === 0 && activeDirectionRef.current != 1){
+            if (direction === 0 && activeDirectionRef.current !== 1){
 
                 playSound(3);
-                setActiveDirection(0);
+                activeDirectionRef.current = 0;
                 canChangeDirectionRef.current = false;
     
-            } else if (direction === 1 && activeDirectionRef.current != 0){
+            } else if (direction === 1 && activeDirectionRef.current !== 0){
     
                 playSound(3);
-                setActiveDirection(1);
+                activeDirectionRef.current = 1;
                 canChangeDirectionRef.current = false;
     
-            } else if (direction === 2 && activeDirectionRef.current != 3){
+            } else if (direction === 2 && activeDirectionRef.current !== 3){
     
                 playSound(3);
-                setActiveDirection(2);
+                activeDirectionRef.current = 2; 
                 canChangeDirectionRef.current = false;
     
-            } else if (direction === 3 && activeDirectionRef.current != 2){
+            } else if (direction === 3 && activeDirectionRef.current !== 2){
     
                 playSound(3);
-                setActiveDirection(3);
+                activeDirectionRef.current = 3;
                 canChangeDirectionRef.current = false;
     
             } else {
@@ -201,7 +196,7 @@ function Gamesscreen(){
         playSound(4);
         
         setSNKUser([false, 0]);
-        setPlayer([Player[0] - ActiveGame[1]]);
+        setPlayer(prev => [prev[0] - ActiveGame[1]]);
         setActiveGame(retrieveActiveGame(0));
     
     }

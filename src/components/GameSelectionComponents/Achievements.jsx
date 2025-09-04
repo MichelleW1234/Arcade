@@ -8,7 +8,7 @@ import "./Achievements.css";
 
 function Achievements ({setShowAchievements}){
 
-    const {Achievements, setAchievements } = useAchievements();
+    const {Achievements } = useAchievements();
 
     const closeAchievements = () => {
 

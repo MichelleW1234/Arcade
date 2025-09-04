@@ -11,14 +11,14 @@ import {playSound} from "../../../Helpers/helpers.js";
 function Navbar ({showReferences, setShowReferences, showFlag}){
 
     const { ActiveGame, setActiveGame} = useActiveGame();
-    const {Player, setPlayer} = usePlayer();
-    const {RPSUser, setRPSUser} = useRPSUser();
+    const { setPlayer} = usePlayer();
+    const { setRPSUser} = useRPSUser();
 
 
     const navigate = useNavigate();
     useKeyboardShortcut("1", () => {
-        if (showReferences == false && showFlag == false){
-            quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player);
+        if (showReferences === false && showFlag === false){
+            quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer);
             navigate("/selection");
         }
     },
@@ -26,7 +26,7 @@ function Navbar ({showReferences, setShowReferences, showFlag}){
     );
 
     useKeyboardShortcut("2", () => {
-        if (showReferences == false && showFlag == false){
+        if (showReferences === false && showFlag === false){
             resetGame();
             navigate("/RPSlevels");
         }
@@ -35,7 +35,7 @@ function Navbar ({showReferences, setShowReferences, showFlag}){
     );
 
     useKeyboardShortcut("3", () => {
-        if (showFlag == false){
+        if (showFlag === false){
             displayReferences();
         }
     },
@@ -46,7 +46,7 @@ function Navbar ({showReferences, setShowReferences, showFlag}){
     const displayReferences = () => {
 
         playSound(25);
-        setShowReferences(prevState => !prevState);
+        setShowReferences(prev => !prev);
 
     }
 
@@ -62,7 +62,7 @@ function Navbar ({showReferences, setShowReferences, showFlag}){
             <div className = "navbarContainer">
                 <ul className = "navbarMenu">
                     <li>
-                        <Link to= "/selection" className = "navBarButton QuitGame" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player)}>
+                        <Link to= "/selection" className = "navBarButton QuitGame" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer)}>
                             <div className="buttonNameContainer">Quit Game<br/> <span className = "buttonKeyDescription"> [1] </span></div>
                         </Link>
                     </li>

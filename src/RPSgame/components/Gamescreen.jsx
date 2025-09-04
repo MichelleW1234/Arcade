@@ -21,11 +21,11 @@ import "./Gamescreen.css";
 
 function Gamescreen (){
 
-    const { ActiveGame, setActiveGame } = useActiveGame();
+    const { ActiveGame } = useActiveGame();
     const { Player, setPlayer } = usePlayer();
-    const { Achievements, setAchievements} = useAchievements();
+    const { setAchievements} = useAchievements();
 
-    const { RPSUser, setRPSUser } = useRPSUser();
+    const { RPSUser } = useRPSUser();
 
     const [showReferences, setShowReferences] = useState(false);
     const [rounds, setRounds] = useState(1);
@@ -37,8 +37,8 @@ function Gamescreen (){
     const navigate = useNavigate();
     
     useKeyboardShortcut("Enter", () => {
-        if (showReferences == false && showFlag == false){
-            if (rounds >= 11 || terminationFlag == true){
+        if (showReferences === false && showFlag === false){
+            if (rounds >= 11 || terminationFlag === true){
                 document.querySelectorAll(".ViewResults").forEach(el => {
                     el.classList.add("active");
                     setTimeout(() => el.classList.remove("active"), 100);
@@ -48,8 +48,8 @@ function Gamescreen (){
                 getWinner();
                 navigate("/RPSsummary");
             }
-        } else if (showReferences == false){
-            if (showFlag == true){
+        } else if (showReferences === false){
+            if (showFlag === true){
                 document.querySelectorAll(".Close").forEach(el => {
                     el.classList.add("active");
                     setTimeout(() => el.classList.remove("active"), 100);
@@ -87,13 +87,13 @@ function Gamescreen (){
 
         }
 
-        if (winner == 1){
+        if (winner === 1){
 
             achievementsUpdate(setAchievements, 1);
 
         }
         
-        pointsDistribution(ActiveGame, winner, setPlayer, Player);
+        pointsDistribution(ActiveGame, winner, setPlayer);
 
     }
 

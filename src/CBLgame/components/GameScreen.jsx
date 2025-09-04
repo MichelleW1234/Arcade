@@ -20,7 +20,7 @@ function Gamescreen (){
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const {CBLUser, setCBLUser} = useCBLUser();
-    const { Achievements, setAchievements} = useAchievements();
+    const { setAchievements} = useAchievements();
 
     const [colorToBlast, setColorToBlast] = useState(Math.floor(Math.random() * 4));
     const [colorAppearances, setColorAppearances] = useState(0);
@@ -38,7 +38,7 @@ function Gamescreen (){
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (colorAppearances >= 50 || wrongColorBlasted == true ){
+        if (colorAppearances >= 50 || wrongColorBlasted === true ){
             result();
             navigate("/CBLsummary");
         }
@@ -56,7 +56,7 @@ function Gamescreen (){
 
     useEffect(() => {
 
-        if (wrongColorBlasted == true) {
+        if (wrongColorBlasted === true) {
 
             return;
 
@@ -78,7 +78,7 @@ function Gamescreen (){
         
         playSound(4);
         setCBLUser([0]);
-        setPlayer([Player[0] - ActiveGame[1]]);
+        setPlayer(prev => [prev[0] - ActiveGame[1]]);
         setActiveGame(retrieveActiveGame(0));
 
     }
@@ -110,7 +110,7 @@ function Gamescreen (){
 
                 <div className = "CBLOuterGameContainer">
 
-                    {colorAppearances < 50 && wrongColorBlasted == false ? (
+                    {colorAppearances < 50 && wrongColorBlasted === false ? (
 
                         <>
             

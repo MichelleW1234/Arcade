@@ -17,7 +17,7 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
     useEffect(() => {
 
-        if (TTTUser[1] != -1){
+        if (TTTUser[1] !== -1){
 
             return;
 
@@ -27,11 +27,11 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
             let result = winnerwinnerchickendinner(matrix, userMoves, computerMoves, setThreeInARow);
 
-            if (result != -1){
+            if (result !== -1){
 
                 playSound(6);
 
-                setTTTUser((prev) => {
+                setTTTUser(prev => {
                     const updatedUser = [...prev];
                     updatedUser[1] = result;
                     return updatedUser;
@@ -47,7 +47,7 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
     useEffect(() => {
 
-        if (TTTUser[1] != -1){
+        if (TTTUser[1] !== -1){
 
             return;
 
@@ -57,7 +57,7 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
             const move = computerMoveDecider(availableMoves, computerMoves, userMoves);
             
-            setComputerMoves(prevMoves => [...prevMoves, move]);
+            setComputerMoves(prev => [...prev, move]);
             takenMove(move, 0);
             nextMove();
             setError("");
@@ -94,7 +94,7 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
     
     const takenMove = (index, player) => {
 
-        setAvailableMoves((prevMoves) => prevMoves.filter((item) => item !== index));
+        setAvailableMoves(prev => prev.filter((item) => item !== index));
 
         const newMatrix = [...matrix];
         newMatrix[index] = player;
@@ -108,7 +108,7 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
             playSound(3);
             
-            setUserMoves(prevMoves => [...prevMoves, index]);
+            setUserMoves(prev => [...prev, index]);
             takenMove(index, 1);
             nextMove();
     
@@ -126,7 +126,7 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
         <div className = "TTTchart_container">
 
-            {matrix.map((item, index) => (
+            {matrix.map((_, index) => (
 
                 matrix[index] === 1 ? (
 

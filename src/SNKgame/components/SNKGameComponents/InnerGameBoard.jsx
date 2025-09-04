@@ -11,7 +11,7 @@ function InnerGameBoard ({snake, appleLocation}){
         <div className = "SNKrenderedgameboard">    
 
             {gameBoardMatrix.map((row, rowIndex) => (
-                row.map((num, colIndex) => {
+                row.map((_, colIndex) => {
 
                     const isApple = appleLocation[0] === rowIndex && appleLocation[1] === colIndex;
                     const isSnake = snake.some(([x, y]) => rowIndex === x && colIndex === y);

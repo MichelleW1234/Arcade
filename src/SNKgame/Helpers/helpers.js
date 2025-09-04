@@ -7,22 +7,22 @@ const bumpChecker = (activeDirection, setSNKUser, snake) => {
 
     if (activeDirection === 0 && snake[0][1] === 0){
 
-        setSNKUser(prevMatrix => [true, prevMatrix[1]]);
+        setSNKUser(prev => [true, prev[1]]);
         playSound(6);
 
     } else if (activeDirection === 1 && snake[0][1] === gameboardWidth-1){
 
-        setSNKUser(prevMatrix => [true, prevMatrix[1]]);
+        setSNKUser(prev => [true, prev[1]]);
         playSound(6);
 
     } else if (activeDirection === 2 && snake[0][0] === 0){
 
-        setSNKUser(prevMatrix => [true, prevMatrix[1]]);
+        setSNKUser(prev => [true, prev[1]]);
         playSound(6);
 
     } else if (activeDirection === 3 && snake[0][0] === gameboardHeight-1){
 
-        setSNKUser(prevMatrix => [true, prevMatrix[1]]);
+        setSNKUser(prev => [true, prev[1]]);
         playSound(6);
 
     } else {
@@ -33,22 +33,22 @@ const bumpChecker = (activeDirection, setSNKUser, snake) => {
 
             if (activeDirection === 0 && snake.some(([sx, sy]) => sx === snakeHead[0] && sy === snakeHead[1]-1)){
         
-                setSNKUser(prevMatrix => [true, prevMatrix[1]]);
+                setSNKUser(prev => [true, prev[1]]);
                 playSound(6);
 
             } else if (activeDirection === 1 && snake.some(([sx, sy]) => sx === snakeHead[0] && sy === snakeHead[1]+1)){
 
-                setSNKUser(prevMatrix => [true, prevMatrix[1]]);
+                setSNKUser(prev => [true, prev[1]]);
                 playSound(6);
 
             } else if (activeDirection === 2 && snake.some(([sx, sy]) => sx === snakeHead[0]-1 && sy === snakeHead[1])){
 
-                setSNKUser(prevMatrix => [true, prevMatrix[1]]);
+                setSNKUser(prev => [true, prev[1]]);
                 playSound(6);
 
             } else if (activeDirection === 3 && snake.some(([sx, sy]) => sx === snakeHead[0]+1 && sy === snakeHead[1])){
 
-                setSNKUser(prevMatrix => [true, prevMatrix[1]]);
+                setSNKUser(prev => [true, prev[1]]);
                 playSound(6);
 
             }
@@ -119,7 +119,7 @@ export const changeSnakeDirection = (setSNKUser, activeDirection, setSnake, snak
         playSound(15);
 
         increaseSnake = true;
-        setSNKUser(prevMatrix => [prevMatrix[0], prevMatrix[1] + 1]);
+        setSNKUser(prev => [prev[0], prev[1] + 1]);
         
         setTimeout(() => {
             newApple(setAppleLocation, snake);

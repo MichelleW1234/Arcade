@@ -47,15 +47,15 @@ import SMZ from '../../Images/ArcadeAchievementBadges/SMZ.svg';
 
 function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchievements}){
 
-    const { ActiveGame, setActiveGame } = useActiveGame(); 
-    const { Player, setPlayer } = usePlayer(); 
-    const { Prize, setPrize } = usePrize();
-    const { Achievements, setAchievements } = useAchievements();
-    const { Termination, setTermination } = useTermination();
+    const { setActiveGame } = useActiveGame(); 
+    const { setPlayer } = usePlayer(); 
+    const { setPrize } = usePrize();
+    const { setAchievements } = useAchievements();
+    const { setTermination } = useTermination();
 
     const navigate = useNavigate();
     useKeyboardShortcut("1", () => {
-        if (showInventory == false && showAchievements == false){
+        if (showInventory === false && showAchievements === false){
             resetPoints();
             navigate("/arcadeStart");
         }
@@ -64,7 +64,7 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
     );
 
     useKeyboardShortcut("2", () => {
-        if (showInventory == false && showAchievements == false){
+        if (showInventory === false && showAchievements === false){
             playSound(24);
             navigate("/prizeRoom");
         }
@@ -73,7 +73,7 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
     );
 
     useKeyboardShortcut("3", () => {
-        if (showAchievements == false){
+        if (showAchievements === false){
             displayInventory();
         }
     },
@@ -81,7 +81,7 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
     );
 
     useKeyboardShortcut("4", () => {
-        if (showInventory == false && showAchievements == false){
+        if (showInventory === false && showAchievements === false){
             goToClawArcade();
             navigate("/CWMstart");
         }
@@ -90,7 +90,7 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
     );
 
     useKeyboardShortcut("5", () => {
-        if (showInventory == false){
+        if (showInventory === false){
             displayAchievements();
         }
     },
@@ -101,7 +101,7 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
     const displayInventory = () => {
     
         playSound(25);
-        setShowInventory(prevState => !prevState);
+        setShowInventory(prev => !prev);
 
     }
 
@@ -141,7 +141,7 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
     const displayAchievements = () => {
     
         playSound(25);
-        setShowAchievements(prevState => !prevState);
+        setShowAchievements(prev => !prev);
 
     }
 

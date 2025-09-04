@@ -10,7 +10,7 @@ import {playSound, retrieveActiveGame, resetAchievementsUpdate} from "../../Help
 
 function Summaryscreen (){
 
-    const { Player, setPlayer} = usePlayer();
+    const { Player} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { SMZUser, setSMZUser} = useSMZUser();
     const { Achievements, setAchievements} = useAchievements();
@@ -62,7 +62,7 @@ function Summaryscreen (){
                 <p> <span className="StatsGlitch">Points Earned: {Math.floor(SMZUser[0]/5)}</span></p>
             </div>
 
-            {Achievements[0][0] == true ? (
+            {Achievements[0][0] === true ? (
 
                 <p className = "largefont"> Congrats! You've won an achievement!</p>
 

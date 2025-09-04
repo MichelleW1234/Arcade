@@ -28,7 +28,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
     const LaserSwitchButtonRef = useRef(null);
     useKeyboardShortcut("Shift", () => {
-        if (waveNumber <= 5 && SPIUser[2] == false){
+        if (waveNumber <= 5 && SPIUser[2] === false){
 
             changeLaser();
         }
@@ -66,7 +66,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
     /*Listener for aliens being shot*/
     useEffect(() => {
 
-        if (SPIUser[2] == true){
+        if (SPIUser[2] === true){
 
             return;
 
@@ -83,7 +83,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
     /* Listener for wave rerendering */
     useEffect(() => {
 
-        if (SPIUser[2] == true){
+        if (SPIUser[2] === true){
 
             return;
 
@@ -100,7 +100,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
     /* Listener for laser rerendering */
     useEffect(() => {
 
-        if (SPIUser[2] == true){
+        if (SPIUser[2] === true){
 
             return;
 
@@ -141,7 +141,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
             <div className = "SPIgameScreenM3"> 
 
                 {gameBoardMatrix.map((row, rowIndex) => (
-                    row.map((num, colIndex) => {
+                    row.map((_, colIndex) => {
 
 
                         const isAlienHere = alienPositions.some(

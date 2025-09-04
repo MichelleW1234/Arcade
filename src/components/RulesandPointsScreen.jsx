@@ -12,14 +12,14 @@ import "./RulesandPointsscreen.css";
 function RulesandPointsscreen (){
 
     const { Player, setPlayer } = usePlayer();
-    const { Termination, setTermination } = useTermination();
+    const { setTermination } = useTermination();
 
     const [pointsClaimed, setPointsClaimed] = useState(false);
 
     const navigate = useNavigate();
 
     useKeyboardShortcut("Enter", () => {
-        if (Player[0] === 20 && pointsClaimed == true){
+        if (Player[0] === 20 && pointsClaimed === true){
             document.querySelectorAll(".LetsGo").forEach(el => {
                 el.classList.add("active");
                 setTimeout(() => el.classList.remove("active"), 100);
@@ -67,7 +67,7 @@ function RulesandPointsscreen (){
 
             <h1 className = "instructionsSign"> Claim Points: </h1>
 
-            {pointsClaimed == false ? (
+            {pointsClaimed === false ? (
 
                 <button className = "generalbutton \\32 0pts" onClick={() => claimPoints()}>
                     <div className="buttonNameContainer">20 pts <br/> <span className='buttonKeyDescription'>[Return]</span></div>

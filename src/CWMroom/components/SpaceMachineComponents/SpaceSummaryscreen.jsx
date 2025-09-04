@@ -14,8 +14,8 @@ import {resetGame, reset} from "../../Helpers/helpers.js";
 
 function SpaceSummaryscreen (){
 
-    const { Player, setPlayer} = usePlayer();
-    const { ActiveGame, setActiveGame} = useActiveGame();
+    const { Player} = usePlayer();
+    const { ActiveGame} = useActiveGame();
     const { CWMUser, setCWMUser} = useCWMUser();
 
     const navigate = useNavigate();

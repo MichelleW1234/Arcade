@@ -118,7 +118,7 @@ export const winnerwinnerchickendinner = (matrix, userMoves, computerMoves, setT
 
 export const resetGame = (setTTTUser) => {
 
-    setTTTUser((prev) => {
+    setTTTUser(prev => {
         const updatedUser = [...prev];
         updatedUser[0] = -1;
         updatedUser[1] = -1;

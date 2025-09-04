@@ -10,7 +10,7 @@ import {playSound, retrieveActiveGame, resetAchievementsUpdate} from "../../Help
 
 function Summaryscreen (){
 
-    const { Player, setPlayer} = usePlayer();
+    const { Player } = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { ORBUser, setORBUser} = useORBUser();
     const { Achievements, setAchievements} = useAchievements();
@@ -77,7 +77,7 @@ function Summaryscreen (){
     
             </div>
 
-            {Achievements[0][0] == true ? (
+            {Achievements[0][0] === true ? (
 
                 <p className = "largefont"> Congrats! You've won an achievement!</p>
 

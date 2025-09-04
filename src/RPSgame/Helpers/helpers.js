@@ -5,7 +5,7 @@ export const resetLevel = (setRPSUser) => {
     const defaultInput = getInput(0);
     const defaultReferences = getReferences(0);
 
-    setRPSUser((prev) => {
+    setRPSUser(prev => {
         const updatedUser = [...prev];
         updatedUser[0] = 0;
         updatedUser[1] = defaultInput;
@@ -306,7 +306,7 @@ const decideRoundWinnerLevel3 = (userMove, setResult) => {
 export const handleHideFlag = (terminationFlag, rounds, setRounds, setShowFlag) => {
 
     playSound(3);
-    if (terminationFlag == true){
+    if (terminationFlag === true){
 
         setRounds(11);
         setShowFlag(false);
@@ -314,13 +314,13 @@ export const handleHideFlag = (terminationFlag, rounds, setRounds, setShowFlag) 
 
     } else {
 
-        if (rounds == 10){
+        if (rounds === 10){
 
             playSound(6);
 
         }
 
-        setRounds((prevRounds) => prevRounds + 1);
+        setRounds(prev => prev + 1);
         setShowFlag(false);
 
     }
@@ -329,11 +329,11 @@ export const handleHideFlag = (terminationFlag, rounds, setRounds, setShowFlag) 
 
 
 
-export const quitGame = (setRPSUser, ActiveGame, setActiveGame, setPlayer, Player) => {
+export const quitGame = (setRPSUser, ActiveGame, setActiveGame, setPlayer) => {
 
     playSound(4);
     resetLevel(setRPSUser);
-    setPlayer([Player[0] - ActiveGame[1]]);
+    setPlayer(prev => [prev[0] - ActiveGame[1]]);
     setActiveGame(retrieveActiveGame(0));
 
 }

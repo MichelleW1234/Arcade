@@ -6,7 +6,7 @@ import "./PrizeInventory.css";
 
 function PrizeInventory ({setShowInventory}){
 
-    const { Prize, setPrize } = usePrize();
+    const { Prize } = usePrize();
 
     const fullInventoryList = [["Bear"], ["BumbleBee"], ["Valentine"], 
         ["GameBoy"], ["Robot"], ["Alien"], ["Spider"], 
@@ -32,7 +32,7 @@ function PrizeInventory ({setShowInventory}){
 
                     {Prize.map((item, index) => (
 
-                        item[0] == "X" ?
+                        item[0] === "X" ?
 
                             item[1] < 0 ? (
 

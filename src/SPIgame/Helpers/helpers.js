@@ -7,7 +7,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
 
     if (SPIUser[2] == false){
 
-        if (SPIUser[1][0] == 1){
+        if (SPIUser[1][0] === 1){
 
             setSPIUser(prev => {
                 const newMission = [...prev];
@@ -16,7 +16,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
                 return newMission;                
             });
 
-        } else if (SPIUser[1][0] == 2){
+        } else if (SPIUser[1][0] === 2){
 
             setSPIUser(prev => {
                 const newMission = [...prev];
@@ -25,7 +25,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
                 return newMission;                
             });
 
-        }  else if (SPIUser[1][0] == 3){
+        }  else if (SPIUser[1][0] === 3){
 
             setSPIUser(prev => {
                 const newMission = [...prev];
@@ -34,7 +34,7 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
                 return newMission;                
             });
 
-        } else if (SPIUser[1][0] == 4){
+        } else if (SPIUser[1][0] === 4){
 
             setSPIUser(prev => {
                 const newMission = [...prev];
@@ -409,12 +409,12 @@ export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions,
 
 
 
-export const quitGame = (setSPIUser, Player, setPlayer, ActiveGame, setActiveGame) => {
+export const quitGame = (setSPIUser, setPlayer, ActiveGame, setActiveGame) => {
         
     playSound(4);
 
     setSPIUser([0,[1, "/SPIM1Instructions"], false]);
-    setPlayer([Player[0] - ActiveGame[1]]);
+    setPlayer(prev => [prev[0] - ActiveGame[1]]);
     setActiveGame(retrieveActiveGame(0));
         
 }

@@ -18,13 +18,13 @@ function LevelSelectionscreen (){
     const [activeButton, setActiveButton] = useState(0);
 
     const { ActiveGame, setActiveGame} = useActiveGame();
-    const { RPSUser, setRPSUser} = useRPSUser();
+    const { setRPSUser} = useRPSUser();
     const {Player, setPlayer} = usePlayer();
 
 
     const navigate = useNavigate();
     useKeyboardShortcut("Escape", () => {
-        quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player);
+        quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer);
         navigate("/selection");
     },
         ".QuitGame"
@@ -98,7 +98,7 @@ function LevelSelectionscreen (){
 
         <div>
 
-            <Link to= "/selection" className = "generalbutton QuitGame" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer, Player)}>
+            <Link to= "/selection" className = "generalbutton QuitGame" onClick ={() => quitGame(setRPSUser, ActiveGame, setActiveGame, setPlayer)}>
                 <div className="buttonNameContainer">Quit Game<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
             </Link>
 

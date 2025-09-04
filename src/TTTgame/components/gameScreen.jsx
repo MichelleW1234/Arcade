@@ -21,7 +21,7 @@ function Gamescreen() {
   const { ActiveGame, setActiveGame} = useActiveGame();
   const { Player, setPlayer} = usePlayer();
   const { TTTUser, setTTTUser} = useTTTUser();
-  const { Achievements, setAchievements} = useAchievements();
+  const {setAchievements} = useAchievements();
 
   const [error, setError] = useState("");
   const [availableMoves, setAvailableMoves] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8]);
@@ -42,7 +42,7 @@ function Gamescreen() {
   );
 
   useKeyboardShortcut("Enter", () => {
-    if (TTTUser[1] != -1){
+    if (TTTUser[1] !== -1){
       result();
       navigate("/TTTsummary");
     }
@@ -62,20 +62,20 @@ function Gamescreen() {
 
     playSound(4);
     resetGame(setTTTUser);
-    setPlayer([Player[0] - ActiveGame[1]]);
+    setPlayer(prev => [prev[0] - ActiveGame[1]]);
     setActiveGame(retrieveActiveGame(0));
 
   }
 
   const result = () => {
 
-    if (TTTUser[1] == 1){
+    if (TTTUser[1] === 1){
 
       achievementsUpdate(setAchievements, 2);
 
     }
 
-    pointsDistribution(ActiveGame, TTTUser[1], setPlayer, Player);
+    pointsDistribution(ActiveGame, TTTUser[1], setPlayer);
 
   }
 
@@ -133,7 +133,7 @@ function Gamescreen() {
 
               <div className = "TTTfinished_chart_container">
 
-                  {matrix.map((item, index) => (
+                  {matrix.map((_, index) => (
 
                       matrix[index] === 1 ? (
 

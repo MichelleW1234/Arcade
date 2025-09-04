@@ -1,4 +1,3 @@
-import React, { useState, useEffect, useRef} from "react";
 import "./InnerGamescreen.css";
 import Bird from "../../../Images/image 33.svg";
 import Wall from "../../../Images/image 32.svg";
@@ -14,7 +13,7 @@ function InnerGamescreen ({wallPositions, birdPosition, startButtonClicked}){
             {!startButtonClicked && <div className = "SMZStartFlag"> Press any of the controls to start</div>}
 
             {gameArray.map((row, rowIndex) => (
-                row.map((cell, colIndex) => {
+                row.map((_, colIndex) => {
 
                     const birdHere = birdPosition[0] === rowIndex && birdPosition[1] === colIndex;
 

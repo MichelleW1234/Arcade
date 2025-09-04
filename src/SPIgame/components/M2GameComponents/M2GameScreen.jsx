@@ -25,14 +25,14 @@ function M2GameScreen() {
     const navigate = useNavigate();
 
     useKeyboardShortcut("Escape", () => {
-        quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame);
+        quitGame(setSPIUser, setPlayer, ActiveGame, setActiveGame);
         navigate("/selection");
     },
         ".QuitGame"
     );
 
     useKeyboardShortcut("Enter", () => {
-        if ( waveNumber > 5 || SPIUser[2] == true){
+        if ( waveNumber > 5 || SPIUser[2] === true){
             unlockNextMission(SPIUser, setSPIUser);
             navigate("/SPImission");
         }
@@ -51,13 +51,13 @@ function M2GameScreen() {
     return (
 
         <div>
-            <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, Player, setPlayer, ActiveGame, setActiveGame)}>
+            <Link to= "/selection" className = "generalbutton QuitGame" onClick={() => quitGame(setSPIUser, setPlayer, ActiveGame, setActiveGame)}>
                 <div className="buttonNameContainer"> Quit Game <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
             <div className = "gameScreenLayout">
 
-                {waveNumber <= 5 && SPIUser[2] == false ? (
+                {waveNumber <= 5 && SPIUser[2] === false ? (
 
                     <div className="SPIouterContainer">
 
@@ -79,7 +79,7 @@ function M2GameScreen() {
                             <h1 className = "SPIgameBoardSign"> <span className='signGlitch'>Game Over. </span></h1>
                             <div className = "SPIendingScreen">
 
-                                {SPIUser[2] == true ? (
+                                {SPIUser[2] === true ? (
 
                                     <p> You died. </p>
 

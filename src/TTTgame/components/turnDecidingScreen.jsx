@@ -15,7 +15,7 @@ import './TurnDecidingscreen.css';
 function TurnDecidingscreen() {
 
     const { TTTUser, setTTTUser} = useTTTUser();
-    const { ActiveGame, setActiveGame} = useActiveGame();
+    const { ActiveGame} = useActiveGame();
     const {Player, setPlayer} = usePlayer();
 
     const [statement, setStatement] = useState("");
@@ -56,7 +56,7 @@ function TurnDecidingscreen() {
         playSound(2);
         const randomChoice = Math.floor(Math.random() * 2);
 
-        if (randomChoice == 0){
+        if (randomChoice === 0){
 
             setStatement("The computer will go first.");
 
@@ -66,7 +66,7 @@ function TurnDecidingscreen() {
 
         }
 
-        setTTTUser((prev) => {
+        setTTTUser(prev => {
             const updatedUser = [...prev];
             updatedUser[0] = randomChoice;
             return updatedUser;

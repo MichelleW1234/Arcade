@@ -27,8 +27,8 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, ter
     // For textbox:
 
     const handleKeyDown = (e) => {
-        if (showReferences == false && round < 11 && terminationFlag == false){
-            if (e.key === "Enter" && showFlag != true) {
+        if (showReferences === false && round < 11 && terminationFlag === false){
+            if (e.key === "Enter" && showFlag === false) {
                 e.preventDefault(); // prevent form submission or default behaviors
 
                 document.querySelectorAll(".Enter").forEach(el => {
@@ -59,7 +59,7 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, ter
 
                 playSound(16);
 
-                setRPSUser((prev) => {
+                setRPSUser(prev => {
                     const updatedUser = [...prev];
                     updatedUser[3] += 1;
                     return updatedUser;
@@ -67,7 +67,7 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, ter
 
             } else if (winner === 0){
 
-                setRPSUser((prev) => {
+                setRPSUser(prev => {
                     const updatedUser = [...prev];
                     updatedUser[4] += 1;
                     return updatedUser;
@@ -75,7 +75,7 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, ter
 
             } else if (winner === 3){
 
-                setRPSUser((prev) => {
+                setRPSUser(prev => {
                     const updatedUser = [...prev];
                     updatedUser[3] = 10;
                     updatedUser[4] = 0;
@@ -87,7 +87,7 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, ter
                 
             } else if (winner === -3){
 
-                setRPSUser((prev) => {
+                setRPSUser(prev => {
                     const updatedUser = [...prev];
                     updatedUser[3] = 0;
                     updatedUser[4] = 10;

@@ -33,6 +33,7 @@ function Instructionsscreen (){
             <p className = "largefont">
                 &gt; Use the controls to guide the snake up, down, left, and right to eat the apples. <br/>
                 &gt; You will gain 2 points for every apple that is eaten. <br/>
+                &gt; The snake always starts in the top left-hand corner. <br/>
                 &gt; It costs 5 points to play this game. <br/>
                 &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
             </p>

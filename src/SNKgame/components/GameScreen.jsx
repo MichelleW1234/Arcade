@@ -237,13 +237,10 @@ function Gamesscreen(){
                         <>
                             <h1 className = "SNKgameBoardSign">  <span className = "signGlitch">Apples Eaten: {SNKUser[1]}</span></h1>
 
-                            <div className = "SNKinnercontainer">
-
-                                <div className="SNKgameboard">
-                                    <p>Press any of the controls to begin.</p>
-                                </div>
-
+                            <div className="SNKgameboard">
+                                <p>Press any of the controls to begin.</p>
                             </div>
+
                         </>
 
                     ) : SNKUser[0] === false && snake.length < 600 ? (
@@ -251,29 +248,23 @@ function Gamesscreen(){
                         <>
                             <h1 className = "SNKgameBoardSign">  <span className = "signGlitch">Apples Eaten: {SNKUser[1]}</span></h1>
 
-                            <div className = "SNKinnercontainer">
-
-                                <InnerGameBoard
-                                    snake = {snake}
-                                    appleLocation = {appleLocation}
-                                />
-
-                            </div>
+                            <InnerGameBoard
+                                snake = {snake}
+                                appleLocation = {appleLocation}
+                            />
 
                         </>
 
                     ):(
 
                         <>
-                        <h1 className = "SNKgameBoardSign"> <span className = "signGlitch">Game Over.</span></h1>
-
-                        <div className = "SNKinnercontainer">
                         
+                            <h1 className = "SNKgameBoardSign"> <span className = "signGlitch">Game Over.</span></h1>
+                            
                             <div className = "SNKgameboard">
                                 <p> Game Over.</p>
                             </div>
                                     
-                        </div>
                         </>
 
                     )}

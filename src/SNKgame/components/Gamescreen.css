@@ -5,7 +5,7 @@
 
     background: linear-gradient(to bottom, rgb(8, 0, 255), rgb(4, 0, 108));
     
-    gap: 2.5rem;       
+    gap: 4rem;       
     padding: 3.125rem;  
 
     border-radius: 1.25rem;     
@@ -19,18 +19,6 @@
         0 0 1.875rem 0.25rem rgb(106, 0, 255); 
 }
 
-.SNKinnercontainer {
-    
-    margin-top: 1.875rem; 
-
-    border-left: 0.3rem solid rgb(46, 99, 0);   
-    border-bottom: 0.3rem solid rgb(46, 99, 0);   
-    border-right: 0.3rem solid rgb(46, 99, 0);   
-    border-top: 0.3rem solid rgb(46, 99, 0);       
-
-    box-shadow: 0 0 1rem 0.60rem rgb(130, 255, 88);
-
-}
 
 
 .SNKgameboard {
@@ -51,6 +39,10 @@
     font-weight: bold;
     
     padding: 5rem;
+
+    border: 0.3rem solid rgb(46, 99, 0);         
+
+    box-shadow: 0 0 1rem 0.60rem rgb(130, 255, 88);
 
 }
 

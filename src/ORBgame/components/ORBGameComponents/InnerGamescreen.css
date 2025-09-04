@@ -11,14 +11,14 @@
         rgb(83, 103, 255) 80%
     );
 
-    border-top: 0.35rem solid rgb(19, 0, 125);
-    border-left: 0.35rem solid rgb(19, 0, 125);
-    border-right: 0.35rem solid rgb(19, 0, 125); 
-    border-bottom: 0.35rem solid rgb(19, 0, 125);
+    border: 0.35rem solid rgb(19, 0, 125);
 
     box-shadow: 0 0 2rem 0.5rem rgb(108, 255, 218); 
 
     gap: 0.5rem; 
+
+    box-sizing: border-box;
+    
 }
 
 

@@ -18,16 +18,6 @@
 }
 
 
-.CWMSpaceGameBoardScreen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 3.125rem;      
-}
-
-
-
 .CWMSpaceButton {
     font-size: 1.5625rem;      
     padding: 1rem 2rem;   

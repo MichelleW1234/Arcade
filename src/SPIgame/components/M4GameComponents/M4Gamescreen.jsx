@@ -99,9 +99,9 @@ function M4Gamescreen() {
                 <div className="buttonNameContainer"> Quit Game<br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
-            {bossDefeated == false && SPIUser[2] == false ? (
+            <div className = "gameScreenLayout">
 
-                <div className = "gameScreenLayout">
+                {bossDefeated == false && SPIUser[2] == false ? (
 
                     <div className="SPIouterContainerM4">
 
@@ -114,47 +114,47 @@ function M4Gamescreen() {
                         
                     </div>
 
-                </div>
+                ): (
 
-            ): (
+                    <>
 
-                <div className = "gameScreenLayout">
+                        <div className="SPIouterContainerM4">
 
-                    <div className="SPIouterContainerM4">
+                            <h1 className = "SPIgameBoardSign"> <span className='signGlitch'>Game Over. </span></h1>
+                            
+                            <div className = "SPIendingScreen">
 
-                        <h1 className = "SPIgameBoardSign"> <span className='signGlitch'>Game Over. </span></h1>
-                        
-                        <div className = "SPIendingScreen">
+                                {SPIUser[2] == true ? (
 
-                            {SPIUser[2] == true ? (
+                                    blownUp == false ? (
 
-                                blownUp == false ? (
+                                        <p> Your beamlight ran out of power.</p>
 
-                                    <p> Your beamlight ran out of power.</p>
+                                    ) : (
+
+                                        <p> You were blown up by the Queen. </p>
+
+                                    )
 
                                 ) : (
 
-                                    <p> You were blown up by the Queen. </p>
+                                    <p> You defeated the Queen in time and have saved your ship! Great job! </p>
 
-                                )
-
-                            ) : (
-
-                                <p> You defeated the Queen in time and have saved your ship! Great job! </p>
-
-                            )}
+                                )}
+                                
+                            </div>
                             
                         </div>
-                        
-                    </div>
 
-                    <Link to="/SPImission" className = "SPIbutton ReturntoMissionsScreen" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
-                        <div className="buttonNameContainer"> Return to Missions Screen <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
-                    </Link>
+                        <Link to="/SPImission" className = "SPIbutton ReturntoMissionsScreen" onClick = {() => unlockNextMission(SPIUser, setSPIUser)}>
+                            <div className="buttonNameContainer"> Return to Missions Screen <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                        </Link>
 
-                </div>
+                    </>
 
-            )}
+                )}
+
+            </div>
 
         </div>
 

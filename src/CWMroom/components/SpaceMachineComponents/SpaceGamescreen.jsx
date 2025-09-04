@@ -115,16 +115,12 @@ function SpaceGamescreen (){
                         currentPosition = {currentPosition}
                     />
 
-                    <div className="CWMSpaceGameBoardScreen">
-
-                        <ClawWindow
-                            buttonHit = {buttonHit}
-                            clawWentDown = {clawWentDown}
-                            setClawWentDown = {setClawWentDown}
-                            currentPosition = {currentPosition}
-                        />
-
-                    </div>
+                    <ClawWindow
+                        buttonHit = {buttonHit}
+                        clawWentDown = {clawWentDown}
+                        setClawWentDown = {setClawWentDown}
+                        currentPosition = {currentPosition}
+                    />
 
                     {buttonHit == true ? (
 

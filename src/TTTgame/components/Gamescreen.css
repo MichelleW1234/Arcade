@@ -42,8 +42,10 @@
 .TTTfinished_chart_container {
         
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(3, 1fr);   
+    grid-template-columns: repeat(3, calc(100% / 3));
+    grid-template-rows: repeat(3, calc(100% / 3));
+
+    box-sizing: border-box;
 
     animation: glowing-shadow2 4s infinite;
 }

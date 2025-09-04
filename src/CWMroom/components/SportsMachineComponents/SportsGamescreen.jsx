@@ -114,16 +114,13 @@ function SportsGamescreen (){
                         currentPosition = {currentPosition}
                     />
 
-                    <div className="CWMSportsGameBoardScreen">
+                    <ClawWindow
+                        buttonHit = {buttonHit}
+                        clawWentDown = {clawWentDown}
+                        setClawWentDown = {setClawWentDown}
+                        currentPosition = {currentPosition}
+                    />
 
-                        <ClawWindow
-                            buttonHit = {buttonHit}
-                            clawWentDown = {clawWentDown}
-                            setClawWentDown = {setClawWentDown}
-                            currentPosition = {currentPosition}
-                        />
-
-                    </div>
 
                     {buttonHit == true ? (
 

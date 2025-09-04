@@ -17,8 +17,10 @@
 .CWMSportsClawRowContainer{
 
     display: grid;
-    grid-template-rows: repeat(8, 1fr);
-    grid-template-columns: repeat(23, 1fr);
+    grid-template-columns: repeat(23, calc(100% / 23));
+    grid-template-rows: repeat(8, calc(100% / 8));
+
+    box-sizing: border-box;
 
 }
 

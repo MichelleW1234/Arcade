@@ -108,48 +108,51 @@ function Gamescreen (){
 
             <div className = "gameScreenLayout">
 
-                {colorAppearances < 50 && wrongColorBlasted == false ? (
+                <div className = "CBLOuterGameContainer">
+
+                    {colorAppearances < 50 && wrongColorBlasted == false ? (
+
+                        <>
             
-                    <div className = "CBLOuterGameContainer">
+                            <h1 className="CBLsign"> <span className='signGlitch'>Colors Blasted: {CBLUser[0]} </span></h1>
 
-                        <h1 className="CBLsign"> <span className='signGlitch'>Colors Blasted: {CBLUser[0]} </span></h1>
+                            <InnerGameScreen
+                                setColorAppearances = {setColorAppearances}
+                                colorToBlast = {colorToBlast}
+                                setWrongColorBlasted = {setWrongColorBlasted}
+                                wrongColorBlasted = {wrongColorBlasted}
+                            />
 
-                        <InnerGameScreen
-                            setColorAppearances = {setColorAppearances}
-                            colorToBlast = {colorToBlast}
-                            setWrongColorBlasted = {setWrongColorBlasted}
-                            wrongColorBlasted = {wrongColorBlasted}
-                        />
-        
-                    </div>
+                        </>
 
-                ) : (
+                    ) : (
 
-                    <div className = "CBLOuterGameContainer">
+                        <>
 
-                        <h1 className="CBLsign"> <span className='signGlitch'> Game Over. </span></h1>
+                            <h1 className="CBLsign"> <span className='signGlitch'> Game Over. </span></h1>
 
-                        <div className = "CBLGameBoardEndingScreen">
+                            <div className = "CBLGameBoardEndingScreen">
 
-                            {wrongColorBlasted ? (
+                                {wrongColorBlasted ? (
 
-                                <p> You blasted the wrong color. </p>
+                                    <p> You blasted the wrong color. </p>
 
-                            ) : (
+                                ) : (
 
-                                <p> Game Over.</p>
+                                    <p> Game Over.</p>
 
-                            )}
-                            
-                        </div>
+                                )}
+                                
+                            </div>
 
-                        <Link to="/CBLsummary" className = "CBLbutton ViewResults" onClick = {() => result()}> 
-                            <div className="buttonNameContainer">View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
-                        </Link>
+                            <Link to="/CBLsummary" className = "CBLbutton ViewResults" onClick = {() => result()}> 
+                                <div className="buttonNameContainer">View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
+                            </Link>
 
-                    </div>
+                        </>
+                    )}
 
-                )}
+                </div>
 
             </div>
         </div>

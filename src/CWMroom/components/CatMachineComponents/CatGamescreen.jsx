@@ -115,16 +115,12 @@ function CatGamescreen (){
                         currentPosition = {currentPosition}
                     />
 
-                    <div className="CWMCatGameBoardScreen">
-
-                        <ClawWindow
-                            buttonHit = {buttonHit}
-                            clawWentDown = {clawWentDown}
-                            setClawWentDown = {setClawWentDown}
-                            currentPosition = {currentPosition}
-                        />
-
-                    </div>
+                    <ClawWindow
+                        buttonHit = {buttonHit}
+                        clawWentDown = {clawWentDown}
+                        setClawWentDown = {setClawWentDown}
+                        currentPosition = {currentPosition}
+                    />
 
                     {buttonHit == true ? (
 

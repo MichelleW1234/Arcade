@@ -1,38 +1,25 @@
-.SPIgameContainerM4 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.875rem; 
-}
-
-
 .SPIgameScreenM4 {
 
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(7, calc(100% / 7));
+    grid-template-rows: repeat(5, calc(100% / 5));
 
-    border-left: 0.3rem solid black;   
-    border-bottom: 0.3rem solid black; 
-    border-top: 0.3rem solid black;   
-    border-right: 0.3rem solid black; 
-
+    border: 0.5rem solid black;   
     box-shadow: 0 0 1.25rem 0.625rem rgb(117, 138, 255); 
-
+    box-sizing: border-box;
     background: linear-gradient(to bottom, #160064, rgb(0, 0, 0));
 
     cursor: url('cursor.cur'), auto;
 
-    gap: 1.5rem;               
-    padding: 1.25rem;        
 }
 
 
 .SPIemptySpaceM4 {
 
-    height: 5.2rem; 
-    width: 5.2rem;  
+    height: 6rem; 
+    width: 6rem;  
 
     display: flex;
     flex-direction: column;
@@ -43,8 +30,8 @@
 
 .SPIemptySpaceBossNormal {
     background-color: rgb(255, 255, 255);
-    height: 5.2em; 
-    width: 5.2rem;  
+    height: 6rem; 
+    width: 6rem;  
 
     display: flex;
     flex-direction: column;
@@ -60,8 +47,8 @@
 
 .SPIemptySpaceBossDanger {
     background-color: #54ff4b;
-    height:5.2rem; 
-    width: 5.2rem;  
+    height: 6rem; 
+    width: 6rem;  
 
     display: flex;
     flex-direction: column;
@@ -75,9 +62,11 @@
 
 .SPIhealthbarContainer {
     display: grid;
-    grid-template-columns: repeat(50, 1fr);
+    grid-template-columns: repeat(50, calc(100% / 50));
     height: 2rem;  
     width: 50rem;  
+
+    box-sizing: border-box;
 
     box-shadow: 0 0 1.25rem 0.625rem rgb(195, 117, 255); 
 }

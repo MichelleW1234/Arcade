@@ -21,14 +21,23 @@
 
 .SNKrenderedgameboard {
     height: 25rem;        
-    width: 37.5rem;       
+    width: 37.5rem;  
+
     display: grid;
-    grid-template-columns: repeat(30, 1fr);
-    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(30, calc(100% / 30));
+    grid-template-rows: repeat(20, calc(100% / 20));
 
     background-image: url("../../../Images/ArcadeGameBackgroundImages/SNK.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    overflow: hidden;
+
+    border: 0.3rem solid rgb(46, 99, 0);        
+
+    box-shadow: 0 0 1rem 0.60rem rgb(130, 255, 88);
+
+    box-sizing: border-box;
 
 }

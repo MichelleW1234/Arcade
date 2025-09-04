@@ -20,18 +20,6 @@
 }
 
 
-
-.CWMSportsGameBoardScreen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 3.125rem;    
-
-}
-
-
-
 .CWMSportsButton {
     font-size: 1.5625rem;     
     padding: 1rem 2rem;      

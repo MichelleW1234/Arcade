@@ -91,7 +91,7 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
 
     return (
 
-        <div className = "SPIgameContainerM4">
+        <div className = "SPIgameContainer">
 
             <div className = "SPIgameScreenM4"> 
 

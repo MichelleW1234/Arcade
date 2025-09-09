@@ -36,7 +36,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 20rem;
     gap: 1rem;
     padding: 1.875rem;        
     font-size: 0.75rem; 
@@ -55,7 +54,7 @@
 .inventoryImage {
 
     height: 10rem;
-    width: 12.5rem; 
+    width: 12rem; 
 
     animation: pulse-glow 2s infinite alternate;
 }

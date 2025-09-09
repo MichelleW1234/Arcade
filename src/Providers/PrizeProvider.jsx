@@ -33,13 +33,13 @@ const PrizeContext = createContext();
 
 export function PrizeProvider({ children }) {
 
-  const defaultPrizes = [["Bear", 80, Bear], ["BumbleBee", 50, Bee], ["Valentine", 20, Heart],
-              ["GameBoy", 100, GameBoy], ["Robot", 30, Robot], ["Alien", 20, Alien], 
-              ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 70, Whale],
+  const defaultPrizes = [["Bear", 100, Bear], ["BumbleBee", 80, Bee], ["Valentine", 50, Heart],
+              ["GameBoy", 80, GameBoy], ["Robot", 60, Robot], ["Alien", 40, Alien], 
+              ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 60, Whale],
               ["Black Cat", 0, BlackCat], ["Orange Cat", 0, OrangeCat], ["Siamese Cat", 0, SiameseCat],
               ["British Shorthair Cat", 0, BritishShorthairCat], ["Football", 0, Football], ["Ping Pong Paddle", 0, Paddle], 
               ["Soccerball", 0, Soccerball], ["Basketball", 0, Basketball], ["Andromeda Galaxy", 0, Andromeda], ["Sun", 0, Sun], 
-              ["Saturn", 0, Saturn], ["Earth", 0, Earth], ["Cow", 40, Cow], ["Hippo", 40, Hippo]];
+              ["Saturn", 0, Saturn], ["Earth", 0, Earth], ["Cow", 50, Cow], ["Hippo", 30, Hippo]];
 
   const [Prize, setPrize] = useState(() => {
     return storage.get("Prize", defaultPrizes);

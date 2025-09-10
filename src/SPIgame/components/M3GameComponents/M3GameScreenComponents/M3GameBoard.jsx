@@ -16,7 +16,6 @@ import { playSound } from '../../../../Helpers/helpers.js';
 
 function M3GameBoard({waveNumber, setWaveNumber}) {
 
-    //15 x 27 (30x30 pieces moving around the screen)
     const gameBoardMatrix = Array.from({ length: 15 }, () => Array(27).fill(0));
 
     const {SPIUser, setSPIUser} = useSPIUser();
@@ -41,8 +40,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
     }, []);
 
     
-    /* Refs avoid stale values and store the latest values for use inside 
-    interval callbacks in useEffect without triggering re-renders*/
+
     const alienPositionsRef = useRef(alienPositions);
     useEffect(() => {
         alienPositionsRef.current = alienPositions;
@@ -60,10 +58,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
     const waveIncremented = useRef(false);
 
-    /* Clear and restart their interval whenever anything in their dependency array changes
-    so that callback always uses the current value */
 
-    /*Listener for aliens being shot*/
     useEffect(() => {
 
         if (SPIUser[2] === true){
@@ -80,7 +75,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
     }, [mutantLaserOn, SPIUser]);
 
-    /* Listener for wave rerendering */
+
     useEffect(() => {
 
         if (SPIUser[2] === true){
@@ -97,7 +92,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
     }, [waveNumber, SPIUser]);
 
-    /* Listener for laser rerendering */
+
     useEffect(() => {
 
         if (SPIUser[2] === true){

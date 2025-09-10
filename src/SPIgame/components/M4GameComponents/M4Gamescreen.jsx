@@ -53,10 +53,6 @@ function M4Gamescreen() {
     });
 
 
-    /* Clear and restart their interval whenever anything in their dependency array changes
-    so that callback always uses the current value */
-
-    /* Timer */
     useEffect(() => {
 
         if (SPIUser[2] === true){
@@ -73,7 +69,7 @@ function M4Gamescreen() {
 
     }, [SPIUser]);
 
-    /*Beamlight battery runs out */
+    
     useEffect(() => {
 
         if (seconds >= 60 && bossDefeated === false && blownUp === false) {

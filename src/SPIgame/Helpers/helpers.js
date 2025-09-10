@@ -1,7 +1,6 @@
 
 import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
-//For transitioning to next mission:
 
 export const unlockNextMission = (SPIUser, setSPIUser) => {
 
@@ -52,7 +51,6 @@ export const unlockNextMission = (SPIUser, setSPIUser) => {
 }
 
 
-/*Instructions */
 
 export const openingGuide = (flagNumber) => {
 
@@ -71,12 +69,10 @@ export const closingGuide = () => {
 
 
 
-//For generating new wave of aliens:
 
 const getUniqueRandomArray = (count, max) => {
     const values = Array.from({ length: max }, (_, i) => i);
 
-    // Shuffle using Fisher-Yates
     for (let i = values.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [values[i], values[j]] = [values[j], values[i]];
@@ -135,7 +131,6 @@ export const newWave = (mission) => {
 
 
 
-//For animating alien movements:
 
 export const aliensIncomingM1andM3 = (setAlienPositions, alienPositions, setSPIUser) => {
 
@@ -196,7 +191,7 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setSPIUser, 
 
     } else {
 
-        setShieldedAliens([]); // Optional: clear if not enough
+        setShieldedAliens([]);
 
     }
 
@@ -230,7 +225,6 @@ export const newBossState = (setBossState) => {
 
 
 
-//For animating laser movements:
 
 export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
 
@@ -259,12 +253,11 @@ export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
 
 
 
-//For determining alien deaths:
 
 export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, waveIncremented) => {
 
     if (waveIncremented.current) {
-        return; // STOP immediately if wave is already in progress
+        return;
     }
 
     const newPositions =  alienPositions.filter(
@@ -311,7 +304,7 @@ export const getRandomElements = (array, count) => {
 export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, shieldedAliens, setShieldedAliens, waveIncremented) => {
 
     if (waveIncremented.current) {
-        return; // STOP immediately if wave is already in progress
+        return;
     }
 
     const newPositions =  alienPositions.filter(alien => !(
@@ -357,7 +350,7 @@ export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions,
 export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, waveIncremented, mutantLaserOn) => {
 
     if (waveIncremented.current) {
-        return; // STOP immediately if wave is already in progress
+        return;
     }
 
     let newPositions = []

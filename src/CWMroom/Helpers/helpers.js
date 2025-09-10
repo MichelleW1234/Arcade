@@ -143,8 +143,8 @@ export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCo
         if (prize === 1){
 
             setPrize(prev => {
-                const newArray = prev.map(row => [...row]); // Deep copy
-                newArray[prizeIndices[0]][0] = "X";                         // Update the value
+                const newArray = prev.map(row => [...row]);
+                newArray[prizeIndices[0]][0] = "X";
                 newArray[prizeIndices[0]][1] -= 1;
                 return newArray;
             });
@@ -152,8 +152,8 @@ export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCo
         } else if (prize === 2){
 
             setPrize(prev => {
-                const newArray = prev.map(row => [...row]); // Deep copy
-                newArray[prizeIndices[1]][0] = "X";                      // Update the value
+                const newArray = prev.map(row => [...row]);
+                newArray[prizeIndices[1]][0] = "X";
                 newArray[prizeIndices[1]][1] -= 1;
                 return newArray;
             });
@@ -161,8 +161,8 @@ export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCo
         } else if (prize === 3){
 
             setPrize(prev => {
-                const newArray = prev.map(row => [...row]); // Deep copy
-                newArray[prizeIndices[2]][0] = "X";                       // Update the value
+                const newArray = prev.map(row => [...row]);
+                newArray[prizeIndices[2]][0] = "X";      
                 newArray[prizeIndices[2]][1] -= 1;
                 return newArray;
             });
@@ -170,8 +170,8 @@ export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCo
         } else {
 
             setPrize(prev => {
-                const newArray = prev.map(row => [...row]); // Deep copy
-                newArray[prizeIndices[3]][0] = "X";                       // Update the value
+                const newArray = prev.map(row => [...row]); 
+                newArray[prizeIndices[3]][0] = "X";          
                 newArray[prizeIndices[3]][1] -= 1;
                 return newArray;
             });

@@ -4,66 +4,64 @@ import "./ClawBar.css";
 
 function ClawBar({currentPosition}) {
 
-    const array = Array.from({ length: 23 }, (_, i) => i);
-
     return (
 
         <div className="CWMGameBoardScreen">
             <div className = "CWMBar">
-                {array.map((index) => (
+                {Array.from({ length: 23 }, (_, i) => (
 
-                    index < 5 || index > 17 ? (
+                    i < 5 || i > 17 ? (
 
-                        currentPosition === index ? (
+                        currentPosition === i ? (
 
-                            <div key={index} className="CWMBarNotAccurate">
-                                <img className="CWMBarCurrent" key={index} src={positionIndicator}/>
+                            <div key={i} className="CWMBarNotAccurate">
+                                <img className="CWMBarCurrent" key={i} src={positionIndicator}/>
                             </div>
 
                         ) : (
 
-                            <div key={index} className="CWMBarNotAccurate"></div>
+                            <div key={i} className="CWMBarNotAccurate"></div>
 
                         )
 
-                    ) : index < 8 || index > 14 ? (
+                    ) : i < 8 || i > 14 ? (
 
-                        currentPosition === index ? (
+                        currentPosition === i ? (
 
-                            <div key={index} className="CWMBarInRange">
-                                <img className="CWMBarCurrent"  key={index} src={positionIndicator}/>
+                            <div key={i} className="CWMBarInRange">
+                                <img className="CWMBarCurrent"  key={i} src={positionIndicator}/>
                             </div>
 
                         ) : (
 
-                            <div key={index} className="CWMBarInRange"></div>
+                            <div key={i} className="CWMBarInRange"></div>
 
                         )
 
-                    ) : index < 11 || index > 11 ? (
+                    ) : i < 11 || i > 11 ? (
 
-                        currentPosition === index ? (
+                        currentPosition === i ? (
 
-                            <div key={index} className="CWMBarClose">
-                                <img className="CWMBarCurrent"  key={index} src={positionIndicator}/>
+                            <div key={i} className="CWMBarClose">
+                                <img className="CWMBarCurrent"  key={i} src={positionIndicator}/>
                             </div>
 
                         ) : (
 
-                            <div key={index} className="CWMBarClose"></div>
+                            <div key={i} className="CWMBarClose"></div>
                         )
 
                     ) : (
 
-                        currentPosition === index ? (
+                        currentPosition === i ? (
 
-                            <div key={index} className="CWMBarVeryClose">
-                                <img className="CWMBarCurrent"  key={index} src={positionIndicator}/>
+                            <div key={i} className="CWMBarVeryClose">
+                                <img className="CWMBarCurrent"  key={i} src={positionIndicator}/>
                             </div>
 
                         ) : (
 
-                            <div key={index} className="CWMBarVeryClose"></div>
+                            <div key={i} className="CWMBarVeryClose"></div>
                         )
 
                     )

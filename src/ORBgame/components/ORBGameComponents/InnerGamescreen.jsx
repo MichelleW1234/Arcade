@@ -2,7 +2,6 @@ import "./InnerGamescreen.css";
 
 function InnerGamescreen ({circle, currentSlot, winner}){
 
-    /*20 × 30 matrix*/
     const gameArray = Array.from({ length: 15 }, () => Array(20).fill(0));
     
     return (

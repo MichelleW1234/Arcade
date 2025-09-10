@@ -64,7 +64,6 @@ function LevelSelectionscreen (){
 
         setRPSUser([activeButton, currLevelInput, currLevelReferences, 0, 0]);
 
-        // scroll the new element into view
         itemRefs.current[activeButton]?.scrollIntoView({
             behavior: "smooth",
             block: "nearest",

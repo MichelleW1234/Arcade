@@ -14,7 +14,6 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
     const [colorSpot, setColorSpot] = useState([Math.floor(Math.random() * 16), Math.floor(Math.random() * 4)]);
     const [colorBlasted, setColorBlasted] = useState(false);
 
-    /*20 × 30 matrix*/
     const gameArray = Array.from({ length: 4 }, () => Array(4).fill(0));
 
 

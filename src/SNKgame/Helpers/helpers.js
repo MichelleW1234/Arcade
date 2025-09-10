@@ -128,25 +128,21 @@ export const changeSnakeDirection = (setSNKUser, activeDirection, setSnake, snak
     }
 
     if (activeDirection === 0){
-    //Left 
         
         editSnake(snake, setSnake, [snake[0][0], snake[0][1]-1], increaseSnake);
 
 
     } else if (activeDirection === 1){
-    //Right 
         
         editSnake(snake, setSnake, [snake[0][0], snake[0][1]+1], increaseSnake);
 
 
     } else if (activeDirection === 2){
-    //Up
 
         editSnake(snake, setSnake, [snake[0][0]-1 , snake[0][1]], increaseSnake);
 
 
     } else if (activeDirection === 3){
-    //Down
 
         editSnake(snake, setSnake, [snake[0][0]+1, snake[0][1]], increaseSnake);
 

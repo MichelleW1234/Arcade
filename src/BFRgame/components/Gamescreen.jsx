@@ -184,7 +184,7 @@ function Gamescreen(){
 
         laserTimeoutRef.current = setTimeout(() => {
             setLaserBlast(false);
-            laserTimeoutRef.current = null; // Clean up ref
+            laserTimeoutRef.current = null;
         }, 100);
 
     };

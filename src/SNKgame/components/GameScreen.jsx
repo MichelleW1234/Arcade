@@ -105,9 +105,7 @@ function Gamesscreen(){
     });
 
 
-    /* Refs avoid stale values and store the latest values for use inside 
-    interval callbacks in useEffect without triggering re-renders*/
-
+    
     const snakeRef = useRef(snake);
     useEffect(() => {
         snakeRef.current = snake;
@@ -119,11 +117,9 @@ function Gamesscreen(){
     }, [appleLocation]);
 
     const canChangeDirectionRef = useRef(true);
-
     const activeDirectionRef = useRef(-1);
 
-    /* Clear and restart their interval whenever anything in their dependency array changes
-    so that callback always uses the current value */
+
 
     useEffect(() => {
 

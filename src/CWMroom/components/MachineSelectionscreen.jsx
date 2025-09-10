@@ -76,7 +76,7 @@ function MachineSelectionscreen (){
                 break;
         }
 
-        // Scroll the active element into view
+
         itemRefs.current[activeButton]?.scrollIntoView({
             behavior: "smooth",
             block: "nearest",

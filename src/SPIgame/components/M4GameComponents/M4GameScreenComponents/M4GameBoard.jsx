@@ -13,7 +13,6 @@ import {playSound} from '../../../../Helpers/helpers.js';
 
 function M4GameBoard({setBossDefeated, setBlownUp}) {
     
-    //5 x 9 (90x90 pieces moving around the screen)
     const gameBoardMatrix = Array.from({ length: 5 }, () => Array(7).fill(0));
     const healthBar = Array(50).fill(0);
 
@@ -23,10 +22,7 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
     const [bossState, setBossState] = useState([newBossPosition(), false]);
 
   
-    /* Clear and restart their interval whenever anything in their dependency array changes
-    so that callback always uses the current value */
-
-    /* Listener for boss position rerendering and determining boss state*/
+    
     useEffect(() => {
 
         if (SPIUser[2] === true){

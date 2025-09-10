@@ -24,12 +24,12 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, ter
         }
     }, [showFlag]);
 
-    // For textbox:
+
 
     const handleKeyDown = (e) => {
         if (showReferences === false && round < 11 && terminationFlag === false){
             if (e.key === "Enter" && showFlag === false) {
-                e.preventDefault(); // prevent form submission or default behaviors
+                e.preventDefault();
 
                 document.querySelectorAll(".Enter").forEach(el => {
                     el.classList.add("active");

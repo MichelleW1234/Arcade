@@ -12,9 +12,6 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
     const { TTTUser, setTTTUser} = useTTTUser();
 
-    /* Clear and restart their interval whenever anything in their dependency array changes
-    so that callback always uses the current value */
-
     useEffect(() => {
 
         if (TTTUser[1] !== -1){
@@ -66,10 +63,8 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
         if (currentTurn === 0) {
 
-            // Trigger the computer's move after a delay (for example, every 2 seconds)
             const interval = setInterval(computerMove, 1800);
     
-            // Cleanup interval when component is unmounted or when the turn changes
             return () => clearInterval(interval);
 
         }

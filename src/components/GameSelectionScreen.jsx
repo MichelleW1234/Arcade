@@ -59,7 +59,6 @@ function GameSelectionscreen (){
         const currGameInfo = retrieveActiveGame(activeButton);
         setActiveGame(currGameInfo);
 
-        // scroll the new element into view
         itemRefs.current[activeButton]?.scrollIntoView({
             behavior: "smooth",
             block: "nearest",

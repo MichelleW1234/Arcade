@@ -118,3 +118,31 @@
     animation: glowing-shadow7 4s infinite, button-glitch 4s infinite;
 
 }
+
+
+.AchievementsProgressBar {
+
+    display: flex;
+    flex-direction: row;
+
+    box-shadow: 0 0 1rem 0.3rem rgb(198, 220, 255);
+
+}
+
+.AchievementsProgressBarCellDone{
+
+    height: 1rem;
+    width: 1rem;
+
+    background-color: rgb(60, 255, 0);
+
+}
+
+.AchievementsProgressBarCellNotDone{
+
+    height: 1rem;
+    width: 1rem;
+
+    background-color: rgb(255, 60, 0);
+
+}

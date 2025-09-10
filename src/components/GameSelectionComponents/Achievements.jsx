@@ -36,21 +36,70 @@ function Achievements ({setShowAchievements}){
                             <div key={index} className = "AchievementsWindow">
 
                                 <h1 className = "AchievementsFont"> {item[2]}</h1>
-                                <br/>
 
                                 {item[4] > 0 ? ( 
 
-                                    <>
-                                        <img className = "AchievementsBadgeUnlocked" src = {item[3]}/>
-                                        <h1 className = "AchievementsFont"> x{item[4]}</h1>
-                                    </>
+                                    item[1] !== 1 ? ( 
+
+                                        <>
+                                            <img className = "AchievementsBadgeUnlocked" src = {item[3]}/>
+                                            <h1 className = "AchievementsFont"> x{item[4]}</h1>
+                                            <h1 className = "AchievementsProgressBar">
+
+                                                {Array.from({ length: (item[0]/item[1])*10 }, (_, i) => (
+
+                                                    <div key={i} className = "AchievementsProgressBarCellDone"></div>
+                                                ))}
+
+                                                {Array.from({ length: ((item[1] - item[0])/item[1])*10 }, (_, i) => (
+
+                                                    <div key={i} className = "AchievementsProgressBarCellNotDone"></div>
+                                                ))}
+
+                                            </h1>
+                                        </>
+
+                                    ):(
+
+                                        <>
+                                            <img className = "AchievementsBadgeUnlocked" src = {item[3]}/>
+                                            <h1 className = "AchievementsFont"> x{item[4]}</h1>
+                                        </>
+
+                                    )
 
                                 ):(
 
-                                    <>
-                                        <img className = "AchievementsBadgeLocked" src = {Lock}/>
-                                        <h1 className = "AchievementsFont"> Locked </h1>
-                                    </>
+                                    item[1] !== 1 ? ( 
+
+                                        <>
+                                            <br/>
+                                            <img className = "AchievementsBadgeLocked" src = {Lock}/>
+                                            <h1 className = "AchievementsFont"> Locked </h1>
+                                            <h1 className = "AchievementsProgressBar">
+
+                                                {Array.from({ length: (item[0]/item[1])*10 }, (_, i) => (
+
+                                                    <div key={i} className = "AchievementsProgressBarCellDone"></div>
+                                                ))}
+
+                                                {Array.from({ length: ((item[1] - item[0])/item[1])*10 }, (_, i) => (
+
+                                                    <div key={i} className = "AchievementsProgressBarCellNotDone"></div>
+                                                ))}
+
+                                            </h1>
+                                        </>
+
+                                    ):(
+
+                                        <>
+                                            <br/>
+                                            <img className = "AchievementsBadgeLocked" src = {Lock}/>
+                                            <h1 className = "AchievementsFont"> Locked </h1>
+                                        </>
+
+                                    )
 
                                 )}
 

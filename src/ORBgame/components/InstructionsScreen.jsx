@@ -31,7 +31,7 @@ function Instructionsscreen (){
             <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
 
             <p className = "largefont">
-                &gt; Press Stop when the yellow light lands on green.<br/>
+                &gt; Press Stop [ Return ] when the yellow light lands on green.<br/>
                 &gt; If you land it, you gain 5 points. If you miss, you lose 5 points.<br/>
                 &gt; You get one attempt.<br/>
                 &gt; It costs 5 points to play this game. <br/>

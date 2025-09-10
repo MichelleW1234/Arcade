@@ -33,7 +33,7 @@ function Instructionsscreen (){
             <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
             
             <p className = "largefont">
-                &gt; Control when to activate the force field to keep balloons from passing through by popping them.<br/>
+                &gt; Control when to activate the force field [ Shift ] to keep balloons from passing through by popping them.<br/>
                 &gt; Every balloon that is popped is worth 2 points. <br/>
                 &gt; You will lose 2 points for every bird that is hit instead. <br/>
                 &gt; Pop as many balloons as you can within the 30 second time limit. <br/>

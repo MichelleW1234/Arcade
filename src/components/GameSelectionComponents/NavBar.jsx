@@ -118,14 +118,14 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
                       ["Soccerball", 0, Soccerball], ["Basketball", 0, Basketball], ["Andromeda Galaxy", 0, Andromeda], ["Sun", 0, Sun], 
                       ["Saturn", 0, Saturn], ["Earth", 0, Earth], ["Cow", 50, Cow], ["Hippo", 30, Hippo]]);
         setAchievements([[false], 
-                            [0, 5, "Won 5 games of Rock-Paper-Scissors", RPS, 0], 
-                            [0, 10, "Won 10 games of Tic-Tac-Toe", TTT, 0], 
-                            [0, 1, "Ate 50 Apples in Snake", SNK, 0], 
-                            [0, 1, "Completed all 4 missions in Space Invasion", SPI, 0], 
-                            [0, 5, "Won 5 games of Orbit", ORB, 0], 
-                            [0, 1, "Blasted 15 colors in Color Blast", CBL, 0], 
-                            [0, 1, "Popped 15 balloons in Balloon Frenzy", BFR, 0], 
-                            [0, 1, "Traveled 500 meters in Sky Maze", SMZ, 0]]);
+                        [0, 5, "Won 5 games of Rock-Paper-Scissors", RPS, 0], 
+                        [0, 10, "Won 10 games of Tic-Tac-Toe", TTT, 0], 
+                        [0, 1, "Ate 50 Apples in one game of Snake", SNK, 0], 
+                        [0, 1, "Completed all 4 missions in one game of Space Invasion", SPI, 0], 
+                        [0, 5, "Won 5 games of Orbit", ORB, 0], 
+                        [0, 1, "Blasted 15 colors in one game of Color Blast", CBL, 0], 
+                        [0, 1, "Popped 15 balloons in one game of Balloon Frenzy", BFR, 0], 
+                        [0, 1, "Traveled 500 meters in one game of Sky Maze", SMZ, 0]]);
         setTermination([true]);
 
     }

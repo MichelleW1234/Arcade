@@ -18,9 +18,11 @@
   flex-direction: row;
   overflow-y: auto;
 
+  padding: 2rem;        
+  gap: 3rem;  
   width: 45vw; 
-  padding: 1.5rem;        
-  gap: 1.875rem;          
+  max-width: 219.625rem;
+         
 }
 
 
@@ -28,7 +30,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem; 
+  gap: 3rem; 
 }
 
 .prizeWindow {

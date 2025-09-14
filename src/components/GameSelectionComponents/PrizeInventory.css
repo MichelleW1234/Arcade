@@ -21,7 +21,8 @@
     overflow-y: auto;
 
     width: 45vw;
-    height: 30rem;    
+    max-width: 554rem;
+    height: 30rem;
 
     padding: 3rem;
     gap: 4rem; 

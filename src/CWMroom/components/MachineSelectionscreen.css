@@ -22,7 +22,8 @@
     
     gap: 3.75rem;     
     padding: 2rem;  
-    width: 41.5vw;
+    width:  41.5vw;
+    max-width: 56.5rem;
 
 }
 

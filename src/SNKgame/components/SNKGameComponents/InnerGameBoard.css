@@ -2,7 +2,11 @@
     height: 1.25rem;      
     width: 1.25rem;     
     background-color: rgb(7, 54, 0); 
+    background-color: rgb(2, 18, 0); 
     border: 0.125rem solid rgb(2, 15, 0); 
+
+    box-shadow: 0 0 1rem 0.15rem rgb(130, 255, 88);
+
 }
 
 .SNKApple {

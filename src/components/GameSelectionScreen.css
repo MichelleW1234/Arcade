@@ -15,21 +15,25 @@
 }
 
 .ArcadeGameBoardInner {
+  
   display: flex;
   flex-direction: row;
   overflow: auto;
 
   gap: 3.75rem;      
   padding: 1.25rem;  
-  width: 50vw;    
+  width: 50vw;
+  max-width: 148.75rem;
+
 }
 
 .ArcadeGameContainer {
+
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;  
-  width: 100%;
+
 }
 
 .ArcadeGame {

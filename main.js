@@ -6,6 +6,11 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+if (process.arch === 'x64') {
+  const userDataPath = path.join(app.getPath('appData'), 'Arcade');
+  app.setPath('userData', userDataPath);
+}
+
 function createWindow () {
   const win = new BrowserWindow({
     width: 800,

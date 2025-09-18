@@ -18,7 +18,8 @@ function createWindow () {
     fullscreen: true,
     resizable: false,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: false,
+      contextIsolation: true
     }
   });
 
@@ -44,7 +45,7 @@ function createWindow () {
 
   // Accounting for machines with different DPI scaling
   win.webContents.on('did-finish-load', () => {
-    const display = screen.getDisplayNearestPoint(win.getBounds());
+    const display = screen.getPrimaryDisplay();
     const scaleFactor = display.scaleFactor;
     const baseZoom = 1.32;
     const normalizedZoom = baseZoom / scaleFactor;
@@ -52,7 +53,7 @@ function createWindow () {
   });
 
   win.on('focus', () => {
-    const display = screen.getDisplayNearestPoint(win.getBounds());
+    const display = screen.getPrimaryDisplay();
     const scaleFactor = display.scaleFactor;
     const baseZoom = 1.32;
     const normalizedZoom = baseZoom / scaleFactor;

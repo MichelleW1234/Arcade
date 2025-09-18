@@ -11,6 +11,8 @@ html {
 body {
 
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 
   background-image: 
     url("./Images/ArcadeStartingScreen.svg"),
@@ -469,6 +471,7 @@ a.navBarButton {
 
 
 ::-webkit-scrollbar {
+  background: #0c0042;
   width: 0.8rem; 
 }
  

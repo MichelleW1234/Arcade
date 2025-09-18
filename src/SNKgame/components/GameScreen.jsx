@@ -57,41 +57,41 @@ function Gamesscreen(){
         ".ViewResults"
     );
 
-    useKeyboardShortcut("ArrowUp", (event) => {
+    useKeyboardShortcut("w", () => {
         if (SNKUser[0] === false && snake.length < 600 ){
-            event.preventDefault();
 
             buttonControls(2);
+
         }
     },
         ".Up"
     );
 
-    useKeyboardShortcut("ArrowDown", (event) => {
+    useKeyboardShortcut("s", () => {
         if (SNKUser[0] === false && snake.length < 600 ){
-            event.preventDefault();
 
             buttonControls(3);
+
         }
     },
         ".Down"
     );
 
-    useKeyboardShortcut("ArrowLeft", (event) => {
+    useKeyboardShortcut("a", () => {
         if (SNKUser[0] === false && snake.length < 600 ){
-            event.preventDefault();
 
             buttonControls(0);
+
         }
     },
         ".Left"
     );
 
-    useKeyboardShortcut("ArrowRight", (event) => {
+    useKeyboardShortcut("d", () => {
         if (SNKUser[0] === false && snake.length < 600 ){
-            event.preventDefault();
 
             buttonControls(1);
+
         }
     },
         ".Right"
@@ -264,10 +264,10 @@ function Gamesscreen(){
 
                         <div className = "SNKbuttonsContainer">
                             
-                            <button className = "SNKcontrolButton Left" onClick={() => buttonControls(0)}> [&larr;] </button>
-                            <button className = "SNKcontrolButton Right" onClick={() => buttonControls(1)}> [&rarr;] </button>
-                            <button className = "SNKcontrolButton Up" onClick={() => buttonControls(2)}> [&uarr;] </button>
-                            <button className = "SNKcontrolButton Down" onClick={() => buttonControls(3)}> [&darr;] </button>
+                            <button className = "SNKcontrolButton Left" onClick={() => buttonControls(0)}> [a] </button>
+                            <button className = "SNKcontrolButton Right" onClick={() => buttonControls(1)}> [d] </button>
+                            <button className = "SNKcontrolButton Up" onClick={() => buttonControls(2)}> [w] </button>
+                            <button className = "SNKcontrolButton Down" onClick={() => buttonControls(3)}> [s] </button>
 
                         </div>
 

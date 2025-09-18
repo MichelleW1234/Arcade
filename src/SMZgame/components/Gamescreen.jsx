@@ -52,24 +52,24 @@ function Gamescreen(){
         ".ViewResults"
     );
 
-    useKeyboardShortcut("ArrowUp", (event) => {
+    useKeyboardShortcut("w", () => {
 
         if (gameOver === false){
-            event.preventDefault();
 
             birdFlyingUpwards();
+
         }
     
     },
         ".Up"
     );
 
-    useKeyboardShortcut("ArrowDown", (event) => {
+    useKeyboardShortcut("s", () => {
 
         if (gameOver === false){
-            event.preventDefault();
 
             birdFlyingDownwards();
+
         }
     },
         ".Down"
@@ -272,8 +272,8 @@ function Gamescreen(){
                             />
 
                             <div className = "SMZButtonContainer">
-                                <button className = "SMZControlButton Up" onClick = {() => birdFlyingUpwards()}> [&uarr;] </button>
-                                <button className = "SMZControlButton Down" onClick = {() => birdFlyingDownwards()}> [&darr;] </button>
+                                <button className = "SMZControlButton Up" onClick = {() => birdFlyingUpwards()}> [w] </button>
+                                <button className = "SMZControlButton Down" onClick = {() => birdFlyingDownwards()}> [s] </button>
                             </div>
                         </>
 

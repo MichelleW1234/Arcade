@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import useKeyboardShortcut from "../../../../hooks/useKeyboardShortcut";
 
 import AlienNormal from '../../../../Images/image 8.svg';
 import AlienShielded from '../../../../Images/image 11.svg';
@@ -23,6 +24,29 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
     const [shieldedAliens, setShieldedAliens] = useState(getRandomElements(alienPositions, 3));
 
     
+    useKeyboardShortcut("ArrowLeft", (event) => {
+        if ( waveNumber <= 5 && SPIUser[2] === false){
+            if (laserValue > 0){
+                event.preventDefault();
+                setLaserValue(prev => prev-1);
+            }
+        }
+    },
+        ".SPISlider"
+    );
+
+    
+    useKeyboardShortcut("ArrowRight", (event) => {
+        if ( waveNumber <= 5 && SPIUser[2] === false ){
+            if (laserValue < 26){
+                event.preventDefault();
+                setLaserValue(prev => prev + 1);
+            }
+        }
+    },
+        ".SPISlider"
+    );
+
 
     const alienPositionsRef = useRef(alienPositions);
     useEffect(() => {
@@ -174,6 +198,8 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
                 value={laserValue}
                 onChange={(e) => setLaserValue(Number(e.target.value))}
             />
+
+            <div className="largefont"> [&larr;] & [&rarr;]</div>
 
         </div>
 

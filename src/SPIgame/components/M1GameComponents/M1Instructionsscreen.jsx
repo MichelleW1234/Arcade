@@ -168,7 +168,7 @@ function M1Instructionsscreen() {
               <p>
                 <img src={laserCannon} ></img> - Laser Cannon <br/> <br/>
                 &nbsp; &bull; Pulse Type: <img src={laser} ></img> <br/>
-                &nbsp; &bull; To Use: Move slider to aim at target <br/>
+                &nbsp; &bull; To Use: Move slider [ &larr; ] and [ &rarr; ] to aim at target <br/>
               </p>
               <button className = "SPIGuideCloseButtons" onClick={() => setEquipmentOn(closingGuide())}> Close </button>
             </div>

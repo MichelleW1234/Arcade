@@ -31,7 +31,7 @@ function Instructionsscreen (){
             <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
             
             <p className = "largefont">
-                &gt; Use the controls to guide the snake up, down, left, and right to eat the apples. <br/>
+                &gt; Use the controls to guide the snake up [ W ], down [ S ], left [ A ], and right [ D ] to eat the apples. <br/>
                 &gt; You will gain 2 points for every apple that is eaten. <br/>
                 &gt; The snake always starts in the top left-hand corner. <br/>
                 &gt; It costs 5 points to play this game. <br/>

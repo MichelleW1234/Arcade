@@ -272,8 +272,8 @@ function Gamescreen(){
                             />
 
                             <div className = "SMZButtonContainer">
-                                <button className = "SMZControlButton Up" onClick = {() => birdFlyingUpwards()}> [w] </button>
-                                <button className = "SMZControlButton Down" onClick = {() => birdFlyingDownwards()}> [s] </button>
+                                <button className = "SMZControlButton Up" onClick = {() => birdFlyingUpwards()}> [W] </button>
+                                <button className = "SMZControlButton Down" onClick = {() => birdFlyingDownwards()}> [S] </button>
                             </div>
                         </>
 

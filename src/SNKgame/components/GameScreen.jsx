@@ -264,10 +264,10 @@ function Gamesscreen(){
 
                         <div className = "SNKbuttonsContainer">
                             
-                            <button className = "SNKcontrolButton Left" onClick={() => buttonControls(0)}> [a] </button>
-                            <button className = "SNKcontrolButton Right" onClick={() => buttonControls(1)}> [d] </button>
-                            <button className = "SNKcontrolButton Up" onClick={() => buttonControls(2)}> [w] </button>
-                            <button className = "SNKcontrolButton Down" onClick={() => buttonControls(3)}> [s] </button>
+                            <button className = "SNKcontrolButton Left" onClick={() => buttonControls(0)}> [A] </button>
+                            <button className = "SNKcontrolButton Right" onClick={() => buttonControls(1)}> [D] </button>
+                            <button className = "SNKcontrolButton Up" onClick={() => buttonControls(2)}> [W] </button>
+                            <button className = "SNKcontrolButton Down" onClick={() => buttonControls(3)}> [S] </button>
 
                         </div>
 

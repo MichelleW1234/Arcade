@@ -21,7 +21,7 @@ export const itemsShifting = (positions, setPositions) => {
     let newMatrixFiltered = newMatrix.filter(position => position[0] >= 0);
     const moreItems = newMatrixFiltered.every(position => position[0] <= 8);
 
-    if (moreItems){
+    if (moreItems === true){
 
         const newItem = [16, incomingItem()];
         newMatrixFiltered.push(newItem);

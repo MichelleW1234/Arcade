@@ -19,7 +19,7 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, ter
 
     const inputRef = useRef(null);
     useEffect(() => {
-        if (!showFlag){
+        if (showFlag === false){
             inputRef.current?.focus();
         }
     }, [showFlag]);

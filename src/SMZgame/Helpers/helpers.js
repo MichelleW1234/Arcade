@@ -47,7 +47,7 @@ export const birdFlyingForward = (wallPositions, setWallPositions) => {
         row.every(position => position[1] <= 4)
     );
 
-    if (newWallNeeded){
+    if (newWallNeeded === true){
 
         const newWall = wallHeight(16);
         newWallsFiltered.push(newWall);
@@ -66,7 +66,7 @@ export const checkHit = (setWallHit, birdPosition, wallPositions) => {
         .flat()
         .some(pair => pair[0] === birdPosition[0] && pair[1] === birdPosition[1]);
 
-    if (wallHit) {
+    if (wallHit === true) {
 
         setWallHit(true);
 

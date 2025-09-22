@@ -150,7 +150,7 @@ export const aliensIncomingM1andM3 = (setAlienPositions, alienPositions, setSPIU
 
     }
 
-    if (gameShouldStop) {
+    if (gameShouldStop === true) {
         setSPIUser(prev => [prev[0], prev[1], true]);
         playSound(13);
     }
@@ -179,7 +179,7 @@ export const aliensIncomingM2 = (setAlienPositions, alienPositions, setSPIUser, 
 
     }
 
-    if (gameShouldStop) {
+    if (gameShouldStop === true) {
         setSPIUser(prev => [prev[0], prev[1], true]);
         playSound(13);
     }
@@ -237,7 +237,7 @@ export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
 
     }
 
-    if (!(newMatrix.some(row => row[0] >= 9))){
+    if (!newMatrix.some(row => row[0] >= 9)){
 
         newMatrix.push(
             [14, laserValue],
@@ -256,7 +256,7 @@ export const laserBlaster = (laserPositions, setLaserPositions, laserValue) => {
 
 export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, waveIncremented) => {
 
-    if (waveIncremented.current) {
+    if (waveIncremented.current === true) {
         return;
     }
 
@@ -269,11 +269,11 @@ export const alienKilledM1 = (laserPositions, alienPositions, setAlienPositions,
 
     const alienHit = newPositions.length < alienPositions.length;
 
-    if (alienHit) {
+    if (alienHit === true) {
         playSound(9);
     }
 
-    if (newPositions.length === 0 && !waveIncremented.current) {
+    if (newPositions.length === 0 && waveIncremented.current === false) {
 
         waveIncremented.current = true;
         setWaveNumber(prev => prev + 1);
@@ -303,7 +303,7 @@ export const getRandomElements = (array, count) => {
 
 export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, shieldedAliens, setShieldedAliens, waveIncremented) => {
 
-    if (waveIncremented.current) {
+    if (waveIncremented.current === true) {
         return;
     }
 
@@ -320,11 +320,11 @@ export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions,
 
     const alienHit = newPositions.length < alienPositions.length;
 
-    if (alienHit) {
+    if (alienHit === true) {
         playSound(9);
     }
 
-    if (newPositions.length === 0 && !waveIncremented.current) {
+    if (newPositions.length === 0 && waveIncremented.current === false) {
 
         waveIncremented.current = true;
         setWaveNumber(prev => prev + 1);
@@ -349,7 +349,7 @@ export const alienKilledM2 = (laserPositions, alienPositions, setAlienPositions,
 
 export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions, setWaveNumber, waveIncremented, mutantLaserOn) => {
 
-    if (waveIncremented.current) {
+    if (waveIncremented.current === true) {
         return;
     }
 
@@ -378,11 +378,11 @@ export const alienKilledM3 = (laserPositions, alienPositions, setAlienPositions,
 
     const alienHit = newPositions.length < alienPositions.length;
 
-    if (alienHit) {
+    if (alienHit === true) {
         playSound(9);
     }
     
-    if (newPositions.length === 0 && !waveIncremented.current) {
+    if (newPositions.length === 0 && waveIncremented.current === false) {
 
         waveIncremented.current = true;
         setWaveNumber(prev => prev + 1);

@@ -20,54 +20,43 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
         }
 
-        const interval = setInterval(() => {
+        let result = winnerwinnerchickendinner(matrix, userMoves, computerMoves, setThreeInARow);
 
-            let result = winnerwinnerchickendinner(matrix, userMoves, computerMoves, setThreeInARow);
+        if (result !== -1){
 
-            if (result !== -1){
+            playSound(6);
 
-                playSound(6);
+            setTTTUser(prev => {
+                const updatedUser = [...prev];
+                updatedUser[1] = result;
+                return updatedUser;
+            });
 
-                setTTTUser(prev => {
-                    const updatedUser = [...prev];
-                    updatedUser[1] = result;
-                    return updatedUser;
-                });
-
-            }
-
-        }, 100);
-
-        return () => clearInterval(interval);
+        }
 
     }, [matrix, TTTUser]);
 
     useEffect(() => {
 
-        if (TTTUser[1] !== -1){
+        if (TTTUser[1] !== -1 || currentTurn === 1){
 
             return;
 
         }
-        
-        const computerMove = () => {
+
+        const interval = setInterval(() => {
 
             const move = computerMoveDecider(availableMoves, computerMoves, userMoves);
-            
+        
             setComputerMoves(prev => [...prev, move]);
             takenMove(move, 0);
             nextMove();
             setError("");
-           
-        }
 
-        if (currentTurn === 0) {
+        }, 1800);
 
-            const interval = setInterval(computerMove, 1800);
-    
-            return () => clearInterval(interval);
+        return () => clearInterval(interval);
 
-        }
 
     }, [currentTurn, TTTUser]);
 

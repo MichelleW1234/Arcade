@@ -150,7 +150,11 @@ function Gamesscreen(){
 
         } else {
 
-            if (!canChangeDirectionRef.current) return;
+            if (canChangeDirectionRef.current === false){
+
+                return;
+
+            }
 
             if (direction === 0 && activeDirectionRef.current !== 1){
 

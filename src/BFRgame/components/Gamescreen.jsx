@@ -139,7 +139,7 @@ function Gamescreen(){
             if (birdShot || balloonPopped) break;
         }
 
-        if (birdShot) {
+        if (birdShot === true) {
 
             playSound(28);
 
@@ -151,7 +151,7 @@ function Gamescreen(){
 
         }
 
-        if (balloonPopped) {
+        if (balloonPopped === true) {
 
             playSound(27);
 
@@ -162,7 +162,7 @@ function Gamescreen(){
 
         }
 
-        if (!birdShot && !balloonPopped){
+        if (birdShot === false && balloonPopped === false){
 
             playSound(26);
 
@@ -178,7 +178,7 @@ function Gamescreen(){
 
         setLaserBlast(true);
 
-        if (laserTimeoutRef.current) {
+        if (laserTimeoutRef.current === true) {
             clearTimeout(laserTimeoutRef.current);
         }
 

@@ -104,7 +104,7 @@ export const winnerwinnerchickendinner = (matrix, userMoves, computerMoves, setT
 
     }
 
-    if (!matrix.includes(-1)){
+    if (matrix.includes(-1) === false){
 
         return 2;
 

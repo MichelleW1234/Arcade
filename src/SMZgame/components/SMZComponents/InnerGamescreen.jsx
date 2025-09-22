@@ -1,6 +1,6 @@
 import "./InnerGamescreen.css";
-import Bird from "../../../Images/image 33.svg";
-import Wall from "../../../Images/image 32.svg";
+import bird from "../../../Images/image 33.svg";
+import wall from "../../../Images/image 32.svg";
 
 function InnerGamescreen ({wallPositions, birdPosition, startButtonClicked}){
 
@@ -26,11 +26,11 @@ function InnerGamescreen ({wallPositions, birdPosition, startButtonClicked}){
 
                         wallHere ? (
 
-                            <img src = {Wall} key = {rowIndex + "," + colIndex} className="SMZGameBoardWall"/>
+                            <img src = {wall} key = {rowIndex + "," + colIndex} alt = "" className="SMZGameBoardWall"/>
 
                         ) : birdHere ? (
 
-                            <img src = {Bird} key = {rowIndex + "," + colIndex} className="SMZGameBoardEmptySpace"/>
+                            <img src = {bird} key = {rowIndex + "," + colIndex} alt = "" className="SMZGameBoardEmptySpace"/>
 
                         ) : (
                             

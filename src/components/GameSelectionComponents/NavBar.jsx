@@ -9,41 +9,41 @@ import { useTermination } from '../../Providers/TerminationProvider.jsx';
 
 import {playSound, retrieveActiveGame} from "../../Helpers/helpers.js";
 
-import Bear from '../../Images/ArcadePrizeImages/Bear.svg';
-import Bee from '../../Images/ArcadePrizeImages/Bee.svg';
-import Heart from '../../Images/ArcadePrizeImages/Valentine.svg';
-import GameBoy from '../../Images/ArcadePrizeImages/GameBoy.svg';
-import Robot from '../../Images/ArcadePrizeImages/Robot.svg';
-import Alien from '../../Images/ArcadePrizeImages/Alien.svg';
-import Spider from '../../Images/ArcadePrizeImages/Spider.svg';
-import Whale from "../../Images/ArcadePrizeImages/Whale.svg";
-import Carrot from "../../Images/ArcadePrizeImages/Carrot.svg";
-import Hippo from "../../Images/ArcadePrizeImages/Hippo.svg";
-import Cow from "../../Images/ArcadePrizeImages/Cow.svg";
+import bear from '../../Images/ArcadePrizeImages/Bear.svg';
+import bee from '../../Images/ArcadePrizeImages/Bee.svg';
+import heart from '../../Images/ArcadePrizeImages/Valentine.svg';
+import gameBoy from '../../Images/ArcadePrizeImages/GameBoy.svg';
+import robot from '../../Images/ArcadePrizeImages/Robot.svg';
+import alien from '../../Images/ArcadePrizeImages/Alien.svg';
+import spider from '../../Images/ArcadePrizeImages/Spider.svg';
+import whale from "../../Images/ArcadePrizeImages/Whale.svg";
+import carrot from "../../Images/ArcadePrizeImages/Carrot.svg";
+import hippo from "../../Images/ArcadePrizeImages/Hippo.svg";
+import cow from "../../Images/ArcadePrizeImages/Cow.svg";
 
-import BlackCat from "../../Images/ArcadePrizeImages/BlackCat.svg";
-import OrangeCat from "../../Images/ArcadePrizeImages/OrangeCat.svg";
-import SiameseCat from "../../Images/ArcadePrizeImages/SiameseCat.svg";
-import BritishShorthairCat from "../../Images/ArcadePrizeImages/BritishShorthairCat.svg";
+import blackCat from "../../Images/ArcadePrizeImages/BlackCat.svg";
+import orangeCat from "../../Images/ArcadePrizeImages/OrangeCat.svg";
+import siameseCat from "../../Images/ArcadePrizeImages/SiameseCat.svg";
+import britishShorthairCat from "../../Images/ArcadePrizeImages/BritishShorthairCat.svg";
 
-import Basketball from "../../Images/ArcadePrizeImages/Basketball.svg";
-import Soccerball from "../../Images/ArcadePrizeImages/Soccerball.svg";
-import Paddle from "../../Images/ArcadePrizeImages/Paddle.svg";
-import Football from "../../Images/ArcadePrizeImages/Football.svg";
+import basketball from "../../Images/ArcadePrizeImages/Basketball.svg";
+import soccerball from "../../Images/ArcadePrizeImages/Soccerball.svg";
+import paddle from "../../Images/ArcadePrizeImages/Paddle.svg";
+import football from "../../Images/ArcadePrizeImages/Football.svg";
 
-import Earth from "../../Images/ArcadePrizeImages/Earth.svg";
-import Sun from "../../Images/ArcadePrizeImages/Sun.svg";
-import Saturn from "../../Images/ArcadePrizeImages/Saturn.svg";
-import Andromeda from "../../Images/ArcadePrizeImages/Andromeda.svg";
+import earth from "../../Images/ArcadePrizeImages/Earth.svg";
+import sun from "../../Images/ArcadePrizeImages/Sun.svg";
+import saturn from "../../Images/ArcadePrizeImages/Saturn.svg";
+import andromeda from "../../Images/ArcadePrizeImages/Andromeda.svg";
 
-import RPS from '../../Images/ArcadeAchievementBadges/RPS.svg';
-import TTT from '../../Images/ArcadeAchievementBadges/TTT.svg';
-import SNK from '../../Images/ArcadeAchievementBadges/SNK.svg';
-import SPI from '../../Images/ArcadeAchievementBadges/SPI.svg';
-import ORB from '../../Images/ArcadeAchievementBadges/ORB.svg';
-import CBL from '../../Images/ArcadeAchievementBadges/CBL.svg';
-import BFR from '../../Images/ArcadeAchievementBadges/BFR.svg';
-import SMZ from '../../Images/ArcadeAchievementBadges/SMZ.svg';
+import rps from '../../Images/ArcadeAchievementBadges/RPS.svg';
+import ttt from '../../Images/ArcadeAchievementBadges/TTT.svg';
+import snk from '../../Images/ArcadeAchievementBadges/SNK.svg';
+import spi from '../../Images/ArcadeAchievementBadges/SPI.svg';
+import orb from '../../Images/ArcadeAchievementBadges/ORB.svg';
+import cbl from '../../Images/ArcadeAchievementBadges/CBL.svg';
+import bfr from '../../Images/ArcadeAchievementBadges/BFR.svg';
+import smz from '../../Images/ArcadeAchievementBadges/SMZ.svg';
 
 function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchievements}){
 
@@ -110,22 +110,22 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
         playSound(24);
         setPlayer([0]);
         setActiveGame(retrieveActiveGame(0));
-        setPrize([["Bear", 100, Bear], ["BumbleBee", 80, Bee], ["Valentine", 50, Heart],
-                      ["GameBoy", 80, GameBoy], ["Robot", 60, Robot], ["Alien", 40, Alien], 
-                      ["Spider", 80, Spider], ["Carrot", 40, Carrot], ["Whale", 60, Whale],
-                      ["Black Cat", 0, BlackCat], ["Orange Cat", 0, OrangeCat], ["Siamese Cat", 0, SiameseCat],
-                      ["British Shorthair Cat", 0, BritishShorthairCat], ["Football", 0, Football], ["Ping Pong Paddle", 0, Paddle], 
-                      ["Soccerball", 0, Soccerball], ["Basketball", 0, Basketball], ["Andromeda Galaxy", 0, Andromeda], ["Sun", 0, Sun], 
-                      ["Saturn", 0, Saturn], ["Earth", 0, Earth], ["Cow", 50, Cow], ["Hippo", 30, Hippo]]);
+        setPrize([["Bear", 100, bear], ["BumbleBee", 80, bee], ["Valentine", 50, heart],
+                      ["GameBoy", 80, gameBoy], ["Robot", 60, robot], ["Alien", 40, alien], 
+                      ["Spider", 80, spider], ["Carrot", 40, carrot], ["Whale", 60, whale],
+                      ["Black Cat", 0, blackCat], ["Orange Cat", 0, orangeCat], ["Siamese Cat", 0, siameseCat],
+                      ["British Shorthair Cat", 0, britishShorthairCat], ["Football", 0, football], ["Ping Pong Paddle", 0, paddle], 
+                      ["Soccerball", 0, soccerball], ["Basketball", 0, basketball], ["Andromeda Galaxy", 0, andromeda], ["Sun", 0, sun], 
+                      ["Saturn", 0, saturn], ["Earth", 0, earth], ["Cow", 50, cow], ["Hippo", 30, hippo]]);
         setAchievements([[false], 
-                        [0, 5, "Won 5 games of Rock-Paper-Scissors", RPS, 0], 
-                        [0, 10, "Won 10 games of Tic-Tac-Toe", TTT, 0], 
-                        [0, 1, "Ate 50 Apples in one game of Snake", SNK, 0], 
-                        [0, 1, "Completed all 4 missions in one game of Space Invasion", SPI, 0], 
-                        [0, 5, "Won 5 games of Orbit", ORB, 0], 
-                        [0, 1, "Blasted 15 colors in one game of Color Blast", CBL, 0], 
-                        [0, 1, "Popped 15 balloons in one game of Balloon Frenzy", BFR, 0], 
-                        [0, 1, "Traveled 500 meters in one game of Sky Maze", SMZ, 0]]);
+                        [0, 5, "Won 5 games of Rock-Paper-Scissors", rps, 0], 
+                        [0, 10, "Won 10 games of Tic-Tac-Toe", ttt, 0], 
+                        [0, 1, "Ate 50 Apples in one game of Snake", snk, 0], 
+                        [0, 1, "Completed all 4 missions in one game of Space Invasion", spi, 0], 
+                        [0, 5, "Won 5 games of Orbit", orb, 0], 
+                        [0, 1, "Blasted 15 colors in one game of Color Blast", cbl, 0], 
+                        [0, 1, "Popped 15 balloons in one game of Balloon Frenzy", bfr, 0], 
+                        [0, 1, "Traveled 500 meters in one game of Sky Maze", smz, 0]]);
         setTermination([true]);
 
     }

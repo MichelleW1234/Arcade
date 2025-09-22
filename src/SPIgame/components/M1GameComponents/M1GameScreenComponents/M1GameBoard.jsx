@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import useKeyboardShortcut from "../../../../hooks/useKeyboardShortcut";
 
-import AlienNormal from '../../../../Images/image 8.svg';
-import LaserBeam from '../../../../Images/image 9.svg';
+import alienNormal from '../../../../Images/image 8.svg';
+import laserBeam from '../../../../Images/image 9.svg';
 
 import { useSPIUser } from '../../../Providers/SPIUserProvider.jsx';
 
@@ -136,13 +136,13 @@ function M1GameBoard({waveNumber, setWaveNumber}) {
                             isLaserHere ? (
 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM1">
-                                    <img src={LaserBeam} alt="LaserBeam" />
+                                    <img src={laserBeam} alt = "" />
                                 </div>
 
                             ) : isAlienHere ? (
 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM1">
-                                    <img src={AlienNormal} alt="Alien" />
+                                    <img src={alienNormal} alt = "" />
                                 </div>
 
 

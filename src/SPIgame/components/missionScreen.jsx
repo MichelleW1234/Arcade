@@ -9,7 +9,7 @@ import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 
-import Lock from "../../Images/image 35.svg";
+import lock from "../../Images/image 35.svg";
 
 import "./Missionscreen.css";
 
@@ -131,7 +131,7 @@ function Missionscreen() {
 
                             <div key = {mission} className="SPImissionWindowLocked">
 
-                                <img className = "SPILocked" src = {Lock}/>
+                                <img className = "SPILocked" src = {lock} alt = ""/>
                             
                             </div>
 

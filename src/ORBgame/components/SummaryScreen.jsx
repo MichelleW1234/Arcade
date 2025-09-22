@@ -15,7 +15,6 @@ function Summaryscreen (){
     const { ORBUser, setORBUser} = useORBUser();
     const { Achievements, setAchievements} = useAchievements();
 
-
     const navigate = useNavigate();
 
     useKeyboardShortcut("Escape", () => {

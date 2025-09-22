@@ -1,6 +1,6 @@
 import "./InnerGamescreen.css";
-import Balloon from "../../../Images/image 30.svg";
-import Bird from "../../../Images/image 31.svg";
+import balloon from "../../../Images/image 30.svg";
+import bird from "../../../Images/image 31.svg";
 
 function InnerGamescreen ({positions, laserBlast}){
 
@@ -34,11 +34,11 @@ function InnerGamescreen ({positions, laserBlast}){
 
                             colIndex === 8 ? (
 
-                                <img src = {Balloon} key = {rowIndex + "," + colIndex} className="BFRFieldUnactivated"/>
+                                <img src = {balloon} key = {rowIndex + "," + colIndex} className="BFRFieldUnactivated" alt = "" />
 
                             ) : (
 
-                                <img src = {Balloon} key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace"/>
+                                <img src = {balloon} key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace" alt = "" />
 
                             )
 
@@ -46,12 +46,12 @@ function InnerGamescreen ({positions, laserBlast}){
 
                             colIndex === 8 ? (
 
-                                <img src = {Bird} key = {rowIndex + "," + colIndex} className="BFRFieldUnactivated"/>
+                                <img src = {bird} key = {rowIndex + "," + colIndex} className="BFRFieldUnactivated" alt = "" />
 
 
                             ) : (
 
-                                <img src = {Bird} key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace"/>
+                                <img src = {bird} key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace" alt = "" />
 
                             )
                                

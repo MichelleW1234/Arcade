@@ -4,9 +4,9 @@ import {animateClaw} from "../../../Helpers/helpers.js";
 
 import "./SpaceClawWindow.css";
 
-import Claw from "../../../../Images/image 22.svg";
-import ClawCable from "../../../../Images/image 23.svg";
-import Prizes from "../../../../Images/image 26.svg";
+import claw from "../../../../Images/image 22.svg";
+import clawCable from "../../../../Images/image 23.svg";
+import prizes from "../../../../Images/image 26.svg";
 
 
 function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition}) {
@@ -51,11 +51,11 @@ function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosit
 
                             clawHere ? (
 
-                                <img className="CWMSpaceClawRow" key={rowIndex + "," + colIndex} src = {Claw}/>
+                                <img className="CWMSpaceClawRow" key={rowIndex + "," + colIndex} src = {claw} alt = "" />
 
                             ) : clawcableHere ? (
 
-                                <img className="CWMSpaceClawRow" key={rowIndex + "," + colIndex} src = {ClawCable}/>
+                                <img className="CWMSpaceClawRow" key={rowIndex + "," + colIndex} src = {clawCable} alt = "" />
                                 
                             ) : (
 
@@ -69,7 +69,7 @@ function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosit
 
             </div>
             <div className="CWMSpacePrizesContainer">
-                <img className = "CWMSpacePrizes" src = {Prizes}/>
+                <img className = "CWMSpacePrizes" src = {prizes} alt = "" />
                 <div className="CWMSpaceoverlayPrizeWindow "></div>
             </div>
         </div>

@@ -126,11 +126,11 @@ function M3Instructionsscreen() {
             <div className = "SPIGuideContainer">
               <h3>Aliens Detected:</h3>
               <p>
-                <img src={alien} ></img> - Soldier  <br/> <br/>
-                  &nbsp; &bull; Laser Weakness: <img src={laser} ></img> <br/>
+                <img src={alien} alt = "" /> - Soldier  <br/> <br/>
+                  &nbsp; &bull; Laser Weakness: <img src={laser} alt = "" /> <br/>
                   &nbsp; &bull; Special Abilities: None <br/> <br/>
-                <img src={alienMutant} ></img> - Mutant  <br/>
-                  &nbsp; &bull; Laser Weakness: <img src={laserMutant} ></img> <br/> 
+                <img src={alienMutant} alt = "" /> - Mutant  <br/>
+                  &nbsp; &bull; Laser Weakness: <img src={laserMutant} alt = "" /> <br/> 
                   &nbsp; &bull; Special Abilities: None <br/> <br/>
               </p>
 
@@ -172,10 +172,10 @@ function M3Instructionsscreen() {
             <div className = "SPIGuideContainer">
               <h3>Equipment:</h3>
               <p>
-                <img src={laserCannon} ></img> - Laser Cannon <br/> <br/>
+                <img src={laserCannon} alt = "" /> - Laser Cannon <br/> <br/>
                 &nbsp; &bull; Modes: <br/>
-                &nbsp; &bull; Pulse Type - Normal: <img src={laser} ></img> <br/>
-                &nbsp; &bull; Pulse Type - Mutant: <img src={laserMutant} ></img> <br/>
+                &nbsp; &bull; Pulse Type - Normal: <img src={laser} alt = "" /> <br/>
+                &nbsp; &bull; Pulse Type - Mutant: <img src={laserMutant} alt = "" /> <br/>
                 &nbsp; &bull; To Use: Move slider [ &larr; ] and [ &rarr; ] to aim at target. Press button [ Shift ] to switch between modes. <br/>
               </p>
               <button className = "SPIGuideCloseButtons" onClick={() => setEquipmentOn(closingGuide())}> Close </button>

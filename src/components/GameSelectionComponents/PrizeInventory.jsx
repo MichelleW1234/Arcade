@@ -38,7 +38,7 @@ function PrizeInventory ({setShowInventory}){
 
                                 <div key={index} className = "inventoryWindow">
                                     <h1> {fullInventoryList[index][0]}</h1>
-                                    <img className = "inventoryImage" src = {item[2]}/>
+                                    <img className = "inventoryImage" src = {item[2]} alt = "" />
                                     <h1>x{Math.abs(item[1])}</h1>
                                 </div>
 
@@ -48,7 +48,7 @@ function PrizeInventory ({setShowInventory}){
 
                                     <h1> {fullInventoryList[index][0]}</h1>
                                     <br/>
-                                    <img className = "inventoryImage" src = {item[2]}/>
+                                    <img className = "inventoryImage" src = {item[2]} alt = "" />
 
                                 </div> 
 

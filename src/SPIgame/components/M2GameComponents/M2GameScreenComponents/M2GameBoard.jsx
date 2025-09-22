@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
 import useKeyboardShortcut from "../../../../hooks/useKeyboardShortcut";
 
-import AlienNormal from '../../../../Images/image 8.svg';
-import AlienShielded from '../../../../Images/image 11.svg';
-import LaserBeam from '../../../../Images/image 9.svg';
+import alienNormal from '../../../../Images/image 8.svg';
+import alienShielded from '../../../../Images/image 11.svg';
+import laserBeam from '../../../../Images/image 9.svg';
 
 import { useSPIUser } from '../../../Providers/SPIUserProvider.jsx';
 
@@ -161,19 +161,19 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
                             isLaserHere ? (
 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM2">
-                                    <img src={LaserBeam} alt="LaserBeam" />
+                                    <img src={laserBeam} alt = "" />
                                 </div>
 
                             ) : isAlienHere ? (
                                 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM2">
-                                    <img src={AlienNormal} alt="AlienNormal" />
+                                    <img src={alienNormal} alt = "" />
                                 </div>
 
                             ) : isShieldedAlienHere ? (
                                 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM2">
-                                    <img src={AlienShielded} alt="AlienShielded" />
+                                    <img src={alienShielded} alt = "" />
                                 </div>
                                 
                                 

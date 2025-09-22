@@ -7,9 +7,9 @@ import { usePlayer} from '../../Providers/PlayerProvider.jsx';
 
 import {playSound, retrieveActiveGame} from '../../Helpers/helpers.js';
 
-import CatMachine from "../../Images/ArcadeGameImages/CWMCat.svg";
-import SportsMachine from "../../Images/ArcadeGameImages/CWMSports.svg";
-import SpaceMachine from "../../Images/ArcadeGameImages/CWMSpace.svg";
+import catMachine from "../../Images/ArcadeGameImages/CWMCat.svg";
+import sportsMachine from "../../Images/ArcadeGameImages/CWMSports.svg";
+import spaceMachine from "../../Images/ArcadeGameImages/CWMSpace.svg";
 
 import "./MachineSelectionscreen.css";
 
@@ -138,7 +138,7 @@ function MachineSelectionscreen (){
                             <div className = "CWMMachine"> 
                                 
                                 <p> <span className='windowGlitch'>Cats</span></p>
-                                <img className= "CWMMachineImages" src = {CatMachine}/>
+                                <img className= "CWMMachineImages" src = {catMachine} alt = "" />
                                 
                             </div>
 
@@ -157,7 +157,7 @@ function MachineSelectionscreen (){
                             <div className = "CWMMachine"> 
                                 
                                 <p>Sports</p>
-                                <img className = "CWMMachineImages" src={SportsMachine}/>
+                                <img className = "CWMMachineImages" src={sportsMachine} alt = "" />
                                 
                             </div>
 
@@ -176,7 +176,7 @@ function MachineSelectionscreen (){
                             <div className = "CWMMachine"> 
                                 
                                 <p>Space</p>
-                                <img className= "CWMMachineImages" src = {SpaceMachine}/>
+                                <img className= "CWMMachineImages" src = {spaceMachine} alt = "" />
                                
                             </div>
 

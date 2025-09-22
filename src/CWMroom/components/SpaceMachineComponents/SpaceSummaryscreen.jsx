@@ -5,10 +5,10 @@ import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { useCWMUser } from '../../Providers/CWMUserProvider.jsx';
 
-import Earth from "../../../Images/ArcadePrizeImages/Earth.svg";
-import Sun from "../../../Images/ArcadePrizeImages/Sun.svg";
-import Saturn from "../../../Images/ArcadePrizeImages/Saturn.svg";
-import Andromeda from "../../../Images/ArcadePrizeImages/Andromeda.svg";
+import earth from "../../../Images/ArcadePrizeImages/Earth.svg";
+import sun from "../../../Images/ArcadePrizeImages/Sun.svg";
+import saturn from "../../../Images/ArcadePrizeImages/Saturn.svg";
+import andromeda from "../../../Images/ArcadePrizeImages/Andromeda.svg";
 
 import {resetGame, reset} from "../../Helpers/helpers.js";
 
@@ -45,7 +45,7 @@ function SpaceSummaryscreen (){
 
                     <>
                         <p> Congrats! You won an Andromeda Galaxy: </p>
-                        <img className = "StatsImage" src = {Andromeda}/>
+                        <img className = "StatsImage" src = {andromeda} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -54,7 +54,7 @@ function SpaceSummaryscreen (){
 
                     <>
                         <p> Congrats! You won a Sun: </p>
-                        <img className = "StatsImage" src = {Sun}/>
+                        <img className = "StatsImage" src = {sun} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -62,7 +62,7 @@ function SpaceSummaryscreen (){
 
                     <>
                         <p> Congrats! You won a Saturn: </p>
-                        <img className = "StatsImage" src = {Saturn}/>
+                        <img className = "StatsImage" src = {saturn} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -70,7 +70,7 @@ function SpaceSummaryscreen (){
 
                     <>
                         <p> Congrats! You won an Earth:</p>
-                        <img className = "StatsImage" src = {Earth}/>
+                        <img className = "StatsImage" src = {earth} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 

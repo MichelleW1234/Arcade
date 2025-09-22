@@ -60,7 +60,7 @@ function PrizeRoomscreen() {
                                         Item: {item[0]} <br/>
                                         Price: {item[1]} points <br/>
                                         <br/>
-                                        <img className = "prizeImages" src = {item[2]}/>
+                                        <img className = "prizeImages" src = {item[2]} alt = "" />
                                     </h2>
 
 

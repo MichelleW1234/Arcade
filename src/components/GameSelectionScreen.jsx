@@ -11,14 +11,14 @@ import PrizeInventory from './GameSelectionComponents/PrizeInventory.jsx';
 import NavBar from './GameSelectionComponents/NavBar.jsx';
 import Achievements from './GameSelectionComponents/Achievements.jsx';
 
-import RPS from "../Images/ArcadeGameImages/RPS.svg";
-import TTT from "../Images/ArcadeGameImages/TTT.svg";
-import SNK from "../Images/ArcadeGameImages/SNK.svg";
-import SPI from "../Images/ArcadeGameImages/SPI.svg";
-import ORB from "../Images/ArcadeGameImages/ORB.svg";
-import CBL from "../Images/ArcadeGameImages/CBL.svg";
-import BFR from "../Images/ArcadeGameImages/BFR.svg";
-import SMZ from "../Images/ArcadeGameImages/SMZ.svg";
+import rps from "../Images/ArcadeGameImages/RPS.svg";
+import ttt from "../Images/ArcadeGameImages/TTT.svg";
+import snk from "../Images/ArcadeGameImages/SNK.svg";
+import spi from "../Images/ArcadeGameImages/SPI.svg";
+import orb from "../Images/ArcadeGameImages/ORB.svg";
+import cbl from "../Images/ArcadeGameImages/CBL.svg";
+import bfr from "../Images/ArcadeGameImages/BFR.svg";
+import smz from "../Images/ArcadeGameImages/SMZ.svg";
 
 import "./GameSelectionscreen.css";
 
@@ -139,7 +139,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 <p>Rock-Paper-Scissors</p>
-                                <img className = "ArcadeGameImage" src = {RPS}/>
+                                <img className = "ArcadeGameImage" src = {rps} alt = "" />
                                 <p><span className = "windowGlitch">(20 Points)</span></p>
                                 
                             </div>
@@ -160,7 +160,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 <p>Tic-Tac-Toe</p>
-                                <img className = "ArcadeGameImage" src = {TTT}/>
+                                <img className = "ArcadeGameImage" src = {ttt} alt = "" />
                                 <p>(10 Points)</p>
                                 
                             </div>
@@ -180,7 +180,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 <p>Snake</p>
-                                <img className = "ArcadeGameImage" src = {SNK}/>
+                                <img className = "ArcadeGameImage" src = {snk} alt = "" />
                                 <p>(5 Points)</p>
                                 
                             </div>
@@ -200,7 +200,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 <p>Space Invasion </p>
-                                <img className = "ArcadeGameImage" src = {SPI}/>
+                                <img className = "ArcadeGameImage" src = {spi} alt = "" />
                                 <p>(15 Points)</p>
                                 
                             </div>
@@ -220,7 +220,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 <p>Orbit</p>
-                                <img className = "ArcadeGameImage" src = {ORB}/>
+                                <img className = "ArcadeGameImage" src = {orb} alt = "" />
                                 <p>(5 Points)</p>
                                 
                             </div>
@@ -240,7 +240,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 <p>Color Blast</p>
-                                <img className = "ArcadeGameImage" src = {CBL}/>
+                                <img className = "ArcadeGameImage" src = {cbl} alt = "" />
                                 <p>(10 Points)</p>
                                 
                             </div>
@@ -261,7 +261,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 <p>Balloon Frenzy</p>
-                                <img className = "ArcadeGameImage" src = {BFR}/>
+                                <img className = "ArcadeGameImage" src = {bfr} alt = "" />
                                 <p>(10 Points)</p>
                                 
                             </div>
@@ -282,7 +282,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 <p>Sky Maze</p>
-                                <img className = "ArcadeGameImage" src = {SMZ}/>
+                                <img className = "ArcadeGameImage" src = {smz} alt = "" />
                                 <p>(15 Points)</p>
                             
                             </div>

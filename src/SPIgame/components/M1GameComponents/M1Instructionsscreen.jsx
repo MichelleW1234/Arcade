@@ -122,8 +122,8 @@ function M1Instructionsscreen() {
             <div className = "SPIGuideContainer">
               <h3>Aliens Detected:</h3>
               <p>
-                <img src={alien} ></img> - Soldier  <br/> <br/>
-                &nbsp; &bull; Laser Weakness: <img src={laser} ></img> <br/>
+                <img src={alien} alt = "" /> - Soldier  <br/> <br/>
+                &nbsp; &bull; Laser Weakness: <img src={laser} alt = "" /> <br/>
                 &nbsp; &bull; Special Abilities: None <br/> <br/>
               </p>
 
@@ -166,8 +166,8 @@ function M1Instructionsscreen() {
             <div className = "SPIGuideContainer">
               <h3>Equipment:</h3>
               <p>
-                <img src={laserCannon} ></img> - Laser Cannon <br/> <br/>
-                &nbsp; &bull; Pulse Type: <img src={laser} ></img> <br/>
+                <img src={laserCannon} alt = "" /> - Laser Cannon <br/> <br/>
+                &nbsp; &bull; Pulse Type: <img src={laser} alt = "" /> <br/>
                 &nbsp; &bull; To Use: Move slider [ &larr; ] and [ &rarr; ] to aim at target <br/>
               </p>
               <button className = "SPIGuideCloseButtons" onClick={() => setEquipmentOn(closingGuide())}> Close </button>

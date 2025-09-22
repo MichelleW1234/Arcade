@@ -5,10 +5,10 @@ import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { useCWMUser } from '../../Providers/CWMUserProvider.jsx';
 
-import BlackCat from "../../../Images/ArcadePrizeImages/BlackCat.svg";
-import OrangeCat from "../../../Images/ArcadePrizeImages/OrangeCat.svg";
-import SiameseCat from "../../../Images/ArcadePrizeImages/SiameseCat.svg";
-import BritishShorthairCat from "../../../Images/ArcadePrizeImages/BritishShorthairCat.svg";
+import blackCat from "../../../Images/ArcadePrizeImages/BlackCat.svg";
+import orangeCat from "../../../Images/ArcadePrizeImages/OrangeCat.svg";
+import siameseCat from "../../../Images/ArcadePrizeImages/SiameseCat.svg";
+import britishShorthairCat from "../../../Images/ArcadePrizeImages/BritishShorthairCat.svg";
 
 import {resetGame, reset} from "../../Helpers/helpers.js";
 
@@ -45,7 +45,7 @@ function CatSummaryscreen (){
 
                     <>
                         <p> Congrats! You won a black cat: </p>
-                        <img className = "StatsImage" src = {BlackCat}/>
+                        <img className = "StatsImage" src = {blackCat} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -54,7 +54,7 @@ function CatSummaryscreen (){
 
                     <>
                         <p> Congrats! You won a orange cat: </p>
-                        <img className = "StatsImage" src = {OrangeCat}/>
+                        <img className = "StatsImage" src = {orangeCat} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -62,7 +62,7 @@ function CatSummaryscreen (){
 
                     <>
                         <p> Congrats! You won a Siamese cat: </p>
-                        <img className = "StatsImage" src = {SiameseCat}/>
+                        <img className = "StatsImage" src = {siameseCat} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -70,7 +70,7 @@ function CatSummaryscreen (){
 
                     <>
                         <p> Congrats! You won a British Shorthair cat:</p>
-                        <img className = "StatsImage" src = {BritishShorthairCat}/>
+                        <img className = "StatsImage" src = {britishShorthairCat} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 

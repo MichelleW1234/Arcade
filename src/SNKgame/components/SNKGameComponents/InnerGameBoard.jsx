@@ -1,6 +1,5 @@
 import "./InnerGameBoard.css";
 
-
 function InnerGameBoard ({snake, appleLocation}){
 
     const gameBoardMatrix = Array.from({ length: 20 }, () => Array(30).fill(0));

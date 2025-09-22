@@ -108,7 +108,7 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
                                         className= "SPIemptySpaceBossDanger"
                                         onClick={() => exploded()}
                                     >
-                                        <img src={bossDanger} alt="bossDanger"/>
+                                        <img src={bossDanger} alt = ""/>
                                     </div>
 
                                 ) : (
@@ -118,7 +118,7 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
                                         className= "SPIemptySpaceBossNormal"
                                         onClick={() => bossHit()}
                                     >
-                                        <img src={bossNormal} alt="bossNormal"/>
+                                        <img src={bossNormal} alt = ""/>
                                     </div>
 
                                 )

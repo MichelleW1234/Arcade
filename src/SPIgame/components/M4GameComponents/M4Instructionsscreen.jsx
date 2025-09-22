@@ -99,10 +99,10 @@ function M4Instructionsscreen() {
             <div className = "SPIGuideContainer">
               <h3>Aliens Detected:</h3>
               <p>
-                <img src={boss} ></img> - The Queen  <br/> <br/>
+                <img src={boss} alt = "" /> - The Queen  <br/> <br/>
                 &nbsp; &bull; Special Abilities: Shifting positions, different states, heightened power<br/> <br/>
-                &nbsp; &bull; Normal State: <img src={boss} ></img> - Okay to shoot <br/> <br/>
-                &nbsp; &bull; Explosive State: <img src={bossDanger} ></img> - DO NOT shoot <br/> <br/>
+                &nbsp; &bull; Normal State: <img src={boss} alt = "" /> - Okay to shoot <br/> <br/>
+                &nbsp; &bull; Explosive State: <img src={bossDanger} alt = "" /> - DO NOT shoot <br/> <br/>
                 &nbsp; &bull; Other Notes: Do NOT let your light source go out before the Queen dies. <br/> <br/>
               </p>
 
@@ -123,12 +123,12 @@ function M4Instructionsscreen() {
             <div className = "SPIGuideContainer">
               <h3>Equipment:</h3>
               <p>
-                <img src={beamlight} ></img> - Beamlight <br/> <br/>
+                <img src={beamlight} alt = "" /> - Beamlight <br/> <br/>
                 &nbsp; &bull; Illuminates objects in complete darkness <br/>
                 &nbsp; &bull; Battery Life: 60 seconds <br/> <br/>
-                <img src={hpbar} ></img> - Health Bar <br/> <br/>
+                <img src={hpbar} alt = "" /> - Health Bar <br/> <br/>
                 &nbsp; &bull; Tracks health status of enemy <br/> <br/>
-                <img src={rifle} ></img> - Laser Rifle<br/> <br/>
+                <img src={rifle} alt = "" /> - Laser Rifle<br/> <br/>
                 &nbsp; &bull; First-person weapon designed for precision firing <br/>
                 &nbsp; &bull; To Use: Aim at target and click <br/>
               </p>

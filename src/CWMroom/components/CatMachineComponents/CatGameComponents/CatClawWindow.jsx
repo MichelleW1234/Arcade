@@ -4,9 +4,9 @@ import {animateClaw} from "../../../Helpers/helpers.js";
 
 import "./CatClawWindow.css";
 
-import Claw from "../../../../Images/image 22.svg";
-import ClawCable from "../../../../Images/image 23.svg";
-import Prizes from "../../../../Images/image 24.svg";
+import claw from "../../../../Images/image 22.svg";
+import clawCable from "../../../../Images/image 23.svg";
+import prizes from "../../../../Images/image 24.svg";
 
 function CatClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition}) {
 
@@ -50,11 +50,11 @@ function CatClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPositio
 
                             clawHere ? (
 
-                                <img className="CWMCatClawRow" key={rowIndex + "," + colIndex} src = {Claw}/>
+                                <img className="CWMCatClawRow" key={rowIndex + "," + colIndex} src = {claw} alt = "" />
 
                             ) : clawcableHere ? (
 
-                                <img className="CWMCatClawRow" key={rowIndex + "," + colIndex} src = {ClawCable}/>
+                                <img className="CWMCatClawRow" key={rowIndex + "," + colIndex} src = {clawCable} alt = "" />
                                 
                             ) : (
 
@@ -68,7 +68,7 @@ function CatClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPositio
 
             </div>
             <div className="CWMCatPrizesContainer">
-                <img className = "CWMCatPrizes" src = {Prizes}/>
+                <img className = "CWMCatPrizes" src = {prizes} alt = "" />
                 <div class="CWMCatoverlayPrizeWindow"></div>
             </div>
 

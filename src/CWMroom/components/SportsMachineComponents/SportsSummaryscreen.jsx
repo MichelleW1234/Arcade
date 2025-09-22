@@ -5,10 +5,10 @@ import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { useCWMUser } from '../../Providers/CWMUserProvider.jsx';
 
-import Basketball from "../../../Images/ArcadePrizeImages/Basketball.svg";
-import Soccerball from "../../../Images/ArcadePrizeImages/Soccerball.svg";
-import Paddle from "../../../Images/ArcadePrizeImages/Paddle.svg";
-import Football from "../../../Images/ArcadePrizeImages/Football.svg";
+import basketball from "../../../Images/ArcadePrizeImages/Basketball.svg";
+import soccerball from "../../../Images/ArcadePrizeImages/Soccerball.svg";
+import paddle from "../../../Images/ArcadePrizeImages/Paddle.svg";
+import football from "../../../Images/ArcadePrizeImages/Football.svg";
 
 import {resetGame, reset} from "../../Helpers/helpers.js";
 
@@ -46,7 +46,7 @@ function SportsSummaryscreen (){
 
                     <>
                         <p> Congrats! You won a football: </p>
-                        <img className = "StatsImage" src = {Football}/>
+                        <img className = "StatsImage" src = {football} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -55,7 +55,7 @@ function SportsSummaryscreen (){
 
                     <>
                         <p> Congrats! You won a ping pong paddle: </p>
-                        <img className = "StatsImage" src = {Paddle}/>
+                        <img className = "StatsImage" src = {paddle} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -63,7 +63,7 @@ function SportsSummaryscreen (){
 
                     <>
                         <p> Congrats! You won a soccerball: </p>
-                        <img className = "StatsImage" src = {Soccerball}/>
+                        <img className = "StatsImage" src = {soccerball} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 
@@ -71,7 +71,7 @@ function SportsSummaryscreen (){
 
                     <>
                         <p> Congrats! You won a basketball:</p>
-                        <img className = "StatsImage" src = {Basketball}/>
+                        <img className = "StatsImage" src = {basketball} alt = "" />
                         <p> <span className="StatsGlitch">Check your prize inventory</span></p>
                     </>
 

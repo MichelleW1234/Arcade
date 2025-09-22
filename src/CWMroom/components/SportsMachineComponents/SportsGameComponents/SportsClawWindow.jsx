@@ -4,9 +4,9 @@ import {animateClaw} from "../../../Helpers/helpers.js";
 
 import "./SportsClawWindow.css";
 
-import Claw from "../../../../Images/image 22.svg";
-import ClawCable from "../../../../Images/image 23.svg";
-import Prizes from "../../../../Images/image 25.svg";
+import claw from "../../../../Images/image 22.svg";
+import clawCable from "../../../../Images/image 23.svg";
+import prizes from "../../../../Images/image 25.svg";
 
 function SportsClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosition}) {
 
@@ -50,11 +50,11 @@ function SportsClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosi
 
                             clawHere ? (
 
-                                <img className="CWMSportsClawRow" key={rowIndex + "," + colIndex} src = {Claw}/>
+                                <img className="CWMSportsClawRow" key={rowIndex + "," + colIndex} src = {claw} alt = "" />
 
                             ) : clawcableHere ? (
 
-                                <img className="CWMSportsClawRow" key={rowIndex + "," + colIndex} src = {ClawCable}/>
+                                <img className="CWMSportsClawRow" key={rowIndex + "," + colIndex} src = {clawCable} alt = ""/>
                                 
                             ) : (
 
@@ -68,7 +68,7 @@ function SportsClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosi
 
             </div>
             <div className="CWMSportsPrizesContainer">
-                <img className = "CWMSportsPrizes" src = {Prizes}/>
+                <img className = "CWMSportsPrizes" src = {prizes} alt = "" />
                 <div className="CWMSportsoverlayPrizeWindow"></div>
             </div>
             

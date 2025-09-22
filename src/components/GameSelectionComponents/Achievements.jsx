@@ -2,7 +2,7 @@ import { useAchievements} from '../../Providers/AchievementsProvider.jsx';
 
 import { playSound } from '../../Helpers/helpers.js';
 
-import Lock from "../../Images/image 34.svg";
+import lock from "../../Images/image 34.svg";
 
 import "./Achievements.css";
 
@@ -42,7 +42,7 @@ function Achievements ({setShowAchievements}){
                                     item[1] !== 1 ? ( 
 
                                         <>
-                                            <img className = "AchievementsBadgeUnlocked" src = {item[3]}/>
+                                            <img className = "AchievementsBadgeUnlocked" src = {item[3]} alt = "" />
                                             <h1 className = "AchievementsFont"> x{item[4]}</h1>
                                             <h1 className = "AchievementsProgressBar">
 
@@ -62,7 +62,7 @@ function Achievements ({setShowAchievements}){
                                     ):(
 
                                         <>
-                                            <img className = "AchievementsBadgeUnlocked" src = {item[3]}/>
+                                            <img className = "AchievementsBadgeUnlocked" src = {item[3]} alt = "" />
                                             <h1 className = "AchievementsFont"> x{item[4]}</h1>
                                         </>
 
@@ -74,7 +74,7 @@ function Achievements ({setShowAchievements}){
 
                                         <>
                                             <br/>
-                                            <img className = "AchievementsBadgeLocked" src = {Lock}/>
+                                            <img className = "AchievementsBadgeLocked" src = {lock} alt = "" />
                                             <h1 className = "AchievementsFont"> Locked </h1>
                                             <h1 className = "AchievementsProgressBar">
 
@@ -95,7 +95,7 @@ function Achievements ({setShowAchievements}){
 
                                         <>
                                             <br/>
-                                            <img className = "AchievementsBadgeLocked" src = {Lock}/>
+                                            <img className = "AchievementsBadgeLocked" src = {lock} alt = "" />
                                             <h1 className = "AchievementsFont"> Locked </h1>
                                         </>
 

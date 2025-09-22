@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
 import useKeyboardShortcut from "../../../../hooks/useKeyboardShortcut";
 
-import AlienNormal from '../../../../Images/image 8.svg';
-import AlienMutant from '../../../../Images/image 10.svg';
-import LaserBeamNormal from '../../../../Images/image 9.svg';
-import LaserBeamMutant from '../../../../Images/image 12.svg';
+import alienNormal from '../../../../Images/image 8.svg';
+import alienMutant from '../../../../Images/image 10.svg';
+import laserBeamNormal from '../../../../Images/image 9.svg';
+import laserBeamMutant from '../../../../Images/image 12.svg';
 
 import { useSPIUser } from '../../../Providers/SPIUserProvider.jsx';
 
@@ -188,13 +188,13 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
                                 mutantLaserOn === true ? (
 
                                     <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM3">
-                                        <img src={LaserBeamMutant} alt="LaserBeamMutant" />
+                                        <img src={laserBeamMutant} alt = "" />
                                     </div>
 
                                 ) : (
 
                                     <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM3">
-                                        <img src={LaserBeamNormal} alt="LaserBeamNormal" />
+                                        <img src={laserBeamNormal} alt = "" />
                                     </div>
 
                                 )
@@ -202,13 +202,13 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
                             ) : isAlienHere ? (
                                 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM3">
-                                    <img src={AlienNormal} alt="AlienNormal" />
+                                    <img src={alienNormal} alt = "" />
                                 </div>
 
                             ) : isMutantAlienHere ? (
                                 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM3">
-                                    <img src={AlienMutant} alt="AlienMutant" />
+                                    <img src={alienMutant} alt = "" />
                                 </div>
                                 
                             ): (

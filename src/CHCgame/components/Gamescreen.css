@@ -1,0 +1,129 @@
+.OuterGameContainer {
+
+    background: linear-gradient(to bottom, rgb(141, 29, 238), rgb(58, 0, 108));
+    padding: 3rem;
+
+    border-top: 0.125rem solid rgb(28, 0, 98);     
+    border-left: 0.5rem solid rgb(28, 0, 98);    
+    border-right: 0.125rem solid rgb(28, 0, 98); 
+    border-bottom: 0.5rem solid rgb(28, 0, 98);  
+
+    border-radius: 1.875rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 3.5rem;
+
+    box-shadow: 0 0 1.25rem 0.5rem rgb(157, 83, 255);
+
+}
+
+.sign{
+
+    font-size: 2rem;
+    border-radius: 1.875rem; 
+    padding: 0.8rem;   
+    color: white;
+    background-color: rgb(183, 161, 255);
+    border: 0.3125rem solid rgba(0, 253, 46, 0.521);
+
+    animation: glowing-sign-shadows 4s infinite;
+
+}
+
+.EndingScreen {
+
+    height: 25rem;
+    width: 40rem;
+
+    font-size: 2rem;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 0.3rem solid rgb(0, 31, 80);    
+
+    box-shadow: 0 0 1rem 0.75rem rgb(208, 161, 255);
+
+  background: linear-gradient(to bottom, rgb(119, 85, 255), rgb(255, 207, 102));
+
+}
+
+
+.ButtonContainer{
+
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+
+}
+
+.ControlButton {
+
+    font-size: 2.3rem;
+    padding: 1.5rem;
+
+    background-color: rgb(103, 219, 255);
+
+    border-top: 0.15rem solid rgb(0, 128, 167);     
+    border-right: 0.15rem solid rgb(0, 128, 167);         
+    border-left: 0.4rem solid rgb(0, 128, 167);    
+    border-bottom: 0.4rem solid rgb(0, 128, 167);     
+
+    animation: glowing-shadow2 4s infinite;
+}
+
+
+.ControlButton:hover,
+.ControlButton.active {
+
+    background-color: rgb(0, 110, 255);
+
+    color: white;
+
+    border-top: 0.15rem solid rgb(0, 44, 101);   
+    border-right: 0.15rem solid rgb(0, 44, 101);       
+    border-left: 0.4rem solid rgb(0, 44, 101);     
+    border-bottom: 0.4rem solid rgb(0, 44, 101);   
+
+    animation: glowing-shadow4 4s infinite;
+}
+
+
+.DoneButton {
+
+    font-size: 1.8rem;                  
+
+    background-color: rgb(102, 255, 237);
+            
+    padding: 0.8rem 1.8rem;       
+    border-left: 0.375rem solid rgb(43, 117, 108);   
+    border-bottom: 0.375rem solid rgb(43, 117, 108); 
+    border-right: 0.125rem solid rgb(43, 117, 108);  
+    border-top: 0.125rem solid rgb(43, 117, 108); 
+
+    animation: glowing-shadow1 3s infinite, button-glitch 4s infinite;
+
+}
+
+
+.DoneButton:hover,
+.DoneButton.active {
+
+  background-color: rgb(0, 132, 142); 
+
+  border-left: 0.375rem solid rgb(0, 71, 76);   
+  border-bottom: 0.375rem solid rgb(0, 71, 76); 
+  border-top: 0.125rem solid rgb(0, 71, 76); 
+  border-right: 0.125rem solid rgb(0, 71, 76); 
+
+  color: white;
+    
+  animation: glowing-shadow8 3s infinite, button-glitch 3s infinite;
+
+}

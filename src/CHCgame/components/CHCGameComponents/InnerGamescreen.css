@@ -1,0 +1,53 @@
+.GameBoardScreen {
+
+  display: grid;
+  grid-template-rows: repeat(5, calc(100% / 5));
+  grid-template-columns: repeat(10, calc(100% / 10));
+
+  border: 0.3rem solid rgb(0, 31, 80);    
+
+  box-shadow: 0 0 1rem 0.75rem rgb(208, 161, 255);
+
+  background: linear-gradient(to bottom, rgb(119, 85, 255), rgb(255, 207, 102));
+
+  box-sizing: border-box;
+
+}
+
+
+.GameBoardCar{
+
+  height: 5rem;
+  width: 5.5rem;
+
+  background-color: rgb(90, 45, 0);
+
+}
+
+.GameBoardNoCar{
+
+  height: 5rem;
+  width: 5.5rem;
+
+  background-color: rgb(131, 134, 136);
+
+}
+
+.GameBoardGrass{
+
+  height: 5rem;
+  width: 5.5rem;
+
+  background-color: rgb(40, 238, 0);
+
+}
+
+
+.GameBoardPlayer{
+
+  height: 5rem;
+  width: 5.5rem;
+
+  background-color: rgb(252, 0, 0);
+
+}

@@ -34,7 +34,7 @@ function GameSelectionscreen (){
     const [showInventory, setShowInventory] = useState(false);
     const [showAchievements, setShowAchievements] = useState(false);
 
-    const totalButtons = 8;
+    const totalButtons = 9;
     const itemRefs = useRef([]);
 
     useKeyboardShortcut("ArrowLeft", (event) => {
@@ -291,6 +291,28 @@ function GameSelectionscreen (){
                             <button
                             className={`gameButton ${activeButton === 7 ? 'active' : ''}`}
                             onClick={() => handleClick(7)}
+                            >
+                                Select
+                            </button>
+
+                        </div>
+
+
+                        <div className = "ArcadeGameContainer"
+                             ref={(el) => (itemRefs.current[8] = el)}>
+
+                            <div className = "ArcadeGame"> 
+                                
+                                <p>Chicken Crossing</p>
+                                <img className = "ArcadeGameImage" src = {smz} alt = "" />
+                                <p>(15 Points)</p>
+                            
+                            </div>
+
+
+                            <button
+                            className={`gameButton ${activeButton === 8 ? 'active' : ''}`}
+                            onClick={() => handleClick(8)}
                             >
                                 Select
                             </button>

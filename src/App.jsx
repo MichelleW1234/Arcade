@@ -67,6 +67,11 @@ import SMZInstructionsscreen from "./SMZgame/components/Instructionsscreen.jsx";
 import SMZGamescreen from "./SMZgame/components/Gamescreen.jsx";
 import SMZSummaryscreen from "./SMZgame/components/Summaryscreen.jsx";
 
+import CHCStartscreen from "./CHCgame/components/Startscreen.jsx";
+import CHCInstructionsscreen from "./CHCgame/components/Instructionsscreen.jsx";
+import CHCGamescreen from "./CHCgame/components/Gamescreen.jsx";
+import CHCSummaryscreen from "./CHCgame/components/Summaryscreen.jsx";
+
 import { useTermination } from './Providers/TerminationProvider.jsx';
 
 import NoPage from "./components/NoPage.jsx";
@@ -153,6 +158,11 @@ function App() {
           <Route path="/SMZinstructions" element={<SMZInstructionsscreen />}/>
           <Route path="/SMZgame" element={<SMZGamescreen />}/>
           <Route path="/SMZsummary" element={<SMZSummaryscreen />}/>
+
+          <Route path="/CHCstart" element={<CHCStartscreen />}/>
+          <Route path="/CHCinstructions" element={<CHCInstructionsscreen />}/>
+          <Route path="/CHCgame" element={<CHCGamescreen />}/>
+          <Route path="/CHCsummary" element={<CHCSummaryscreen />}/>
           
           {/*Page doesn't exist error*/}
           <Route path="*" element={<NoPage />} />

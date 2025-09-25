@@ -6,7 +6,7 @@ function InnerGamescreen ({streets, position, carCrash}){
     
     return (
          
-        <div className = "GameBoardScreen">
+        <div className = "CHCGameBoardScreen">
 
             {gameArray.map((row, rowIndex) => (
                 row.map((_, colIndex) => {
@@ -24,17 +24,17 @@ function InnerGamescreen ({streets, position, carCrash}){
 
                             streetVehicleHere ? (
 
-                                <div className = "GameBoardCar" key = {rowIndex + "," + colIndex}></div>
+                                <div className = "CHCGameBoardCar" key = {rowIndex + "," + colIndex}></div>
 
                             ) : (
 
                                 playerHere && carCrash === false ? ( 
 
-                                    <div className = "GameBoardPlayer" key = {rowIndex + "," + colIndex}></div>
+                                    <div className = "CHCGameBoardPlayer" key = {rowIndex + "," + colIndex}></div>
 
                                 ) : (
 
-                                    <div className = "GameBoardNoCar" key = {rowIndex + "," + colIndex}></div>
+                                    <div className = "CHCGameBoardEmptySpace" key = {rowIndex + "," + colIndex}></div>
 
                                 )
 
@@ -44,11 +44,11 @@ function InnerGamescreen ({streets, position, carCrash}){
 
                             playerHere && carCrash === false ? (
 
-                                <div className = "GameBoardPlayer" key = {rowIndex + "," + colIndex}></div>
+                                <div className = "CHCGameBoardPlayer" key = {rowIndex + "," + colIndex}></div>
 
                             ) : ( 
 
-                                <div className = "GameBoardGrass" key = {rowIndex + "," + colIndex}></div>
+                                <div className = "CHCGameBoardEmptySpace" key = {rowIndex + "," + colIndex}></div>
 
                             )
 

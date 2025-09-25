@@ -1,4 +1,4 @@
-.OuterGameContainer {
+.CHCOuterGameContainer {
 
     background: linear-gradient(to bottom, rgb(141, 29, 238), rgb(58, 0, 108));
     padding: 3rem;
@@ -20,7 +20,7 @@
 
 }
 
-.sign{
+.CHCsign{
 
     font-size: 2rem;
     border-radius: 1.875rem; 
@@ -33,7 +33,7 @@
 
 }
 
-.EndingScreen {
+.CHCEndingScreen {
 
     height: 25rem;
     width: 40rem;
@@ -50,12 +50,12 @@
 
     box-shadow: 0 0 1rem 0.75rem rgb(208, 161, 255);
 
-  background: linear-gradient(to bottom, rgb(119, 85, 255), rgb(255, 207, 102));
+    background: linear-gradient(to bottom, rgb(119, 85, 255), rgb(255, 207, 102));
 
 }
 
 
-.ButtonContainer{
+.CHCButtonContainer{
 
     display: flex;
     flex-direction: row;
@@ -63,7 +63,7 @@
 
 }
 
-.ControlButton {
+.CHCControlButton {
 
     font-size: 2.3rem;
     padding: 1.5rem;
@@ -79,8 +79,8 @@
 }
 
 
-.ControlButton:hover,
-.ControlButton.active {
+.CHCControlButton:hover,
+.CHCControlButton.active {
 
     background-color: rgb(0, 110, 255);
 
@@ -95,7 +95,7 @@
 }
 
 
-.DoneButton {
+.CHCDoneButton {
 
     font-size: 1.8rem;                  
 
@@ -112,8 +112,8 @@
 }
 
 
-.DoneButton:hover,
-.DoneButton.active {
+.CHCDoneButton:hover,
+.CHCDoneButton.active {
 
   background-color: rgb(0, 132, 142); 
 

@@ -305,7 +305,7 @@ function GameSelectionscreen (){
                                 
                                 <p>Chicken Crossing</p>
                                 <img className = "ArcadeGameImage" src = {smz} alt = "" />
-                                <p>(15 Points)</p>
+                                <p>(10 Points)</p>
                             
                             </div>
 

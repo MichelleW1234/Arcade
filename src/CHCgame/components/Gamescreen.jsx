@@ -10,6 +10,7 @@ import {trafficIncoming, newStreetCars, checkHit} from "../Helpers/helpers.js";
 
 import {playSound, retrieveActiveGame, claimPoints, achievementsUpdate} from "../../Helpers/helpers.js";
 
+import { useCHCUser } from '../Providers/CHCUserProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
@@ -21,10 +22,10 @@ function Gamescreen(){
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { setAchievements} = useAchievements();
+    const { CHCUser, setCHCUser } = useCHCUser();
 
     const [position, setPosition] = useState(5);
     const [streets, setStreets] = useState([[0, newStreetCars()], [2, newStreetCars()]]);
-    const [stepsTaken, setStepsTaken] = useState(0);
     const [timer, setTimer] = useState(0);
     const [carCrash, setCarCrash] = useState(false);
     const [gameOver, setGameOver] = useState(false);
@@ -178,15 +179,7 @@ function Gamescreen(){
     const movingForward = () => {
 
         moveForwardRef.current = true;
-
-        const newStepsTaken = stepsTaken + 1;
-        setStepsTaken(newStepsTaken);
-        if (newStepsTaken >= 100){
-
-            setStepsLimitReached(true);
-
-        }
-
+        setCHCUser(prev => [prev[0] + 1]);
         checkHit(positionRef.current, streetsRef.current, setCarCrash);
 
     }
@@ -218,7 +211,7 @@ function Gamescreen(){
     const exitGame = () => {
         
         playSound(4);
-
+        setCHCUser([0]);
         setPlayer(prev => [prev[0] - ActiveGame[1]]);
         setActiveGame(retrieveActiveGame(0));
 
@@ -226,10 +219,13 @@ function Gamescreen(){
 
     const result = () => {
             
-        //if statement goes here
-        achievementsUpdate(setAchievements, 8);
+        if (CHCUser[0] >= 50){
 
-        claimPoints(ActiveGame, Player, setPlayer, Math.floor(0));
+            achievementsUpdate(setAchievements, 9);
+
+        }
+
+        claimPoints(ActiveGame, Player, setPlayer, CHCUser[0]);
     
     }
     
@@ -244,12 +240,12 @@ function Gamescreen(){
             </Link>
 
             <div className = "gameScreenLayout">
-                <div className = "OuterGameContainer">
+                <div className = "CHCOuterGameContainer">
 
                     {gameOver === false ? (
 
                         <>
-                            <h1 className="sign"> <span className='signGlitch'> Timer: {timer} | Distance Traveled: {stepsTaken}</span></h1>
+                            <h1 className="CHCsign"> <span className='signGlitch'> Timer: {timer} | Distance Traveled: {CHCUser[0]}</span></h1>
 
                             <InnerGameScreen
                                 streets = {streets}
@@ -257,10 +253,10 @@ function Gamescreen(){
                                 carCrash = {carCrash}
                             />
 
-                            <div className = "ButtonContainer">
-                                <button className = "ControlButton Left" onClick = {() => movingLeft()}> [A] </button>
-                                <button className = "ControlButton Forward" onClick = {() => movingForward()}> [W] </button>
-                                <button className = "ControlButton Right" onClick = {() => movingRight()}> [D] </button>
+                            <div className = "CHCButtonContainer">
+                                <button className = "CHCControlButton Left" onClick = {() => movingLeft()}> [A] </button>
+                                <button className = "CHCControlButton Forward" onClick = {() => movingForward()}> [W] </button>
+                                <button className = "CHCControlButton Right" onClick = {() => movingRight()}> [D] </button>
                             </div>
                         </>
 
@@ -269,13 +265,13 @@ function Gamescreen(){
 
                         <>
 
-                            <h1 className="sign"> <span className='signGlitch'> Game Over. </span></h1>
+                            <h1 className="CHCsign"> <span className='signGlitch'> Game Over. </span></h1>
 
-                            <div className = "EndingScreen">
+                            <div className = "CHCEndingScreen">
                                 <p> Game Over.</p>
                             </div>
 
-                            <Link to="/CHCsummary" className = "DoneButton ViewResults" onClick = {() => result()}> 
+                            <Link to="/CHCsummary" className = "CHCDoneButton ViewResults" onClick = {() => result()}> 
                                 <div className="buttonNameContainer"> View Results <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                             </Link>
                         </>

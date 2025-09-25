@@ -1,4 +1,4 @@
-.GameBoardScreen {
+.CHCGameBoardScreen {
 
   display: grid;
   grid-template-rows: repeat(5, calc(100% / 5));
@@ -15,7 +15,7 @@
 }
 
 
-.GameBoardCar{
+.CHCGameBoardCar{
 
   height: 5rem;
   width: 5.5rem;
@@ -24,7 +24,7 @@
 
 }
 
-.GameBoardNoCar{
+.CHCGameBoardNoCar{
 
   height: 5rem;
   width: 5.5rem;
@@ -33,17 +33,15 @@
 
 }
 
-.GameBoardGrass{
+.CHCGameBoardEmptySpace{
 
   height: 5rem;
   width: 5.5rem;
 
-  background-color: rgb(40, 238, 0);
-
 }
 
 
-.GameBoardPlayer{
+.CHCGameBoardPlayer{
 
   height: 5rem;
   width: 5.5rem;

@@ -79,7 +79,7 @@ export const retrieveActiveGame = (index) => {
     } else if (index === 8){
 
         gameControls[0] = "/CHCstart";
-        gameControls[1] = 15;
+        gameControls[1] = 10;
 
     }
     

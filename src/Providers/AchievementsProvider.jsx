@@ -41,7 +41,8 @@ export function AchievementsProvider({ children }) {
                                    [0, 5, "Won 5 games of Orbit", ORB, 0], 
                                    [0, 1, "Blasted 15 colors in one game of Color Blast", CBL, 0], 
                                    [0, 1, "Popped 15 balloons in one game of Balloon Frenzy", BFR, 0], 
-                                   [0, 1, "Traveled 500 meters in one game of Sky Maze", SMZ, 0]];
+                                   [0, 1, "Traveled 500 meters in one game of Sky Maze", SMZ, 0],
+                                   [0, 1, "Took 50 steps in one game of Chicken Crossing", SMZ, 0]];
 
   const [Achievements, setAchievements] = useState(() => {
     return storage.get("Achievements", defaultAchievementsList);

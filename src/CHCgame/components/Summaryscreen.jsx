@@ -1,6 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
+import { useCHCUser } from '../Providers/CHCUserProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
 import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
@@ -12,6 +13,7 @@ function Summaryscreen (){
     const { Player} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
     const { Achievements, setAchievements} = useAchievements();
+    const { CHCUser, setCHCUser } = useCHCUser();
 
     const navigate = useNavigate();
 
@@ -36,6 +38,7 @@ function Summaryscreen (){
     const reset = () => {
         
         playSound(4);
+        setCHCUser([0]);
         setActiveGame(retrieveActiveGame(0));
         resetAchievementsUpdate(Achievements, setAchievements);
 
@@ -44,6 +47,7 @@ function Summaryscreen (){
     const resetGame = () => {
         
         playSound(19);
+        setCHCUser([0]);
         resetAchievementsUpdate(Achievements, setAchievements);
 
     }
@@ -54,8 +58,8 @@ function Summaryscreen (){
         <div className = "screenLayout">
 
             <div className = "StatsBoard">
-                <p>Distance Traveled: meters</p>
-                <p> <span className="StatsGlitch">Points Earned: {Math.floor(0)}</span></p>
+                <p>Steps Taken: {CHCUser[0]}</p>
+                <p> <span className="StatsGlitch">Points Earned: {CHCUser[0]}</span></p>
             </div>
 
             {Achievements[0][0] === true ? (

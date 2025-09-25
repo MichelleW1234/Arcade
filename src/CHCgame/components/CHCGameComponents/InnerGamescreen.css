@@ -8,7 +8,7 @@
 
   box-shadow: 0 0 1rem 0.75rem rgb(208, 161, 255);
 
-  background: linear-gradient(to bottom, rgb(119, 85, 255), rgb(255, 207, 102));
+  background-color: rgb(0, 203, 0);
 
   box-sizing: border-box;
 
@@ -24,16 +24,16 @@
 
 }
 
-.CHCGameBoardNoCar{
+.CHCGameBoardStreet{
 
   height: 5rem;
   width: 5.5rem;
 
-  background-color: rgb(131, 134, 136);
+  background-color: rgb(194, 194, 194);
 
 }
 
-.CHCGameBoardEmptySpace{
+.CHCGameBoardGrass{
 
   height: 5rem;
   width: 5.5rem;

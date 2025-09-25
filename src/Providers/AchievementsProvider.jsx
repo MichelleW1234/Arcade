@@ -16,14 +16,14 @@ for each achievement array:
   4 -> # of badges won
 */
 
-import RPS from '../Images/ArcadeAchievementBadges/RPS.svg';
-import TTT from '../Images/ArcadeAchievementBadges/TTT.svg';
-import SNK from '../Images/ArcadeAchievementBadges/SNK.svg';
-import SPI from '../Images/ArcadeAchievementBadges/SPI.svg';
-import ORB from '../Images/ArcadeAchievementBadges/ORB.svg';
-import CBL from '../Images/ArcadeAchievementBadges/CBL.svg';
-import BFR from '../Images/ArcadeAchievementBadges/BFR.svg';
-import SMZ from '../Images/ArcadeAchievementBadges/SMZ.svg';
+import rps from '../Images/ArcadeAchievementBadges/RPS.svg';
+import ttt from '../Images/ArcadeAchievementBadges/TTT.svg';
+import snk from '../Images/ArcadeAchievementBadges/SNK.svg';
+import spi from '../Images/ArcadeAchievementBadges/SPI.svg';
+import orb from '../Images/ArcadeAchievementBadges/ORB.svg';
+import cbl from '../Images/ArcadeAchievementBadges/CBL.svg';
+import bfr from '../Images/ArcadeAchievementBadges/BFR.svg';
+import smz from '../Images/ArcadeAchievementBadges/SMZ.svg';
 
 import { createContext, useContext, useState, useEffect } from "react";
 
@@ -34,15 +34,15 @@ const AchievementsContext = createContext();
 export function AchievementsProvider({ children }) {
 
   const defaultAchievementsList = [[false], 
-                                   [0, 5, "Won 5 games of Rock-Paper-Scissors", RPS, 0], 
-                                   [0, 10, "Won 10 games of Tic-Tac-Toe", TTT, 0], 
-                                   [0, 1, "Ate 50 Apples in one game of Snake", SNK, 0], 
-                                   [0, 1, "Completed all 4 missions in one game of Space Invasion", SPI, 0], 
-                                   [0, 5, "Won 5 games of Orbit", ORB, 0], 
-                                   [0, 1, "Blasted 15 colors in one game of Color Blast", CBL, 0], 
-                                   [0, 1, "Popped 15 balloons in one game of Balloon Frenzy", BFR, 0], 
-                                   [0, 1, "Traveled 500 meters in one game of Sky Maze", SMZ, 0],
-                                   [0, 1, "Took 50 steps in one game of Chicken Crossing", SMZ, 0]];
+                                   [0, 5, "Won 5 games of Rock-Paper-Scissors", rps, 0], 
+                                   [0, 10, "Won 10 games of Tic-Tac-Toe", ttt, 0], 
+                                   [0, 1, "Ate 50 Apples in one game of Snake", snk, 0], 
+                                   [0, 1, "Completed all 4 missions in one game of Space Invasion", spi, 0], 
+                                   [0, 5, "Won 5 games of Orbit", orb, 0], 
+                                   [0, 1, "Blasted 15 colors in one game of Color Blast", cbl, 0], 
+                                   [0, 1, "Popped 15 balloons in one game of Balloon Frenzy", bfr, 0], 
+                                   [0, 1, "Traveled 500 meters in one game of Sky Maze", smz, 0],
+                                   [0, 1, "Took 50 steps in one game of Chicken Crossing", smz, 0]];
 
   const [Achievements, setAchievements] = useState(() => {
     return storage.get("Achievements", defaultAchievementsList);

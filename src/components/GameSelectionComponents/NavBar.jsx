@@ -125,7 +125,8 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
                         [0, 5, "Won 5 games of Orbit", orb, 0], 
                         [0, 1, "Blasted 15 colors in one game of Color Blast", cbl, 0], 
                         [0, 1, "Popped 15 balloons in one game of Balloon Frenzy", bfr, 0], 
-                        [0, 1, "Traveled 500 meters in one game of Sky Maze", smz, 0]]);
+                        [0, 1, "Traveled 500 meters in one game of Sky Maze", smz, 0],
+                        [0, 1, "Took 50 steps in one game of Chicken Crossing", smz, 0]]);
         setTermination([true]);
 
     }

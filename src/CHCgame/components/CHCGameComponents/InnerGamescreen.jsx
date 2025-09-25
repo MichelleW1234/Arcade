@@ -34,7 +34,7 @@ function InnerGamescreen ({streets, position, carCrash}){
 
                                 ) : (
 
-                                    <div className = "CHCGameBoardEmptySpace" key = {rowIndex + "," + colIndex}></div>
+                                    <div className = "CHCGameBoardStreet" key = {rowIndex + "," + colIndex}></div>
 
                                 )
 
@@ -48,7 +48,7 @@ function InnerGamescreen ({streets, position, carCrash}){
 
                             ) : ( 
 
-                                <div className = "CHCGameBoardEmptySpace" key = {rowIndex + "," + colIndex}></div>
+                                <div className = "CHCGameBoardGrass" key = {rowIndex + "," + colIndex}></div>
 
                             )
 

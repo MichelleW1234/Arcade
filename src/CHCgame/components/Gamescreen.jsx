@@ -25,7 +25,7 @@ function Gamescreen(){
     const [position, setPosition] = useState(5);
     const [streets, setStreets] = useState([[0, newStreetCars()], [2, newStreetCars()]]);
     const [stepsTaken, setStepsTaken] = useState(0);
-    const [stepsLimitReached, setStepsLimitReached] = useState(false);
+    const [timer, setTimer] = useState(0);
     const [carCrash, setCarCrash] = useState(false);
     const [gameOver, setGameOver] = useState(false);
 
@@ -117,7 +117,7 @@ function Gamescreen(){
 
            trafficIncoming(streetsRef.current, setStreets, moveForwardRef);
 
-        }, 175);
+        }, 160);
 
         return () => clearInterval(interval);
 
@@ -144,14 +144,33 @@ function Gamescreen(){
 
     useEffect(() => {
 
-        if (carCrash === true || stepsLimitReached === true) {
+        if (gameOver === true){
+
+            return;
+
+        }
+
+        const interval = setInterval(() => {
+
+            setTimer(prev => prev + 1);
+
+        }, 1000);
+
+        return () => clearInterval(interval);
+
+    }, [gameOver]);
+
+
+    useEffect(() => {
+
+        if (carCrash === true || timer >= 30) {
 
             playSound(6);
             setGameOver(true);
 
         }
 
-    }, [carCrash, stepsLimitReached]);
+    }, [carCrash, timer]);
 
 
 
@@ -160,17 +179,15 @@ function Gamescreen(){
 
         moveForwardRef.current = true;
 
-        if (carCrash === false){
+        const newStepsTaken = stepsTaken + 1;
+        setStepsTaken(newStepsTaken);
+        if (newStepsTaken >= 100){
 
-            const newStepsTaken = stepsTaken + 1;
-            setStepsTaken(newStepsTaken);
-            if (newStepsTaken >= 100){
-
-                setStepsLimitReached(true);
-
-            }
+            setStepsLimitReached(true);
 
         }
+
+        checkHit(positionRef.current, streetsRef.current, setCarCrash);
 
     }
 
@@ -178,9 +195,11 @@ function Gamescreen(){
 
         if (positionRef.current > 0){
 
-            setPosition(prev => prev -1);
+            setPosition(prev => prev - 1);
 
         }
+
+        checkHit(positionRef.current, streetsRef.current, setCarCrash);
 
     }
 
@@ -191,6 +210,8 @@ function Gamescreen(){
             setPosition(prev => prev + 1);
 
         }
+
+        checkHit(positionRef.current, streetsRef.current, setCarCrash);
 
     }
 
@@ -228,7 +249,7 @@ function Gamescreen(){
                     {gameOver === false ? (
 
                         <>
-                            <h1 className="sign"> <span className='signGlitch'> Distance Traveled: {stepsTaken}</span></h1>
+                            <h1 className="sign"> <span className='signGlitch'> Timer: {timer} | Distance Traveled: {stepsTaken}</span></h1>
 
                             <InnerGameScreen
                                 streets = {streets}

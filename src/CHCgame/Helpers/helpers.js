@@ -30,14 +30,12 @@ const crossedStreet = (newStreets) => {
     }
 
     const filteredStreets = newStreets.filter(inner => inner[0] < 5);
-
-    const streetNeeded = !newStreets.some(([first, second]) => first === 0);
     
-    if (streetNeeded === true){
+    if (newStreets.length < 3){
 
-        const random = Math.floor(Math.random() * 5);
+        const random = Math.floor(Math.random() * 2);
 
-        if (random > 2){
+        if (random === 1){
 
             filteredStreets.push([0, newStreetCars()]);
         

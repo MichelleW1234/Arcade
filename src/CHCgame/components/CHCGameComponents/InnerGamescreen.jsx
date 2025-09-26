@@ -1,4 +1,6 @@
 import "./InnerGamescreen.css";
+import car from "./../../../Images/image 30.svg";
+import chicken from "./../../../Images/image 33.svg";
 
 function InnerGamescreen ({streets, position, carCrash}){
 
@@ -24,17 +26,17 @@ function InnerGamescreen ({streets, position, carCrash}){
 
                             streetVehicleHere ? (
 
-                                <div className = "CHCGameBoardCar" key = {rowIndex + "," + colIndex}></div>
+                                <img src = {car} className = "CHCGameBoardStreet" key = {rowIndex + "," + colIndex} />
 
                             ) : (
 
                                 playerHere && carCrash === false ? ( 
 
-                                    <div className = "CHCGameBoardPlayer" key = {rowIndex + "," + colIndex}></div>
+                                    <img src= {chicken} className = "CHCGameBoardStreet" key = {rowIndex + "," + colIndex} />
 
                                 ) : (
 
-                                    <div className = "CHCGameBoardStreet" key = {rowIndex + "," + colIndex}></div>
+                                    <div className = "CHCGameBoardStreet" key = {rowIndex + "," + colIndex}> </div>
 
                                 )
 
@@ -44,7 +46,7 @@ function InnerGamescreen ({streets, position, carCrash}){
 
                             playerHere && carCrash === false ? (
 
-                                <div className = "CHCGameBoardPlayer" key = {rowIndex + "," + colIndex}></div>
+                                <img src= {chicken} className = "CHCGameBoardGrass" key = {rowIndex + "," + colIndex} />
 
                             ) : ( 
 

@@ -1,6 +1,6 @@
 .CHCOuterGameContainer {
 
-    background: linear-gradient(to bottom, rgb(141, 29, 238), rgb(58, 0, 108));
+    background: linear-gradient(to bottom, rgb(32, 62, 255), rgb(0, 11, 85));
     padding: 3rem;
 
     border-top: 0.125rem solid rgb(28, 0, 98);     
@@ -16,7 +16,7 @@
 
     gap: 3.5rem;
 
-    box-shadow: 0 0 1.25rem 0.5rem rgb(157, 83, 255);
+    box-shadow: 0 0 1.25rem 0.5rem rgb(83, 175, 255);
 
 }
 
@@ -26,7 +26,7 @@
     border-radius: 1.875rem; 
     padding: 0.8rem;   
     color: white;
-    background-color: rgb(183, 161, 255);
+    background-color: rgb(135, 169, 255);
     border: 0.3125rem solid rgba(0, 253, 46, 0.521);
 
     animation: glowing-sign-shadows 4s infinite;
@@ -48,9 +48,9 @@
 
     border: 0.3rem solid rgb(0, 31, 80);    
 
-    box-shadow: 0 0 1rem 0.75rem rgb(208, 161, 255);
+    box-shadow: 0 0 1rem 0.75rem rgb(161, 211, 255);
 
-    background: linear-gradient(to bottom, rgb(119, 85, 255), rgb(255, 207, 102));
+    background: linear-gradient(to bottom, rgb(108, 255, 85), rgb(68, 127, 255));
 
 }
 
@@ -107,7 +107,7 @@
     border-right: 0.125rem solid rgb(43, 117, 108);  
     border-top: 0.125rem solid rgb(43, 117, 108); 
 
-    animation: glowing-shadow1 3s infinite, button-glitch 4s infinite;
+    animation: glowing-shadow2 3s infinite, button-glitch 4s infinite;
 
 }
 

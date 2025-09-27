@@ -1,5 +1,5 @@
 import "./InnerGamescreen.css";
-import car from "./../../../Images/image 30.svg";
+import car from "./../../../Images/image 38.svg";
 import chicken from "./../../../Images/image 33.svg";
 
 function InnerGamescreen ({streets, position, carCrash}){

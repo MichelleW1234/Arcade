@@ -58,7 +58,7 @@ function Summaryscreen (){
         <div className = "screenLayout">
 
             <div className = "StatsBoard">
-                <p>Distance Traveled: {SMZUser[0]} meters</p>
+                <p>Distance Traveled: {SMZUser[0]} Meters</p>
                 <p> <span className="StatsGlitch">Points Earned: {Math.floor(SMZUser[0]/5)}</span></p>
             </div>
 

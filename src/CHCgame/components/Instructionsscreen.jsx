@@ -34,7 +34,13 @@ function Instructionsscreen (){
             <h1 className = "instructionsSign"> <span className='signGlitch'>Instructions:</span></h1>
             
             <p className = "largefont">
-                &gt; instructions go here <br/>
+                &gt; Use the control buttons to move the chicken up [ W ], left [ A ], and right [ D ]. <br/>
+                &gt; You get a 30 second time limit to travel as far as possible. <br/>
+                &gt; Avoid all cars while crossing streets. <br/>
+                &gt; Grassy areas are safe zones. <br/>
+                &gt; Each step forward equals one point. <br/>
+                &gt; It costs 10 points to play this game. <br/>
+                &gt; NOTE: Beyond this point, you will lose points if you quit in the middle of the game. <br/>
             </p>
 
             <div className = "generalbuttonContainer">

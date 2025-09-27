@@ -178,6 +178,8 @@ function Gamescreen(){
 
     const movingForward = () => {
 
+        playSound(3);
+
         moveForwardRef.current = true;
         setCHCUser(prev => [prev[0] + 1]);
         checkHit(positionRef.current, streetsRef.current, setCarCrash);
@@ -185,6 +187,8 @@ function Gamescreen(){
     }
 
     const movingLeft = () => {
+
+        playSound(3);
 
         if (positionRef.current > 0){
 
@@ -197,6 +201,8 @@ function Gamescreen(){
     }
 
     const movingRight = () => {
+
+        playSound(3);
 
         if (positionRef.current < 9){
 
@@ -245,7 +251,7 @@ function Gamescreen(){
                     {gameOver === false ? (
 
                         <>
-                            <h1 className="CHCsign"> <span className='signGlitch'> Timer: {timer} | Distance Traveled: {CHCUser[0]}</span></h1>
+                            <h1 className="CHCsign"> <span className='signGlitch'> Timer: {timer} | Distance Traveled: {CHCUser[0]} Steps</span></h1>
 
                             <InnerGameScreen
                                 streets = {streets}

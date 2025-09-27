@@ -1,6 +1,7 @@
 import "./InnerGamescreen.css";
-import car from "./../../../Images/image 38.svg";
-import chicken from "./../../../Images/image 33.svg";
+import redCar from "./../../../Images/image 38.svg";
+import blueCar from "./../../../Images/image 39.svg";
+import chicken from "./../../../Images/image 40.svg";
 
 function InnerGamescreen ({streets, position, carCrash}){
 
@@ -14,8 +15,11 @@ function InnerGamescreen ({streets, position, carCrash}){
                 row.map((_, colIndex) => {
 
                     const street = streets.find(inner => inner[0] === rowIndex);
-                    const streetVehicleHere = street !== undefined ? 
-                        street[1].includes(colIndex) 
+                    const redVehicleHere = street !== undefined
+                        ? street[1].some(([a, b]) => a === colIndex && b === 0)
+                        : false;
+                    const blueVehicleHere = street !== undefined
+                        ? street[1].some(([a, b]) => a === colIndex && b === 1)
                         : false;
 
                     const playerHere = rowIndex === 3 && colIndex === position;
@@ -24,9 +28,13 @@ function InnerGamescreen ({streets, position, carCrash}){
 
                         street !== undefined ? (
 
-                            streetVehicleHere ? (
+                            redVehicleHere  ? (
 
-                                <img src = {car} className = "CHCGameBoardStreet" key = {rowIndex + "," + colIndex} />
+                                <img src = {redCar} className = "CHCGameBoardStreet" key = {rowIndex + "," + colIndex} />
+
+                            ) : blueVehicleHere ? (
+
+                                <img src = {blueCar} className = "CHCGameBoardStreet" key = {rowIndex + "," + colIndex} />
 
                             ) : (
 

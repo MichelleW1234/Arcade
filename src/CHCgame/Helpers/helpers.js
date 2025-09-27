@@ -10,7 +10,8 @@ export const newStreetCars = () => {
 
         if (random[i] === 1){
 
-            newStreetCarsArray.push(i);
+            const random = Math.floor(Math.random() * 2);
+            newStreetCarsArray.push([i, random]);
 
         }
 
@@ -51,7 +52,10 @@ const crossedStreet = (newStreets) => {
 
 export const trafficIncoming = (streets, setStreets, moveForwardRef) => {
 
-    let newStreets = streets.map(([first, second]) => [first, [...second]]);
+    let newStreets = streets.map(([first, second]) => [
+        first,
+        second.map(([a, b]) => [a, b])
+    ]);
 
     if (moveForwardRef.current === true){
 
@@ -63,18 +67,18 @@ export const trafficIncoming = (streets, setStreets, moveForwardRef) => {
 
     for (let i = 0; i<newStreets.length; i++){
         for (let j = 0; j<newStreets[i][1].length; j++){
-            newStreets[i][1][j] += 1; 
+            newStreets[i][1][j][0] += 1; 
         }
     }
 
     let filteredStreets = newStreets.map(([first, second]) => [
         first,
-        second.filter(num => num < 10)
+        second.filter(([a, b]) => a < 10)
     ]);
 
     for (let i = 0; i<filteredStreets.length; i++){
         
-        const newTraffic = filteredStreets[i][1].includes(0);
+        const newTraffic = filteredStreets[i][1].some(([a, b]) => a === 0);
 
         if (newTraffic === false){
 
@@ -82,7 +86,8 @@ export const trafficIncoming = (streets, setStreets, moveForwardRef) => {
 
             if (random === 2){
 
-                filteredStreets[i][1].push(0);
+                const random = Math.floor(Math.random() * 2);
+                filteredStreets[i][1].push([0, random]);
 
             }
 
@@ -102,7 +107,7 @@ export const checkHit = (position, streets, setCarCrash) => {
     
     if (street !== undefined){
 
-        const collision = street[1].includes(position);
+        const collision = street[1].some(([a, b]) => a === position);
 
         if (collision === true){
 

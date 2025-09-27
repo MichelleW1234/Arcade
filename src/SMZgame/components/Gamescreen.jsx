@@ -264,7 +264,7 @@ function Gamescreen(){
                     {gameOver === false ? (
 
                         <>
-                            <h1 className="SMZsign"> <span className='signGlitch'> Distance Traveled: {distance} meters</span></h1>
+                            <h1 className="SMZsign"> <span className='signGlitch'> Distance Traveled: {distance} Meters</span></h1>
 
                             <InnerGameScreen
                             wallPositions={wallPositions}

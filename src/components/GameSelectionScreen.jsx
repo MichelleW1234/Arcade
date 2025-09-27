@@ -19,6 +19,7 @@ import orb from "../Images/ArcadeGameImages/ORB.svg";
 import cbl from "../Images/ArcadeGameImages/CBL.svg";
 import bfr from "../Images/ArcadeGameImages/BFR.svg";
 import smz from "../Images/ArcadeGameImages/SMZ.svg";
+import chc from "../Images/ArcadeGameImages/CHC.svg";
 
 import "./GameSelectionscreen.css";
 
@@ -304,7 +305,7 @@ function GameSelectionscreen (){
                             <div className = "ArcadeGame"> 
                                 
                                 <p>Chicken Crossing</p>
-                                <img className = "ArcadeGameImage" src = {smz} alt = "" />
+                                <img className = "ArcadeGameImage" src = {chc} alt = "" />
                                 <p>(10 Points)</p>
                             
                             </div>

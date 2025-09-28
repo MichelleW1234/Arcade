@@ -60,6 +60,7 @@ function Summaryscreen (){
 
               <p> Computer Wins: {RPSUser[4]} </p>
               <p> User Wins: {RPSUser[3]} </p>
+              
               {RPSUser[4] > RPSUser[3] ? (
 
                 <p><span className = "StatsGlitch"> You lost. </span></p>

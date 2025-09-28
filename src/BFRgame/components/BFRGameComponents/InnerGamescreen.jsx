@@ -26,11 +26,11 @@ function InnerGamescreen ({positions, laserBlast}){
 
                     return (
 
-                        laserShot ? (
+                        laserShot === true ? (
                             
                             <div key = {rowIndex + "," + colIndex} className="BFRFieldActivated"> </div>
                         
-                        ) : balloonHere ? (
+                        ) : balloonHere === true ? (
 
                             colIndex === 8 ? (
 
@@ -42,7 +42,7 @@ function InnerGamescreen ({positions, laserBlast}){
 
                             )
 
-                        ) : birdHere ? (
+                        ) : birdHere === true ? (
 
                             colIndex === 8 ? (
 

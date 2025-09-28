@@ -48,11 +48,11 @@ function SportsClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosi
 
                         return(
 
-                            clawHere ? (
+                            clawHere === true ? (
 
                                 <img className="CWMSportsClawRow" key={rowIndex + "," + colIndex} src = {claw} alt = "" />
 
-                            ) : clawcableHere ? (
+                            ) : clawcableHere === true ? (
 
                                 <img className="CWMSportsClawRow" key={rowIndex + "," + colIndex} src = {clawCable} alt = ""/>
                                 

@@ -44,6 +44,7 @@ import orb from '../../Images/ArcadeAchievementBadges/ORB.svg';
 import cbl from '../../Images/ArcadeAchievementBadges/CBL.svg';
 import bfr from '../../Images/ArcadeAchievementBadges/BFR.svg';
 import smz from '../../Images/ArcadeAchievementBadges/SMZ.svg';
+import chc from '../../Images/ArcadeAchievementBadges/CHC.svg';
 
 function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchievements}){
 
@@ -125,7 +126,8 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
                         [0, 5, "Won 5 games of Orbit", orb, 0], 
                         [0, 1, "Blasted 15 colors in one game of Color Blast", cbl, 0], 
                         [0, 1, "Popped 15 balloons in one game of Balloon Frenzy", bfr, 0], 
-                        [0, 1, "Traveled 500 meters in one game of Sky Maze", smz, 0]]);
+                        [0, 1, "Traveled 500 meters in one game of Sky Maze", smz, 0],
+                        [0, 1, "Traveled 50 steps in one game of Chicken Crossing", chc, 0]]);
         setTermination([true]);
 
     }

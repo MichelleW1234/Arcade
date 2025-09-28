@@ -1,0 +1,38 @@
+.CHCGameBoardScreen {
+
+  display: grid;
+  grid-template-rows: repeat(5, calc(100% / 5));
+  grid-template-columns: repeat(10, calc(100% / 10));
+
+  border: 0.3rem solid rgb(9, 80, 0);    
+
+  box-shadow: 0 0 1rem 0.75rem rgb(172, 255, 161);
+
+  box-sizing: border-box;
+
+}
+
+
+.CHCGameBoardStreet{
+
+  height: 5rem;
+  width: 5.5rem;
+
+  background-image: url("./../../../Images/image 36.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.CHCGameBoardGrass{
+
+  height: 5rem;
+  width: 5.5rem;
+
+  background-image: url("./../../../Images/image 37.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}

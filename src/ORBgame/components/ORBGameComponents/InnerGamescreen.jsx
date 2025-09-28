@@ -20,16 +20,16 @@ function InnerGamescreen ({circle, currentSlot, winner}){
 
                     return (
 
-                        slot ? (
+                        slot === true ? (
 
                             <div key = {rowIndex + "," + colIndex} className="ORBGameBoardCurrentSlot"></div>
 
 
-                        ) : winningCirclePart ? (
+                        ) : winningCirclePart === true ? (
 
                             <div key = {rowIndex + "," + colIndex} className="ORBGameBoardWinningCircle"></div>
 
-                        ) : circlePart ? (
+                        ) : circlePart === true ? (
 
                             <div key = {rowIndex + "," + colIndex} className="ORBGameBoardCircle"></div>
 

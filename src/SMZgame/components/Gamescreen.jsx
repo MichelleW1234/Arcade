@@ -4,7 +4,7 @@ import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 import { useExitPoints } from "../../hooks/useExitPoints";
 import { storage } from "../../storage";
 
-import InnerGameScreen from "./SMZComponents/InnerGamescreen.jsx";
+import InnerGameScreen from "./SMZGameComponents/InnerGamescreen.jsx";
 
 import {birdFlyingForward, wallHeight, checkHit} from "../Helpers/helpers.js";
 
@@ -83,6 +83,7 @@ function Gamescreen(){
         setPlayer(adjustedPoints);
     });
 
+    
 
     const wallPositionsRef = useRef(wallPositions);
     useEffect(() => {
@@ -263,7 +264,7 @@ function Gamescreen(){
                     {gameOver === false ? (
 
                         <>
-                            <h1 className="SMZsign"> <span className='signGlitch'> Distance Traveled: {distance} meters</span></h1>
+                            <h1 className="SMZsign"> <span className='signGlitch'> Distance Traveled: {distance} Meters</span></h1>
 
                             <InnerGameScreen
                             wallPositions={wallPositions}

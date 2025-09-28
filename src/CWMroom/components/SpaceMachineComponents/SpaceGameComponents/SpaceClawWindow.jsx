@@ -49,11 +49,11 @@ function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosit
 
                         return(
 
-                            clawHere ? (
+                            clawHere === true ? (
 
                                 <img className="CWMSpaceClawRow" key={rowIndex + "," + colIndex} src = {claw} alt = "" />
 
-                            ) : clawcableHere ? (
+                            ) : clawcableHere === true ? (
 
                                 <img className="CWMSpaceClawRow" key={rowIndex + "," + colIndex} src = {clawCable} alt = "" />
                                 

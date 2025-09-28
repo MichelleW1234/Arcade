@@ -17,6 +17,7 @@ import {CBLUserProvider } from './CBLgame/Providers/CBLUserProvider.jsx';
 import {CWMUserProvider } from './CWMroom/Providers/CWMUserProvider.jsx'; 
 import { BFRUserProvider } from './BFRgame/Providers/BFRUserProvider.jsx';
 import { SMZUserProvider } from './SMZgame/Providers/SMZUserProvider.jsx';
+import { CHCUserProvider } from './CHCgame/Providers/CHCUserProvider.jsx';
 
 import App from './App.jsx';
 
@@ -25,9 +26,9 @@ createRoot(document.getElementById('root')).render(
     <MusicProvider>
     <TerminationProvider>
     <PlayerProvider><PrizeProvider><AchievementsProvider><ActiveGameProvider>
-    <CWMUserProvider><SMZUserProvider><BFRUserProvider><CBLUserProvider><ORBUserProvider><SPIUserProvider><SNKUserProvider><TTTUserProvider><RPSUserProvider>
+    <CWMUserProvider><CHCUserProvider> <SMZUserProvider><BFRUserProvider><CBLUserProvider><ORBUserProvider><SPIUserProvider><SNKUserProvider><TTTUserProvider><RPSUserProvider>
       <App />
-    </RPSUserProvider></TTTUserProvider></SNKUserProvider></SPIUserProvider></ORBUserProvider></CBLUserProvider></BFRUserProvider></SMZUserProvider></CWMUserProvider>
+    </RPSUserProvider></TTTUserProvider></SNKUserProvider></SPIUserProvider></ORBUserProvider></CBLUserProvider></BFRUserProvider></SMZUserProvider></CHCUserProvider></CWMUserProvider>
     </ActiveGameProvider></AchievementsProvider></PrizeProvider></PlayerProvider>
     </TerminationProvider>
     </MusicProvider>

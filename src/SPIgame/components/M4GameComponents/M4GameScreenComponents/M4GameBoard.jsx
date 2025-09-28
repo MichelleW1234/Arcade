@@ -99,7 +99,7 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
 
                         return (
 
-                            isBossHere ? (
+                            isBossHere === true ? (
 
                                 bossState[1] === true ? (
 

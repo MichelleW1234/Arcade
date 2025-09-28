@@ -10,8 +10,9 @@ import {playSound, retrieveActiveGame, claimPoints, achievementsUpdate} from "..
 
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
-import {useCBLUser} from "../Providers/CBLUserProvider.jsx";
 import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
+import {useCBLUser} from "../Providers/CBLUserProvider.jsx";
+
 
 import "./Gamescreen.css";
 
@@ -133,7 +134,7 @@ function Gamescreen (){
 
                             <div className = "CBLGameBoardEndingScreen">
 
-                                {wrongColorBlasted ? (
+                                {wrongColorBlasted === true ? (
 
                                     <p> You blasted the wrong color. </p>
 

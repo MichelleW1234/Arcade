@@ -158,19 +158,19 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
 
                         return (
 
-                            isLaserHere ? (
+                            isLaserHere === true ? (
 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM2">
                                     <img src={laserBeam} alt = "" />
                                 </div>
 
-                            ) : isAlienHere ? (
+                            ) : isAlienHere === true ? (
                                 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM2">
                                     <img src={alienNormal} alt = "" />
                                 </div>
 
-                            ) : isShieldedAlienHere ? (
+                            ) : isShieldedAlienHere === true ? (
                                 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM2">
                                     <img src={alienShielded} alt = "" />

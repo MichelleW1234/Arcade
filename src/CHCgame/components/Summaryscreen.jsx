@@ -1,9 +1,9 @@
 import { useNavigate, Link } from 'react-router-dom';
 import useKeyboardShortcut from "../../hooks/useKeyboardShortcut";
 
+import { useCHCUser } from '../Providers/CHCUserProvider.jsx';
 import { usePlayer } from '../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../Providers/ActiveGameProvider.jsx';
-import { useSMZUser} from '../Providers/SMZUserProvider.jsx';
 import { useAchievements } from '../../Providers/AchievementsProvider.jsx';
 
 import {playSound, retrieveActiveGame, resetAchievementsUpdate} from "../../Helpers/helpers.js";
@@ -12,8 +12,8 @@ function Summaryscreen (){
 
     const { Player} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
-    const { SMZUser, setSMZUser} = useSMZUser();
     const { Achievements, setAchievements} = useAchievements();
+    const { CHCUser, setCHCUser } = useCHCUser();
 
     const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ function Summaryscreen (){
     useKeyboardShortcut("Enter", () => {
         if (Player[0] >= ActiveGame[1]){
             resetGame();
-            navigate("/SMZgame");
+            navigate("/CHCgame");
         }
     },
         ".PlayAgain"
@@ -38,7 +38,7 @@ function Summaryscreen (){
     const reset = () => {
         
         playSound(4);
-        setSMZUser([0]);
+        setCHCUser([0]);
         setActiveGame(retrieveActiveGame(0));
         resetAchievementsUpdate(Achievements, setAchievements);
 
@@ -47,7 +47,7 @@ function Summaryscreen (){
     const resetGame = () => {
         
         playSound(19);
-        setSMZUser([0]);
+        setCHCUser([0]);
         resetAchievementsUpdate(Achievements, setAchievements);
 
     }
@@ -58,8 +58,8 @@ function Summaryscreen (){
         <div className = "screenLayout">
 
             <div className = "StatsBoard">
-                <p>Distance Traveled: {SMZUser[0]} Meters</p>
-                <p> <span className="StatsGlitch">Points Earned: {Math.floor(SMZUser[0]/5)}</span></p>
+                <p>Distance Traveled: {CHCUser[0]} Steps</p>
+                <p> <span className="StatsGlitch">Points Earned: {CHCUser[0]}</span></p>
             </div>
 
             {Achievements[0][0] === true ? (
@@ -74,7 +74,7 @@ function Summaryscreen (){
 
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/SMZgame" className = "generalbutton PlayAgain" onClick = {() => resetGame()}> 
+                <Link to = "/CHCgame" className = "generalbutton PlayAgain" onClick = {() => resetGame()}> 
                     <div className="buttonNameContainer">Play Again<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                 </Link>
 

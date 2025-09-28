@@ -217,7 +217,17 @@ export const newBossState = (setBossState) => {
     const newPosition = newBossPosition();
 
     const value = Math.floor(Math.random() * 5);
-    const dangerState = value < 3 ? false : true;
+
+    let dangerState;
+    if (value < 3){
+
+        dangerState = false;
+
+    } else {
+        
+        dangerState = true;
+        
+    }
 
     setBossState([newPosition, dangerState]);
 

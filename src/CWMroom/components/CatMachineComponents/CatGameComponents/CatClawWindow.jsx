@@ -48,11 +48,11 @@ function CatClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPositio
 
                         return(
 
-                            clawHere ? (
+                            clawHere === true ? (
 
                                 <img className="CWMCatClawRow" key={rowIndex + "," + colIndex} src = {claw} alt = "" />
 
-                            ) : clawcableHere ? (
+                            ) : clawcableHere === true ? (
 
                                 <img className="CWMCatClawRow" key={rowIndex + "," + colIndex} src = {clawCable} alt = "" />
                                 

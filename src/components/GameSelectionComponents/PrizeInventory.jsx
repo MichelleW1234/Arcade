@@ -32,7 +32,7 @@ function PrizeInventory ({setShowInventory}){
 
                     {Prize.map((item, index) => (
 
-                        item[0] === "X" ?
+                        item[0] === "X" ? (
 
                             item[1] < 0 ? (
 
@@ -54,10 +54,12 @@ function PrizeInventory ({setShowInventory}){
 
                             )
 
-                        :
+                        ) : ( 
 
                             null
 
+                        )
+                        
                     ))}
 
                 </div>

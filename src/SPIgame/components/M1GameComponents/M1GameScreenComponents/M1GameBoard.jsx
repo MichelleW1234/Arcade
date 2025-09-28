@@ -133,13 +133,13 @@ function M1GameBoard({waveNumber, setWaveNumber}) {
 
                         return (
 
-                            isLaserHere ? (
+                            isLaserHere === true ? (
 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM1">
                                     <img src={laserBeam} alt = "" />
                                 </div>
 
-                            ) : isAlienHere ? (
+                            ) : isAlienHere === true ? (
 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM1">
                                     <img src={alienNormal} alt = "" />

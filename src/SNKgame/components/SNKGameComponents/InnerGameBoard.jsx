@@ -18,11 +18,11 @@ function InnerGameBoard ({snake, appleLocation}){
 
                         <div key={rowIndex + "," + colIndex} className="SNKemptySpace">
 
-                            {isSnake ? (
+                            {isSnake === true ? (
 
                                 <div className="SNKsnakeLink"></div>
 
-                            ) : isApple ? (
+                            ) : isApple === true ? (
 
                                 <div className="SNKApple"></div>
 

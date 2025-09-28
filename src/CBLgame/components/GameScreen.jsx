@@ -134,7 +134,7 @@ function Gamescreen (){
 
                             <div className = "CBLGameBoardEndingScreen">
 
-                                {wrongColorBlasted ? (
+                                {wrongColorBlasted === true ? (
 
                                     <p> You blasted the wrong color. </p>
 

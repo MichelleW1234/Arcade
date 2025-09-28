@@ -1,5 +1,3 @@
-import {playSound} from "../../Helpers/helpers.js";
-
 export const newStreetCars = () => {
 
     let newStreetCarsArray = [];

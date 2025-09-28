@@ -15,30 +15,25 @@ function InnerGamescreen ({streets, position, carCrash}){
                 row.map((_, colIndex) => {
 
                     const street = streets.find(inner => inner[0] === rowIndex);
-                    const redVehicleHere = street !== undefined
-                        ? street[1].some(([a, b]) => a === colIndex && b === 0)
-                        : false;
-                    const blueVehicleHere = street !== undefined
-                        ? street[1].some(([a, b]) => a === colIndex && b === 1)
-                        : false;
-
+                    const redVehicleHere = street !== undefined && street[1].some(([a, b]) => a === colIndex && b === 0);
+                    const blueVehicleHere = street !== undefined && street[1].some(([a, b]) => a === colIndex && b === 1);
                     const playerHere = rowIndex === 3 && colIndex === position;
 
                     return (
 
                         street !== undefined ? (
 
-                            redVehicleHere  ? (
+                            redVehicleHere === true ? (
 
                                 <img src = {redCar} className = "CHCGameBoardStreet" key = {rowIndex + "," + colIndex} />
 
-                            ) : blueVehicleHere ? (
+                            ) : blueVehicleHere === true ? (
 
                                 <img src = {blueCar} className = "CHCGameBoardStreet" key = {rowIndex + "," + colIndex} />
 
                             ) : (
 
-                                playerHere && carCrash === false ? ( 
+                                playerHere === true && carCrash === false ? ( 
 
                                     <img src= {chicken} className = "CHCGameBoardStreet" key = {rowIndex + "," + colIndex} />
 
@@ -52,7 +47,7 @@ function InnerGamescreen ({streets, position, carCrash}){
 
                         ) : (
 
-                            playerHere && carCrash === false ? (
+                            playerHere === true && carCrash === false ? (
 
                                 <img src= {chicken} className = "CHCGameBoardGrass" key = {rowIndex + "," + colIndex} />
 

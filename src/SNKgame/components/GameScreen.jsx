@@ -264,7 +264,7 @@ function Gamesscreen(){
 
                     )}
                     
-                    {SNKUser[0] === false && snake.length < 600 ? 
+                    {SNKUser[0] === false && snake.length < 600 ? (
 
                         <div className = "SNKbuttonsContainer">
                             
@@ -275,13 +275,13 @@ function Gamesscreen(){
 
                         </div>
 
-                    :
+                    ) : (
 
                         <Link to= "/SNKsummary" className = "SNKdonebutton ViewResults" onClick = {() => result()}>
                             <div className="buttonNameContainer"> View Results<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                         </Link>   
 
-                    } 
+                    )} 
 
                 </div>
                 

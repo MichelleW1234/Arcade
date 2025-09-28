@@ -75,17 +75,17 @@ function Summaryscreen(){
 
             )}
 
-            {Player[0] >= ActiveGame[1] ? 
+            {Player[0] >= ActiveGame[1] ? (
 
                 <Link to="/SNKgame" className = "generalbutton PlayAgain" onClick={() => resetGame()}>
                     <div className="buttonNameContainer"> Play Again <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                 </Link>
 
-            :
+            ) : (
 
                 <p className = "largefont"> You don't have enough points to play this game again. </p>
 
-            }
+            )}
 
             <Link to="/selection" className = "generalbutton QuitGame" onClick={() => reset()}>
                 <div className="buttonNameContainer">Quit Game<br/> <span className = "buttonKeyDescription"> [Esc] </span></div>

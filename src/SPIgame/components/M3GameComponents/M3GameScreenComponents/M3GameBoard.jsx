@@ -183,7 +183,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
                         return (
 
-                            isLaserHere ? (
+                            isLaserHere === true ? (
 
                                 mutantLaserOn === true ? (
 
@@ -199,13 +199,13 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
                                 )
 
-                            ) : isAlienHere ? (
+                            ) : isAlienHere === true ? (
                                 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM3">
                                     <img src={alienNormal} alt = "" />
                                 </div>
 
-                            ) : isMutantAlienHere ? (
+                            ) : isMutantAlienHere === true ? (
                                 
                                 <div key={rowIndex + "," + colIndex} className="SPIemptySpaceM3">
                                     <img src={alienMutant} alt = "" />
@@ -238,7 +238,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
             <div className="largefont"> [&larr;] & [&rarr;]</div>
 
-            <button ref = {LaserSwitchButtonRef} className={mutantLaserOn ? "SPIlaserButtonMutant ChangeLaser" : "SPIlaserButtonNormal ChangeLaser"} onClick={() => changeLaser()}> 
+            <button ref = {LaserSwitchButtonRef} className={mutantLaserOn === true ? "SPIlaserButtonMutant ChangeLaser" : "SPIlaserButtonNormal ChangeLaser"} onClick={() => changeLaser()}> 
                 <div className="buttonNameContainer"> Change Laser <br/> <span className = "buttonKeyDescription"> [Shift] </span></div>
             </button>
 

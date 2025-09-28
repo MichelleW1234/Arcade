@@ -92,9 +92,9 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
 
                     return (
 
-                        colorHere ? (
+                        colorHere === true ? (
 
-                            colorBlasted ? (
+                            colorBlasted === true ? (
 
                                 <button key={rowIndex + "," + colIndex} className="CBLGameBoardHole"></button>
 

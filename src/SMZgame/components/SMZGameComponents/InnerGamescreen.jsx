@@ -24,11 +24,11 @@ function InnerGamescreen ({wallPositions, birdPosition, startButtonClicked}){
 
                     return (
 
-                        wallHere ? (
+                        wallHere === true ? (
 
                             <img src = {wall} key = {rowIndex + "," + colIndex} alt = "" className="SMZGameBoardWall"/>
 
-                        ) : birdHere ? (
+                        ) : birdHere === true ? (
 
                             <img src = {bird} key = {rowIndex + "," + colIndex} alt = "" className="SMZGameBoardEmptySpace"/>
 

@@ -46,11 +46,11 @@
     align-items: center;
     justify-content: center;
 
-    border: 0.3rem solid rgb(9, 80, 0);    
+    border: 0.3rem solid rgb(74, 103, 147);    
 
-    box-shadow: 0 0 1rem 0.75rem rgb(172, 255, 161);
+    box-shadow: 0 0 1rem 0.75rem rgb(175, 208, 255);
 
-    background: linear-gradient(to bottom, rgb(166, 255, 141), rgb(0, 152, 3));
+    background-color: rgb(128, 191, 240);
 
 }
 

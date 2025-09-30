@@ -21,12 +21,11 @@ function Gamescreen(){
 
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame, setActiveGame} = useActiveGame();
-    const { setSMZUser} = useSMZUser();
+    const { SMZUser, setSMZUser} = useSMZUser();
     const { setAchievements} = useAchievements();
 
     const [wallPositions, setWallPositions] = useState([wallHeight(16)]);
     const [birdPosition, setBirdPosition] = useState([5,5]);
-    const [distance, setDistance] = useState(0);
     const [fullDistanceTraveled, setFullDistanceTraveled] = useState(false);
     const [wallHit, setWallHit] = useState(false);
 
@@ -128,9 +127,9 @@ function Gamescreen(){
 
             let newDistance;
 
-            setDistance(prev => {
-                newDistance = prev + 1;
-                return newDistance;
+            setSMZUser(prev => {
+                newDistance = prev[0] + 1;
+                return [newDistance];
             });
 
             if (newDistance > 1000) {
@@ -168,7 +167,6 @@ function Gamescreen(){
 
             playSound(6);
             setGameOver(true);
-            setSMZUser([distance]);
 
         }
 
@@ -238,13 +236,13 @@ function Gamescreen(){
 
     const result = () => {
             
-        if (distance >= 500){
+        if (SMZUser[0] >= 500){
     
             achievementsUpdate(setAchievements, 8);
     
         }
 
-        claimPoints(ActiveGame, Player, setPlayer, Math.floor(distance / 5));
+        claimPoints(ActiveGame, Player, setPlayer, Math.floor(SMZUser[0] / 5));
     
     }
     
@@ -264,7 +262,7 @@ function Gamescreen(){
                     {gameOver === false ? (
 
                         <>
-                            <h1 className="SMZsign"> <span className='signGlitch'> Distance Traveled: {distance} Meters</span></h1>
+                            <h1 className="SMZsign"> <span className='signGlitch'> Distance Traveled: {SMZUser[0]} Meters</span></h1>
 
                             <InnerGameScreen
                             wallPositions={wallPositions}

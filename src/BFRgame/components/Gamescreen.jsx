@@ -134,9 +134,25 @@ function Gamescreen(){
         let balloonPopped = false;
 
         for (const [r, c] of positions) {
-            if (r === 8 && c === 0) birdShot = true;
-            if (r === 8 && c === 1) balloonPopped = true;
-            if (birdShot || balloonPopped) break;
+
+            if (r === 8 && c === 0) {
+
+                birdShot = true;
+
+            } 
+
+            if (r === 8 && c === 1) {
+
+                balloonPopped = true;
+
+            } 
+
+            if (birdShot || balloonPopped) {
+                
+                break;
+
+            }
+            
         }
 
         if (birdShot === true) {

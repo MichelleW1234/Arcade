@@ -58,9 +58,8 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
         if (type === colorToBlast) {
 
             setCBLUser(prev => {
-                const updated = [...prev];
-                updated[0] = updated[0] + 1;
-                return updated;
+                const updated = prev[0] + 1;
+                return [updated];
             });
 
             setColorBlasted(true);

@@ -32,41 +32,29 @@ function InnerGamescreen ({positions, laserBlast}){
                         
                         ) : balloonHere === true ? (
 
-                            colIndex === 8 ? (
-
-                                <img src = {balloon} key = {rowIndex + "," + colIndex} className="BFRFieldUnactivated" alt = "" />
-
-                            ) : (
-
-                                <img src = {balloon} key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace" alt = "" />
-
-                            )
+                            <img 
+                                src = {balloon} 
+                                key = {rowIndex + "," + colIndex} 
+                                className= {colIndex === 8 ? "BFRFieldUnactivated" : "BFRGameBoardEmptySpace"} 
+                                alt = "" 
+                            />
 
                         ) : birdHere === true ? (
 
-                            colIndex === 8 ? (
-
-                                <img src = {bird} key = {rowIndex + "," + colIndex} className="BFRFieldUnactivated" alt = "" />
-
-
-                            ) : (
-
-                                <img src = {bird} key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace" alt = "" />
-
-                            )
-                               
+                            <img 
+                                src = {bird} 
+                                key = {rowIndex + "," + colIndex} 
+                                className= {colIndex === 8 ? "BFRFieldUnactivated" : "BFRGameBoardEmptySpace"}
+                                alt = "" 
+                            />
 
                         ) : (
-                            
-                            colIndex === 8 ? (
-
-                                <div key = {rowIndex + "," + colIndex} className="BFRFieldUnactivated"/>
-
-                            ) : (
-
-                                <div key = {rowIndex + "," + colIndex} className="BFRGameBoardEmptySpace"></div>
-                        
-                            )
+                    
+                            <div
+                                key = {rowIndex + "," + colIndex} 
+                                className= {colIndex === 8 ? "BFRFieldUnactivated" : "BFRGameBoardEmptySpace"}
+                            >
+                            </div>
 
                         )
     

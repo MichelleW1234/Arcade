@@ -131,23 +131,11 @@ function M4GameBoard({setBossDefeated, setBlownUp, gameOver}) {
             <div className = "SPIhealthbarContainer">  
                 {healthBar.map((_, colIndex) => (
 
-                    bossHealth > colIndex ? (
-
-                        <div
-                        key={colIndex}
-                        className="SPIhealthLeft"
-                        >
-                        </div>
-
-                    ) : (
-
-                        <div
-                        key={colIndex}
-                        className="SPIhealthGone"
-                        >
-                        </div>
-
-                    )
+                    <div
+                    key={colIndex}
+                    className={bossHealth > colIndex ? "SPIhealthLeft" : "SPIhealthGone"}
+                    >
+                    </div>
 
                 ))}
             </div>

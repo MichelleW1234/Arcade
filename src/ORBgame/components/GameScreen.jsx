@@ -117,8 +117,8 @@ function Gamescreen(){
         setStop(true);
         playSound(6);
 
-        if (circle[currentSlot][0] === winner[0] && circle[currentSlot][1] === winner[1]){
-
+        if (circle[currentSlotRef.current][0] === winner[0] && circle[currentSlotRef.current][1] === winner[1]){
+            
             setSuccess(true);
 
         }
@@ -164,23 +164,11 @@ function Gamescreen(){
 
                 <div className = "ORBOuterGameContainer">
 
-                    {stop === false ? (
-
-                        <div className = "ORBGameBoardLightContainer">
-                            <div className = "ORBGameBoardLightGo">  </div>
-                            <div className = "ORBGameBoardLightGo">  </div>
-                            <div className = "ORBGameBoardLightGo">  </div>
-                        </div>
-
-                    ) : (
-
-                        <div className = "ORBGameBoardLightContainer">
-                            <div className = "ORBGameBoardLightStop">  </div>
-                            <div className = "ORBGameBoardLightStop">  </div>
-                            <div className = "ORBGameBoardLightStop">  </div>
-                        </div>
-
-                    )}
+                    <div className = "ORBGameBoardLightContainer">
+                        <div className = {stop === false ? "ORBGameBoardLightGo" : "ORBGameBoardLightStop"}>  </div>
+                        <div className = {stop === false ? "ORBGameBoardLightGo" : "ORBGameBoardLightStop"}>  </div>
+                        <div className = {stop === false ? "ORBGameBoardLightGo" : "ORBGameBoardLightStop"}>  </div>
+                    </div>
 
                     <InnerGameScreen
                         circle = {circle}

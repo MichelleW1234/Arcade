@@ -109,12 +109,12 @@ function Missionscreen() {
                             </div>
 
                         ) : SPIUser[0] >= mission ? (
+
                             <div key = {mission} className= "SPImissionWindowCompleted">
                                 
                                 <p>Mission {mission} Completed</p>
                             
                             </div>
-
 
                         ) : SPIUser[1][0] === mission ? (
 

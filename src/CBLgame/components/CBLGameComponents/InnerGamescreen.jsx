@@ -75,8 +75,8 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
             colorToBlast === 0 ? "CBLGameBoardScreenOne"
             : colorToBlast === 1 ? "CBLGameBoardScreenTwo"
             : colorToBlast === 2 ? "CBLGameBoardScreenThree"
-            : "CBLGameBoardScreenFour"
-        }>
+            : "CBLGameBoardScreenFour"}
+        >
 
             {gameArray.map((row, rowIndex) => (
                 row.map((_, colIndex) => {
@@ -93,7 +93,8 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
 
                             ) : (
 
-                                <button key={rowIndex + "," + colIndex}  
+                                <button 
+                                    key={rowIndex + "," + colIndex}  
                                     className={colorSpot[1] === 0 ? "CBLGameBoardColorOne"
                                         : colorSpot[1] === 1 ? "CBLGameBoardColorTwo"
                                         : colorSpot[1] === 2 ? "CBLGameBoardColorThree"

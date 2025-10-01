@@ -145,7 +145,6 @@ function Gamesscreen(){
 
         if (SNKUser[0] === true || snake.length >= 600) {
 
-            console.log("hello??");
             playSound(6);
             setGameOver(true);
 

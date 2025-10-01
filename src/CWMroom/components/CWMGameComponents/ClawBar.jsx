@@ -10,61 +10,29 @@ function ClawBar({currentPosition}) {
             <div className = "CWMBar">
                 {Array.from({ length: 23 }, (_, i) => (
 
-                    i < 5 || i > 17 ? (
+                    currentPosition === i ? (
 
-                        currentPosition === i ? (
-
-                            <div key={i} className="CWMBarNotAccurate">
-                                <img className="CWMBarCurrent" key={i} src={positionIndicator} alt = "" />
-                            </div>
-
-                        ) : (
-
-                            <div key={i} className="CWMBarNotAccurate"></div>
-
-                        )
-
-                    ) : i < 8 || i > 14 ? (
-
-                        currentPosition === i ? (
-
-                            <div key={i} className="CWMBarInRange">
-                                <img className="CWMBarCurrent"  key={i} src={positionIndicator} alt = "" />
-                            </div>
-
-                        ) : (
-
-                            <div key={i} className="CWMBarInRange"></div>
-
-                        )
-
-                    ) : i < 11 || i > 11 ? (
-
-                        currentPosition === i ? (
-
-                            <div key={i} className="CWMBarClose">
-                                <img className="CWMBarCurrent"  key={i} src={positionIndicator} alt = "" />
-                            </div>
-
-                        ) : (
-
-                            <div key={i} className="CWMBarClose"></div>
-                        )
+                        <div 
+                            key={i} 
+                            className={i < 5 || i > 17 ? "CWMBarNotAccurate"
+                                    : i < 8 || i > 14 ? "CWMBarInRange"
+                                    : i < 11 || i > 11 ? "CWMBarClose" 
+                                    : "CWMBarVeryClose"}
+                        >
+                            <img className="CWMBarCurrent" key={i} src={positionIndicator} alt = "" />
+                        </div>
 
                     ) : (
 
-                        currentPosition === i ? (
+                        <div 
+                            key={i} 
+                            className={i < 5 || i > 17 ? "CWMBarNotAccurate"
+                                    : i < 8 || i > 14 ? "CWMBarInRange"
+                                    : i < 11 || i > 11 ? "CWMBarClose" 
+                                    : "CWMBarVeryClose"}>
+                        </div>
 
-                            <div key={i} className="CWMBarVeryClose">
-                                <img className="CWMBarCurrent"  key={i} src={positionIndicator} alt = "" />
-                            </div>
-
-                        ) : (
-
-                            <div key={i} className="CWMBarVeryClose"></div>
-                        )
-
-                    )
+                    )    
                     
                 ))}
             </div>

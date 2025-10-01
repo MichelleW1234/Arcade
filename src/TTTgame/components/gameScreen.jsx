@@ -97,7 +97,15 @@ function Gamescreen() {
 
               {error === "" ? (
                                   
-                <h1 className = "TTTturnBoard"> <span className='signGlitch'>Active Player: {currentTurn === 1 ? "  You" : "  Computer"} </span></h1>
+                currentTurn === 1 ? (
+
+                  <h1 className = "TTTturnBoard"> <span className='signGlitch'>Active Player: You </span></h1>
+
+                ) : (
+
+                  <h1 className = "TTTturnBoard"> <span className='signGlitch'>Active Player: Computer </span></h1>
+
+                )
 
               ) : (
 
@@ -137,27 +145,21 @@ function Gamescreen() {
 
                       matrix[index] === 1 ? (
 
-                        threeInARow.includes(index) ? (
-
-                          <div key = {index} className="TTTresulting_chart_win"> O </div>
-
-                        ) : (
-
-                          <div key = {index} className="TTTresulting_chart"> O </div>
-
-                        )
+                        <div
+                          key={index}
+                          className={threeInARow.includes(index) ? "TTTresulting_chart_win" : "TTTresulting_chart"}
+                        >
+                          O
+                        </div>
                           
                       ) : matrix[index] === 0 ? (
 
-                        threeInARow.includes(index) ? (
-
-                          <div key = {index} className="TTTresulting_chart_win"> X </div>
-
-                        ) : (
-
-                          <div key = {index} className="TTTresulting_chart"> X </div>
-
-                        )
+                        <div 
+                          key = {index} 
+                          className={threeInARow.includes(index) ? "TTTresulting_chart_win" : "TTTresulting_chart"}
+                        > 
+                          X 
+                        </div>
 
                       ) : (
 

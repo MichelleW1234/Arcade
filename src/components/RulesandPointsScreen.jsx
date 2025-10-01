@@ -75,7 +75,8 @@ function RulesandPointsscreen (){
 
             ) : (
 
-                <div className = "pointsClaimedButton"> <div className="buttonNameContainer">20 pts <br/> <span className='buttonKeyDescription'>[Return]</span></div>
+                <div className = "pointsClaimedButton"> 
+                    <div className="buttonNameContainer">20 pts <br/> <span className='buttonKeyDescription'>[Return]</span></div>
                 </div>
 
             )}

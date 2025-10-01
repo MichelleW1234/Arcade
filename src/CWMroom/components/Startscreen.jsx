@@ -27,7 +27,6 @@ function Startscreen (){
 
 
 
-
     const leave = () => {
     
         playSound(1);

@@ -2,13 +2,13 @@ import "./InnerGameBoard.css";
 
 function InnerGameBoard ({snake, appleLocation}){
 
-    const gameBoardMatrix = Array.from({ length: 20 }, () => Array(30).fill(0));
+    const gameboardMatrix = Array.from({ length: 20 }, () => Array(30).fill(0));
 
     return (
 
         <div className = "SNKrenderedgameboard">    
 
-            {gameBoardMatrix.map((row, rowIndex) => (
+            {gameboardMatrix.map((row, rowIndex) => (
                 row.map((_, colIndex) => {
 
                     const isApple = appleLocation[0] === rowIndex && appleLocation[1] === colIndex;

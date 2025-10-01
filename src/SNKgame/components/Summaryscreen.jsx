@@ -35,7 +35,6 @@ function Summaryscreen(){
 
 
 
-
     const resetGame = () => {
         
         playSound(19);

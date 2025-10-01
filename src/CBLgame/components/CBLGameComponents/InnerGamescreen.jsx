@@ -7,7 +7,7 @@ import { useCBLUser } from "../../Providers/CBLUserProvider.jsx";
 import "./InnerGamescreen.css";
 import { playSound } from "../../../Helpers/helpers.js";
 
-function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlasted, wrongColorBlasted}) {
+function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlasted, gameOver}) {
 
     const { setCBLUser } = useCBLUser();
 
@@ -16,7 +16,6 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
 
     const gameArray = Array.from({ length: 4 }, () => Array(4).fill(0));
 
-
     const colorSpotRef = useRef(colorSpot);
     useEffect(() => {
         colorSpotRef.current = colorSpot;
@@ -24,7 +23,7 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
 
     useEffect(() => {
 
-        if (wrongColorBlasted === true){
+        if (gameOver === true){
 
             return;
 
@@ -38,19 +37,13 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
             const type = Math.floor(Math.random() * 4);
             setColorSpot([newPosition, type]);
 
-            setColorAppearances(prev => {
-                const newVal = prev + 1;
-                if (newVal === 50) {
-                    playSound(6);
-                }
-                return newVal;
-            });
+            setColorAppearances(prev => prev + 1);
 
         }, 700);
 
         return () => clearInterval(interval);
 
-    }, [wrongColorBlasted]);
+    }, [gameOver]);
 
 
     const blasted = (type) => {
@@ -58,8 +51,9 @@ function InnerGamescreen({setColorAppearances, colorToBlast, setWrongColorBlaste
         if (type === colorToBlast) {
 
             setCBLUser(prev => {
-                const updated = prev[0] + 1;
-                return [updated];
+                const updated = [...prev];
+                updated[0] += 1;
+                return updated;
             });
 
             setColorBlasted(true);

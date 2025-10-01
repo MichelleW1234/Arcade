@@ -8,7 +8,6 @@ function Startscreen (){
 
     const { setActiveGame} = useActiveGame();
 
-
     const navigate = useNavigate();
 
     useKeyboardShortcut("Escape", () => {

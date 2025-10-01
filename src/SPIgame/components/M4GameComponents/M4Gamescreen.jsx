@@ -25,7 +25,8 @@ function M4Gamescreen() {
     const [bossDefeated, setBossDefeated] = useState(false);
     const [seconds, setSeconds] = useState(0);
     const [blownUp, setBlownUp] = useState(false);
-    const [bossRoared, setBossRoared] = useState(false);
+
+    const [gameOver, setGameOver] = useState(false);
 
     const navigate = useNavigate();
 
@@ -37,7 +38,7 @@ function M4Gamescreen() {
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (bossDefeated === true || SPIUser[2] === true){
+        if (gameOver === true){
             unlockNextMission(SPIUser, setSPIUser);
             navigate("/SPImission");
         }
@@ -55,7 +56,7 @@ function M4Gamescreen() {
 
     useEffect(() => {
 
-        if (SPIUser[2] === true){
+        if (gameOver === true){
 
             return;
 
@@ -67,25 +68,31 @@ function M4Gamescreen() {
 
         return () => clearInterval(interval);
 
-    }, [SPIUser]);
+    }, [gameOver]);
 
     
     useEffect(() => {
 
-        if (seconds >= 60 && bossDefeated === false && blownUp === false) {
-
+        if (seconds >= 60){
+        
             setSPIUser(prev => [prev[0], prev[1], true]);
-
-            if (bossRoared === false){
-
-                playSound(14);
-                setBossRoared(true);
-
-            }
+            playSound(14);
 
         }
 
-    }, [seconds, bossDefeated, bossRoared, blownUp]);
+    }, [seconds]);
+
+
+    useEffect(() => {
+
+        if (SPIUser[2] === true || bossDefeated === true){
+        
+            setGameOver(true);
+
+        }
+
+    }, [SPIUser, bossDefeated]);
+    
 
 
     return (
@@ -97,7 +104,7 @@ function M4Gamescreen() {
 
             <div className = "gameScreenLayout">
 
-                {bossDefeated === false && SPIUser[2] === false ? (
+                {gameOver === false ? (
 
                     <div className="SPIouterContainerM4">
 
@@ -106,6 +113,7 @@ function M4Gamescreen() {
                         <GameBoardM4
                             setBossDefeated = {setBossDefeated}
                             setBlownUp = {setBlownUp}
+                            gameOver = {gameOver}
                         />
                         
                     </div>

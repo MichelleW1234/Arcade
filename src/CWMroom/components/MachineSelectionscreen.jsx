@@ -76,12 +76,12 @@ function MachineSelectionscreen (){
                 break;
         }
 
-
         itemRefs.current[activeButton]?.scrollIntoView({
             behavior: "smooth",
             block: "nearest",
             inline: "center"
         });
+
     }, [activeButton]);
 
 

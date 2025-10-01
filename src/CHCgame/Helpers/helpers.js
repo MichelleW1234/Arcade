@@ -8,8 +8,8 @@ export const newStreetCars = () => {
 
         if (random[i] === 1){
 
-            const random = Math.floor(Math.random() * 2);
-            newStreetCarsArray.push([i, random]);
+            const carType = Math.floor(Math.random() * 2);
+            newStreetCarsArray.push([i, carType]);
 
         }
 
@@ -84,8 +84,8 @@ export const trafficIncoming = (streets, setStreets, moveForwardRef) => {
 
             if (random === 2){
 
-                const random = Math.floor(Math.random() * 2);
-                filteredStreets[i][1].push([0, random]);
+                const carType = Math.floor(Math.random() * 2);
+                filteredStreets[i][1].push([0, carType]);
 
             }
 

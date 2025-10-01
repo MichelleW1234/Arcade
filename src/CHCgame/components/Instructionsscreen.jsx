@@ -8,7 +8,6 @@ function Instructionsscreen (){
 
     const { setActiveGame} = useActiveGame();
 
-
     const navigate = useNavigate();
 
     useKeyboardShortcut("Escape", () => {

@@ -11,12 +11,12 @@ import {newBossState, newBossPosition} from "../../../Helpers/helpers.js";
 
 import {playSound} from '../../../../Helpers/helpers.js';
 
-function M4GameBoard({setBossDefeated, setBlownUp}) {
+function M4GameBoard({setBossDefeated, setBlownUp, gameOver}) {
     
     const gameBoardMatrix = Array.from({ length: 5 }, () => Array(7).fill(0));
     const healthBar = Array(50).fill(0);
 
-    const {SPIUser, setSPIUser} = useSPIUser();
+    const {setSPIUser} = useSPIUser();
 
     const [bossHealth, setBossHealth] = useState(50);
     const [bossState, setBossState] = useState([newBossPosition(), false]);
@@ -25,7 +25,7 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
     
     useEffect(() => {
 
-        if (SPIUser[2] === true){
+        if (gameOver === true){
 
             return;
 
@@ -36,45 +36,32 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
         }, 850);
 
         return () => clearInterval(interval);
-    }, [SPIUser]);
 
-
+    }, [gameOver]);
 
 
 
     const bossHit = () =>  {
 
-        let newHealth;
+        setBossHealth(prev => prev - 1);
 
-        setBossHealth(prev => {
-            
-            newHealth = prev - 1;
+    }
 
-            if (newHealth <= 0) {
 
-                return 0;
+    useEffect(() => {
 
-            } else {
-
-                return newHealth;
-
-            }
-
-        });
-
-        if (newHealth <= 0) {
+        if (bossHealth <= 0) {
 
             setBossDefeated(true);
             playSound(20);
 
-        } else {
+        } else if (bossHealth < 50){
 
             playSound(8);
 
         }
 
-    }
-
+    }, [bossHealth]);
 
 
     const exploded = () =>  {
@@ -94,8 +81,7 @@ function M4GameBoard({setBossDefeated, setBlownUp}) {
                 {gameBoardMatrix.map((row, rowIndex) => (
                     row.map((_, colIndex) => {
 
-                        const isBossHere =
-                            bossState[0][0] === rowIndex && bossState[0][1] === colIndex;
+                        const isBossHere = bossState[0][0] === rowIndex && bossState[0][1] === colIndex;
 
                         return (
 

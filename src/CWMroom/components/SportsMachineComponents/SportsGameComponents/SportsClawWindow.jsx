@@ -43,7 +43,7 @@ function SportsClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosi
                 {array.map((row, rowIndex) => (
                     row.map((_, colIndex) => {
 
-                        const clawcableHere = rowIndex < clawExtension[0] && colIndex === clawExtension[1]
+                        const clawCableHere = rowIndex < clawExtension[0] && colIndex === clawExtension[1]
                         const clawHere = rowIndex === clawExtension[0] && colIndex === clawExtension[1]
 
                         return(
@@ -52,7 +52,7 @@ function SportsClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosi
 
                                 <img className="CWMSportsClawRow" key={rowIndex + "," + colIndex} src = {claw} alt = "" />
 
-                            ) : clawcableHere === true ? (
+                            ) : clawCableHere === true ? (
 
                                 <img className="CWMSportsClawRow" key={rowIndex + "," + colIndex} src = {clawCable} alt = ""/>
                                 

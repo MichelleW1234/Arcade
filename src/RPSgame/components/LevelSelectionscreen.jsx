@@ -72,14 +72,11 @@ function LevelSelectionscreen (){
     }, [activeButton]);
 
 
-
-
     useExitPoints(() => {
         const adjustedPoints = [Player[0] - ActiveGame[1]];
         storage.set("Player", adjustedPoints);
         setPlayer(adjustedPoints);
     });
-
 
 
     const handleClick = (index) => {
@@ -92,6 +89,7 @@ function LevelSelectionscreen (){
         setRPSUser([index, currLevelInput, currLevelReferences, 0, 0]);
 
     };
+    
 
     return (
 

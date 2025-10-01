@@ -44,7 +44,7 @@ function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosit
                 {array.map((row, rowIndex) => (
                     row.map((_, colIndex) => {
 
-                        const clawcableHere = rowIndex < clawExtension[0] && colIndex === clawExtension[1]
+                        const clawCableHere = rowIndex < clawExtension[0] && colIndex === clawExtension[1]
                         const clawHere = rowIndex === clawExtension[0] && colIndex === clawExtension[1]
 
                         return(
@@ -53,7 +53,7 @@ function SpaceClawWindow({buttonHit, clawWentDown, setClawWentDown, currentPosit
 
                                 <img className="CWMSpaceClawRow" key={rowIndex + "," + colIndex} src = {claw} alt = "" />
 
-                            ) : clawcableHere === true ? (
+                            ) : clawCableHere === true ? (
 
                                 <img className="CWMSpaceClawRow" key={rowIndex + "," + colIndex} src = {clawCable} alt = "" />
                                 

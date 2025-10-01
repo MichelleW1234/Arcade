@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 import { useExitPoints } from "../../../hooks/useExitPoints";
@@ -21,6 +21,7 @@ function M1GameScreen() {
     const {SPIUser, setSPIUser} = useSPIUser();
 
     const [waveNumber, setWaveNumber] = useState(1);
+    const [gameOver, setGameOver] = useState(false);
 
     const navigate = useNavigate();
 
@@ -32,7 +33,7 @@ function M1GameScreen() {
     );
 
     useKeyboardShortcut("Enter", () => {
-        if ( waveNumber > 5 || SPIUser[2] === true){
+        if (gameOver === true){
             unlockNextMission(SPIUser, setSPIUser);
             navigate("/SPImission");
         }
@@ -41,13 +42,22 @@ function M1GameScreen() {
     );
 
 
-
     useExitPoints(() => {
         const adjustedPoints = [Player[0] - ActiveGame[1]];
         storage.set("Player", adjustedPoints);
         setPlayer(adjustedPoints);
     });
 
+
+    useEffect(() => {
+
+        if (SPIUser[2] === true || waveNumber > 5) {
+
+            setGameOver(true);
+
+        }
+
+    }, [SPIUser, waveNumber]);
 
 
     return (
@@ -59,7 +69,7 @@ function M1GameScreen() {
 
             <div className = "gameScreenLayout">
 
-                {waveNumber <= 5 && SPIUser[2] === false ? (
+                {gameOver === false ? (
 
                     <div className="SPIouterContainer">
 
@@ -68,6 +78,7 @@ function M1GameScreen() {
                         <GameBoardM1
                             waveNumber = {waveNumber}
                             setWaveNumber = {setWaveNumber}
+                            gameOver = {gameOver}
                         />
 
                     </div>

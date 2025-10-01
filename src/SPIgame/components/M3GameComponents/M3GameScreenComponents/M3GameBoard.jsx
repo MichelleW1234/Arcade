@@ -14,20 +14,20 @@ import {aliensIncomingM1andM3, newWave, alienKilledM3, laserBlaster} from "../..
 import { playSound } from '../../../../Helpers/helpers.js';
 
 
-function M3GameBoard({waveNumber, setWaveNumber}) {
+function M3GameBoard({waveNumber, setWaveNumber, gameOver}) {
 
     const gameBoardMatrix = Array.from({ length: 15 }, () => Array(27).fill(0));
 
-    const {SPIUser, setSPIUser} = useSPIUser();
+    const {setSPIUser} = useSPIUser();
 
     const [laserValue, setLaserValue] = useState(14);
     const [laserPositions, setLaserPositions] = useState([[14, laserValue], [13, laserValue], [12, laserValue]]);
     const [alienPositions, setAlienPositions] = useState(newWave(3));
     const [mutantLaserOn, setMutantLaserOn] = useState(false);
 
-    const LaserSwitchButtonRef = useRef(null);
+    const laserSwitchButtonRef = useRef(null);
     useKeyboardShortcut("Shift", () => {
-        if (waveNumber <= 5 && SPIUser[2] === false){
+        if (gameOver === false){
             changeLaser();
         }
     },
@@ -35,18 +35,18 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
     );
 
     useEffect(() => {
-        LaserSwitchButtonRef.current?.focus();
+        laserSwitchButtonRef.current?.focus();
     }, []);
 
     useKeyboardShortcut("Enter", (event) => {
-        if (waveNumber <= 5 && SPIUser[2] === false){
+        if (gameOver === false){
             event.preventDefault();
         }
     });
 
 
     useKeyboardShortcut("ArrowLeft", (event) => {
-        if ( waveNumber <= 5 && SPIUser[2] === false){
+        if (gameOver === false){
             if (laserValue > 0){
                 event.preventDefault();
                 setLaserValue(prev => prev-1);
@@ -58,7 +58,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
     
     useKeyboardShortcut("ArrowRight", (event) => {
-        if ( waveNumber <= 5 && SPIUser[2] === false ){
+        if (gameOver === false){
             if (laserValue < 26){
                 event.preventDefault();
                 setLaserValue(prev => prev + 1);
@@ -90,7 +90,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
     useEffect(() => {
 
-        if (SPIUser[2] === true){
+        if (gameOver === true){
 
             return;
 
@@ -102,12 +102,12 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
         return () => clearInterval(interval);
 
-    }, [mutantLaserOn, SPIUser]);
+    }, [mutantLaserOn, gameOver]);
 
 
     useEffect(() => {
 
-        if (SPIUser[2] === true){
+        if (gameOver === true){
 
             return;
 
@@ -119,12 +119,12 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
         return () => clearInterval(interval);
 
-    }, [waveNumber, SPIUser]);
+    }, [waveNumber, gameOver]);
 
 
     useEffect(() => {
 
-        if (SPIUser[2] === true){
+        if (gameOver === true){
 
             return;
 
@@ -136,8 +136,7 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
 
         return () => clearInterval(interval);
 
-    }, [SPIUser]);
-
+    }, [gameOver]);
 
 
 
@@ -231,14 +230,14 @@ function M3GameBoard({waveNumber, setWaveNumber}) {
                 max="26"
                 value={laserValue}
                 onChange={(e) => setLaserValue(Number(e.target.value))}
-                onPointerUp={() => LaserSwitchButtonRef.current?.focus()}
-                onPointerCancel={() => LaserSwitchButtonRef.current?.focus()}
-                onPointerLeave={() => LaserSwitchButtonRef.current?.focus()}
+                onPointerUp={() => laserSwitchButtonRef.current?.focus()}
+                onPointerCancel={() => laserSwitchButtonRef.current?.focus()}
+                onPointerLeave={() => laserSwitchButtonRef.current?.focus()}
             />
 
             <div className="largefont"> [&larr;] & [&rarr;]</div>
 
-            <button ref = {LaserSwitchButtonRef} className={mutantLaserOn === true ? "SPIlaserButtonMutant ChangeLaser" : "SPIlaserButtonNormal ChangeLaser"} onClick={() => changeLaser()}> 
+            <button ref = {laserSwitchButtonRef} className={mutantLaserOn === true ? "SPIlaserButtonMutant ChangeLaser" : "SPIlaserButtonNormal ChangeLaser"} onClick={() => changeLaser()}> 
                 <div className="buttonNameContainer"> Change Laser <br/> <span className = "buttonKeyDescription"> [Shift] </span></div>
             </button>
 

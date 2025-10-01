@@ -8,22 +8,18 @@ const bumpChecker = (activeDirection, setSNKUser, snake) => {
     if (activeDirection === 0 && snake[0][1] === 0){
 
         setSNKUser(prev => [true, prev[1]]);
-        playSound(6);
 
     } else if (activeDirection === 1 && snake[0][1] === gameboardWidth-1){
 
         setSNKUser(prev => [true, prev[1]]);
-        playSound(6);
 
     } else if (activeDirection === 2 && snake[0][0] === 0){
 
         setSNKUser(prev => [true, prev[1]]);
-        playSound(6);
 
     } else if (activeDirection === 3 && snake[0][0] === gameboardHeight-1){
 
         setSNKUser(prev => [true, prev[1]]);
-        playSound(6);
 
     } else {
 
@@ -34,22 +30,18 @@ const bumpChecker = (activeDirection, setSNKUser, snake) => {
             if (activeDirection === 0 && snake.some(([sx, sy]) => sx === snakeHead[0] && sy === snakeHead[1]-1)){
         
                 setSNKUser(prev => [true, prev[1]]);
-                playSound(6);
 
             } else if (activeDirection === 1 && snake.some(([sx, sy]) => sx === snakeHead[0] && sy === snakeHead[1]+1)){
 
                 setSNKUser(prev => [true, prev[1]]);
-                playSound(6);
 
             } else if (activeDirection === 2 && snake.some(([sx, sy]) => sx === snakeHead[0]-1 && sy === snakeHead[1])){
 
                 setSNKUser(prev => [true, prev[1]]);
-                playSound(6);
 
             } else if (activeDirection === 3 && snake.some(([sx, sy]) => sx === snakeHead[0]+1 && sy === snakeHead[1])){
 
                 setSNKUser(prev => [true, prev[1]]);
-                playSound(6);
 
             }
 
@@ -68,15 +60,15 @@ const newApple = (setAppleLocation, snake) => {
 
     if (snake.length < (gameboardHeight * gameboardWidth)) {
 
-        let Y;
-        let X;
+        let y;
+        let x;
     
         do {
-            X = Math.floor(Math.random() * gameboardHeight);
-            Y = Math.floor(Math.random() * gameboardWidth);
-        } while (snake.some(([sx, sy]) => sx === X && sy === Y));
+            x = Math.floor(Math.random() * gameboardHeight);
+            y = Math.floor(Math.random() * gameboardWidth);
+        } while (snake.some(([sx, sy]) => sx === x && sy === y));
     
-        setAppleLocation([X, Y]);
+        setAppleLocation([x, y]);
 
     }
 

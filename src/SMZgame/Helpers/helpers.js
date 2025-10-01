@@ -1,5 +1,3 @@
-import {playSound} from "../../Helpers/helpers.js";
-
 export const wallHeight = (column) => {
 
     let newWallMatrix = []; 
@@ -32,7 +30,7 @@ export const birdFlyingForward = (wallPositions, setWallPositions) => {
 
     for (let i =0; i< newWalls.length; i++){
 
-        for (let j =0; j < newWalls[i].length; j ++){
+        for (let j =0; j < newWalls[i].length; j++){
 
             newWalls[i][j][1] -= 1;
         }
@@ -49,8 +47,7 @@ export const birdFlyingForward = (wallPositions, setWallPositions) => {
 
     if (newWallNeeded === true){
 
-        const newWall = wallHeight(16);
-        newWallsFiltered.push(newWall);
+        newWallsFiltered.push(wallHeight(16));
 
     }
 

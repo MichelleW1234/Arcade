@@ -24,7 +24,6 @@ function PrizeRoomscreen() {
 
     );
 
-
     
     const purchaseItem = (index) => {
 

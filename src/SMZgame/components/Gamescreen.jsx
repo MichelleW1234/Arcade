@@ -43,7 +43,7 @@ function Gamescreen(){
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (gameOver === true){
+        if (startButtonClicked === true && gameOver === true){
             result();
             navigate("/SMZsummary");
         }
@@ -125,22 +125,28 @@ function Gamescreen(){
 
         const interval = setInterval(() => {
 
-            let newDistance;
-
             setSMZUser(prev => {
-                newDistance = prev[0] + 1;
-                return [newDistance];
+                const updated = [...prev];
+                updated[0] += 1;
+                return updated;
             });
-
-            if (newDistance > 1000) {
-                setFullDistanceTraveled(true);
-            }
 
         }, 100);
 
         return () => clearInterval(interval);
 
     }, [gameOver, startButtonClicked]);
+
+
+    useEffect(() => {
+
+        if (SMZUser[0] > 1000) {
+            setFullDistanceTraveled(true);
+        }
+
+    }, [SMZUser]);
+
+
 
     useEffect(() => {
 

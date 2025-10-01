@@ -33,6 +33,7 @@ function Gamesscreen(){
     ]);
 
     const [startButtonPressed, setStartButtonPressed] = useState(false);
+    const [gameOver, setGameOver] = useState(false);
 
 
     const navigate = useNavigate();
@@ -45,20 +46,18 @@ function Gamesscreen(){
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (startButtonPressed === true){
-            if(SNKUser[0] === true || snake.length >= 600){
+        if (startButtonPressed === true && gameOver === true){
 
-                result();
-                navigate("/SNKsummary");
+            result();
+            navigate("/SNKsummary");
 
-            }
         }
     },
         ".ViewResults"
     );
 
     useKeyboardShortcut("w", () => {
-        if (SNKUser[0] === false && snake.length < 600 ){
+        if (gameOver === false){
 
             buttonControls(2);
 
@@ -68,7 +67,7 @@ function Gamesscreen(){
     );
 
     useKeyboardShortcut("s", () => {
-        if (SNKUser[0] === false && snake.length < 600 ){
+        if (gameOver === false){
 
             buttonControls(3);
 
@@ -78,7 +77,7 @@ function Gamesscreen(){
     );
 
     useKeyboardShortcut("a", () => {
-        if (SNKUser[0] === false && snake.length < 600 ){
+        if (gameOver === false){
 
             buttonControls(0);
 
@@ -88,7 +87,7 @@ function Gamesscreen(){
     );
 
     useKeyboardShortcut("d", () => {
-        if (SNKUser[0] === false && snake.length < 600 ){
+        if (gameOver === false){
 
             buttonControls(1);
 
@@ -123,7 +122,7 @@ function Gamesscreen(){
 
     useEffect(() => {
 
-        if (SNKUser[0] === true){
+        if (startButtonPressed === false || gameOver === true){
 
             return;
 
@@ -138,7 +137,21 @@ function Gamesscreen(){
 
         return () => clearInterval(interval);
 
-    }, [startButtonPressed, SNKUser]);
+    }, [startButtonPressed, gameOver]);
+
+
+
+    useEffect(() => {
+
+        if (SNKUser[0] === true || snake.length >= 600) {
+
+            console.log("hello??");
+            playSound(6);
+            setGameOver(true);
+
+        }
+
+    }, [SNKUser, snake]);
 
 
     const buttonControls = (direction) => {
@@ -238,7 +251,7 @@ function Gamesscreen(){
 
                         </>
 
-                    ) : SNKUser[0] === false && snake.length < 600 ? (
+                    ) : gameOver === false ? (
 
                         <>
                             <h1 className = "SNKgameBoardSign">  <span className = "signGlitch">Apples Eaten: {SNKUser[1]}</span></h1>
@@ -264,7 +277,7 @@ function Gamesscreen(){
 
                     )}
                     
-                    {SNKUser[0] === false && snake.length < 600 ? (
+                    {gameOver === false ? (
 
                         <div className = "SNKbuttonsContainer">
                             

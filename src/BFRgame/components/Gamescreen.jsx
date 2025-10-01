@@ -130,30 +130,9 @@ function Gamescreen(){
 
     const checkHit = () => {
 
-        let birdShot = false;
-        let balloonPopped = false;
-
-        for (const [r, c] of positions) {
-
-            if (r === 8 && c === 0) {
-
-                birdShot = true;
-
-            } 
-
-            if (r === 8 && c === 1) {
-
-                balloonPopped = true;
-
-            } 
-
-            if (birdShot || balloonPopped) {
-                
-                break;
-
-            }
-            
-        }
+        const column = positions.findIndex(inner => inner[0] === 8);
+        const birdShot = column !== -1 && positions[column][1] === 0;
+        const balloonPopped = column !== -1 && positions[column][1] === 1;
 
         if (birdShot === true) {
 

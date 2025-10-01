@@ -36,7 +36,7 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, ter
                     setTimeout(() => el.classList.remove("active"), 100);
                 });
 
-                ProcessingInput();
+                processingInput();
             }
         }
     };
@@ -45,7 +45,7 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, ter
         setInputValue(e.target.value);
     };
 
-    const ProcessingInput = () => {
+    const processingInput = () => {
         
         const inputNumber = Number(inputValue);
         if (1 <= inputNumber && inputNumber <= currInput.length) {
@@ -134,7 +134,7 @@ function Roundbox ({round, showReferences, showFlag, setShowFlag, setResult, ter
                 placeholder="Type here..."
             />
 
-            <button className = "RPSenterButton Enter" onClick={() => ProcessingInput()}>
+            <button className = "RPSenterButton Enter" onClick={() => processingInput()}>
                 <div className="buttonNameContainer">Enter <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
             </button>
 

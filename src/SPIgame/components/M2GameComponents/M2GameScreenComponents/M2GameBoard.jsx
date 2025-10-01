@@ -12,11 +12,11 @@ import "../../GameBoard.css";
 import {aliensIncomingM2, newWave, alienKilledM2, laserBlaster, getRandomElements} from "../../../Helpers/helpers.js";
 
 
-function M2GameBoard({waveNumber, setWaveNumber}) {
+function M2GameBoard({waveNumber, setWaveNumber, gameOver}) {
 
     const gameBoardMatrix = Array.from({ length: 15 }, () => Array(27).fill(0));
 
-    const {SPIUser, setSPIUser} = useSPIUser();
+    const {setSPIUser} = useSPIUser();
 
     const [laserValue, setLaserValue] = useState(14);
     const [laserPositions, setLaserPositions] = useState([[14, laserValue], [13, laserValue], [12, laserValue]]);
@@ -25,7 +25,7 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
 
     
     useKeyboardShortcut("ArrowLeft", (event) => {
-        if ( waveNumber <= 5 && SPIUser[2] === false){
+        if (gameOver === false){
             if (laserValue > 0){
                 event.preventDefault();
                 setLaserValue(prev => prev-1);
@@ -37,7 +37,7 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
 
     
     useKeyboardShortcut("ArrowRight", (event) => {
-        if ( waveNumber <= 5 && SPIUser[2] === false ){
+        if (gameOver === false){
             if (laserValue < 26){
                 event.preventDefault();
                 setLaserValue(prev => prev + 1);
@@ -73,7 +73,7 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
 
     useEffect(() => {
 
-        if (SPIUser[2] === true){
+        if (gameOver === true){
 
             return;
 
@@ -85,12 +85,12 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
 
         return () => clearInterval(interval);
 
-    }, [SPIUser]);
+    }, [gameOver]);
 
 
     useEffect(() => {
 
-        if (SPIUser[2] === true){
+        if (gameOver === true){
 
             return;
 
@@ -102,12 +102,12 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
 
         return () => clearInterval(interval);
 
-    }, [waveNumber, SPIUser]);
+    }, [waveNumber, gameOver]);
 
 
     useEffect(() => {
 
-        if (SPIUser[2] === true){
+        if (gameOver === true){
 
             return;
 
@@ -119,8 +119,7 @@ function M2GameBoard({waveNumber, setWaveNumber}) {
 
         return () => clearInterval(interval);
 
-    }, [SPIUser]);
-
+    }, [gameOver]);
 
 
     return (

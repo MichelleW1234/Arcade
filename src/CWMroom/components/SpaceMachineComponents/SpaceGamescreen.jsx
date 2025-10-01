@@ -74,8 +74,6 @@ function SpaceGamescreen (){
     const directionRef = useRef(1);
 
 
-
-
     useEffect(() => {
 
         if (buttonHit === true){

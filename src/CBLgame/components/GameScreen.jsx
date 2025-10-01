@@ -25,8 +25,8 @@ function Gamescreen (){
 
     const [colorToBlast, setColorToBlast] = useState(Math.floor(Math.random() * 4));
     const [colorAppearances, setColorAppearances] = useState(0);
-
     const [wrongColorBlasted, setWrongColorBlasted] = useState(false);
+    const [gameOver, setGameOver] = useState(false);
 
 
     const navigate = useNavigate();
@@ -39,7 +39,7 @@ function Gamescreen (){
     );
 
     useKeyboardShortcut("Enter", () => {
-        if (colorAppearances >= 50 || wrongColorBlasted === true ){
+        if (gameOver === true){
             result();
             navigate("/CBLsummary");
         }
@@ -57,7 +57,7 @@ function Gamescreen (){
 
     useEffect(() => {
 
-        if (wrongColorBlasted === true) {
+        if (gameOver === true) {
 
             return;
 
@@ -72,8 +72,20 @@ function Gamescreen (){
 
         return () => clearInterval(interval);
 
-    }, [wrongColorBlasted]);
-    
+    }, [gameOver]);
+
+
+    useEffect(() => {
+
+        if (wrongColorBlasted === true || colorAppearances >= 50) {
+
+            playSound(6);
+            setGameOver(true);
+
+        }
+
+    }, [wrongColorBlasted, colorAppearances]);
+
 
     const exitGame = () => {
         
@@ -98,7 +110,6 @@ function Gamescreen (){
     }
 
 
-
     return (
 
         <div>             
@@ -111,7 +122,7 @@ function Gamescreen (){
 
                 <div className = "CBLOuterGameContainer">
 
-                    {colorAppearances < 50 && wrongColorBlasted === false ? (
+                    {gameOver === false ? (
 
                         <>
             
@@ -121,7 +132,7 @@ function Gamescreen (){
                                 setColorAppearances = {setColorAppearances}
                                 colorToBlast = {colorToBlast}
                                 setWrongColorBlasted = {setWrongColorBlasted}
-                                wrongColorBlasted = {wrongColorBlasted}
+                                gameOver = {gameOver}
                             />
 
                         </>

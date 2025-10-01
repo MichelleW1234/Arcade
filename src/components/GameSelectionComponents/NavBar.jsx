@@ -112,13 +112,13 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
         setPlayer([0]);
         setActiveGame(retrieveActiveGame(0));
         setPrize([["Bear", 100, bear], ["BumbleBee", 80, bee], ["Valentine", 50, heart],
-                      ["GameBoy", 80, gameBoy], ["Robot", 60, robot], ["Alien", 40, alien], 
-                      ["Spider", 80, spider], ["Carrot", 40, carrot], ["Whale", 60, whale],
-                      ["Black Cat", 0, blackCat], ["Orange Cat", 0, orangeCat], ["Siamese Cat", 0, siameseCat],
-                      ["British Shorthair Cat", 0, britishShorthairCat], ["Football", 0, football], ["Ping Pong Paddle", 0, paddle], 
-                      ["Soccerball", 0, soccerball], ["Basketball", 0, basketball], ["Andromeda Galaxy", 0, andromeda], ["Sun", 0, sun], 
-                      ["Saturn", 0, saturn], ["Earth", 0, earth], ["Cow", 50, cow], ["Hippo", 30, hippo]]);
-        setAchievements([[false], 
+                ["GameBoy", 80, gameBoy], ["Robot", 60, robot], ["Alien", 40, alien], 
+                ["Spider", 80, spider], ["Carrot", 40, carrot], ["Whale", 60, whale],
+                ["Black Cat", 0, blackCat], ["Orange Cat", 0, orangeCat], ["Siamese Cat", 0, siameseCat],
+                ["British Shorthair Cat", 0, britishShorthairCat], ["Football", 0, football], ["Ping Pong Paddle", 0, paddle], 
+                ["Soccerball", 0, soccerball], ["Basketball", 0, basketball], ["Andromeda Galaxy", 0, andromeda], ["Sun", 0, sun], 
+                ["Saturn", 0, saturn], ["Earth", 0, earth], ["Cow", 50, cow], ["Hippo", 30, hippo]]);
+        setAchievements([[false],
                         [0, 5, "Won 5 games of Rock-Paper-Scissors", rps, 0], 
                         [0, 10, "Won 10 games of Tic-Tac-Toe", ttt, 0], 
                         [0, 1, "Ate 50 Apples in one game of Snake", snk, 0], 

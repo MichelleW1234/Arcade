@@ -3,7 +3,7 @@ import {useEffect} from 'react';
 
 import { useTTTUser } from '../../Providers/TTTUserProvider.jsx';
 
-import {computerMoveDecider, winnerwinnerchickendinner} from "../../Helpers/helpers.js";
+import {computerMoveDecider, winnerWinnerChickenDinner} from "../../Helpers/helpers.js";
 
 import {playSound} from "../../../Helpers/helpers.js";
 
@@ -20,7 +20,7 @@ function Turn({setError, matrix, setMatrix, availableMoves, setAvailableMoves, c
 
         }
 
-        let result = winnerwinnerchickendinner(matrix, userMoves, computerMoves, setThreeInARow);
+        let result = winnerWinnerChickenDinner(matrix, userMoves, computerMoves, setThreeInARow);
 
         if (result !== -1){
 

@@ -7,7 +7,6 @@ import "./FloatingReferences.css";
 function FloatingReferences ({setShowReferences}){
 
     const {RPSUser} = useRPSUser();
-    const references = RPSUser[2];
 
     const closeReferences = () => {
 
@@ -20,8 +19,8 @@ function FloatingReferences ({setShowReferences}){
         <div className = "navBarFloatingFlag">
             <div className = "RPSFloatingReferencesFlag">
                 <div className = "RPSReferences">
-                    {references.map((item, index) => (
-                            <p key={index}> &gt; {item} </p> 
+                    {RPSUser[2].map((item, index) => (
+                        <p key={index}> &gt; {item} </p> 
                     ))}
                 </div>
                 <button className='RPSreferencesButton' onClick = {() => closeReferences()}> Close </button>

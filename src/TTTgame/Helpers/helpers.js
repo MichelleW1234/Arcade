@@ -73,7 +73,7 @@ export const computerMoveDecider = (availableMoves, computerMoves, userMoves) =>
 
 
 
-export const winnerwinnerchickendinner = (matrix, userMoves, computerMoves, setThreeInARow) => {
+export const winnerWinnerChickenDinner = (matrix, userMoves, computerMoves, setThreeInARow) => {
 
     const winningSequences = [[0, 1, 2], 
     [3, 4, 5],

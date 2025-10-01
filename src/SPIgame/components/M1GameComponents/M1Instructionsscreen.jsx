@@ -97,11 +97,11 @@ function M1Instructionsscreen() {
   );
   
 
-    useExitPoints(() => {
-      const adjustedPoints = [Player[0] - ActiveGame[1]];
-      storage.set("Player", adjustedPoints);
-      setPlayer(adjustedPoints);
-    });
+  useExitPoints(() => {
+    const adjustedPoints = [Player[0] - ActiveGame[1]];
+    storage.set("Player", adjustedPoints);
+    setPlayer(adjustedPoints);
+  });
 
 
   return (

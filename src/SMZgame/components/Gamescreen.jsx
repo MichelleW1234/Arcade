@@ -188,7 +188,7 @@ function Gamescreen(){
 
         } else {
 
-            if (birdPosition[0] > 0){
+            if (birdPositionRef.current[0] > 0){
 
                 playSound(3);
                 setBirdPosition(prev => [prev[0] - 1, prev[1]]);
@@ -214,7 +214,7 @@ function Gamescreen(){
 
         } else {
 
-            if (birdPosition[0] < 9){
+            if (birdPositionRef.current[0] < 9){
 
                 playSound(3);
                 setBirdPosition(prev => [prev[0] + 1, prev[1]]);

@@ -188,11 +188,15 @@ function Gamescreen(){
 
     const movingLeft = () => {
 
-        playSound(3);
-
         if (positionRef.current > 0){
 
             setPosition(prev => prev - 1);
+            playSound(3);
+
+        } else {
+
+            playSound(5);
+
 
         }
 
@@ -202,11 +206,14 @@ function Gamescreen(){
 
     const movingRight = () => {
 
-        playSound(3);
-
         if (positionRef.current < 9){
 
             setPosition(prev => prev + 1);
+            playSound(3);
+
+        } else {
+
+            playSound(5);
 
         }
 

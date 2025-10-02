@@ -481,7 +481,7 @@ a.navBarButton {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(196, 226, 255);
+  background: linear-gradient(rgb(196, 226, 255), rgb(6, 50, 196));
   border-radius: 1rem;
   border: 0.2rem solid #0c0042; 
 }

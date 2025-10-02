@@ -143,7 +143,7 @@ function Gamesscreen(){
 
     useEffect(() => {
 
-        if (SNKUser[0] === true || snake.length >= 600) {
+        if (SNKUser[0] === true || snakeRef.current.length >= 600) {
 
             playSound(6);
             setGameOver(true);

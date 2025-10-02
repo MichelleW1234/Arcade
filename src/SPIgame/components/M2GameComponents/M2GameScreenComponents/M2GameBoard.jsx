@@ -68,7 +68,7 @@ function M2GameBoard({waveNumber, setWaveNumber, gameOver}) {
         shieldedAliensRef.current = shieldedAliens;
     }, [shieldedAliens]);
 
-    const waveIncremented = useRef(false);
+    const waveIncrementedRef = useRef(false);
 
 
     useEffect(() => {
@@ -80,7 +80,7 @@ function M2GameBoard({waveNumber, setWaveNumber, gameOver}) {
         }
 
         const interval = setInterval(() => {
-            alienKilledM2(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, shieldedAliensRef.current, setShieldedAliens, waveIncremented);
+            alienKilledM2(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, shieldedAliensRef.current, setShieldedAliens, waveIncrementedRef);
         }, 60);
 
         return () => clearInterval(interval);

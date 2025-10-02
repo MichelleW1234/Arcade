@@ -60,7 +60,7 @@ function M1GameBoard({waveNumber, setWaveNumber, gameOver}) {
         laserValueRef.current = laserValue;
     }, [laserValue]);
 
-    const waveIncremented = useRef(false);
+    const waveIncrementedRef = useRef(false);
 
 
     useEffect(() => {
@@ -72,7 +72,7 @@ function M1GameBoard({waveNumber, setWaveNumber, gameOver}) {
         }
 
         const interval = setInterval(() => {
-            alienKilledM1(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, waveIncremented);
+            alienKilledM1(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, waveIncrementedRef);
         }, 50);
 
         return () => clearInterval(interval);

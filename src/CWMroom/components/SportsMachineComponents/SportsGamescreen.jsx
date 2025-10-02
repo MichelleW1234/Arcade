@@ -74,8 +74,6 @@ function SportsGamescreen (){
     const directionRef = useRef(1);
 
 
-
-
     useEffect(() => {
 
         if (buttonHit === true){
@@ -93,6 +91,7 @@ function SportsGamescreen (){
         return () => clearInterval(interval);
 
     }, [buttonHit]);
+
 
     return (
 

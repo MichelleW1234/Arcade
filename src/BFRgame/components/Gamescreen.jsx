@@ -127,12 +127,11 @@ function Gamescreen(){
 
 
 
-
     const checkHit = () => {
 
-        const column = positions.findIndex(inner => inner[0] === 8);
-        const birdShot = column !== -1 && positions[column][1] === 0;
-        const balloonPopped = column !== -1 && positions[column][1] === 1;
+        const column = positionsRef.current.findIndex(inner => inner[0] === 8);
+        const birdShot = column !== -1 && positionsRef.current[column][1] === 0;
+        const balloonPopped = column !== -1 && positionsRef.current[column][1] === 1;
 
         if (birdShot === true) {
 
@@ -150,7 +149,7 @@ function Gamescreen(){
 
             playSound(27);
 
-            let newMatrix = positions.filter(position => !(position[0] === 8));
+            let newMatrix = positionsRef.current.filter(position => !(position[0] === 8));
             setPositions(newMatrix);
 
             setBFRUser(prev => [prev[0] + 1]);

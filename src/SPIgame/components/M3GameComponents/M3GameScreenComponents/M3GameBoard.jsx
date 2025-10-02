@@ -85,7 +85,7 @@ function M3GameBoard({waveNumber, setWaveNumber, gameOver}) {
         laserValueRef.current = laserValue;
     }, [laserValue]);
 
-    const waveIncremented = useRef(false);
+    const waveIncrementedRef = useRef(false);
 
 
     useEffect(() => {
@@ -97,7 +97,7 @@ function M3GameBoard({waveNumber, setWaveNumber, gameOver}) {
         }
 
         const interval = setInterval(() => {
-            alienKilledM3(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, waveIncremented, mutantLaserOn);
+            alienKilledM3(laserPositionsRef.current, alienPositionsRef.current, setAlienPositions, setWaveNumber, waveIncrementedRef, mutantLaserOn);
         }, 60);
 
         return () => clearInterval(interval);

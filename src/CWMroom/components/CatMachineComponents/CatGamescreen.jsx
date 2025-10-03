@@ -13,6 +13,7 @@ import { useCWMUser } from '../../Providers/CWMUserProvider.jsx';
 import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { usePrize} from '../../../Providers/PrizeProvider.jsx';
+import { useAchievements } from '../../../Providers/AchievementsProvider.jsx';
 
 import "./CatGamescreen.css";
 
@@ -21,7 +22,8 @@ function CatGamescreen (){
     const { setCWMUser} = useCWMUser();
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame } = useActiveGame();
-    const { setPrize } = usePrize();
+    const { Prize, setPrize } = usePrize();
+    const { setAchievements } = useAchievements();
 
     const [buttonHit, setButtonHit] = useState(false);
     const [result, setResult] = useState(0);
@@ -46,7 +48,7 @@ function CatGamescreen (){
             });
             document.querySelectorAll(".Grab").forEach(el => el.classList.remove("active"));
 
-            claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [9, 10, 11, 12]);
+            claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [9, 10, 11, 12], setAchievements);
             navigate("/CWMcatsummary");
         }
     });
@@ -121,7 +123,7 @@ function CatGamescreen (){
 
                         clawWentDown === true ? (
                             
-                            <Link to="/CWMcatsummary" className ="CWMCatButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [9, 10, 11, 12])}>
+                            <Link to="/CWMcatsummary" className ="CWMCatButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [9, 10, 11, 12], setAchievements)}>
                                 <div className="buttonNameContainer"> Check Prize Door <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                             </Link>
 

@@ -175,7 +175,6 @@ export const exitGame = (setActiveGame) => {
 }
 
 
-
 export const achievementsUpdate = (setAchievements, index) => {
 
     setAchievements(prev => {
@@ -195,6 +194,8 @@ export const achievementsUpdate = (setAchievements, index) => {
     });
 
 }
+
+
 
 export const resetAchievementsUpdate = (Achievements, setAchievements) => {
 

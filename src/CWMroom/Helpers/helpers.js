@@ -1,4 +1,4 @@
-import { playSound} from "../../Helpers/helpers";
+import { playSound, resetAchievementsUpdate} from "../../Helpers/helpers";
 
 export const changePosition = (currentPosition, setCurrentPosition, direction) => {
 
@@ -133,7 +133,41 @@ const choosePrize = () => {
 
 
 
-export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCost, prizeIndices) => {
+
+const setsEqual = (a, b) => {
+  return a.size === b.size && [...a].every(val => b.has(val));
+}
+
+
+const clawAchievementsUpdate = (setAchievements, index, prizeWon) => {
+
+    setAchievements(prev => {
+        const newAchievements = prev.map(inner =>
+            inner.map(val => Array.isArray(val) ? [...val] : val)
+            );
+
+        if (!newAchievements[index][0].includes(prizeWon)){
+
+            newAchievements[index][0].push(prizeWon);
+
+            if (newAchievements[index][0].length === newAchievements[index][1]) {
+
+                newAchievements[index][0] = [];
+                newAchievements[index][4] += 1;
+                newAchievements[0][0] = true;
+
+            }
+
+        }
+
+        return newAchievements;
+
+    });
+
+}
+
+
+export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCost, prizeIndices, setAchievements) => {
 
     if (result === 1){
 
@@ -167,6 +201,7 @@ export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCo
                 return newArray;
             });
 
+
         } else {
 
             setPrize(prev => {
@@ -178,12 +213,29 @@ export const claimPrize = (result, setCWMUser, setPrize, setPlayer, ActiveGameCo
 
         }
 
+
+        if (setsEqual(new Set(prizeIndices), new Set([9, 10, 11, 12]))){
+
+            clawAchievementsUpdate(setAchievements, 10, prize);
+
+        } else if (setsEqual(new Set(prizeIndices), new Set([13, 14, 15, 16]))){
+
+            clawAchievementsUpdate(setAchievements, 11, prize);
+
+        } else {
+
+            clawAchievementsUpdate(setAchievements, 12, prize);
+
+        }
+
+
     }
 
     setPlayer(prev => [prev[0] - ActiveGameCost]);
     playSound(2);
 
 }
+
 
 
 
@@ -197,18 +249,20 @@ export const exitGame = (setPlayer, ActiveGameCost, setCWMUser) => {
 
 
 
-export const resetGame = (setCWMUser) => {
+export const resetGame = (setCWMUser, Achievements, setAchievements) => {
     
     playSound(19);
     setCWMUser([0]);
+    resetAchievementsUpdate(Achievements, setAchievements);
 
 }
 
 
 
-export const reset = (setCWMUser) => {
+export const reset = (setCWMUser, Achievements, setAchievements) => {
     
     playSound(4);
     setCWMUser([0]);
+    resetAchievementsUpdate(Achievements, setAchievements);
 
 }

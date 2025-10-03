@@ -13,6 +13,7 @@ import { useCWMUser } from '../../Providers/CWMUserProvider.jsx';
 import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
 import { usePrize} from '../../../Providers/PrizeProvider.jsx';
+import { useAchievements } from '../../../Providers/AchievementsProvider.jsx';
 
 import "./SpaceGamescreen.css";
 
@@ -21,7 +22,8 @@ function SpaceGamescreen (){
     const { setCWMUser} = useCWMUser();
     const { Player, setPlayer} = usePlayer();
     const { ActiveGame} = useActiveGame();
-    const { setPrize } = usePrize();
+    const { Prize, setPrize } = usePrize();
+    const { setAchievements } = useAchievements();
 
     const [buttonHit, setButtonHit] = useState(false);
     const [result, setResult] = useState(0);
@@ -46,7 +48,7 @@ function SpaceGamescreen (){
             });
             document.querySelectorAll(".Grab").forEach(el => el.classList.remove("active"));
 
-            claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [17, 18, 19, 20]);
+            claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [17, 18, 19, 20], setAchievements);
             navigate("/CWMspacesummary");
         }
     });
@@ -120,7 +122,7 @@ function SpaceGamescreen (){
 
                         clawWentDown === true ? (
                             
-                            <Link to="/CWMspacesummary" className ="CWMSpaceButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [17, 18, 19, 20])}> 
+                            <Link to="/CWMspacesummary" className ="CWMSpaceButton CheckPrizeDoor" onClick = {() => claimPrize(result, setCWMUser, setPrize, setPlayer, ActiveGame[1], [17, 18, 19, 20], setAchievements)}> 
                                 <div className="buttonNameContainer">Check Prize Door<br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                             </Link>
 

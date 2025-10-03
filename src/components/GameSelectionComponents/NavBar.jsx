@@ -45,6 +45,9 @@ import cbl from '../../Images/ArcadeAchievementBadges/CBL.svg';
 import bfr from '../../Images/ArcadeAchievementBadges/BFR.svg';
 import smz from '../../Images/ArcadeAchievementBadges/SMZ.svg';
 import chc from '../../Images/ArcadeAchievementBadges/CHC.svg';
+import cwmcat from '../../Images/ArcadeAchievementBadges/CWMCat.svg';
+import cwmsports from '../../Images/ArcadeAchievementBadges/CWMSports.svg';
+import cwmspace from '../../Images/ArcadeAchievementBadges/CWMSpace.svg';
 
 function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchievements}){
 
@@ -118,7 +121,7 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
                 ["British Shorthair Cat", 0, britishShorthairCat], ["Football", 0, football], ["Ping Pong Paddle", 0, paddle], 
                 ["Soccerball", 0, soccerball], ["Basketball", 0, basketball], ["Andromeda Galaxy", 0, andromeda], ["Sun", 0, sun], 
                 ["Saturn", 0, saturn], ["Earth", 0, earth], ["Cow", 50, cow], ["Hippo", 30, hippo]]);
-        setAchievements([[false],
+        setAchievements([[false], 
                         [0, 5, "Won 5 games of Rock-Paper-Scissors", rps, 0], 
                         [0, 10, "Won 10 games of Tic-Tac-Toe", ttt, 0], 
                         [0, 1, "Ate 50 Apples in one game of Snake", snk, 0], 
@@ -127,7 +130,10 @@ function NavBar ({showInventory, setShowInventory, showAchievements, setShowAchi
                         [0, 1, "Blasted 15 colors in one game of Color Blast", cbl, 0], 
                         [0, 1, "Popped 15 balloons in one game of Balloon Frenzy", bfr, 0], 
                         [0, 1, "Traveled 500 meters in one game of Sky Maze", smz, 0],
-                        [0, 1, "Traveled 50 steps in one game of Chicken Crossing", chc, 0]]);
+                        [0, 1, "Traveled 50 steps in one game of Chicken Crossing", chc, 0], 
+                        [[], 4, "Won all 4 types of prizes from the Cat Claw Machine", cwmcat, 0], 
+                        [[], 4, "Won all 4 types of prizes from the Sports Claw Machine", cwmsports, 0], 
+                        [[], 4, "Won all 4 types of prizes from the Space Claw Machine", cwmspace, 0]]);
         setTermination([true]);
 
     }

@@ -3,6 +3,7 @@ import useKeyboardShortcut from "../../../hooks/useKeyboardShortcut";
 
 import { usePlayer } from '../../../Providers/PlayerProvider.jsx';
 import { useActiveGame } from '../../../Providers/ActiveGameProvider.jsx';
+import { useAchievements } from '../../../Providers/AchievementsProvider.jsx';
 import { useCWMUser } from '../../Providers/CWMUserProvider.jsx';
 
 import basketball from "../../../Images/ArcadePrizeImages/Basketball.svg";
@@ -17,11 +18,12 @@ function SportsSummaryscreen (){
     const { Player } = usePlayer();
     const { ActiveGame } = useActiveGame();
     const { CWMUser, setCWMUser} = useCWMUser();
+    const { Achievements, setAchievements} = useAchievements();
 
     const navigate = useNavigate();
     useKeyboardShortcut("Enter", () => {
         if (Player[0] >= ActiveGame[1]){
-            resetGame(setCWMUser);
+            resetGame(setCWMUser, Achievements, setAchievements);
             navigate("/CWMsportsgame");
         }
     },
@@ -29,7 +31,7 @@ function SportsSummaryscreen (){
     );
 
     useKeyboardShortcut("Escape", () => {
-        reset(setCWMUser);
+        reset(setCWMUser, Achievements, setAchievements);
         navigate("/CWMselection");
     },
         ".LeaveMachine"
@@ -86,9 +88,19 @@ function SportsSummaryscreen (){
 
             </div>
 
+            {Achievements[0][0] === true ? (
+
+                <p className = "largefont"> Congrats! You've won an achievement!</p>
+
+            ) : (
+
+                null
+
+            )}
+
             {Player[0] >= ActiveGame[1] ? (
 
-                <Link to = "/CWMsportsgame" className = "generalbutton PlayAgain" onClick = {() => resetGame(setCWMUser)}> 
+                <Link to = "/CWMsportsgame" className = "generalbutton PlayAgain" onClick = {() => resetGame(setCWMUser, Achievements, setAchievements)}> 
                     <div className="buttonNameContainer"> Play Again <br/> <span className = "buttonKeyDescription"> [Return] </span></div>
                 </Link>
 
@@ -98,7 +110,7 @@ function SportsSummaryscreen (){
 
             )} 
 
-            <Link to = "/CWMselection" className = "generalbutton LeaveMachine" onClick={() => reset(setCWMUser)}> 
+            <Link to = "/CWMselection" className = "generalbutton LeaveMachine" onClick={() => reset(setCWMUser, Achievements, setAchievements)}> 
                 <div className="buttonNameContainer">Leave Machine <br/> <span className = "buttonKeyDescription"> [Esc] </span></div>
             </Link>
 
